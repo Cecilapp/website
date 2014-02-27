@@ -1,12 +1,5 @@
 {
   "require": {
-    "phpoole/plugin-gallery": "master-dev",
     "phpoole/plugin-twbootstrap": "@dev"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/PHPoole/Plugin-Gallery"
-    }
-  ]
+  }
 }

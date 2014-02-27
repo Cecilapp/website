@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5894a2559f59474811170d0419abe31e",
+    "hash": "16b33d7d60bbb69090ec07df44fca6ea",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -436,7 +436,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phpoole/plugin-gallery": 20,
         "phpoole/plugin-twbootstrap": 20
     },
     "platform": [
