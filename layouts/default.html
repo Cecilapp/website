@@ -53,7 +53,7 @@
     {% block footer %}
     <div id="footer">
       <div class="container">
-        <p class="text-muted credit">&copy; <a href="{{ site.author.home }}">{{ site.author.name }}</a> {{ 'now'|date('Y') }} - Powered by <a href="{{ phpoole.url }}" title="PHPoole {{ phpoole.version }}">PHPoole</a></p>
+        <p class="text-muted credit">&copy; <a href="{{ site.author.home }}">{{ site.author.name }}</a> {{ 'now'|date('Y') }} - <a href="{{ phpoole.url }}" title="Powered by {{ phpoole.poweredby }}">Powered by {{ phpoole.poweredby }}</a></p>
       </div>
     </div>
     {% endblock footer %}
