@@ -1,0 +1,12 @@
+{
+  "require": {
+    "narno/phpoole-library": "1.1.x-dev",
+    "symfony/yaml": "2.8.*"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/PHPoole/PHPoole-library"
+    }
+  ]
+}

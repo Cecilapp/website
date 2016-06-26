@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 7
+
+sudo: false
+
+cache:
+  directories:
+    - vendor
+    - $COMPOSER_CACHE_DIR
+
+before_script:
+  - phpenv config-rm xdebug.ini
+  - composer install --no-interaction
+
+script:
+  - php build.php -e=prod
+
+after_success:
+  - bash deploy.sh
