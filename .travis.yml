@@ -5,6 +5,13 @@ php:
 
 sudo: false
 
+addons:
+  apt:
+    packages:
+    - lftp
+
+os: linux
+
 cache:
   directories:
     - vendor
