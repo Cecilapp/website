@@ -10,7 +10,7 @@ dist: trusty
 addons:
   apt:
     packages:
-    - lftp-4.7.1-1
+    - lftp
 
 os: linux
 
