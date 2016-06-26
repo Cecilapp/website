@@ -3,14 +3,15 @@ language: php
 php:
   - 7
 
-#sudo: false
-sudo: required
-dist: trusty
+sudo: false
+#sudo: required
+#dist: trusty
 
 addons:
   apt:
     packages:
-    - lftp
+    #- lftp
+    - sshpass
 
 os: linux
 
