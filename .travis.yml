@@ -8,7 +8,7 @@ sudo: false
 addons:
   apt:
     packages:
-    - lftp
+    - lftp-4.7.1-1
 
 os: linux
 
