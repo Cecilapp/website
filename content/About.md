@@ -1,5 +1,5 @@
 ---
-title: A propos
+title: About
 layout: default
 menu: nav
 ---
