@@ -7,6 +7,6 @@ DEST_DIR="/lamp0/web/vhosts/phpoole.org/htdocs"
 
 echo "Starting to update gh-pages"
 
-scp -r $SRC_DIR $USER@$PASSWORD:$DEST_DIR
+lftp -e "mirror -R $SRC_DIR $DEST_DIR" -u $USER,$PASSWORD $HOST
 
 exit 0
