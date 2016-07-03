@@ -1,3 +1,10 @@
 {% extends "default.html" %}
 
-{% block pageheader %}{% endblock %}
+{% block content %}
+{% for item in page.pages %}
+<li>
+  <a href="{{ url(item) }}">{{ item.title }}</a>
+    {{ item.content|excerpt }}
+</li>
+{% endfor %}
+{% endblock content %}
