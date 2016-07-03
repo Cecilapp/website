@@ -4,16 +4,6 @@ php:
   - 7
 
 sudo: false
-#sudo: required
-#dist: trusty
-
-addons:
-  apt:
-    packages:
-    #- lftp
-    - sshpass
-
-os: linux
 
 cache:
   directories:
