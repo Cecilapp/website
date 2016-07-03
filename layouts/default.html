@@ -17,7 +17,9 @@
   </head>
   <body>
     <div class="container markdown-body">
-      {{ page.content }}
+{% block content %}
+{{ page.content }}
+{% endblock content %}
 {% block footer %}
       <div id="footer">
         <hr />
