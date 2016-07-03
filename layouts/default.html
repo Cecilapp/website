@@ -40,13 +40,15 @@
       <div id="menu">
         <span class="entry"><a class="{% if page.pathname == 'index' %} active{% endif %}" href="{{ url() }}">Home</a></span>
 {% for menu in site.menus.main|sortByWeight %}
-        <span class="entry"><a class="{% if page.pathname == menu.url %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a></span>
+        <span class="entry"><a class="{% if page.path == menu.url %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a></span>
 {% endfor %}
       </div>
       <hr />
 {% block content %}
 {{ page.content }}
 {% endblock content %}
+{% block subcontent %}
+{% endblock subcontent %}
 {% block footer %}
       <div id="footer">
         <hr />
