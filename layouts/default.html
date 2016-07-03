@@ -8,7 +8,27 @@
     <meta name="author" content="{{ site.author.name }}">
     <title>{{ site.name }} - {{ page.title|title }}</title>
     <link href="{{ url() }}css/github-markdown.css" rel="stylesheet">
-    <style>body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px;}</style>
+    <style>
+      body{
+        box-sizing:border-box;
+        min-width:200px;
+        max-width:980px;
+        margin:0 auto;
+        padding:0 45px 45px 45px;
+      }
+      .markdown-body h1 {
+        margin-top: 0;
+      }
+      .entry:after {
+        content: " | ";
+      }
+      .entry:last-child::after {
+        content: "";
+      }
+      span a.active {
+        font-weight: bold;
+      }
+    </style>
     <!--[if lt IE 9]>
       <script src="{{ url() }}js/html5shiv.js"></script>
       <script src="{{ url() }}js/respond.min.js"></script>
@@ -17,6 +37,13 @@
   </head>
   <body>
     <div class="container markdown-body">
+      <div id="menu">
+        <span class="entry"><a class="{% if page.pathname == 'index' %} active{% endif %}" href="{{ url() }}">Home</a></span>
+{% for menu in site.menus.main|sortByWeight %}
+        <span class="entry"><a class="{% if page.pathname == menu.url %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a></span>
+{% endfor %}
+      </div>
+      <hr />
 {% block content %}
 {{ page.content }}
 {% endblock content %}

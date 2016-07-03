@@ -1,7 +1,7 @@
 ---
 title: Download
 layout: default
-menu: nav
+menu: main
 ---
 
 * [phpoole.phar](/phpoole.phar)
