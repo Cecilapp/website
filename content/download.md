@@ -4,5 +4,4 @@ layout: default
 menu: main
 ---
 
-* [phpoole.phar](/phpoole.phar)
-* [phpoole.phar.version](/phpoole.phar.version)
+Download the [latest release](/phpoole.phar) ([SHA1](/phpoole.phar.version)).
