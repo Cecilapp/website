@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 
 REPO="PHPoole/phpoole.github.io"
 SOURCE_BRANCH="source"
