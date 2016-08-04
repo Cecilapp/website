@@ -7,11 +7,11 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.author.name }}">
     <title>{{ site.name }} - {{ page.title|title }}</title>
-    <link href="{{ minify('css/github-markdown.css') }}" rel="stylesheet">
-    <link href="{{ minify('css/style.css') }}" rel="stylesheet">
+    <link href="{{ url(minify('css/github-markdown.css')) }}" rel="stylesheet">
+    <link href="{{ url(minify('css/style.css')) }}" rel="stylesheet">
     <!--[if lt IE 9]>
-      <script src="{{ url() }}js/html5shiv.js"></script>
-      <script src="{{ url() }}js/respond.min.js"></script>
+      <script src="{{ url('js/html5shiv.js') }}"></script>
+      <script src="{{ url('js/respond.min.js') }}"></script>
     <![endif]-->
 {% endblock head %}
   </head>
