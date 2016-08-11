@@ -1,6 +1,5 @@
 ---
 title: Download
-layout: default
 menu: main
 ---
 

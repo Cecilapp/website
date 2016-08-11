@@ -1,5 +1,8 @@
-{% extends "default.html" %}
+{% extends "default.html.twig" %}
 
+{% block title %}
+<h1>{{ page.title }}</h1>
+{% endblock title %}
 {% block content %}
 <ol>
 {% for item in page.pages|sortByDate %}
