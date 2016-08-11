@@ -6,7 +6,7 @@
 {% endif %}
 {% endblock title %}
 {% block subcontent %}
-{% if page.name == 'documentation' %}
+{% if page.section == 'documentation' %}
 <hr />
 <ol>
 {% for item in site.pages|sortByDate|filterBy('section', 'documentation') %}
