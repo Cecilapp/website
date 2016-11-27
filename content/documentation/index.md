@@ -1,4 +1,3 @@
 ---
 aliases: [docs]
-menu: main
 ---
