@@ -1,6 +1,7 @@
 ---
 title: Download
-menu: main
+menu:
+    main:
+        weight: 20
+layout: download.html
 ---
-
-Download the [latest release](/phpoole.phar) ([SHA1](/phpoole.phar.version)).
