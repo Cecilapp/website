@@ -23,6 +23,7 @@
         <span class="entry"><a class="{% if page.path == menu.url or page.pathname == menu.url %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a></span>
 {% endfor %}
       </div>
+      <hr />
 {% block title %}
 {% endblock title %}
 {% block content %}
@@ -33,10 +34,10 @@
 {% block footer %}
       <div id="footer">
         <hr />
-        <p class="text-muted credit">&copy; <a href="{{ site.author.home }}">{{ site.author.name }}</a> {{ 'now'|date('Y') }} - Powered by <a href="{{ phpoole.url }}" title="Powered by {{ phpoole.poweredby }}">{{ phpoole.poweredby }}</a></p>
+        <p class="text-muted credit">&copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a> - Powered by <a href="{{ phpoole.url }}" title="Powered by PHPoole">PHPoole</a></p>
       </div>
 {% endblock footer %}
-    </div>    
+    </div>
 {% block javascript %}
 {% endblock javascript %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">

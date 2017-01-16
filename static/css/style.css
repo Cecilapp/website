@@ -23,6 +23,11 @@ span a.active {
 }
 
 #menu {
+  padding-top: .5em;
   /*padding-bottom: .5em;*/
-  text-align: right;
+  /*text-align: right;*/
+}
+
+.markdown-body hr {
+  height: .15em;
 }

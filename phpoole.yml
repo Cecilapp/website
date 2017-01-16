@@ -6,8 +6,7 @@ site:
   language: "en"
   author:
     name: "Arnaud Ligny"
-    email: "arnaud+phpoole@ligny.org"
-    home: "http://narno.org"
+    home: "http://arnaudligny.fr"
   menu:
     main:
       documentation:
