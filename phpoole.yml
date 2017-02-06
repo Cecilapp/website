@@ -25,3 +25,4 @@ site:
   release:
     name: phpoole.phar
     sha1: phpoole.phar.version
+  ga: UA-387892-21

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.language }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <title>Home &middot; PHPoole</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.author.name }}">
+    <meta name="author" content="{{ site.description }}">
+    <title>{{ page.title }} &middot; {{ site.name }}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
-    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-precomposed.png">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('apple-touch-icon-precomposed.png') }}">
+    <link rel="icon" href="{{ url('favicon.ico') }}">
     <style>
     .masthead {
       background-color: #333;
@@ -24,9 +24,9 @@
     <!-- header -->
     <header class="masthead">
       <div class="container">
-        <a href="/" class="masthead-logo">
-          <img src="{{ url('phpoole-logo-trans-white.png') }}" alt="Logo PHPoole" height="40px" />
-          PHPoole
+        <a href="{{ site.baseurl }}" class="masthead-logo">
+          <img src="{{ url('phpoole-logo-trans-white.png') }}" alt="Logo {{ site.name }}" height="40px" />
+          {{ site.name }}
         </a>
         <nav class="masthead-nav">
           {% for menu in site.menus.main|sortByWeight %}
@@ -41,8 +41,8 @@
 {% block content %}
     <div class="jumbotron">
       <div class="container">
-        <h1>PHPoole</h1>
-        <p>An easy and lightweight static website generator, written in PHP.</p>
+        <h1>{{ site.name }}</h1>
+        <p>{{ site.baseline }}</p>
         <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">
           Read the docs
         </a>
@@ -90,7 +90,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-387892-21', 'auto');
+      ga('create', '{{ site.ga }}', 'auto');
       ga('send', 'pageview');
     </script>
   </body>
