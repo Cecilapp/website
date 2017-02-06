@@ -22,6 +22,11 @@ site:
         name: GitHub
         url: https://github.com/Narno/PHPoole
         weight: 30
+      install:
+        id: install
+        name: Install
+        url: https://github.com/Narno/PHPoole#installation
+        weight: 50
   release:
     name: phpoole.phar
     sha1: phpoole.phar.version
