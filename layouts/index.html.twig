@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Home &middot; PHPoole</title>
+    <link rel="stylesheet" href="{{ url('css/primer.css') }}">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+    .masthead {
+      background-color: #333;
+    }
+    .jumbotron {
+      background-color: #333;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="masthead">
+      <div class="container">
+        <a href="/" class="masthead-logo">
+          <img src="{{ url('phpoole-logo-trans-white.png') }}" alt="Logo PHPoole" height="40px" />
+          PHPoole
+        </a>
+        <nav class="masthead-nav">
+          {% for menu in site.menus.main|sortByWeight %}
+          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') %} selected{% endif %}" href="{{ url(menu.url) }}">
+            {{ menu.name }}
+          </a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+    <!-- content -->
+{% block content %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1>PHPoole</h1>
+        <p>An easy and lightweight static website generator, written in PHP.</p>
+        <a href="/scaffolding/" class="btn btn-reverse text-white bg-gray-dark">
+          Read the docs
+        </a>
+      </div>
+    </div>
+    <div class="container about-that">
+      <div class="columns">
+        <div class="one-three column">
+          <h2>Static</h2>
+          <p>No database, files only.</p>
+        </div>
+        <div class="one-three column">
+          <h2>Template engine</h2>
+          <p>Flexible template engine and themes support.</p>
+        </div>
+        <div class="one-three column">
+          <h2>Generators support</h2>
+          <p>Menu, taxonomies, paginaton, etc.</p>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
+    <!-- footer -->
+    <div class="container">
+      <footer class="footer">
+        Copyright Arnaud Ligny<br>
+        Powered by <a href="{{ phpoole.url }}">PHPoole</a> and <a href="http://primercss.io/">Primer CSS</a>
+      </footer>
+    </div>
+    <!-- scripts -->
+    <!--
+    <script src="/js/anchor.min.js"></script>
+    <script>
+      var selector = '.markdown-body > h2, .markdown-body > h3';
+      anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+      };
+      anchors.add(selector);
+    </script>
+    -->
+  </body>
+</html>

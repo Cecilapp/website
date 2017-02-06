@@ -1,9 +1,16 @@
-{% extends "default.html.twig" %}
+{% extends 'index.html.twig' %}
 
-{% block title %}
-<h1>{{ page.title }}</h1>
-{% endblock title %}
 {% block content %}
-<kbd><a href="{{ url(site.release.name) }}">Download</a></kbd> <sub><a href="{{ url(site.release.sha1) }}">SHA1</a></sub>
-{{ page.content }}
+<div class="container">
+  <div class="columns docs-layout">
+    <div class="two-fourths column">
+      <a class="btn btn-primary btn-block" href="{{ url(site.release.name) }}" role="button">Download</a><br />
+      <a class="btn btn-sm btn-block" href="{{ url(site.release.sha1) }}" role="button">SHA1</a>
+    </div>
+    <div class="three-fourths column markdown-body">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
 {% endblock content %}

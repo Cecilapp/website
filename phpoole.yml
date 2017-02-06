@@ -12,7 +12,7 @@ site:
       documentation:
         id: documentation
         name: Documentation
-        url: documentation
+        url: documentation/1-overview
         weight: 10
       github:
         id: github

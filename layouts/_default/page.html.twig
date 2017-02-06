@@ -1,19 +1,12 @@
-{% extends "default.html.twig" %}
+{% extends 'index.html.twig' %}
 
-{% block title %}
-{% if page.name == 'download' or page.id == 'documentation/index' %}
-<h1>{{ page.title }}</h1>
-{% endif %}
-{% endblock title %}
-{% block subcontent %}
-{% if page.section == 'documentation' %}
-<h2>Index</h2>
-<ol>
-{% for item in site.pages|sortByDate|filterBy('section', 'documentation') %}
-{% if item.id != 'documentation/index' %}
-<li><a href="{{ url(item) }}">{{ item.title|slice(2) }}</a></li>
-{% endif %}
-{% endfor %}
-</ol>
-{% endif %}
-{% endblock subcontent %}
+{% block content %}
+<div class="container">
+  <div class="columns docs-layout">
+    <div class="three-fourths column markdown-body">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
