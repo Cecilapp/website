@@ -9,6 +9,9 @@ site:
     home: "http://arnaudligny.fr"
   menu:
     main:
+      index:
+        id: index
+        disabled: true
       documentation:
         id: documentation
         name: Documentation
