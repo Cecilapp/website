@@ -14,7 +14,7 @@ site:
         disabled: true
       documentation:
         id: documentation
-        name: Documentation
+        name: Docs
         url: documentation/1-overview
         weight: 10
       github:
