@@ -68,7 +68,8 @@
     <!-- footer -->
     <div class="container">
       <footer class="footer">
-        Copyright Arnaud Ligny<br>
+        &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a><br>
+        PHPoole logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
         Powered by <a href="{{ phpoole.url }}">PHPoole</a> and <a href="http://primercss.io/">Primer CSS</a>
       </footer>
     </div>
