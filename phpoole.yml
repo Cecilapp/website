@@ -21,12 +21,12 @@ site:
         id: about
         name: About
         url: about
-        weight: 30
+        weight: 20
       github:
         id: github
         name: GitHub
         url: https://github.com/Narno/PHPoole
-        weight: 30
+        weight: 40
       install:
         id: install
         name: Install
