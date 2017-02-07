@@ -2,6 +2,6 @@
 title: Download
 menu:
     main:
-        weight: 20
+        weight: 30
 layout: download.html
 ---
