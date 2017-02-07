@@ -25,7 +25,7 @@ site:
       install:
         id: install
         name: Install
-        url: https://github.com/Narno/PHPoole#installation
+        url: https://github.com/Narno/PHPoole/blob/master/README.md#installation
         weight: 50
   release:
     name: phpoole.phar
