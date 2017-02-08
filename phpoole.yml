@@ -22,16 +22,16 @@ site:
         name: About
         url: about
         weight: 20
+      install:
+        id: install
+        name: Install
+        url: install
+        weight: 30
       github:
         id: github
         name: GitHub
         url: https://github.com/Narno/PHPoole
         weight: 40
-      install:
-        id: install
-        name: Install
-        url: https://github.com/Narno/PHPoole/blob/master/README.md#installation
-        weight: 50
   release:
     name: phpoole.phar
     sha1: phpoole.phar.version
