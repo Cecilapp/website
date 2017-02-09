@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for page in site.pages %}
-{% if page.name not in ['sitemap', 'about', 'docs', 'index'] %}
+{% if page.id not in ['sitemap', 'about', 'docs', 'documentation/index'] %}
   <url>
     <loc>{{ url(page) }}</loc>
     <lastmod>{{ page.date|date('c') }}</lastmod>
