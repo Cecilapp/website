@@ -12,12 +12,19 @@
     <link rel="apple-touch-icon-precomposed" href="{{ url('apple-touch-icon-precomposed.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
     <style>
-    .masthead {
-      background-color: #333;
-    }
-    .jumbotron {
-      background-color: #333;
-    }
+      .masthead {
+        background-color: #333;
+      }
+      .jumbotron {
+        background-color: #333;
+      }
+      @media (max-width: 760px) {
+        .jumbotron .column {
+          float: none;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -40,7 +47,7 @@
     <!-- content -->
 {% block content %}
     <div class="jumbotron">
-      <div class="container about-that">
+      <div class="container">
         <div class="columns">
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
