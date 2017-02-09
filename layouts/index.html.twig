@@ -40,12 +40,19 @@
     <!-- content -->
 {% block content %}
     <div class="jumbotron">
-      <div class="container">
-        <h1>{{ site.name }}</h1>
-        <p>{{ site.baseline }}</p>
-        <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">
-          Read the docs
-        </a>
+      <div class="container about-that">
+        <div class="columns">
+          <div class="one-half column">
+            <h1>{{ site.name }}</h1>
+            <p>{{ site.baseline }}</p>
+            <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">
+              Read the docs
+            </a>
+          </div>
+          <div class="one-half column markdown-body">
+            <img src="https://raw.githubusercontent.com/Narno/PHPoole/master/docs/phpoole.gif" alt="Command line demo">
+          </div>
+        </div>
       </div>
     </div>
     <div class="container about-that">
