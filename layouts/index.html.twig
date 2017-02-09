@@ -7,7 +7,15 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{{ site.author.name }}">
     <meta name="author" content="{{ site.description }}">
-    <title>{{ page.title }} &middot; {{ site.name }}</title>
+    <title>{% spaceless %}
+{% if page.section == 'documentation' %}
+{% set title = 'Docs' %}
+{% else %}
+{% set title = page.title %}
+{% endif %}
+{% if title != 'Home' %}{{ title }} &middot; {% endif %}
+{{ site.name }}
+    {% endspaceless %}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('apple-touch-icon-precomposed.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
