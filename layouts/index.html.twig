@@ -29,6 +29,7 @@
         margin-right: .5rem;
       }
     </style>
+    <link rel="stylesheet" href="{{ url('css/terminal.css') }}">
   </head>
   <body>
     <!-- header -->
@@ -59,8 +60,8 @@
               Read the docs
             </a>
           </div>
-          <div class="one-half column markdown-body">
-            <img src="https://raw.githubusercontent.com/Narno/PHPoole/master/docs/phpoole.gif" alt="Command line demo">
+          <div class="one-half column">
+            {% include 'includes/terminal.html.twig' %}
           </div>
         </div>
       </div>
