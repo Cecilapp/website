@@ -1,7 +1,18 @@
-# Source code of [phpoole.org](http://phpoole.org)
+Source code of http://phpoole.org, generated with [PHPoole-library](https://github.com/PHPoole/PHPoole-library).
 
-[![Build Status](https://travis-ci.org/PHPoole/phpoole.github.io.svg?branch=source)](https://travis-ci.org/PHPoole/phpoole.github.io)
+The website is automatically built and deployed through [Travis CI](https://travis-ci.org/PHPoole/phpoole.github.io).
 
-Auto-deployed on ```gh-pages``` branch through Travis CI.
+[![Build Status](https://travis-ci.org/PHPoole/phpoole.github.io.svg?branch=master)](https://travis-ci.org/PHPoole/phpoole.github.io)
 
-See [Travis config file](.travis.yml) for more details.
+## Install, build & deploy
+```
+$ composer install
+$ php build.php -e=prod
+$ export GH_TOKEN=your_github_token
+$ sh deploy.sh
+```
+
+## Test locally
+```
+$ php build.php -e=dev
+```
