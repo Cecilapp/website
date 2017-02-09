@@ -8,7 +8,7 @@
       <nav class="menu docs-menu">
 {% for item in site.pages|sortByDate|filterBy('section', 'documentation') %}
 {% if item.id != 'documentation/index' %}
-        <a  class="menu-item" href="{{ url(item) }}">{{ item.title|slice(2) }}</a></li>
+        <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title|slice(2) }}</a></li>
 {% endif %}
 {% endfor %}
       </nav>

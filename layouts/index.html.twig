@@ -40,7 +40,7 @@
         </a>
         <nav class="masthead-nav">
           {% for menu in site.menus.main|sortByWeight %}
-          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') %} selected{% endif %}" href="{{ url(menu.url) }}">
+          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">
             {{ menu.name }}
           </a>
           {% endfor %}
