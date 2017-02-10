@@ -1,7 +1,5 @@
 ---
 title: About
-external: 'https://raw.githubusercontent.com/Narno/PHPoole/master/README.md'
-published: true
 ---
 PHPoole is an easy and lightweight static website generator, written in PHP.
 
@@ -12,4 +10,3 @@ PHPoole is a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) applica
 ## Author
 
 PHPoole is created by [Arnaud Ligny](https://arnaudligny.fr), a french Web & mobile consultant.
-
