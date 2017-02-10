@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://phpoole.org/sitemap.xml
+Sitemap: https://phpoole.org/sitemap.xml
