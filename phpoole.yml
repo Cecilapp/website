@@ -2,11 +2,11 @@ site:
   name: "PHPoole"
   baseline: "An easy and lightweight static website generator."
   description: "PHPoole takes your content (written in Markdown plain text format) and merges files with layouts (Twig templates) to generate static HTML files."
-  baseurl: "http://phpoole.org/"
+  baseurl: "https://phpoole.org/"
   language: "en"
   author:
     name: "Arnaud Ligny"
-    home: "http://arnaudligny.fr"
+    home: "https://arnaudligny.fr"
   menu:
     main:
       index:
