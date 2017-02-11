@@ -1,6 +1,7 @@
 ---
 title: Download
 layout: download.html
+alias: install
 ---
 
 # Download
