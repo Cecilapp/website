@@ -1,7 +1,7 @@
 ---
 title: About
 ---
-## About
+# About
 
 PHPoole is an easy and lightweight static website generator, written in PHP.
 
