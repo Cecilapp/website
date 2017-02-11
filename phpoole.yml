@@ -22,10 +22,10 @@ site:
         name: About
         url: about
         weight: 20
-      install:
-        id: install
-        name: Install
-        url: install
+      download:
+        id: download
+        name: Download
+        url: download
         weight: 30
       github:
         id: github
