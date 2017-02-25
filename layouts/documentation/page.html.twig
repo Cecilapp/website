@@ -6,7 +6,7 @@
     <div class="one-fourth column">
       <!-- menu -->
       <nav class="menu docs-menu">
-{% for item in site.pages|sortByDate|filterBy('section', 'documentation') %}
+{% for item in site.pages|filterBy('section', 'documentation') %}
 {% if item.id != 'documentation/index' %}
         <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title|slice(2) }}</a></li>
 {% endif %}
@@ -20,7 +20,14 @@
         <span class="octicon octicon-markdown"></span>
         Suggest a modification
       </a>
-    {% endif %}
+{% endif %}
+{% if page.next is defined %}
+{% set url = page.section ~ '/' ~ page.next %}
+      <a class="btn btn-sm btn-outline right" href="{{ url(url) }}" role="button">
+        Next
+        <span class="octicon octicon-arrow-right"></span>
+      </a>
+{% endif %}
     </div>
   </div>
 </div>
