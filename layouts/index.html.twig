@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('apple-touch-icon-precomposed.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
-    <style>
+    <style>{% filter minifyCSS %}
       .masthead {
         background-color: #333;
       }
@@ -37,7 +37,7 @@
       .about-that .column .mega-octicon {
         margin-right: .5rem;
       }
-    </style>
+    {% endfilter %}</style>
     <link rel="stylesheet" href="{{ url('css/terminal.css') }}">
   </head>
   <body>
@@ -49,11 +49,9 @@
           {{ site.name }}
         </a>
         <nav class="masthead-nav">
-          {% for menu in site.menus.main|sortByWeight %}
-          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">
-            {{ menu.name }}
-          </a>
-          {% endfor %}
+{% for menu in site.menus.main|sortByWeight %}
+          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a>
+{% endfor %}
         </nav>
       </div>
     </header>
@@ -97,13 +95,12 @@
       <footer class="footer">
         &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a>
         - PHPoole logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
-        Powered by <a href="{{ phpoole.url }}">PHPoole</a>, <a href="http://primercss.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a> 
+        Powered by <a href="{{ phpoole.url }}">PHPoole</a>, <a href="http://primercss.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a>
         and <a href="https://github.com/PHPoole/phpoole.github.io"><span class="octicon octicon-octoface"></span></a>
       </footer>
     </div>
     <!-- scripts -->
     <script src="{{ url('js/anchor.min.js') }}"></script>
-    <script>
     <script>{% filter minifyJS %}
       var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
