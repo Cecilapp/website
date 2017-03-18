@@ -1,6 +1,6 @@
 {
   "require": {
-    "narno/phpoole-library": "^1.4",
-    "symfony/yaml": "^3.2"
+    "narno/phpoole-library": "^1.6",
+    "symfony/yaml": "^2.8"
   }
 }
