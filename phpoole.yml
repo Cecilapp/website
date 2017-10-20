@@ -15,7 +15,7 @@ site:
       documentation:
         id: documentation
         name: Docs
-        url: documentation/1-overview
+        url: documentation/overview
         weight: 10
       about:
         id: about
