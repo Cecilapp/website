@@ -5,14 +5,14 @@ The website is automatically built and deployed through [Travis CI](https://trav
 [![Build Status](https://travis-ci.org/PHPoole/phpoole.github.io.svg?branch=master)](https://travis-ci.org/PHPoole/phpoole.github.io)
 
 ## Install, build & deploy
-```
-$ composer install
-$ php build.php -e=prod
-$ export GH_TOKEN=your_github_token
-$ sh deploy.sh
+```bash
+composer install
+php build.php -e=prod
+export GH_TOKEN=GITHUB_TOKEN
+sh deploy.sh
 ```
 
-## Test locally
-```
-$ php build.php -e=dev
+## Build & run locally
+```bash
+php build.php -e=dev
 ```
