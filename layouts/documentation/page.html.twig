@@ -8,15 +8,15 @@
       <nav class="menu docs-menu">
 {% for item in site.pages|filterBy('section', 'documentation') %}
 {% if item.id != 'documentation/index' %}
-        <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title|slice(2) }}</a></li>
+        <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
 {% endif %}
 {% endfor %}
       </nav>
     </div>
     <div class="three-fourths column markdown-body">
       {{ page.content }}
-      {% if page.repository is defined %}
-      <a class="btn btn-sm btn-outline" href="{{ page.repository }}{{ page.title }}.md" role="button">
+      {% if page.repository is defined and page.file is defined %}
+      <a class="btn btn-sm btn-outline" href="{{ page.repository }}{{ page.file }}" role="button">
         <span class="octicon octicon-markdown"></span>
         Suggest a modification
       </a>

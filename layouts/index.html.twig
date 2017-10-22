@@ -10,7 +10,7 @@
     <meta name="google-site-verification" content="{{ site.gsv }}" />
     <title>{% spaceless %}
 {% if page.section == 'documentation' %}
-{% set title = 'Docs &middot; ' ~ page.title|slice(2) %}
+{% set title = 'Docs &middot; ' ~ page.title %}
 {% else %}
 {% set title = page.title %}
 {% endif %}
