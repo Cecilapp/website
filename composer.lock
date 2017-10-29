@@ -370,16 +370,16 @@
         },
         {
             "name": "narno/phpoole-library",
-            "version": "1.7.14",
+            "version": "1.7.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPoole/PHPoole-library.git",
-                "reference": "3692519ecc52de4a2df48eb571da5d9a8234ced9"
+                "reference": "a2beef1ef17d2d0d36f358b76a21d38ae899b2d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPoole/PHPoole-library/zipball/3692519ecc52de4a2df48eb571da5d9a8234ced9",
-                "reference": "3692519ecc52de4a2df48eb571da5d9a8234ced9",
+                "url": "https://api.github.com/repos/PHPoole/PHPoole-library/zipball/a2beef1ef17d2d0d36f358b76a21d38ae899b2d7",
+                "reference": "a2beef1ef17d2d0d36f358b76a21d38ae899b2d7",
                 "shasum": ""
             },
             "require": {
@@ -433,7 +433,7 @@
                 "twig",
                 "website"
             ],
-            "time": "2017-10-22T13:01:47+00:00"
+            "time": "2017-10-26T15:57:55+00:00"
         },
         {
             "name": "symfony/filesystem",
