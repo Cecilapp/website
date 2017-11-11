@@ -21,7 +21,7 @@ $prod = (isset($getopt['e']) && $getopt['e'] == 'prod') ? true : false;
 $options = (!$prod) ? array_replace_recursive($options, $options_dev) : $options;
 
 $phpoole = new PHPoole($options);
-$phpoole->build();
+$phpoole->build(true);
 
 // run server
 if (!$prod) {
