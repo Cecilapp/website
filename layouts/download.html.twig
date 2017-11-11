@@ -7,7 +7,7 @@
       {{ page.content }}
     </div>
     <div class="one-fourth column">
-      <a class="btn btn-primary btn-block" href="{{ url(site.release.name) }}" role="button">Download {{ source('static/SOURCE', ignore_missing = true) }}</a><br />
+      <a class="btn btn-primary btn-block" href="{{ url(site.release.name) }}" role="button">Download {{ source('../static/SOURCE', ignore_missing = true) }}</a><br />
       <a class="btn btn-sm btn-block" href="{{ url(site.release.sha1) }}" role="button">File checksum (SHA1)</a>
     </div>
   </div>
