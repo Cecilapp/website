@@ -1,0 +1,65 @@
+{
+    "name": "PHPoole\\Step\\LocateContent",
+    "line": 17,
+    "short_desc": "Locates content.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Step",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Step\/LocateContent.php",
+    "relative_file": null,
+    "hash": "c6532d20050583b94cb220b4f3a8e38bd008dc7e",
+    "parent": "PHPoole\\Step\\AbstractStep",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Exception": "PHPoole\\Exception\\Exception",
+        "Finder": "Symfony\\Component\\Finder\\Finder"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "init": {
+            "name": "init",
+            "line": 24,
+            "short_desc": "Checks if step can be processed.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "internalProcess": {
+            "name": "internalProcess",
+            "line": 35,
+            "short_desc": "Process implementation.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

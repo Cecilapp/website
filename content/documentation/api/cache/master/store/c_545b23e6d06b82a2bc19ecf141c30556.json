@@ -1,0 +1,82 @@
+{
+    "name": "PHPoole\\Generator\\Homepage",
+    "line": 18,
+    "short_desc": "Class Homepage.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Generator",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Generator\/Homepage.php",
+    "relative_file": null,
+    "hash": "ee00997ff25f9a57e60f3257db6f535ed5ddfaa9",
+    "parent": "PHPoole\\Generator\\AbstractGenerator",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "PageCollection": "PHPoole\\Collection\\Collection",
+        "Page": "PHPoole\\Collection\\Page\\Page",
+        "NodeType": "PHPoole\\Page\\NodeType"
+    },
+    "errors": [],
+    "interfaces": {
+        "PHPoole\\Generator\\GeneratorInterface": "PHPoole\\Generator\\GeneratorInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "generate": {
+            "name": "generate",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "pageCollection": {
+                    "name": "pageCollection",
+                    "line": 23,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\Collection",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\Collection",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "messageCallback": {
+                    "name": "messageCallback",
+                    "line": 23,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

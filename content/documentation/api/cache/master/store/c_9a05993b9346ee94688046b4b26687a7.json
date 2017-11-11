@@ -1,0 +1,86 @@
+{
+    "name": "PHPoole\\Generator\\Taxonomy",
+    "line": 22,
+    "short_desc": "Class Taxonomy.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Generator",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Generator\/Taxonomy.php",
+    "relative_file": null,
+    "hash": "48915cc50ca3e0c7baa653405979a67a121d4ad4",
+    "parent": "PHPoole\\Generator\\AbstractGenerator",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "PageCollection": "PHPoole\\Collection\\Collection",
+        "Page": "PHPoole\\Collection\\Page\\Page",
+        "TaxonomyCollection": "PHPoole\\Collection\\Taxonomy\\Collection",
+        "Term": "PHPoole\\Collection\\Taxonomy\\Term",
+        "Vocabulary": "PHPoole\\Collection\\Taxonomy\\Vocabulary",
+        "Exception": "PHPoole\\Exception\\Exception",
+        "NodeType": "PHPoole\\Page\\NodeType"
+    },
+    "errors": [],
+    "interfaces": {
+        "PHPoole\\Generator\\GeneratorInterface": "PHPoole\\Generator\\GeneratorInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "generate": {
+            "name": "generate",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "pageCollection": {
+                    "name": "pageCollection",
+                    "line": 34,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\Collection",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\Collection",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "messageCallback": {
+                    "name": "messageCallback",
+                    "line": 34,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

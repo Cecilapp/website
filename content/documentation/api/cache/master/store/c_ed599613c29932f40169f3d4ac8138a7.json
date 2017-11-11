@@ -1,0 +1,99 @@
+{
+    "name": "PHPoole\\Step\\ConvertPages",
+    "line": 18,
+    "short_desc": "Converts content of all pages.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Step",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Step\/ConvertPages.php",
+    "relative_file": null,
+    "hash": "17962676d2b1b5b99a248dc75c1787564ab98cde",
+    "parent": "PHPoole\\Step\\AbstractStep",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Page": "PHPoole\\Collection\\Page\\Page",
+        "Converter": "PHPoole\\Converter\\Converter",
+        "Exception": "PHPoole\\Exception\\Exception"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "internalProcess": {
+            "name": "internalProcess",
+            "line": 23,
+            "short_desc": "Process implementation.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "convertPage": {
+            "name": "convertPage",
+            "line": 72,
+            "short_desc": "Converts page content:\n- Yaml frontmatter to PHP array\n- Markdown body to HTML.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\Page\\Page",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "page": {
+                    "name": "page",
+                    "line": 72,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\Page\\Page",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\Page\\Page",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "format": {
+                    "name": "format",
+                    "line": 72,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "'yaml'",
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

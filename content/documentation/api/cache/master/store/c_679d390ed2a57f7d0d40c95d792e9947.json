@@ -1,0 +1,104 @@
+{
+    "name": "PHPoole\\Converter\\Converter",
+    "line": 19,
+    "short_desc": "Class Converter.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Converter",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Converter\/Converter.php",
+    "relative_file": null,
+    "hash": "3b45c127d561bf74ae0e856546252b94c9d52a3b",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ParsedownExtra": "ParsedownExtra",
+        "Exception": "PHPoole\\Exception\\Exception",
+        "ParseException": "Symfony\\Component\\Yaml\\Exception\\ParseException",
+        "Yaml": "Symfony\\Component\\Yaml\\Yaml"
+    },
+    "errors": [],
+    "interfaces": {
+        "PHPoole\\Converter\\ConverterInterface": "PHPoole\\Converter\\ConverterInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "convertFrontmatter": {
+            "name": "convertFrontmatter",
+            "line": 24,
+            "short_desc": "Converts frontmatter.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "string": {
+                    "name": "string",
+                    "line": 24,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "type": {
+                    "name": "type",
+                    "line": 24,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "'yaml'",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "convertBody": {
+            "name": "convertBody",
+            "line": 42,
+            "short_desc": "Converts body.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "string": {
+                    "name": "string",
+                    "line": 42,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

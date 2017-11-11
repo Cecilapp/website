@@ -1,0 +1,73 @@
+{
+    "name": "PHPoole\\Page\\NodeType",
+    "line": 21,
+    "short_desc": "Class NodeType.",
+    "long_desc": "",
+    "hint": null,
+    "tags": {
+        "method": [
+            [
+                "static",
+                "NodeType",
+                "HOMEPAGE()"
+            ],
+            [
+                "static",
+                "NodeType",
+                "SECTION()"
+            ],
+            [
+                "static",
+                "NodeType",
+                "TAXONOMY()"
+            ],
+            [
+                "static",
+                "NodeType",
+                "TERMS()"
+            ]
+        ]
+    },
+    "namespace": "PHPoole\\Page",
+    "file": "\/home\/travis\/build\/PHPoole\/PHPoole-library\/src\/Page\/NodeType.php",
+    "relative_file": null,
+    "hash": "ffd27e3e490aaa81dffd6e52ae6ec7f484ed95ca",
+    "parent": "MyCLabs\\Enum\\Enum",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Enum": "MyCLabs\\Enum\\Enum"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": {
+        "HOMEPAGE": {
+            "name": "HOMEPAGE",
+            "line": 23,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "SECTION": {
+            "name": "SECTION",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "TAXONOMY": {
+            "name": "TAXONOMY",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": ""
+        },
+        "TERMS": {
+            "name": "TERMS",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}
