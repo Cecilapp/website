@@ -18,7 +18,7 @@
 {{ site.name }}
     {% endspaceless %}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ url('apple-touch-icon-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('phpoole-logo.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
     <style>{% filter minifyCSS %}
       .masthead {
@@ -38,16 +38,16 @@
         margin-right: .5rem;
       }
     {% endfilter %}</style>
-    <link rel="stylesheet" href="{{ url('css/terminal.css') }}">
+    <link rel="stylesheet" href="{{ url(minify('css/terminal.css')) }}">
   </head>
   <body>
     <!-- header -->
     <header class="masthead">
       <div class="container">
-        <a href="{{ site.baseurl }}" class="masthead-logo">{% spaceless %}
-          <img src="{{ url('phpoole-logo-trans-white.png') }}" alt="Logo {{ site.name }}" height="40px" />
+        <a href="{{ site.baseurl }}" class="masthead-logo">
+          <img src="{{ url('phpoole-logo-white.png') }}" alt="Logo {{ site.name }}" height="40px" />
           {{ site.name }}
-        {% endspaceless %}</a>
+        </a>
         <nav class="masthead-nav">
 {% for menu in site.menus.main|sortByWeight %}
           <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a>
@@ -63,11 +63,11 @@
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
             <p>{{ site.baseline }}</p>
-            <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">Docs</a>
+            <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse">Docs</a>
             <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-primary">Download</a>
           </div>
           <div class="one-half column">
-            {% include 'includes/terminal.html.twig' %}
+{% include 'includes/terminal.html.twig' %}
           </div>
         </div>
       </div>
@@ -76,15 +76,15 @@
       <div class="columns">
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-markdown"></span>Files only</h2>
-          <p>No database, content is stored is flat files (<a href="https://daringfireball.net/projects/markdown/">Markdown</a> + <a href="http://www.yaml.org/spec/1.2/spec.html">YAML</a>): no dependency, security and performance.</p>
+          <p>Pages are stored is flat files (<a href="https://daringfireball.net/projects/markdown/">Markdown</a> + <a href="http://www.yaml.org/spec/1.2/spec.html">YAML</a>): no database, no dependency, security and performance.</p>
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by a flexible template engine (<a href="http://twig.sensiolabs.org/">Twig</a>) + themes support.</p>
+          <p>Powered by a flexible template engine (<a href="http://twig.sensiolabs.org/">Twig</a>) and <a href="https://github.com/PHPoole/PHPoole-theme-hyde">theme</a> <a href="https://github.com/PHPoole/PHPoole-installer">support</a>.</p>
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-hubot"></span>Generators</h2>
-          <p>Home page, taxonomies, paginaton, etc. generated automatically.</p>
+          <p>Paginaton, taxonomies, redirections, sections, sitemap, RSS, etc. are generated automatically.</p>
         </div>
       </div>
     </div>
