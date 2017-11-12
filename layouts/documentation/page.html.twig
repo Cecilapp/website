@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container">
   <div class="columns docs-layout">
+    <!-- menu -->
     <div class="one-fourth column">
-      <!-- menu -->
       <nav class="menu docs-menu">
 {% for item in site.pages|filterBy('section', 'documentation') %}
 {% if item.id != 'documentation/index' %}
@@ -13,6 +13,7 @@
 {% endfor %}
       </nav>
     </div>
+    <!-- markdown -->
     <div class="three-fourths column markdown-body">
       {{ page.content }}
       {% if page.repository is defined and page.file is defined %}
@@ -21,6 +22,7 @@
         Suggest a modification
       </a>
 {% endif %}
+      <!-- next page -->
 {% if page.next is defined %}
 {% set url = page.section ~ '/' ~ page.next %}
       <a class="btn btn-sm btn-outline right" href="{{ url(url) }}" role="button">
