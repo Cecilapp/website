@@ -44,10 +44,10 @@
     <!-- header -->
     <header class="masthead">
       <div class="container">
-        <a href="{{ site.baseurl }}" class="masthead-logo">
+        <a href="{{ site.baseurl }}" class="masthead-logo">{% spaceless %}
           <img src="{{ url('phpoole-logo-trans-white.png') }}" alt="Logo {{ site.name }}" height="40px" />
           {{ site.name }}
-        </a>
+        {% endspaceless %}</a>
         <nav class="masthead-nav">
 {% for menu in site.menus.main|sortByWeight %}
           <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a>
@@ -63,9 +63,8 @@
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
             <p>{{ site.baseline }}</p>
-            <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">
-              Read the docs
-            </a>
+            <a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse text-white bg-gray-dark">Read the docs</a>
+            <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-primary">Download</a>
           </div>
           <div class="one-half column">
             {% include 'includes/terminal.html.twig' %}
@@ -108,6 +107,23 @@
         class: 'anchor-link'
       };
       anchors.add(selector);
+    {% endfilter %}</script>
+    <script>{% filter minifyJS %}
+      const buttonId = 'download-button';
+      const button = document.getElementById(buttonId)
+      if (null !== button) {
+        fetch('../VERSION')
+          .then(response => {
+            if(!response.ok) {
+              return '2.X.X'
+            }
+          })
+          .then(text => {
+            version = text
+            text = document.getElementById(buttonId).innerHTML;
+            document.getElementById(buttonId).innerHTML = text+' <span class="counter">'+version+'</span>'
+          })
+      }
     {% endfilter %}</script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
