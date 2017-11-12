@@ -11,4 +11,5 @@ PHPoole is a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) applica
 
 ## Author
 
-PHPoole is created by [Arnaud Ligny](https://arnaudligny.fr), a french Web & mobile consultant.
+PHPoole is created by [Arnaud Ligny](https://arnaudligny.fr), a french Web & mobile consultant.  
+PHPoole logo has been created by [Cécile Ricordeau](http://www.cecillie.fr).
