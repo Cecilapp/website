@@ -118,12 +118,14 @@
             let text = response.text
             if(!response.ok) {
               text = '2.X.X'
+            } else {
+              console.log('problem to fetch VERSION')
             }
-            console.log('VERSION: '+text)
             return text
           })
           .then(text => {
             version = text
+            console.log('VERSION: '+version)
             text = document.getElementById(buttonId).innerHTML;
             document.getElementById(buttonId).innerHTML = text+' <span class="counter">'+version+'</span>'
           })
