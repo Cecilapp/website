@@ -115,7 +115,7 @@
       if (null !== button) {
         fetch('/VERSION')
           .then(response => {
-            let text = response.text
+            let text = response.text()
             if(!response.ok) {
               text = '2.X.X'
             } else {
