@@ -115,9 +115,12 @@
       if (null !== button) {
         fetch('/VERSION')
           .then(response => {
+            let text = response.text
             if(!response.ok) {
-              return '2.X.X'
+              text = '2.X.X'
             }
+            console.log('VERSION: '+text)
+            return text
           })
           .then(text => {
             version = text
