@@ -22,6 +22,7 @@ site:
         name: About
         url: about
         weight: 20
+        disabled: true
       download:
         id: download
         name: Download
@@ -35,5 +36,5 @@ site:
   release:
     name: phpoole.phar
     sha1: phpoole.phar.version
-  ga: UA-387892-21
+  googleanalytics: UA-387892-21
   gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
