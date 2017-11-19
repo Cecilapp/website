@@ -3,3 +3,4 @@ _site/
 .phpoole/
 static/phpoole.phar
 static/phpoole.phar.version
+phpoole.phar

@@ -2,28 +2,21 @@ language: php
 php:
   - 7
 sudo: false
-# cache
-cache:
-  directories:
-    - vendor
-    - $COMPOSER_CACHE_DIR
-# install
+# download PHPoole
 before_script:
-  - phpenv config-rm xdebug.ini
-  - composer install --no-interaction
   - curl -SOL https://phpoole.org/phpoole.phar
+  - php phpoole.phar -v
 # build
 script:
   - php phpoole.phar build
 # deploy
 deploy:
-  - provider: script
-    script: bash scripts/deploy.sh
-    skip_cleanup: true
-    overwrite: true
-    on:
-      branch: deploy
-      php: '7.0'
+  provider: script
+  script: bash scripts/deploy.sh
+  skip_cleanup: true
+  overwrite: true
+  on:
+    branch: deploy
 # purge cache
 after_deploy:
   - "curl -X DELETE \"https://api.cloudflare.com/client/v4/zones/${Cloudflare_zone}/purge_cache\" \
