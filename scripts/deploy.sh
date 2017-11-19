@@ -6,12 +6,7 @@ SOURCE_BRANCH="source"
 TARGET_BRANCH="master"
 SITE_DIR="_site"
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy."
-    exit 0
-fi
-
-echo "Starting to update gh-pages..."
+echo "Starting to update GitHub pages..."
 
 cp -R $SITE_DIR $HOME/$SITE_DIR
 cd $HOME
@@ -24,6 +19,6 @@ cp -R $HOME/.git gh-pages/.git
 cd gh-pages
 cp -Rf $HOME/$SITE_DIR/* .
 git add -Af .
-git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages"
+git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to $TARGET_BRANCH"
 git push -fq origin $TARGET_BRANCH > /dev/null
 exit 0
