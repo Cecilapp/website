@@ -16,7 +16,7 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    branch: deploy
+    branch: source
 # purge cache
 after_deploy:
   - "curl -X DELETE \"https://api.cloudflare.com/client/v4/zones/${Cloudflare_zone}/purge_cache\" \
