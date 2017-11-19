@@ -3,8 +3,10 @@ php:
   - 7
 sudo: false
 # download PHPoole
-before_script:
+install:
   - curl -SOL https://phpoole.org/phpoole.phar
+# check version
+before_script:
   - php phpoole.phar -v
 # build
 script:
