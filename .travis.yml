@@ -15,10 +15,10 @@ before_script:
   - composer install --no-interaction
 
 script:
-  - php build.php -e=prod
+  - php scripts/build.php -e=prod
 
 after_success:
-  - bash deploy.sh
+  - bash scripts/deploy.sh
   - "curl -X DELETE \"https://api.cloudflare.com/client/v4/zones/${Cloudflare_zone}/purge_cache\" \
     -H \"X-Auth-Email: arnaud@ligny.org\" \
     -H \"X-Auth-Key: ${Cloudflare_API}\" \

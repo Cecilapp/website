@@ -7,12 +7,12 @@ The website is automatically built and deployed through [Travis CI](https://trav
 ## Install, build & deploy
 ```bash
 composer install
-php build.php -e=prod
+php scripts/build.php -e=prod
 export GH_TOKEN=GITHUB_TOKEN
-sh deploy.sh
+sh scripts/deploy.sh
 ```
 
 ## Build & run locally
 ```bash
-php build.php -e=dev
+php scripts/build.php -e=dev
 ```
