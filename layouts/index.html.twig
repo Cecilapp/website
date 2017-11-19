@@ -21,12 +21,6 @@
     <link rel="apple-touch-icon-precomposed" href="{{ url('images/phpoole-logo.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
     <style>{% filter minifyCSS %}
-      .masthead {
-        background-color: #333;
-      }
-      .jumbotron {
-        background-color: #333;
-      }
       @media (max-width: 760px) {
         .jumbotron .column {
           float: none;
@@ -42,7 +36,7 @@
   </head>
   <body>
     <!-- header -->
-    <header class="masthead">
+    <header class="masthead bg-gray-dark">
       <div class="container">
         <a href="{{ site.baseurl }}" class="masthead-logo">
           <img src="{{ url('images/phpoole-logo-white.png') }}" alt="Logo {{ site.name }}" height="40px" />
@@ -57,7 +51,7 @@
     </header>
     <!-- content -->
 {% block content %}
-    <div class="jumbotron">
+    <div class="jumbotron bg-gray-dark">
       <div class="container">
         <div class="columns">
           <div class="one-half column">
@@ -76,11 +70,11 @@
       <div class="columns">
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-markdown"></span>Files only</h2>
-          <p>Pages are stored is flat files (<a href="https://daringfireball.net/projects/markdown/">Markdown</a> + <a href="http://www.yaml.org/spec/1.2/spec.html">YAML</a>): no database, no dependency, security and performance.</p>
+          <p>Pages content is stored in flat files, in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> syntax with <a href="/documentation/content/#front-matter">YAML front matter</a>: no database, no dependency, security and performance.</p>
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by a flexible template engine (<a href="http://twig.sensiolabs.org/">Twig</a>) and <a href="https://github.com/PHPoole/PHPoole-theme-hyde">theme</a> <a href="https://github.com/PHPoole/PHPoole-installer">support</a>.</p>
+          <p>Powered by <a href="http://twig.sensiolabs.org/">Twig</a>, a flexible template engine, with <a href="https://github.com/PHPoole/PHPoole-installer">theme support</a>.</p>
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-hubot"></span>Generators</h2>
