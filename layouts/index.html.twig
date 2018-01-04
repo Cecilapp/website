@@ -43,8 +43,8 @@
           {{ site.name }}
         </a>
         <nav class="masthead-nav">
-{% for menu in site.menus.main|sortByWeight %}
-          <a class="{% if url(page) == url(menu.url) or url(page) == url(menu.url)|trim('/') or page.section == menu.id %} active{% endif %}" href="{{ url(menu.url) }}">{{ menu.name }}</a>
+{% for entry in site.menus.main|sortByWeight %}
+          <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.id %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
         </nav>
       </div>

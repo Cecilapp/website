@@ -1,0 +1,30 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+<div class="container">
+  <div class="columns docs-layout">
+    <!-- menu -->
+    <div class="one-fourth column">
+      <nav class="menu docs-menu">
+{% for item in site.pages|filterBy('section', 'documentation') %}
+{% if item.id != 'documentation/index' %}
+        <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
+{% endif %}
+{% endfor %}
+      </nav>
+    </div>
+    <!-- markdown -->
+    <div class="three-fourths column markdown-body">
+      <dl>
+{% for doc in site.pages|filterBy('section', page.pathname)|sortByTitle %}
+        <dt><a href="{{ url(doc) }}">{{ doc.title|e }}</a></dt>
+{% if doc.description is defined %}
+        <dd>{{ doc.description|e }}</dd>
+{% endif %}
+{% endfor %}
+      </dl>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
