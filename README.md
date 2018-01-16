@@ -1,4 +1,4 @@
-Source code of https://phpoole.org, generated with [PHPoole-library](https://github.com/PHPoole/PHPoole-library).
+Source code of https://phpoole.org, generated with [PHPoole/library](https://github.com/PHPoole/library).
 
 The website is automatically built and deployed through [Travis CI](https://travis-ci.org/PHPoole/phpoole.github.io).
 
