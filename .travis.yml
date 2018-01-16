@@ -21,5 +21,4 @@ deploy:
     branch: source
 # purge cache
 after_deploy:
-  - echo Purge cache of '${Cloudflare_zone}'
   - bash scripts/cache.sh
