@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+echo "Purge cache of '${Cloudflare_zone}'"
 curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$Cloudflare_zone/purge_cache" \
     -H "X-Auth-Email: arnaud@ligny.org" \
     -H "X-Auth-Key: $Cloudflare_API" \
