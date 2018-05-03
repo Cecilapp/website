@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
 echo "Purge cache of '${Cloudflare_zone}'"
 curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$Cloudflare_zone/purge_cache" \
