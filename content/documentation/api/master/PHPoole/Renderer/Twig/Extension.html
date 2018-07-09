@@ -230,6 +230,26 @@
                     string
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_toCss">toCss</a>(string $path)
+        
+                                            <p>Compile style file to CSS.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_scssToCss">scssToCss</a>($value)
+        
+                                            <p>Compile SCSS string to CSS.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_excerpt">excerpt</a>($string, int $length = 450, string $suffix = &#039; …&#039;)
         
                                             <p>Read $lenght first characters of a string and add a suffix.</p>                </div>
@@ -263,7 +283,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 32</div>
+        <div class="location">at line         line 33</div>
         <code>                    
     <strong>__construct</strong>(string $destPath)
         </code>
@@ -294,7 +314,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getName">
-        <div class="location">at line         line 43</div>
+        <div class="location">at line         line 44</div>
         <code>                    
     <strong>getName</strong>()
         </code>
@@ -315,7 +335,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getFilters">
-        <div class="location">at line         line 51</div>
+        <div class="location">at line         line 52</div>
         <code>                    
     <strong>getFilters</strong>()
         </code>
@@ -336,7 +356,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getFunctions">
-        <div class="location">at line         line 70</div>
+        <div class="location">at line         line 72</div>
         <code>                    
     <strong>getFunctions</strong>()
         </code>
@@ -357,7 +377,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_filterBySection">
-        <div class="location">at line         line 87</div>
+        <div class="location">at line         line 90</div>
         <code>                    array
     <strong>filterBySection</strong>(<abbr title="PHPoole\Page\Collection">Collection</abbr> $pages, string $section)
         </code>
@@ -402,7 +422,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_filterBy">
-        <div class="location">at line         line 103</div>
+        <div class="location">at line         line 106</div>
         <code>                    array
     <strong>filterBy</strong>(<abbr title="PHPoole\Page\Collection">Collection</abbr> $pages, string $variable, string $value)
         </code>
@@ -461,7 +481,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_sortByTitle">
-        <div class="location">at line         line 134</div>
+        <div class="location">at line         line 137</div>
         <code>                    mixed
     <strong>sortByTitle</strong>($array)
         </code>
@@ -501,7 +521,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_sortByWeight">
-        <div class="location">at line         line 167</div>
+        <div class="location">at line         line 170</div>
         <code>                    mixed
     <strong>sortByWeight</strong>($array)
         </code>
@@ -541,7 +561,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_sortByDate">
-        <div class="location">at line         line 200</div>
+        <div class="location">at line         line 203</div>
         <code>                    mixed
     <strong>sortByDate</strong>($array)
         </code>
@@ -581,7 +601,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createUrl">
-        <div class="location">at line         line 235</div>
+        <div class="location">at line         line 238</div>
         <code>                    string
     <strong>createUrl</strong>(Twig_Environment $env, null $value = null, <abbr title="PHPoole\Renderer\Twig\false">false</abbr> $canonical = false)
         </code>
@@ -631,7 +651,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_minify">
-        <div class="location">at line         line 275</div>
+        <div class="location">at line         line 278</div>
         <code>                    string
     <strong>minify</strong>(string $path)
         </code>
@@ -680,7 +700,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_minifyCss">
-        <div class="location">at line         line 305</div>
+        <div class="location">at line         line 308</div>
         <code>                    string
     <strong>minifyCss</strong>($value)
         </code>
@@ -720,7 +740,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_minifyJs">
-        <div class="location">at line         line 319</div>
+        <div class="location">at line         line 322</div>
         <code>                    string
     <strong>minifyJs</strong>($value)
         </code>
@@ -759,8 +779,97 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_toCss">
+        <div class="location">at line         line 338</div>
+        <code>                    string
+    <strong>toCss</strong>(string $path)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Compile style file to CSS.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$path</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../PHPoole/Exception/Exception.html"><abbr title="PHPoole\Exception\Exception">Exception</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_scssToCss">
+        <div class="location">at line         line 367</div>
+        <code>                    string
+    <strong>scssToCss</strong>($value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Compile SCSS string to CSS.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_excerpt">
-        <div class="location">at line         line 335</div>
+        <div class="location">at line         line 383</div>
         <code>                    string
     <strong>excerpt</strong>($string, int $length = 450, string $suffix = &#039; …&#039;)
         </code>
@@ -810,7 +919,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_excerptHtml">
-        <div class="location">at line         line 354</div>
+        <div class="location">at line         line 402</div>
         <code>                    string
     <strong>excerptHtml</strong>($string)
         </code>
@@ -850,7 +959,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_readtime">
-        <div class="location">at line         line 377</div>
+        <div class="location">at line         line 425</div>
         <code>                    float|string
     <strong>readtime</strong>($text)
         </code>

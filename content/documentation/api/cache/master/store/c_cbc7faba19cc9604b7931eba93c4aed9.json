@@ -1,6 +1,6 @@
 {
     "name": "PHPoole\\Renderer\\Twig\\Extension",
-    "line": 22,
+    "line": 23,
     "short_desc": "Class Twig\\Extension.",
     "long_desc": "",
     "hint": null,
@@ -8,7 +8,7 @@
     "namespace": "PHPoole\\Renderer\\Twig",
     "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Renderer\/Twig\/Extension.php",
     "relative_file": null,
-    "hash": "63f9512c67e50163bb31caf0baa2c6a984967e43",
+    "hash": "54180c474f804b2cd82f132eaebb339c27f5f1c8",
     "parent": "Cocur\\Slugify\\Bridge\\Twig\\SlugifyExtension",
     "modifiers": "Stmt_Class",
     "is_trait": false,
@@ -16,6 +16,7 @@
     "aliases": {
         "SlugifyExtension": "Cocur\\Slugify\\Bridge\\Twig\\SlugifyExtension",
         "Slugify": "Cocur\\Slugify\\Slugify",
+        "Compiler": "Leafo\\ScssPhp\\Compiler",
         "Minify": "MatthiasMullie\\Minify",
         "Collection": "PHPoole\\Collection\\Collection",
         "CollectionInterface": "PHPoole\\Collection\\CollectionInterface",
@@ -29,7 +30,7 @@
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 32,
+            "line": 33,
             "short_desc": "Constructor.",
             "long_desc": "",
             "hint": null,
@@ -42,7 +43,7 @@
             "parameters": {
                 "destPath": {
                     "name": "destPath",
-                    "line": 32,
+                    "line": 33,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -60,7 +61,7 @@
         },
         "getName": {
             "name": "getName",
-            "line": 43,
+            "line": 44,
             "short_desc": "{@inheritdoc}",
             "long_desc": "",
             "hint": null,
@@ -74,7 +75,7 @@
         },
         "getFilters": {
             "name": "getFilters",
-            "line": 51,
+            "line": 52,
             "short_desc": "{@inheritdoc}",
             "long_desc": "",
             "hint": null,
@@ -88,7 +89,7 @@
         },
         "getFunctions": {
             "name": "getFunctions",
-            "line": 70,
+            "line": 72,
             "short_desc": "{@inheritdoc}",
             "long_desc": "",
             "hint": null,
@@ -102,7 +103,7 @@
         },
         "filterBySection": {
             "name": "filterBySection",
-            "line": 87,
+            "line": 90,
             "short_desc": "Filter by section.",
             "long_desc": "",
             "hint": [
@@ -120,7 +121,7 @@
             "parameters": {
                 "pages": {
                     "name": "pages",
-                    "line": 87,
+                    "line": 90,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -136,7 +137,7 @@
                 },
                 "section": {
                     "name": "section",
-                    "line": 87,
+                    "line": 90,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -154,7 +155,7 @@
         },
         "filterBy": {
             "name": "filterBy",
-            "line": 103,
+            "line": 106,
             "short_desc": "Filter by variable.",
             "long_desc": "",
             "hint": [
@@ -177,7 +178,7 @@
             "parameters": {
                 "pages": {
                     "name": "pages",
-                    "line": 103,
+                    "line": 106,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -193,7 +194,7 @@
                 },
                 "variable": {
                     "name": "variable",
-                    "line": 103,
+                    "line": 106,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -209,7 +210,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 103,
+                    "line": 106,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -227,7 +228,7 @@
         },
         "sortByTitle": {
             "name": "sortByTitle",
-            "line": 134,
+            "line": 137,
             "short_desc": "Sort by title.",
             "long_desc": "",
             "hint": [
@@ -247,7 +248,7 @@
             "parameters": {
                 "array": {
                     "name": "array",
-                    "line": 134,
+                    "line": 137,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,
@@ -260,7 +261,7 @@
         },
         "sortByWeight": {
             "name": "sortByWeight",
-            "line": 167,
+            "line": 170,
             "short_desc": "Sort by weight.",
             "long_desc": "",
             "hint": [
@@ -280,7 +281,7 @@
             "parameters": {
                 "array": {
                     "name": "array",
-                    "line": 167,
+                    "line": 170,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,
@@ -293,7 +294,7 @@
         },
         "sortByDate": {
             "name": "sortByDate",
-            "line": 200,
+            "line": 203,
             "short_desc": "Sort by date.",
             "long_desc": "",
             "hint": [
@@ -313,7 +314,7 @@
             "parameters": {
                 "array": {
                     "name": "array",
-                    "line": 200,
+                    "line": 203,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": null,
@@ -326,7 +327,7 @@
         },
         "createUrl": {
             "name": "createUrl",
-            "line": 235,
+            "line": 238,
             "short_desc": "Create an URL.",
             "long_desc": "",
             "hint": [
@@ -344,7 +345,7 @@
             "parameters": {
                 "env": {
                     "name": "env",
-                    "line": 235,
+                    "line": 238,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -360,7 +361,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 235,
+                    "line": 238,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -376,7 +377,7 @@
                 },
                 "canonical": {
                     "name": "canonical",
-                    "line": 235,
+                    "line": 238,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -394,7 +395,7 @@
         },
         "minify": {
             "name": "minify",
-            "line": 275,
+            "line": 278,
             "short_desc": "Minify a CSS or a JS file.",
             "long_desc": "",
             "hint": [
@@ -417,7 +418,7 @@
             "parameters": {
                 "path": {
                     "name": "path",
-                    "line": 275,
+                    "line": 278,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -435,7 +436,7 @@
         },
         "minifyCss": {
             "name": "minifyCss",
-            "line": 305,
+            "line": 308,
             "short_desc": "Minify CSS.",
             "long_desc": "",
             "hint": [
@@ -453,7 +454,7 @@
             "parameters": {
                 "value": {
                     "name": "value",
-                    "line": 305,
+                    "line": 308,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -466,7 +467,7 @@
         },
         "minifyJs": {
             "name": "minifyJs",
-            "line": 319,
+            "line": 322,
             "short_desc": "Minify JS.",
             "long_desc": "",
             "hint": [
@@ -484,7 +485,79 @@
             "parameters": {
                 "value": {
                     "name": "value",
-                    "line": 319,
+                    "line": 322,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "toCss": {
+            "name": "toCss",
+            "line": 338,
+            "short_desc": "Compile style file to CSS.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\PHPoole\\Exception\\Exception",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 338,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "scssToCss": {
+            "name": "scssToCss",
+            "line": 367,
+            "short_desc": "Compile SCSS string to CSS.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "value": {
+                    "name": "value",
+                    "line": 367,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -497,7 +570,7 @@
         },
         "excerpt": {
             "name": "excerpt",
-            "line": 335,
+            "line": 383,
             "short_desc": "Read $lenght first characters of a string and add a suffix.",
             "long_desc": "",
             "hint": [
@@ -515,7 +588,7 @@
             "parameters": {
                 "string": {
                     "name": "string",
-                    "line": 335,
+                    "line": 383,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -526,7 +599,7 @@
                 },
                 "length": {
                     "name": "length",
-                    "line": 335,
+                    "line": 383,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -542,7 +615,7 @@
                 },
                 "suffix": {
                     "name": "suffix",
-                    "line": 335,
+                    "line": 383,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -560,7 +633,7 @@
         },
         "excerptHtml": {
             "name": "excerptHtml",
-            "line": 354,
+            "line": 402,
             "short_desc": "Read characters before '<!-- excerpt -->'.",
             "long_desc": "",
             "hint": [
@@ -578,7 +651,7 @@
             "parameters": {
                 "string": {
                     "name": "string",
-                    "line": 354,
+                    "line": 402,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -591,7 +664,7 @@
         },
         "readtime": {
             "name": "readtime",
-            "line": 377,
+            "line": 425,
             "short_desc": "Calculate estimated time to read a text.",
             "long_desc": "",
             "hint": [
@@ -613,7 +686,7 @@
             "parameters": {
                 "text": {
                     "name": "text",
-                    "line": 377,
+                    "line": 425,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
