@@ -1,0 +1,85 @@
+{
+    "name": "PHPoole\\Collection\\ItemInterface",
+    "line": 14,
+    "short_desc": "Interface ItemInterface.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Collection",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Collection\/ItemInterface.php",
+    "relative_file": null,
+    "hash": "a909378d76beb1a9e2574d1b31317c1fd503e1e3",
+    "parent": null,
+    "modifiers": "Stmt_Interface",
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "ArrayAccess": "ArrayAccess"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "setId": {
+            "name": "setId",
+            "line": 23,
+            "short_desc": "Set the item identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "PHPoole\\Collection\\ItemInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 23,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getId": {
+            "name": "getId",
+            "line": 30,
+            "short_desc": "Return the item identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

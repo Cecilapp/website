@@ -1,0 +1,465 @@
+{
+    "name": "PHPoole\\Collection\\CollectionInterface",
+    "line": 14,
+    "short_desc": "Interface CollectionInterface.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Collection",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Collection\/CollectionInterface.php",
+    "relative_file": null,
+    "hash": "dff92b57352337b68e283f2ecca45403987657f5",
+    "parent": null,
+    "modifiers": "Stmt_Interface",
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": {
+        "Countable": "Countable",
+        "IteratorAggregate": "IteratorAggregate",
+        "ArrayAccess": "ArrayAccess"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "setId": {
+            "name": "setId",
+            "line": 23,
+            "short_desc": "Set the collection identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 23,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": "''",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getId": {
+            "name": "getId",
+            "line": 30,
+            "short_desc": "Return the collection identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "has": {
+            "name": "has",
+            "line": 39,
+            "short_desc": "Does the item exist?",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 39,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "add": {
+            "name": "add",
+            "line": 48,
+            "short_desc": "Add an item.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "item": {
+                    "name": "item",
+                    "line": 48,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\ItemInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\ItemInterface",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "replace": {
+            "name": "replace",
+            "line": 58,
+            "short_desc": "Replace an item if exists.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ],
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 58,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "item": {
+                    "name": "item",
+                    "line": 58,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\ItemInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\ItemInterface",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "remove": {
+            "name": "remove",
+            "line": 67,
+            "short_desc": "Remove an item if exists.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ],
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "get": {
+            "name": "get",
+            "line": 76,
+            "short_desc": "Retrieve an item.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ],
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 76,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "keys": {
+            "name": "keys",
+            "line": 83,
+            "short_desc": "Retrieve all the keys.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of all the keys",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "count": {
+            "name": "count",
+            "line": 90,
+            "short_desc": "Implement Countable.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "toArray": {
+            "name": "toArray",
+            "line": 97,
+            "short_desc": "Return collection.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getIterator": {
+            "name": "getIterator",
+            "line": 104,
+            "short_desc": "Implement \\IteratorAggregate.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\ArrayIterator",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "usort": {
+            "name": "usort",
+            "line": 113,
+            "short_desc": "Implements usort.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 113,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "filter": {
+            "name": "filter",
+            "line": 122,
+            "short_desc": "Filters items using a callback function.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 122,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "map": {
+            "name": "map",
+            "line": 131,
+            "short_desc": "Applies a callback to items.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 131,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

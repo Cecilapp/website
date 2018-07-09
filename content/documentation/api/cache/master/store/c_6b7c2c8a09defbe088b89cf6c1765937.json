@@ -1,0 +1,129 @@
+{
+    "name": "PHPoole\\Util",
+    "line": 14,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Util.php",
+    "relative_file": null,
+    "hash": "c9d445d34e28e0d38c2462a094e9d6ea8318d5e9",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Filesystem": "Symfony\\Component\\Filesystem\\Filesystem",
+        "Process": "Symfony\\Component\\Process\\Process"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getFS": {
+            "name": "getFS",
+            "line": 28,
+            "short_desc": "Return Symfony\\Component\\Filesystem instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Symfony\\Component\\Filesystem\\Filesystem",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "runGitCommand": {
+            "name": "runGitCommand",
+            "line": 46,
+            "short_desc": "Runs a Git command on the repository.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The trimmed output from the command.",
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    "If the command failed."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "command": {
+                    "name": "command",
+                    "line": 46,
+                    "short_desc": "The command.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "sortByDate": {
+            "name": "sortByDate",
+            "line": 74,
+            "short_desc": "Sort array by 'date' item.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "9",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "a": {
+                    "name": "a",
+                    "line": 74,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "b": {
+                    "name": "b",
+                    "line": 74,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

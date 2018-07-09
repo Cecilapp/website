@@ -1,0 +1,46 @@
+{
+    "name": "PHPoole\\Step\\GenerateMenus",
+    "line": 17,
+    "short_desc": "Generates menus.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Step",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Step\/GenerateMenus.php",
+    "relative_file": null,
+    "hash": "9372fbd4162dd7853814eb7bd8ef28ceedac7eff",
+    "parent": "PHPoole\\Step\\AbstractStep",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "MenusCollection": "PHPoole\\Collection\\Menu\\Collection",
+        "Entry": "PHPoole\\Collection\\Menu\\Entry"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "internalProcess": {
+            "name": "internalProcess",
+            "line": 22,
+            "short_desc": "Process implementation.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

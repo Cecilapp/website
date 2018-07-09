@@ -1,0 +1,87 @@
+{
+    "name": "PHPoole\\Renderer\\Layout",
+    "line": 20,
+    "short_desc": "Class Layout.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Renderer",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Renderer\/Layout.php",
+    "relative_file": null,
+    "hash": "c286ff24b1e83daf8946739c68c09a3ecff0f159",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Page": "PHPoole\\Collection\\Page\\Page",
+        "Config": "PHPoole\\Config",
+        "Exception": "PHPoole\\Exception\\Exception",
+        "NodeType": "PHPoole\\Page\\NodeType",
+        "Util": "PHPoole\\Util"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "finder": {
+            "name": "finder",
+            "line": 32,
+            "short_desc": "Layout file finder.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\PHPoole\\Exception\\Exception",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "page": {
+                    "name": "page",
+                    "line": 32,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\Page\\Page",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\Page\\Page",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "config": {
+                    "name": "config",
+                    "line": 32,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Config",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Config",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

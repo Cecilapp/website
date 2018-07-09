@@ -1,0 +1,121 @@
+{
+    "name": "PHPoole\\Step\\AbstractStep",
+    "line": 13,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Step",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Step\/AbstractStep.php",
+    "relative_file": null,
+    "hash": "726b9c9d16420fc60ca8efaf9ab6df91ebf0f3cd",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "PHPoole": "PHPoole\\PHPoole"
+    },
+    "errors": [],
+    "interfaces": {
+        "PHPoole\\Step\\StepInterface": "PHPoole\\Step\\StepInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 21,
+            "short_desc": "StepInterface constructor.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "phpoole": {
+                    "name": "phpoole",
+                    "line": 21,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\PHPoole",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\PHPoole",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "init": {
+            "name": "init",
+            "line": 29,
+            "short_desc": "Checks if step can be processed.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "process": {
+            "name": "process",
+            "line": 37,
+            "short_desc": "Public call to process.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "internalProcess": {
+            "name": "internalProcess",
+            "line": 47,
+            "short_desc": "Process implementation.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "17",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

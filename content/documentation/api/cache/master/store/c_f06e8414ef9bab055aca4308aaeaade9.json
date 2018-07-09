@@ -1,0 +1,65 @@
+{
+    "name": "PHPoole\\Collection\\Menu\\Menu",
+    "line": 17,
+    "short_desc": "Class Menu.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Collection\\Menu",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Collection\/Menu\/Menu.php",
+    "relative_file": null,
+    "hash": "ce52c8017fad0fd559d6454e99099dadd2a9d07f",
+    "parent": "PHPoole\\Collection\\Collection",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "PHPooleCollection": "PHPoole\\Collection\\Collection",
+        "ItemInterface": "PHPoole\\Collection\\ItemInterface"
+    },
+    "errors": [],
+    "interfaces": {
+        "PHPoole\\Collection\\ItemInterface": "PHPoole\\Collection\\ItemInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "add": {
+            "name": "add",
+            "line": 23,
+            "short_desc": "Add menu entry.",
+            "long_desc": "{@inheritdoc}",
+            "hint": [
+                [
+                    "PHPoole\\Collection\\CollectionInterface",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "item": {
+                    "name": "item",
+                    "line": 23,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\PHPoole\\Collection\\ItemInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "PHPoole\\Collection\\ItemInterface",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

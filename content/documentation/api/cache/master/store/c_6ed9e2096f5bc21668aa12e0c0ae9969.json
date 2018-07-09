@@ -1,0 +1,126 @@
+{
+    "name": "PHPoole\\Page\\Parser",
+    "line": 16,
+    "short_desc": "Class Parser.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Page",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Page\/Parser.php",
+    "relative_file": null,
+    "hash": "1c2d8e076b978c2302d1b85fa9689123e34c6084",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "SplFileInfo": "Symfony\\Component\\Finder\\SplFileInfo"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 38,
+            "short_desc": "Constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 38,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Symfony\\Component\\Finder\\SplFileInfo",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Symfony\\Component\\Finder\\SplFileInfo",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "parse": {
+            "name": "parse",
+            "line": 58,
+            "short_desc": "Parse the contents of the file.",
+            "long_desc": "Example:\n\n    ---\n    title: Title\n    date: 2016-07-29\n    ---\n    Lorem Ipsum.",
+            "hint": [
+                [
+                    "PHPoole\\Page\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\RuntimeException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "getFrontmatter": {
+            "name": "getFrontmatter",
+            "line": 88,
+            "short_desc": "Get frontmatter.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getBody": {
+            "name": "getBody",
+            "line": 98,
+            "short_desc": "Get body.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": {
+        "PATTERN": {
+            "name": "PATTERN",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": ""
+        }
+    }
+}

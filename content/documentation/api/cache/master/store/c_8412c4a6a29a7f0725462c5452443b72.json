@@ -1,0 +1,23 @@
+{
+    "name": "PHPoole\\Exception\\ExceptionInterface",
+    "line": 11,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Exception",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Exception\/ExceptionInterface.php",
+    "relative_file": null,
+    "hash": "eba3fcd7f862c18f98b0f44495ede9ad391f5b11",
+    "parent": null,
+    "modifiers": "Stmt_Interface",
+    "is_trait": false,
+    "is_interface": true,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

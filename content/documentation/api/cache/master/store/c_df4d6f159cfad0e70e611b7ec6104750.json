@@ -1,0 +1,46 @@
+{
+    "name": "PHPoole\\Step\\CopyStatic",
+    "line": 17,
+    "short_desc": "Copy static directory content to site root.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "PHPoole\\Step",
+    "file": "\/home\/travis\/build\/PHPoole\/library\/src\/Step\/CopyStatic.php",
+    "relative_file": null,
+    "hash": "033e92c8bf73fbf5a2f7831eaff4d3f049058dab",
+    "parent": "PHPoole\\Step\\AbstractStep",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Util": "PHPoole\\Util",
+        "Finder": "Symfony\\Component\\Finder\\Finder"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "internalProcess": {
+            "name": "internalProcess",
+            "line": 24,
+            "short_desc": "Process implementation.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}
