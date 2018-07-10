@@ -13,10 +13,11 @@
     <meta property="og:locale" content="{{ site.language }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
-    <meta property="og:image" content="{{ site.gif }}">
+    <meta property="og:image" content="{{ url('images/phpoole-logo-1000.png') }}">
+    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:description" content="{{ site.description }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@PHPooleSSG">
-    <meta property="og:title" content="{{ site.name }}">
     <title>{% spaceless %}
 {% if page.section == 'documentation' %}
 {% set title = 'Docs &middot; ' ~ page.title %}
