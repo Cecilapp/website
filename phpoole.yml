@@ -7,6 +7,8 @@ site:
   author:
     name: "Arnaud Ligny"
     home: "https://arnaudligny.fr"
+  keywords: ['static', 'generator', 'SSG', 'PHP', 'Twig']
+  gif: https://raw.githubusercontent.com/PHPoole/PHPoole/master/docs/phpoole.gif
   menu:
     main:
       index:
