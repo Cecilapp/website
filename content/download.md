@@ -26,7 +26,7 @@ chmod +x /usr/local/bin/phpoole
 ## Specific version
 
 If you want to download a specific version of PHPole, you can specify the version in the URL path.
-For instance, if you want to install the `2.0.0` version you need to put `download/2.2.0/` in the URL:
+For instance, if you want to install the `2.2.0` version you need to put `download/2.2.0/` in the URL:
 
 ```bash
 curl -SOL https://phpoole.org/download/2.2.0/phpoole.phar
