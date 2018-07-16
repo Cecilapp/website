@@ -3,6 +3,7 @@
 > Source code of https://phpoole.org, generated with [PHPoole](https://github.com/PHPoole/) (obviously!), automatically built and deployed through [Travis CI](https://travis-ci.org/PHPoole/phpoole.github.io).
 
 ## Install, build & deploy
+
 ```bash
 composer install
 php scripts/build.php -e=prod
@@ -11,6 +12,7 @@ sh scripts/deploy.sh
 ```
 
 ## Build & run locally
+
 ```bash
 php scripts/build.php -e=dev
 ```
