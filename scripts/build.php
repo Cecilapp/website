@@ -5,10 +5,10 @@ if (php_sapi_name() !== 'cli') {
 }
 date_default_timezone_set('Europe/Paris');
 require_once 'vendor/autoload.php';
-use PHPoole\PHPoole;
-use Symfony\Component\Yaml\Yaml;
+use PHPoole\PHPoole;             # require phpoole/library
+use Symfony\Component\Yaml\Yaml; # require symfony/yaml
 
-$getopt = getopt('e::p::');
+$getopt = getopt('e::');
 
 $options = Yaml::parse(file_get_contents('phpoole.yml'));
 $options_dev = [
