@@ -20,12 +20,15 @@
     <meta name="twitter:site" content="@PHPooleSSG">
     <title>{% spaceless %}
 {% if page.section == 'documentation' %}
-{% set title = 'Docs &middot; ' ~ page.title %}
+{% set title = 'Docs &rang; ' ~ page.title %}
 {% else %}
 {% set title = page.title %}
 {% endif %}
-{% if title != 'Home' %}{{ title }} &middot; {% endif %}
-{{ site.name }}
+{% if title != 'Home' %}
+{{ title }} &middot; {{ site.name }}
+{% else %}
+{{ site.name }} &middot; {{ site.baseline }}
+{% endif %}
     {% endspaceless %}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('images/phpoole-logo.png') }}">
