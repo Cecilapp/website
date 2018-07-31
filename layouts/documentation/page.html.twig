@@ -6,6 +6,7 @@
     <!-- menu -->
     <div class="one-fourth column">
       <nav class="menu docs-menu">
+        <span class="menu-heading" id="menu-heading">Documentation</span>
 {% for item in site.pages|filterBy('section', 'documentation') %}
 {% if item.id != 'documentation/index' %}
         <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
