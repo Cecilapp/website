@@ -138,16 +138,14 @@
       if (null !== button) {
         fetch('/VERSION')
           .then(response => {
-            let text = response.text()
+            let version = response.text()
             if(!response.ok) {
-              text = 'X.X.X'
-            } else {
               console.log('problem to fetch VERSION')
+              version = 'X.X.X'
             }
-            return text
+            return version
           })
-          .then(text => {
-            version = text
+          .then(version => {
             console.log('VERSION: '+version)
             text = document.getElementById(buttonId).innerHTML;
             document.getElementById(buttonId).innerHTML = text+' <span class="counter">'+version+'</span>'
