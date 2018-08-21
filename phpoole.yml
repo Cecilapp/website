@@ -15,7 +15,7 @@ site:
         id: index
         disabled: true
       documentation:
-        id: documentation/index
+        id: documentation/
         name: Docs
         url: documentation
         weight: 10
