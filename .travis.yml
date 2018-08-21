@@ -11,7 +11,7 @@ before_script:
   - php phpoole.phar -v
 # build
 script:
-  - php phpoole.phar build
+  - php phpoole.phar build --quiet
 # deploy
 deploy:
   provider: script
