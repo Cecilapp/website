@@ -130,6 +130,29 @@
         class: 'anchor-link'
       };
       anchors.add(selector);
+      generateTableOfContents(anchors.elements);
+      function generateTableOfContents(els) {
+      	var anchoredElText,
+        		anchoredElHref,
+      			ul = document.createElement('UL');
+        document.getElementById('table-of-contents').appendChild(ul);
+      	for (var i = 0; i < els.length; i++) {
+          if (els[i].tagName == 'H2') {
+            anchoredElText = els[i].textContent;
+        		anchoredElHref = els[i].querySelector('.anchorjs-link').getAttribute('href');
+          	addNavItem(ul, anchoredElHref, anchoredElText);
+          }
+        }
+      }
+      function addNavItem(ul, href, text) {
+        var listItem = document.createElement('LI'),
+      		  anchorItem = document.createElement('A'),
+        	  textNode = document.createTextNode(text);
+        anchorItem.href = href;
+        ul.appendChild(listItem);
+        listItem.appendChild(anchorItem);
+        anchorItem.appendChild(textNode);
+      }
     {% endfilter %}</script>
     <!-- fetch version -->
     <script>{% filter minifyJS %}

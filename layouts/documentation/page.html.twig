@@ -16,8 +16,11 @@
     </div>
     <!-- markdown -->
     <div class="three-fourths column markdown-body">
+      <div style="float:right;background-color:white;" id="table-of-contents">
+        <strong>Table of contents</strong>
+      </div>
       {{ page.content }}
-      {% if page.repository is defined and page.file is defined %}
+{% if page.repository is defined and page.file is defined %}
       <a class="btn btn-sm btn-outline" href="{{ page.repository }}{{ page.file }}" role="button">
         <span class="octicon octicon-markdown"></span>
         Suggest a modification
@@ -34,5 +37,4 @@
     </div>
   </div>
 </div>
-
 {% endblock content %}
