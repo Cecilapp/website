@@ -35,6 +35,7 @@ site:
         name: GitHub
         url: https://github.com/PHPoole
         weight: 40
+        disabled: true
   release:
     name: phpoole.phar
     sha1: phpoole.phar.version

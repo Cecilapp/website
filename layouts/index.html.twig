@@ -75,6 +75,7 @@
 {% for entry in site.menus.main|sortByWeight %}
           <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
+          <a class="github-button" href="https://github.com/PHPoole/PHPoole" data-show-count="true" aria-label="Star PHPoole/PHPoole on GitHub">Star</a>
         </nav>
       </div>
     </header>
@@ -190,6 +191,7 @@
           })
       }
     {% endfilter %}</script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- highlight -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
