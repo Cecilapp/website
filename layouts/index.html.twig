@@ -41,6 +41,12 @@
           margin-bottom: 30px;
         }
       }
+      .btn-reverse:hover, .btn-reverse:active {
+        color: #333;
+      }
+      #quickstart-button, #download-button {
+        margin-bottom: .25em;
+      }
       @media (min-width: 546px) {
         #table-of-contents {
           float:right;
@@ -80,8 +86,7 @@
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
             <p>{{ site.baseline }}</p>
-            <!--<a href="{{ url(site.menu.main.documentation.url) }}" class="btn btn-reverse">Docs</a>-->
-            <a href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-reverse">Quick Start</a>
+            <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-reverse">Quick Start</a>
             <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-primary">Download</a>
           </div>
           <div class="one-half column">
