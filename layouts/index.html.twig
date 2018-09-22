@@ -148,6 +148,9 @@
       anchors.add(selector);
       generateTableOfContents(anchors.elements);
       function generateTableOfContents(els) {
+        if (document.getElementById('table-of-contents') == null) {
+          return;
+        }
       	var anchoredElText,
         		anchoredElHref,
       			ul = document.createElement('UL');
