@@ -11,6 +11,8 @@ You can download `phpoole.phar` by clicking on the "Download" button or with the
 curl -SOL https://phpoole.org/phpoole.phar
 ```
 
+> [PHP](http://php.net/manual/en/install.php) 7.1+ is required.
+
 > File integrity can be checked with the `SHA1` file, by clicking on the "File checksum" button.
 
 ## Get a specific version
