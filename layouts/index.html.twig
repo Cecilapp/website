@@ -82,9 +82,9 @@
     <!-- header -->
     <header class="masthead bg-gray-dark">
       <div class="container">
-        <a href="{{ site.baseurl }}" class="masthead-logo">
+        <a href="{{ site.baseurl }}" title="{{ site.name }}" class="masthead-logo">
           <img src="{{ url('images/phpoole-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
-          {{ site.name }}
+          {#{{ site.name }}#}
         </a>
         <nav class="masthead-nav">
 {% for entry in site.menus.main|sortByWeight %}
@@ -102,8 +102,8 @@
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
             <p>{{ site.baseline }}</p>
-            <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-reverse">Quick Start</a>
-            <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-primary">Download</a>
+            <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-primary">{#<span class="mega-octicon octicon-triangle-right"></span>&nbsp;#}Quick Start</a>
+            <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-reverse">Download</a>
           </div>
           <div class="one-half column">
 {% include 'includes/terminal.html.twig' %}
