@@ -9,6 +9,10 @@ site:
     home: "https://arnaudligny.fr"
   keywords: ['static', 'generator', 'SSG', 'PHP', 'Twig']
   gif: https://raw.githubusercontent.com/PHPoole/PHPoole/master/docs/phpoole.gif
+  fmpages:
+    redirects:
+      layout: _redirects.txt
+      permalink: _redirects
   menu:
     main:
       index:
