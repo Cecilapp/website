@@ -7,7 +7,7 @@
     <div class="one-fourth column">
       <nav class="menu docs-menu">
         <span class="menu-heading" id="menu-heading">Documentation</span>
-{% for item in site.pages|filterBySection('documentation') %}
+{% for item in site.pages|filterBySection('documentation')|sortByWeight %}
 {% if item.id != 'documentation/index' %}
         <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
 {% endif %}
@@ -18,7 +18,7 @@
     <div class="three-fourths column markdown-body">
       <h1>Documentation</h1>
       <dl>
-{% for doc in site.pages|filterBySection('documentation') %}
+{% for doc in site.pages|filterBySection('documentation')|sortByWeight %}
         <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
 {% if doc.description is defined %}
         <dd>{{ doc.description|e }}</dd>
