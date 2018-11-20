@@ -1,14 +1,14 @@
 site:
-  name: "PHPoole"
-  baseline: "An easy and lightweight static website generator."
-  description: "PHPoole takes your content (written in Markdown plain text format) and merges files with layouts (Twig templates) to generate static HTML files."
-  baseurl: "https://phpoole.org/"
+  name: "Cecil"
+  baseline: "Your content driven static site generator."
+  description: "Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website."
+  baseurl: "https://cecil.app/"
   language: "en"
   author:
     name: "Arnaud Ligny"
     home: "https://arnaudligny.fr"
   keywords: ['static', 'generator', 'SSG', 'PHP', 'Twig']
-  gif: https://raw.githubusercontent.com/PHPoole/PHPoole/master/docs/phpoole.gif
+  gif: https://raw.githubusercontent.com/Cecil/Cecil/master/docs/phpoole.gif
   fmpages:
     redirects:
       layout: _redirects.txt
@@ -37,11 +37,11 @@ site:
       github:
         id: github
         name: GitHub
-        url: https://github.com/PHPoole
+        url: https://github.com/Cecil/Cecil
         weight: 40
         disabled: true
   release:
-    name: phpoole.phar
-    sha1: phpoole.phar.version
+    name: cecil.phar
+    sha1: cecil.phar.version
   googleanalytics: 387892-21
   gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
