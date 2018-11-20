@@ -1,24 +1,99 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
-  {% include 'includes/head.html.twig' %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords|join(', ') }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="copyright" content="{{ site.author.name }}">
+    <meta name="google-site-verification" content="{{ site.gsv }}" />
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:locale" content="{{ site.language }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.baseurl }}">
+    <meta property="og:image" content="{{ url('images/phpoole-logo-1000.png') }}">
+    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@PHPooleSSG">
+    <title>{% spaceless %}
+{% if page.section == 'documentation' %}
+{% set title = 'Docs > ' ~ page.title %}
+{% else %}
+{% set title = page.title %}
+{% endif %}
+{% if title != 'Home' %}
+{{ title }} &middot; {{ site.name }}
+{% else %}
+{{ site.name }} &middot; {{ site.baseline }}
+{% endif %}
+    {% endspaceless %}</title>
+    <link rel="stylesheet" href="{{ url('css/primer.css') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('images/phpoole-logo.png') }}">
+    <link rel="icon" href="{{ url('favicon.ico') }}">
+    <style>{% filter minifyCSS %}
+      @media (max-width: 760px) {
+        .jumbotron .column {
+          float: none;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+      .btn-reverse:hover, .btn-reverse:active {
+        color: #333;
+      }
+      .btn-primary {
+        background-color: #376bad;
+        background-image: -webkit-linear-gradient(#4078c0, #376bad);
+        background-image: linear-gradient(#4078c0, #376bad);
+        border-color: #376bad;
+      }
+      .btn-primary:hover {
+        background-color: #2b5c9b;
+        background-image: -webkit-linear-gradient(#3062a3, #2b5c9b);
+        background-image: linear-gradient(#3062a3, #2b5c9b);
+        border-color: #2b5c9b;
+      }
+      .btn-primary .counter {
+        color: #4078c0;
+      }
+      #quickstart-button, #download-button {
+        margin-bottom: .25em;
+      }
+      @media (min-width: 546px) {
+        #table-of-contents {
+          float:right;
+          background-color:white;
+        }
+      }
+      .about-that .column .mega-octicon {
+        margin-right: .5rem;
+      }
+      /* cause of ToC */
+      .markdown-body > :nth-child(0n+2) {
+        margin-top: 0 !important;
+      }
+    {% endfilter %}</style>
+    <link rel="stylesheet" href="{{ url(minify('css/terminal.css')) }}">
+  </head>
   <body>
     <!-- header -->
-{% block header %}
     <header class="masthead bg-gray-dark">
       <div class="container">
         <a href="{{ site.baseurl }}" title="{{ site.name }}" class="masthead-logo">
-          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
+          <img src="{{ url('images/phpoole-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
           {#{{ site.name }}#}
         </a>
         <nav class="masthead-nav">
 {% for entry in site.menus.main|sortByWeight %}
           <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
-          <a class="github-button" href="https://github.com/Cecil/Cecil" data-show-count="true" aria-label="Star Cecil/Cecil on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/PHPoole/PHPoole" data-show-count="true" aria-label="Star PHPoole/PHPoole on GitHub">Star</a>
         </nav>
       </div>
     </header>
-{% endblock %}
     <!-- content -->
 {% block content %}
     <div class="jumbotron bg-gray-dark">
@@ -48,7 +123,7 @@
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by <a href="http://twig.sensiolabs.org/">Twig</a>, a flexible template engine, with <a href="https://github.com/Cecil/theme-hyde">theme</a> support.</p>
+          <p>Powered by <a href="http://twig.sensiolabs.org/">Twig</a>, a flexible template engine, with <a href="https://github.com/PHPoole/theme-hyde">theme</a> support.</p>
         </div>
       </div>
       <div class="columns">
@@ -58,9 +133,9 @@
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-rocket"></span>Quick deploy</h2>
-          <p>Deploy a blog in 2min with the <a href="https://templates.netlify.com/template/cecil-starter-blog-with-netlify-cms/">Netlify template</a>.</p>
+          <p>Deploy a blog in 2min with the <a href="https://templates.netlify.com/template/phpoole-blog-cecil-with-netlify-cms/">Netlify template</a>.</p>
           <p style="text-align: center;">
-            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Cecil/Cecil">
+            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/PHPoole/Cecil">
               <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify" alt="Netlify deploy button">
             </a>
           </p>
@@ -69,8 +144,76 @@
     </div>
 {% endblock content %}
     <!-- footer -->
-{% include 'includes/footer.html.twig' %}
-{% include 'includes/scripts.js.twig' %}
-{% include 'includes/googleanalytics.js.twig' %}
+    <div class="container">
+      <footer class="footer">
+        PHPoole &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a>
+         &bull; PHPoole logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
+        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ phpoole.url }}">PHPoole</a>, <a href="https://primer.github.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a>
+        and <a href="https://github.com/PHPoole/phpoole.github.io">GitHub</a>
+      </footer>
+    </div>
+    <!-- anchor -->
+    <script src="{{ url('js/anchor.min.js') }}"></script>
+    <script>{% filter minifyJS %}
+      var selector = '.markdown-body > h2, .markdown-body > h3';
+      anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+      };
+      anchors.add(selector);
+      generateTableOfContents(anchors.elements);
+      function generateTableOfContents(els) {
+        if (document.getElementById('table-of-contents') == null) {
+          return;
+        }
+      	var anchoredElText,
+        		anchoredElHref,
+      			ul = document.createElement('UL');
+        document.getElementById('table-of-contents').appendChild(ul);
+      	for (var i = 0; i < els.length; i++) {
+          if (els[i].tagName == 'H2') {
+            anchoredElText = els[i].textContent;
+        		anchoredElHref = els[i].querySelector('.anchorjs-link').getAttribute('href');
+          	addNavItem(ul, anchoredElHref, anchoredElText);
+          }
+        }
+      }
+      function addNavItem(ul, href, text) {
+        var listItem = document.createElement('LI'),
+      		  anchorItem = document.createElement('A'),
+        	  textNode = document.createTextNode(text);
+        anchorItem.href = href;
+        ul.appendChild(listItem);
+        listItem.appendChild(anchorItem);
+        anchorItem.appendChild(textNode);
+      }
+    {% endfilter %}</script>
+    <!-- fetch version -->
+    <script>{% filter minifyJS %}
+      const buttonId = 'download-button';
+      const button = document.getElementById(buttonId)
+      if (null !== button) {
+        fetch('/VERSION')
+          .then(response => {
+            let version = response.text()
+            if(!response.ok) {
+              console.log('problem to fetch VERSION')
+              version = 'X.X.X'
+            }
+            return version
+          })
+          .then(version => {
+            console.log('VERSION: '+version)
+            text = document.getElementById(buttonId).innerHTML;
+            document.getElementById(buttonId).innerHTML = text+' <span class="counter">'+version+'</span>'
+          })
+      }
+    {% endfilter %}</script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {% include 'includes/googleanalytics.js.twig' %}
   </body>
 </html>
