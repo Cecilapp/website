@@ -14,7 +14,7 @@
 {% for entry in site.menus.main|sortByWeight %}
           <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
-          <a class="github-button" href="https://github.com/Cecil/Cecil" data-show-count="true" aria-label="Star Cecil/Cecil on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/Cecilapp/Cecil" data-show-count="true" aria-label="Star Cecilapp/Cecil on GitHub">Star</a>
         </nav>
       </div>
     </header>
