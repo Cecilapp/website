@@ -41,6 +41,6 @@ chmod +x /usr/local/bin/cecil
 ### Windows
 
 1.  Move `cecil.phar` in a dedicated directory like `C:\bin`
-2.  Rename it to `cecil.phar` to `cecil`
+2.  Rename it from `cecil.phar` to `cecil`
 3.  Append `;C:\bin` to your `PATH` environment variable
 4.  Create a [wrapping batch script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
