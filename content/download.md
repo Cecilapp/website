@@ -22,7 +22,7 @@ If you want to download a specific version you should specify the version in the
 For instance, if you want to install the `4.0.0` version you need to put `download/4.0.0/` in the URL:
 
 ```bash
-curl -SOL https://cecil.app/download/3.0.0/cecil.phar
+curl -SOL https://cecil.app/download/4.0.0/cecil.phar
 ```
 
 See the [releases list](https://github.com/Cecilapp/Cecil/releases) on GitHub.
