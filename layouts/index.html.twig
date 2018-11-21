@@ -13,11 +13,11 @@
     <meta property="og:locale" content="{{ site.language }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
-    <meta property="og:image" content="{{ url('images/phpoole-logo-1000.png') }}">
+    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png') }}">
     <meta property="og:title" content="{{ site.name }}">
     <meta property="og:description" content="{{ site.description }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@PHPooleSSG">
+    <meta name="twitter:site" content="@CecilSSG">
     <title>{% spaceless %}
 {% if page.section == 'documentation' %}
 {% set title = 'Docs > ' ~ page.title %}
@@ -31,7 +31,7 @@
 {% endif %}
     {% endspaceless %}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ url('images/phpoole-logo.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('images/cecil-logo.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
     <style>{% filter minifyCSS %}
       @media (max-width: 760px) {
@@ -83,7 +83,7 @@
     <header class="masthead bg-gray-dark">
       <div class="container">
         <a href="{{ site.baseurl }}" title="{{ site.name }}" class="masthead-logo">
-          <img src="{{ url('images/phpoole-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
+          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
           {#{{ site.name }}#}
         </a>
         <nav class="masthead-nav">
@@ -123,7 +123,7 @@
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by <a href="http://twig.sensiolabs.org/">Twig</a>, a flexible template engine, with <a href="https://github.com/PHPoole/theme-hyde">theme</a> support.</p>
+          <p>Powered by <a href="http://twig.sensiolabs.org/">Twig</a>, a flexible template engine, with <a href="https://github.com/Cecilapp/theme-hyde">theme</a> support.</p>
         </div>
       </div>
       <div class="columns">
@@ -133,9 +133,9 @@
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-rocket"></span>Quick deploy</h2>
-          <p>Deploy a blog in 2min with the <a href="https://templates.netlify.com/template/phpoole-blog-cecil-with-netlify-cms/">Netlify template</a>.</p>
+          <p>Deploy a blog in 2min with the <a href="https://templates.netlify.com/template/cecil-start-blogwith-netlify-cms/">Netlify template</a>.</p>
           <p style="text-align: center;">
-            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/PHPoole/Cecil">
+            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/Cecil">
               <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify" alt="Netlify deploy button">
             </a>
           </p>
@@ -146,10 +146,10 @@
     <!-- footer -->
     <div class="container">
       <footer class="footer">
-        PHPoole &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a>
-         &bull; PHPoole logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
-        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ phpoole.url }}">PHPoole</a>, <a href="https://primer.github.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a>
-        and <a href="https://github.com/PHPoole/phpoole.github.io">GitHub</a>
+        Cecil &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a>
+         &bull; Cecil logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
+        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ cecil.url }}">Cecil</a>, <a href="https://primer.github.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a>
+        and <a href="https://github.com/Cecilapp/website">GitHub</a>
       </footer>
     </div>
     <!-- anchor -->
