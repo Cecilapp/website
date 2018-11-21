@@ -4,16 +4,7 @@
 <div class="container">
   <div class="columns docs-layout">
     <!-- menu -->
-    <div class="one-fourth column">
-      <nav class="menu docs-menu">
-        <span class="menu-heading" id="menu-heading">Documentation</span>
-{% for item in site.pages|filterBySection('documentation')|sortByWeight %}
-{% if item.id != 'documentation/index' %}
-        <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
-{% endif %}
-{% endfor %}
-      </nav>
-    </div>
+{% include 'includes/docs-menu.html.twig' %}
     <!-- pages in "documentation" section -->
     <div class="three-fourths column markdown-body">
       <h1>Documentation</h1>

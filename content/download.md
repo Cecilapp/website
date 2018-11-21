@@ -7,6 +7,7 @@ alias: install
 # Download
 
 You can download `phpoole.phar` by clicking on the "Download" button or with the following command from your terminal:
+
 ```bash
 curl -SOL https://phpoole.org/phpoole.phar
 ```
@@ -21,7 +22,7 @@ If you want to download a specific version of PHPoole, you can specify the versi
 For instance, if you want to install the `3.0.0` version you need to put `download/3.0.0/` in the URL:
 
 ```bash
-curl -SOL https://phpoole.org/download/3.0.0/phpoole.phar
+curl -SOL https://cecil.app/download/4.0.0/cecil.phar
 ```
 
 See the [releases list](https://github.com/PHPoole/PHPoole/releases) on GitHub.
@@ -40,11 +41,8 @@ phpoole help
 ```
 
 ### Windows
-1. Move `phpoole.phar` in a dedicated directory like `C:\bin`
-2. Rename it to `phpoole`
-3. Append `;C:\bin` to your `PATH` environment variable
-4. Create a [wrapping batch script](https://raw.githubusercontent.com/PHPoole/PHPoole/master/bin/phpoole.bat)
 
-```bash
-phpoole help
-```
+1.  Move `cecil.phar` in a dedicated directory like `C:\bin`
+2.  Rename it from `cecil.phar` to `cecil`
+3.  Append `;C:\bin` to your `PATH` environment variable
+4.  Create a [wrapping batch script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
