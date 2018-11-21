@@ -36,6 +36,7 @@ For more comfort you should install Cecil globally.
 ```bash
 mv cecil.phar /usr/local/bin/cecil
 chmod +x /usr/local/bin/cecil
+```
 
 ### Windows
 
@@ -43,4 +44,3 @@ chmod +x /usr/local/bin/cecil
 2.  Rename it from `cecil.phar` to `cecil`
 3.  Append `;C:\bin` to your `PATH` environment variable
 4.  Create a [wrapping batch script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
-```
