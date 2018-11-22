@@ -41,6 +41,6 @@ site:
         disabled: true
   release:
     name: cecil.phar
-    sha1: cecil.phar.version
+    sha1: cecil.phar.sha1
   googleanalytics: 387892-21
   gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
