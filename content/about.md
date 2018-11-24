@@ -15,5 +15,5 @@ Since the 2.x branch, Cecil use a powerful core library, [PHPoole](https://githu
 - Cecil is maintained by [Arnaud Ligny](https://arnaudligny.fr), a web & mobile consultant.
 - The logo has been created by [Cécile Ricordeau](http://www.cecillie.fr), an amazing creative director! <3
 
-[CLI]: Command-Line Interface
-[PHP]: PHP Hypertext Preprocessor
+*[CLI]: Command-Line Interface
+*[PHP]: PHP Hypertext Preprocessor
