@@ -1,4 +1,4 @@
 ---
-redirect: download/4.3.1/cecil.phar
+redirect: download/4.3.2/cecil.phar
 permalink: cecil.phar
 ---
