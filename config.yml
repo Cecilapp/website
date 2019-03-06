@@ -8,17 +8,21 @@ site:
     name: "Arnaud Ligny"
     home: "https://arnaudligny.fr"
   keywords: ["static", "generator", "SSG", "PHP", "Twig"]
-  fmpages:
-    redirects:
-      layout: _redirects.txt
-      permalink: _redirects
+  output:
+    formats:
+      netlify_redirects:
+        mediatype: 'text/plain'
+        extension: ''
+  virtualpages:
+    _redirects:
+      output: netlify_redirects
   menu:
     main:
       index:
         id: index
         enabled: false
       documentation:
-        id: documentation/
+        id: documentation
         name: Docs
         url: documentation
         weight: 10
