@@ -1,6 +1,6 @@
 ---
 title: Download
-layout: download.html
+layout: download
 alias: install
 ---
 
