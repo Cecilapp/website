@@ -15,7 +15,7 @@ site:
         extension: 'phar'
       sha1:
         mediatype: 'text/plain'
-        extension: 'sha1'
+        extension: 'phar.sha1'
       netlify_redirects:
         mediatype: 'text/plain'
         extension: ''
