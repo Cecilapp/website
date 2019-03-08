@@ -1,5 +1,5 @@
 ---
-redirect: download/4.5.2/cecil.phar
+redirect: download/4.5.3/cecil.phar
 slug: cecil
 output: phar
 ---
