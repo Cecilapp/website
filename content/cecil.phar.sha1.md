@@ -1,5 +1,4 @@
 ---
-redirect: download/4.5.1/cecil.phar.sha1
-slug: cecil
+redirect: download/4.5.2/cecil.phar.sha1
 output: sha1
 ---
