@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{{ site.description|e }}">
     <meta name="keywords" content="{{ site.keywords|join(', ') }}">
     <meta name="author" content="{{ site.author.name }}">
     <meta name="copyright" content="{{ site.author.name }}">
@@ -13,9 +13,9 @@
     <meta property="og:locale" content="{{ site.language }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
-    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {'canonical': true}) }}">
+    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {canonical:true}) }}">
     <meta property="og:title" content="{{ site.name }}">
-    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description|e }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@CecilSSG">
     <title>{% spaceless %}
@@ -101,7 +101,7 @@
         <div class="columns">
           <div class="one-half column">
             <h1>{{ site.name }}</h1>
-            <p>{{ site.baseline }}</p>
+            <p>{{ site.baseline|e }}</p>
             <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-primary">{#<span class="mega-octicon octicon-triangle-right"></span>&nbsp;#}Quick Start</a>
             <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-reverse">Download</a>
           </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="one-third column">
           <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by <a href="https://twig.symfony.com">Twig</a>, a flexible template engine, with <a href="https://github.com/Cecilapp/theme-hyde">theme</a> support.</p>
+          <p>Powered by <a href="https://twig.symfony.com/doc/templates.html">Twig</a>, a flexible template engine, with <a href="https://github.com/Cecilapp/theme-hyde">theme</a> support.</p>
         </div>
       </div>
       <div class="columns">
