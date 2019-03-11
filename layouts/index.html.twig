@@ -62,14 +62,21 @@
       #quickstart-button, #download-button {
         margin-bottom: .25em;
       }
+      .about-that .column .mega-octicon {
+        margin-right: .5rem;
+      }
+      @media (max-width: 546px) {
+        .not-on-mobile {
+          visibility: hidden;
+          display: none;
+          clear: both;
+        }
+      }
       @media (min-width: 546px) {
         #table-of-contents {
           float:right;
           background-color:white;
         }
-      }
-      .about-that .column .mega-octicon {
-        margin-right: .5rem;
       }
       /* cause of ToC */
       .markdown-body > :nth-child(0n+2) {
@@ -103,9 +110,9 @@
             <h1>{{ site.name }}</h1>
             <p>{{ site.baseline|e }}</p>
             <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-primary">{#<span class="mega-octicon octicon-triangle-right"></span>&nbsp;#}Quick Start</a>
-            <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-reverse">Download</a>
+            <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-reverse not-on-mobile">Download</a>
           </div>
-          <div class="one-half column">
+          <div class="one-half column not-on-mobile">
 {% include 'partials/terminal.html.twig' %}
           </div>
         </div>
