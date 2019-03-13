@@ -24,7 +24,7 @@
 {% else %}
 {% set title = page.title %}
 {% endif %}
-{% if title != 'Home' %}
+{% if title != 'Home' and title != 'index' %}
 {{ title }} &middot; {{ site.name }}
 {% else %}
 {{ site.name }} &middot; {{ site.baseline }}
@@ -120,37 +120,9 @@
     </div>
     <div class="container about-that">
       <div class="columns">
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-zap"></span>Fast & Secure</h2>
-          <p>No server, no database, no dependency: performance and security.</p>
-        </div>
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-markdown"></span>Files only</h2>
-          <p>Content is stored in flat files, written in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> with <a href="/documentation/content/#front-matter">YAML front matter</a>.</p>
-        </div>
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-paintcan"></span>Customisable</h2>
-          <p>Powered by <a href="https://twig.symfony.com/doc/templates.html">Twig</a>, a flexible template engine, with <a href="https://github.com/Cecilapp/theme-hyde">theme</a> support.</p>
-        </div>
-      </div>
-      <div class="columns">
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-hubot"></span>Generators</h2>
-          <p>Paginaton, taxonomies, redirections (and more !) are generated automatically.</p>
-        </div>
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-cloud-download"></span>Install & run</h2>
-          <p><a href="/download/">Download</a> just one file and run it!</p>
-        </div>
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-rocket"></span>Deploy quickly</h2>
-          <p><!--Deploy a blog in 2min with the <a href="https://templates.netlify.com/template/cecil-starter-blog-with-netlify-cms/">Netlify template</a> (<a href="https://demo.cecil.app">demo here</a>).--></p>
-          <p style="text-align: center;">
-            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/starter-blog">
-              <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify" alt="Netlify deploy button">
-            </a>
-          </p>
-        </div>
+{% for block in page.blocks['about'] %}
+{% include 'partials/block-about.html.twig' with {octicon:block.octicon,title:block.title,description:block.description} only %}
+{% endfor %}
       </div>
     </div>
 {% endblock content %}
@@ -163,68 +135,6 @@
         and <a href="https://github.com/Cecilapp/website">GitHub</a>
       </footer>
     </div>
-    <!-- anchor -->
-    <script src="{{ url('js/anchor.min.js') }}"></script>
-    <script>{% filter minifyJS %}
-      var selector = '.markdown-body > h2, .markdown-body > h3';
-      anchors.options = {
-        placement: 'left',
-        class: 'anchor-link'
-      };
-      anchors.add(selector);
-      generateTableOfContents(anchors.elements);
-      function generateTableOfContents(els) {
-        if (document.getElementById('table-of-contents') == null) {
-          return;
-        }
-      	var anchoredElText,
-        		anchoredElHref,
-      			ul = document.createElement('UL');
-        document.getElementById('table-of-contents').appendChild(ul);
-      	for (var i = 0; i < els.length; i++) {
-          if (els[i].tagName == 'H2') {
-            anchoredElText = els[i].textContent;
-        		anchoredElHref = els[i].querySelector('.anchorjs-link').getAttribute('href');
-          	addNavItem(ul, anchoredElHref, anchoredElText);
-          }
-        }
-      }
-      function addNavItem(ul, href, text) {
-        var listItem = document.createElement('LI'),
-      		  anchorItem = document.createElement('A'),
-        	  textNode = document.createTextNode(text);
-        anchorItem.href = href;
-        ul.appendChild(listItem);
-        listItem.appendChild(anchorItem);
-        anchorItem.appendChild(textNode);
-      }
-    {% endfilter %}</script>
-    <!-- fetch version -->
-    <script>{% filter minifyJS %}
-      const buttonId = 'download-button';
-      const button = document.getElementById(buttonId)
-      if (null !== button) {
-        fetch('/VERSION')
-          .then(response => {
-            let version = response.text()
-            if(!response.ok) {
-              console.log('problem to fetch VERSION')
-              version = 'X.X.X'
-            }
-            return version
-          })
-          .then(version => {
-            console.log('VERSION: '+version)
-            text = document.getElementById(buttonId).innerHTML;
-            document.getElementById(buttonId).innerHTML = text+' <span class="counter">'+version+'</span>'
-          })
-      }
-    {% endfilter %}</script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- highlight -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    {% include 'partials/googleanalytics.js.twig' %}
+{% include 'partials/scripts.js.twig' %}
   </body>
 </html>
