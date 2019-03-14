@@ -9,12 +9,12 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="copyright" content="{{ site.author.name }}">
     <meta name="google-site-verification" content="{{ site.gsv }}" />
-    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="{{ site.language }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
     <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {canonical:true}) }}">
-    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:title" content="{{ site.title }}">
     <meta property="og:description" content="{{ site.description|e }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@CecilSSG">
@@ -25,9 +25,9 @@
 {% set title = page.title %}
 {% endif %}
 {% if title != 'Home' and title != 'index' %}
-{{ title }} &middot; {{ site.name }}
+{{ title }} &middot; {{ site.title }}
 {% else %}
-{{ site.name }} &middot; {{ site.baseline }}
+{{ site.title }} &middot; {{ site.baseline }}
 {% endif %}
     {% endspaceless %}</title>
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
@@ -89,9 +89,9 @@
     <!-- header -->
     <header class="masthead bg-gray-dark">
       <div class="container">
-        <a href="{{ site.baseurl }}" title="{{ site.name }}" class="masthead-logo">
-          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.name }} logo" height="40px" />
-          {#{{ site.name }}#}
+        <a href="{{ site.baseurl }}" title="{{ site.title }}" class="masthead-logo">
+          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.title }} logo" height="40px" />
+          {#{{ site.title }}#}
         </a>
         <nav class="masthead-nav">
 {% for entry in site.menus.main|sortByWeight %}
@@ -107,7 +107,7 @@
       <div class="container">
         <div class="columns">
           <div class="one-half column">
-            <h1>{{ site.name }}</h1>
+            <h1>{{ site.title }}</h1>
             <p>{{ site.baseline|e }}</p>
             <a id="quickstart-button" href="{{ url(site.menu.main.documentation.url) ~ 'quick-start/' }}" class="btn btn-primary">{#<span class="mega-octicon octicon-triangle-right"></span>&nbsp;#}Quick Start</a>
             <a id="download-button" href="{{ url(site.menu.main.download.url) }}" class="btn btn-reverse not-on-mobile">Download</a>
