@@ -1,4 +1,4 @@
-{% extends 'index.html.twig' %}
+{% extends '_default/page.html.twig' %}
 
 {% block content %}
 <div class="container">
@@ -13,5 +13,9 @@
     </div>
   </div>
 </div>
-
 {% endblock content %}
+
+{% block footer_scripts %}
+{{ parent() }}
+{% include 'partials/version.js.twig' only %}
+{% endblock footer_scripts %}

@@ -1,4 +1,18 @@
-{% extends 'index.html.twig' %}
+{% extends '_default/page.html.twig' %}
+
+{% block title %}
+Docs > {{ parent() }}
+{% endblock title %}
+
+{% block head_css %}
+{{ parent() }}
+      @media (min-width: 546px) {
+        #table-of-contents {
+          float: right;
+          background-color: white;
+        }
+      }
+{% endblock head_css %}
 
 {% block content %}
 <div class="container">
@@ -7,9 +21,7 @@
 {% include 'partials/docs-menu.html.twig' %}
     <!-- markdown -->
     <div class="three-fourths column markdown-body">
-      <div id="table-of-contents">
-        <strong>Table of contents</strong>
-      </div>
+{% include 'partials/toc.html.twig' only %}
       {{ page.content }}
 {% if page.repository is defined and page.file is defined %}
       <a class="btn btn-sm btn-outline" href="{{ page.repository }}{{ page.file }}" role="button">
@@ -29,3 +41,8 @@
   </div>
 </div>
 {% endblock content %}
+
+{% block footer_scripts %}
+{{ parent() }}
+{% include 'partials/highlight.js.twig' only %}
+{% endblock footer_scripts %}

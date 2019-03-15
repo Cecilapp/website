@@ -1,12 +1,111 @@
-{% extends 'index.html.twig' %}
-
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description|e }}">
+    <meta name="keywords" content="{{ site.keywords|join(', ') }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="copyright" content="{{ site.author.name }}">
+    <meta name="google-site-verification" content="{{ site.gsv }}" />
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.language }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.baseurl }}">
+    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {canonical:true}) }}">
+    <meta property="og:title" content="{{ block('title')|trim }}">
+    <meta property="og:description" content="{{ site.description|e }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@CecilSSG">
+    <title>{% spaceless %}{% block title %}
+{{ page.title }} &middot; {{ site.title }}
+{% endblock title %}{% endspaceless %}</title>
+    <link rel="stylesheet" href="{{ url('css/primer.css') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('images/cecil-logo.png') }}">
+    <link rel="icon" href="{{ url('favicon.ico') }}">
+{% include 'partials/alternates.html.twig' %}
+    <style>{% filter minifyCSS %}{% block head_css %}
+      .btn-reverse:hover,
+      .btn-reverse:active {
+        color: #333;
+      }
+      .btn-primary {
+        background-color: #376bad;
+        background-image: -webkit-linear-gradient(#4078c0, #376bad);
+        background-image: linear-gradient(#4078c0, #376bad);
+        border-color: #376bad;
+      }
+      .btn-primary:hover {
+        background-color: #2b5c9b;
+        background-image: -webkit-linear-gradient(#3062a3, #2b5c9b);
+        background-image: linear-gradient(#3062a3, #2b5c9b);
+        border-color: #2b5c9b;
+      }
+      .btn-primary .counter {
+        color: #4078c0;
+      }
+      #quickstart-button,
+      #download-button {
+        margin-bottom: .25em;
+      }
+      /* mobile */
+      @media (max-width: 546px) {
+        .not-on-mobile {
+          visibility: hidden;
+          display: none;
+          clear: both;
+        }
+      }
+      /* ToC */
+      .markdown-body> :nth-child(0n+2) {
+        margin-top: 0 !important;
+      }
+    {% endblock head_css %}{% endfilter %}</style>
+    <link rel="stylesheet" href="{{ url(minify('css/terminal.css')) }}">
+  </head>
+  <body>
+    <!-- header -->
+    <header class="masthead bg-gray-dark">
+      <div class="container">
+        <a href="{{ site.baseurl }}" title="{{ site.title }}" class="masthead-logo">
+          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.title }} logo" height="40px" />
+        </a>
+        <nav class="masthead-nav">
+{% for entry in site.menus.main|sortByWeight %}
+          <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
+{% endfor %}
+          <a class="github-button" href="https://github.com/Cecilapp/Cecil" data-show-count="true" aria-label="Star Cecilapp/Cecil on GitHub">Star</a>
+        </nav>
+      </div>
+    </header>
+    <!-- content -->
 {% block content %}
-<div class="container">
-  <div class="columns">
-    <div class="four-fourths column markdown-body">
-      {{ page.content }}
+    <div class="container">
+      <div class="columns">
+        <div class="four-fourths column markdown-body">
+          {{ page.content }}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 {% endblock content %}
+    <!-- footer -->
+    <div class="container">
+      <footer class="footer">
+{% block footer %}
+        Cecil &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.home) }}">{{ site.author.name }}</a>
+        &bull; Cecil logo &copy; <a href="http://www.cecillie.fr/">Cécile Ricordeau</a><br>
+        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ cecil.url }}">Cecil</a>, <a
+          href="https://primer.github.io/">Primer CSS</a>, <a href="https://octicons.github.com/">Octicons</a>
+        and <a href="https://github.com/Cecilapp/website">GitHub</a>
+{% endblock footer %}
+      </footer>
+    </div>
+{% block footer_scripts %}
+    <!-- scripts -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+{% include 'partials/googleanalytics.js.twig' %}
+{% include 'partials/anchor.js.twig' only %}
+{% endblock footer_scripts %}
+  </body>
+</html>
