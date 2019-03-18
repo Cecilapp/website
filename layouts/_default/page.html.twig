@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ url('css/primer.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('images/cecil-logo.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
-{% include 'partials/alternates.html.twig' %}
+{% include 'partials/alternates.html.twig' with {'title':block('title')} %}
     <style>{% filter minifyCSS %}{% block head_css %}
       .btn-reverse:hover,
       .btn-reverse:active {
