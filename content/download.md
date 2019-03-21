@@ -1,5 +1,6 @@
 ---
-title: Download
+title: "Download"
+date: 2018-11-21
 layout: download
 alias: install
 ---
