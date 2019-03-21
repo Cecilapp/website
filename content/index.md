@@ -1,4 +1,6 @@
 ---
+title: "Homepage"
+date: 2019-03-14
 blocks:
   about:
     - title: "Fast & Secure"
