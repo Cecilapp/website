@@ -6,7 +6,7 @@ site:
   language: "en"
   author:
     name: "Arnaud Ligny"
-    home: "https://arnaudligny.fr"
+    url: "https://arnaudligny.fr"
   keywords: ["static", "generator", "SSG", "PHP", "Twig"]
   output:
     formats:
