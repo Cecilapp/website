@@ -23,20 +23,29 @@ Docs > {{ parent() }}
     <div class="three-fourths column markdown-body">
 {% include 'partials/toc.html.twig' only %}
       {{ page.content }}
-{% if page.repository is defined and page.file is defined %}
-      <a class="btn btn-sm btn-outline" href="{{ page.repository }}{{ page.file }}" role="button">
-        <span class="octicon octicon-markdown"></span>
-        Suggest a modification
-      </a>
+{% if site.docs_repo is defined and page.filepath is defined %}
+      <p>
+        <a class="btn btn-sm btn-outline" href="{{ site.docs_repo }}{{ page.filepath|replace({'documentation/':''}) }}" role="button">
+          <span class="octicon octicon-markdown"></span>
+          Suggest a modification
+        </a>
+      </p>
 {% endif %}
-      <!-- next page -->
+      <!-- prev/next page -->
+      <p>
 {% if page.next is defined %}
-{% set url = page.section ~ '/' ~ page.next %}
-      <a class="btn btn-sm btn-outline right" href="{{ url(url) }}" role="button">
-        Next
-        <span class="octicon octicon-arrow-right"></span>
-      </a>
+        <a class="btn btn-sm btn-outline left" href="{{ url(page.next.path) }}" role="button">
+          <span class="octicon octicon-arrow-left"></span>
+          Previous
+        </a>
 {% endif %}
+{% if page.prev is defined %}
+        <a class="btn btn-sm btn-outline right" href="{{ url(page.prev.path) }}" role="button">
+          Next
+          <span class="octicon octicon-arrow-right"></span>
+        </a>
+{% endif %}
+      </p>
     </div>
   </div>
 </div>
