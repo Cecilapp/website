@@ -25,30 +25,22 @@ site:
   menu:
     main:
       index:
-        id: index
         enabled: false
       documentation:
-        id: documentation
         name: Docs
         url: documentation
         weight: 10
       about:
-        id: about
-        name: About
-        url: about
-        weight: 20
         enabled: false
       download:
-        id: download
         name: Download
         url: download
         weight: 30
       github:
-        id: github
+        enabled: false
         name: GitHub
         url: https://github.com/Cecilapp/Cecil
         weight: 40
-        enabled: false
   release:
     name: cecil.phar
     sha1: cecil.phar.sha1
