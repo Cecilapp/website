@@ -44,7 +44,7 @@ site:
   release:
     name: cecil.phar
     sha1: cecil.phar.sha1
-  googleanalytics: 387892-21
+  googleanalytics: UA-387892-21
   gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
   docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
 
