@@ -2,16 +2,15 @@ sudo: false
 language: php
 php:
   - 7.1
-# download PHPoole
+# download Cecil
 install:
-  #- curl -SOL https://github.com/PHPoole/PHPoole/releases/download/3.2.0/phpoole.phar
-  - curl -SOL https://phpoole.org/phpoole.phar
+  - curl -SOL https://cecil.app/cecil.phar
 # check version
 before_script:
-  - php phpoole.phar -v
+  - php cecil.phar -v
 # build
 script:
-  - php phpoole.phar build --quiet
+  - php cecil.phar build --quiet
 # deploy
 deploy:
   provider: script
