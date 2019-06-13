@@ -1,9 +1,8 @@
 # cecil.app
 
+The website and documentation for the Cecil static site generator.
 - https://cecil.app
 - https://cecil.app/documentation
-
-The website and documentation for the Cecil static site generator.
 
 > Source code of https://cecil.app, generated with [Cecil](https://github.com/Cecilapp/Cecil) (obviously!) and hosted by [Netlify](https://www.netlify.com).
 
