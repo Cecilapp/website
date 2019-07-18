@@ -1,50 +1,48 @@
-site:
-  title: "Cecil"
-  baseline: "Your content driven static site generator."
-  description: "Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website."
-  baseurl: "https://cecil.app/"
-  language: "en"
-  author:
-    name: "Arnaud Ligny"
-    url: "https://arnaudligny.fr"
-  keywords: ["static", "generator", "SSG", "PHP", "Twig"]
-  output:
-    formats:
-      phar:
-        mediatype: 'application/octet-stream'
-        extension: 'phar'
-      sha1:
-        mediatype: 'text/plain'
-        extension: 'phar.sha1'
-      netlify_redirects:
-        mediatype: 'text/plain'
-        extension: ''
-  virtualpages:
-    _redirects:
-      output: netlify_redirects
-  menu:
-    main:
-      index:
-        enabled: false
-      documentation:
-        name: Docs
-        url: documentation
-        weight: 10
-      about:
-        enabled: false
-      download:
-        name: Download
-        url: download
-        weight: 30
-      github:
-        enabled: false
-        name: GitHub
-        url: https://github.com/Cecilapp/Cecil
-        weight: 40
-  release:
-    name: cecil.phar
-    sha1: cecil.phar.sha1
-  googleanalytics: UA-387892-21
-  gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
-  docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
-
+title: "Cecil"
+baseline: "Your content driven static site generator."
+description: "Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website."
+baseurl: "https://cecil.app/"
+language: "en"
+author:
+  name: "Arnaud Ligny"
+  url: "https://arnaudligny.fr"
+keywords: ["static", "generator", "SSG", "PHP", "Twig"]
+output:
+  formats:
+    phar:
+      mediatype: 'application/octet-stream'
+      extension: 'phar'
+    sha1:
+      mediatype: 'text/plain'
+      extension: 'phar.sha1'
+    netlify_redirects:
+      mediatype: 'text/plain'
+      extension: ''
+virtualpages:
+  _redirects:
+    output: netlify_redirects
+menu:
+  main:
+    index:
+      enabled: false
+    documentation:
+      name: Docs
+      url: documentation
+      weight: 10
+    about:
+      enabled: false
+    download:
+      name: Download
+      url: download
+      weight: 30
+    github:
+      enabled: false
+      name: GitHub
+      url: https://github.com/Cecilapp/Cecil
+      weight: 40
+release:
+  name: cecil.phar
+  sha1: cecil.phar.sha1
+googleanalytics: UA-387892-21
+gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
+docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
