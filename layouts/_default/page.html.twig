@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description|e }}">
+    <meta name="description" content="{{ page.description|default(site.description)|e }}">
     <meta name="keywords" content="{{ site.keywords|join(', ') }}">
     <meta name="author" content="{{ site.author.name }}">
     <meta name="copyright" content="{{ site.author.name }}">
@@ -15,7 +15,7 @@
     <meta property="og:url" content="{{ site.baseurl }}">
     <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {canonical:true}) }}">
     <meta property="og:title" content="{{ block('title')|trim }}">
-    <meta property="og:description" content="{{ site.description|e }}">
+    <meta property="og:description" content="{{ page.description|default(site.description)|e }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@CecilSSG">
     <title>{% spaceless %}{% block title %}
