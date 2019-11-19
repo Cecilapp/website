@@ -17,8 +17,7 @@
         margin-right: .5rem;
       }
 {% endblock head_css %}
-
-{% block content %}
+{% block intro %}
     <div class="jumbotron bg-gray-dark">
       <div class="container">
         <div class="columns">
@@ -41,8 +40,7 @@
 {% endfor %}
       </div>
     </div>
-{% endblock content %}
-
+{% endblock intro %}
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/version.js.twig' only %}

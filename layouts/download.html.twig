@@ -1,8 +1,6 @@
 {% extends '_default/page.html.twig' %}
 
 {% block content %}
-<div class="container">
-  <div class="columns docs-layout">
     <div class="one-fourth column">
       <a id="download-button" class="btn btn-primary btn-block" href="{{ url(site.release.name) }}" role="button">Download</a><br />
       <a class="btn btn-sm btn-block" href="{{ url(site.release.sha1) }}" role="button">File checksum</a>
@@ -11,8 +9,6 @@
     <div class="three-fourths column markdown-body">
       {{ page.content }}
     </div>
-  </div>
-</div>
 {% endblock content %}
 
 {% block footer_scripts %}

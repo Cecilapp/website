@@ -79,16 +79,17 @@
         </nav>
       </div>
     </header>
-    <!-- content -->
-{% block content %}
+{% block intro %}{% endblock intro %}
     <div class="container">
       <div class="columns">
+        <!-- content -->
+{% block content %}
         <div class="four-fourths column markdown-body">
-          {{ page.content }}
+{{ page.content }}
         </div>
+{% endblock content %}
       </div>
     </div>
-{% endblock content %}
     <!-- footer -->
     <div class="container">
       <footer class="footer">
