@@ -11,6 +11,6 @@ The website and documentation for the Cecil static site generator.
 ## Build & serve locally
 
 ```bash
-curl -SOL https://cecil.app/cecil.phar
+curl -OL https://cecil.app/cecil.phar
 php cecil.phar serve
 ```
