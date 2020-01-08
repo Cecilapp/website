@@ -19,6 +19,6 @@ blocks:
       description: "<a href=\"/download/\">Download</a> just one file and run it!"
       octicon: cloud-download
     - title: "Deploy quickly"
-      description: "<a href=\"https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/starter-blog\"><img src=\"https://www.netlify.com/img/deploy/button.svg\" title=\"Deploy to Netlify\" alt=\"Netlify deploy button\"></a> <a href=\"https://zeit.co/new/project?template=https://github.com/Cecilapp/starter-blog\"><img src=\"https://zeit.co/button\" alt=\"Deploy to ZEIT Now\" /></a>"
+      description: "<a href=\"https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/the-butler\"><img src=\"https://www.netlify.com/img/deploy/button.svg\" title=\"Deploy to Netlify\" alt=\"Netlify deploy button\"></a> <a href=\"https://zeit.co/new/project?template=https://github.com/Cecilapp/the-butler\"><img src=\"https://zeit.co/button\" alt=\"Deploy to ZEIT Now\" /></a>"
       octicon: rocket
 ---
