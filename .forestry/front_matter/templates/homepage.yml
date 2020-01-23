@@ -5,9 +5,16 @@ fields:
 - type: text
   name: title
   label: Title
+  config:
+    required: true
 - type: datetime
   name: date
   label: Date
+  config:
+    date_format: YYYY-MM-DD
+    required: true
+  default: now
+  hidden: true
 - type: field_group
   name: blocks
   label: Blocks
