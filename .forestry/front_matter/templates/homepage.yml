@@ -19,11 +19,19 @@ fields:
     - type: text
       name: title
       label: Title
+      config:
+        required: true
     - type: text
       name: description
       label: Description
+      config:
+        required: true
     - type: text
       name: octicon
       label: Octicon
+      config:
+        required: true
+    config:
+      labelField: title
 pages:
 - content/index.md
