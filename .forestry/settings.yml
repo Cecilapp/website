@@ -13,14 +13,21 @@ sections:
 - type: document
   path: content/download.md
   label: Download
+- type: document
+  path: config.yml
+  label: Configuration
 upload_dir: static/images
-public_path: ''
+public_path: /images
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
-  install_dependencies_command: npm install
-  preview_docker_image: node:10
-  mount_path: "/srv"
-  working_dir: "/srv"
-  instant_preview_command: npm run forestry:preview
+  preview_env:
+  - PHP_VERSION=7.2
+  - CECIL_VERSION=5.3.1
+  preview_output_directory: _site
+  install_dependencies_command: bash .forestry/install.sh
+  preview_docker_image: composer:latest
+  mount_path: "/usr/src"
+  working_dir: "/usr/src"
+  instant_preview_command: php cecil.phar serve -v -d --host=0.0.0.0 --port=8080
