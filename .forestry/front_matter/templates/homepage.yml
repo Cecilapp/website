@@ -1,0 +1,44 @@
+---
+label: Homepage
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Title
+- type: datetime
+  name: date
+  label: Date
+- type: field_group
+  name: blocks
+  label: Blocks
+  fields:
+  - type: field_group_list
+    name: about
+    label: About
+    fields:
+    - type: text
+      name: title
+      label: Title
+      config:
+        required: true
+    - type: textarea
+      name: description
+      label: Description
+      config:
+        required: true
+        wysiwyg: true
+        schema:
+          format: html
+    - type: text
+      name: octicon
+      label: Octicon
+      config:
+        required: true
+    - name: visible
+      type: boolean
+      label: Visible
+      default: true
+    config:
+      labelField: title
+pages:
+- content/index.md
