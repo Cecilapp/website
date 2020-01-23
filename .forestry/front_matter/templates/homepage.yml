@@ -21,20 +21,14 @@ fields:
       label: Title
       config:
         required: true
-    - type: text
+    - type: textarea
       name: description
       label: Description
-      config:
-        required: true
-    - name: description_BIS
-      type: textarea
-      default: ''
       config:
         required: true
         wysiwyg: true
         schema:
           format: html
-      label: Description
     - type: text
       name: octicon
       label: Octicon
