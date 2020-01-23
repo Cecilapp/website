@@ -36,7 +36,7 @@
     </div>
     <div class="container about-that">
       <div class="columns">
-{% for block in page.blocks['about'] %}
+{% for block in page.blocks['about'] if block.visible != false %}
 {% include 'partials/block-about.html.twig' with {octicon:block.octicon,title:block.title,description:block.description} only %}
 {% endfor %}
       </div>
