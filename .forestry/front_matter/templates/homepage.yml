@@ -42,12 +42,14 @@ fields:
       label: Octicon
       config:
         required: true
+      description: See https://octicons.github.com
     - name: visible
       type: boolean
       label: Visible
       default: true
+      description: Display block?
     config:
       labelField: title
-  hidden: true
+  hidden: false
 pages:
 - content/index.md
