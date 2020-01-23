@@ -4,24 +4,24 @@ hide_body: true
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: datetime
   name: date
-  label: date
+  label: Date
 - type: field_group
   name: blocks
-  label: blocks
+  label: Blocks
   fields:
   - type: field_group_list
     name: about
-    label: about
+    label: About
     fields:
     - type: text
       name: title
-      label: title
+      label: Title
     - type: text
       name: description
-      label: description
+      label: Description
     - type: text
       name: octicon
-      label: octicon
+      label: Octicon
