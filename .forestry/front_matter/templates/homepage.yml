@@ -1,5 +1,5 @@
 ---
-label: Home page
+label: Homepage
 hide_body: true
 fields:
 - type: text
