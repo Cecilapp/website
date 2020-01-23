@@ -6,12 +6,12 @@ webhook_url:
 sections:
 - type: document
   path: content/index.md
-  label: Home page
+  label: Homepage
 - type: document
-  path: about.md
+  path: content/about.md
   label: About
 - type: document
-  path: download.md
+  path: content/download.md
   label: Download
 upload_dir: static/images
 public_path: ''
