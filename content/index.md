@@ -11,13 +11,13 @@ blocks:
     description: Content is stored in flat files, written in <a href="https://daringfireball.net/projects/markdown/">Markdown</a>
       with <a href="/documentation/content/#front-matter">YAML front matter</a>.
     octicon: markdown
-    visible: false
+    visible: true
   - title: Customisable
     description: Powered by <a href="https://twig.symfony.com/doc/templates.html">Twig</a>,
       a flexible template engine, with <a href="https://github.com/Cecilapp/theme-hyde">theme</a>
       support.
     octicon: paintcan
-    visible: false
+    visible: true
   - title: Generators
     description: Paginaton, taxonomies, redirections (and more !) are generated automatically.
     octicon: hubot
