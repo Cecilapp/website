@@ -25,3 +25,5 @@ fields:
     - type: text
       name: octicon
       label: Octicon
+pages:
+- content/index.md
