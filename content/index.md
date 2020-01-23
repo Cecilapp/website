@@ -32,6 +32,6 @@ blocks:
       alt="Netlify deploy button"></a> <a href="https://zeit.co/new/project?template=https://github.com/Cecilapp/the-butler"><img
       src="https://zeit.co/button" alt="Deploy to ZEIT Now" /></a>
     octicon: rocket
-    visible: true
+    visible: false
 
 ---
