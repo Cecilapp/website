@@ -21,21 +21,21 @@ output:
 virtualpages:
   _redirects:
     output: netlify_redirects
-menu:
+menus:
   main:
-    index:
+    - id: index
       enabled: false
-    documentation:
+    - id: documentation
       name: Docs
       url: documentation
       weight: 10
-    about:
+    - id: about
       enabled: false
-    download:
+    - id: download
       name: Download
       url: download
       weight: 30
-    github:
+    - id : github
       enabled: false
       name: GitHub
       url: https://github.com/Cecilapp/Cecil
