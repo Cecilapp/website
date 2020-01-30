@@ -7,6 +7,25 @@ author:
   name: "Arnaud Ligny"
   url: "https://arnaudligny.fr"
 keywords: ["static", "generator", "SSG", "PHP", "Twig"]
+menus:
+  main:
+    - name: GitHub
+      id : github
+      url: https://github.com/Cecilapp/Cecil
+      weight: 40
+      enabled: false
+    - id: index
+      enabled: false
+    - id: documentation
+      name: Docs
+      url: documentation
+      weight: 10
+    - id: about
+      enabled: false
+    - id: download
+      name: Download
+      url: download
+      weight: 30
 output:
   formats:
     phar:
@@ -21,25 +40,6 @@ output:
 virtualpages:
   _redirects:
     output: netlify_redirects
-menus:
-  main:
-    - id: index
-      enabled: false
-    - id: documentation
-      name: Docs
-      url: documentation
-      weight: 10
-    - id: about
-      enabled: false
-    - id: download
-      name: Download
-      url: download
-      weight: 30
-    - id : github
-      enabled: false
-      name: GitHub
-      url: https://github.com/Cecilapp/Cecil
-      weight: 40
 release:
   name: cecil.phar
   sha1: cecil.phar.sha1
