@@ -9,6 +9,15 @@ author:
 keywords: ["static", "generator", "SSG", "PHP", "Twig"]
 menus:
   main:
+    - id: documentation
+      name: Docs
+      url: documentation
+      weight: 10
+      enabled: true
+    - id: download
+      name: Download
+      url: download
+      weight: 30
     - id : github
       name: GitHub
       url: https://github.com/Cecilapp/Cecil
@@ -16,16 +25,8 @@ menus:
       enabled: false
     - id: index
       enabled: false
-    - id: documentation
-      name: Docs
-      url: documentation
-      weight: 10
     - id: about
       enabled: false
-    - id: download
-      name: Download
-      url: download
-      weight: 30
 output:
   formats:
     phar:
