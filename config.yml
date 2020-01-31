@@ -44,6 +44,8 @@ output:
 virtualpages:
   _redirects:
     output: netlify_redirects
+  documentation/overview:
+    redirect: documentation
 release:
   name: cecil.phar
   sha1: cecil.phar.sha1
