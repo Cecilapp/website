@@ -38,6 +38,9 @@ output:
     netlify_redirects:
       mediatype: 'text/plain'
       extension: ''
+    php:
+      mediatype: 'text/html'
+      extension: 'php'
 virtualpages:
   _redirects:
     output: netlify_redirects
