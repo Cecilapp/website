@@ -11,8 +11,13 @@ The [first version](https://github.com/Cecilapp/Cecil/commit/58cd48bcc72baa7636f
 
 ## Authors
 
-- Cecil is maintained by [Arnaud Ligny](https://arnaudligny.fr), a web & mobile consultant.
+- Cecil is maintained by [Arnaud Ligny](https://arnaudligny.fr), a web & mobile consultant
 - The logo has been created by [Cécile Ricordeau](http://www.cecillie.fr), an amazing creative director! <3
+
+## License
+
+- [Cecil](https://github.com/Cecilapp/Cecil/) is a free software distributed under the terms of the [MIT license](https://github.com/Cecilapp/Cecil/blob/master/LICENSE)
+- The website [cecil.app](https://cecil.app) is distribued under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 *[CLI]: Command-Line Interface
 *[PHP]: PHP Hypertext Preprocessor
