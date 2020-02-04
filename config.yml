@@ -18,6 +18,7 @@ menus:
       name: Download
       url: download
       weight: 30
+      enabled: true
     - id : github
       name: GitHub
       url: https://github.com/Cecilapp/Cecil
