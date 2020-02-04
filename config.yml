@@ -42,9 +42,9 @@ output:
       mediatype: 'text/html'
       extension: 'php'
 virtualpages:
-  _redirects:
+  - path: _redirects
     output: netlify_redirects
-  documentation/overview:
+  - path: documentation/overview
     redirect: documentation
 release:
   name: cecil.phar
