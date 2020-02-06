@@ -30,16 +30,16 @@ menus:
       enabled: false
 output:
   formats:
-    phar:
+    - name: phar
       mediatype: 'application/octet-stream'
       extension: 'phar'
-    sha1:
+    - name: sha1
       mediatype: 'text/plain'
       extension: 'phar.sha1'
-    netlify_redirects:
+    - name: netlify_redirects
       mediatype: 'text/plain'
       extension: ''
-    php:
+    - name: php
       mediatype: 'text/html'
       extension: 'php'
 virtualpages:
