@@ -2,7 +2,6 @@ title: "Cecil"
 baseline: "Your content driven static site generator."
 description: "Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website."
 baseurl: "https://cecil.app/"
-language: "en"
 author:
   name: "Arnaud Ligny"
   url: "https://arnaudligny.fr"
@@ -53,3 +52,6 @@ release:
 googleanalytics: UA-387892-21
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
+static:
+  exclude:
+#    - '*.phar*'
