@@ -106,5 +106,6 @@
 {% include 'partials/googleanalytics.js.twig' %}
 {% include 'partials/anchor.js.twig' only %}
 {% endblock footer_scripts %}
+    <style>{% filter minifyCSS %}{% block footer_css %}{% endblock footer_css %}{% endfilter %}</style>
   </body>
 </html>

@@ -4,24 +4,13 @@
 Docs > {{ parent() }}
 {% endblock title %}
 
-{% block head_css %}
-{{ parent() }}
-      @media (min-width: 546px) {
-        #table-of-contents {
-          float: right;
-          background-color: white;
-        }
-      }
-{% endblock head_css %}
-
 {% block content %}
 <div class="container">
   <div class="columns docs-layout">
     <!-- menu -->
 {% include 'partials/docs-menu.html.twig' %}
     <!-- markdown -->
-    <div class="three-fourths column markdown-body">
-{% include 'partials/toc.html.twig' only %}
+    <div class="one-half column markdown-body">
       {{ page.content }}
 {% if site.docs_repo is defined and page.filepath is defined %}
       <p>
@@ -47,9 +36,26 @@ Docs > {{ parent() }}
 {% endif %}
       </p>
     </div>
+    <div class="one-fourth column column-toc">
+      {% include 'partials/toc.html.twig' only %}
+    </div>
   </div>
 </div>
 {% endblock content %}
+
+{% block footer_css %}
+{{ parent() }}
+      @media (min-width: 546px) {
+        .column-toc {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 20px;
+        }
+        .is-active-link::before{
+          background-color:#4078C0
+        }
+      }
+{% endblock footer_css %}
 
 {% block footer_scripts %}
 {{ parent() }}
