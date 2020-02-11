@@ -45,14 +45,18 @@ Docs > {{ parent() }}
 
 {% block footer_css %}
 {{ parent() }}
+      .is-active-link::before{
+        background-color:#4078C0
+      }
+      .column-toc {
+        display: none;
+      }
       @media (min-width: 546px) {
         .column-toc {
+          display: block;
           position: -webkit-sticky;
           position: sticky;
           top: 20px;
-        }
-        .is-active-link::before{
-          background-color:#4078C0
         }
       }
 {% endblock footer_css %}
