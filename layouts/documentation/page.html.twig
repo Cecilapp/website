@@ -64,4 +64,14 @@ Docs > {{ parent() }}
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script>{% filter minifyJS %}
+  tocbot.init({
+    tocSelector: '.toc',
+    contentSelector: '.markdown-body',
+    headingSelector: 'h2, h3',
+    hasInnerContainers: true,
+  });
+{% endfilter %}</script>
 {% endblock footer_scripts %}

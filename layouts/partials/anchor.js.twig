@@ -1,7 +1,5 @@
     <!-- anchor.js -->
     <script src="{{ url('js/anchor.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
     <script>{% filter minifyJS %}
       var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
@@ -9,10 +7,4 @@
         class: 'anchor-link'
       };
       anchors.add(selector);
-      tocbot.init({
-        tocSelector: '.toc',
-        contentSelector: '.markdown-body',
-        headingSelector: 'h2, h3',
-        hasInnerContainers: true,
-      });
     {% endfilter %}</script>
