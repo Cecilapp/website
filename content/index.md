@@ -23,10 +23,10 @@ blocks:
     octicon: hubot
     visible: true
   - title: Install & run
-    description: <a href="/download/">Download</a> just one file and run it!
+    description: <a href="/download/">Download</a> just one file and run it.
     octicon: cloud-download
     visible: true
-  - title: Deploy quickly
+  - title: Easy to deploy
     description: <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/the-butler&stack=cms"><img
       src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"
       alt="Netlify deploy button"></a> <a href="https://zeit.co/new/project?template=https://github.com/Cecilapp/the-butler"><img
