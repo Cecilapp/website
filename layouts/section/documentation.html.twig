@@ -9,7 +9,7 @@
     <div class="three-fourths column markdown-body">
       <h1>Documentation</h1>
       <dl>
-{% for doc in site.pages|filterBySection('documentation')|filterBy('exclude', false)|sortByWeight %}
+{% for doc in site.pages|filterBySection('documentation')|sortByWeight %}
         <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
 {% if doc.description is defined %}
         <dd>{{ doc.description|e }}</dd>
