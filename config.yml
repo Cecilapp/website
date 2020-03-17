@@ -41,6 +41,8 @@ output:
     - name: php
       mediatype: 'text/html'
       extension: 'php'
+  pagetypeformats:
+    section: ['html', 'atom', 'rss', 'json']
 virtualpages:
   - path: _redirects
     output: netlify_redirects
