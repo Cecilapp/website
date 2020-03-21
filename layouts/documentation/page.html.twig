@@ -22,15 +22,15 @@ Docs > {{ parent() }}
 {% endif %}
       <!-- prev/next page -->
       <p>
-{% if page.next is defined %}
-        <a class="btn btn-sm btn-outline left" href="{{ url(page.next.path) }}" role="button" title="Previous">
+{% if page.prev is defined %}
+        <a class="btn btn-sm btn-outline left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
           <span class="octicon octicon-arrow-left"></span>
-          {{ page.next.title }}
+          {{ page.prev.title }}
         </a>
 {% endif %}
-{% if page.prev is defined %}
-        <a class="btn btn-sm btn-outline right" href="{{ url(page.prev.path) }}" role="button" title="Next">
-          {{ page.prev.title }}
+{% if page.next is defined %}
+        <a class="btn btn-sm btn-outline right" href="{{ url(page.next.path) }}" role="button" title="Next">
+          {{ page.next.title }}
           <span class="octicon octicon-arrow-right"></span>
         </a>
 {% endif %}
