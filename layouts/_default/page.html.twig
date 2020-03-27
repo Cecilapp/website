@@ -26,7 +26,7 @@
     <link rel="apple-touch-icon-precomposed" href="{{ url('images/cecil-logo.png') }}">
     <link rel="icon" href="{{ url('favicon.ico') }}">
 {% include 'partials/alternates.html.twig' with {'title':block('title')} %}
-    <style>{% filter minifyCSS %}{% block head_css %}
+    <style>{% apply minifyCSS %}{% block head_css %}
       .btn-reverse:hover,
       .btn-reverse:active {
         color: #333;
@@ -62,7 +62,7 @@
       .markdown-body> :nth-child(0n+2) {
         margin-top: 0 !important;
       }
-    {% endblock head_css %}{% endfilter %}</style>
+    {% endblock head_css %}{% endapply %}</style>
     <link rel="stylesheet" href="{{ url(minify('css/terminal.css')) }}">
   </head>
   <body>
@@ -106,6 +106,6 @@
 {% include 'partials/googleanalytics.js.twig' %}
 {% include 'partials/anchor.js.twig' only %}
 {% endblock footer_scripts %}
-    <style>{% filter minifyCSS %}{% block footer_css %}{% endblock footer_css %}{% endfilter %}</style>
+    <style>{% apply minifyCSS %}{% block footer_css %}{% endblock footer_css %}{% endapply %}</style>
   </body>
 </html>
