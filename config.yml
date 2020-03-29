@@ -27,6 +27,8 @@ menus:
       enabled: false
     - id: about
       enabled: false
+    - id: cms
+      enabled: false
 output:
   formats:
     - name: phar
