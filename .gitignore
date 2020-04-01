@@ -1,6 +1,7 @@
 vendor/
 _site/
 .cecil/
+.cache/
 static/cecil.phar
 static/cecil.phar.version
 cecil.phar
