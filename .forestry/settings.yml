@@ -26,7 +26,7 @@ build:
   - PHP_VERSION=7.2
   preview_output_directory: _site
   install_dependencies_command: bash .forestry/install.sh
-  preview_docker_image: composer:latest
+  preview_docker_image: phpdocker/phpdocker:7.2
   mount_path: "/usr/src"
   working_dir: "/usr/src"
   instant_preview_command: php cecil.phar serve --host=0.0.0.0 --port=8080 -v -d
