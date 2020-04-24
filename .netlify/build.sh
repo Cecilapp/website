@@ -6,9 +6,9 @@ php cecil.phar --version
 
 echo "Started Cecil build"
 if [ -z "$1" ]; then
-  php cecil.phar build --no-ansi -v --postprocess;
+  php cecil.phar build -v --postprocess;
 else
-  echo "URL: $1" && php cecil.phar build --no-ansi -v --baseurl=$1 --drafts || { sleep 30; false; };
+  echo "URL: $1" && php cecil.phar build -v --baseurl=$1 --drafts || { sleep 30; false; };
 fi
 
 # build success? can deploy?
