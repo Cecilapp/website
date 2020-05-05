@@ -56,6 +56,8 @@ release:
 googleanalytics: UA-387892-21
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
+cache:
+  enabled: true
 #static:
 #  exclude:
 #    - '*.phar*'
