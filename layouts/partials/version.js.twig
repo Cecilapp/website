@@ -1,5 +1,5 @@
     <!-- fetch version -->
-    <script>{% filter minifyJS %}
+    <script>{% apply minify_js %}
       const buttonId = 'download-button';
       const button = document.getElementById(buttonId)
       if (null !== button) {
@@ -18,4 +18,4 @@
             document.getElementById(buttonId).innerHTML = text + ' <span class="counter">' + version + '</span>'
           })
       }
-    {% endfilter %}</script>
+    {% endapply %}</script>

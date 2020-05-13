@@ -45,7 +45,7 @@ Docs > {{ parent() }}
 
 {% block footer_css %}
 {{ parent() }}
-      .is-active-link::before{
+      {% apply minify_css %}.is-active-link::before{
         background-color:#4078C0
       }
       .column-toc {
@@ -58,7 +58,7 @@ Docs > {{ parent() }}
           position: sticky;
           top: 20px;
         }
-      }
+      }{% endapply %}
 {% endblock footer_css %}
 
 {% block footer_scripts %}
@@ -66,12 +66,12 @@ Docs > {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-<script>{% filter minifyJS %}
+<script>{% apply minify_js %}
   tocbot.init({
     tocSelector: '.toc',
     contentSelector: '.markdown-body',
     headingSelector: 'h2, h3, h4',
     hasInnerContainers: true,
   });
-{% endfilter %}</script>
+{% endapply %}</script>
 {% endblock footer_scripts %}

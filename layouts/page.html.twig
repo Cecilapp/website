@@ -14,19 +14,19 @@
     <meta property="og:locale" content="{{ site.language.locale }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
-    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png', {canonical:true}) }}">
+    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png',{canonical:true}) }}">
     <meta property="og:title" content="{{ block('title')|trim }}">
     <meta property="og:description" content="{{ page.description|default(site.description)|e }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@CecilSSG">
-    <title>{% spaceless %}{% block title %}
+    <title>{% apply spaceless %}{% block title %}
 {{ page.title }} &middot; {{ site.title }}
-{% endblock title %}{% endspaceless %}</title>
-    <link rel="stylesheet" href="{{ url('css/primer.css') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ url('images/cecil-logo.png') }}">
-    <link rel="icon" href="{{ url('favicon.ico') }}">
+{% endblock title %}{% endapply %}</title>
+    <link rel="stylesheet" href="{{ asset('css/primer.css')|url }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png')|url }}">
+    <link rel="icon" href="{{ asset('favicon.ico')|url }}">
 {% include 'partials/alternates.html.twig' with {'title':block('title')} %}
-    <style>{% apply minifyCSS %}{% block head_css %}
+    <style>{% apply minify_css %}{% block head_css %}
       .btn-reverse:hover,
       .btn-reverse:active {
         color: #333;
@@ -63,17 +63,17 @@
         margin-top: 0 !important;
       }
     {% endblock head_css %}{% endapply %}</style>
-    <link rel="stylesheet" href="{{ url(minify('css/terminal.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/terminal.css')|minify|url }}">
   </head>
   <body>
     <!-- header -->
     <header class="masthead bg-gray-dark">
       <div class="container">
         <a href="{{ site.baseurl }}" title="{{ site.title }}" class="masthead-logo">
-          <img src="{{ url('images/cecil-logo-white.png') }}" alt="{{ site.title }} logo" height="40px" />
+          <img src="{{ asset('images/cecil-logo-white.png')|url }}" alt="{{ site.title }} logo" height="40px" />
         </a>
         <nav class="masthead-nav">
-{% for entry in site.menus.main|sortByWeight %}
+{% for entry in site.menus.main|sort_by_weight %}
           <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
           <a class="github-button" href="https://github.com/Cecilapp/Cecil" data-show-count="true" aria-label="Star Cecilapp/Cecil on GitHub">Star</a>
@@ -94,7 +94,7 @@
     <div class="container">
       <footer class="footer">
 {% block footer %}
-        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ cecil.url }}">Cecil</a>, <a href="https://primer.github.io/">Primer</a>, <a href="https://octicons.github.com/">Octicons</a>, <a href="https://github.com/Cecilapp/website">GitHub</a>, <a href="https://forestry.io">Forestry.io</a> and <a href="https://www.netlify.com">Netlify</a><br>
+        <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ cecil.url }}">Cecil</a>, <a href="https://primer.github.io">Primer</a>, <a href="https://octicons.github.com">Octicons</a>, <a href="https://github.com/Cecilapp/website">GitHub</a>, <a href="https://forestry.io">Forestry.io</a> and <a href="https://www.netlify.com">Netlify</a><br>
         Copyright &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.url) }}">{{ site.author.name }}</a> &bull; logo by <a href="https://www.cecillie.fr/">Cécile Ricordeau</a><br>
         <!--<a href="https://github.com/Cecilapp/Cecil/">Cecil</a> is a free software distributed under the terms of the <a href="https://github.com/Cecilapp/Cecil/blob/master/LICENSE">MIT license</a>-->
 {% endblock footer %}
@@ -106,6 +106,6 @@
 {% include 'partials/googleanalytics.js.twig' %}
 {% include 'partials/anchor.js.twig' only %}
 {% endblock footer_scripts %}
-    <style>{% apply minifyCSS %}{% block footer_css %}{% endblock footer_css %}{% endapply %}</style>
+    <style>{% apply minify_css %}{% block footer_css %}{% endblock footer_css %}{% endapply %}</style>
   </body>
 </html>

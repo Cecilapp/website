@@ -2,8 +2,8 @@
               <p class="shell-top-bar">/Users/Narno/websites/</p>
               <div class="shell-body">
                 <video width="100%" preload="auto" autoplay loop muted mute>
-                  <source src="{{ url('videos/cecil-demo.mp4', {addhash:true}) }}" type="video/mp4">
-                  <img src="{{ url('cecil-demo.gif', {addhash:true}) }}" alt="Cecil demo in Terminal" style="max-width:100%;">
+                  <source src="{{ asset('videos/cecil-demo.mp4')|url }}" type="video/mp4">
+                  <img src="{{ asset('cecil-demo.gif')|url }}" alt="Cecil demo in Terminal" style="max-width:100%;">
                 </video>
               </div>
             </div>
