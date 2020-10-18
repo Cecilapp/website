@@ -14,11 +14,11 @@
     <meta property="og:locale" content="{{ site.language.locale }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}">
-    <meta property="og:image" content="{{ url('images/cecil-logo-1000.png',{canonical:true}) }}">
+    <meta property="og:image" content="{{ url('images/cecil-card.png',{canonical:true}) }}">
     <meta property="og:title" content="{{ block('title')|trim }}">
     <meta property="og:description" content="{{ page.description|default(site.description)|e }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@CecilSSG">
+    <meta name="twitter:site" content="@Cecil_Static">
     <title>{% apply spaceless %}{% block title %}
 {{ page.title }} &middot; {{ site.title }}
 {% endblock title %}{% endapply %}</title>
@@ -44,7 +44,7 @@
         border-color: #2b5c9b;
       }
       .btn-primary .counter {
-        color: #4078c0;
+        color: #163C56;
       }
       #quickstart-button,
       #download-button {
@@ -62,7 +62,44 @@
       .markdown-body> :nth-child(0n+2) {
         margin-top: 0 !important;
       }
+      /* New logo & design */
+      body {
+        font-family: Montserrat,"Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 1rem;
+        font: 13px/1.4 Montserrat,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        color: #092F44;
+      }
+      a {
+        color: #7B99A9;
+      }
+      .masthead a {
+        color: #F2D07F;
+      }
+      .bg-gray-dark {
+        background-color: #163C56!important;
+      }
+      .jumbotron h1 {
+        font-weight: 600;
+      }
+      .jumbotron .btn {
+        font-weight: 500;
+      }
+      .btn-primary {
+        color: #163C56;
+        background-color: #F2D07F;
+        background-image: -webkit-linear-gradient(#F2D07F, #F2D07F);
+        background-image: linear-gradient(#F2D07F, #F2D07F);
+        border-color: #F2D07F;
+      }
+      .btn-primary:hover {
+        color: #092F44;
+        background-color: #7B99A9;
+        background-image: -webkit-linear-gradient(#7B99A9, #7B99A9);
+        background-image: linear-gradient(#7B99A9, #7B99A9);
+        border-color: #7B99A9;
+      }
     {% endblock head_css %}{% endapply %}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/terminal.css')|minify|url }}">
   </head>
   <body>
@@ -70,13 +107,13 @@
     <header class="masthead bg-gray-dark">
       <div class="container">
         <a href="{{ site.baseurl }}" title="{{ site.title }}" class="masthead-logo">
-          <img src="{{ asset('images/cecil-logo-white.png')|url }}" alt="{{ site.title }} logo" height="40px" />
+          <img src="{{ asset('images/cecil-logo.png')|url }}" alt="{{ site.title }} logo" height="40px" />
         </a>
         <nav class="masthead-nav">
 {% for entry in site.menus.main|sort_by_weight %}
           <a id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
 {% endfor %}
-          <a class="github-button" href="https://github.com/Cecilapp/Cecil" data-show-count="true" aria-label="Star Cecilapp/Cecil on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/Cecilapp/Cecil" data-show-count="true" aria-label="Star Cecil on GitHub">Star</a>
         </nav>
       </div>
     </header>
