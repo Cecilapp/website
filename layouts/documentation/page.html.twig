@@ -14,7 +14,7 @@ Docs > {{ parent() }}
       {{ page.content }}
 {% if site.docs_repo is defined and page.filepath is defined %}
       <p>
-        <a class="btn btn-sm btn-outline" href="{{ site.docs_repo }}{{ page.filepath|replace({'documentation/':''}) }}" role="button">
+        <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
           <span class="octicon octicon-markdown"></span>
           Suggest a modification
         </a>
@@ -23,13 +23,13 @@ Docs > {{ parent() }}
       <!-- prev/next page -->
       <p>
 {% if page.prev is defined %}
-        <a class="btn btn-sm btn-outline left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+        <a class="btn btn-sm left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
           <span class="octicon octicon-arrow-left"></span>
           {{ page.prev.title }}
         </a>
 {% endif %}
 {% if page.next is defined %}
-        <a class="btn btn-sm btn-outline right" href="{{ url(page.next.path) }}" role="button" title="Next">
+        <a class="btn btn-sm right" href="{{ url(page.next.path) }}" role="button" title="Next">
           {{ page.next.title }}
           <span class="octicon octicon-arrow-right"></span>
         </a>
@@ -46,7 +46,7 @@ Docs > {{ parent() }}
 {% block footer_css %}
 {{ parent() }}
       {% apply minify_css %}.is-active-link::before{
-        background-color:#4078C0
+        background-color:#163C56
       }
       .column-toc {
         display: none;
