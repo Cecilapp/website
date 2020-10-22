@@ -16,7 +16,7 @@ blocks:
     octicon: paintcan
     visible: true
   - title: Generators
-    description: 'Paginaton, taxonomies, redirections (and more !) are generated automatically.'
+    description: 'Pagination, taxonomies, RSS, redirections, etc. are generated automatically.'
     octicon: hubot
     visible: true
   - title: Install & run
