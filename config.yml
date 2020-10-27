@@ -34,6 +34,8 @@ menus:
       enabled: false
     - id: cms
       enabled: false
+    - id: hosting
+      enabled: false
 output:
   formats:
     - name: phar
