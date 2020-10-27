@@ -24,7 +24,7 @@ blocks:
     octicon: cloud-download
     visible: true
   - title: Easy to deploy
-    description: '[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](https://app.netlify.com/start/deploy?repository=https://github.com/Cecilapp/the-butler&stack=cms) [![Deploy to ZEIT Now](https://zeit.co/button "Deploy to ZEIT Now")](https://zeit.co/new/project?template=https://github.com/Cecilapp/the-butler)'
+    description: '[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](https://cecil.app/hosting/netlify/deploy/) [![Deploy to ZEIT Now](https://zeit.co/button "Deploy to ZEIT Now")](https://cecil.app/hosting/vercel/deploy/)'
     octicon: rocket
     visible: true
 ---
