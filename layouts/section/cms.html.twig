@@ -1,0 +1,19 @@
+{% extends '_default/list.html.twig' %}
+
+{% block content %}
+    <div class="container">
+       <div class="columns">
+         <div class="four-fourths column markdown-body">
+{% for p in pages %}
+           <div class="page">
+             <h2 class="page-title">
+               <a href="{{ url(p) }}">{{ p.title|e }}</a>
+             </h2>
+               {{ p.content|excerpt_html }}
+          </div>
+{% endfor %}
+        </div>
+      </div>
+    </div>
+{% include 'partials/pagination.html.twig' %}
+{% endblock content %}
