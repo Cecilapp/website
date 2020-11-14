@@ -8,23 +8,29 @@ blocks:
     octicon: zap
     visible: true
   - title: Files only
-    description: 'Content is stored in flat files, written in [Markdown](https://daringfireball.net/projects/markdown/) with [YAML front matter](/documentation/content/#front-matter).'
+    description: Content is stored in flat files, written in [Markdown](https://daringfireball.net/projects/markdown/)
+      with [YAML front matter](/documentation/content/#front-matter).
     octicon: markdown
     visible: true
   - title: Customisable
-    description: 'Powered by [Twig](https://twig.symfony.com/doc/templates.html), a flexible template engine, with [theme](https://github.com/Cecilapp/theme-hyde) support.'
+    description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
+      flexible template engine, with [theme](https://github.com/Cecilapp/theme-hyde)
+      support.
     octicon: paintcan
     visible: true
   - title: Generators
-    description: 'Pagination, taxonomies, RSS, redirections, etc. are generated automatically.'
+    description: Pagination, taxonomies, RSS, redirections, etc. are generated automatically.
     octicon: hubot
     visible: true
   - title: Install & run
-    description: '[Download](/download/) just one file and run it.'
+    description: "[Download](/download/) just one file and run it."
     octicon: cloud-download
     visible: true
   - title: Easy to deploy
-    description: '[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](https://cecil.app/hosting/netlify/deploy/) [![Deploy to ZEIT Now](https://zeit.co/button "Deploy to ZEIT Now")](https://cecil.app/hosting/vercel/deploy/)'
+    description: "Create & deploy a new blog in 1 minute!  \n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
+      \"Deploy to Netlify\")](https://cecil.app/hosting/netlify/deploy/) [![Deploy
+      to ZEIT Now](https://zeit.co/button \"Deploy to ZEIT Now\")](https://cecil.app/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
+
 ---
