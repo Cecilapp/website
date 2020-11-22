@@ -50,8 +50,12 @@ output:
     - name: php
       mediatype: 'text/html'
       extension: 'php'
+    - name: algolia
+      mediatype: 'application/json'
+      extension: 'json'
   pagetypeformats:
-    section: ['html', 'atom', 'rss', 'json']
+    homepage: ['html', 'algolia']
+    section: ['html', 'atom', 'json']
 virtualpages:
   - path: _redirects
     output: netlify_redirects
