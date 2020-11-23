@@ -6,7 +6,8 @@
 
 {% block head_css %}
 {{ parent() }}
-      {% apply minify_css %}@media (max-width: 760px) {
+{% apply minify_css %}
+      @media (max-width: 760px) {
         .jumbotron .column {
           float: none;
           width: 100%;
@@ -15,7 +16,8 @@
       }
       .about-that .column .mega-octicon {
         margin-right: .5rem;
-      }{% endapply %}
+      }
+{% endapply %}
 {% endblock head_css %}
 
 {% block content %}
@@ -29,21 +31,23 @@
             <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-reverse not-on-mobile">Download</a>
           </div>
           <div class="one-half column not-on-mobile">
-{% include 'partials/terminal.html.twig' %}
+            {%~ include 'partials/terminal.html.twig' ~%}
           </div>
         </div>
       </div>
     </div>
     <div class="container about-that">
       <div class="columns">
-{% for block in page.blocks.about %}{% if block.visible != false %}
-{% include 'partials/block-about.html.twig' with {octicon:block.octicon,title:block.title,description:block.description} only %}
-{% endif %}{% endfor %}
+        {%~ for block in page.blocks.about ~%}
+        {%- if block.visible != false -%}
+        {%~ include 'partials/block-about.html.twig' with {octicon:block.octicon,title:block.title,description:block.description} only ~%}
+        {%- endif -%}
+        {%~ endfor ~%}
       </div>
     </div>
 {% endblock content %}
 
 {% block footer_scripts %}
 {{ parent() }}
-{% include 'partials/version.js.twig' only %}
+{%~ include 'partials/version.js.twig' only ~%}
 {% endblock footer_scripts %}

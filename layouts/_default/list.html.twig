@@ -10,19 +10,19 @@
 
 {% block content %}
     <div class="container">
-       <div class="columns">
-         <div class="four-fourths column markdown-body">
-{% for p in pages %}
-           <div class="page">
-             <h2 class="page-title">
-               <a href="{{ url(p) }}">{{ p.title|e }}</a>
-             </h2>
-             <span class="page-date">{{ p.date|date("j M Y") }}</span>
-               {{ p.content|excerpt_html }}
+      <div class="columns">
+        <div class="four-fourths column markdown-body">
+          {%- for p in pages -%}
+          <div class="page">
+            <h2 class="page-title">
+              <a href="{{ url(p) }}">{{ p.title|e }}</a>
+            </h2>
+            <span class="page-date">{{ p.date|date("j M Y") }}</span>
+            {{ p.content|excerpt_html }}
           </div>
-{% endfor %}
+          {%- endfor -%}
         </div>
       </div>
     </div>
-{% include 'partials/pagination.html.twig' %}
+    {%~ include 'partials/pagination.html.twig' ~%}
 {% endblock content %}

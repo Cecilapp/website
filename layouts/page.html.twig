@@ -19,13 +19,11 @@
     <meta property="og:description" content="{{ page.description|default(site.description)|e }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Cecil_Static">
-    <title>{% apply spaceless %}{% block title %}
-{{ page.title }} &middot; {{ site.title }}
-{% endblock title %}{% endapply %}</title>
+    <title>{% apply spaceless %}{% block title %}{{ page.title }} &middot; {{ site.title }}{% endblock title %}{% endapply %}</title>
     <link rel="stylesheet" href="{{ asset('css/primer.css')|url }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png')|url }}">
     <link rel="icon" href="{{ asset('favicon.ico')|url }}">
-{% include 'partials/alternates.html.twig' with {'title':block('title')} %}
+    {%~ include 'partials/alternates.html.twig' with {'title':block('title')} ~%}
     <style>{% apply minify_css %}{% block head_css %}
       .btn-reverse:hover,
       .btn-reverse:active {
@@ -123,7 +121,7 @@
       </div>
     </header>
     <!-- content -->
-{% block content %}
+    {%~ block content ~%}
     <div class="container">
       <div class="columns">
         <div class="four-fourths column markdown-body">
@@ -131,23 +129,23 @@
         </div>
       </div>
     </div>
-{% endblock content %}
+    {%~ endblock content ~%}
     <!-- footer -->
     <div class="container">
       <footer class="footer">
-{% block footer %}
+        {%~ block footer ~%}
         <a href="{{ url('about') }}">About</a> &bull; Powered by <a href="{{ cecil.url }}">Cecil</a>, <a href="https://primer.github.io">Primer</a>, <a href="https://octicons.github.com">Octicons</a>, <a href="https://github.com/Cecilapp/website">GitHub</a>, <a href="https://forestry.io">Forestry.io</a> and <a href="https://www.netlify.com">Netlify</a><br>
         Copyright &copy; {{ 'now'|date('Y') }} <a href="{{ url(site.author.url) }}">{{ site.author.name }}</a> &bull; logo by <a href="https://www.cecillie.fr/">Cécile Ricordeau</a><br>
-        <!--<a href="https://github.com/Cecilapp/Cecil/">Cecil</a> is a free software distributed under the terms of the <a href="https://github.com/Cecilapp/Cecil/blob/master/LICENSE">MIT license</a>-->
-{% endblock footer %}
+        {#<a href="https://github.com/Cecilapp/Cecil/">Cecil</a> is a free software distributed under the terms of the <a href="https://github.com/Cecilapp/Cecil/blob/master/LICENSE">MIT license</a>#}
+        {%~ endblock footer ~%}
       </footer>
     </div>
-{% block footer_scripts %}
+    {%~ block footer_scripts ~%}
     <!-- scripts -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-{% include 'partials/googleanalytics.js.twig' %}
-{% include 'partials/anchor.js.twig' only %}
-{% endblock footer_scripts %}
+    {%~ include 'partials/googleanalytics.js.twig' ~%}
+    {%~ include 'partials/anchor.js.twig' only ~%}
+    {%~ endblock footer_scripts ~%}
     <style>{% apply minify_css %}{% block footer_css %}{% endblock footer_css %}{% endapply %}</style>
   </body>
 </html>
