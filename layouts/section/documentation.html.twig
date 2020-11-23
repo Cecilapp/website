@@ -32,10 +32,4 @@
           display: block;
         }
       }
-      {%~ include 'partials/algolia.css.twig' ~%}
 {% endapply %}{% endblock footer_css %}
-
-{% block footer_scripts %}
-  {{ parent() }}
-  {%~ include 'partials/algolia.js.twig' only ~%}
-{% endblock footer_scripts %}

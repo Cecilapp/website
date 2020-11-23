@@ -4,11 +4,6 @@
 Docs > {{ parent() }}
 {% endblock title %}
 
-{% block head_css %}
-      {{ parent() }}
-      {%~ include 'partials/algolia.css.twig' ~%}
-{% endblock head_css %}
-
 {% block content %}
 <div class="container">
   <div class="columns docs-layout">
@@ -84,5 +79,4 @@ Docs > {{ parent() }}
     hasInnerContainers: true,
   });
 {% endapply %}</script>
-{%~ include 'partials/algolia.js.twig' only ~%}
 {% endblock footer_scripts %}
