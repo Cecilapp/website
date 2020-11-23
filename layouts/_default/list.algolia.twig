@@ -3,7 +3,7 @@
     {
         "title": "{{ p.title }}",
         "content": {{ p.content|striptags|json_encode }},
-        "date": "{{ p.date }}",
+        "date": "{{ p.date|date }}",
         "href": "{{ url(p,{canonical:true}) }}",
         "objectID": "{{ p.id }}"
     }{% if not loop.last %},{% endif ~%}
