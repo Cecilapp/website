@@ -2,7 +2,7 @@
 {% for p in site.pages.all %}
     {
         "title": "{{ p.title }}",
-        "content": {{ p.content|json_encode }},
+        "content": {{ p.content|striptags|json_encode }},
         "date": "{{ p.date }}",
         "href": "{{ url(p,{canonical:true}) }}",
         "objectID": "{{ p.id }}"
