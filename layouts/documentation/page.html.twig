@@ -10,7 +10,6 @@ Docs > {{ parent() }}
     <!-- menu -->
 {% include 'partials/docs-menu.html.twig' %}
     <!-- markdown -->
-    <input type="text" id="search-input" placeholder="Search..." size="50" />
     <div class="one-half column markdown-body">
       {{ page.content }}
 {% if site.docs_repo is defined and page.filepath is defined %}
@@ -75,42 +74,4 @@ Docs > {{ parent() }}
     hasInnerContainers: true,
   });
 {% endapply %}</script>
-{# Algolia #}
-<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-<script>
-  var client = algoliasearch('PVTO81KCEC', 'd4f7a88b01ac073e9bb24dc264ead2dc');
-  var index = client.initIndex('full');
-  function newHitsSource(index, params) {
-    return function doSearch(query, cb) {
-      index
-        .search(query, params)
-        .then(function(res) {
-          cb(res.hits, res);
-        })
-        .catch(function(err) {
-          console.error(err);
-          cb([]);
-        });
-    };
-  }
-  autocomplete('#search-input', { hint: false }, [
-    {
-      source: newHitsSource(index, { hitsPerPage: 5 }),
-      displayKey: 'title',
-      templates: {
-        footer: '<hr><span class="search-foot">Powered by <a href="https://www.algolia.com/" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="https://www.carnivorousplants.co.uk/img/algolia.svg" width="47" height="15"></a></span>',
-        suggestion: function(suggestion) {
-          return '<div class="search-title"><strong>' +
-              suggestion._highlightResult.title.value +
-              '</strong></div>' + '<div class="search-snippet">...' +
-              suggestion._snippetResult.content.value + '...</div>';
-        }
-      }
-    }
-  ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
-    console.log(event, suggestion, dataset, context);
-    window.location.href = suggestion.href;
-  });
-</script>
 {% endblock footer_scripts %}
