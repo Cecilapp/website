@@ -52,6 +52,7 @@ output:
       extension: 'php'
     - name: algolia
       mediatype: 'application/json'
+      suffix: 'algolia'
       extension: 'json'
   pagetypeformats:
     homepage: ['html', 'algolia']
