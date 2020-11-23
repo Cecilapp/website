@@ -8,36 +8,38 @@ Docs > {{ parent() }}
 <div class="container">
   <div class="columns docs-layout">
     <!-- menu -->
-{% include 'partials/docs-menu.html.twig' %}
+    {%~ include 'partials/docs-menu.html.twig' ~%}
     <!-- markdown -->
     <div class="one-half column markdown-body">
+      {%~ include 'partials/search-box.html.twig' ~%}
+      {# content #}
       {{ page.content }}
-{% if site.docs_repo is defined and page.filepath is defined %}
+      {%- if site.docs_repo is defined and page.filepath is defined -%}
       <p>
         <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
           <span class="octicon octicon-markdown"></span>
           Suggest a modification
         </a>
       </p>
-{% endif %}
+      {%- endif -%}
       <!-- prev/next page -->
       <p>
-{% if page.prev is defined %}
+        {%- if page.prev is defined -%}
         <a class="btn btn-sm left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
           <span class="octicon octicon-arrow-left"></span>
           {{ page.prev.title }}
         </a>
-{% endif %}
-{% if page.next is defined %}
+        {%- endif -%}
+        {%- if page.next is defined -%}
         <a class="btn btn-sm right" href="{{ url(page.next.path) }}" role="button" title="Next">
           {{ page.next.title }}
           <span class="octicon octicon-arrow-right"></span>
         </a>
-{% endif %}
+        {%- endif -%}
       </p>
     </div>
     <div class="one-fourth column column-toc">
-      {% include 'partials/toc.html.twig' only %}
+      {%~ include 'partials/toc.html.twig' only ~%}
     </div>
   </div>
 </div>
@@ -74,4 +76,5 @@ Docs > {{ parent() }}
     hasInnerContainers: true,
   });
 {% endapply %}</script>
+{%~ include 'partials/algolia.js.twig' only ~%}
 {% endblock footer_scripts %}

@@ -4,19 +4,25 @@
 <div class="container">
   <div class="columns docs-layout">
     <!-- menu -->
-{% include 'partials/docs-menu.html.twig' %}
+    {%~ include 'partials/docs-menu.html.twig' ~%}
     <!-- pages in "documentation" section -->
     <div class="three-fourths column markdown-body">
       <h1>Documentation</h1>
+      {%~ include 'partials/search-box.html.twig' ~%}
       <dl>
-{% for doc in site.pages|filter_by('section','documentation')|sort_by_weight %}
+        {%- for doc in site.pages|filter_by('section','documentation')|sort_by_weight -%}
         <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
-{% if doc.description is defined %}
+        {%- if doc.description is defined -%}
         <dd>{{ doc.description|e }}</dd>
-{% endif %}
-{% endfor %}
+        {%- endif -%}
+        {%- endfor -%}
       </dl>
     </div>
   </div>
 </div>
 {% endblock content %}
+
+{% block footer_scripts %}
+  {{ parent() }}
+  {%~ include 'partials/algolia.js.twig' only ~%}
+{% endblock footer_scripts %}
