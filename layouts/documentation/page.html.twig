@@ -4,6 +4,11 @@
 Docs > {{ parent() }}
 {% endblock title %}
 
+{% block head_css %}
+      {{ parent() }}
+      {%~ include 'partials/algolia.css.twig' ~%}
+{% endblock head_css %}
+
 {% block content %}
 <div class="container">
   <div class="columns docs-layout">
@@ -46,11 +51,11 @@ Docs > {{ parent() }}
 {% endblock content %}
 
 {% block footer_css %}
-{{ parent() }}
-      {% apply minify_css %}.is-active-link::before{
-        background-color:#163C56
+{{ parent() }}{% apply minify_css %}
+      .is-active-link::before {
+        background-color: #163C56
       }
-      .column-toc {
+      .docs-menu, .column-toc {
         display: none;
       }
       @media (min-width: 546px) {
@@ -60,8 +65,11 @@ Docs > {{ parent() }}
           position: sticky;
           top: 20px;
         }
-      }{% endapply %}
-{% endblock footer_css %}
+        .docs-menu {
+          display: block;
+        }
+      }
+{% endapply %}{% endblock footer_css %}
 
 {% block footer_scripts %}
 {{ parent() }}

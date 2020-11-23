@@ -22,6 +22,19 @@
 </div>
 {% endblock content %}
 
+{% block footer_css %}
+{{ parent() }}{% apply minify_css %}
+      .docs-menu {
+        display: none;
+      }
+      @media (min-width: 546px) {
+        .docs-menu {
+          display: block;
+        }
+      }
+      {%~ include 'partials/algolia.css.twig' ~%}
+{% endapply %}{% endblock footer_css %}
+
 {% block footer_scripts %}
   {{ parent() }}
   {%~ include 'partials/algolia.js.twig' only ~%}
