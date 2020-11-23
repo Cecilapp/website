@@ -1,11 +1,12 @@
 [
-{% for p in site.pages.all %}
-    {
-        "title": "{{ p.title }}",
-        "content": {{ p.content|striptags|json_encode }},
-        "date": "{{ p.date|date }}",
-        "href": "{{ url(p,{canonical:true}) }}",
-        "objectID": "{{ p.id }}"
-    }{% if not loop.last %},{% endif ~%}
+{#% for p in site.pages|filter(p => p.section == 'documentation') %#}
+{% for p in site.pages|filter_by('section','documentation') %}
+  {
+    "title": "{{ p.title }}",
+    "content": {{ p.content|striptags|json_encode }},
+    "date": "{{ p.date|date('c') }}",
+    "href": "{{ url(p,{canonical:true}) }}",
+    "objectID": "{{ p.id }}"
+  }{% if not loop.last %},{% endif ~%}
 {% endfor %}
 ]
