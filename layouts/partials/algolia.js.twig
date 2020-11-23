@@ -1,8 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-<script>
-  var client = algoliasearch('PVTO81KCEC', 'd4f7a88b01ac073e9bb24dc264ead2dc');
-  var index = client.initIndex('full');
+<script>{% apply minify_js %}
+  var client = algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_api_key }}');
+  var index = client.initIndex('{{ site.algolia.index }}');
   function newHitsSource(index, params) {
     return function doSearch(query, cb) {
       index
@@ -32,4 +32,4 @@
     console.log(event, suggestion, dataset, context);
     window.location.href = suggestion.href;
   });
-</script>
+{% endapply %}</script>

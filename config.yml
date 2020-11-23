@@ -72,3 +72,7 @@ cache:
 #static:
 #  exclude:
 #    - '*.phar*'
+algolia:
+  application_id: 'PVTO81KCEC'
+  search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
+  index: 'documentation'
