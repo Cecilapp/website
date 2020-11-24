@@ -1,6 +1,6 @@
 [
 {#- for p in site.pages|filter(p => p.section == 'documentation') -#}
-{%- for p in site.pages|filter_by('section','documentation') -%}
+{%- for p in site.pages|filter_by('section','documentation')|sort_by_weight -%}
   {%- set count = 0 -%}
   {%- set page_heads = p.content|split('<h3>') -%}
   {%- if page_heads|length > 0 -%}
