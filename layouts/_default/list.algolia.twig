@@ -15,8 +15,9 @@
     "date": "{{ p.date|date('c') }}",
     "href": "{{ url(p,{canonical:true}) }}#{{ head_anchor }}",
     "objectID": "{{ p.id }}#{{ head_anchor }}"
-  }{% if not loop.last %},{% endif ~%}
-      {%- set count = count + 1 -%}
+  }
+        {%- if not loop.last %},{% endif ~%}
+        {%- set count = count + 1 -%}
       {%- endif -%}
     {%- endfor -%}
     {%- if not loop.last and count > 0 %},{% endif ~%}
