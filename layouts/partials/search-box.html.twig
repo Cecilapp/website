@@ -46,7 +46,7 @@
         }
         .aa-input-icon {
           position: absolute;
-          top: 45%;
+          top: 42%;
           right: 1rem;
           height: 1rem;
           width: 1rem;
@@ -61,8 +61,8 @@
           float: right;
         }
       {% endapply %}</style>
-      <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.umd.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+      <script src="{{ asset('/js/algoliasearch.umd.min.js')|url }}"></script>
+      <script src="{{ asset('/js/autocomplete.min.js')|url }}"></script>
       <script>{% apply minify_js %}
         var client = algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_api_key }}');
         var index = client.initIndex('{{ site.algolia.index }}');
@@ -84,7 +84,7 @@
             source: newHitsSource(index, { hitsPerPage: 5 }),
             displayKey: 'title',
             templates: {
-              footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="/images/algolia.svg" width="47" height="15"></a></span>',
+              footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg') }}" width="47" height="15" alt="Algolia logo"></a></span>',
               suggestion: function(suggestion) {
                 return '<div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
                   + '<div class="aa-tpl-snippet">…' + suggestion._snippetResult.content.value + '…</div>';
