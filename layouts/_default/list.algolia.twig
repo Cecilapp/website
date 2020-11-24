@@ -1,12 +1,22 @@
 [
-{#% for p in site.pages|filter(p => p.section == 'documentation') %#}
-{% for p in site.pages|filter_by('section','documentation') %}
+{#- for p in site.pages|filter(p => p.section == 'documentation') -#}
+{%- for p in site.pages|filter_by('section','documentation') -%}
+  {%- set page_heads = p.content|split('<h2>') -%}
+  {%- if page_heads|length > 0 -%}
+    {%- for head in page_heads -%}
+      {%- if loop.index0 > 0 -%}
+        {%- set head_split = page_heads[loop.index0]|split('</h2>') -%}
+        {%- set head_anchor = head_split[0]|trim|striptags|lower|replace({' ':'-'}) -%}
+        {%- set head_content = head_split[1]|striptags ~%}
   {
     "title": "{{ p.title }}",
-    "content": {{ p.content|striptags|json_encode }},
+    "content": {{ head_content|json_encode }},
     "date": "{{ p.date|date('c') }}",
-    "href": "{{ url(p,{canonical:true}) }}",
-    "objectID": "{{ p.id }}"
+    "href": "{{ url(p,{canonical:true}) }}#{{ head_anchor }}",
+    "objectID": "{{ p.id }}#{{ head_anchor }}"
   }{% if not loop.last %},{% endif ~%}
-{% endfor %}
+      {%- endif -%}
+    {%- endfor -%}{% if not loop.last %},{% endif ~%}
+  {%- endif -%}
+{%- endfor ~%}
 ]
