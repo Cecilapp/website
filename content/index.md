@@ -14,7 +14,7 @@ blocks:
     visible: true
   - title: Customisable
     description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
-      flexible template engine, with [theme](https://github.com/Cecilapp/theme-hyde)
+      flexible template engine, with [theme](https://github.com/Cecilapp?q=theme#org-repositories)
       support.
     octicon: paintcan
     visible: true
@@ -28,8 +28,8 @@ blocks:
     visible: true
   - title: Easy to deploy
     description: "Create & deploy a new blog in 1 minute!  \n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
-      \"Deploy to Netlify\")](https://cecil.app/hosting/netlify/deploy/) [![Deploy
-      to ZEIT Now](https://zeit.co/button \"Deploy to ZEIT Now\")](https://cecil.app/hosting/vercel/deploy/)"
+      \"Deploy to Netlify\")](/hosting/netlify/deploy/) [![Deploy
+      to ZEIT Now](https://zeit.co/button \"Deploy to ZEIT Now\")](/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
 
