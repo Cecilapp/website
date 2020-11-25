@@ -19,7 +19,7 @@ blocks:
     octicon: paintcan
     visible: true
   - title: Generators
-    description: Pagination, sitemap, redirections, robots.txt, 404, taxonomies, RSS are generated automatically.
+    description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
     octicon: hubot
     visible: true
   - title: No installation
