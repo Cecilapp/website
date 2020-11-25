@@ -7,9 +7,9 @@ Docs > {{ parent() }}
 {% block content %}
 <div class="container">
   <div class="columns docs-layout">
-    <!-- menu -->
+    {# menu #}
     {%~ include 'partials/docs-menu.html.twig' ~%}
-    <!-- markdown -->
+    {# markdown #}
     <div class="one-half column markdown-body">
       {%~ include 'partials/search-box.html.twig' ~%}
       {# content #}
@@ -22,7 +22,7 @@ Docs > {{ parent() }}
         </a>
       </p>
       {%- endif -%}
-      <!-- prev/next page -->
+      {# prev/next page #}
       <p>
         {%- if page.prev is defined -%}
         <a class="btn btn-sm left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
