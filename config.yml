@@ -7,10 +7,12 @@ author:
   url: "https://arnaudligny.fr"
 keywords: ["static", "generator", "SSG", "PHP", "Twig"]
 social:
-  - name: GitHub
-    url: https://github.com/Cecilapp/Cecil
-  - name: Twitter
-    url: https://twitter.com/Cecil_Static
+  twitter:
+    site: Cecil_Static
+    creator: ArnaudLigny
+  github:
+    repo: https://github.com/Cecilapp/Cecil
+image: /images/cecil-card.png
 menus:
   main:
     - id: documentation
@@ -50,10 +52,7 @@ output:
       extension: 'json'
   pagetypeformats:
     homepage: ['html', 'algolia']
-    section: ['html', 'atom', 'json']
-virtualpages:
-  - path: documentation/overview
-    redirect: documentation
+    section: ['html', 'atom']
 theme:
   - netlify
 release:
@@ -62,8 +61,6 @@ release:
 googleanalytics: UA-387892-21
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
-cache:
-  enabled: true
 #static:
 #  exclude:
 #    - '*.phar*'
