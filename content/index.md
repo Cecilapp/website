@@ -5,25 +5,24 @@ updated: 2020-11-25
 blocks:
   about:
   - title: Fast & Secure
-    description: 'No server, no database, no dependency: performance and security.'
+    description: 'No database, no server, no dependency: performance and security.'
     octicon: zap
     visible: true
   - title: Files only
-    description: Content is stored in flat files, written in [Markdown](https://daringfireball.net/projects/markdown/)
-      with [YAML front matter](/documentation/content/#front-matter).
+    description: Your content is stored in [Markdown](https://daringfireball.net/projects/markdown/) flat files
+      with a [front matter](/documentation/content/#front-matter).
     octicon: markdown
     visible: true
   - title: Customisable
     description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
-      flexible template engine, with [theme](https://github.com/Cecilapp?q=theme#org-repositories)
-      support.
+      flexible template engine, with [theme](https://github.com/Cecilapp?q=theme#org-repositories) support.
     octicon: paintcan
     visible: true
   - title: Generators
-    description: Pagination, taxonomies, RSS, redirections (and more) are generated automatically.
+    description: Pagination, sitemap, redirections, robots.txt, 404, taxonomies, RSS are generated automatically.
     octicon: hubot
     visible: true
-  - title: Install & run
+  - title: No installation
     description: "[Download](/download/) one file and run it with PHP."
     octicon: desktop-download
     visible: true
