@@ -9,7 +9,7 @@ blocks:
     octicon: zap
     visible: true
   - title: Files only
-    description: Your content is stored in [Markdown](https://daringfireball.net/projects/markdown/) flat files
+    description: Your content is stored in [Markdown](/documentation/content/#body) flat files
       with a [front matter](/documentation/content/#front-matter).
     octicon: markdown
     visible: true
