@@ -44,9 +44,6 @@ output:
     - name: sha1
       mediatype: 'text/plain'
       extension: 'phar.sha1'
-    - name: netlify_redirects
-      mediatype: 'text/plain'
-      extension: ''
     - name: php
       mediatype: 'text/html'
       extension: 'php'
@@ -58,10 +55,10 @@ output:
     homepage: ['html', 'algolia']
     section: ['html', 'atom', 'json']
 virtualpages:
-  - path: _redirects
-    output: netlify_redirects
   - path: documentation/overview
     redirect: documentation
+theme:
+  - netlify
 release:
   name: cecil.phar
   sha1: cecil.phar.sha1
