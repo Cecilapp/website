@@ -44,9 +44,6 @@ output:
     - name: sha1
       mediatype: 'text/plain'
       extension: 'phar.sha1'
-    - name: php
-      mediatype: 'text/html'
-      extension: 'php'
     - name: algolia
       mediatype: 'application/json'
       suffix: 'algolia'
