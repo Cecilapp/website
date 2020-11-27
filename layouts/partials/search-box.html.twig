@@ -84,7 +84,7 @@
             source: newHitsSource(index, { hitsPerPage: 5 }),
             displayKey: 'title',
             templates: {
-              footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg') }}" width="47" height="15" alt="Algolia logo"></a></span>',
+              footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg')|url }}" width="47" height="15" alt="Algolia logo"></a></span>',
               suggestion: function(suggestion) {
                 return '<div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
                   + '<div class="aa-tpl-snippet">…' + suggestion._snippetResult.content.value + '…</div>';
