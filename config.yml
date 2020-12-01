@@ -54,6 +54,7 @@ output:
     homepage: ['html', 'algolia']
     section: ['html', 'atom']
 theme:
+  - cecil
   - netlify
 release:
   name: cecil.phar

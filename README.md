@@ -4,9 +4,18 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2353ad5a-611d-4236-9542-183fe0d585c7/deploy-status)](https://app.netlify.com/sites/cecilapp/deploys)
 
-## Build & serve locally
+## Development
 
 ```bash
+npx tailwindcss-cli build ./static/tailwind.css -o ./static/styles.css
 curl -LO https://cecil.app/cecil.phar
-php cecil.phar serve
+php cecil.phar serve -v
+```
+
+## Production
+
+```bash
+NODE_ENV=production npx tailwindcss-cli build ./static/tailwind.css -o ./static/styles.css
+curl -LO https://cecil.app/cecil.phar
+php cecil.phar build
 ```
