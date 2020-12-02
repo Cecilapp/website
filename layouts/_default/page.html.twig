@@ -24,7 +24,7 @@
         <a href="{{ url() }}" title="{{ site.title }}" class="text-2xl md:float-left">
           <img src="{{ asset('images/cecil-logo.png')|url }}" alt="{{ site.title }} logo" class="h-10" />
         </a>
-        <nav class="mt-3 md:mt-0 pt-3 md:pt-0 border-t md:border-t-0 border-lightblue space-x-4 > * + * md:float-right">
+        <nav class="mt-3 md:mt-0 pt-3 md:pt-0 border-t md:border-t-0 border-lightblue space-x-4 > * md:float-right">
           {%- for entry in site.menus.main|sort_by_weight -%}
           <a class="hover:text-white" id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">{{ entry.name }}</a>
           {%- endfor -%}
