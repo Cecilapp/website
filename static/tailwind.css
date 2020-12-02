@@ -12,6 +12,9 @@
   a {
     @apply text-mediumblue;
   }
+  img, svg {
+    @apply inline-block;
+  }
 }
 
 /* Base styles */
