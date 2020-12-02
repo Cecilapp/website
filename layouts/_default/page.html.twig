@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
     {%- if getenv('NODE_ENV') == 'production' ~%}
     <style>
-	    {{- asset('styles.css') ~}}
+	    {{- asset('styles.css')|inline ~}}
     </style>
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css',{minify:false,fingerprint:false}) }}" />
