@@ -15,9 +15,12 @@
   img, svg {
     @apply inline-block;
   }
+  img {
+    @apply mb-1;
+  }
 }
 
-/* Base styles */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.5rem;
 }
@@ -31,26 +34,35 @@ h1 {
 p {
   @apply mb-4;
 }
+
 header a {
   @apply text-gold;
 }
 .jumbotron {
   @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium;
 }
+
+/* Components */
 .btn {
-  @apply inline-block py-3 px-6 rounded;
+  @apply inline-block mb-2 py-3 px-6 no-underline border border-blue rounded;
+}
+.btn-sm {
+  @apply py-1 px-3;
+}
+.btn:hover {
+  @apply bg-blue text-white border-transparent;
 }
 .btn-gold {
-  @apply bg-gold text-darkblue border border-gold;
+  @apply bg-gold text-darkblue border-gold;
 }
 .btn-gold:hover {
   @apply bg-white text-darkblue border-transparent;
 }
 .btn-trans {
-  @apply bg-transparent text-white border border-white;
+  @apply bg-transparent text-white border-white;
 }
 .btn-trans:hover {
-  @apply bg-white text-darkblue border-transparent;
+  @apply bg-white text-darkblue;
 }
 
 /* Terminal */
