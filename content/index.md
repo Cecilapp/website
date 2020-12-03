@@ -16,7 +16,7 @@ blocks:
   - title: Customisable
     description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
       flexible template engine, with [theme](https://github.com/Cecilapp?q=theme#org-repositories) support.
-    octicon: paintcan
+    octicon: paintbrush
     visible: true
   - title: Generators
     description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
@@ -27,7 +27,7 @@ blocks:
     octicon: desktop-download
     visible: true
   - title: Easy to deploy
-    description: "Create & deploy a new blog in 1 minute!\n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
+    description: "Create & deploy a new blog in 1 minute!  \n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
       \"Deploy to Netlify\")](/hosting/netlify/deploy/) [![Deploy
       to ZEIT Now](https://zeit.co/button \"Deploy to ZEIT Now\")](/hosting/vercel/deploy/)"
     octicon: rocket

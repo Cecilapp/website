@@ -1,69 +1,50 @@
 {% extends 'page.html.twig' %}
 
-{% block title %}
-Docs > {{ parent() }}
-{% endblock title %}
-
 {% block content %}
-<div class="container">
-  <div class="columns docs-layout">
-    {# menu #}
+<div class="flex flex-row xl:space-x-8">
+	{# menu #}
+  <div class="flex-none w-48 hidden xl:block">
     {%~ include 'partials/docs-menu.html.twig' ~%}
-    {# markdown #}
-    <div class="one-half column markdown-body">
-      {%~ include 'partials/search-box.html.twig' ~%}
-      {# content #}
+  </div>
+	{# markdown #}
+  <div class="flex-grow overflow-y-auto">
+    {%~ include 'partials/search-box.html.twig' ~%}
+    {# content #}
+    <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
       {{ page.content }}
-      {%- if site.docs_repo is defined and page.filepath is defined -%}
-      <p>
-        <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-          <span class="octicon octicon-markdown"></span>
-          Suggest a modification
-        </a>
-      </p>
+    </div>
+    {# suggest a modification #}
+    {%- if site.docs_repo is defined and page.filepath is defined -%}
+    <p><hr /></p>
+    <p>
+      <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
+        Suggest a modification
+      </a>
+    </p>
+    {%- endif -%}
+    {# prev/next page #}
+    <p>
+      {%- if page.prev is defined -%}
+      <a class="float-left text-gray-500 text-bold no-underline" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+        ← {{ page.prev.title }}
+      </a>
       {%- endif -%}
-      {# prev/next page #}
-      <p>
-        {%- if page.prev is defined -%}
-        <a class="btn btn-sm left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-          <span class="octicon octicon-arrow-left"></span>
-          {{ page.prev.title }}
-        </a>
-        {%- endif -%}
-        {%- if page.next is defined -%}
-        <a class="btn btn-sm right" href="{{ url(page.next.path) }}" role="button" title="Next">
-          {{ page.next.title }}
-          <span class="octicon octicon-arrow-right"></span>
-        </a>
-        {%- endif -%}
-      </p>
-    </div>
-    <div class="one-fourth column column-toc">
-      {%~ include 'partials/toc.html.twig' only ~%}
-    </div>
+      {%- if page.next is defined -%}
+      <a class="float-right text-gray-500 text-bold no-underline" href="{{ url(page.next.path) }}" role="button" title="Next">
+        {{ page.next.title }} →
+      </a>
+      {%- endif -%}
+    </p>
+  </div>
+	{# toc #}
+  <div class="flex-none w-48 hidden xl:block xl:sticky">
+    {%~ include 'partials/toc.html.twig' only ~%}
   </div>
 </div>
 {% endblock content %}
 
 {% block footer_css %}
 {{ parent() }}{% apply minify_css %}
-      .is-active-link::before {
-        background-color: #163C56
-      }
-      .docs-menu, .column-toc {
-        display: none;
-      }
-      @media (min-width: 546px) {
-        .column-toc {
-          display: block;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 20px;
-        }
-        .docs-menu {
-          display: block;
-        }
-      }
 {% endapply %}{% endblock footer_css %}
 
 {% block footer_scripts %}
@@ -74,7 +55,7 @@ Docs > {{ parent() }}
 <script>{% apply minify_js %}
   tocbot.init({
     tocSelector: '.toc',
-    contentSelector: '.markdown-body',
+    contentSelector: '.prose',
     headingSelector: 'h2, h3, h4',
     hasInnerContainers: true,
   });

@@ -1,4 +1,25 @@
-        <div class="one-third column">
-          <h2><span class="mega-octicon octicon-{{ octicon }}"></span>{{ title }}</h2>
-          {{ description|markdown_to_html }}
-        </div>
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center h-12 w-12 text-blue">
+                {%- set octicons = site.data.octicons ~%}
+                {%- if 24 in octicons[octicon].heights ~%}
+                  {%- set path = octicons[octicon].heights[24].path ~%}
+                  {%- set size = 24 ~%}
+                {%- else ~%}
+                  {%- set path = octicons[octicon].heights[16].path ~%}
+                  {%- set size = 16 ~%}
+                {%- endif ~%}
+                <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 {{ size }} {{ size }}" fill="currentColor" aria-hidden="true">
+                  {{ path }}
+                </svg>
+              </div>
+            </div>
+            <div class="ml-4">
+              <dt class="text-lg leading-6 font-medium">
+                {{ title }}
+              </dt>
+              <dd class="mt-2 text-sm">
+                {{ description|markdown_to_html }}
+              </dd>
+            </div>
+          </div>

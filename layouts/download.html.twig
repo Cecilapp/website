@@ -1,18 +1,13 @@
 {% extends 'page.html.twig' %}
 
 {% block content %}
-<div class="container">
-  <div class="columns docs-layout">
-    <div class="one-fourth column">
-      <a id="download-button" class="btn btn-primary btn-block" href="{{ url(site.release.name) }}" role="button">Download</a><br />
-      <a class="btn btn-sm btn-block" href="{{ url(site.release.sha1) }}" role="button">File checksum</a>
-      <br />
-    </div>
-    <div class="three-fourths column markdown-body">
+    <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">Download</a>
+    <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">File checksum</a>
+    <p><hr /></p>
+    {# content #}
+    <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
       {{ page.content }}
     </div>
-  </div>
-</div>
 {% endblock content %}
 
 {% block footer_scripts %}

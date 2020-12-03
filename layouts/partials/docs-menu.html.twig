@@ -1,10 +1,11 @@
-<div class="one-fourth column">
-  <nav class="menu docs-menu">
-    <span class="menu-heading" id="menu-heading">Documentation</span>
+<div class="border rounded w-48">
+	<ul class="list-reset">
     {%- for item in site.pages|filter_by('section','documentation')|sort_by_weight -%}
-    {%- if item.id != 'documentation/index' -%}
-    <a class="menu-item{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} selected{% endif %}" href="{{ url(item) }}">{{ item.title }}</a></li>
-    {%- endif -%}
+      {%- if item.id != 'documentation/index' -%}
+    <li>
+      <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-gray-100{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue border-l-2{% endif %}">{{ item.title }}</a>
+    </li>
+      {%- endif -%}
     {%- endfor -%}
-  </nav>
+	</ul>
 </div>
