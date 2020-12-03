@@ -2,9 +2,9 @@
 
 {% block content %}
         {# content #}
-        <div class="prose-sm lg:prose">
-          <h1>Documentation</h1>
+        <div class="prose prose-sm lg:prose">
           {%~ include 'partials/search-box.html.twig' ~%}
+          <h1>Documentation</h1>
           <dl>
             {%- for doc in site.pages|filter_by('section','documentation')|sort_by_weight -%}
             <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
