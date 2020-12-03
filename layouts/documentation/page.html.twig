@@ -7,17 +7,17 @@
     {%~ include 'partials/docs-menu.html.twig' ~%}
   </div>
 	{# markdown #}
-  <div class="flex-grow">
+  <div class="flex-grow overflow-y-auto">
     {%~ include 'partials/search-box.html.twig' ~%}
     {# content #}
-    <div class="prose-sm lg:prose">
+    <div class="prose prose-sm lg:prose">
       {{ page.content }}
     </div>
     {# suggest a modification #}
     {%- if site.docs_repo is defined and page.filepath is defined -%}
+    <p><hr /></p>
     <p>
       <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-        <span class="octicon octicon-markdown"></span>
         Suggest a modification
       </a>
     </p>
@@ -25,15 +25,13 @@
     {# prev/next page #}
     <p>
       {%- if page.prev is defined -%}
-      <a class="btn btn-sm left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-        <span class="octicon octicon-arrow-left"></span>
-        {{ page.prev.title }}
+      <a class="float-left text-gray-500 text-bold no-underline" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+        ← {{ page.prev.title }}
       </a>
       {%- endif -%}
       {%- if page.next is defined -%}
-      <a class="btn btn-sm right" href="{{ url(page.next.path) }}" role="button" title="Next">
-        {{ page.next.title }}
-        <span class="octicon octicon-arrow-right"></span>
+      <a class="float-right text-gray-500 text-bold no-underline" href="{{ url(page.next.path) }}" role="button" title="Next">
+        {{ page.next.title }} →
       </a>
       {%- endif -%}
     </p>
