@@ -1,35 +1,17 @@
 {% extends 'page.html.twig' %}
 
 {% block content %}
-<div class="container">
-  <div class="columns docs-layout">
-    {# menu #}
-    {%~ include 'partials/docs-menu.html.twig' ~%}
-    {# pages in "documentation" section #}
-    <div class="three-fourths column markdown-body">
-      <h1>Documentation</h1>
-      {%~ include 'partials/search-box.html.twig' ~%}
-      <dl>
-        {%- for doc in site.pages|filter_by('section','documentation')|sort_by_weight -%}
-        <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
-        {%- if doc.description is defined -%}
-        <dd>{{ doc.description|e }}</dd>
-        {%- endif -%}
-        {%- endfor -%}
-      </dl>
-    </div>
-  </div>
-</div>
+        {# content #}
+        <div class="prose-sm lg:prose">
+          <h1>Documentation</h1>
+          {%~ include 'partials/search-box.html.twig' ~%}
+          <dl>
+            {%- for doc in site.pages|filter_by('section','documentation')|sort_by_weight -%}
+            <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
+              {%- if doc.description is defined -%}
+            <dd>{{ doc.description|e }}</dd>
+              {%- endif -%}
+            {%- endfor -%}
+          </dl>
+        </div>
 {% endblock content %}
-
-{% block footer_css %}
-{{ parent() }}{% apply minify_css %}
-      .docs-menu {
-        display: none;
-      }
-      @media (min-width: 546px) {
-        .docs-menu {
-          display: block;
-        }
-      }
-{% endapply %}{% endblock footer_css %}
