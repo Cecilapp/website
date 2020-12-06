@@ -10,10 +10,8 @@ module.exports = {
       colors: {
         'blue': '#163C56', // text
         'gold': '#F2D07F',
-        'darkblue': '#092F44',
-        'mediumblue': '#092F44', // links
-        'ultralightblue': '#7B99A9',
-        'lightblue': '#47657A',
+        'darkblue': '#092F44', // links
+        'bluegray': '#7B99A9',
       },
       fontFamily: {
         'sans': ['Montserrat', 'sans-serif'],
@@ -21,22 +19,22 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.blue'),
+            color: theme('colors.darkblue'),
             a: {
-              color: theme('colors.mediumblue'),
+              color: theme('colors.blue'),
               '&:hover': {
-                color: theme('colors.mediumblue'),
+                color: theme('colors.blue'),
               },
             },
             h1: {
-              color: theme('colors.blue'),
+              color: theme('colors.darkblue'),
               fontWeight: '700',
               paddingBottom: '.3em',
-              borderBottom: '1px solid #eee',
+              borderBottom: '1px solid #e5e7eb',
               marginBottom: 0,
             },
             h2: {
-              color: theme('colors.blue'),
+              color: theme('colors.darkblue'),
             },
           },
         },

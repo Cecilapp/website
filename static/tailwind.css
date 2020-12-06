@@ -10,7 +10,7 @@
     @apply underline;
   }
   a {
-    @apply text-mediumblue;
+    @apply text-blue;
   }
   img, svg {
     @apply inline-block;
