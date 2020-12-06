@@ -1,17 +1,8 @@
           <div class="flex">
             <div class="flex-shrink-0">
               <div class="flex items-center justify-center h-12 w-12 text-blue">
-                {%- set octicons = site.data.octicons ~%}
-                {%- if 24 in octicons[octicon].heights ~%}
-                  {%- set path = octicons[octicon].heights[24].path ~%}
-                  {%- set size = 24 ~%}
-                {%- else ~%}
-                  {%- set path = octicons[octicon].heights[16].path ~%}
-                  {%- set size = 16 ~%}
-                {%- endif ~%}
-                <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 {{ size }} {{ size }}" fill="currentColor" aria-hidden="true">
-                  {{ path }}
-                </svg>
+                {% import 'macros/octicons.twig' as octicons %}
+                {{ octicons.svg(octicon) }}
               </div>
             </div>
             <div class="ml-4">
