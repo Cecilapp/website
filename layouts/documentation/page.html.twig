@@ -40,6 +40,12 @@
   <div class="flex-none w-48 hidden xl:block xl:sticky">
     {%~ include 'partials/toc.html.twig' only ~%}
   </div>
+  <div class="back-to-top-wrapper hidden lg:block">
+	  <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
+      {% import 'macros/octicons.twig' as octicons %}
+      {{ octicons.svg('arrow-up') }}
+    </a>
+  </div>
 </div>
 {% endblock content %}
 

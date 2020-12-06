@@ -20,6 +20,23 @@
   }
 }
 
+/* Bac to top */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+.back-to-top-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+.back-to-top-link {
+  position: fixed;
+  position: sticky;
+  pointer-events: all;
+  top: calc(100vh - 3rem);
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.5rem;
