@@ -61,7 +61,7 @@ module.exports = {
       }
     }
   },
-  darkMode: 'media',
+  darkMode: 'class',
   variants: {
     typography: ['dark'],
   },
