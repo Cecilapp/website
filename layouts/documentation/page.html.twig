@@ -3,7 +3,7 @@
 {% block content %}
 <div class="flex flex-row xl:space-x-8">
 	{# menu #}
-  <div class="flex-none w-48 hidden xl:block">
+  <div class="flex-none w-48 hidden lg:block">
     {%~ include 'partials/docs-menu.html.twig' ~%}
   </div>
 	{# markdown #}
@@ -37,11 +37,9 @@
     </p>
   </div>
 	{# toc #}
-  <div class="flex-none w-48 hidden xl:block xl:sticky">
+  <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
     {%~ include 'partials/toc.html.twig' only ~%}
-  </div>
-  <div class="back-to-top-wrapper hidden lg:block">
-	  <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
+    <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
       {% import 'macros/octicons.twig' as octicons %}
       {{ octicons.svg('arrow-up') }}
     </a>
