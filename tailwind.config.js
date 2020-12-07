@@ -3,18 +3,19 @@ module.exports = {
     mode: 'all',
     content: [
       './layouts/**/*.html.twig',
-    ]
+    ],
   },
   theme: {
     extend: {
       colors: {
-        'blue': '#163C56', // text
-        'gold': '#F2D07F',
-        'darkblue': '#092F44', // links
-        'bluegray': '#7B99A9',
+        blue: '#163C56',
+        gold: '#F2D07F',
+        darkblue: '#092F44',
+        bluegray: '#7B99A9',
+        dark: '#24283b',
       },
       fontFamily: {
-        'sans': ['Montserrat', 'sans-serif'],
+        sans: ['Montserrat', 'sans-serif'],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -38,18 +39,32 @@ module.exports = {
             },
           },
         },
+        dark: {
+          css: {
+            color: '#7982a9',
+            a: {
+              color: '#9ECE6A',
+              '&:hover': {
+                color: '#9ECE6A',
+              },
+            },
+          },
+        },
       }),
     },
     container: {
       screens: {
-        sm: "100%",
-        md: "100%",
-        lg: "1024px",
-        xl: "1024px"
+        sm: '100%',
+        md: '100%',
+        lg: '1024px',
+        xl: '1024px',
       }
     }
   },
   darkMode: 'media',
+  variants: {
+    typography: ['dark'],
+  },
   plugins: [
     require('@tailwindcss/typography'),
   ],
