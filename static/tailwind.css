@@ -63,11 +63,17 @@ header a {
 .btn {
   @apply inline-block mb-2 py-3 px-6 no-underline border border-blue rounded;
 }
-.btn-sm {
-  @apply py-1 px-3;
+a.btn {
+  @apply no-underline;
+}
+a.btn:hover {
+  @apply text-white;
 }
 .btn:hover {
   @apply bg-blue text-white border-transparent;
+}
+.btn-sm {
+  @apply py-1 px-3;
 }
 .btn-gold {
   @apply bg-gold text-darkblue border-gold;
@@ -80,6 +86,9 @@ header a {
 }
 .btn-trans:hover {
   @apply bg-white text-darkblue;
+}
+a.docs-nav {
+  @apply text-blue font-bold no-underline;
 }
 
 /* Terminal */

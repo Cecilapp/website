@@ -8,33 +8,32 @@
   </div>
 	{# markdown #}
   <div class="flex-grow overflow-y-auto">
-    {%~ include 'partials/search-box.html.twig' ~%}
     {# content #}
     <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
+      {%~ include 'partials/search-box.html.twig' ~%}
       {{ page.content }}
+      {# suggest a modification #}
+      {%- if site.docs_repo is defined and page.filepath is defined -%}
+      <p>
+        <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
+          Suggest a modification
+        </a>
+      </p>
+      {%- endif -%}
+      {# prev/next page #}
+      <p>
+        {%- if page.prev is defined -%}
+        <a class="docs-nav float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+          ← {{ page.prev.title }}
+        </a>
+        {%- endif -%}
+        {%- if page.next is defined -%}
+        <a class="docs-nav float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
+          {{ page.next.title }} →
+        </a>
+        {%- endif -%}
+      </p>
     </div>
-    {# suggest a modification #}
-    {%- if site.docs_repo is defined and page.filepath is defined -%}
-    <p><hr /></p>
-    <p>
-      <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-        Suggest a modification
-      </a>
-    </p>
-    {%- endif -%}
-    {# prev/next page #}
-    <p>
-      {%- if page.prev is defined -%}
-      <a class="float-left text-gray-500 text-bold no-underline" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-        ← {{ page.prev.title }}
-      </a>
-      {%- endif -%}
-      {%- if page.next is defined -%}
-      <a class="float-right text-gray-500 text-bold no-underline" href="{{ url(page.next.path) }}" role="button" title="Next">
-        {{ page.next.title }} →
-      </a>
-      {%- endif -%}
-    </p>
   </div>
 	{# toc #}
   <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
