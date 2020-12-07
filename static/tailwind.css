@@ -81,11 +81,17 @@ a.btn:hover {
 .btn-gold:hover {
   @apply bg-white text-darkblue border-transparent;
 }
+a.btn-gold:hover {
+  @apply text-darkblue;
+}
 .btn-trans {
   @apply bg-transparent text-white border-white;
 }
 .btn-trans:hover {
   @apply bg-white text-darkblue;
+}
+a.btn-trans:hover {
+  @apply text-darkblue;
 }
 a.docs-nav {
   @apply text-blue font-bold no-underline;
