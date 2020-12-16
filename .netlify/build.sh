@@ -15,6 +15,10 @@ else
   php cecil.phar build -v --baseurl=$URL --postprocess;
 fi
 
+echo "Import Algolia index"
+npm install -g @algolia/cli
+algolia import -s _site/algolia.json -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
+
 # build success? can deploy?
 if [ $? = 0 ]; then echo "Finished Cecil build"; exit 0; fi
 
