@@ -9,9 +9,11 @@ echo "${CACHE_PATH}/${CSS_OUPUT}.sha1"
 echo $(sha1sum -c ${CACHE_PATH}/${CSS_OUPUT}.sha1 --status)
 
 # Build CSS
-if [[ -f "$CACHE_PATH/$CSS_OUPUT" ]] && [[ $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status) == 0 ]]; then
-  echo "Loads CSS from cache"
-  cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
+if [[ -f "$CACHE_PATH/$CSS_OUPUT" ]] && [[ -f "$CACHE_PATH/$CSS_OUPUT.sha1" ]]; then
+  if [[ $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status) == 0 ]]; then
+    echo "Loads CSS from cache"
+    cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
+  fi
 else
   echo "Started CSS build"
   npm install tailwindcss --silent
