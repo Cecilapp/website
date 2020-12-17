@@ -5,10 +5,11 @@ curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
 # DEBUG
+echo "$CACHE_PATH/$CSS_OUPUT"
 echo $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status)
 
 # Build CSS
-if [ -f $CACHE_PATH/$CSS_OUPUT ] && [0 = $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status)]; then
+if [ -f "$CACHE_PATH/$CSS_OUPUT" ] && [0 = $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status)]; then
   echo "Loads CSS from cache"
   cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
 else
