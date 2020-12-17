@@ -2,7 +2,7 @@ CECIL_PHAR_URL=https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.
 CACHE_PATH=/opt/build/cache
 CSS_INPUT=static/tailwind.css
 CSS_OUPUT=static/styles.css
-ALGOLIA_INDEX=algolia.json
+ALGOLIA_INDEX=_site/algolia.json
 
 
 echo "Downloading Cecil"
@@ -46,6 +46,7 @@ if [ $import_index = 1 ]; then
   echo "Started Algolia index import"
   npm install -g @algolia/cli
   algolia import -s _site/algolia.json -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
+  mkdir -p $(dirname "${CACHE_PATH}/${ALGOLIA_INDEX}")
   cp $ALGOLIA_INDEX $CACHE_PATH/$ALGOLIA_INDEX
   sha1sum $ALGOLIA_INDEX > "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
   if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
