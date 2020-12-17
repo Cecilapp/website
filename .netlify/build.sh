@@ -35,9 +35,11 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 if [[ $CECIL_ENV == "production" ]]; then
-  if [[ -f "$CACHE_PATH/$ALGOLIA_INDEX" ]] && [[ $(sha1sum -c "${CACHE_PATH}/${ALGOLIA_INDEX}.sha1" --status) == 0 ]]; then
-    echo "Loads Algolia index from cache"
-    cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
+  if [[ -f "$CACHE_PATH/$ALGOLIA_INDEX" ]] && [[ -f "$CACHE_PATH/$ALGOLIA_INDEX.sha1" ]]; then
+    if [[ $(sha1sum -c "${CACHE_PATH}/${ALGOLIA_INDEX}.sha1" --status) == 0 ]]; then
+      echo "Loads Algolia index from cache"
+      cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
+    fi
   else
     echo "Started Algolia index import"
     npm install -g @algolia/cli
