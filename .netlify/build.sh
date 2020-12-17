@@ -6,7 +6,7 @@ echo "Started CSS build"
 npm install tailwindcss --silent
 npm install @tailwindcss/typography --silent
 npx tailwindcss-cli build ./static/tailwind.css -o ./static/styles.css
-if [ $? != 0 ]; then echo "Tailwind fail..."; exit 1; fi
+if [ $? = 0 ]; then echo "Finished Tailwind build"; exit 0; else echo "Tailwind fail..."; exit 1; fi
 
 echo "Started Cecil build"
 if [[ $1 == "preview" ]]; then
@@ -15,9 +15,10 @@ else
   php cecil.phar build -v --baseurl=$URL --postprocess;
 fi
 
-echo "Import Algolia index"
+echo "Started Algolia index import"
 npm install -g @algolia/cli
 algolia import -s _site/algolia.json -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
+if [ $? = 0 ]; then echo "Finished Algolia index import"; exit 0; else echo "Index imort fail..."; exit 1; fi
 
 # build success? can deploy?
 if [ $? = 0 ]; then echo "Finished Cecil build"; exit 0; fi
