@@ -22,8 +22,9 @@ else
   sha1sum "$CACHE_PATH/$CSS_OUPUT" > "$CACHE_PATH/$CSS_OUPUT.sha1"
   cat "$CACHE_PATH/$CSS_OUPUT.sha1"
 
-
-  echo $(sha1sum -c ${CACHE_PATH}/${CSS_OUPUT}.sha1 --status)
+  echo "DEBUG"
+  echo $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status)
+  echo "/DEBUG"
 fi
 
 if [[ $CECIL_ENV != "production" ]]; then
