@@ -4,10 +4,6 @@ echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
-echo "$CACHE_PATH/$CSS_OUPUT"
-echo "${CACHE_PATH}/${CSS_OUPUT}.sha1"
-echo $(sha1sum -c ${CACHE_PATH}/${CSS_OUPUT}.sha1 --status)
-
 # Build CSS
 if [[ -f "$CACHE_PATH/$CSS_OUPUT" ]] && [[ -f "$CACHE_PATH/$CSS_OUPUT.sha1" ]]; then
   if [[ $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status) == 0 ]]; then
@@ -25,6 +21,9 @@ else
   cp $CSS_OUPUT $CACHE_PATH/$CSS_OUPUT
   sha1sum "$CACHE_PATH/$CSS_OUPUT" > "$CACHE_PATH/$CSS_OUPUT.sha1"
   cat "$CACHE_PATH/$CSS_OUPUT.sha1"
+
+
+  echo $(sha1sum -c ${CACHE_PATH}/${CSS_OUPUT}.sha1 --status)
 fi
 
 if [[ $CECIL_ENV != "production" ]]; then
