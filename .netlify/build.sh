@@ -13,11 +13,11 @@ if [ -f $CACHE_PATH/css.sha1 ]; then
   # DEBUG
   sha1sum $CSS_OUPUT
   sha1sum -c $CACHE_PATH/css.sha1
+  cat $CACHE_PATH/css.sha1
+  echo "DEBUG: $build_css"
 
   sha1sum -c $CACHE_PATH/css.sha1 --status
   build_css=$?
-  cat $CACHE_PATH/css.sha1
-  echo "DEBUG: $build_css"
 fi;
 if [ $build_css = 1 ]; then
   echo "Started CSS build"
