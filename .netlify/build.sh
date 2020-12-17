@@ -1,6 +1,6 @@
 CECIL_PHAR_URL=https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar
-CSS_INPUT=./static/tailwind.css
-CSS_OUPUT=./static/styles.css
+CSS_INPUT=static/tailwind.css
+CSS_OUPUT=static/styles.css
 CACHE_PATH=/opt/build/cache
 
 echo "Downloading Cecil"
