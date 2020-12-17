@@ -9,7 +9,11 @@ php cecil.phar --version
 
 build_css=1
 if [ -f $CACHE_PATH/css.sha1 ]; then
+
+  # DEBUG
+  sha1sum $CSS_OUPUT
   sha1sum -c $CACHE_PATH/css.sha1
+
   sha1sum -c $CACHE_PATH/css.sha1 --status
   build_css=$?
   cat $CACHE_PATH/css.sha1
