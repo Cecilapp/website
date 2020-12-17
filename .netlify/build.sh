@@ -4,7 +4,6 @@ CSS_INPUT=static/tailwind.css
 CSS_OUPUT=static/styles.css
 ALGOLIA_INDEX=_site/algolia.json
 
-
 echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
