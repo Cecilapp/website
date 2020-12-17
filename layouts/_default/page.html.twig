@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png')|url }}" />
     <link rel="icon" href="{{ asset('favicon.ico')|url }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
-    {%- if getenv('NODE_ENV') == 'production' ~%}
+    {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>
 	    {{- asset('styles.css',{minify:false})|inline ~}}
     </style>
