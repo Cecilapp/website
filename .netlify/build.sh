@@ -4,10 +4,6 @@ echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
-# DEBUG
-echo "$CACHE_PATH/$CSS_OUPUT"
-echo $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status)
-
 # Build CSS
 if [[ -f "$CACHE_PATH/$CSS_OUPUT" ]] && [[ $(sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status) == 0 ]]; then
   echo "Loads CSS from cache"
@@ -33,7 +29,7 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 if [[ $CECIL_ENV == "production" ]]; then
-  if [[ -f "$CACHE_PATH/$ALGOLIA_INDEX" && $(sha1sum -c "${CACHE_PATH}/${ALGOLIA_INDEX}.sha1" --status) == 0]]; then
+  if [[ -f "$CACHE_PATH/$ALGOLIA_INDEX" ]] && [[ $(sha1sum -c "${CACHE_PATH}/${ALGOLIA_INDEX}.sha1" --status) == 0 ]]; then
     echo "Loads Algolia index from cache"
     cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
   else
