@@ -11,6 +11,7 @@ build_css=1
 if [ -f $CACHE_PATH/css.sha1 ]; then
   sha1sum -c $CACHE_PATH/css.sha1 --status
   build_css=$?
+  echo "DEBUG: $build_css"
 fi;
 if [ $build_css = 1 ]; then
   echo "Started CSS build"
