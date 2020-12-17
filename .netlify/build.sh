@@ -23,7 +23,8 @@ else
   # cache
   mkdir -p $(dirname "${CACHE_PATH}/${CSS_OUPUT}")
   cp $CSS_OUPUT $CACHE_PATH/$CSS_OUPUT
-  sha1sum $CSS_OUPUT > "$CACHE_PATH/$CSS_OUPUT.sha1"
+  sha1sum "$CACHE_PATH/$CSS_OUPUT" > "$CACHE_PATH/$CSS_OUPUT.sha1"
+  cat "$CACHE_PATH/$CSS_OUPUT.sha1"
 fi
 
 if [[ $CECIL_ENV != "production" ]]; then
