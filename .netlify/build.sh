@@ -26,13 +26,12 @@ if [ $build_css = 1 ]; then
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
 fi
 
-echo "Started Cecil build"
 if [[ $1 == "preview" ]]; then
   php cecil.phar build -v --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; };
 else
   php cecil.phar build -v --baseurl=$URL --postprocess;
 fi
-if [ $? = 0 ]; then echo "Finished Cecil build"; else echo "Cecil build fail..."; exit 1; fi
+if [ $? != 0 ]; echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 import_index=1
