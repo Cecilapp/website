@@ -9,13 +9,6 @@ php cecil.phar --version
 
 build_css=1
 if [ -f $CACHE_PATH/css.sha1 ]; then
-
-  # DEBUG
-  sha1sum $CSS_OUPUT
-  sha1sum -c $CACHE_PATH/css.sha1
-  cat $CACHE_PATH/css.sha1
-  echo "DEBUG: $build_css"
-
   sha1sum -c $CACHE_PATH/css.sha1 --status
   build_css=$?
 fi;
@@ -24,7 +17,6 @@ if [ $build_css = 1 ]; then
   npm install tailwindcss --silent
   npm install @tailwindcss/typography --silent
   npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
-  sha1sum $CSS_OUPUT
   sha1sum $CSS_OUPUT > $CACHE_PATH/css.sha1
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
 fi
