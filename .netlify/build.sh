@@ -8,6 +8,11 @@ echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
+# Prepare cache path
+if [[ $1 == "preview" ]]; then
+  CACHE_PATH="$CACHE_PATH/$BRANCH"
+fi
+
 # Build CSS
 build_css=1
 if [ -f $CACHE_PATH/$CSS_OUPUT ]; then
@@ -34,20 +39,22 @@ fi
 if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
-import_index=1
-if [ -f $CACHE_PATH/$ALGOLIA_INDEX ]; then
-  cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
-  sha1sum -c "$CACHE_PATH/$ALGOLIA_INDEX.sha1" --status
-  import_index=$?
-fi;
-if [ $import_index = 1 ]; then
-  echo "Started Algolia index import"
-  npm install -g @algolia/cli
-  algolia import -s _site/algolia.json -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
-  mkdir -p $(dirname "${CACHE_PATH}/${ALGOLIA_INDEX}")
-  cp $ALGOLIA_INDEX $CACHE_PATH/$ALGOLIA_INDEX
-  sha1sum $ALGOLIA_INDEX > "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
-  if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
+if [[ $1 != "preview" ]]; then
+  import_index=1
+  if [ -f $CACHE_PATH/$ALGOLIA_INDEX ]; then
+    cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
+    sha1sum -c "$CACHE_PATH/$ALGOLIA_INDEX.sha1" --status
+    import_index=$?
+  fi;
+  if [ $import_index = 1 ]; then
+    echo "Started Algolia index import"
+    npm install -g @algolia/cli
+    algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
+    mkdir -p $(dirname "${CACHE_PATH}/${ALGOLIA_INDEX}")
+    cp $ALGOLIA_INDEX $CACHE_PATH/$ALGOLIA_INDEX
+    sha1sum $ALGOLIA_INDEX > "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
+    if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
+  fi
 fi
 
 # build success? can deploy?
