@@ -1,13 +1,13 @@
 CECIL_PHAR_URL=https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar
 CSS_INPUT=./static/tailwind.css
 CSS_OUPUT=./static/styles.css
-CACHE_PATH=/opt/build/cache/
+CACHE_PATH=/opt/build/cache
 
 echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
-sha1sum -c $CACHE_PATH/hash/css.sha1
+sha1sum -c $CACHE_PATH/hash/css.sha1 --status
 if [ $? != 0 ]; then
   echo "Started CSS build"
   npm install tailwindcss --silent
