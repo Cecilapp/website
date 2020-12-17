@@ -9,7 +9,8 @@ php cecil.phar --version
 
 build_css=1
 if [ -f $CACHE_PATH/css.sha1 ]; then
-  build_css = sha1sum -c $CACHE_PATH/css.sha1 --status
+  sha1sum -c $CACHE_PATH/css.sha1 --status
+  build_css=$?
 fi;
 if [ $build_css = 1 ]; then
   echo "Started CSS build"
