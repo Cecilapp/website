@@ -20,6 +20,7 @@ if [ $build_css = 1 ]; then
   npm install tailwindcss --silent
   npm install @tailwindcss/typography --silent
   npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
+  mkdir -p $(dirname "${CACHE_PATH}/${CSS_OUPUT}")
   cp $CSS_OUPUT $CACHE_PATH/$CSS_OUPUT
   sha1sum $CSS_OUPUT > "$CACHE_PATH/$CSS_OUPUT.sha1"
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
