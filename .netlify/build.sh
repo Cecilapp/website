@@ -8,11 +8,9 @@ curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
 build_css=1
-if [ -f "$CACHE_PATH/$CSS_OUPUT.sha1" ]; then
-  sha1sum -c $CACHE_PATH/$CSS_OUPUT.sha1 --status
-  if [ $? = 0 ]; then
-    cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
-  fi;
+if [ -f $CACHE_PATH/$CSS_OUPUT ]; then
+  cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
+  sha1sum -c "$CACHE_PATH/$CSS_OUPUT.sha1" --status
   build_css=$?
 fi;
 if [ $build_css = 1 ]; then
