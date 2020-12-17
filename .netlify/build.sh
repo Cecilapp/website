@@ -39,6 +39,7 @@ if [[ $CECIL_ENV == "production" ]]; then
     mkdir -p $(dirname "${CACHE_PATH}/${ALGOLIA_INDEX}")
     cp $ALGOLIA_INDEX $CACHE_PATH/$ALGOLIA_INDEX
     sha1sum $ALGOLIA_INDEX > "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
+  fi
 fi
 
 # build success? can deploy?
