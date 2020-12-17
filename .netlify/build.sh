@@ -1,4 +1,4 @@
-CACHE_PATH="$CACHE_PATH/$BRANCH"
+#CACHE_PATH="$CACHE_PATH/$BRANCH"
 
 echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
