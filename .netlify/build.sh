@@ -7,8 +7,10 @@ echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
-sha1sum -c $CACHE_PATH/hash/css.sha1 --status
-if [ $? != 0 ]; then
+if [ -f $CACHE_PATH/hash/css.sha1 ]; then
+  sha1sum -c $CACHE_PATH/hash/css.sha1 --status
+fi;
+if [ $? = 0 ]; then
   echo "Started CSS build"
   npm install tailwindcss --silent
   npm install @tailwindcss/typography --silent
