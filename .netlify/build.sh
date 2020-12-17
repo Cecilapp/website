@@ -31,7 +31,7 @@ if [[ $1 == "preview" ]]; then
 else
   php cecil.phar build -v --baseurl=$URL --postprocess;
 fi
-if [ $? != 0 ]; echo "Cecil build fail..."; exit 1; fi
+if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 import_index=1
