@@ -9,6 +9,7 @@ php cecil.phar --version
 sha1sum -c "${CECIL_CACHE_DIR}/${CSS_INPUT}.sha1" --status
 if [ $? = 0 ]; then
   echo "Loads CSS from cache"
+  cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
   cp $CECIL_CACHE_DIR/$CSS_OUPUT $CSS_OUPUT
 else
   echo "Started CSS build"
@@ -36,6 +37,7 @@ if [[ $CECIL_ENV == "production" ]]; then
   sha1sum -c "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1" --status
   if [ $? = 0 ]; then
     echo "Loads Algolia index from cache"
+    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     cp $CECIL_CACHE_DIR/$ALGOLIA_INDEX $ALGOLIA_INDEX
   else
     echo "Started Algolia index import"
