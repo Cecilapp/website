@@ -6,7 +6,6 @@
   NODE_VERSION = "12.13"
   CECIL_ENV = "production"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
-  CACHE_PATH = "/opt/build/cache"
   CSS_INPUT = "static/tailwind.css"
   CSS_OUPUT = "static/styles.css"
   ALGOLIA_INDEX = "_site/algolia.json"
