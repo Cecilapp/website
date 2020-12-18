@@ -1,14 +1,14 @@
-CACHE_PATH=$CACHE_PATH/$BRANCH
+CECIL_CACHE_DIR=$CECIL_CACHE_DIR$BRANCH
 
 echo "Downloading Cecil"
 curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
 # Build CSS
-sha1sum -c "${CACHE_PATH}/${CSS_OUPUT}.sha1" --status
+sha1sum -c "${CACHE_CACHE_DIR}${CSS_OUPUT}.sha1" --status
 if [ $? = 0 ]; then
   echo "Loads CSS from cache"
-  cp $CACHE_PATH/$CSS_OUPUT $CSS_OUPUT
+  cp $CECIL_CACHE_DIR$CSS_OUPUT $CSS_OUPUT
 else
   echo "Started CSS build"
   npm install tailwindcss --silent
@@ -16,10 +16,10 @@ else
   npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
   # cache
-  mkdir -p $(dirname "${CACHE_PATH}/${CSS_OUPUT}")
-  cp $CSS_OUPUT $CACHE_PATH/$CSS_OUPUT
-  sha1sum $CACHE_PATH/$CSS_OUPUT > "$CACHE_PATH/$CSS_OUPUT.sha1"
-  cat "$CACHE_PATH/$CSS_OUPUT.sha1"
+  mkdir -p $(dirname "${CACHE_CACHE_DIR}${CSS_OUPUT}")
+  cp $CSS_OUPUT $CECIL_CACHE_DIR$CSS_OUPUT
+  sha1sum $CECIL_CACHE_DIR$CSS_OUPUT > "$CECIL_CACHE_DIR$CSS_OUPUT.sha1"
+  cat "$CECIL_CACHE_DIR$CSS_OUPUT.sha1"
 fi
 
 if [[ $CECIL_ENV != "production" ]]; then
@@ -31,20 +31,20 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 if [[ $CECIL_ENV == "production" ]]; then
-  sha1sum -c "${CACHE_PATH}/${ALGOLIA_INDEX}.sha1" --status
+  sha1sum -c "${CACHE_CACHE_DIR}${ALGOLIA_INDEX}.sha1" --status
   if [ $? = 0 ]; then
     echo "Loads Algolia index from cache"
-    cp $CACHE_PATH/$ALGOLIA_INDEX $ALGOLIA_INDEX
+    cp $CECIL_CACHE_DIR$ALGOLIA_INDEX $ALGOLIA_INDEX
   else
     echo "Started Algolia index import"
     npm install -g @algolia/cli
     algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
     if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
     # cache
-    mkdir -p $(dirname "${CACHE_PATH}/${ALGOLIA_INDEX}")
-    cp $ALGOLIA_INDEX $CACHE_PATH/$ALGOLIA_INDEX
-    sha1sum $CACHE_PATH/$ALGOLIA_INDEX > "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
-    cat "$CACHE_PATH/$ALGOLIA_INDEX.sha1"
+    mkdir -p $(dirname "${CACHE_CACHE_DIR}${ALGOLIA_INDEX}")
+    cp $ALGOLIA_INDEX $CECIL_CACHE_DIR$ALGOLIA_INDEX
+    sha1sum $CECIL_CACHE_DIR$ALGOLIA_INDEX > "$CECIL_CACHE_DIR$ALGOLIA_INDEX.sha1"
+    cat "$CECIL_CACHE_DIR$ALGOLIA_INDEX.sha1"
   fi
 fi
 
