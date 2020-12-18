@@ -23,17 +23,18 @@
         }
         .algolia-autocomplete .aa-dropdown-menu {
           width: 100%;
-          background-color: #fff;
+          background-color: #FFF;
           border: 1px solid #163C56;
-          border-top: none;
+          border-radius: 4px;
+          border-top: 0;
         }
         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
           cursor: pointer;
-          padding: 5px 4px;
+          padding: .5em 1em .5em 1em;
           width: 100%;
         }
         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-          background-color: #7B99A9;
+          background-color: #DEE5ED;
         }
         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
           font-weight: bold;
@@ -59,6 +60,8 @@
         .aa-tpl-footer {
           text-align: right;
           float: right;
+          margin-right: 1em;
+          padding: 0
         }
       {% endapply %}</style>
       <script src="{{ asset('/js/algoliasearch.umd.min.js')|url }}"></script>
