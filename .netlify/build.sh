@@ -17,6 +17,7 @@ else
   npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
   # cache
+  echo "Caches CSS file."
   mkdir -p $(dirname "${CECIL_CACHE_DIR}/${CSS_OUPUT}")
   cp $CSS_OUPUT $CECIL_CACHE_DIR/$CSS_OUPUT
   sha1sum $CSS_OUPUT > "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
@@ -32,7 +33,6 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 if [[ $CECIL_ENV == "production" ]]; then
-  cat "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1"
   sha1sum -c "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1" --status
   if [ $? = 0 ]; then
     echo "Loads Algolia index from cache"
@@ -43,6 +43,7 @@ if [[ $CECIL_ENV == "production" ]]; then
     algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
     if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
     # cache
+    echo "Caches index file."
     mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
     cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
     sha1sum $ALGOLIA_INDEX > "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
