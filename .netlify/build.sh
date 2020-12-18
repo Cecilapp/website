@@ -6,7 +6,7 @@ curl -sSOL $CECIL_PHAR_URL
 php cecil.phar --version
 
 # Build CSS
-sha1sum -c "${CECIL_CACHE_DIR}/${CSS_OUPUT}.sha1" --status
+sha1sum -c "${CECIL_CACHE_DIR}/${CSS_INPUT}.sha1" --status
 if [ $? = 0 ]; then
   echo "Loads CSS from cache"
   cp $CECIL_CACHE_DIR/$CSS_OUPUT $CSS_OUPUT
@@ -20,8 +20,8 @@ else
   echo "Caches CSS file."
   mkdir -p $(dirname "${CECIL_CACHE_DIR}/${CSS_OUPUT}")
   cp $CSS_OUPUT $CECIL_CACHE_DIR/$CSS_OUPUT
-  sha1sum $CSS_OUPUT > "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
-  cat "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
+  sha1sum $CSS_INPUT > "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
+  cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
 fi
 
 if [[ $CECIL_ENV != "production" ]]; then
