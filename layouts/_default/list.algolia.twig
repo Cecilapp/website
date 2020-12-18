@@ -7,10 +7,11 @@
     {%- for head in page_heads -%}
       {%- if loop.index0 > 0 -%}
         {%- set head_split = page_heads[loop.index0]|split('</h3>') -%}
-        {%- set head_anchor = head_split[0]|trim|striptags|lower|replace({' ':'-',':':''}) -%}
+        {%- set head_title = head_split[0]|trim|striptags -%}
+        {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
         {%- set head_content = head_split[1]|striptags ~%}
   {
-    "title": "{{ p.title }} > {{ head_anchor }}",
+    "title": "{{ p.title }} > {{ head_title }}",
     "content": {{ head_content|json_encode }},
     "date": "{{ p.date|date('c') }}",
     "href": "{{ url(p,{canonical:true}) }}#{{ head_anchor }}",
