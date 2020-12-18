@@ -32,6 +32,7 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
 if [[ $CECIL_ENV == "production" ]]; then
+  cat "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1"
   sha1sum -c "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1" --status
   if [ $? = 0 ]; then
     echo "Loads Algolia index from cache"
