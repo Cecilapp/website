@@ -20,7 +20,7 @@ else
   echo "Caches CSS file."
   mkdir -p $(dirname "${CECIL_CACHE_DIR}/${CSS_OUPUT}")
   cp $CSS_OUPUT $CECIL_CACHE_DIR/$CSS_OUPUT
-  sha1sum $CECIL_CACHE_DIR/$CSS_OUPUT > "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
+  sha1sum $CSS_OUPUT > "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
   cat "$CECIL_CACHE_DIR/$CSS_OUPUT.sha1"
 fi
 
@@ -46,7 +46,7 @@ if [[ $CECIL_ENV == "production" ]]; then
     echo "Caches index file."
     mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
     cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
-    sha1sum $CECIL_CACHE_DIR/$ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
+    sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
   fi
 fi
