@@ -12,7 +12,6 @@
   ALGOLIA_INDEX = "_site/algolia.json"
 
 [context.deploy-preview.environment]
-  command = "chmod +x .netlify/build.sh && bash .netlify/build.sh $DEPLOY_PRIME_URL"
   CECIL_ENV = "preview"
 
 [context.branch-deploy.environment]
