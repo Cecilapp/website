@@ -11,7 +11,7 @@
         {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
         {%- set head_content = head_split[1]|striptags ~%}
   {
-    "title": "{{ p.title }} > {{ head_title }}",
+    "title": "{{ p.title }} &middot; {{ head_title }}",
     "content": {{ head_content|json_encode }},
     "date": "{{ p.date|date('c') }}",
     "href": "{{ url(p,{canonical:true}) }}#{{ head_anchor }}",
