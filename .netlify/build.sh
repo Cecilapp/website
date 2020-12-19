@@ -52,6 +52,9 @@ if [[ $CECIL_ENV == "production" ]]; then
     cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
     sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
+
+    # DEBUG
+    cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
   fi
 fi
 
