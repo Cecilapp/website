@@ -26,6 +26,10 @@ else
   cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
 fi
 
+# DEBUG
+    cat $ALGOLIA_INDEX | sha1sum
+    cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
+
 if [[ $CECIL_ENV != "production" ]]; then
   php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
 else
