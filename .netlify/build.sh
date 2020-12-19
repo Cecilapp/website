@@ -54,6 +54,7 @@ if [[ $CECIL_ENV == "production" ]]; then
     cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
 
     # DEBUG
+    cat $ALGOLIA_INDEX | sha1sum
     cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
   fi
 fi
