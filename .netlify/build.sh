@@ -26,12 +26,6 @@ else
   cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
 fi
 
-# DEBUG
-    cat $ALGOLIA_INDEX | sha1sum
-    cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
-
-    cmp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
-
 if [[ $CECIL_ENV != "production" ]]; then
   php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
 else
@@ -55,6 +49,10 @@ if [[ $CECIL_ENV == "production" ]]; then
     # cache
     echo "Caches index file."
     mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
+
+    # DEBUG
+    cmp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
+
     cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
     sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
