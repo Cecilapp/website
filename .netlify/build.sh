@@ -30,6 +30,8 @@ fi
     cat $ALGOLIA_INDEX | sha1sum
     cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
 
+    cmp -s $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
+
 if [[ $CECIL_ENV != "production" ]]; then
   php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
 else
