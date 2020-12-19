@@ -13,7 +13,6 @@ if [ $? = 0 ]; then
   cp $CECIL_CACHE_DIR/$CSS_OUPUT $CSS_OUPUT
 else
   echo "Started CSS build"
-  cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
   npm install tailwindcss --silent
   npm install @tailwindcss/typography --silent
   npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
@@ -42,25 +41,15 @@ if [[ $CECIL_ENV == "production" ]]; then
     cp $CECIL_CACHE_DIR/$ALGOLIA_INDEX $ALGOLIA_INDEX
   else
     echo "Started Algolia index import"
-    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     npm install -g @algolia/cli
     algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
     if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
     # cache
     echo "Caches index file."
     mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
-
-    # DEBUG
-    cmp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
-    diff $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
-
     cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
     sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
     cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
-
-    # DEBUG
-    cat $ALGOLIA_INDEX | sha1sum
-    cat $CECIL_CACHE_DIR/$ALGOLIA_INDEX | sha1sum
   fi
 fi
 
