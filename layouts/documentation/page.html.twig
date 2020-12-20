@@ -53,14 +53,15 @@
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script src="{{ asset('js/tocbot.min.js',{minify:false})|url }}"></script>
+<link rel="stylesheet" href="{{ asset('css/tocbot.min.css',{minify:false})|url }}">
 <script>{% apply minify_js %}
   tocbot.init({
     tocSelector: '.toc',
     contentSelector: '.prose',
     headingSelector: 'h2, h3, h4',
     hasInnerContainers: true,
+    scrollSmooth: false,
   });
 {% endapply %}</script>
 {% endblock footer_scripts %}
