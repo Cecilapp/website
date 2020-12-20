@@ -20,6 +20,13 @@
   }
 }
 
+/* ToC */
+.toc {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
 /* Back to top */
 @media screen and (prefers-reduced-motion: no-preference) {
   html, body {
