@@ -61,11 +61,14 @@ release:
 googleanalytics: UA-387892-21
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
-#static:
-#  exclude:
-#    - '*.phar*'
 algolia:
   enabled: true
   application_id: 'PVTO81KCEC'
   search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
   index: 'documentation'
+static:
+  exclude:
+    #- '*.phar*' # dev only
+    - 'cecil-demo.png'
+    - '*.mp4'
+    - 'tailwind.css'
