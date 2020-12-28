@@ -21,13 +21,13 @@
 {% block content %}
       {# about blocks #}
       <div class="mt-6 md:mt-10">
-        <dl class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
+        <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
           {%~ for block in page.blocks.about ~%}
           {%- if block.visible != false -%}
           {%~ include 'partials/block-about.html.twig' with {octicon:block.octicon,title:block.title,description:block.description} only ~%}
           {%- endif -%}
           {%~ endfor ~%}
-        </dl>
+        </div>
       </div>
 {% endblock %}
 
