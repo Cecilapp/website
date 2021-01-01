@@ -4,6 +4,7 @@ module.exports = {
     mode: 'all',
     content: [
       './layouts/**/*.html.twig',
+      './themes/**/layouts/**/*.html.twig',
     ],
   },
   theme: {
