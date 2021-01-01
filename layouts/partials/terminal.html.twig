@@ -1,9 +1,19 @@
             <div class="shell-wrap">
-              <p class="shell-top-bar">/Users/Narno/websites/</p>
+              <p class="shell-top-bar">/Users/Cecil/websites/</p>
               <div class="shell-body">
-                <video width="100%" autoplay loop muted>
-                  <source src="{{ asset('videos/cecil-demo.mp4')|url }}" type="video/mp4">
-                  <p>Sorry, your browser doesn't support embedded videos.</p>
-                </video>
+                <video data-src="{{ asset('videos/cecil-demo.mp4')|url }}" id="video-demo" width="100%" autoplay loop muted></video>
+                <noscript>
+                  <video width="100%" autoplay loop muted>
+                    <source src="{{ asset('videos/cecil-demo.mp4')|url }}" type="video/mp4">
+                    <p>Sorry, your browser doesn't support embedded videos.</p>
+                  </video>
+                </noscript>
               </div>
             </div>
+            <script>
+            if (window.matchMedia("(min-width: 768px)").matches) {
+              console.log('Loading video');
+              var video = document.getElementById('video-demo');
+              video.src = video.getAttribute('data-src');
+            }
+            </script>
