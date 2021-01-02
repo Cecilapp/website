@@ -2,7 +2,7 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url: 
+webhook_url:
 sections:
 - type: document
   path: content/index.md
@@ -25,7 +25,7 @@ build:
   preview_env:
   - PHP_VERSION=7.2
   preview_output_directory: _site
-  install_dependencies_command: bash .forestry/install.sh
+  install_dependencies_command: bash ./scripts/forestry-install.sh
   preview_docker_image: phpdocker/phpdocker:7.2
   mount_path: "/usr/src"
   working_dir: "/usr/src"
