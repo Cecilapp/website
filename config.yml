@@ -16,7 +16,7 @@ image: /images/cecil-card.png
 menus:
   main:
     - id: documentation
-      name: Docs
+      name: Documentation
       url: documentation
       weight: 10
       enabled: true
