@@ -72,3 +72,9 @@ static:
     - 'cecil-demo.png'
     - '*.mp4'
     - 'tailwind.css'
+anchor:
+  version: 4.3.1
+highlight:
+  version: 10.4.0
+  styles: atom-one-dark
+  languages: twig
