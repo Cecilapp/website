@@ -1,4 +1,4 @@
-title: "Cecil"
+title: "Cecil - TEST"
 baseline: "Your content driven static site generator."
 description: "Cecil is a CLI application that merges plain text files (written in Markdown), images and Twig templates to generate a static website."
 baseurl: "https://cecil.app/"
