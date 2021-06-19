@@ -7,9 +7,8 @@
 ## Development
 
 ```bash
-npm install tailwindcss
-npm install @tailwindcss/typography
-npx tailwindcss-cli build ./static/tailwind.css -o ./static/styles.css
+npm install
+npx tailwindcss -i ./static/tailwind.css -o ./static/styles.css
 curl -LO https://cecil.app/cecil.phar
 php cecil.phar serve -v
 ```
@@ -17,7 +16,8 @@ php cecil.phar serve -v
 ## Production
 
 ```bash
-CECIL_ENV=production npx tailwindcss-cli build ./static/tailwind.css -o ./static/styles.css
+npm install
+CECIL_ENV=production npx tailwindcss -i ./static/tailwind.css -o ./static/styles.css
 curl -LO https://cecil.app/cecil.phar
 php cecil.phar build
 ```
