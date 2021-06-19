@@ -1,12 +1,12 @@
+{% set section, balise = 'documentation', 'h3' %}
 [
-{#- for p in site.pages|filter(p => p.section == 'documentation') -#}
-{%- for p in site.pages|filter_by('section','documentation')|sort_by_weight -%}
+{%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
   {%- set count = 0 -%}
-  {%- set page_heads = p.content|split('<h3>') -%}
+  {%- set page_heads = p.content|split('<' ~ balise ~ '>') -%}
   {%- if page_heads|length > 0 -%}
     {%- for head in page_heads -%}
       {%- if loop.index0 > 0 -%}
-        {%- set head_split = page_heads[loop.index0]|split('</h3>') -%}
+        {%- set head_split = page_heads[loop.index0]|split('</' ~ balise ~ '>') -%}
         {%- set head_title = head_split[0]|trim|striptags -%}
         {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
         {%- set head_content = head_split[1]|striptags ~%}
