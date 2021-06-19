@@ -32,25 +32,25 @@ fi
 if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
 # Import Algolia index
-if [[ $CECIL_ENV == "production" ]]; then
-  sha1sum -c "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1" --status
-  if [ $? = 0 ]; then
-    echo "Loads Algolia index from cache"
-    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
-    cp $CECIL_CACHE_DIR/$ALGOLIA_INDEX $ALGOLIA_INDEX
-  else
-    echo "Started Algolia index import"
-    npm install -g @algolia/cli
-    algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
-    if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
-    # cache
-    echo "Caches index file."
-    mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
-    cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
-    sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
-    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
-  fi
-fi
+#if [[ $CECIL_ENV == "production" ]]; then
+#  sha1sum -c "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}.sha1" --status
+#  if [ $? = 0 ]; then
+#    echo "Loads Algolia index from cache"
+#    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
+#    cp $CECIL_CACHE_DIR/$ALGOLIA_INDEX $ALGOLIA_INDEX
+#  else
+#    echo "Started Algolia index import"
+#    npm install -g @algolia/cli
+#    algolia import -s $ALGOLIA_INDEX -a $ALGOLIA_APP_ID -k $ALGOLIA_APP_KEY -n $ALGOLIA_INDEX_NAME
+#    if [ $? = 0 ]; then echo "Finished Algolia index import"; else echo "Algolia index import fail..."; exit 1; fi
+#    # cache
+#    echo "Caches index file."
+#    mkdir -p $(dirname "${CECIL_CACHE_DIR}/${ALGOLIA_INDEX}")
+#    cp $ALGOLIA_INDEX $CECIL_CACHE_DIR/$ALGOLIA_INDEX
+#    sha1sum $ALGOLIA_INDEX> "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
+#    cat "$CECIL_CACHE_DIR/$ALGOLIA_INDEX.sha1"
+#  fi
+#fi
 
 # build success? can deploy?
 if [ $? = 0 ]; then echo "Finished build"; exit 0; fi
