@@ -13,9 +13,8 @@ if [ $? = 0 ]; then
   cp $CECIL_CACHE_DIR/$CSS_OUPUT $CSS_OUPUT
 else
   echo "Started CSS build"
-  npm install tailwindcss --silent
-  npm install @tailwindcss/typography --silent
-  npx tailwindcss-cli build -i $CSS_INPUT -o $CSS_OUPUT
+  #npm install --silent
+  npx tailwindcss -i $CSS_INPUT -o $CSS_OUPUT
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
   # cache
   echo "Caches CSS file."
