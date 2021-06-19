@@ -16,3 +16,9 @@
 
 [context.branch-deploy.environment]
   CECIL_ENV = "branch"
+
+[[plugins]]
+  package = "netlify-plugin-refresh-algolia"
+    [plugins.inputs]
+    appId = "PVTO81KCEC"
+    indexName = "documentation"
