@@ -3,7 +3,7 @@
   command = "chmod +x ./scripts/netlify-build.sh && bash ./scripts/netlify-build.sh"
 [build.environment]
   PHP_VERSION = "7.2"
-  #NODE_VERSION = "12.13"
+  NODE_VERSION = "12.16"
   CECIL_ENV = "production"
   CECIL_CACHE_DIR = "/opt/build/cache/"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
