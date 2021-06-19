@@ -15,7 +15,7 @@ else
   echo "Started CSS build"
   npm install tailwindcss --silent
   npm install @tailwindcss/typography --silent
-  npx tailwindcss-cli build $CSS_INPUT -o $CSS_OUPUT
+  npx tailwindcss-cli build -i $CSS_INPUT -o $CSS_OUPUT
   if [ $? = 0 ]; then echo "Finished CSS build"; else echo "CSS build fail..."; exit 1; fi
   # cache
   echo "Caches CSS file."
