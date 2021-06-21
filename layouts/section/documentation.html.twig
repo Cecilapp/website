@@ -1,6 +1,7 @@
 {% extends 'page.html.twig' %}
 
 {% block content %}
+        <div class="py-6 md:py-10">
         {# content #}
         <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
           {%~ include 'partials/search-box.html.twig' ~%}
@@ -13,5 +14,6 @@
               {%- endif -%}
             {%- endfor -%}
           </dl>
+        </div>
         </div>
 {% endblock content %}
