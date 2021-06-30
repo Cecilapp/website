@@ -2,7 +2,7 @@
 [
 {%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
   {%- set count = 0 -%}
-  {%- set page_heads = p.content|preg_split('/<h3[^>]*>/') -%}
+  {%- set page_heads = p.content|preg_split('/<' ~ balise ~ '[^>]*>/') -%}
   {%- if page_heads|length > 0 -%}
     {%- for head in page_heads -%}
       {%- if loop.index0 > 0 -%}
