@@ -39,6 +39,7 @@
         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
           font-weight: bold;
           font-style: oblique;
+          text-decoration: underline dotted;
         }
         .aa-input-container {
           display: block;
@@ -56,6 +57,11 @@
         }
         .aa-tpl-title {
           font-weight: bold;
+        }
+        .aa-tpl-page {
+          font-weight: bold;
+          color: #6C7381;
+          font-size: .75em;
         }
         .aa-tpl-footer {
           text-align: right;
@@ -84,13 +90,18 @@
         }
         autocomplete('#search-input', { hint: false }, [
           {
-            source: newHitsSource(index, { hitsPerPage: 5 }),
+            source: newHitsSource(index, {
+              hitsPerPage: 5,
+              attributesToSnippet: ['content:10'],
+              snippetEllipsisText: '…'
+            }),
             displayKey: 'title',
             templates: {
               footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg')|url }}" width="47" height="15" alt="Algolia logo"></a></span>',
               suggestion: function(suggestion) {
                 return '<div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
-                  + '<div class="aa-tpl-snippet">…' + suggestion._snippetResult.content.value + '…</div>';
+                  + '<div class="aa-tpl-page">' + suggestion._highlightResult.page.value + '</div>'
+                  + '<div class="aa-tpl-snippet">' + suggestion._snippetResult.content.value.trim().replace(/(?:\r\n|\r|\n)/g, '<br>').replace(/(<br>){3,}/gi, '<br>') + '</div>';
               }
             }
           }
