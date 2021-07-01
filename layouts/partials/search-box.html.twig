@@ -33,13 +33,13 @@
           padding: .5em 1em .5em 1em;
           width: 100%;
         }
+        .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .aa-tpl-suggestion {
+          padding-bottom: 10px;
+          border-bottom: 0.1rem solid;
+        }
         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
           background-color: #DEE5ED;
-        }
-        .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-          font-weight: bold;
-          font-style: oblique;
-          text-decoration: underline dotted;
+          border-radius: 4px;
         }
         .aa-input-container {
           display: block;
@@ -57,6 +57,7 @@
         }
         .aa-tpl-title {
           font-weight: bold;
+          font-size: 1.25em;
         }
         .aa-tpl-page {
           font-weight: bold;
@@ -64,6 +65,7 @@
           font-size: .75em;
         }
         .aa-tpl-footer {
+          font-size: .75em;
           text-align: right;
           float: right;
           margin-right: 1em;
@@ -91,7 +93,10 @@
         autocomplete('#search-input', { hint: false }, [
           {
             source: newHitsSource(index, {
-              hitsPerPage: 5,
+              hitsPerPage: 4,
+              attributesToHighlight: ['content', 'page', 'title'],
+              highlightPreTag: '<strong>',
+              highlightPostTag: '</strong>',
               attributesToSnippet: ['content:10'],
               snippetEllipsisText: '…'
             }),
@@ -99,9 +104,11 @@
             templates: {
               footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg')|url }}" width="47" height="15" alt="Algolia logo"></a></span>',
               suggestion: function(suggestion) {
-                return '<div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
+                return '<div class="aa-tpl-suggestion">'
+                  + '<div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
                   + '<div class="aa-tpl-page">' + suggestion._highlightResult.page.value + '</div>'
                   + '<div class="aa-tpl-snippet">' + suggestion._snippetResult.content.value.trim().replace(/(?:\r\n|\r|\n)/g, '<br>').replace(/(<br>){2,}/gi, '<br>') + '</div>';
+                  + '</div>'
               }
             }
           }
