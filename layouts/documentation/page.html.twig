@@ -53,8 +53,8 @@
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
-<script src="{{ asset('js/tocbot.min.js',{minify:false})|url }}"></script>
-<link rel="stylesheet" href="{{ asset('css/tocbot.min.css',{minify:false})|url }}">
+<script src="{{ asset('js/tocbot.min.js',{minify:false}) }}"></script>
+<link rel="stylesheet" href="{{ asset('css/tocbot.min.css',{minify:false}) }}">
 <script>{% apply minify_js %}
   tocbot.init({
     tocSelector: '.toc',

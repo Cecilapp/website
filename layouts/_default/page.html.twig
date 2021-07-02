@@ -7,8 +7,8 @@
     {%~ include 'partials/metatags.html.twig' ~%}
     <meta name="copyright" content="{{ site.author.name }}" />
     <meta name="google-site-verification" content="{{ site.gsv }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png')|url }}" />
-    <link rel="icon" href="{{ asset('favicon.ico',{fingerprint:false})|url }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png') }}" />
+    <link rel="icon" href="{{ asset('favicon.ico',{fingerprint:false}) }}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
@@ -27,7 +27,7 @@
     <header class="px-6 pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-gray-900">
       <div class="container mx-auto">
         <a href="{{ url() }}" title="{{ site.title }}" class="text-2xl md:float-left">
-          <img src="{{ asset('images/cecil-logo.png')|url }}" alt="{{ site.title }} logo" class="w-10" />
+          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-10" />
         </a>
         <nav class="mt-3 md:mt-0 pt-3 md:pt-0 border-t md:border-t-0 border-bluegray space-x-6 md:float-right">
           {%- for entry in site.menus.main|sort_by_weight -%}
