@@ -1,29 +1,39 @@
-{% set section, balise = 'documentation', 'h3' %}
+{%- set section, balise = 'documentation', 'h3' -%}
+{%- macro dataset(page, title, description = '', content, date, href, objectID) ~%}
+	{
+    "page": "{{ page }}",
+    "title": "{{ title }}",
+    "description": {{ description }},
+    "content": {{ content }},
+    "date": "{{ date }}",
+    "href": "{{ href }}",
+    "objectID": "{{ objectID }}"
+  }
+{%- endmacro -%}
 [
 {%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
   {%- set count = 0 -%}
-  {%- set page_heads = p.content|preg_split('/<' ~ balise ~ '[^>]*>/') -%}
-  {%- if page_heads|length > 0 -%}
-    {%- for head in page_heads -%}
+  {%- set sections = p.content|preg_split('/<' ~ balise ~ '[^>]*>/') -%}
+  {%- if sections|length > 0 -%}
+    {%- for section in sections -%}
       {%- if loop.index0 > 0 -%}
-        {%- set head_split = page_heads[loop.index0]|split('</' ~ balise ~ '>') -%}
-        {%- set head_title = head_split[0]|trim|striptags -%}
-        {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
-        {#- set head_content = head_split[1]|striptags ~#}
-        {%- set head_content = head_split[1] -%}
-        {%- if head_content|trim starts with '<p>' -%}
-        {%- set head_content = head_content|trim|split('</p>')|first|striptags -%}
-        {%- else -%}
-        {%- set head_content = '' -%}
+        {%- set section_content = sections[loop.index0]|split('</' ~ balise ~ '>') -%}
+        {%- set title = section_content[0]|trim|striptags -%}
+        {%- set anchor = title|lower|replace({' ':'-',':':''}) -%}
+        {%- set content = section_content[1]|striptags ~%}
+        {%- set description = '' -%}
+        {%- if section_content[1]|trim starts with '<p>' -%}
+        {%- set description = section_content[1]|trim|split('</p>')|first|striptags -%}
         {%- endif -%}
-  {
-    "page": "{{ p.title }}",
-    "title": "{{ head_title }}",
-    "content": {{ head_content|json_encode }},
-    "date": "{{ p.date|date('c') }}",
-    "href": "{{ url(p,{canonical:false})|trim('/') }}#{{ head_anchor }}",
-    "objectID": "{{ p.id }}#{{ head_anchor }}"
-  }
+  {{- _self.dataset(
+    p.title,
+    title,
+    description|json_encode,
+    content|json_encode,
+    p.date|date('c'),
+    url(p,{canonical:false})|trim('/') ~ '#' ~ anchor,
+    p.id ~ '#' ~ anchor
+  ) -}}
         {%- if not loop.last %},{% endif ~%}
         {%- set count = count + 1 -%}
       {%- endif -%}
