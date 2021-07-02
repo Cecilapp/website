@@ -24,6 +24,6 @@
     indexName = "documentation"
 
 [[context.algolia.plugins]]
-  package = "netlify-plugin-refresh-algolia"
+package = "netlify-plugin-refresh-algolia"
   [context.algolia.plugins.inputs]
     indexName = "documentation-preview"
