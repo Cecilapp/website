@@ -3,7 +3,7 @@
 	{
     "objectID": "{{ objectID }}",
     "page": "{{ page }}",
-    "title": {{ title }},
+    "title": "{{ title }}",
     "description": {{ description }},
     "content": {{ content }},
     "date": "{{ date }}",
@@ -32,13 +32,13 @@
         {% endif %}
 
   {{- _self.dataset(
+    p.id ~ '#' ~ anchor,
     p.title,
     title,
     description|json_encode,
     content|json_encode,
-    p.date|date('c')|json_encode,
+    p.date|date('c'),
     url(p,{canonical:false})|trim('/') ~ '#' ~ anchor,
-    p.id ~ '#' ~ anchor,
     experimental|default(0)
   ) -}}
         {%- if not loop.last %},{% endif ~%}
