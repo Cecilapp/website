@@ -10,9 +10,9 @@
         {%- set head_title = head_split[0]|trim|striptags -%}
         {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
         {#- set head_content = head_split[1]|striptags ~#}
-        {%- set h = head_split[1] -%}
-        {%- if h|trim starts with '<p>' -%}
-        {%- set head_content = h|trim|split('</p>')|first|striptags -%}
+        {%- set head_content = head_split[1] -%}
+        {%- if head_content|trim starts with '<p>' -%}
+        {%- set head_content = head_content|trim|split('</p>')|first|striptags -%}
         {%- else -%}
         {%- set head_content = '' -%}
         {%- endif -%}
