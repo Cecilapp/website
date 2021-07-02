@@ -23,8 +23,7 @@
     appId = "PVTO81KCEC"
     indexName = "documentation"
 
-[context.algolia]
-  [[context.algolia.plugins]]
-    package = "netlify-plugin-refresh-algolia"
-    [context.algolia.plugins.inputs]
-      indexName = "documentation-preview"
+[[context.algolia.plugins]]
+  package = "netlify-plugin-refresh-algolia"
+  [context.algolia.plugins.inputs]
+    indexName = "documentation-preview"
