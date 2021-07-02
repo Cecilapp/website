@@ -114,7 +114,8 @@
           }
         ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
           console.log(event, suggestion, dataset, context);
-          window.location.href = suggestion.href;
+          let baseurl = '{{ site.baseurl }}';
+          window.location.href = baseurl + suggestion.href;
         });
       {% endapply %}</script>
 {% endif %}
