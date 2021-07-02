@@ -15,7 +15,7 @@
     "title": "{{ head_title }}",
     "content": {{ head_content|json_encode }},
     "date": "{{ p.date|date('c') }}",
-    "href": "{{ url(p,{canonical:false}) }}#{{ head_anchor }}",
+    "href": "{{ url(p,{canonical:false})|trim('/') }}#{{ head_anchor }}",
     "objectID": "{{ p.id }}#{{ head_anchor }}"
   }
         {%- if not loop.last %},{% endif ~%}
