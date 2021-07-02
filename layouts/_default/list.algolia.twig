@@ -28,8 +28,8 @@
   {{- _self.dataset(
     p.title,
     title,
-    description|json_encode,
-    content|json_encode,
+    description|json_encode|trim,
+    content|json_encode|trim,
     p.date|date('c'),
     url(p,{canonical:false})|trim('/') ~ '#' ~ anchor,
     p.id ~ '#' ~ anchor
