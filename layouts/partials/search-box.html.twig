@@ -102,14 +102,14 @@
             }),
             displayKey: 'title',
             templates: {
-              footer: '<span class="aa-tpl-footer">Powered by <a href="https://www.algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/algolia.svg')|url }}" width="47" height="15" alt="Algolia logo"></a></span>',
               suggestion: function(suggestion) {
                 return '<div class="aa-tpl-suggestion">'
                   + '  <div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
                   + '  <div class="aa-tpl-page">' + suggestion._highlightResult.page.value + '</div>'
                   + '  <div class="aa-tpl-snippet">' + suggestion._snippetResult.description.value + '</div>';
                   + '</div>'
-              }
+              },
+              footer: '<span class="aa-tpl-footer"><a href="https://algolia.com" target="_blank" title="Algolia - Hosted cloud search as a service"><img src="{{ asset('/images/search-by-algolia.svg') }}" width="120" height="16" alt="Algolia logo"></a></span>',
             }
           }
         ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
