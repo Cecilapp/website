@@ -94,10 +94,10 @@
           {
             source: newHitsSource(index, {
               hitsPerPage: 4,
-              attributesToHighlight: ['content', 'page', 'title'],
+              attributesToHighlight: ['description', 'page', 'title', 'content'],
               highlightPreTag: '<strong>',
               highlightPostTag: '</strong>',
-              attributesToSnippet: ['content:25'],
+              attributesToSnippet: ['description:25'],
               snippetEllipsisText: '…'
             }),
             displayKey: 'title',
@@ -107,7 +107,7 @@
                 return '<div class="aa-tpl-suggestion">'
                   + '  <div class="aa-tpl-title">' + suggestion._highlightResult.title.value + '</div>'
                   + '  <div class="aa-tpl-page">' + suggestion._highlightResult.page.value + '</div>'
-                  + '  <div class="aa-tpl-snippet">' + suggestion._snippetResult.content.value + '</div>';
+                  + '  <div class="aa-tpl-snippet">' + suggestion._snippetResult.description.value + '</div>';
                   + '</div>'
               }
             }
