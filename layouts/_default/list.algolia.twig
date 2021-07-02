@@ -20,16 +20,16 @@
         {%- set section_content = sections[loop.index0]|split('</' ~ balise ~ '>') -%}
         {%- set title = section_content[0]|trim|striptags -%}
         {%- set anchor = title|lower|replace({' ':'-',':':''}) -%}
-        {%- set content = section_content[1]|striptags ~%}
+        {%- set content = section_content[1]|striptags|trim ~%}
         {%- set description = '' -%}
         {%- if section_content[1]|trim starts with '<p>' -%}
-        {%- set description = section_content[1]|trim|split('</p>')|first|striptags -%}
+        {%- set description = section_content[1]|trim|split('</p>')|first|striptags|trim -%}
         {%- endif -%}
   {{- _self.dataset(
     p.title,
     title,
-    description|json_encode|trim,
-    content|json_encode|trim,
+    description|json_encode,
+    content|json_encode,
     p.date|date('c'),
     url(p,{canonical:false})|trim('/') ~ '#' ~ anchor,
     p.id ~ '#' ~ anchor
