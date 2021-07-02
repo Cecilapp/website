@@ -9,7 +9,13 @@
         {%- set head_split = page_heads[loop.index0]|split('</' ~ balise ~ '>') -%}
         {%- set head_title = head_split[0]|trim|striptags -%}
         {%- set head_anchor = head_title|lower|replace({' ':'-',':':''}) -%}
-        {%- set head_content = head_split[1]|striptags ~%}
+        {#- set head_content = head_split[1]|striptags ~#}
+        {%- set h = head_split[1] -%}
+        {%- if h|trim starts with '<p>' -%}
+        {%- set head_content = h|trim|split('</p>')|first|striptags -%}
+        {%- else -%}
+        {%- set head_content = '' -%}
+        {%- endif -%}
   {
     "page": "{{ p.title }}",
     "title": "{{ head_title }}",
