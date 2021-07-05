@@ -5,7 +5,7 @@
 
 /* Tailwind base styles */
 @layer base {
-  main a:hover:not(.btn):not(.menu-item),
+  main a:hover:not(.btn):not(.menu-item):not(.toc-link),
   footer a:hover {
     @apply underline;
   }
