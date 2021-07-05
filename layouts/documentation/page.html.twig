@@ -46,22 +46,31 @@
 </div>
 {% endblock content %}
 
-{% block footer_css %}
-{{ parent() }}{% apply minify_css %}
-{% endapply %}{% endblock footer_css %}
-
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
-<script src="{{ asset('js/tocbot.min.js',{minify:false}) }}"></script>
-<link rel="stylesheet" href="{{ asset('css/tocbot.min.css',{minify:false}) }}">
-<script>{% apply minify_js %}
-  tocbot.init({
-    tocSelector: '.toc',
-    contentSelector: '.prose',
-    headingSelector: 'h2, h3, h4',
-    hasInnerContainers: true,
-    scrollSmooth: false,
-  });
-{% endapply %}</script>
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css') }}">
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js') }}"></script>
+    <script>{% apply minify_js %}
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.prose',
+        headingSelector: 'h2, h3, h4',
+        hasInnerContainers: true,
+        scrollSmooth: false,
+      });
+    {% endapply %}</script>
 {% endblock footer_scripts %}
+
+{% block footer_css %}
+      {{ parent() }}
+      .toc-link::before {
+        background-color: #e5e7eb;
+      }
+      .is-active-link::before {
+        background-color: #163C56;
+      }
+      a.toc-link {
+        text-decoration: none;
+      }
+{% endblock footer_css %}
