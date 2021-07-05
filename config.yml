@@ -66,6 +66,9 @@ algolia:
   application_id: 'PVTO81KCEC'
   search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
   index: 'documentation'
+  version: '@4'
+  autocomplete:
+    version: 0
 static:
   exclude:
     #- '*.phar*' # dev only
@@ -78,3 +81,5 @@ highlight:
   version: 10.4.0
   styles: atom-one-dark
   languages: twig
+tocbot:
+  version: 4.12.3
