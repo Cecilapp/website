@@ -1,4 +1,3 @@
-    {#- <script src="{{ url('js/anchor.min.js') }}"></script> ~#}
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/anchor-js/' ~ site.anchor.version ~ '/anchor.min.js',{minify:false}) }}"></script>
     <script>{% apply minify_js %}
       var selector = '.prose > h2, .prose > h3, .prose > h4';

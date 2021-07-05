@@ -65,7 +65,7 @@
       </div>
     </footer>
     {%- block footer_scripts ~%}
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="{{ asset('https://buttons.github.io/buttons.js') }}"></script>
     {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
     {%~ endblock footer_scripts ~%}
