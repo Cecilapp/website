@@ -64,18 +64,12 @@
         Copyright © 2020 <a href="https://arnaudligny.fr">Arnaud Ligny</a> &middot; logo by <a href="https://www.cecillie.fr">Cécile Ricordeau</a>
       </div>
     </footer>
-    {%~ block footer_scripts -%}
+    {%- block footer_scripts ~%}
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
-    {%~ endblock footer_scripts -%}
+    {%~ endblock footer_scripts ~%}
     <style>{% apply minify_css %}{% block footer_css %}
-      .toc-link::before {
-        background-color: #e5e7eb;
-      }
-      .is-active-link::before {
-        background-color: #163C56;
-      }
     {% endblock footer_css %}{% endapply %}</style>
   </body>
 </html>
