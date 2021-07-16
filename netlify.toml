@@ -22,6 +22,7 @@
   [plugins.inputs]
     appId = "PVTO81KCEC"
     indexName = "documentation"
+    filePath = "_site/algolia.json"
 
 #[[context.algolia.plugins]]
 #  package = "netlify-plugin-refresh-algolia"
