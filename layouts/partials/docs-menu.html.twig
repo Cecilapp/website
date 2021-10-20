@@ -1,11 +1,11 @@
-<div class="w-48">
-	<ul class="list-reset">
-    {%- for item in site.pages|filter_by('section','documentation')|sort_by_weight -%}
-      {%- if item.id != 'documentation/index' -%}
-    <li>
-      <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-gray-200 border-l-2 border-gray-200{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
-    </li>
-      {%- endif -%}
-    {%- endfor -%}
-	</ul>
-</div>
+            <div class="w-48">
+              <ul class="list-reset">
+                {%- for item in site.pages|filter_by('section','documentation')|sort_by_weight ~%}
+                  {%- if item.id != 'documentation/index' ~%}
+                <li>
+                  <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-gray-200 border-l-2 border-gray-200{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
+                </li>
+                  {%- endif ~%}
+                {%- endfor ~%}
+              </ul>
+            </div>

@@ -10,10 +10,10 @@
                 </noscript>
               </div>
             </div>
-            <script>
+            <script>{% apply minify_js %}
               if (window.matchMedia("(min-width: 768px)").matches) {
                 console.log('Loading video');
                 var video = document.getElementById('video-demo');
                 video.src = video.getAttribute('data-src');
               }
-            </script>
+            {% endapply %}</script>

@@ -1,16 +1,16 @@
-          <div class="flex">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 text-blue dark:text-gray-300">
-                {% import 'macros/octicons.twig' as octicons %}
-                {{ octicons.svg(octicon) }}
+{% import 'macros/octicons.twig' as octicons %}
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 text-blue dark:text-gray-300">
+                  {{- octicons.svg(octicon) ~}}
+                </div>
               </div>
+              <dl class="ml-4">
+                <dt class="text-lg leading-6 font-medium">
+                  {{ title }}
+                </dt>
+                <dd class="mt-2 text-sm">
+                  {{ description|markdown_to_html }}
+                </dd>
+              </dl>
             </div>
-            <dl class="ml-4">
-              <dt class="text-lg leading-6 font-medium">
-                {{ title }}
-              </dt>
-              <dd class="mt-2 text-sm">
-                {{ description|markdown_to_html }}
-              </dd>
-            </dl>
-          </div>

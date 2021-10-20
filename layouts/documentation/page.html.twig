@@ -1,49 +1,50 @@
 {% extends 'page.html.twig' %}
 
 {% block content %}
-<div class="flex flex-row xl:space-x-8">
-	{# menu #}
-  <div class="flex-none w-48 hidden lg:block">
-    {%~ include 'partials/docs-menu.html.twig' ~%}
-  </div>
-	{# markdown #}
-  <div class="flex-grow overflow-y-auto">
-    {# content #}
-    <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
-      {%~ include 'partials/search-box.html.twig' ~%}
-      {{ page.content }}
-      {# suggest a modification #}
-      {%- if site.docs_repo is defined and page.filepath is defined -%}
-      <p>
-        <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-          Suggest a modification
-        </a>
-      </p>
-      {%- endif -%}
-      {# prev/next page #}
-      <p>
-        {%- if page.prev is defined -%}
-        <a class="docs-nav float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-          ← {{ page.prev.title }}
-        </a>
-        {%- endif -%}
-        {%- if page.next is defined -%}
-        <a class="docs-nav float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
-          {{ page.next.title }} →
-        </a>
-        {%- endif -%}
-      </p>
-    </div>
-  </div>
-	{# toc #}
-  <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
-    {%~ include 'partials/toc.html.twig' only ~%}
-    <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-      {% import 'macros/octicons.twig' as octicons %}
-      {{ octicons.svg('arrow-up') }}
-    </a>
-  </div>
-</div>
+        {#- content ~#}
+        <div class="flex flex-row xl:space-x-8">
+          {#- menu ~#}
+          <div class="flex-none w-48 hidden lg:block">
+            {%~ include 'partials/docs-menu.html.twig' ~%}
+          </div>
+          {#- markdown ~#}
+          <div class="flex-grow overflow-y-auto">
+            {#- content ~#}
+            <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
+              {%~ include 'partials/search-box.html.twig' ~%}
+              {{ page.content }}
+              {#- suggest a modification ~#}
+              {%- if site.docs_repo is defined and page.filepath is defined -%}
+              <p>
+                <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
+                  Suggest a modification
+                </a>
+              </p>
+              {%- endif -%}
+              {#- prev/next page ~#}
+              <p>
+                {%- if page.prev is defined -%}
+                <a class="docs-nav float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+                  ← {{ page.prev.title }}
+                </a>
+                {%- endif -%}
+                {%- if page.next is defined -%}
+                <a class="docs-nav float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
+                  {{ page.next.title }} →
+                </a>
+                {%- endif -%}
+              </p>
+            </div>
+          </div>
+          {#- toc ~#}
+          <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
+            {%~ include 'partials/toc.html.twig' only ~%}
+            <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
+              {% import 'macros/octicons.twig' as octicons %}
+              {{ octicons.svg('arrow-up') }}
+            </a>
+          </div>
+        </div>
 {% endblock content %}
 
 {% block footer_scripts %}
@@ -64,6 +65,7 @@
 
 {% block footer_css %}
       {{ parent() }}
+      {% apply minify_css %}
       .toc-link::before {
         background-color: #e5e7eb;
       }
@@ -73,4 +75,5 @@
       a.toc-link {
         text-decoration: none;
       }
+      {% endapply %}
 {% endblock footer_css %}
