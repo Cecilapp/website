@@ -5,8 +5,8 @@
           {#- content ~#}
           <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
             <p>
-              <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">Download</a>
-              <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">File checksum</a>
+              <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">{% trans "Download" %}</a>
+              <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">{% trans "File checksum" %}</a>
             </p>
             {{ page.content }}
           </div>

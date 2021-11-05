@@ -17,7 +17,7 @@
               {%- if site.docs_repo is defined and page.filepath is defined -%}
               <p>
                 <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-                  Suggest a modification
+                  {% trans "Suggest a modification" %}
                 </a>
               </p>
               {%- endif -%}

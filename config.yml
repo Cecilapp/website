@@ -13,6 +13,29 @@ social:
   github:
     repo: https://github.com/Cecilapp/Cecil
 image: /images/cecil-card.png
+languages:
+  - code: en
+    name: English
+    locale: en_US
+  - code: fr
+    name: Français
+    locale: fr_FR
+    config:
+      baseurl: "https://cecil.app/fr/"
+      baseline: "Votre générateur de site statique orienté contenu."
+      description: "Cecil est une application CLI qui fusionne des fichiers texte brut (écrits en Markdown), des images et des templates Twig pour générer un site web statique."
+      menus:
+        main:
+          - id: documentation
+            name: Documentation
+            url: fr/documentation/
+            weight: 10
+            enabled: true
+          - id: download
+            name: Télécharger
+            url: fr/download/
+            weight: 30
+            enabled: true
 menus:
   main:
     - id: documentation
