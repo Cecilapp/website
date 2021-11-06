@@ -23,12 +23,12 @@
     appId = "PVTO81KCEC"
     indexName = "documentation"
     #filePath = "_site/algolia.json"
-[[plugins]]
-  package = "netlify-plugin-refresh-algolia"
-  [plugins.inputs]
-    appId = "PVTO81KCEC"
-    indexName = "documentation.fr"
-    filePath = "_site/fr/algolia.json"
+#[[plugins]]
+#  package = "netlify-plugin-refresh-algolia"
+#  [plugins.inputs]
+#    appId = "PVTO81KCEC"
+#    indexName = "documentation.fr"
+#    filePath = "_site/fr/algolia.json"
 
 #[[context.algolia.plugins]]
 #  package = "netlify-plugin-refresh-algolia"
