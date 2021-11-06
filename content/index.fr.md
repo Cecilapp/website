@@ -19,14 +19,12 @@ blocks:
     description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS sont générés automatiquement.
     octicon: hubot
     visible: true
-  - title: pas d'installation
+  - title: Pas d’installation
     description: "[Téléchargez](/download/) un fichier et exécutez le avec PHP."
     octicon: desktop-download
     visible: true
   - title: Facile à déployer
-    description: "Créez et déployez un nouveau blog en 1 minute !  \n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
-      \"Deploy to Netlify\")](/hosting/netlify/deploy/) [![Deploy
-      to ZEIT Now](https://zeit.co/button \"Deploy to ZEIT Now\")](/hosting/vercel/deploy/)"
+    description: "Créez et déployez un nouveau blog en 1 minute !  \n[![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg \"Deployer sur Netlify\")](/hosting/netlify/deploy/) [![Deployer sur Vercel](https://zeit.co/button \"Deployer sur Vercel\")](/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
 

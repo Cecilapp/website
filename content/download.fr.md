@@ -6,21 +6,20 @@ layout: download
 
 # Télécharger
 
-You can download `cecil.phar` by clicking on the "Download" button or with the following command from your terminal:
+Vous pouvez télécharger `cecil.phar` en cliquant sur le bouton "Télécharger" ou via la commande suivante depuis votre terminal:
 
 ```bash
 curl -LO https://cecil.app/cecil.phar
 ```
 
-> [PHP](https://www.php.net/manual/install.php) 7.1+ is required.
+> [PHP](https://www.php.net/manual/fr/install.php) 7.1+ est requis.  
+> L’intégrité du fichier peut être vérifié via le fichier `SHA1`, en cliquant sur le bouton "Somme de contrôle des fichiers".
 
-> File integrity can be checked with the `SHA1` file, by clicking on the "File checksum" button.
+## Installation globale
 
-## Install globally
+Pour plus de confort vous devriez installer Cecil globalement.
 
-For more comfort you should install Cecil globally.
-
-### macOS and Linux
+### macOS et Linux
 
 ```bash
 mv cecil.phar /usr/local/bin/cecil
@@ -29,26 +28,26 @@ chmod +x /usr/local/bin/cecil
 
 ### Windows
 
-1. Move `cecil.phar` in a dedicated directory like `C:\bin`
-2. Rename it from `cecil.phar` to `cecil`
-3. Append `;C:\bin` to your `PATH` environment variable
-4. Create a [wrapping batch script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
+1. Déplacez `cecil.phar` dans un dossier dédié tel que `C:\bin`
+2. Rennomez le de `cecil.phar` vers `cecil`
+3. Ajoutez `;C:\bin` à votre variable d’environnement `PATH`
+4. Créez un ["wrapping batch script"](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
 
-## Update
+## Mise à jour
 
-The easiest way to update Cecil to the last version is to use the dedicated command:
+La manière la plus simple de mettre à jour Cecil vers la dernière version est d'utilsier la commande dédiée :
 
 ```bash
 php cecil self-update
 ```
 
-## Get a specific version
+## Obtenir une version spécifique
 
-If you want to download a specific version you can specify it in the URL path.
-For instance, if you want to install the `4.0.0` version you need to put `download/4.0.0/` in the URL:
+Si vous souhaitez télécharger une version spécifique vous pouvez la spécifier dans le checmin de l’URL.  
+Par exemple, si vous souhaitez installer la version `4.0.0` vous devez ajouter `download/4.0.0/` dans l’URL :
 
 ```bash
 curl -LO https://cecil.app/download/4.0.0/cecil.phar
 ```
 
-> See the [releases list](https://github.com/Cecilapp/Cecil/releases) on GitHub.
+> Voir la ["releases list"](https://github.com/Cecilapp/Cecil/releases) sur GitHub.
