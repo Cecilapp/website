@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-05 20:04+0100\n"
-"PO-Revision-Date: 2021-11-05 20:05+0100\n"
+"POT-Creation-Date: 2021-11-06 00:44+0100\n"
+"PO-Revision-Date: 2021-11-06 01:36+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -24,11 +24,11 @@ msgstr "Accueil"
 
 #: _default/page.html.twig:37
 msgid "Docs"
-msgstr "Docs"
+msgstr "Doc"
 
 #: _default/page.html.twig:46
 msgid "Star"
-msgstr "Étoile"
+msgstr "Favoris"
 
 #: _default/page.html.twig:63
 msgid "About"
@@ -54,7 +54,7 @@ msgstr "Documentation"
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: download.html.twig:8 index.html.twig:13
+#: download.html.twig:8 index.html.twig:14
 msgid "Download"
 msgstr "Télécharger"
 
@@ -68,11 +68,11 @@ msgstr "Démarrage rapide"
 
 #: partials/search-box.html.twig:3
 msgid "Search the Docs"
-msgstr "Rechercher dans la documentation"
+msgstr "Rechercher dans la doc"
 
 #: partials/toc.html.twig:2
 msgid "What's on this Page"
-msgstr "Qu’y a-t-il sur cette page"
+msgstr "Sur cette page"
 
 #: partials/toc.html.twig:5
 msgid "Table of contents"
