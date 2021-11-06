@@ -38,6 +38,8 @@ languages:
             url: fr/download/
             weight: 30
             enabled: true
+      algolia:
+        enabled: false
 menus:
   main:
     - id: documentation
