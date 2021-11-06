@@ -17,9 +17,11 @@ languages:
   - code: en
     name: English
     locale: en_US
+    weight: 1
   - code: fr
     name: Français
     locale: fr_FR
+    weight: 2
     config:
       baseurl: "https://cecil.app/fr/"
       baseline: "Votre générateur de site statique orienté contenu."
