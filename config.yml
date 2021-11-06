@@ -13,6 +13,7 @@ social:
   github:
     repo: https://github.com/Cecilapp/Cecil
 image: /images/cecil-card.png
+language: en
 languages:
   - code: en
     name: English
