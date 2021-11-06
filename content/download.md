@@ -14,8 +14,7 @@ You can download `cecil.phar` by clicking on the "Download" button or with the f
 curl -LO https://cecil.app/cecil.phar
 ```
 
-> [PHP](https://www.php.net/manual/install.php) 7.1+ is required.
-
+> [PHP](https://www.php.net/manual/en/install.php) 7.1+ is required.  
 > File integrity can be checked with the `SHA1` file, by clicking on the "File checksum" button.
 
 ## Install globally
@@ -46,7 +45,7 @@ php cecil self-update
 
 ## Get a specific version
 
-If you want to download a specific version you can specify it in the URL path.
+If you want to download a specific version you can specify it in the URL path.  
 For instance, if you want to install the `4.0.0` version you need to put `download/4.0.0/` in the URL:
 
 ```bash
