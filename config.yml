@@ -24,7 +24,7 @@ languages:
     locale: fr_FR
     weight: 2
     config:
-      baseline: "Votre générateur de site statique orienté contenu."
+      baseline: "Votre générateur de site statique axé sur le contenu."
       description: "Cecil est une application CLI qui fusionne des fichiers texte brut (écrits en Markdown), des images et des templates Twig pour générer un site web statique."
       menus:
         main:
