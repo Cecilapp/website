@@ -15,10 +15,10 @@ blocks:
     visible: true
   - title: Customisable
     description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
-      flexible template engine, with [theme](https://github.com/Cecilapp?q=theme#org-repositories) support.
+      flexible template engine, with [themes](https://github.com/Cecilapp?q=theme#org-repositories) support.
     octicon: paintbrush
     visible: true
-  - title: Generators
+  - title: Multiples generators
     description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
     octicon: hubot
     visible: true
