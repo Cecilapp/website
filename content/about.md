@@ -21,5 +21,3 @@ The [first version](https://github.com/Cecilapp/Cecil/commit/58cd48bcc72baa7636f
 
 <iframe src="https://github.com/sponsors/Narno/button" title="Sponsor Narno" height="35" width="116" style="border: 0;"></iframe>
 
-*[CLI]: Command-Line Interface
-*[PHP]: PHP Hypertext Preprocessor
