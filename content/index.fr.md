@@ -7,7 +7,7 @@ blocks:
     description: 'Pas de base de données, pas de serveur, pas de dépendance : performance et sécurité.'
     octicon: zap
     visible: true
-  - title: Juste des fichiers
+  - title: Uniquement des fichiers
     description: Votre contenu est stocké dans des fichiers plat au format [Markdown](/documentation/content/#body) avec un [front matter](/documentation/content/#front-matter).
     octicon: markdown
     visible: true
