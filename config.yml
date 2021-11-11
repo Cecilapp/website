@@ -28,36 +28,15 @@ languages:
         main:
           - id: documentation
             name: Documentation
-            url: fr/documentation/
             weight: 10
-            enabled: true
-          - id: download
-            name: Télécharger
-            url: fr/download/
-            weight: 30
-            enabled: true
       algolia:
         enabled: false
 menus:
   main:
     - id: documentation
       name: Documentation
-      url: documentation
       weight: 10
-      enabled: true
-    - id: download
-      name: Download
-      url: download
-      weight: 30
-      enabled: true
-    - id : github
-      name: GitHub
-      url: https://github.com/Cecilapp/Cecil
-      weight: 40
-      enabled: false
     - id: index
-      enabled: false
-    - id: about
       enabled: false
     - id: cms
       enabled: false

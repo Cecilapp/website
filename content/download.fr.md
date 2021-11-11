@@ -2,6 +2,9 @@
 title: "Télécharger"
 date: 2021-10-26
 layout: download
+menu:
+  main:
+    weight: 20
 ---
 
 # Télécharger
