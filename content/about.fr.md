@@ -20,6 +20,3 @@ La [première version](https://github.com/Cecilapp/Cecil/commit/58cd48bcc72baa76
 
 - [Cecil](https://github.com/Cecilapp/Cecil/) est un logiciel gratuit distribué sous les termes de la [licence MIT](https://github.com/Cecilapp/Cecil/blob/master/LICENSE )
 - Le site [cecil.app](https://cecil.app) est distribué sous [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-
-<iframe src="https://github.com/sponsors/Narno/button" title="Sponsor Narno" height="35" width="116" style="border: 0;"></iframe>
-
