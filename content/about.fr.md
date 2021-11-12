@@ -1,6 +1,8 @@
 ---
 title: À propos
 date: 2021-10-26
+slug: a-propos
+menu: footer
 ---
 
 # À propos

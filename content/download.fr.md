@@ -5,6 +5,7 @@ layout: download
 menu:
   main:
     weight: 20
+slug: telecharger
 ---
 
 # Télécharger

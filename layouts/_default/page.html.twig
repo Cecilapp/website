@@ -60,8 +60,8 @@
     </main>
     <footer class="px-6 py-6 leading-6 text-xs text-left text-gray-500 font-light border-t border-gray-200">
       <div class="container mx-auto">
-        {% include 'partials/languages.html.twig' %} &middot; <a href="{{ url('about',{lang:site.language}) }}">{% trans "About" %}</a> &middot; {% trans "Powered by" %} <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a> and <a href="https://www.netlify.com">Netlify</a><br />
-        {% trans "Copyright" %} © 2013-{{ 'now'|date('Y') }} <a href="https://arnaudligny.fr">Arnaud Ligny</a> &middot; {% trans "logo by" %} <a href="https://www.cecillie.fr">Cécile Ricordeau</a>
+        {% include 'partials/languages.html.twig' %} &middot; <a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% trans "Powered by" %} <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a> and <a href="https://www.netlify.com">Netlify</a><br />
+        {% trans "Copyright" %} © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans "logo by" %} <a href="https://www.cecillie.fr">Cécile Ricordeau</a>
       </div>
     </footer>
     {%- block footer_scripts ~%}
