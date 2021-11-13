@@ -1,0 +1,8 @@
+{# Language switcher #}
+{% if page.translations|length >= 1 %}
+  {%- for p in page.translations ~%}
+    {%- if p.language is defined ~%}
+<a href="{{ url(p) }}" title="{{ site.language.name(p.language) }}">{{ p.language|upper }}</a>{% if not loop.last %}, {% endif %}
+    {%- endif ~%}
+  {%- endfor ~%}
+{% endif %}
