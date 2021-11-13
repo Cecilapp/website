@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59a7cef2722efbb7d77c31af9cf7e08e",
+    "content-hash": "3366b26924312c2e41f2b0c34e1eac63",
     "packages": [
         {
             "name": "cecil/theme-installer",
@@ -78,16 +78,16 @@
         },
         {
             "name": "cecil/theme-netlify",
-            "version": "1.1.6",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-netlify.git",
-                "reference": "8b6f164606cdcbea951e9de0c26c9cf5e1f24900"
+                "reference": "12208cb4454e4840c8dd4bf7a0253a29c4960a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/8b6f164606cdcbea951e9de0c26c9cf5e1f24900",
-                "reference": "8b6f164606cdcbea951e9de0c26c9cf5e1f24900",
+                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/12208cb4454e4840c8dd4bf7a0253a29c4960a70",
+                "reference": "12208cb4454e4840c8dd4bf7a0253a29c4960a70",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-netlify/issues",
-                "source": "https://github.com/Cecilapp/theme-netlify/tree/1.1.6"
+                "source": "https://github.com/Cecilapp/theme-netlify/tree/1.2.0"
             },
             "funding": [
                 {
@@ -122,9 +122,13 @@
                 {
                     "url": "https://github.com/Narno",
                     "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2021-02-07T01:42:40+00:00"
+            "time": "2021-11-13T00:55:28+00:00"
         }
     ],
     "packages-dev": [],
