@@ -4,6 +4,6 @@
         {# content #}
         <div class="prose prose-sm lg:prose">
           <h3>{% trans "Sorry, page doesn't exist…" %}</h3>
-          <p>→ <a href="{{ url() }}">{% trans "Home" %}</a></p>
+          <p>→ <a href="{{ url(site.home) }}">{% trans "Home" %}</a></p>
         </div>
 {% endblock content %}
