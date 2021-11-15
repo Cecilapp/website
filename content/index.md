@@ -32,5 +32,6 @@ blocks:
       to Vercel](https://zeit.co/button \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
-
+pagination:
+  enabled: false
 ---

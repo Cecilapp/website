@@ -27,5 +27,6 @@ blocks:
     description: "Créez et déployez un nouveau blog en 1 minute !  \n[![Deployer sur Netlify](https://www.netlify.com/img/deploy/button.svg \"Deployer sur Netlify\")](/hosting/netlify/deploy/) [![Deployer sur Vercel](https://zeit.co/button \"Deployer sur Vercel\")](/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
-
+pagination:
+  enabled: false
 ---
