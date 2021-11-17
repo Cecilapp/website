@@ -5,7 +5,7 @@ baseurl: "https://cecil.app/"
 author:
   name: "Arnaud Ligny"
   url: "https://arnaudligny.fr"
-keywords: ["static", "generator", "SSG", "PHP", "Twig"]
+keywords: ["static", "generator", "website", "SSG", "PHP", "Twig"]
 social:
   twitter:
     site: Cecil_Static
