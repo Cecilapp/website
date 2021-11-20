@@ -11,4 +11,4 @@
 # Redirects defined in config
 https://cecilapp.netlify.app/*    https://cecil.app/:splat    301!
 # Language redirects
-/*  /fr/:splat    302!    Language=fr
+/  /fr/    302!    Language=fr
