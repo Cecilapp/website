@@ -63,8 +63,8 @@ output:
   pagetypeformats:
     homepage: ['html', 'algolia']
     section: ['html', 'atom']
-#theme:
-#  - netlify
+theme:
+  - netlify
 netlify:
   redirects:
     - from: https://cecilapp.netlify.app/*
