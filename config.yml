@@ -63,8 +63,14 @@ output:
   pagetypeformats:
     homepage: ['html', 'algolia']
     section: ['html', 'atom']
-theme:
-  - netlify
+#theme:
+#  - netlify
+netlify:
+  redirects:
+    - from: https://cecilapp.netlify.app/*
+      to: https://cecil.app/:splat
+      status: 301
+      force: true
 static:
   exclude:
     #- '*.phar*' # dev only
