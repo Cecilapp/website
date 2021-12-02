@@ -7,8 +7,6 @@
     {%~ include 'partials/metatags.html.twig' with {'title': title|default('')} ~%}
     <meta name="copyright" content="{{ site.author.name }}" />
     <meta name="google-site-verification" content="{{ site.gsv }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/cecil-logo.png') }}" />
-    <link rel="icon" href="{{ asset('favicon.ico',{fingerprint:false}) }}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
@@ -17,7 +15,7 @@
     </noscript>
     {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>
-      {{- asset('styles.css',{minify:true})|inline ~}}
+      {{- asset('styles.css')|inline ~}}
     </style>
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css',{minify:false,fingerprint:false}) }}" />
