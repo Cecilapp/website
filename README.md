@@ -8,7 +8,7 @@
 
 ```bash
 npm install
-npx tailwindcss -i ./static/tailwind.css -o ./static/styles.css
+npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 curl -LO https://cecil.app/cecil.phar
 php cecil.phar serve -v
 ```
