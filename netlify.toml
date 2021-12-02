@@ -7,8 +7,8 @@
   CECIL_ENV = "production"
   CECIL_CACHE_DIR = "/opt/build/cache/"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
-  CSS_INPUT = "static/tailwind.css"
-  CSS_OUPUT = "static/styles.css"
+  CSS_INPUT = "assets/tailwind.css"
+  CSS_OUPUT = "assets/styles.css"
   #ALGOLIA_INDEX = "_site/algolia.json"
 
 [context.deploy-preview.environment]
