@@ -23,10 +23,10 @@ else
   cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
 fi
 
-if [[ $CECIL_ENV != "production" ]]; then
-  php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
-else
+if [[ $CECIL_ENV == "production" ]]; then
   php cecil.phar build -v --baseurl=$URL --postprocess
+else
+  php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
 fi
 if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 
