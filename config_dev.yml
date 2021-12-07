@@ -1,0 +1,3 @@
+static:
+  exclude:
+    - '*.phar*' # dev only
