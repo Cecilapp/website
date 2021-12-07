@@ -73,10 +73,8 @@ netlify:
       force: true
 static:
   exclude:
-    #- '*.phar*' # dev only
     - 'cecil-demo.png'
     - '*.mp4'
-    - 'tailwind.css'
 release:
   name: cecil.phar
   sha1: cecil.phar.sha1
