@@ -10,14 +10,14 @@
 npm install
 npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 curl -LO https://cecil.app/cecil.phar
-php cecil.phar serve -v
+php cecil.phar serve -v --config=config_dev.yml
 ```
 
 ## Production
 
 ```bash
 npm install
-CECIL_ENV=production npx tailwindcss -i ./static/tailwind.css -o ./static/styles.css
+CECIL_ENV=production npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 curl -LO https://cecil.app/cecil.phar
 php cecil.phar build
 ```
