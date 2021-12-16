@@ -100,9 +100,6 @@ a.btn-gold:hover {
 a.btn-trans:hover {
   @apply text-darkblue;
 }
-a.docs-nav {
-  @apply text-blue font-bold no-underline;
-}
 
 /* Terminal */
 .shell-wrap {

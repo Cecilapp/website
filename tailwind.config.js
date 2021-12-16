@@ -7,6 +7,7 @@ module.exports = {
       './themes/**/layouts/**/*.html.twig',
     ],
   },
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -43,12 +44,30 @@ module.exports = {
         },
         dark: {
           css: {
-            color: '#7982a9',
+            color: 'white',
             a: {
-              color: '#9ECE6A',
+              color: 'white',
               '&:hover': {
-                color: '#9ECE6A',
+                color: 'white',
               },
+            },
+            h1: {
+              color: 'white',
+            },
+            h2: {
+              color: 'white',
+            },
+            h3: {
+              color: 'white',
+            },
+            code: {
+              color: 'white',
+            },
+            blockquote: {
+              color: 'white',
+            },
+            strong: {
+              color: 'white',
             },
           },
         },
@@ -63,7 +82,6 @@ module.exports = {
       }
     }
   },
-  darkMode: 'class',
   variants: {
     typography: ['dark'],
   },

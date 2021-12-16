@@ -12,7 +12,7 @@
           {#- markdown ~#}
           <div class="flex-grow overflow-y-auto">
             {#- content ~#}
-            <div class="prose prose-sm sm:prose lg:prose-lg mx-auto">
+            <div class="prose prose-sm sm:prose lg:prose-lg mx-auto dark:prose-dark">
               {%~ include 'partials/search-box.html.twig' ~%}
               {{ page.content }}
               {#- suggest a modification ~#}
@@ -23,19 +23,19 @@
                 </a>
               </p>
               {%- endif -%}
-              {#- prev/next page ~#}
-              <p>
-                {%- if page.prev is defined -%}
-                <a class="docs-nav float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-                  ← {{ page.prev.title }}
-                </a>
-                {%- endif -%}
-                {%- if page.next is defined -%}
-                <a class="docs-nav float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
-                  {{ page.next.title }} →
-                </a>
-                {%- endif -%}
-              </p>
+            </div>
+            {#- prev/next page ~#}
+            <div>
+              {%- if page.prev is defined -%}
+              <a class="text-blue dark:text-white font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+                ← {{ page.prev.title }}
+              </a>
+              {%- endif -%}
+              {%- if page.next is defined -%}
+              <a class="text-blue dark:text-white font-bold no-underline float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
+                {{ page.next.title }} →
+              </a>
+              {%- endif -%}
             </div>
           </div>
           {#- toc ~#}
