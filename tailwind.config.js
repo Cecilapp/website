@@ -44,30 +44,33 @@ module.exports = {
         },
         dark: {
           css: {
-            color: 'white',
+            color: theme('colors.gray.50'),
             a: {
-              color: 'white',
+              color: theme('colors.gray.50'),
               '&:hover': {
-                color: 'white',
+                color: theme('colors.gray.50'),
+              },
+              '& code': {
+                color: theme('colors.gray.50'),
               },
             },
             h1: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
             h2: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
             h3: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
             code: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
             blockquote: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
             strong: {
-              color: 'white',
+              color: theme('colors.gray.50'),
             },
           },
         },
