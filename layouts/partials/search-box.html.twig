@@ -6,6 +6,21 @@
                 </svg>
               </div>
               <style>{% apply minify_css %}
+                :root {
+                  --search-color: #7B99A9;
+                  --search-bg-color: white;
+                  --search-border-color: #163C56;
+                  --search-cursor-bg-color: #DEE5ED;
+                  --search-tpl-page-color: #6C7381;
+                }
+                @media (prefers-color-scheme: dark) {
+                  :root {
+                    --search-bg-color: black;
+                    --search-border-color: white;
+                    --search-cursor-bg-color: #121212;
+                    --search-tpl-page-color: #6C7381;
+                  }
+                }
                 .algolia-autocomplete {
                   width: 100%;
                   font-size: small;
@@ -16,19 +31,19 @@
                   width: 100%;
                   padding: .5em 0 .5em .75em;
                   background-color: unset;
-                  border: 2px solid #7B99A9;
+                  border: 2px solid var(--search-color);
                   border-radius: 4px;
                 }
                 .algolia-autocomplete .aa-input {
                   padding-left: 2rem;
                 }
                 .algolia-autocomplete .aa-hint {
-                  color: #163C56;
+                  color: var(--search-border-color);
                 }
                 .algolia-autocomplete .aa-dropdown-menu {
                   width: 100%;
-                  background-color: #FFF;
-                  border: 1px solid #163C56;
+                  background-color: var(--search-bg-color);
+                  border: 1px solid var(--search-border-color);
                   border-radius: 4px;
                   border-top: 0;
                 }
@@ -38,7 +53,7 @@
                   width: 100%;
                 }
                 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-                  background-color: #DEE5ED;
+                  background-color: var(--search-cursor-bg-color);
                   border-radius: 4px;
                 }
                 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .aa-tpl-suggestion {
@@ -57,7 +72,7 @@
                   height: 1rem;
                   width: 1rem;
                   transform: translateY(-50%);
-                  fill: #7B99A9;
+                  fill: var(--search-color);
                 }
                 .aa-tpl-title {
                   font-weight: bold;
@@ -65,7 +80,7 @@
                 }
                 .aa-tpl-page {
                   font-weight: bold;
-                  color: #6C7381;
+                  color: var(--search-tpl-page-color);
                   font-size: .75em;
                 }
                 .aa-tpl-footer {
