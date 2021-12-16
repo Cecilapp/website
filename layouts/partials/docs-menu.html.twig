@@ -3,7 +3,7 @@
                 {%- for item in site.pages|filter_by('section','documentation')|sort_by_weight ~%}
                   {%- if item.id != 'documentation/index' ~%}
                 <li>
-                  <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 border-l-2 border-gray-200 dark:border-gray-700{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
+                  <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-gray-200 dark:hover:bg-darkgray border-l-2 border-gray-200 dark:border-darkgray{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
                 </li>
                   {%- endif ~%}
                 {%- endfor ~%}

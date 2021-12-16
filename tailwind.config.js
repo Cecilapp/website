@@ -15,7 +15,8 @@ module.exports = {
         gold: '#F2D07F',
         darkblue: '#092F44',
         bluegray: '#7B99A9',
-        dark: '#24283b',
+        dark: '#111827',
+        darkgray: '#374151',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
@@ -24,52 +25,27 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.darkblue'),
-            a: {
+            'h1, h2': {
+              color: theme('colors.darkblue'),
+            },
+            'a, a:hover': {
               color: theme('colors.blue'),
-              '&:hover': {
-                color: theme('colors.blue'),
-              },
             },
             h1: {
-              color: theme('colors.darkblue'),
               fontWeight: '700',
               paddingBottom: '.3em',
-              borderBottom: '1px solid #e5e7eb',
+              borderBottom: '1px solid ' + theme('colors.gray.200'),
               marginBottom: 0,
-            },
-            h2: {
-              color: theme('colors.darkblue'),
             },
           },
         },
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            a: {
-              color: theme('colors.gray.300'),
-              '&:hover': {
-                color: theme('colors.gray.300'),
-              },
-              '& code': {
-                color: theme('colors.gray.300'),
-              },
-            },
-            h1: {
+            'h1, h2, h3, code, blockquote, strong': {
               color: theme('colors.gray.300'),
             },
-            h2: {
-              color: theme('colors.gray.300'),
-            },
-            h3: {
-              color: theme('colors.gray.300'),
-            },
-            code: {
-              color: theme('colors.gray.300'),
-            },
-            blockquote: {
-              color: theme('colors.gray.300'),
-            },
-            strong: {
+            'a, a:hover, a code': {
               color: theme('colors.gray.300'),
             },
           },
