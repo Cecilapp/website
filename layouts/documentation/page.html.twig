@@ -16,34 +16,33 @@
               {%~ include 'partials/search-box.html.twig' ~%}
               {{ page.content }}
               {#- suggest a modification ~#}
-              {%- if site.docs_repo is defined and page.filepath is defined -%}
+              {%- if site.docs_repo is defined and page.filepath is defined ~%}
               <p>
                 <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-                  {% trans "Suggest a modification" %}
+                  {% trans "Suggest a modification" ~%}
                 </a>
               </p>
-              {%- endif -%}
+              {%- endif ~%}
             </div>
             {#- prev/next page ~#}
             <div>
-              {%- if page.prev is defined -%}
+              {%- if page.prev is defined ~%}
               <a class="text-blue dark:text-gray-300 font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
                 ← {{ page.prev.title }}
               </a>
               {%- endif -%}
-              {%- if page.next is defined -%}
+              {%- if page.next is defined ~%}
               <a class="text-blue dark:text-gray-300 font-bold no-underline float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
                 {{ page.next.title }} →
               </a>
-              {%- endif -%}
+              {%- endif ~%}
             </div>
           </div>
           {#- toc ~#}
           <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
             {%~ include 'partials/toc.html.twig' only ~%}
             <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-              {% import 'macros/octicons.twig' as octicons %}
-              {{ octicons.svg('arrow-up') }}
+              {% import 'macros/octicons.twig' as octicons %}{{ octicons.svg('arrow-up') }}
             </a>
           </div>
         </div>
@@ -67,15 +66,23 @@
 
 {% block footer_css %}
       {{ parent() }}
-      {% apply minify_css %}
+      :root {
+        --toc-before-color: #e5e7eb;
+        --toc-before-active-color: #163C56;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --toc-before-color: #374151;
+          --toc-before-active-color: #374151;
+        }
+      }
       .toc-link::before {
-        background-color: #e5e7eb;
+        background-color: var(--toc-before-color);
       }
       .is-active-link::before {
-        background-color: #163C56;
+        background-color: var(--toc-before-active-color);
       }
       a.toc-link {
         text-decoration: none;
       }
-      {% endapply %}
 {% endblock footer_css %}
