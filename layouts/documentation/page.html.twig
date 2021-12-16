@@ -12,7 +12,7 @@
           {#- markdown ~#}
           <div class="flex-grow overflow-y-auto">
             {#- content ~#}
-            <div class="prose prose-sm sm:prose lg:prose-lg mx-auto dark:prose-dark">
+            <div class="markdown markdown-sm sm:markdown lg:markdown-lg mx-auto dark:markdown-dark">
               {%~ include 'partials/search-box.html.twig' ~%}
               {{ page.content }}
               {#- suggest a modification ~#}
@@ -56,7 +56,7 @@
     <script>{% apply minify_js %}
       tocbot.init({
         tocSelector: '.toc',
-        contentSelector: '.prose',
+        contentSelector: '.markdown',
         headingSelector: 'h2, h3, h4',
         hasInnerContainers: true,
         scrollSmooth: false,
