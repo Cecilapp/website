@@ -23,7 +23,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            backgroundColor: theme('colors.coolGray.900'),
             color: theme('colors.darkblue'),
             a: {
               color: theme('colors.blue'),
