@@ -19,6 +19,7 @@ languages:
     name: English
     locale: en_US
   - code: fr
+    enabled: true
     name: Français
     locale: fr_FR
     config:
