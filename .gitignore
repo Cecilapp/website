@@ -1,4 +1,5 @@
 vendor/
+node_modules/
 themes/
 _site/
 .cecil/
@@ -6,5 +7,3 @@ _site/
 static/cecil.phar
 static/cecil.phar.version
 cecil.phar
-node_modules/
-static/styles.css
