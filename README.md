@@ -4,20 +4,23 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2353ad5a-611d-4236-9542-183fe0d585c7/deploy-status)](https://app.netlify.com/sites/cecilapp/deploys)
 
-## Development
+## Install
 
 ```bash
 npm install
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 curl -LO https://cecil.app/cecil.phar
+```
+
+## Development
+
+```bash
+npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 php cecil.phar serve -v --config=config_dev.yml
 ```
 
 ## Production
 
 ```bash
-npm install
 CECIL_ENV=production npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
-curl -LO https://cecil.app/cecil.phar
 php cecil.phar build
 ```
