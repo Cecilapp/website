@@ -61,6 +61,9 @@ output:
       mediatype: 'application/json'
       suffix: 'algolia'
       extension: 'json'
+    - name: bash
+      mediatype: 'text/plain'
+      extension: 'sh'
   pagetypeformats:
     homepage: ['html', 'algolia']
     section: ['html', 'atom']
