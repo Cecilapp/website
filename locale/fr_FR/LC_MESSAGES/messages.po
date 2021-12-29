@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-06 00:44+0100\n"
-"PO-Revision-Date: 2021-11-06 01:36+0100\n"
+"POT-Creation-Date: 2021-12-29 02:22+0100\n"
+"PO-Revision-Date: 2021-12-29 02:25+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,35 +22,36 @@ msgstr "Désolé, la page n’existe pas..."
 msgid "Home"
 msgstr "Accueil"
 
-#: _default/page.html.twig:37
+#: _default/page.html.twig:35
 msgid "Docs"
 msgstr "Doc"
 
-#: _default/page.html.twig:46
+#: _default/page.html.twig:45
 msgid "Star"
-msgstr "Favoris"
+msgstr "Étoile"
 
-#: _default/page.html.twig:63
+#: _default/page.html.twig:62
 msgid "About"
 msgstr "À propos"
 
+#: _default/page.html.twig:62
+msgid "Open source"
+msgstr "Open source"
+
 #: _default/page.html.twig:63
+msgid "Logo by"
+msgstr "Logo par"
+
+#: _default/page.html.twig:64
 msgid "Powered by"
 msgstr "Propulsé par"
 
-#: _default/page.html.twig:64
-msgid "Copyright"
-msgstr "Copyright"
-
-#: _default/page.html.twig:64
-msgid "logo by"
-msgstr "logo par"
-
-#: documentation/list.html.twig:7
+#: documentation/list.html.twig:1 documentation/list.html.twig:9
+#: documentation/page.html.twig:1
 msgid "Documentation"
 msgstr "Documentation"
 
-#: documentation/page.html.twig:20
+#: documentation/page.html.twig:22
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
@@ -77,3 +78,6 @@ msgstr "Sur cette page"
 #: partials/toc.html.twig:5
 msgid "Table of contents"
 msgstr "Table des matières"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
