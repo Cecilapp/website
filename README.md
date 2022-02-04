@@ -14,7 +14,7 @@ curl -LO https://cecil.app/cecil.phar
 ## Development
 
 ```bash
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
+npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css --watch
 php cecil.phar serve -v --config=config_dev.yml
 ```
 
