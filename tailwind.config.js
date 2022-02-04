@@ -25,7 +25,7 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.darkblue'),
-            'h1, h2': {
+            'h1, h2, h3, h4': {
               color: theme('colors.darkblue'),
             },
             'a, a:hover': {
@@ -42,7 +42,7 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            'h1, h2, h3, code, blockquote, strong': {
+            'h1, h2, h3, h4, code, blockquote, strong': {
               color: theme('colors.gray.300'),
             },
             'a, a:hover, a code': {
