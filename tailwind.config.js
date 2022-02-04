@@ -31,6 +31,12 @@ module.exports = {
             'a, a:hover': {
               color: theme('colors.blue'),
             },
+            'a.anchorjs-link, a.anchorjs-link:hover': {
+              textDecoration: 'none',
+            },
+            '.anchorjs-link': {
+              color: theme('colors.gray.300'),
+            },
             h1: {
               fontWeight: '700',
               paddingBottom: '.3em',
