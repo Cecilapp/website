@@ -3,6 +3,6 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "netlify-plugin-refresh-algolia": "^1.0.5",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^2.2.19"
   }
 }
