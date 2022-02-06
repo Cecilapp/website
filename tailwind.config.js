@@ -24,6 +24,13 @@ module.exports = {
           css: {
             fontSize: '.875rem',
             color: theme('colors.darkblue'),
+            'h2 a': {
+              fontWeight: 700,
+              textDecoration: 'none',
+            },
+            '.readmore': {
+              textDecoration: 'none',
+            },
             'h1, h2, h3, h4': {
               color: theme('colors.darkblue'),
             },
