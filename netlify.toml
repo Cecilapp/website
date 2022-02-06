@@ -1,6 +1,7 @@
 [build]
   publish = "_site"
   command = "chmod +x ./scripts/netlify-build.sh && bash ./scripts/netlify-build.sh"
+
 [build.environment]
   #PHP_VERSION = "7.2"
   NODE_VERSION = "12.16"
@@ -11,18 +12,22 @@
   CSS_OUPUT = "assets/styles.css"
   #ALGOLIA_INDEX = "_site/algolia.json"
 
+[context.production.environment]
+  CECIL_ENV = "production"
+  [[plugins]]
+    package = "netlify-plugin-refresh-algolia"
+    [plugins.inputs]
+      appId = "PVTO81KCEC"
+      indexName = "documentation"
+      #filePath = "_site/algolia.json"
+
 [context.deploy-preview.environment]
   CECIL_ENV = "preview"
 
 [context.branch-deploy.environment]
   CECIL_ENV = "branch"
 
-[[plugins]]
-  package = "netlify-plugin-refresh-algolia"
-  [plugins.inputs]
-    appId = "PVTO81KCEC"
-    indexName = "documentation"
-    #filePath = "_site/algolia.json"
+
 #[[plugins]]
 #  package = "netlify-plugin-refresh-algolia"
 #  [plugins.inputs]
