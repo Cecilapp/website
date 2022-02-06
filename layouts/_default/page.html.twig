@@ -59,7 +59,7 @@
     </main>
     <footer class="px-6 py-6 leading-6 text-xs text-left text-gray-500 dark:text-gray-300 font-light border-t border-gray-200">
       <div class="container mx-auto">
-        {% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% if page.translations|length >= 1 %} &middot; {%- include 'partials/languages.html.twig' %}{% endif -%}<br />
+        {% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% if page.translations|length >= 1 %} &middot; {% include 'partials/languages.html.twig' %}{% endif -%}<br />
         {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
         © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}<br />
         {%- set powered_by -%}
