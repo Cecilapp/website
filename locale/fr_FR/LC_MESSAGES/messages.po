@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-12-29 02:22+0100\n"
-"PO-Revision-Date: 2021-12-29 02:25+0100\n"
+"POT-Creation-Date: 2022-02-06 03:10+0100\n"
+"PO-Revision-Date: 2022-02-06 03:11+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: 404.html.twig:6
 msgid "Sorry, page doesn't exist…"
-msgstr "Désolé, la page n’existe pas..."
+msgstr "Désolé, la page n’existe pas…"
 
 #: 404.html.twig:7
 msgid "Home"
@@ -50,6 +50,10 @@ msgstr "Propulsé par"
 #: documentation/page.html.twig:1
 msgid "Documentation"
 msgstr "Documentation"
+
+#: documentation/list.html.twig:20
+msgid "Read More"
+msgstr "En savoir plus"
 
 #: documentation/page.html.twig:22
 msgid "Suggest a modification"
