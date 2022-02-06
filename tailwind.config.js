@@ -60,6 +60,9 @@ module.exports = {
             'a, a:hover, a code': {
               color: theme('colors.gray.300'),
             },
+            'thead th': {
+              color: theme('colors.gray.300'),
+            },
           },
         },
       }),

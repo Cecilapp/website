@@ -919,6 +919,15 @@ img {
   margin-bottom: 0;
 }
 
+.markdown :where(h2 a):not(:where([class~="not-markdown"] *)) {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.markdown :where(.readmore):not(:where([class~="not-markdown"] *)) {
+  text-decoration: none;
+}
+
 .markdown :where(h1, h2, h3, h4):not(:where([class~="not-markdown"] *)) {
   color: #092F44;
 }
@@ -933,15 +942,6 @@ img {
 
 .markdown :where(.anchorjs-link):not(:where([class~="not-markdown"] *)) {
   color: #d1d5db;
-}
-
-.markdown :where(h2 a):not(:where([class~="not-markdown"] *)) {
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.markdown :where(.readmore):not(:where([class~="not-markdown"] *)) {
-  text-decoration: none;
 }
 
 .visible {
@@ -1075,12 +1075,12 @@ img {
   overflow-y: auto;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-l-2 {
@@ -1089,19 +1089,6 @@ img {
 
 .border-t {
   border-top-width: 1px;
-}
-
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
-.border-b {
-  border-bottom-width: 1px;
-}
-
-.border-bluegray {
-  --tw-border-opacity: 1;
-  border-color: rgb(123 153 169 / var(--tw-border-opacity));
 }
 
 .border-gray-200 {
@@ -1114,19 +1101,9 @@ img {
   border-color: rgb(22 60 86 / var(--tw-border-opacity));
 }
 
-.border-l-bluegray {
+.border-bluegray {
   --tw-border-opacity: 1;
-  border-left-color: rgb(123 153 169 / var(--tw-border-opacity));
-}
-
-.border-b-bluegray {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(123 153 169 / var(--tw-border-opacity));
-}
-
-.border-b-gray-200 {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
+  border-color: rgb(123 153 169 / var(--tw-border-opacity));
 }
 
 .bg-blue {
@@ -1482,6 +1459,10 @@ a.btn-trans:hover {
   }
 
   .dark\:markdown-dark :where(a, a:hover, a code):not(:where([class~="not-markdown"] *)) {
+    color: #d1d5db;
+  }
+
+  .dark\:markdown-dark :where(thead th):not(:where([class~="not-markdown"] *)) {
     color: #d1d5db;
   }
 
