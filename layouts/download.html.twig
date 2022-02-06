@@ -5,8 +5,8 @@
           {#- content ~#}
           <div class="markdown mx-auto dark:markdown-dark">
             <p>
-              <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">{% trans "Download" %}</a>
-              <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">{% trans "File checksum" %}</a>
+              <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">{% trans %}Download{% endtrans %}</a>
+              <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">{% trans %}File checksum{% endtrans %}</a>
             </p>
             {{ page.content }}
           </div>

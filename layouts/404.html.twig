@@ -3,7 +3,7 @@
 {% block content %}
         {# content #}
         <div class="markdown mx-auto dark:markdown-dark">
-          <h3>{% trans "Sorry, page doesn't exist…" %}</h3>
-          <p>→ <a href="{{ url(site.home) }}">{% trans "Home" %}</a></p>
+          <h3>{% trans %}Sorry, page doesn't exist…{% endtrans %}</h3>
+          <p>→ <a href="{{ url(site.home) }}">{% trans %}Home{% endtrans %}</a></p>
         </div>
 {% endblock content %}

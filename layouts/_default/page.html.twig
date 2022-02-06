@@ -32,7 +32,7 @@
           <a class="hover:text-white" id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">
             {%- if entry.id == 'documentation' ~%}
             <span class="hidden sm:inline-block">{{ entry.name }}</span>
-            <span class="sm:hidden">{% trans "Docs" %}</span>
+            <span class="sm:hidden">{% trans %}Docs{% endtrans %}</span>
             {%- else ~%}
             {{ entry.name }}
             {%- endif ~%}
@@ -42,7 +42,7 @@
           <a href="https://twitter.com/{{ site.social.twitter.site }}" aria-label="{{ site.title }} on Twitter">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z" fill="#F2D07F"/></svg>
           </a>
-          <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">{% trans "Star" %}</a>
+          <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">{% trans %}Star{% endtrans %}</a>
         </nav>
       </div>
     </header>
@@ -59,9 +59,13 @@
     </main>
     <footer class="px-6 py-6 leading-6 text-xs text-left text-gray-500 dark:text-gray-300 font-light border-t border-gray-200">
       <div class="container mx-auto">
-        {% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% if page.translations|length >= 1 %} &middot; {% include 'partials/languages.html.twig' %}{% endif %}<br />
-        © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans "Logo by" %} <a href="https://www.cecillie.fr">Cécile Ricordeau</a><br />
-        {% trans "Powered by" %} <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>
+        {% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% if page.translations|length >= 1 %} &middot; {%- include 'partials/languages.html.twig' %}{% endif -%}<br />
+        {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
+        © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}<br />
+        {%- set powered_by -%}
+        <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>
+        {%- endset ~%}
+        {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
       </div>
     </footer>
     {%- block footer_scripts ~%}

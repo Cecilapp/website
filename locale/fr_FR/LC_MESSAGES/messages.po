@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-06 03:10+0100\n"
-"PO-Revision-Date: 2022-02-06 03:11+0100\n"
+"POT-Creation-Date: 2022-02-06 04:05+0100\n"
+"PO-Revision-Date: 2022-02-06 04:05+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -38,13 +38,13 @@ msgstr "À propos"
 msgid "Open source"
 msgstr "Open source"
 
-#: _default/page.html.twig:63
-msgid "Logo by"
-msgstr "Logo par"
-
 #: _default/page.html.twig:64
-msgid "Powered by"
-msgstr "Propulsé par"
+msgid "Logo by %logo_by%"
+msgstr "Logo par %logo_by%"
+
+#: _default/page.html.twig:68
+msgid "Powered by %powered_by%"
+msgstr "Propulsé par %powered_by%"
 
 #: documentation/list.html.twig:1 documentation/list.html.twig:9
 #: documentation/page.html.twig:1
@@ -72,8 +72,8 @@ msgid "Quick Start"
 msgstr "Démarrage rapide"
 
 #: partials/search-box.html.twig:3
-msgid "Search the Docs"
-msgstr "Rechercher dans la doc"
+msgid "Search the Docs [Alt+S]"
+msgstr "Rechercher dans la doc [Alt+S]"
 
 #: partials/toc.html.twig:2
 msgid "What's on this Page"
@@ -82,6 +82,9 @@ msgstr "Sur cette page"
 #: partials/toc.html.twig:5
 msgid "Table of contents"
 msgstr "Table des matières"
+
+#~ msgid "Logo by"
+#~ msgstr "Logo par"
 
 #~ msgid "Copyright"
 #~ msgstr "Copyright"
