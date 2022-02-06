@@ -6,13 +6,19 @@
         {#- content ~#}
         <div class="markdown mx-auto dark:markdown-dark">
           {%~ include 'partials/search-box.html.twig' ~%}
-          <h1>{% trans "Documentation" %}</h1>
+          <h1>{% trans %}Documentation{% endtrans %}</h1>
+          <p>{{ page.content }}</p>
           <dl>
-            {%- for doc in site.pages|filter_by('section','documentation')|sort_by_weight -%}
-            <dt><h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2></dt>
+            {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
+            <dt>
+              <h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2>
+            </dt>
+            <dd{% if not loop.last %} class="border-b border-gray-200"{% endif %}>
               {%- if doc.description is defined -%}
-            <dd>{{ doc.description|e }}</dd>
+              {{ doc.description|e }}
               {%- endif -%}
+              <p><a class="readmore" href="{{ url(doc) }}">{% trans %}Read More{% endtrans %} &raquo;</a></p>
+            </dd>
             {%- endfor -%}
           </dl>
         </div>
