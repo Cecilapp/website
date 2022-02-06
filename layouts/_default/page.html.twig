@@ -18,7 +18,7 @@
       {{- asset('styles.css')|inline ~}}
     </style>
     {%- else ~%}
-    <link rel="stylesheet" href="{{ asset('styles.css',{minify:false,fingerprint:false}) }}" />
+    <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}" />
     {%- endif ~%}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-gray-300">
