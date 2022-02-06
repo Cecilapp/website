@@ -1,16 +1,11 @@
 module.exports = {
-  purge: {
-    enabled: process.env.CECIL_ENV == 'production',
-    mode: 'all',
-    content: [
-      './layouts/**/*.html.twig',
-      './themes/**/layouts/**/*.html.twig',
-    ],
-    options: {
-      safelist: ['anchorjs-link'],
-    },
-  },
-  darkMode: 'media',
+  content: [
+    './layouts/**/*.html.twig',
+    './themes/**/layouts/**/*.html.twig',
+  ],
+  safelist: [
+    'anchorjs-link'
+  ],
   theme: {
     extend: {
       colors: {
@@ -27,7 +22,15 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            fontSize: '.875rem',
             color: theme('colors.darkblue'),
+            'h2 a': {
+              fontWeight: 700,
+              textDecoration: 'none',
+            },
+            '.readmore': {
+              textDecoration: 'none',
+            },
             'h1, h2, h3, h4': {
               color: theme('colors.darkblue'),
             },
@@ -69,9 +72,6 @@ module.exports = {
         xl: '1024px',
       }
     }
-  },
-  variants: {
-    typography: ['dark'],
   },
   plugins: [
     require('@tailwindcss/typography')({

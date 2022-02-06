@@ -25,7 +25,7 @@
     <header class="px-6 pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-dark">
       <div class="container mx-auto">
         <a href="{{ url(site.home) }}" title="{{ site.title }}" class="text-2xl md:float-left">
-          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-10" />
+          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-10" width="250" height="250" />
         </a>
         <nav class="mt-3 md:mt-0 pt-3 md:pt-0 border-t md:border-t-0 border-bluegray space-x-6 md:float-right">
           {%- for entry in site.menus.main|sort_by_weight ~%}
@@ -51,7 +51,7 @@
       <div class="container mx-auto">
         {%- block content ~%}
         {#- content ~#}
-        <div class="markdown markdown-sm sm:markdown lg:markdown-lg mx-auto dark:markdown-dark">
+        <div class="markdown mx-auto dark:markdown-dark">
           {{ page.content }}
         </div>
         {%- endblock ~%}
