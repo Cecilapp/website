@@ -14,12 +14,13 @@
 
 [context.production.environment]
   CECIL_ENV = "production"
-  [[plugins]]
-    package = "netlify-plugin-refresh-algolia"
-    [plugins.inputs]
-      appId = "PVTO81KCEC"
-      indexName = "documentation"
-      #filePath = "_site/algolia.json"
+
+[[context.production.plugins]]
+  package = "netlify-plugin-refresh-algolia"
+  [plugins.inputs]
+    appId = "PVTO81KCEC"
+    indexName = "documentation"
+    #filePath = "_site/algolia.json"
 
 [context.deploy-preview.environment]
   CECIL_ENV = "preview"
