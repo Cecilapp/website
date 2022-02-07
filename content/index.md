@@ -27,9 +27,9 @@ blocks:
     octicon: desktop-download
     visible: true
   - title: Easy to deploy
-    description: "Create & deploy a new blog in 1 minute!  \n[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg
-      \"Deploy to Netlify\")](/hosting/netlify/deploy/) [![Deploy
-      to Vercel](https://zeit.co/button \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
+    description: "Create & deploy a new blog in 1 minute.  \n
+      [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg \"Deploy to Netlify\")](/hosting/netlify/deploy/) 
+      [![Deploy to Vercel](https://zeit.co/button \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
     octicon: rocket
     visible: true
 pagination:
