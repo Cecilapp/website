@@ -15,7 +15,7 @@ If you want to create a no-hassle blog, the [starter blog](https://github.com/Ce
 
 Click on one of the buttons below depending on the service you prefer:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](/hosting/netlify/deploy/) [![Deploy to Vercel](https://zeit.co/button "Deploy to Vercel")](/hosting/vercel/deploy/) [![Import into Forestry](https://assets.forestry.io/import-to-forestryK.svg "Import into Forestry")](/cms/forestry/import/)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](/hosting/netlify/deploy/) [![Deploy to Vercel](https://zeit.co/button "Deploy to Vercel")](/hosting/vercel/deploy/) [![Import to Forestry](https://assets.forestry.io/import-to-forestryK.svg "Import to Forestry")](/cms/forestry/import/)
 
 ----
 
