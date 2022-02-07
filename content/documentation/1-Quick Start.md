@@ -11,17 +11,17 @@ Cecil is a CLI application, powered by [PHP](https://www.php.net), that merge pl
 
 ## Create a blog
 
-If you want to create a no-hassle blog, the [starter blog](https://github.com/Cecilapp/the-butler#readme) is for you!
+If you want to create a no-hassle blog, the [starter blog](https://github.com/Cecilapp/the-butler#readme) is for you.
 
-Click on the button below and let [Forestry CMS](https://forestry.io) guide you.
+Click on one of the buttons below depending on the service you prefer:
 
-[![Import this project into Forestry](https://assets.forestry.io/import-to-forestryK.svg)](https://cecil.app/cms/forestry/import/)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg "Deploy to Netlify")](/hosting/netlify/deploy/) [![Deploy to Vercel](https://zeit.co/button "Deploy to Vercel")](/hosting/vercel/deploy/) [![Import into Forestry](https://assets.forestry.io/import-to-forestryK.svg "Import into Forestry")](/cms/forestry/import/)
 
 ----
 
 ## Create a website
 
-Create a website – from scratch – in 4 steps!
+Create a website – from scratch – in 4 steps.
 
 ### Step 1: Install Cecil
 
