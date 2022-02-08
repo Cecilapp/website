@@ -105,3 +105,15 @@ algolia:
   index: 'documentation'
 metatags:
   jsonld: true
+body:
+  images:
+    lazy:
+      enabled: true
+    caption:
+      enabled: true
+    resize:
+      enabled: true
+    responsive:
+      enabled: true
+    webp:
+      enabled: true
