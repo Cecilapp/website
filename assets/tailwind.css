@@ -63,7 +63,7 @@ header a {
   @apply text-gold;
 }
 .jumbotron {
-  @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-gray-900;
+  @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
 }
 
 /* Components */
