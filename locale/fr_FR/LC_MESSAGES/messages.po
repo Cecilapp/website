@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-06 04:05+0100\n"
-"PO-Revision-Date: 2022-02-06 04:05+0100\n"
+"POT-Creation-Date: 2022-02-08 02:29+0100\n"
+"PO-Revision-Date: 2022-02-08 02:29+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,27 +22,27 @@ msgstr "Désolé, la page n’existe pas…"
 msgid "Home"
 msgstr "Accueil"
 
-#: _default/page.html.twig:35
+#: _default/page.html.twig:42
 msgid "Docs"
 msgstr "Doc"
 
-#: _default/page.html.twig:45
+#: _default/page.html.twig:52
 msgid "Star"
 msgstr "Étoile"
 
-#: _default/page.html.twig:62
+#: _default/page.html.twig:69
 msgid "About"
 msgstr "À propos"
 
-#: _default/page.html.twig:62
+#: _default/page.html.twig:69
 msgid "Open source"
 msgstr "Open source"
 
-#: _default/page.html.twig:64
+#: _default/page.html.twig:71
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: _default/page.html.twig:68
+#: _default/page.html.twig:75
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
@@ -82,6 +82,14 @@ msgstr "Sur cette page"
 #: partials/toc.html.twig:5
 msgid "Table of contents"
 msgstr "Table des matières"
+
+#: partials/toggle-switch-dark.html.twig:2
+msgid "Light"
+msgstr "Clair"
+
+#: partials/toggle-switch-dark.html.twig:6
+msgid "Dark"
+msgstr "Sombre"
 
 #~ msgid "Logo by"
 #~ msgstr "Logo par"
