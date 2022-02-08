@@ -6,6 +6,7 @@ module.exports = {
   safelist: [
     'anchorjs-link'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ site.language }}">
+<html lang="{{ site.language }}"
+  x-data="{'darkMode': false}"
+  x-init="
+    darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark': darkMode === true || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +26,7 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}" />
     {%- endif ~%}
+    <script defer src="{{ asset('https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', {minify: false})|url }}"></script>
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-gray-300">
     <header class="px-6 pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-dark">
@@ -66,6 +73,7 @@
         <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>
         {%- endset ~%}
         {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
+        {%~ include 'partials/toggle-switch-dark.html.twig' ~%}
       </div>
     </footer>
     {%- block footer_scripts ~%}
