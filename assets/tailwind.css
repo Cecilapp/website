@@ -88,6 +88,9 @@ a.btn:hover {
 .btn-gold:hover {
   @apply bg-white text-darkblue border-transparent;
 }
+a.btn-gold {
+  @apply dark:text-darkblue;
+}
 a.btn-gold:hover {
   @apply text-darkblue;
 }
