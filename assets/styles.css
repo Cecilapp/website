@@ -1457,6 +1457,8 @@ a.btn-trans:hover {
 .shell-wrap {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   width: 450px;
   height: 323px;
   background: #000000;
@@ -1479,8 +1481,8 @@ a.btn-trans:hover {
   background: #f7f7f7;
   /* Old browsers */
   /* FF3.6+ */
-  /* Chrome,Safari4+ */
-  /* Chrome10+,Safari5.1+ */
+  /* Chrome, Safari4+ */
+  /* Chrome10+, Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
   background: linear-gradient(to bottom, #f7f7f7 0%, #b8b8b8 100%);

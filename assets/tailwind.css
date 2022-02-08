@@ -107,9 +107,9 @@ a.btn-trans:hover {
 /* Terminal */
 .shell-wrap {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border-radius: 3px;
   width: 450px;
   height: 323px;
   background: #000000;
@@ -136,12 +136,12 @@ a.btn-trans:hover {
     left bottom,
     color-stop(0%, #f7f7f7),
     color-stop(100%, #b8b8b8)
-  ); /* Chrome,Safari4+ */
+  ); /* Chrome, Safari4+ */
   background: -webkit-linear-gradient(
     top,
     #f7f7f7 0%,
     #b8b8b8 100%
-  ); /* Chrome10+,Safari5.1+ */
+  ); /* Chrome10+, Safari5.1+ */
   background: -o-linear-gradient(
     top,
     #f7f7f7 0%,
