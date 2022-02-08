@@ -1,0 +1,8 @@
+        <div class="flex items-center space-x-2 mt-2">
+          <span class="text-sm text-darkblue dark:text-gray-500">Light</span>
+          <label for="toggle" class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer duration-300 ease-in-out dark:bg-gray-600">
+            <div class="toggle-dot bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out dark:translate-x-3"></div>
+          </label>
+          <span class="text-sm text-gray-500 dark:text-white">Dark</span>
+          <input id="toggle" type="checkbox" class="hidden" :value="darkMode" @change="darkMode = !darkMode"/>
+        </div>
