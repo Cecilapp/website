@@ -93,6 +93,8 @@ anchor:
   version: 4.3.1
 tocbot:
   version: 4.12.3
+alpinejs:
+  version: 3.8.1
 algolia:
   enabled: true
   version: '@4'
@@ -101,7 +103,5 @@ algolia:
   application_id: 'PVTO81KCEC'
   search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
   index: 'documentation'
-alpinejs:
-  version: 3.8.1
 metatags:
   jsonld: true
