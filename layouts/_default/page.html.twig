@@ -26,7 +26,7 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}" />
     {%- endif ~%}
-    <script defer src="{{ asset('https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', {minify: false})|url }}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-gray-300">
     <header class="px-6 pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-black">

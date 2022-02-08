@@ -101,5 +101,7 @@ algolia:
   application_id: 'PVTO81KCEC'
   search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
   index: 'documentation'
+alpinejs:
+  version: 3.8.1
 metatags:
   jsonld: true
