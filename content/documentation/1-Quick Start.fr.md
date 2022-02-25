@@ -13,21 +13,21 @@ Cecil est une application en ligne de commande, propulsée par [PHP](https://www
 
 ## Créer un blog
 
-Si vous souhaiter créer un blog sans vous casser la tête, le [starter blog](https://github.com/Cecilapp/the-butler#readme) est fait pour vous.
+Si vous souhaiter créer un blog sans vous casser la tête, le [starter blog](https://github.com/Cecilapp/the-butler#readme) est fait pou vous !
 
-Cliquez sur l'un des boutons ci-dessous selon le service que vous préférez :
+Cliquez sur le bouton ci-dessous et laisser [Forestry CMS](https://forestry.io) vous guider.
 
-[![Déployer sur Netlify](https://www.netlify.com/img/deploy/button.svg "Déployer sur Netlify")](/hosting/netlify/deploy/) [![Déployer sur Vercel](https://zeit.co/button "Déployer sur Vercel")](/hosting/vercel/deploy/) [![Importer dans Forestry](https://assets.forestry.io/import-to-forestryK.svg "Importer dans Forestry")](/cms/forestry/import/)
+[![Import this project into Forestry](https://assets.forestry.io/import-to-forestryK.svg)](https://cecil.app/cms/forestry/import/)
 
 ----
 
 ## Créer un site web
 
-Créer un site web – à partir de rien – en 4 étapes.
+Créer un site web – à partir de rien – en 4 étapes!
 
 ### Étape 1 : Installer Cecil
 
-Téléchargez `cecil.phar` depuis votre terminal :
+Téléchargez `cecil.phar` depuis votre terminal:
 
 ```bash
 curl -LO https://cecil.app/cecil.phar
@@ -53,7 +53,7 @@ Lancez la commande `new:page` :
 php cecil.phar new:page blog/mon-premier-billet.md <monsiteweb>
 ```
 
-Vous pouvez maintenant modifier la page nouvellement créée avec votre éditeur Markdown favoris (je recommande [Typora](https://www.typora.io)) : `<monsiteweb>/content/blog/mon-premier-billet.md`.
+Vous pouvez maintenant modifier la page nouvellement créée avec votre éditeur Markdown favoris (je recommande [Typora](https://www.typora.io)): `<monsiteweb>/content/blog/mon-premier-billet.md`.
 
 ### Étape 4 : Vérifier l’aperçu
 
