@@ -1,6 +1,6 @@
-/* Tailwind CSS */
-
-/* ! tailwindcss v3.0.20 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.0.20 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -423,9 +423,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-main a:hover:not(.btn):not(.menu-item), footer a:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5rem;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 a {
@@ -436,6 +445,20 @@ a {
 .dark a {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+header a {
+  --tw-text-opacity: 1;
+  color: rgb(242 208 127 / var(--tw-text-opacity));
+}
+
+main a:hover:not(.btn):not(.menu-item), footer a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 img, svg {
@@ -942,6 +965,124 @@ img {
   color: #d1d5db;
 }
 
+.jumbotron {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .jumbotron {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .jumbotron {
+    text-align: left;
+  }
+}
+
+.btn {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(22 60 86 / var(--tw-border-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+a.btn {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+a.btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn:hover {
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-sm {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.btn-gold {
+  --tw-border-opacity: 1;
+  border-color: rgb(242 208 127 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
+.btn-gold:hover {
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
+.dark a.btn-gold {
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
+a.btn-gold:hover {
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
+.btn-trans {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-trans:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
+a.btn-trans:hover {
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
+}
+
 .visible {
   visibility: visible;
 }
@@ -1276,8 +1417,6 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tailwind base styles */
-
 /* ToC */
 
 .toc {
@@ -1305,151 +1444,6 @@ img {
   position: sticky;
   pointer-events: all;
   top: calc(100vh - 3rem);
-}
-
-/* Typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.5rem;
-}
-
-h1, h2 {
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-header a {
-  --tw-text-opacity: 1;
-  color: rgb(242 208 127 / var(--tw-text-opacity));
-}
-
-.jumbotron {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.dark .jumbotron {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  .jumbotron {
-    text-align: left;
-  }
-}
-
-/* Components */
-
-.btn {
-  margin-bottom: 0.5rem;
-  display: inline-block;
-  border-radius: 0.25rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(22 60 86 / var(--tw-border-opacity));
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
-a.btn {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
-a.btn:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.btn:hover {
-  border-color: transparent;
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.btn-sm {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.btn-gold {
-  --tw-border-opacity: 1;
-  border-color: rgb(242 208 127 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-.btn-gold:hover {
-  border-color: transparent;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-.dark a.btn-gold {
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-a.btn-gold:hover {
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-.btn-trans {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-  background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.btn-trans:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-a.btn-trans:hover {
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
 /* Terminal */

@@ -1,22 +1,78 @@
-/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Tailwind base styles */
 @layer base {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5rem;
+  }
+  h1, h2 {
+    @apply mb-4;
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue dark:text-white;
+  }
+  header a {
+    @apply text-gold;
+  }
   main a:hover:not(.btn):not(.menu-item),
   footer a:hover {
     @apply underline;
   }
-  a {
-    @apply text-blue dark:text-white;
+  p {
+    @apply mb-4;
   }
   img, svg {
     @apply inline-block;
   }
   img {
     @apply mb-1;
+  }
+}
+
+@layer components {
+  .jumbotron {
+    @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
+  }
+  .btn {
+    @apply inline-block mb-2 py-3 px-6 no-underline border border-blue rounded;
+  }
+  a.btn {
+    @apply no-underline;
+  }
+  a.btn:hover {
+    @apply text-white;
+  }
+  .btn:hover {
+    @apply bg-blue text-white border-transparent;
+  }
+  .btn-sm {
+    @apply py-1 px-3;
+  }
+  .btn-gold {
+    @apply bg-gold text-darkblue border-gold;
+  }
+  .btn-gold:hover {
+    @apply bg-white text-darkblue border-transparent;
+  }
+  a.btn-gold {
+    @apply dark:text-darkblue;
+  }
+  a.btn-gold:hover {
+    @apply text-darkblue;
+  }
+  .btn-trans {
+    @apply bg-transparent text-white border-white;
+  }
+  .btn-trans:hover {
+    @apply bg-white text-darkblue;
+  }
+  a.btn-trans:hover {
+    @apply text-darkblue;
   }
 }
 
@@ -42,66 +98,6 @@
   position: sticky;
   pointer-events: all;
   top: calc(100vh - 3rem);
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.5rem;
-}
-h1, h2 {
-  @apply mb-4;
-  @apply font-semibold;
-}
-h1 {
-  @apply text-lg;
-}
-p {
-  @apply mb-4;
-}
-
-header a {
-  @apply text-gold;
-}
-.jumbotron {
-  @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
-}
-
-/* Components */
-.btn {
-  @apply inline-block mb-2 py-3 px-6 no-underline border border-blue rounded;
-}
-a.btn {
-  @apply no-underline;
-}
-a.btn:hover {
-  @apply text-white;
-}
-.btn:hover {
-  @apply bg-blue text-white border-transparent;
-}
-.btn-sm {
-  @apply py-1 px-3;
-}
-.btn-gold {
-  @apply bg-gold text-darkblue border-gold;
-}
-.btn-gold:hover {
-  @apply bg-white text-darkblue border-transparent;
-}
-a.btn-gold {
-  @apply dark:text-darkblue;
-}
-a.btn-gold:hover {
-  @apply text-darkblue;
-}
-.btn-trans {
-  @apply bg-transparent text-white border-white;
-}
-.btn-trans:hover {
-  @apply bg-white text-darkblue;
-}
-a.btn-trans:hover {
-  @apply text-darkblue;
 }
 
 /* Terminal */
