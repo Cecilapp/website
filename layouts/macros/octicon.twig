@@ -1,10 +1,10 @@
-{%- macro svg(octicon) -%}
+{%- macro svg(name) -%}
   {%- set octicons = site.data.octicons -%}
-  {%- if 24 in octicons[octicon].heights -%}
-    {%- set path = octicons[octicon].heights[24].path -%}
+  {%- if 24 in octicons[name].heights -%}
+    {%- set path = octicons[name].heights[24].path -%}
     {%- set size = 24 -%}
   {%- else -%}
-    {%- set path = octicons[octicon].heights[16].path -%}
+    {%- set path = octicons[name].heights[16].path -%}
     {%- set size = 16 -%}
   {%- endif -%}
   <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 {{ size }} {{ size }}" fill="currentColor" aria-hidden="true">{{ path }}</svg>

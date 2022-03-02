@@ -1,8 +1,9 @@
-{% import 'macros/octicons.twig' as octicons %}
+{# Variables: icon; title, description #}
+{% import 'macros/octicon.twig' as octicon %}
             <div class="flex">
               <div class="flex-shrink-0">
                 <div class="flex items-center justify-center h-12 w-12 text-blue dark:text-gray-300">
-                  {{- octicons.svg(octicon) ~}}
+                  {{- octicon.svg(icon) ~}}
                 </div>
               </div>
               <dl class="ml-4">

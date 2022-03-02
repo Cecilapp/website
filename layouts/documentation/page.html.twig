@@ -1,4 +1,5 @@
 {% set title = page.title ~ ' &middot; ' ~ "Documentation"|trans ~ ' &middot; ' ~ site.title %}
+{% import 'macros/octicon.twig' as octicon %}
 
 {% extends 'page.html.twig' %}
 
@@ -42,7 +43,7 @@
           <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
             {%~ include 'partials/toc.html.twig' only ~%}
             <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-              {% import 'macros/octicons.twig' as octicons %}{{ octicons.svg('arrow-up') }}
+              {{ octicon.svg('arrow-up') }}
             </a>
           </div>
         </div>
