@@ -841,6 +841,7 @@ img {
 .markdown :where(img):not(:where([class~="not-markdown"] *)) {
   margin-top: 2em;
   margin-bottom: 2em;
+  margin: auto;
 }
 
 .markdown :where(video):not(:where([class~="not-markdown"] *)) {

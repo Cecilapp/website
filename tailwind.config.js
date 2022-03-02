@@ -50,6 +50,9 @@ module.exports = {
               borderBottom: '1px solid ' + theme('colors.gray.200'),
               marginBottom: 0,
             },
+            img: {
+              margin: 'auto',
+            },
           },
         },
         dark: {
