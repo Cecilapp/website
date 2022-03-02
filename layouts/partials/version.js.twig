@@ -14,7 +14,7 @@
           .then(version => {
             console.log('VERSION: ' + version)
             text = document.getElementById(buttonId).innerHTML;
-            document.getElementById(buttonId).innerHTML = text + ' <span class="text-xs">(' + version + ')</span>'
+            document.getElementById(buttonId).innerHTML = text + ' <span class="text-xs">(' + version.trim() + ')</span>'
           })
       }
     {% endapply %}</script>
