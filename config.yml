@@ -46,8 +46,8 @@ menus:
       enabled: false
     - id: hosting
       enabled: false
-    - id: news
-      enabled: false
+    #- id: news
+    #  enabled: false
   footer:
     - id: github
       url: https://github.com/Cecilapp/
