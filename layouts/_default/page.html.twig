@@ -28,7 +28,7 @@
     {%- endif ~%}
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
   </head>
-  <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-gray-300">
+  <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
     <header class="px-6 pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-dark">
       <div class="container mx-auto">
         <a href="{{ url(site.home) }}" title="{{ site.title }}" class="text-2xl md:float-left">
@@ -64,7 +64,7 @@
         {%- endblock ~%}
       </div>
     </main>
-    <footer class="px-6 py-6 leading-6 text-xs text-left text-gray-500 dark:text-gray-300 font-light border-t border-gray-200 dark:bg-black">
+    <footer class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% if page.translations|length >= 1 %} &middot; {% include 'partials/languages.html.twig' %}{% endif -%}<br />
         {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
