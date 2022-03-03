@@ -46,6 +46,8 @@ menus:
       enabled: false
     - id: hosting
       enabled: false
+    - id: news
+      enabled: false
   footer:
     - id: github
       url: https://github.com/Cecilapp/
@@ -117,3 +119,6 @@ body:
       enabled: true
     webp:
       enabled: true
+paths:
+  - section: news
+    path: :section/:year/:month/:day/:slug

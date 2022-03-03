@@ -20,6 +20,15 @@
         </div>
       </div>
     </div>
+    {#- news ~#}
+    <div class="flex flex-wrap flex-row bg-darkblue dark:bg-black">
+      {% for news in site.pages|filter(p => p.section == 'news')|sort_by_date|slice(0, 4) %}
+      <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-darkgray {% if loop.index > 2 %}hidden md:block{% endif %}" href="{{ url(news) }}">
+        <div class="text-slate-300 mb-2">{{ news.date|localizeddate('long', 'none') }}</div>
+        <div class="text-white">{{ news.title }}</div>
+      </a>
+      {% endfor %}
+    </div>
 {% endblock %}
 
 {% block content %}
