@@ -1,0 +1,25 @@
+{% extends '_default/list.html.twig' %}
+
+{% block content %}
+        {#- content ~#}
+        <div class="markdown markdown-a:no-underline hover:markdown-a:no-underline markdown-h2:m-0 markdown-h2:mb-4 max-w-screen-md mx-auto dark:markdown-dark">
+          <h1>{% trans %}News{% endtrans %}</h1>
+          {%- for news in pages -%}
+          <article class="border-slate-200{% if loop.index > 1 %} border-t{% endif %}">
+            <div class="text-sm text-slate-300 mt-6">{{ news.date|localizeddate('medium', 'none') }}</div>
+            <h2><a href="{{ url(news) }}">{{ news.title }}</a></h2>
+            {% if loop.index == 1 %}
+            <div class="mb-6">
+              {{ news.content }}
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+
+        </div>
+{% endblock content %}
+
+{% block footer_scripts %}
+{{ parent() }}
+{% include 'partials/highlight.js.twig' only %}
+{% endblock footer_scripts %}

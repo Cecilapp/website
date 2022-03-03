@@ -1,0 +1,19 @@
+{% extends 'page.html.twig' %}
+
+{%~ block content ~%}
+        {#- content ~#}
+        <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
+          <h1>{{ page.title }}</h1>
+          {% if page.github_release|default('') is not empty  %}
+          <blockquote>
+            <a href="{{ page.github_release }}">{% trans "Release notes on GitHub" %}</a>
+          </blockquote>
+          {% endif %}
+          {{ page.content }}
+        </div>
+{%- endblock ~%}
+
+{% block footer_scripts %}
+{{ parent() }}
+{% include 'partials/highlight.js.twig' only %}
+{% endblock footer_scripts %}
