@@ -8,19 +8,17 @@
           {%~ include 'partials/search-box.html.twig' ~%}
           <h1>{% trans %}Documentation{% endtrans %}</h1>
           <p>{{ page.content }}</p>
-          <dl class="flex flex-wrap flex-row">
+          <div class="flex flex-wrap flex-row">
             {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
             <a href="{{ url(doc) }}" class="flex-auto w-96 hover:bg-slate-200 rounded-md p-2 dark:hover:bg-black">
-              <dt>
-                <h2>{{ doc.title|e }}</h2>
-              </dt>
-              <dd class="pb-4{% if not loop.last %} border-b border-slate-200 dark:border-black{% endif %}">
+              <h2>{{ doc.title|e }}</h2>
+              <div class="pb-4{% if not loop.last %} border-b border-slate-200 dark:border-black{% endif %}">
                 {%- if doc.description is defined -%}
                 {{ doc.description|e }}
                 {%- endif -%}
-              </dd>
+              </div>
             </a>
             {%- endfor -%}
-          </dl>
+          </div>
         </div>
 {% endblock content %}
