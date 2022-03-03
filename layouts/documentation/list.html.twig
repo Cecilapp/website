@@ -10,7 +10,7 @@
           <p>{{ page.content }}</p>
           <dl class="flex flex-wrap flex-row">
             {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
-            <a href="#" class="flex-auto w-96 hover:bg-slate-200 rounded-md p-2 dark:hover:bg-black">
+            <a href="{{ url(doc) }}" class="flex-auto w-96 hover:bg-slate-200 rounded-md p-2 dark:hover:bg-black">
               <dt>
                 <h2>{{ doc.title|e }}</h2>
               </dt>
