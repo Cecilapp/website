@@ -1119,6 +1119,10 @@ a.btn-trans:hover {
   margin-top: 1.5rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -1285,12 +1289,12 @@ a.btn-trans:hover {
   border-bottom-width: 1px;
 }
 
-.border-l-2 {
-  border-left-width: 2px;
-}
-
 .border-t {
   border-top-width: 1px;
+}
+
+.border-l-2 {
+  border-left-width: 2px;
 }
 
 .border-slate-200 {
@@ -1380,14 +1384,14 @@ a.btn-trans:hover {
   line-height: 1;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -1559,8 +1563,16 @@ a.btn-trans:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.markdown-h2\:m-0 :is(:where(h2):not(:where([class~="not-markdown"] *))) {
+  margin: 0px;
+}
+
 .markdown-h2\:mt-3 :is(:where(h2):not(:where([class~="not-markdown"] *))) {
   margin-top: 0.75rem;
+}
+
+.markdown-h2\:mb-4 :is(:where(h2):not(:where([class~="not-markdown"] *))) {
+  margin-bottom: 1rem;
 }
 
 .markdown-a\:no-underline :is(:where(a):not(:where([class~="not-markdown"] *))) {
