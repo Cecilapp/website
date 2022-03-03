@@ -75,8 +75,8 @@ module.exports = {
       screens: {
         sm: '100%',
         md: '100%',
-        lg: '1024px',
-        xl: '1024px',
+        lg: '1280px',
+        xl: '1280px',
       }
     }
   },

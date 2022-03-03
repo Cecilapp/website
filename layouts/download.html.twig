@@ -3,7 +3,7 @@
 {% block content %}
         <div class="mx-auto">
           {#- content ~#}
-          <div class="markdown mx-auto dark:markdown-dark">
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
             <p>
               <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">{% trans %}Download{% endtrans %}</a>
               <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">{% trans %}File checksum{% endtrans %}</a>
