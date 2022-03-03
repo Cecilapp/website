@@ -4,21 +4,22 @@
 
 {% block content %}
         {#- content ~#}
-        <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
+        <div class="markdown markdown-a:no-underline hover:markdown-a:no-underline markdown-h2:mt-3 max-w-screen-md mx-auto dark:markdown-dark">
           {%~ include 'partials/search-box.html.twig' ~%}
           <h1>{% trans %}Documentation{% endtrans %}</h1>
           <p>{{ page.content }}</p>
-          <dl>
+          <dl class="flex flex-wrap flex-row">
             {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
-            <dt>
-              <h2><a href="{{ url(doc) }}">{{ doc.title|e }}</a></h2>
-            </dt>
-            <dd{% if not loop.last %} class="border-b border-gray-200"{% endif %}>
-              {%- if doc.description is defined -%}
-              {{ doc.description|e }}
-              {%- endif -%}
-              <p><a class="readmore" href="{{ url(doc) }}">{% trans %}Read More{% endtrans %} &raquo;</a></p>
-            </dd>
+            <a href="#" class="flex-auto w-96 hover:bg-slate-200 rounded-md p-2 dark:hover:bg-black">
+              <dt>
+                <h2>{{ doc.title|e }}</h2>
+              </dt>
+              <dd class="pb-4{% if not loop.last %} border-b border-slate-200 dark:border-black{% endif %}">
+                {%- if doc.description is defined -%}
+                {{ doc.description|e }}
+                {%- endif -%}
+              </dd>
+            </a>
             {%- endfor -%}
           </dl>
         </div>
