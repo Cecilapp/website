@@ -81,6 +81,14 @@
     {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
     {%~ endblock footer_scripts ~%}
-    <style>{% apply minify_css %}{% block footer_css %}{% endblock footer_css %}{% endapply %}</style>
+    <style>{% apply minify_css %}
+      {% block footer_css %}
+      /* Fix highlight.js with Typography */
+      .hljs {
+        padding: 0;
+        background: transparent;
+      }
+      {% endblock footer_css %}
+    {% endapply %}</style>
   </body>
 </html>

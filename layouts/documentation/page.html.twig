@@ -52,8 +52,8 @@
 {% block footer_scripts %}
 {{ parent() }}
 {% include 'partials/highlight.js.twig' only %}
-    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.css',{minify:false}) }}">
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.js',{minify:false}) }}"></script>
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.css', {minify: false}) }}">
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.js', {minify: false}) }}"></script>
     <script>{% apply minify_js %}
       tocbot.init({
         tocSelector: '.toc',
@@ -67,10 +67,7 @@
 
 {% block footer_css %}
       {{ parent() }}
-      .hljs {
-        padding: 0;
-        background: transparent;
-      }
+      /* ToC */
       :root {
         --toc-before-color: #e5e7eb;
         --toc-before-active-color: #163C56;
