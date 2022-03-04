@@ -12,4 +12,4 @@ Also, we have created the **[News section](https://cecil.app/news/)** in order t
 1. What are the new features of a major version?
 2. What bugs are fixed in a minor release?
 
-We hope you like it 😊
+We hope you like it 🤵
