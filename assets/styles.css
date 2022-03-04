@@ -1420,6 +1420,10 @@ a.btn-trans:hover {
   font-weight: 300;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .leading-6 {
   line-height: 1.5rem;
 }
@@ -1552,9 +1556,9 @@ a.btn-trans:hover {
   border-bottom-left-radius: 3px;
 }
 
-.hover\:bg-darkgray:hover {
+.hover\:bg-gold:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-200:hover {
@@ -1562,9 +1566,24 @@ a.btn-trans:hover {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+.hover\:text-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(22 60 86 / var(--tw-text-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(22 60 86 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-darkblue {
+  --tw-text-opacity: 1;
+  color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
 .markdown-h2\:m-0 :is(:where(h2):not(:where([class~="not-markdown"] *))) {
