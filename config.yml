@@ -37,17 +37,17 @@ languages:
         enabled: false
 menus:
   main:
+    - id: news
+      weight: 10
     - id: documentation
       name: Documentation
-      weight: 10
+      weight: 20
     - id: index
       enabled: false
     - id: cms
       enabled: false
     - id: hosting
       enabled: false
-    #- id: news
-    #  enabled: false
   footer:
     - id: github
       url: https://github.com/Cecilapp/
