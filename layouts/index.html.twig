@@ -25,7 +25,7 @@
       <div class="container mx-auto flex flex-wrap flex-row">
         {% for news in site.pages|filter(p => p.section == 'news')|sort_by_date|slice(0, 4) %}
         <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold group {% if loop.index > 2 %}hidden md:block{% endif %}" href="{{ url(news) }}">
-          <div class="text-slate-300 group-hover:text-blue mb-2">{{ news.date|localizeddate('long', 'none') }}</div>
+          <div class="text-slate-300 group-hover:text-blue mb-1">{{ news.date|localizeddate('long', 'none') }}</div>
           <div class="font-medium text-white group-hover:text-darkblue">{{ news.title }}</div>
         </a>
         {% endfor %}
