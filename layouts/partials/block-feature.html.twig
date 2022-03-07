@@ -1,5 +1,5 @@
 {# Variables: title, description, path, image, shadow #}
-    <div class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-bluegray dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
+    <div class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-gold dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
       <div class="basis-1/2 text-center align-middle">
         <h2 class="text-4xl mb-8">{{ title }}</h2>
         <div class="text-2xl mb-8">{{ description|markdown_to_html }}</div>
