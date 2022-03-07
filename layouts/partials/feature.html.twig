@@ -4,11 +4,11 @@
         <h2 class="text-4xl mb-8">{{ title }}</h2>
         <div class="text-2xl mb-8">{{ description }}</div>
         <div>
-          <a class="text-xl" href="{{ url(path) }}">{% trans %}See documenation 🠒{% endtrans %}</a>
+          <a class="text-xl" href="{{ url(path) }}">{% trans %}See documenation{% endtrans %}</a>
         </div>
       </div>
       <div class="basis-1/2 text-center">
         {%- set image_template = asset(image) ~%}
-        <a href="{{ url(path) }}" title="{% trans %}See documenation 🠒{% endtrans %}"><img class="shadow-3xl" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
+        <a href="{{ url(path) }}" title="{% trans %}See documenation{% endtrans %}"><img class="shadow-3xl" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
       </div>
     </div>

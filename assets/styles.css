@@ -1737,6 +1737,11 @@ a.btn-trans:hover {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-darkblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 47 68 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:text-slate-300 {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
@@ -1823,6 +1828,10 @@ a.btn-trans:hover {
 
   .md\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .md\:flex-col-reverse {
+    flex-direction: column-reverse;
   }
 
   .md\:gap-x-8 {
