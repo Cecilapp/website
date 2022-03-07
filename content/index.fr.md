@@ -36,12 +36,12 @@ blocks:
       path: documentation/content/#body
       image: cecil-markdown-content.png
       visible: true
-    - title: Modèles intuitifs
-      description: "Les modèles de Cecil, motorisés par [Twig](https://twig.symfony.com), offrent le moyen le plus simple de créer n’importe quoi : blog, site Web, portfolio, etc."
+    - title: Des modèles intuitifs
+      description: "Les modèles de Cecil, motorisés par [Twig](https://twig.symfony.com), offrent le moyen le plus simple de créer n’importe quoi : blog, site Web, portfolio, e-commerce, etc."
       path: documentation/templates
       image: cecil-twig-template.png
       visible: true
-    - title: Un blog prêt à l’usage
+    - title: Un blog prêt à l’emploi
       description: "The Butler est un blog de démarrage prêt à l’emploi avec un CMS convivial, motorisé par Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png

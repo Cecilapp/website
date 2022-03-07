@@ -39,7 +39,7 @@ blocks:
       image: cecil-markdown-content.png
       visible: true
     - title: Intuitive templating
-      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build anything: blog, website, portfolio, etc."
+      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build anything: blog, website, portfolio, ecommerce, etc."
       path: documentation/templates
       image: cecil-twig-template.png
       visible: true
