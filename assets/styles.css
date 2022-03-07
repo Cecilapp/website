@@ -1785,6 +1785,11 @@ a.btn-gold:hover {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
+.dark .group:hover .dark\:group-hover\:border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:inline-block {
     display: inline-block;

@@ -12,7 +12,7 @@
             {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
             <a href="{{ url(doc) }}" class="flex-auto w-96 hover:bg-gold group rounded-md p-2 dark:hover:bg-black">
               <h2>{{ doc.title|e }}</h2>
-              <div class="pb-4{% if not loop.last %} border-b border-slate-200 group-hover:border-gold dark:border-black{% endif %}">
+              <div class="pb-4{% if not loop.last %} border-b border-slate-200 group-hover:border-gold dark:border-black dark:group-hover:border-black{% endif %}">
                 {%- if doc.description is defined -%}
                 {{ doc.description|e }}
                 {%- endif -%}
