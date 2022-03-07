@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2020-11-25
+updated: 2022-03-07
 blocks:
   about:
     - title: Fast & Secure
@@ -33,7 +33,7 @@ blocks:
       icon: rocket
       visible: true
   feature:
-    - title: Markdown format
+    - title: Managing content
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: cecil-markdown-content.png
@@ -44,7 +44,7 @@ blocks:
       image: cecil-twig-template.png
       visible: true
     - title: A ready to use blog
-      description: "The Butler is a ready to use starter blog with a user friendly CMS, powered by the Cecil static site generator."
+      description: "The Butler is a ready to use starter blog with a user friendly CMS, powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: 0
@@ -52,12 +52,11 @@ blocks:
 pagination:
   enabled: false
 ---
-
 ```bash
 # download
 curl -LO https://cecil.app/cecil.phar
 # create a new site
 php cecil.phar new:site
-# serve the site, with drafts
-php cecil.phar serve --drafts
+# serve the site
+php cecil.phar serve
 ```
