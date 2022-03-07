@@ -23,12 +23,12 @@
     {#- news ~#}
     <div class="bg-darkblue dark:bg-black">
       <div class="container mx-auto flex flex-wrap flex-row">
-        {% for news in site.pages|filter(p => p.section == 'news')|sort_by_date|slice(0, 4) %}
-        <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold group {% if loop.index > 2 %}hidden md:block{% endif %}" href="{{ url(news) }}">
+        {%- for news in site.pages|filter(p => p.section == 'news')|sort_by_date|slice(0, 4) ~%}
+        <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold hover:shadow-xl group{% if loop.index > 2 %} hidden md:block{% endif %}" href="{{ url(news) }}">
           <div class="text-slate-300 group-hover:text-blue mb-1">{{ news.date|localizeddate('long', 'none') }}</div>
           <div class="font-medium text-white group-hover:text-darkblue">{{ news.title }}</div>
         </a>
-        {% endfor %}
+        {%- endfor ~%}
       </div>
     </div>
 {% endblock %}
@@ -46,6 +46,25 @@
         {#-<div class="container mx-auto md:w-2/4 bg-slate-100 mt-10 px-8 py-5 leading-loose">
           {{ page.content }}
         </div>}-#}
+{% endblock %}
+
+{% block features %}
+    {#- twig ~#}
+    {%~ include 'partials/feature.html.twig' with {
+      class: 'bg-bluegray',
+      title: 'Intuitive templating',
+      description: 'Cecil’s Twig templating provides the easiest way to build anything: blog, website, portfolio, etc.',
+      path: 'documentation/templates',
+      image: 'cecil-twig-template.png'
+    } only ~%}
+    {#- markdown ~#}
+    {%~ include 'partials/feature.html.twig' with {
+      class: 'flex-col-reverse md:flex-row-reverse md:space-x-reverse space-y-reverse',
+      title: 'Markdown',
+      description: 'Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use.',
+      path: 'documentation/content/#body',
+      image: 'cecil-markdown-content.png'
+    } only ~%}
 {% endblock %}
 
 {% block footer_scripts %}
