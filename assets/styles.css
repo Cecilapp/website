@@ -1362,9 +1362,9 @@ a.btn-gold:hover {
   background-color: rgb(9 47 68 / var(--tw-bg-opacity));
 }
 
-.bg-bluegray {
+.bg-gold {
   --tw-bg-opacity: 1;
-  background-color: rgb(123 153 169 / var(--tw-bg-opacity));
+  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
 }
 
 .bg-slate-300 {
@@ -1380,6 +1380,10 @@ a.btn-gold:hover {
 .bg-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
+}
+
+.fill-gold {
+  fill: #F2D07F;
 }
 
 .p-6 {
@@ -1663,6 +1667,11 @@ a.btn-gold:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.group:hover .group-hover\:border-gold {
+  --tw-border-opacity: 1;
+  border-color: rgb(242 208 127 / var(--tw-border-opacity));
+}
+
 .group:hover .group-hover\:text-blue {
   --tw-text-opacity: 1;
   color: rgb(22 60 86 / var(--tw-text-opacity));
@@ -1739,6 +1748,10 @@ a.btn-gold:hover {
 .dark .dark\:bg-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:fill-white {
+  fill: #fff;
 }
 
 .dark .dark\:text-slate-300 {
