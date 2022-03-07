@@ -39,40 +39,31 @@
     @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
   }
   .btn {
-    @apply inline-block mb-2 py-3 px-6 no-underline border border-blue rounded;
+    @apply inline-block mb-2 py-3 px-6 no-underline border bg-white dark:bg-transparent border-blue dark:border-white rounded;
+  }
+  .btn:hover {
+    @apply bg-blue dark:bg-black text-white;
   }
   a.btn {
     @apply no-underline;
-  }
-  a.btn:hover {
-    @apply text-white;
-  }
-  .btn:hover {
-    @apply bg-blue text-white border-transparent;
   }
   .btn-sm {
     @apply py-1 px-3;
   }
   .btn-gold {
-    @apply bg-gold text-darkblue border-gold;
+    @apply bg-gold dark:bg-gold border-gold dark:border-gold text-darkblue dark:text-darkblue;
   }
   .btn-gold:hover {
-    @apply bg-white text-darkblue border-transparent;
-  }
-  a.btn-gold {
-    @apply dark:text-darkblue;
+    @apply bg-white dark:bg-white border-white dark:border-white;
   }
   a.btn-gold:hover {
     @apply text-darkblue;
   }
   .btn-trans {
-    @apply bg-transparent text-white border-white;
+    @apply bg-transparent dark:hover:bg-white text-white border-white;
   }
   .btn-trans:hover {
     @apply bg-white text-darkblue;
-  }
-  a.btn-trans:hover {
-    @apply text-darkblue;
   }
 }
 
