@@ -33,17 +33,17 @@ blocks:
       icon: rocket
       visible: true
   feature:
-    - title: Intuitive templating
-      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build anything: blog, website, portfolio, etc."
-      path: documentation/templates
-      image: cecil-twig-template.png
-      visible: true
     - title: Markdown format
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: cecil-markdown-content.png
       visible: true
-    - title: Ready to use blog
+    - title: Intuitive templating
+      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build anything: blog, website, portfolio, etc."
+      path: documentation/templates
+      image: cecil-twig-template.png
+      visible: true
+    - title: A ready to use blog
       description: "The Butler is a ready to use starter blog with a user friendly CMS, powered by the Cecil static site generator."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
