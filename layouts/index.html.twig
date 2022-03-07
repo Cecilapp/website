@@ -37,7 +37,7 @@
         {#- about blocks ~#}
         <div class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
-            {%~ for block in page.blocks.about|filter(b => b.visible != false) ~%}
+            {%~ for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
             {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
             {%~ endfor ~%}
           </div>
@@ -56,22 +56,9 @@
 {% endblock %}
 
 {% block features %}
-    {#- twig ~#}
-    {%~ include 'partials/feature.html.twig' with {
-      class: 'bg-bluegray dark:bg-black',
-      title: 'Intuitive templating',
-      description: 'Cecil’s Twig templating provides the easiest way to build anything: blog, website, portfolio, etc.',
-      path: 'documentation/templates',
-      image: 'cecil-twig-template.png'
-    } only ~%}
-    {#- markdown ~#}
-    {%~ include 'partials/feature.html.twig' with {
-      class: 'flex-col md:flex-row-reverse md:space-x-reverse',
-      title: 'Markdown',
-      description: 'Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use.',
-      path: 'documentation/content/#body',
-      image: 'cecil-markdown-content.png'
-    } only ~%}
+    {%~ for block in page.blocks.feature|default({})|filter(b => b.visible != false) ~%}
+    {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow|default(true)} only ~%}
+    {%~ endfor ~%}
 {% endblock %}
 
 {% block footer_scripts %}
