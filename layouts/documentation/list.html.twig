@@ -10,9 +10,9 @@
           <p>{{ page.content }}</p>
           <div class="flex flex-wrap flex-row">
             {%- for doc in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
-            <a href="{{ url(doc) }}" class="flex-auto w-96 hover:bg-slate-200 rounded-md p-2 dark:hover:bg-black">
+            <a href="{{ url(doc) }}" class="flex-auto w-96 hover:bg-gold group rounded-md p-2 dark:hover:bg-black">
               <h2>{{ doc.title|e }}</h2>
-              <div class="pb-4{% if not loop.last %} border-b border-slate-200 dark:border-black{% endif %}">
+              <div class="pb-4{% if not loop.last %} border-b border-slate-200 group-hover:border-gold dark:border-black{% endif %}">
                 {%- if doc.description is defined -%}
                 {{ doc.description|e }}
                 {%- endif -%}
