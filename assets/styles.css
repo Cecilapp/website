@@ -1101,6 +1101,10 @@ a.btn-gold:hover {
   color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
+.box-shadow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
 .visible {
   visibility: visible;
 }

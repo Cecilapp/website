@@ -9,6 +9,6 @@
       </div>
       <div class="basis-1/2 text-center">
         {%- set image_template = asset(image) ~%}
-        <a href="{{ url(path) }}" title="{% trans %}See documentation{% endtrans %}"><img class="{% if shadow %}shadow-xl{% endif %}" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
+        <a href="{{ url(path) }}" title="{% trans %}See documentation{% endtrans %}"><img class="{% if shadow %}box-shadow{% endif %}" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
       </div>
     </div>
