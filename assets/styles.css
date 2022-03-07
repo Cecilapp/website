@@ -1004,6 +1004,8 @@ img {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(22 60 86 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -1012,22 +1014,27 @@ img {
           text-decoration-line: none;
 }
 
-a.btn {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
-a.btn:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.dark .btn {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: transparent;
 }
 
 .btn:hover {
-  border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+a.btn {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .btn-sm {
@@ -1046,17 +1053,27 @@ a.btn:hover {
   color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
-.btn-gold:hover {
-  border-color: transparent;
+.dark .btn-gold {
+  --tw-border-opacity: 1;
+  border-color: rgb(242 208 127 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
-.dark a.btn-gold {
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
+.btn-gold:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.dark .btn-gold:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 a.btn-gold:hover {
@@ -1072,14 +1089,14 @@ a.btn-gold:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.dark .btn-trans:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .btn-trans:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(9 47 68 / var(--tw-text-opacity));
-}
-
-a.btn-trans:hover {
   --tw-text-opacity: 1;
   color: rgb(9 47 68 / var(--tw-text-opacity));
 }
@@ -1125,6 +1142,10 @@ a.btn-trans:hover {
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mb-6 {
@@ -1251,10 +1272,6 @@ a.btn-trans:hover {
   flex-direction: column;
 }
 
-.flex-col-reverse {
-  flex-direction: column-reverse;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -1295,10 +1312,6 @@ a.btn-trans:hover {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-reverse > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 1;
 }
 
 .overflow-y-auto {
@@ -1349,9 +1362,9 @@ a.btn-trans:hover {
   background-color: rgb(9 47 68 / var(--tw-bg-opacity));
 }
 
-.bg-slate-100 {
+.bg-bluegray {
   --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(123 153 169 / var(--tw-bg-opacity));
 }
 
 .bg-slate-300 {
@@ -1367,21 +1380,6 @@ a.btn-trans:hover {
 .bg-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
-}
-
-.bg-gold {
-  --tw-bg-opacity: 1;
-  background-color: rgb(242 208 127 / var(--tw-bg-opacity));
-}
-
-.bg-bluegray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(123 153 169 / var(--tw-bg-opacity));
-}
-
-.bg-darkgray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .p-6 {
@@ -1400,9 +1398,9 @@ a.btn-trans:hover {
   padding: 0.25rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .py-5 {
@@ -1737,11 +1735,6 @@ a.btn-trans:hover {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-darkblue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 47 68 / var(--tw-bg-opacity));
-}
-
 .dark .dark\:text-slate-300 {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
@@ -1790,6 +1783,10 @@ a.btn-trans:hover {
     margin-top: 2.5rem;
   }
 
+  .md\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1830,10 +1827,6 @@ a.btn-trans:hover {
     flex-direction: row-reverse;
   }
 
-  .md\:flex-col-reverse {
-    flex-direction: column-reverse;
-  }
-
   .md\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
@@ -1871,6 +1864,11 @@ a.btn-trans:hover {
 
   .md\:p-28 {
     padding: 7rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:pt-6 {
