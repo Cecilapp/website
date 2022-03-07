@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-03-07 14:11+0100\n"
-"PO-Revision-Date: 2022-03-07 14:11+0100\n"
+"POT-Creation-Date: 2022-03-07 18:19+0100\n"
+"PO-Revision-Date: 2022-03-07 18:20+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -76,8 +76,8 @@ msgid "Release notes on GitHub"
 msgstr "Notes de version sur GitHub"
 
 #: partials/block-feature.html.twig:7 partials/block-feature.html.twig:12
-msgid "See documentation"
-msgstr "Voir la documentation"
+msgid "Get started"
+msgstr "Commencer"
 
 #: partials/search-box.html.twig:3
 msgid "Search the Docs [Alt+S]"
@@ -98,6 +98,9 @@ msgstr "Clair"
 #: partials/toggle-switch-dark.html.twig:6
 msgid "Dark"
 msgstr "Sombre"
+
+#~ msgid "See documentation"
+#~ msgstr "Voir la documentation"
 
 #~ msgid "Read More"
 #~ msgstr "En savoir plus"

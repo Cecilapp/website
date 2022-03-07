@@ -4,11 +4,11 @@
         <h2 class="text-4xl mb-8">{{ title }}</h2>
         <div class="text-2xl mb-8">{{ description|markdown_to_html }}</div>
         <div>
-          <a class="text-xl" href="{{ url(path) }}">{% trans %}See documentation{% endtrans %}</a>
+          <a class="text-xl" href="{{ url(path) }}">{% trans %}Get started{% endtrans %}</a>
         </div>
       </div>
       <div class="basis-1/2 text-center">
         {%- set image_template = asset(image) ~%}
-        <a href="{{ url(path) }}" title="{% trans %}See documentation{% endtrans %}"><img class="{% if shadow %}box-shadow{% endif %}" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
+        <a href="{{ url(path) }}" title="{% trans %}Get started{% endtrans %}"><img class="{% if shadow %}box-shadow{% endif %}" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
       </div>
     </div>
