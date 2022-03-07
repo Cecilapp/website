@@ -8,7 +8,7 @@
             <h1 class="text-6xl">{{ site.title }}</h1>
             <p class="md:text-2xl">{{ site.baseline }}</p>
             {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-            <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn btn-gold mb-2">{% trans %}Quick Start{% endtrans %}</a>
+            <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn btn-gold mb-4 mr-2">{% trans %}Quick Start{% endtrans %}</a>
             {%- endif ~%}
             {%- if site.menus.main.download is defined ~%}
             <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-trans">{% trans %}Download{% endtrans %}</a>
