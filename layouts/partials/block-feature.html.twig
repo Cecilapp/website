@@ -1,13 +1,13 @@
 {# Variables: title, description, path, image, shadow #}
     <div class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-bluegray dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
-      <div class="basis-1/2 text-center align-middle animate__animated{% if loop.index0 is even %} animate__fadeInLeft{% else %} animate__fadeInRight{% endif %}">
+      <div class="basis-1/2 text-center align-middle">
         <h2 class="text-4xl mb-8">{{ title }}</h2>
         <div class="text-2xl mb-8">{{ description|markdown_to_html }}</div>
         <div>
           <a class="text-xl" href="{{ url(path) }}">{% trans %}See documentation{% endtrans %}</a>
         </div>
       </div>
-      <div class="basis-1/2 text-center animate__animated{% if loop.index0 is even %} animate__fadeInRight{% else %} animate__fadeInLeft{% endif %}">
+      <div class="basis-1/2 text-center">
         {%- set image_template = asset(image) ~%}
         <a href="{{ url(path) }}" title="{% trans %}See documentation{% endtrans %}"><img class="{% if shadow %}shadow-3xl{% endif %}" src="{{ image_template|url() }}" width="{{ image_template.width }}" height="{{ image_template.height }}" alt="{{ title }}"></a>
       </div>
