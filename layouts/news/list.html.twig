@@ -20,6 +20,6 @@
 {% endblock content %}
 
 {% block footer_scripts %}
-{{ parent() }}
-{% include 'partials/highlight.js.twig' only %}
+    {{ parent() }}
+    {%~ include 'partials/highlight.js.twig' only ~%}
 {% endblock footer_scripts %}
