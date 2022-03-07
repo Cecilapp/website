@@ -37,7 +37,10 @@ pagination:
 ---
 
 ```bash
+# download
 curl -LO https://cecil.app/cecil.phar
+# create a new site
 php cecil.phar new:site
+# serve the site, with drafts
 php cecil.phar serve --drafts
 ```
