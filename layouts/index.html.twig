@@ -38,7 +38,7 @@
         <div class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
             {%~ for block in page.blocks.about|filter(b => b.visible != false) ~%}
-            {%~ include 'partials/block-about.html.twig' with {icon:block.icon, title:block.title, description:block.description} only ~%}
+            {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
             {%~ endfor ~%}
           </div>
         </div>
