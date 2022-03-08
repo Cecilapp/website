@@ -33,7 +33,7 @@ blocks:
       icon: rocket
       visible: true
   feature:
-    - title: Managing content
+    - title: Writing content
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: cecil-markdown-content.png

@@ -31,7 +31,7 @@ blocks:
     icon: rocket
     visible: true
   feature:
-    - title: Gestion du contenu
+    - title: Rédaction de contenu
       description: "L’analyseur Markdown de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: cecil-markdown-content.png
