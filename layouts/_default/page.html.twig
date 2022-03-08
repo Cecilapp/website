@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}"
-  x-data="{'darkMode': false}"
-  x-init="
-    darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-  :class="{'dark': darkMode === true}"
+  x-data="{theme: localStorage.getItem('theme') || localStorage.setItem('theme', 'system')}"
+  x-init="$watch('theme', value => localStorage.setItem('theme', value))"
+  :class="{'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
 >
   <head>
     <meta charset="UTF-8">
