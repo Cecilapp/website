@@ -55,8 +55,8 @@ pagination:
 ```bash
 # download
 curl -LO https://cecil.app/cecil.phar
-# create a new site
+# create
 php cecil.phar new:site
-# serve the site
+# serve
 php cecil.phar serve
 ```
