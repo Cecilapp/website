@@ -53,8 +53,8 @@ pagination:
 ```bash
 # télécharger
 curl -LO https://cecil.app/cecil.phar
-# créer un nouveau site
+# créer
 php cecil.phar new:site
-# servir le site
+# servir
 php cecil.phar serve
 ```
