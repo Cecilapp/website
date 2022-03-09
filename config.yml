@@ -67,7 +67,7 @@ output:
       mediatype: 'text/plain'
       extension: 'sh'
   pagetypeformats:
-    homepage: ['html', 'algolia']
+    homepage: ['html', 'atom', 'algolia']
     section: ['html', 'atom']
 theme:
   - netlify
