@@ -31,12 +31,12 @@ blocks:
     icon: rocket
     visible: true
   feature:
-    - title: Rédaction de contenu
+    - title: Rédiger en Markdown
       description: "L’analyseur Markdown de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: cecil-markdown-content.png
       visible: true
-    - title: Des modèles intuitifs
+    - title: Modèles Twig
       description: "Les modèles de Cecil, motorisés par [Twig](https://twig.symfony.com), offrent le moyen le plus simple de créer n’importe quoi : blog, site Web, portfolio, e-commerce, etc."
       path: documentation/templates
       image: cecil-twig-template.png
