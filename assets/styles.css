@@ -1212,10 +1212,6 @@ a.btn-gold:hover {
   height: 0.75rem;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -1246,18 +1242,6 @@ a.btn-gold:hover {
 
 .w-3 {
   width: 0.75rem;
-}
-
-.w-4 {
-  width: 1rem;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .w-5 {
