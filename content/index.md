@@ -33,12 +33,12 @@ blocks:
       icon: rocket
       visible: true
   feature:
-    - title: Write in Markdown
+    - title: Intuitive writing experience
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: cecil-markdown-content.png
       visible: true
-    - title: Twig templates
+    - title: Modern template engine
       description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build anything: blog, website, portfolio, ecommerce, etc."
       path: documentation/templates
       image: cecil-twig-template.png
