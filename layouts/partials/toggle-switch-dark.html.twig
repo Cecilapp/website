@@ -1,3 +1,4 @@
+        <!--
         <div class="flex items-center space-x-2 mt-1">
           <span class="text-xs text-darkblue dark:text-slate-500">{% trans %}Light{% endtrans %}</span>
           <label for="toggle" class="w-8 h-4 flex items-center bg-slate-300 rounded-full p-1 cursor-pointer duration-300 ease-in-out dark:bg-slate-600">
@@ -5,4 +6,33 @@
           </label>
           <span class="text-xs text-slate-500 dark:text-white">{% trans %}Dark{% endtrans %}</span>
           <input id="toggle" type="checkbox" class="hidden" :value="darkMode" @change="darkMode = !darkMode"/>
+        </div>
+        -->
+
+        <!--<style>
+          .switch-toggle {
+            float: left;
+            background: #242729;
+          }
+          .switch-toggle input {
+            position: absolute;
+            opacity: 0;
+          }
+          .switch-toggle input + label {
+            padding: 7px;
+            float:left;
+            color: #fff;
+            cursor: pointer;
+          }
+          .switch-toggle input:checked + label {
+            background: green;
+          }
+        </style>-->
+        <div class="switch-toggle mt-1">
+          <input id="light" name="theme" type="radio" value="light" @click="theme = 'light'" x-init="this.checked = true" />
+          <label for="light">Light</label>
+          <input id="system" name="theme" type="radio" value="system" @click="theme = 'system'" x-init="this.checked = true" />
+          <label for="system" class="disabled">System</label>
+          <input id="dark" name="theme" type="radio" value="dark" @click="theme = 'dark'" x-init="this.checked = true" />
+          <label for="dark">Dark</label>
         </div>
