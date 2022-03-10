@@ -34,17 +34,17 @@ blocks:
       visible: true
   feature:
     - title: Intuitive writing experience
-      description: "Cecil’s [Markdown](https://en.wikipedia.org/wiki/Markdown) parser provides a simple way to write your content. It’s easy to learn and easy to use."
+      description: "Cecil’s [Markdown](https://en.wikipedia.org/wiki/Markdown \"Markdown on wikipedia\") parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: cecil-markdown-content.png
       visible: true
     - title: Modern template engine
-      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
+      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com \"Twig’s website\"), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
       image: cecil-twig-template.png
       visible: true
     - title: A ready to use blog
-      description: "The Butler is a ready to use starter blog with a user friendly CMS, powered by Cecil."
+      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog with a user friendly CMS, powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: 0
