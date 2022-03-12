@@ -49,6 +49,7 @@ blocks:
       visible: true
 pagination:
   enabled: false
+output: ['html', 'atom']
 ---
 ```bash
 # télécharger
