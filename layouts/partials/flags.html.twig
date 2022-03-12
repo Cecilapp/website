@@ -64,7 +64,7 @@
       x-on:click.outside="close($refs.button)"
       :id="$id('dropdown-button')"
       style="display: none;"
-      class="absolute right-0 mt-2 border-darkblue rounded-md bg-darkblue overflow-hidden"
+      class="absolute right-0 mt-2 border-darkblue dark:border-black rounded-md bg-darkblue dark:bg-black overflow-hidden"
     >
       {%- for p in page.translations ~%}
         {%- if p.language is defined ~%}
