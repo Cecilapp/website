@@ -42,6 +42,9 @@
             {%- if entry.id == 'documentation' ~%}
             <span class="hidden sm:inline-block">{{ entry.name }}</span>
             <span class="sm:hidden">{% trans %}Docs{% endtrans %}</span>
+            {%- elseif  entry.id == 'download' ~%}
+            <span class="hidden sm:inline-block">{{ entry.name }}</span>
+            <span class="sm:hidden"><span class="sr-only">{{ entry.name }}</span>{{ octicon.svg('download', 'w-5 h-5') }}</span>
             {%- else ~%}
             {{ entry.name }}
             {%- endif ~%}
