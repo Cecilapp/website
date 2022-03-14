@@ -77,7 +77,7 @@
         {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
         © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}<br />
         {%- set powered_by -%}
-        <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>, <a href="https://vercel.com/?utm_source=cecilapp&utm_campaign=oss">Vercel</a>
+        <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>, <a href="https://vercel.com/?utm_source=cecilapp&utm_campaign=oss">Vercel</a>
         {%- endset ~%}
         {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
         {%~ include 'partials/toggle-switch-dark.html.twig' ~%}
