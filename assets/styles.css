@@ -1681,8 +1681,8 @@ a.btn-gold:hover {
   padding-bottom: 1.5rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .pb-4 {
@@ -2301,8 +2301,8 @@ a.btn-gold:hover {
     padding-right: 2rem;
   }
 
-  .md\:pb-8 {
-    padding-bottom: 2rem;
+  .md\:pb-16 {
+    padding-bottom: 4rem;
   }
 
   .md\:pt-6 {
