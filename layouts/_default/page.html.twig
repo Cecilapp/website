@@ -72,7 +72,7 @@
     </main>
     {%~ block features %}{% endblock ~%}
     {%~ block sponsors %}{% endblock ~%}
-    <footer class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
+    <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {% if site.menus.footer is defined %}{% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% endif %}{% if page.translations|length >= 1 %} &middot; {% include 'partials/languages.html.twig' %}{% endif -%}<br />
         {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}

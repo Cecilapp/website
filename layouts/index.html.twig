@@ -23,7 +23,7 @@
       </div>
     </div>
     {#- news ~#}
-    <div class="bg-darkblue dark:bg-black">
+    <div id="news" class="bg-darkblue dark:bg-black">
       <div class="container mx-auto flex flex-wrap flex-row">
         {%- for news in site.pages.showable|filter(p => p.section == 'news')|sort_by_date|slice(0, 4) ~%}
         <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold hover:shadow-lg group{% if loop.index > 2 %} hidden md:block{% endif %}" href="{{ url(news) }}" title="{{ news.description|default() }}">
@@ -37,7 +37,7 @@
 
 {% block content %}
         {#- about blocks ~#}
-        <div class="mt-6 md:mt-10">
+        <div id="about" class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
             {%~ for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
             {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
@@ -58,13 +58,15 @@
 {% endblock %}
 
 {% block features %}
+    <div id="features">
     {%~ for block in page.blocks.feature|default({})|filter(b => b.visible != false) ~%}
     {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow|default(true)} only ~%}
     {%~ endfor ~%}
+    </div>
 {% endblock %}
 
 {% block sponsors %}
-    <div class="p-10 md:p-16 bg-darkblue dark:bg-dark text-white">
+    <div id="sponsors" class="p-10 md:p-16 bg-darkblue dark:bg-dark text-white">
       <div class="container mx-auto">
         <div class="text-2xl font-bold pb-10 md:pb-16 text-center">{% trans %}Cecil sponsors{% endtrans %}</div>
         <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-16 items-center">
