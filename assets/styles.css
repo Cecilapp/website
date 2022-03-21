@@ -1395,6 +1395,10 @@ a.btn-gold:hover {
   display: none;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -1472,6 +1476,10 @@ a.btn-gold:hover {
 }
 
 .flex-grow {
+  flex-grow: 1;
+}
+
+.grow {
   flex-grow: 1;
 }
 
@@ -1626,12 +1634,12 @@ a.btn-gold:hover {
   padding: 1.5rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-1 {
@@ -1673,6 +1681,10 @@ a.btn-gold:hover {
   padding-bottom: 1.5rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1707,6 +1719,11 @@ a.btn-gold:hover {
   line-height: 1.75rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1720,11 +1737,6 @@ a.btn-gold:hover {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-xs {
@@ -1797,6 +1809,10 @@ a.btn-gold:hover {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 .duration-300 {
@@ -2010,6 +2026,12 @@ a.btn-gold:hover {
   padding: 0
 }
 
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:bg-gold:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(242 208 127 / var(--tw-bg-opacity));
@@ -2203,6 +2225,10 @@ a.btn-gold:hover {
     display: none;
   }
 
+  .md\:h-auto {
+    height: auto;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2262,6 +2288,10 @@ a.btn-gold:hover {
     border-top-width: 0px;
   }
 
+  .md\:p-16 {
+    padding: 4rem;
+  }
+
   .md\:p-28 {
     padding: 7rem;
   }
@@ -2269,6 +2299,10 @@ a.btn-gold:hover {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:pb-8 {
+    padding-bottom: 2rem;
   }
 
   .md\:pt-6 {

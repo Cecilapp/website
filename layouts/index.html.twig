@@ -63,6 +63,25 @@
     {%~ endfor ~%}
 {% endblock %}
 
+{% block sponsors %}
+    <div class="p-10 md:p-16 bg-darkblue dark:bg-dark text-white">
+      <div class="container mx-auto">
+        <div class="text-2xl font-bold pb-6 md:pb-8">{% trans %}Cecil sponsors{% endtrans %}</div>
+        <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-16 items-center">
+        {%~ for block in page.blocks.sponsor|default({})|filter(b => b.visible != false) ~%}
+          {%- set sponsor_title = block.title -%}
+          {%- set sponsor_logo = asset(block.logo) -%}
+          <div class="grow h-28 md:h-auto text-center hover:scale-125 ease-in-out duration-700">
+            <a href="{{ block.url }}" title="{% trans %}Sponsored by {{ sponsor_title }}{% endtrans %}">
+              <img src="{{ sponsor_logo }}" alt="{{ sponsor_title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}">
+            </a>
+          </div>
+        {%~ endfor ~%}
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
 {% block footer_scripts %}
     {{ parent() }}
     {%~ include 'partials/version.js.twig' only ~%}

@@ -49,6 +49,23 @@ blocks:
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: 0
       visible: true
+  sponsor:
+    - title: Aperture Lab
+      logo: https://avatars.githubusercontent.com/u/10225022?s=100
+      url: https://aperturelab.fr
+      visible: true
+    - title: studio cecillie
+      logo: https://raw.githubusercontent.com/cecillie/eshop/main/static/images/cecillie_signature.png
+      url: https://studio.cecillie.fr
+      visible: true
+    - title: Netlify
+      logo: https://www.netlify.com/img/global/badges/netlify-color-bg.svg
+      url: https://www.netlify.com
+      visible: true
+    - title: Vercel
+      logo: https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg
+      url: https://vercel.com/?utm_source=cecilapp&utm_campaign=oss
+      visible: true
 pagination:
   enabled: false
 pagesfrom: news
