@@ -62,7 +62,7 @@
     {%~ block jumbotron %}{% endblock ~%}
     <main class="flex-grow px-6 py-8">
       <div class="container mx-auto">
-        {%~ block content ~%}
+        {%- block content ~%}
         {#- content ~#}
         <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
           {{ page.content }}
@@ -75,19 +75,19 @@
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         <div>
-          {% if site.menus.footer is defined %}
-            {% if site.menus.footer.about is defined %}
+          {%- if site.menus.footer is defined -%}
+            {%- if site.menus.footer.about is defined ~%}
           <a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot;
-            {% endif %}
+            {%- endif -%}
           <a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>
-          {% endif %}
-          {% if page.translations|length >= 1 %}
+          {%- endif -%}
+          {%- if page.translations|length >= 1 -%}
             &middot; {% include 'partials/languages.html.twig' %}
-          {% endif -%}
+          {%- endif ~%}
         </div>
         <div>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
-          © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}
+          © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans ~%}
         </div>
         <div>
           {%- set powered_by -%}
