@@ -110,10 +110,14 @@ Can be displayed in a template with:
 | --------------------- | ----------------------------------------------------- |
 | `site.home`           | ID of the home page.                                  |
 | `site.pages`          | Collection of pages, in the current language.         |
-| `site.pages.showable` | `site.pages` with "showable" pages only (published, not virtual/redirect/excluded).  Alias: `site.pages.all` (deprecated) |
+| `site.pages.showable` | `site.pages` with "showable" pages only (published, not virtual/redirect/excluded).<br>Alias: `site.pages.all` (deprecated) |
 | `site.allpages`       | Collection of pages, regardless of their translation. |
 | `site.taxonomies`     | Collection of vocabularies.                           |
 | `site.time`           | [_Timestamp_](https://wikipedia.org/wiki/Unix_time) of the last generation. |
+
+<div markdown="1" class="tips">
+You can get any page with `site.pages['id']` where `id` is the _ID_ of a page (ie: `index` for home page).
+</div>
 
 #### site.menus
 
