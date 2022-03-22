@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-03-21 12:16+0100\n"
-"PO-Revision-Date: 2022-03-21 12:17+0100\n"
+"POT-Creation-Date: 2022-03-22 01:13+0100\n"
+"PO-Revision-Date: 2022-03-22 01:13+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -26,21 +26,25 @@ msgstr "Accueil"
 msgid "Docs"
 msgstr "Doc"
 
-#: _default/page.html.twig:77
+#: _default/page.html.twig:80
 msgid "About"
 msgstr "À propos"
 
-#: _default/page.html.twig:77
+#: _default/page.html.twig:82
 msgid "Open source"
 msgstr "Open source"
 
-#: _default/page.html.twig:79
+#: _default/page.html.twig:90
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: _default/page.html.twig:83
+#: _default/page.html.twig:96
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
+
+#: _default/page.html.twig:102
+msgid "Cecil is generously supported by"
+msgstr "Cecil est généreusement soutenu par"
 
 #: documentation/list.html.twig:1 documentation/list.html.twig:9
 #: documentation/page.html.twig:1
@@ -62,14 +66,6 @@ msgstr "Somme de contrôle des fichiers"
 #: index.html.twig:13 index.html.twig:55
 msgid "Quick Start"
 msgstr "Démarrage rapide"
-
-#: index.html.twig:69
-msgid "Cecil sponsors"
-msgstr "Sponsors de Cecil"
-
-#: index.html.twig:75
-msgid "Sponsored by %sponsor_title%"
-msgstr "Sponsorisé par %sponsor_title%"
 
 #: news/list.html.twig:6
 msgid "News"
@@ -102,6 +98,12 @@ msgstr "Clair"
 #: partials/toggle-switch-dark.html.twig:6
 msgid "Dark"
 msgstr "Sombre"
+
+#~ msgid "Cecil sponsors"
+#~ msgstr "Sponsors de Cecil"
+
+#~ msgid "Sponsored by %sponsor_title%"
+#~ msgstr "Sponsorisé par %sponsor_title%"
 
 #~ msgid "Star"
 #~ msgstr "Étoile"
