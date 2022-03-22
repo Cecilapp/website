@@ -74,24 +74,27 @@
     {%~ block sponsors %}{% endblock ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
-        <div>
+        <ul>
           {%- if site.menus.footer is defined -%}
             {%- if site.menus.footer.about is defined ~%}
-          <a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot;
+          <li class="inline after:content-['\00a0\00B7']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a></li>
             {%- endif -%}
-          <a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>
+            {%- if site.menus.footer.github.url is defined ~%}
+          <li class="inline after:content-['\00a0\00B7']"><a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a></li>
+            {%- endif -%}
           {%- endif -%}
           {%- if page.translations|length >= 1 -%}
-            &middot; {% include 'partials/languages.html.twig' %}
+          <li class="inline"> {% include 'partials/languages.html.twig' %}</li>
           {%- endif ~%}
-        </div>
-        <div>
+        </ul>
+        <ul>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
-          © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans ~%}
-        </div>
+          <li class="inline after:content-['\00a0\00B7']">© 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a></li>
+          <li class="inline">{% trans %}Logo by {{ logo_by }}{% endtrans ~%}</li>
+        </ul>
         <div>
           {%- set powered_by -%}
-          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>, <a href="https://vercel.com/?utm_source=cecilapp&utm_campaign=oss">Vercel</a>
+          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://animate.style">Animate.css</a>, <a href="https://alpinejs.dev">Alpine.js</a>, <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
           {%- endset ~%}
           {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
         </div>

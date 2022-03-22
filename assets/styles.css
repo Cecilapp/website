@@ -1387,6 +1387,10 @@ a.btn-gold:hover {
   display: inline-block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -2040,6 +2044,11 @@ a.btn-gold:hover {
   float: right;
   margin-right: 1em;
   padding: 0
+}
+
+.after\:content-\[\'\\00a0\\00B7\'\]::after {
+  --tw-content: '\00a0\00B7';
+  content: var(--tw-content);
 }
 
 .hover\:scale-125:hover {
