@@ -1383,6 +1383,10 @@ a.btn-gold:hover {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -1507,6 +1511,10 @@ a.btn-gold:hover {
   flex-wrap: wrap;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1602,6 +1610,11 @@ a.btn-gold:hover {
   background-color: rgb(9 47 68 / var(--tw-bg-opacity));
 }
 
+.bg-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
+}
+
 .bg-gold {
   --tw-bg-opacity: 1;
   background-color: rgb(242 208 127 / var(--tw-bg-opacity));
@@ -1619,11 +1632,6 @@ a.btn-gold:hover {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
 }
 
 .fill-gold {
@@ -1695,6 +1703,14 @@ a.btn-gold:hover {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .text-left {
@@ -2106,6 +2122,14 @@ a.btn-gold:hover {
   color: #d1d5db;
 }
 
+.dark .dark\:inline-block {
+  display: inline-block;
+}
+
+.dark .dark\:hidden {
+  display: none;
+}
+
 .dark .dark\:translate-x-3 {
   --tw-translate-x: 0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2237,6 +2261,10 @@ a.btn-gold:hover {
     width: 50%;
   }
 
+  .md\:w-3\/5 {
+    width: 60%;
+  }
+
   .md\:flex-\[1_1_25\%\] {
     flex: 1 1 25%;
   }
@@ -2251,6 +2279,10 @@ a.btn-gold:hover {
 
   .md\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
   }
 
   .md\:gap-x-8 {
@@ -2313,8 +2345,16 @@ a.btn-gold:hover {
     padding-top: 0px;
   }
 
+  .md\:pr-4 {
+    padding-right: 1rem;
+  }
+
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:align-middle {
+    vertical-align: middle;
   }
 
   .md\:text-2xl {
@@ -2326,6 +2366,10 @@ a.btn-gold:hover {
 @media (min-width: 1024px) {
   .lg\:block {
     display: block;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 }
 
