@@ -48,20 +48,19 @@ blocks:
       shadow: 0
       visible: true
   sponsor:
-    - title: Aperture Lab
-      logo: https://avatars.githubusercontent.com/u/10225022?s=100
-      url: https://aperturelab.fr
-      visible: true
     - title: studio cecillie
-      logo: https://raw.githubusercontent.com/cecillie/eshop/main/static/images/cecillie_signature.png
+      logo: logos/cecillie.png
+      logo_dark: logos/cecillie-dark.png
       url: https://studio.cecillie.fr
       visible: true
     - title: Netlify
-      logo: https://www.netlify.com/img/global/badges/netlify-color-bg.svg
+      logo: logos/netlify.png
+      logo_dark: logos/netlify-dark.png
       url: https://www.netlify.com
       visible: true
     - title: Vercel
-      logo: https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg
+      logo: logos/vercel.png
+      logo_dark: logos/vercel-dark.png
       url: https://vercel.com/?utm_source=cecilapp&utm_campaign=oss
       visible: true
 pagination:
