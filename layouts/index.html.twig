@@ -39,9 +39,9 @@
         {#- about blocks ~#}
         <div id="about" class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
-            {%~ for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
+            {%- for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
             {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
-            {%~ endfor ~%}
+            {%- endfor ~%}
           </div>
         </div>
         {#- content ~#}
@@ -59,9 +59,9 @@
 
 {% block features %}
     <div id="features">
-    {%~ for block in page.blocks.feature|default({})|filter(b => b.visible != false) ~%}
+    {%- for block in page.blocks.feature|default({})|filter(b => b.visible != false) ~%}
     {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow|default(true)} only ~%}
-    {%~ endfor ~%}
+    {%- endfor ~%}
     </div>
 {% endblock %}
 
