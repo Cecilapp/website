@@ -74,13 +74,27 @@
     {%~ block sponsors %}{% endblock ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
-        {% if site.menus.footer is defined %}{% if site.menus.footer.about is defined %}<a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot; {% endif %}<a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>{% endif %}{% if page.translations|length >= 1 %} &middot; {% include 'partials/languages.html.twig' %}{% endif -%}<br />
-        {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
-        © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}<br />
-        {%- set powered_by -%}
-        <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>, <a href="https://vercel.com/?utm_source=cecilapp&utm_campaign=oss">Vercel</a>
-        {%- endset ~%}
-        {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
+        <div>
+          {% if site.menus.footer is defined %}
+            {% if site.menus.footer.about is defined %}
+          <a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a> &middot;
+            {% endif %}
+          <a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a>
+          {% endif %}
+          {% if page.translations|length >= 1 %}
+            &middot; {% include 'partials/languages.html.twig' %}
+          {% endif -%}
+        </div>
+        <div>
+          {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
+          © 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a> &middot; {% trans %}Logo by {{ logo_by }}{% endtrans %}
+        </div>
+        <div>
+          {%- set powered_by -%}
+          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://github.com">GitHub</a>, <a href="https://forestry.io">Forestry.io</a>, <a href="https://www.netlify.com">Netlify</a>, <a href="https://vercel.com/?utm_source=cecilapp&utm_campaign=oss">Vercel</a>
+          {%- endset ~%}
+          {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
+        </div>
         {%~ include 'partials/toggle-switch-dark.html.twig' ~%}
       </div>
     </footer>
