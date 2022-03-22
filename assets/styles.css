@@ -2046,8 +2046,8 @@ a.btn-gold:hover {
   padding: 0
 }
 
-.after\:content-\[\'\\00a0\\00B7\'\]::after {
-  --tw-content: '\00a0\00B7';
+.after\:content-\[\'\\00a0\\00B7\\00a0\'\]::after {
+  --tw-content: '\00a0\00B7\00a0';
   content: var(--tw-content);
 }
 
