@@ -1843,6 +1843,55 @@ a.btn-gold:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Tips block in Markdown */
+
+.tips {
+  position: relative;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 0.25rem;
+  /*border: 1px solid #163C56;
+  border-left: 4px solid #163C56;*/
+  border-width: 1px;
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(22 60 86 / var(--tw-border-opacity));
+}
+
+.dark .tips {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.tips > p {
+  margin: 0;
+}
+
+.tips:before {
+  position: absolute;
+  top: 1.4rem;
+  left: 0.75rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  -webkit-mask-image: url(/images/note-info.svg);
+          mask-image: url(/images/note-info.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  content: "";
+  /*background-color: #163C56;*/
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
+}
+
+.dark .tips:before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 /* ToC */
 
 .toc {

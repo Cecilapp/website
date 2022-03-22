@@ -70,6 +70,34 @@
   }
 }
 
+/* Tips block in Markdown */
+.tips {
+  position: relative;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 0.25rem;
+  /*border: 1px solid #163C56;
+  border-left: 4px solid #163C56;*/
+  @apply border border-blue dark:border-white border-l-4;
+}
+.tips > p {
+  margin: 0;
+}
+.tips:before {
+  position: absolute;
+  top: 1.4rem;
+  left: 0.75rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  mask-image: url(/images/note-info.svg);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  content: "";
+  /*background-color: #163C56;*/
+  @apply bg-blue dark:bg-white;
+}
+
 /* ToC */
 .toc {
   position: -webkit-sticky;
