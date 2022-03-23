@@ -1843,38 +1843,85 @@ a.btn-gold:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tips block in Markdown */
+/* Note block in Markdown */
 
-.tips {
+.note {
   position: relative;
   padding: 1rem 1rem 1rem 2.5rem;
+  margin-bottom: 1rem;
   border-radius: 0.25rem;
-  /*border: 1px solid #163C56;
-  border-left: 4px solid #163C56;*/
   border-width: 1px;
   border-left-width: 4px;
   --tw-border-opacity: 1;
   border-color: rgb(22 60 86 / var(--tw-border-opacity));
 }
 
-.dark .tips {
+.dark .note {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.tips > p {
+.note-info {
+  border-width: 1px;
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(3 105 161 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 249 255 / var(--tw-bg-opacity));
+}
+
+.dark .note-info {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+}
+
+.note-tip {
+  border-width: 1px;
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(77 124 15 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 254 231 / var(--tw-bg-opacity));
+}
+
+.dark .note-tip {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 230 53 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(54 83 20 / var(--tw-bg-opacity));
+}
+
+.note-important {
+  border-width: 1px;
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}
+
+.dark .note-important {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
+.note > p {
   margin: 0;
 }
 
-.tips:before {
+.note:before {
   position: absolute;
-  top: 1.4rem;
-  left: 0.75rem;
+  top: 1.25rem;
+  left: 0.8rem;
   display: block;
   width: 1rem;
   height: 1rem;
-  -webkit-mask-image: url(/images/note-info.svg);
-          mask-image: url(/images/note-info.svg);
+  -webkit-mask-image: url(/images/icons/info.svg);
+          mask-image: url(/images/icons/info.svg);
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-position: center;
@@ -1882,14 +1929,49 @@ a.btn-gold:hover {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   content: "";
-  /*background-color: #163C56;*/
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
 }
 
-.dark .tips:before {
+.dark .note:before {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.note-info:before {
+  -webkit-mask-image: url(/images/icons/info.svg);
+          mask-image: url(/images/icons/info.svg);
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+}
+
+.dark .note-info:before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+
+.note-tip:before {
+  -webkit-mask-image: url(/images/icons/light-bulb.svg);
+          mask-image: url(/images/icons/light-bulb.svg);
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
+}
+
+.dark .note-tip:before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(163 230 53 / var(--tw-bg-opacity));
+}
+
+.note-important:before {
+  -webkit-mask-image: url(/images/icons/stop.svg);
+          mask-image: url(/images/icons/stop.svg);
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.dark .note-important:before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 /* ToC */
