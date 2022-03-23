@@ -119,6 +119,8 @@ body:
       enabled: true
     webp:
       enabled: true
+  notes:
+    enabled: true
 paths:
   - section: news
     path: :section/:year/:month/:day/:slug/
