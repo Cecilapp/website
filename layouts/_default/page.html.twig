@@ -108,8 +108,8 @@
             {%- set sponsor_logo = asset(block.logo)|resize(55) -%}
             {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(55) ~%}
             <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}" class="pr-2 md:pr-4">
-              <img class="inline-block dark:hidden" src="{{ sponsor_logo }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}">
-              <img class="hidden dark:inline-block" src="{{ sponsor_logo_dark }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}">
+              <img class="inline-block dark:hidden" src="{{ sponsor_logo }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block" src="{{ sponsor_logo_dark }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
             </a>
           {%- endfor ~%}
           </div>
