@@ -46,6 +46,7 @@ blocks:
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: 0
+      webp: 0
       visible: true
   sponsor:
     - title: studio cecillie

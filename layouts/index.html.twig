@@ -60,7 +60,7 @@
 {% block features %}
     <div id="features">
     {%- for block in page.blocks.feature|default({})|filter(b => b.visible != false) ~%}
-    {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow|default(true)} only ~%}
+    {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow|default(true), webp:block.webp|default(true)} only ~%}
     {%- endfor ~%}
     </div>
 {% endblock %}

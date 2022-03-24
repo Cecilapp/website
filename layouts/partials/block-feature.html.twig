@@ -1,4 +1,4 @@
-{# Variables: title, description, path, image, shadow #}
+{# Variables: title, description, path, image, shadow, webp #}
       <div class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-gold dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
         <div class="basis-1/2 text-center align-middle">
           <h2 class="text-4xl mb-8">{{ title }}</h2>
@@ -16,7 +16,7 @@
             {%- if shadow -%}
               {%- set class = 'box-shadow' -%}
             {%- endif ~%}
-            {{ image_template|html({alt: title, loading: 'lazy', class}, {responsive: true}) }}
+            {{ image_template|html({alt: title, loading: 'lazy', class}, {webp}) }}
           </a>
         </div>
       </div>
