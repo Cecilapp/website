@@ -121,6 +121,14 @@ body:
       enabled: true
   notes:
     enabled: true
+assets:
+  images:
+    optimize:
+      enabled: true
+    responsive:
+      enabled: true
+    webp:
+      enabled: true
 paths:
   - section: news
     path: :section/:year/:month/:day/:slug/
