@@ -60,7 +60,7 @@ blocks:
       logo: logos/netlify.png
       logo_dark: logos/netlify-dark.png
       url: https://www.netlify.com
-      visible: true
+      visible: false
     - title: Vercel
       logo: logos/vercel.png
       logo_dark: logos/vercel-dark.png
