@@ -28,8 +28,8 @@ blocks:
       visible: true
     - title: Easy to deploy
       description: "Create & deploy a new blog in 1 minute.  \n
-        [![Deploy to Netlify](/netlify-button.svg \"Deploy to Netlify\")](/hosting/netlify/deploy/) 
-        [![Deploy to Vercel](/vercel-button.svg \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
+        [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg \"Deploy to Netlify\")](/hosting/netlify/deploy/) 
+        [![Deploy to Vercel](https://vercel.com/button/default.svg \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
       icon: rocket
       visible: true
   feature:
@@ -48,7 +48,7 @@ blocks:
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: 0
-      webp: 0
+      webp: 1
       visible: true
   sponsor:
     - title: studio cecillie
