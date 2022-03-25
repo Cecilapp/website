@@ -64,7 +64,7 @@ blocks:
     - title: Vercel
       logo: logos/vercel.png
       logo_dark: logos/vercel-dark.png
-      url: https://vercel.com/?utm_source=cecilapp&utm_campaign=oss
+      url: https://vercel.com/?utm_source=cecil&utm_campaign=oss
       visible: true
 pagination:
   enabled: false
