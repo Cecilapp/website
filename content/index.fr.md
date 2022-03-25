@@ -69,10 +69,7 @@ pagination:
 output: ['html', 'atom']
 ---
 ```bash
-# télécharger
 curl -LO https://cecil.app/cecil.phar
-# créer
 php cecil.phar new:site
-# servir
 php cecil.phar serve
 ```
