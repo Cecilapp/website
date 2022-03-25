@@ -71,10 +71,7 @@ pagination:
 pagesfrom: news
 ---
 ```bash
-# download
 curl -LO https://cecil.app/cecil.phar
-# create
 php cecil.phar new:site
-# serve
 php cecil.phar serve
 ```
