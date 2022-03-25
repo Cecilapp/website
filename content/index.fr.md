@@ -34,12 +34,12 @@ blocks:
     - title: Expérience d’écriture intuitive
       description: "L’analyseur [Markdown](https://fr.wikipedia.org/wiki/Markdown \"Markdown sur wikipédia\") de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
-      image: cecil-markdown-content.png
+      image: images/cecil-markdown-content.png
       visible: true
     - title: Moteur de template moderne
       description: "Les modèles de Cecil, propulsés par [Twig](https://twig.symfony.com \"Le site web de Twig\"), offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
       path: documentation/templates
-      image: cecil-twig-template.png
+      image: images/cecil-twig-template.png
       visible: true
     - title: Un blog prêt à l’emploi
       description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un CMS convivial, propulsé par Cecil."
