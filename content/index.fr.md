@@ -27,7 +27,7 @@ blocks:
   - title: Facile à déployer
     description: "Créez et déployez un nouveau blog en 1 minute.  \n
       [![Déployer sur Netlify](https://www.netlify.com/img/deploy/button.svg \"Déployer sur Netlify\")](/hosting/netlify/deploy/) 
-      [![Déployer sur Vercel](https://vercel.com/button \"Déployer sur Vercel\")](/hosting/vercel/deploy/)"
+      [![Déployer sur Vercel](https://vercel.com/button/default.svg \"Déployer sur Vercel\")](/hosting/vercel/deploy/)"
     icon: rocket
     visible: true
   feature:
