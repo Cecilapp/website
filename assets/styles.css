@@ -1313,6 +1313,10 @@ a.btn-gold:hover {
   top: 0px;
 }
 
+.top-\[60px\] {
+  top: 60px;
+}
+
 .z-\[100\] {
   z-index: 100;
 }
@@ -1323,6 +1327,10 @@ a.btn-gold:hover {
 
 .float-left {
   float: left;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .mx-auto {
@@ -1386,6 +1394,10 @@ a.btn-gold:hover {
 
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mt-0 {
@@ -1474,6 +1486,18 @@ a.btn-gold:hover {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .max-w-screen-md {
@@ -2019,7 +2043,7 @@ a.btn-gold:hover {
 .toc {
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  top: 60px;
 }
 
 /* Back to top */
@@ -2412,6 +2436,10 @@ a.btn-gold:hover {
 
   .md\:block {
     display: block;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
   }
 
   .md\:flex {

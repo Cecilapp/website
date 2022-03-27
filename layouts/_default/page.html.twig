@@ -36,8 +36,14 @@
       :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl dark:shadow-slate-500/40': scrolledFromTop}"
     >
       <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
-        <a class="" href="{{ url(site.home) }}" title="{{ site.title }}">
-          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-8 md:w-12" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
+        <a class="flex flex-row items-center justify-center" href="{{ url(site.home) }}" title="{{ site.title }}">
+          <img class="w-8 md:w-12 m-0" src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
+          {%- if page.id != site.home ~%}
+          <span
+            class="hidden ml-2 text-2xl text-gold align-middle"
+            :class="{'hidden': !scrolledFromTop, 'hidden md:inline-block': scrolledFromTop}"
+          >Cecil</span>
+          {%- endif ~%}
         </a>
         <nav class="flex mt-0 pt-0 space-x-4 md:space-x-6">
           {%- for entry in site.menus.main|sort_by_weight ~%}

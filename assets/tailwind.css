@@ -119,7 +119,7 @@
 
 /* ToC */
 .toc {
-  @apply sticky top-[80px];
+  @apply sticky top-[60px];
 }
 
 /* Back to top */
