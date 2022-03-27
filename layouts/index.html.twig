@@ -13,7 +13,7 @@
             <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn btn-gold mb-4 mr-2">{% trans %}Quick Start{% endtrans %}</a>
             {%- endif ~%}
             {%- if site.menus.main.download is defined ~%}
-            <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-trans mr-2">{% trans %}Download{% endtrans %}</a>
+            <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-trans mr-2 hidden sm:inline-block">{% trans %}Download{% endtrans %}</a>
             {%- endif ~%}
           </div>
           <div class="md:w-1/2 mx-4 hidden md:inline-flex">
