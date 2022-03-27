@@ -4,10 +4,9 @@
   x-data="{'darkMode': false, scrolledFromTop: false}"
   x-init="
     darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))
-    window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
-  @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
   :class="{'dark': darkMode === true}"
+  @scroll.window="scrolledFromTop = (window.pageYOffset >= 50) ? true : false"
 >
   <head>
     <meta charset="UTF-8">
@@ -33,12 +32,14 @@
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
-    <header class="sticky top-0 z-[100] px-6 pt-3 md:pt-6 pb-4 bg-blue text-white text-center md:text-left dark:bg-dark" :class="{'md:pt-6': !scrolledFromTop, 'md:pt-4 shadow-2xl': scrolledFromTop}">
-      <div class="container mx-auto">
-        <a href="{{ url(site.home) }}" title="{{ site.title }}" class="float-left">
-          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-8 md:w-12" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75 md:-translate-y-1/4': scrolledFromTop}" />
+    <header class="sticky -top-[6px] md:-top-[20px] z-[100] px-6 pt-3 md:pt-6 pb-2 md:pb-0 bg-blue dark:bg-dark text-white"
+      :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl': scrolledFromTop}"
+    >
+      <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
+        <a class="" href="{{ url(site.home) }}" title="{{ site.title }}">
+          <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-8 md:w-12" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
         </a>
-        <nav class="mt-0 pt-0 space-x-4 md:space-x-6 md:float-right">
+        <nav class="mt-0 pt-0 space-x-4 md:space-x-6">
           {%- for entry in site.menus.main|sort_by_weight ~%}
           <a class="hover:text-white" id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">
             {%- if entry.id == 'documentation' ~%}

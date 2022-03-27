@@ -119,9 +119,7 @@
 
 /* ToC */
 .toc {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 15px;
+  @apply sticky top-[80px];
 }
 
 /* Back to top */
