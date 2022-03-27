@@ -32,20 +32,20 @@
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
-    <header class="sticky -top-[6px] md:-top-[20px] z-[100] px-6 pt-3 md:pt-6 pb-2 md:pb-0 bg-blue dark:bg-dark text-white"
-      :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl': scrolledFromTop}"
+    <header class="sticky top-0 md:-top-[20px] z-[100] px-6 pt-2 md:pt-6 pb-2 md:pb-0 bg-blue dark:bg-dark text-white"
+      :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl dark:shadow-slate-500/40': scrolledFromTop}"
     >
       <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
         <a class="" href="{{ url(site.home) }}" title="{{ site.title }}">
           <img src="{{ asset('images/cecil-logo.png') }}" alt="{{ site.title }} logo" class="w-8 md:w-12" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
         </a>
-        <nav class="mt-0 pt-0 space-x-4 md:space-x-6">
+        <nav class="flex mt-0 pt-0 space-x-4 md:space-x-6">
           {%- for entry in site.menus.main|sort_by_weight ~%}
           <a class="hover:text-white" id="menu-entry-{{ entry.id }}" class="{% if url(page) == url(entry.url) or url(page) == url(entry.url)|trim('/') or page.section == entry.url %} active{% endif %}" href="{{ url(entry.url) }}">
             {%- if entry.id == 'documentation' ~%}
             <span class="hidden sm:inline-block">{{ entry.name }}</span>
             <span class="sm:hidden">{% trans %}Docs{% endtrans %}</span>
-            {%- elseif  entry.id == 'download' ~%}
+            {%- elseif entry.id == 'download' ~%}
             <span class="hidden sm:inline-block">{{ entry.name }}</span>
             <span class="sm:hidden"><span class="sr-only">{{ entry.name }}</span>{{ octicon.svg('download', 16, 'w-5 h-5') }}</span>
             {%- else ~%}
@@ -53,11 +53,11 @@
             {%- endif ~%}
           </a>
           {%- endfor ~%}
+          {%~ include 'partials/flags.html.twig' ~%}
           <a href="https://twitter.com/{{ site.social.twitter.site }}" aria-label="{{ site.title }} on Twitter">
-            <svg class="fill-gold dark:fill-white w-5 h-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+            <svg class="w-5 h-5 fill-gold dark:fill-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/></svg>
           </a>
           <a href="{{ site.social.github.repo }}" aria-label="{{ site.title }} on GitHub">{{- octicon.svg('mark-github', 16, 'w-5 h-5') ~}}</a>
-          {%~ include 'partials/flags.html.twig' ~%}
           {#-<a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">{% trans %}Star{% endtrans %}</a>~#}
         </nav>
       </div>

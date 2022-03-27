@@ -1,6 +1,6 @@
 {# Language switcher #}
 {# mobile #}
-          <select id="language" class="md:hidden w-14 border-0 px-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
+          <select id="language" class="md:hidden w-14 border-0 p-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
             <option value="{{ url(page) }}" class="bg-darkblue dark:bg-dark">{{ page.language|upper }}</option>
             {%- for p in page.translations ~%}
               {%- if p.language is defined ~%}
@@ -10,7 +10,7 @@
           </select>
 {#- desktop #}
           {%- if page.translations|length >= 1 ~%}
-          <div class="hidden md:flex md:float-right justify-center">
+          <div class="hidden md:flex justify-center">
             <div
               x-data="{
                 open: false,

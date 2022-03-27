@@ -1309,10 +1309,6 @@ a.btn-gold:hover {
   right: 0px;
 }
 
-.-top-\[6px\] {
-  top: -6px;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -1666,6 +1662,10 @@ a.btn-gold:hover {
   padding: 0.5rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1715,10 +1715,6 @@ a.btn-gold:hover {
 
 .pt-2 {
   padding-top: 0.5rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
 }
 
 .pb-2 {
@@ -2363,6 +2359,11 @@ a.btn-gold:hover {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+.dark .dark\:shadow-slate-500\/40 {
+  --tw-shadow-color: rgb(100 116 139 / 0.4);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .dark .dark\:hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -2391,10 +2392,6 @@ a.btn-gold:hover {
 @media (min-width: 768px) {
   .md\:-top-\[20px\] {
     top: -20px;
-  }
-
-  .md\:float-right {
-    float: right;
   }
 
   .md\:mt-10 {
