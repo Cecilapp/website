@@ -1662,6 +1662,10 @@ a.btn-gold:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-none {
+  background-image: none;
+}
+
 .fill-gold {
   fill: #F2D07F;
 }
