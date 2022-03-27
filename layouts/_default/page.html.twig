@@ -6,7 +6,7 @@
     darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
   :class="{'dark': darkMode === true}"
-  @scroll.window="scrolledFromTop = (window.pageYOffset >= 50) ? true : false"
+  @scroll.window="scrolledFromTop = (window.pageYOffset >= 21) ? true : false"
 >
   <head>
     <meta charset="UTF-8">
