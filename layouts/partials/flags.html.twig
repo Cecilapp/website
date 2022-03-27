@@ -1,4 +1,5 @@
 {# Language switcher #}
+{%- if page.translations|length >= 1 ~%}
 {# mobile #}
           <label class="sr-only" for="language">{% trans %}Language:{% endtrans %}</label>
           <select id="language" class="md:hidden w-14 border-0 p-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
@@ -10,7 +11,7 @@
             {%- endfor ~%}
           </select>
 {#- desktop #}
-          {%- if page.translations|length >= 1 ~%}
+
           <div class="hidden md:flex justify-center">
             <div
               x-data="{
@@ -63,4 +64,4 @@
               </div>
             </div>
           </div>
-          {%- endif %}
+{%- endif %}
