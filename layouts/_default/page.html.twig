@@ -1,6 +1,6 @@
 {% import 'macros/octicon.twig' as octicon %}
 <!DOCTYPE html>
-<html lang="{{ site.language }}"
+<html lang="{{ site.language }}" class="scroll-pt-[60px]"
   x-data="{'darkMode': false, scrolledFromTop: false}"
   x-init="
     darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);

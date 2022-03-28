@@ -1532,6 +1532,10 @@ a.btn-gold:hover {
   cursor: pointer;
 }
 
+.scroll-pt-\[60px\] {
+  scroll-padding-top: 60px;
+}
+
 .flex-row {
   flex-direction: row;
 }
