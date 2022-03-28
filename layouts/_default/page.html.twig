@@ -101,7 +101,7 @@
           <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a></li>
             {%- endif -%}
             {%- if site.menus.footer.github.url is defined -%}
-          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a></li>
+          <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a></li>
             {%- endif -%}
           {%- endif -%}
           {%- if page.translations|length >= 1 -%}
