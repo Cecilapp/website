@@ -1309,8 +1309,8 @@ a.btn-gold:hover {
   top: 60px;
 }
 
-.right-0 {
-  right: 0px;
+.left-0 {
+  left: 0px;
 }
 
 .top-0 {
@@ -2256,6 +2256,11 @@ a.btn-gold:hover {
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.hover\:text-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(22 60 86 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {

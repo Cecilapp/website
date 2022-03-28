@@ -54,11 +54,11 @@
                 x-on:click.outside="close($refs.button)"
                 :id="$id('dropdown-button')"
                 style="display: none;"
-                class="absolute right-0 mt-2 border-darkblue dark:border-black rounded-md bg-darkblue dark:bg-black overflow-hidden"
+                class="absolute left-0 mt-2 border-darkblue dark:border-black rounded-md bg-darkblue dark:bg-black overflow-hidden"
               >
                 {%- for p in page.translations ~%}
                   {%- if p.language is defined ~%}
-                <a href="{{ url(p) }}" class="block w-full px-4 py-2 text-left">{{ site.language.name(p.language) }}</a>
+                <a href="{{ url(p) }}" class="block w-full px-4 py-2 text-left hover:bg-gold hover:text-blue">{{ site.language.name(p.language) }}</a>
                   {%- endif ~%}
                 {%- endfor ~%}
               </div>
