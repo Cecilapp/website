@@ -52,18 +52,18 @@ blocks:
       visible: true
   sponsor:
     - title: studio cecillie
-      logo: /logos/cecillie.png
-      logo_dark: /logos/cecillie-dark.png
+      logo: /images/logos/cecillie.png
+      logo_dark: /images/logos/cecillie-dark.png
       url: https://studio.cecillie.fr
       visible: true
     - title: Netlify
-      logo: /logos/netlify.png
-      logo_dark: /logos/netlify-dark.png
+      logo: /images/logos/netlify.png
+      logo_dark: /images/logos/netlify-dark.png
       url: https://www.netlify.com
       visible: false
     - title: Vercel
-      logo: /logos/vercel.png
-      logo_dark: /logos/vercel-dark.png
+      logo: /images/logos/vercel.png
+      logo_dark: /images/logos/vercel-dark.png
       url: https://vercel.com/?utm_source=cecil&utm_campaign=oss
       visible: true
 pagination:
