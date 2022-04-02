@@ -7,11 +7,11 @@ metatags:
     enabled: false
 body:
   images:
-    remote:
-      enabled: false
     lazy:
       enabled: false
     caption:
+      enabled: false
+    remote:
       enabled: false
     resize:
       enabled: false
