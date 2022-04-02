@@ -3,8 +3,12 @@ static:
     - '*.phar*' # dev only
 metatags:
   jsonld: false
+  favicon:
+    enabled: false
 body:
   images:
+    remote:
+      enabled: false
     lazy:
       enabled: false
     caption:
