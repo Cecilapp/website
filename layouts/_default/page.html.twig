@@ -69,9 +69,9 @@
           {%- if site.menus.main.documentation is defined ~%}
           <label class="sr-only" for="documentation">{% trans %}Documentation:{% endtrans %}</label>
           <select id="documentation" class="md:hidden flex w-full border-0 p-0 bg-transparent text-gold dark:text-white bg-none" @change="document.location.href=$event.target.value">
-            <option value="{{ url(site.menus.main.documentation.url) }}" class="bg-darkblue dark:bg-dark">Docs</option>
+            <option value="{{ url(site.menus.main.documentation.url) }}" class="bg-darkblue dark:bg-dark" selected="selected">Docs</option>
             {%- for d in site.pages|filter_by('section', 'documentation') ~%}
-            <option value="{{ url(d) }}" class="bg-darkblue dark:bg-dark"{% if url(page) == url(d) %} selected="selected"{% endif %}>{{ d.title }}</option>
+            <option value="{{ url(d) }}" class="bg-darkblue dark:bg-dark">{{ d.title }}</option>
             {%- endfor ~%}
           </select>
           {%- endif ~%}
