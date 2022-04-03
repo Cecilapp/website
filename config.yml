@@ -10,8 +10,10 @@ social:
   twitter:
     site: Cecil_Static
     creator: ArnaudLigny
+    url: https://twitter.com/Cecil_Static
   github:
     repo: https://github.com/Cecilapp/Cecil
+    url: https://github.com/Cecilapp/Cecil
 image: /images/cecil-card.png
 language: en
 languages:
@@ -107,6 +109,7 @@ algolia:
   index: 'documentation'
 metatags:
   jsonld: true
+  articles: news
 body:
   images:
     lazy:
