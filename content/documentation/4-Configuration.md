@@ -113,7 +113,12 @@ taxonomies:
 ```
 
 :::tip
-**Tip:** A vocabulary can be disabled with the special value `disabled`. Example: `tags: disabled`.
+**Tip:** A vocabulary can be disabled with the special value `disabled`:
+
+```yaml
+taxonomies:
+  tags: disabled
+```
 :::
 
 ### menus
@@ -229,7 +234,7 @@ social:
 **Tip:** If needed the title can be overridden:
 
 ```twig
-{% include 'partials/metatags.html.twig' with {title: 'Custom title'} %}
+{{ include('partials/metatags.html.twig', {title: 'Custom title'}) }}
 ```
 :::
 
@@ -586,7 +591,7 @@ To know how those options impacts your content see _[Content > Page > Body](2-Co
 
 :::info
 
-**Info:** Remote images are downloaded and converted into an _Asset_ to be manipulated. You can disable this behavior by setting the option `body.images.remote.enabled` to `false`. 
+Remote images are downloaded and converted into an _Asset_ to be manipulated. You can disable this behavior by setting the option `body.images.remote.enabled` to `false`. 
 :::
 
 ### data
@@ -615,7 +620,7 @@ static:
 ```
 
 :::important
-**Important:** You should put your assets files, used by [`asset()`](3-Templates.md#asset), in [`assets` directory](4-Configuration.md#assets) to avoid unnecessary files copy.
+**You should** put your assets files, used by [`asset()`](3-Templates.md#asset), in [`assets` directory](4-Configuration.md#assets) to avoid unnecessary files copy.
 :::
 
 _Example:_

@@ -13,7 +13,7 @@ Available commands:
   build                  Builds the website
   clear                  [clean] Removes generated files
   help                   Display help for a command
-  open                   Open content directory with the editor
+  open                   Open content with the editor
   self-update            Updates Cecil to the latest version
   serve                  Starts the built-in server
  cache
@@ -25,7 +25,7 @@ Available commands:
   new:site               Creates a new website
  show
   show:config            Shows the configuration
-  show:content           Shows content as tree
+  show:content           Shows content
 ```
 
 ## Main commands
@@ -35,7 +35,7 @@ Available commands:
 Creates a new skeleton site.
 
 ```plaintext
-Description:
+escription:
   Creates a new website
 
 Usage:
@@ -76,7 +76,7 @@ Arguments:
 Options:
   -f, --force           Override the file if already exist
   -o, --open            Open editor automatically
-  -p, --prefix          Prefix the file name with the current date (`YYYY-MM-DD`)
+  -p, --prefix          Add date (`YYYY-MM-DD`) as a prefix
   -h, --help            Display this help message
   -q, --quiet           Do not output any message
   -V, --version         Display this application version
@@ -86,7 +86,7 @@ Options:
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Help:
-  Creates a new page file (with filename as title)
+  Creates a new page file (with filename as title and the current date)
 ```
 
 #### Page’s models
@@ -120,14 +120,14 @@ Arguments:
   path                             Use the given path as working directory
 
 Options:
-  -c, --config=CONFIG              Set the path to extra config files (comma-separated)
+  -c, --config=CONFIG              Set the path to the config file(s) (comma-separated)
   -d, --drafts                     Include drafts
   -p, --page=PAGE                  Build a specific page
       --dry-run                    Build without saving
       --baseurl=BASEURL            Set the base URL
       --output=OUTPUT              Set the output directory
       --postprocess[=POSTPROCESS]  Post-process output (disable with "no") [default: false]
-      --clear-cache                Clear cache before build
+      --clear-cache                Clear cache after build
   -h, --help                       Display this help message
   -q, --quiet                      Do not output any message
   -V, --version                    Display this application version
@@ -155,14 +155,14 @@ Arguments:
   path                             Use the given path as working directory
 
 Options:
-  -c, --config=CONFIG              Set the path to extra config files (comma-separated)
+  -c, --config=CONFIG              Set the path to the config file(s) (comma-separated)
   -d, --drafts                     Include drafts
   -p, --page=PAGE                  Build a specific page
-  -o, --open                       Open web browser automatically
+  -o, --open                       Open browser automatically
       --host=HOST                  Server host
       --port=PORT                  Server port
       --postprocess[=POSTPROCESS]  Post-process output (disable with "no") [default: false]
-      --clear-cache                Clear cache before build
+      --clear-cache                Clear cache after build
   -h, --help                       Display this help message
   -q, --quiet                      Do not output any message
   -V, --version                    Display this application version
