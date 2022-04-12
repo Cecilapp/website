@@ -2121,6 +2121,16 @@ a.btn-gold:hover {
 
 .dark .algolia-autocomplete .aa-input, .dark .algolia-autocomplete .aa-hint {
   --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+
+.algolia-autocomplete .aa-input:focus, .algolia-autocomplete .aa-hint:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(22 60 86 / var(--tw-border-opacity));
+}
+
+.dark .algolia-autocomplete .aa-input:focus, .dark .algolia-autocomplete .aa-hint:focus {
+  --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 

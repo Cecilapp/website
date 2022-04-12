@@ -181,7 +181,8 @@
   padding: .5em 0 .5em .75em;
   background-color: unset;
   border-radius: 4px;
-  @apply border-2 border-slate-200 dark:border-white;
+  @apply border-2 border-slate-200 dark:border-slate-300;
+  @apply focus:border-blue dark:focus:border-white;
 }
 .algolia-autocomplete .aa-input {
   padding-left: 2rem;
