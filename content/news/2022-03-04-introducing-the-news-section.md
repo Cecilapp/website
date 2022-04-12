@@ -9,9 +9,10 @@ Since the creation of Cecil the only way to know about new features and other fi
 
 Nevertheless, the information communicated remained very technical and not always detailed (unless you put your nose in the code itself).
 
-Also, we have created the **[News section](https://cecil.app/news/)** in order to be able to communicate with users more explicitly on:
+Also, we have created the **[News section](/news/)** in order to be able to communicate with users more explicitly on:
 
 1. What are the new features of a major version?
 2. What bugs are fixed in a minor release?
 
 We hope you like it 🤵
+
