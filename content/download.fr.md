@@ -1,5 +1,6 @@
 ---
-title: "Télécharger"
+title: Télécharger
+description: "Comment télécharger Cecil."
 date: 2021-10-26
 layout: download
 menu:
