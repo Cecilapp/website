@@ -1,5 +1,6 @@
 ---
-title: "Download"
+title: Download
+description: "How to download Cecil."
 date: 2018-11-21
 updated: 2020-06-03
 layout: download
