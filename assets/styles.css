@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1161,9 +1161,6 @@ img {
   .jumbotron {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .jumbotron {
     text-align: left;
   }
 }
@@ -1305,8 +1302,8 @@ a.btn-gold:hover {
   position: sticky;
 }
 
-.top-\[60px\] {
-  top: 60px;
+.top-\[75px\] {
+  top: 75px;
 }
 
 .left-0 {
@@ -1745,10 +1742,6 @@ a.btn-gold:hover {
   padding-top: 0.5rem;
 }
 
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
 .pt-0 {
   padding-top: 0px;
 }
@@ -2043,7 +2036,7 @@ a.btn-gold:hover {
 .toc {
   position: -webkit-sticky;
   position: sticky;
-  top: 60px;
+  top: 75px;
 }
 
 /* Back to top */
@@ -2398,6 +2391,11 @@ a.btn-gold:hover {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+.dark .dark\:text-gold {
+  --tw-text-opacity: 1;
+  color: rgb(242 208 127 / var(--tw-text-opacity));
+}
+
 .dark .dark\:shadow-slate-500\/40 {
   --tw-shadow-color: rgb(100 116 139 / 0.4);
   --tw-shadow: var(--tw-shadow-colored);
@@ -2429,8 +2427,8 @@ a.btn-gold:hover {
 }
 
 @media (min-width: 768px) {
-  .md\:-top-\[20px\] {
-    top: -20px;
+  .md\:-top-\[15px\] {
+    top: -15px;
   }
 
   .md\:mt-10 {
@@ -2577,8 +2575,8 @@ a.btn-gold:hover {
     padding-top: 1.5rem;
   }
 
-  .md\:pb-0 {
-    padding-bottom: 0px;
+  .md\:pb-2 {
+    padding-bottom: 0.5rem;
   }
 
   .md\:pr-4 {
