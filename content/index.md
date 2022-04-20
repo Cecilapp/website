@@ -22,12 +22,12 @@ blocks:
       description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
       icon: hubot
       visible: true
-    - title: Image optimization
+    - title: Images optimization
       description: "Responsive images are generated automatically, converted to WebP and compressed to reduce load time."
       icon: image
       visible: true
     - title: Internationalization & localization
-      description: "Multilangual supports with Gettext and locale code suffix."
+      description: "Multilangual support with Gettext and locale code."
       icon: globe
       visible: true
     - title: SEO friendly
