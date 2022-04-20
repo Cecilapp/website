@@ -27,7 +27,7 @@ blocks:
       icon: image
       visible: true
     - title: Internationalization & localization
-      description: "Multilangual support with Gettext and locale code."
+      description: "Multilangual with Gettext translations and locale codes support."
       icon: globe
       visible: true
     - title: SEO friendly
