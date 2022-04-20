@@ -22,6 +22,18 @@ blocks:
       description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
       icon: hubot
       visible: true
+    - title: Image optimization
+      description: "Responsive images are generated automatically, converted to WebP and compressed to reduce load time."
+      icon: image
+      visible: true
+    - title: Internationalization & localization
+      description: "Multilangual supports with Gettext for templates and suffixed files for content."
+      icon: globe
+      visible: true
+    - title: SEO
+      description: "Cecil provides SEO helpers to generate Open Graph meta tags, structured data and more."
+      icon: search
+      visible: true
     - title: No installation
       description: "[Download](/download/) one file and run it with PHP."
       icon: desktop-download
