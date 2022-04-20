@@ -25,7 +25,7 @@ blocks:
       icon: image
       visible: true
     - title: Internationalisation & localisation
-      description: "Support du multilangue avec Gettext et le code de la locale."
+      description: "Support du multilangue avec la traduction Gettext et le support du code des locales."
       icon: globe
       visible: true
     - title: Orienté SEO
