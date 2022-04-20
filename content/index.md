@@ -27,10 +27,10 @@ blocks:
       icon: image
       visible: true
     - title: Internationalization & localization
-      description: "Multilangual supports with Gettext for templates and suffixed files for content."
+      description: "Multilangual supports with Gettext and locale code suffix."
       icon: globe
       visible: true
-    - title: SEO
+    - title: SEO friendly
       description: "Cecil provides SEO helpers to generate Open Graph meta tags, structured data and more."
       icon: search
       visible: true
