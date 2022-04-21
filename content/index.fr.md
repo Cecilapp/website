@@ -4,7 +4,7 @@ date: 2021-11-01
 updated: 2022-03-07
 blocks:
   about:
-    - title: Rapide & Sécurisé
+    - title: Rapide & sécurisé
       description: 'Pas de base de données, pas de serveur, pas de dépendance : performance et sécurité.'
       icon: zap
       visible: true
