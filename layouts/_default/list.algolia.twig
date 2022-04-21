@@ -37,7 +37,7 @@
     description|json_encode,
     content|json_encode,
     p.date|date('c'),
-    url(p,{canonical:false})|trim('/') ~ '#' ~ anchor,
+    url(p, {canonical: false}) ~ '#' ~ anchor,
     experimental|default(0)
   ) -}}
         {%- if not loop.last %},{% endif ~%}
