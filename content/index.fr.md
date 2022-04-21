@@ -13,7 +13,7 @@ blocks:
       icon: markdown
       visible: true
     - title: Personnalisable
-      description: Propulsé par [Twig](https://twig.symfony.com/doc/templates.html), un moteur de template flexible, et supporte les [themes](https://github.com/Cecilapp?q=theme#org-repositories).
+      description: Propulsé par [Twig](/documentation/templates/), un moteur de template flexible, et supporte les [themes](https://github.com/Cecilapp?q=theme#org-repositories).
       icon: paintbrush
       visible: true
     - title: Générateurs multiples
@@ -21,19 +21,19 @@ blocks:
       icon: hubot
       visible: true
     - title: Optimisation des images
-      description: "Les images adaptatives sont générées automatiquement, convertiss en WebP et compressées afin de réduire le temps de chargement."
+      description: "Les [images adaptatives](/documentation/content/#responsive) sont générées automatiquement, convertiss en [WebP](/documentation/content/#webp) et [compressées](/documentation/configuration/#assets) afin de réduire le temps de chargement."
       icon: image
       visible: true
     - title: Internationalisation & localisation
-      description: "Support du multilangue avec la traduction Gettext et le support du code des locales."
+      description: "Capacités [multilingue](/documentation/content/#multilingual) avec localisation des contenus et traduction de templates."
       icon: globe
       visible: true
     - title: Orienté SEO
-      description: "Cecil fourni des aides au SEO en générant les meta éléments Open Graph, les données structurées et plus encore."
+      description: "Cecil fourni des [aides au SEO](/documentation/configuration/#metatags) en générant les meta éléments Open Graph, les données structurées et plus encore."
       icon: search
       visible: true
     - title: Pas d’installation
-      description: "[Téléchargez](/download/) un fichier et exécutez le avec PHP."
+      description: "[Téléchargez](/fr/download/) un fichier et exécutez le avec PHP."
       icon: desktop-download
       visible: true
     - title: Facile à déployer
@@ -44,12 +44,12 @@ blocks:
       visible: true
   feature:
     - title: Expérience d’écriture intuitive
-      description: "L’analyseur [Markdown](https://fr.wikipedia.org/wiki/Markdown \"Markdown sur wikipédia\") de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
+      description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
       visible: true
     - title: Moteur de template moderne
-      description: "Les modèles de Cecil, propulsés par [Twig](https://twig.symfony.com \"Le site web de Twig\"), offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
+      description: "Les modèles de Cecil, propulsés par [Twig](/documentation/templates/), offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
       visible: true
