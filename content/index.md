@@ -14,7 +14,7 @@ blocks:
       icon: markdown
       visible: true
     - title: Customisable
-      description: Powered by [Twig](https://twig.symfony.com/doc/templates.html), a
+      description: Powered by [Twig](/documentation/templates/), a
         flexible template engine, with [themes](https://github.com/Cecilapp?q=theme#org-repositories) support.
       icon: paintbrush
       visible: true
@@ -23,15 +23,15 @@ blocks:
       icon: hubot
       visible: true
     - title: Images optimization
-      description: "Responsive images are generated automatically, converted to WebP and compressed to reduce load time."
+      description: "[Responsive images](/documentation/content/#responsive) are generated automatically, converted to [WebP](/documentation/content/#webp) and [compressed](/documentation/configuration/#assets) to reduce load time."
       icon: image
       visible: true
     - title: Internationalization & localization
-      description: "Multilangual with Gettext translations and locale codes support."
+      description: "[Multilingual](/documentation/content/#multilingual) capabilities with content localization and templates translation."
       icon: globe
       visible: true
     - title: SEO friendly
-      description: "Cecil provides SEO helpers to generate Open Graph meta tags, structured data and more."
+      description: "Cecil provides [SEO helpers](/documentation/configuration/#metatags) to generate Open Graph meta tags, structured data and more."
       icon: search
       visible: true
     - title: No installation
@@ -46,12 +46,12 @@ blocks:
       visible: true
   feature:
     - title: Intuitive writing experience
-      description: "Cecil’s [Markdown](https://en.wikipedia.org/wiki/Markdown \"Markdown on wikipedia\") parser provides a simple way to write your content. It’s easy to learn and easy to use."
+      description: "Cecil’s [Markdown](/documentation/content/#body) parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
       visible: true
     - title: Modern template engine
-      description: "Cecil’s templating, powered by [Twig](https://twig.symfony.com \"Twig’s website\"), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
+      description: "Cecil’s templating, powered by [Twig](/documentation/templates/), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
       visible: true
