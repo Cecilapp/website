@@ -252,7 +252,7 @@ metatags:
     image: favicon.png    # path to favicon image
     sizes:
       - "icon": [32, 57, 76, 96, 128, 192, 228] # web browsers
-      - "shortcut icon": [196]                  # Adnroid
+      - "shortcut icon": [196]                  # Android
       - "apple-touch-icon": [120, 152, 180]     # iOS
 ```
 
