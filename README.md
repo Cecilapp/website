@@ -7,6 +7,7 @@
 ## Install
 
 ```bash
+composer install
 npm install
 curl -LO https://cecil.app/cecil.phar
 ```
