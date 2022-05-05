@@ -57,8 +57,8 @@ blocks:
       description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un CMS convivial, propulsé par Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
-      shadow: 0
-      webp: 0
+      shadow: false
+      webp: false
       visible: true
   sponsor:
     - title: studio cecillie
