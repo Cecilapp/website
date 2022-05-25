@@ -487,8 +487,7 @@ select {
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 [multiple] {
@@ -497,8 +496,7 @@ select {
   background-repeat: unset;
   background-size: initial;
   padding-right: 0.75rem;
-  -webkit-print-color-adjust: unset;
-          color-adjust: unset;
+  print-color-adjust: unset;
 }
 
 [type='checkbox'],[type='radio'] {
@@ -506,8 +504,7 @@ select {
      -moz-appearance: none;
           appearance: none;
   padding: 0;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
@@ -591,6 +588,7 @@ select {
 }
 
 [type='file']:focus {
+  outline: 1px solid ButtonText;
   outline: 1px auto -webkit-focus-ring-color;
 }
 
@@ -1529,6 +1527,26 @@ a.btn-gold:hover {
   cursor: pointer;
 }
 
+.scroll-m-\[15px\] {
+  scroll-margin: 15px;
+}
+
+.scroll-mb-\[15px\] {
+  scroll-margin-bottom: 15px;
+}
+
+.scroll-mt-\[15px\] {
+  scroll-margin-top: 15px;
+}
+
+.scroll-mt-\[25px\] {
+  scroll-margin-top: 25px;
+}
+
+.scroll-mt-\[50px\] {
+  scroll-margin-top: 50px;
+}
+
 .scroll-pt-\[60px\] {
   scroll-padding-top: 60px;
 }
@@ -1639,6 +1657,11 @@ a.btn-gold:hover {
   background-color: rgb(9 47 68 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#1f2937\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
 .bg-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
@@ -1673,6 +1696,10 @@ a.btn-gold:hover {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .p-10 {
@@ -1762,6 +1789,10 @@ a.btn-gold:hover {
   vertical-align: middle;
 }
 
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -1772,14 +1803,14 @@ a.btn-gold:hover {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-lg {
@@ -1811,6 +1842,10 @@ a.btn-gold:hover {
 
 .leading-loose {
   line-height: 2;
+}
+
+.leading-normal {
+  line-height: 1.5;
 }
 
 .leading-6 {
@@ -1898,6 +1933,36 @@ a.btn-gold:hover {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* terminal buttons */
+
+.termBtns {
+  line-height: 11px;
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 1rem
+}
+
+.termBtns>span {
+  display: inline-block;
+  vertical-align: top;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 6px
+}
+
+.termBtns>span:first-child {
+  background: #f35f56
+}
+
+.termBtns>span:nth-child(2) {
+  background: #fce35f
+}
+
+.termBtns>span:nth-child(3) {
+  background: #56cc7e
 }
 
 /* Note block in Markdown */
@@ -2391,11 +2456,6 @@ a.btn-gold:hover {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
-.dark .dark\:text-gold {
-  --tw-text-opacity: 1;
-  color: rgb(242 208 127 / var(--tw-text-opacity));
-}
-
 .dark .dark\:shadow-slate-500\/40 {
   --tw-shadow-color: rgb(100 116 139 / 0.4);
   --tw-shadow: var(--tw-shadow-colored);
@@ -2489,6 +2549,10 @@ a.btn-gold:hover {
 
   .md\:w-3\/5 {
     width: 60%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
   }
 
   .md\:flex-\[1_1_25\%\] {

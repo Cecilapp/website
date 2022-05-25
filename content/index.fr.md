@@ -80,8 +80,3 @@ pagination:
   enabled: false
 output: ['html', 'atom']
 ---
-```bash
-curl -LO https://cecil.app/cecil.phar
-php cecil.phar new:site
-php cecil.phar serve
-```

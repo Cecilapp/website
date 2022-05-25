@@ -82,8 +82,3 @@ pagination:
   enabled: false
 pagesfrom: news
 ---
-```bash
-curl -LO https://cecil.app/cecil.phar
-php cecil.phar new:site
-php cecil.phar serve
-```

@@ -70,6 +70,31 @@
   }
 }
 
+/* terminal buttons */
+.termBtns {
+  line-height: 11px;
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 1rem
+}
+.termBtns>span {
+  display: inline-block;
+  vertical-align: top;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 6px
+}
+.termBtns>span:first-child {
+  background: #f35f56
+}
+.termBtns>span:nth-child(2) {
+  background: #fce35f
+}
+.termBtns>span:nth-child(3) {
+  background: #56cc7e
+}
+
 /* Note block in Markdown */
 .note {
   position: relative;
