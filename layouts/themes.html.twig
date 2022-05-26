@@ -8,7 +8,6 @@
             {% for item in site.data.themes %}
             <h2>{{ item.name }}</h2>
             <p>{{ item.description }}</p>
-            <p><a href="{{ item.url }}">{{ item.url }}</a></p>
             {% set screenshot = asset('https://raw.githubusercontent.com/' ~ item.full_name ~ '/' ~ item.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
             {% if screenshot.size > 0 %}
             <p>
@@ -16,11 +15,12 @@
             </p>
             {% endif %}
             <ul>
-              <li>{% trans %}License:{% endtrans %} {{ item.license }}</li>
-              <li>{% trans %}Author:{% endtrans %} {{ item.owner }}</li>
               {% if item.homepage %}
-              <li>{% trans %}Homepage:{% endtrans %} <a href="{{ item.homepage }}">{{ item.homepage }}</a></li>
+              <li>{% trans %}Demo:{% endtrans %} <a href="{{ item.homepage }}">{{ item.homepage }}</a></li>
               {% endif %}
+              <li>Documentaton: <a href="{{ item.url }}">{{ item.url }}</a></li>
+              <li>{% trans %}License:{% endtrans %} {{ item.license }}</li>
+              {#<li>{% trans %}Author:{% endtrans %} {{ item.owner }}</li>#}
             </ul>
             {% endfor %}
             {# page.content #}
