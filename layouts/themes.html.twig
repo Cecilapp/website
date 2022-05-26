@@ -15,6 +15,13 @@
               {{ screenshot|html({alt: item.name}) }}
             </p>
             {% endif %}
+            <ul>
+              <li>{% trans %}License:{% endtrans %} {{ item.license }}</li>
+              <li>{% trans %}Author:{% endtrans %} {{ item.owner }}</li>
+              {% if item.homepage %}
+              <li>{% trans %}Homepage:{% endtrans %} <a href="{{ item.homepage }}">{{ item.homepage }}</a></li>
+              {% endif %}
+            </ul>
             {% endfor %}
             {# page.content #}
           </div>
