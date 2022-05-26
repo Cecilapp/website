@@ -1,13 +1,30 @@
 [
   {
+    "name": "theme-netlifycms",
+    "full_name": "Cecilapp/theme-netlifycms",
+    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
+    "url": "https://github.com/Cecilapp/theme-netlifycms",
+    "license": "MIT License",
+    "homepage": "",
+    "owner": "Cecilapp",
+    "date": "2022-05-26T19:15:38Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cms",
+      "netlify-cms",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-netlify",
     "full_name": "Cecilapp/theme-netlify",
     "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
     "url": "https://github.com/Cecilapp/theme-netlify",
     "license": "MIT License",
-    "homepage": "https://cecil.app",
+    "homepage": "",
     "owner": "Cecilapp",
-    "date": "2022-04-28T12:18:17Z",
+    "date": "2022-05-26T19:14:39Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -56,23 +73,6 @@
     "date": "2022-01-11T00:18:26Z",
     "default_branch": "master",
     "topics": []
-  },
-  {
-    "name": "theme-netlifycms",
-    "full_name": "Cecilapp/theme-netlifycms",
-    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
-    "url": "https://github.com/Cecilapp/theme-netlifycms",
-    "license": "MIT License",
-    "homepage": "https://cecil.app",
-    "owner": "Cecilapp",
-    "date": "2022-01-10T12:40:45Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cms",
-      "netlify-cms",
-      "theme"
-    ]
   },
   {
     "name": "theme-installer",
