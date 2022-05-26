@@ -6,7 +6,7 @@
           <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
             <h1>{{ page.title }}</h1>
             {%- for theme in site.data.themes|filter(t => 'composer-installer' not in t.topics and 'theme-component' not in t.topics) ~%}
-            <h2>{{ theme.name }}</h2>
+            <h2>{{ theme.name|split('-')[1]|capitalize }}</h2>
             <p>{{ theme.description }}</p>
             {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ theme.full_name ~ '/' ~ theme.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
             {% if screenshot.size > 0 ~%}
