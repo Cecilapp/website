@@ -79,7 +79,7 @@
     "full_name": "Cecilapp/theme-installer",
     "description": "Composer installer for Cecil's themes.",
     "url": "https://github.com/Cecilapp/theme-installer",
-    "license": null,
+    "license": "MIT License",
     "homepage": "",
     "owner": "Cecilapp",
     "date": "2022-01-06T10:54:30Z",
