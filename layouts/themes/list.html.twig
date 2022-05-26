@@ -1,0 +1,28 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+        <div class="mx-auto">
+          {#- content ~#}
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
+            <h1>{{ page.title }}</h1>
+            {%- for theme in site.data.themes|filter(t => 'composer-installer' not in t.topics and 'theme-component' not in t.topics) ~%}
+            <h2>{{ theme.name }}</h2>
+            <p>{{ theme.description }}</p>
+            {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ theme.full_name ~ '/' ~ theme.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot.size > 0 ~%}
+            <p>
+              {{ screenshot|html({alt: theme.name}) }}
+            </p>
+            {%- endif ~%}
+            <ul>
+              {%- if theme.homepage ~%}
+              <li><a href="{{ theme.homepage }}">{% trans %}Demo{% endtrans %}</a></li>
+              {%- endif ~%}
+              <li><a href="{{ theme.url }}#readme">Documentaton</a></li>
+              <li>{{ theme.license }}</li>
+            </ul>
+            {%- endfor ~%}
+            {#- page.content ~#}
+          </div>
+        </div>
+{% endblock %}

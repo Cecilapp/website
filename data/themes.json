@@ -6,16 +6,12 @@
     "url": "https://github.com/Cecilapp/theme-installer",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-26T19:21:25Z",
     "default_branch": "master",
     "topics": [
       "cecil",
-      "cecill",
       "composer-installer",
-      "php",
-      "theme",
-      "theme-installation"
+      "theme"
     ]
   },
   {
@@ -25,14 +21,12 @@
     "url": "https://github.com/Cecilapp/theme-hyde",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-hyde/",
-    "owner": "Cecilapp",
     "date": "2022-05-26T19:18:27Z",
     "default_branch": "master",
     "topics": [
       "blog",
       "cecil",
-      "theme",
-      "theme-hyde"
+      "theme"
     ]
   },
   {
@@ -42,13 +36,10 @@
     "url": "https://github.com/Cecilapp/theme-garth",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-garth/",
-    "owner": "Cecilapp",
     "date": "2022-05-26T18:32:57Z",
     "default_branch": "master",
     "topics": [
-      "blog",
       "cecil",
-      "garth-theme",
       "theme"
     ]
   },
@@ -59,10 +50,13 @@
     "url": "https://github.com/Cecilapp/theme-applanding",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-26T18:20:35Z",
     "default_branch": "main",
-    "topics": []
+    "topics": [
+      "cecil",
+      "tailwindcss",
+      "theme"
+    ]
   },
   {
     "name": "theme-comingsoon",
@@ -71,10 +65,10 @@
     "url": "https://github.com/Cecilapp/theme-comingsoon",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-comingsoon/",
-    "owner": "Cecilapp",
     "date": "2022-05-26T18:19:22Z",
     "default_branch": "main",
     "topics": [
+      "bootstrap",
       "cecil",
       "theme"
     ]
@@ -86,15 +80,14 @@
     "url": "https://github.com/Cecilapp/theme-serviceworker",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-13T23:40:44Z",
     "default_branch": "master",
     "topics": [
       "cecil",
-      "progressive-web-app",
       "pwa",
       "service-worker",
-      "theme"
+      "theme",
+      "theme-component"
     ]
   },
   {
@@ -104,10 +97,14 @@
     "url": "https://github.com/Cecilapp/theme-podcast",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-13T23:40:13Z",
     "default_branch": "master",
-    "topics": []
+    "topics": [
+      "cecil",
+      "podcast",
+      "theme",
+      "theme-component"
+    ]
   },
   {
     "name": "theme-netlifycms",
@@ -116,14 +113,14 @@
     "url": "https://github.com/Cecilapp/theme-netlifycms",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-13T23:39:38Z",
     "default_branch": "main",
     "topics": [
       "cecil",
       "cms",
-      "netlify-cms",
-      "theme"
+      "netlify",
+      "theme",
+      "theme-component"
     ]
   },
   {
@@ -133,13 +130,13 @@
     "url": "https://github.com/Cecilapp/theme-netlify",
     "license": "MIT License",
     "homepage": "",
-    "owner": "Cecilapp",
     "date": "2022-05-13T23:39:08Z",
     "default_branch": "main",
     "topics": [
       "cecil",
       "netlify",
-      "theme"
+      "theme",
+      "theme-component"
     ]
   }
 ]

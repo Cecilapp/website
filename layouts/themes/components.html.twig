@@ -1,0 +1,18 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+        <div class="mx-auto">
+          {#- content ~#}
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark">
+            <h1>{{ page.title }}</h1>
+            {%- for theme in site.data.themes|filter(t => 'theme-component' in t.topics) ~%}
+            <h2>{{ theme.name }}</h2>
+            <p>{{ theme.description }}</p>
+            <ul>
+              <li><a href="{{ theme.url }}#readme">Documentaton</a></li>
+              <li>{{ theme.license }}</li>
+            </ul>
+            {%- endfor ~%}
+          </div>
+        </div>
+{% endblock %}
