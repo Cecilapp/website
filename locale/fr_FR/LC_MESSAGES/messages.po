@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-25 01:57+0200\n"
-"PO-Revision-Date: 2022-05-25 01:57+0200\n"
+"POT-Creation-Date: 2022-05-26 20:44+0200\n"
+"PO-Revision-Date: 2022-05-26 20:45+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -67,7 +67,7 @@ msgstr "Télécharger"
 msgid "File checksum"
 msgstr "Somme de contrôle du fichier"
 
-#: index.html.twig:13 index.html.twig:55
+#: index.html.twig:13 index.html.twig:63
 msgid "Quick Start"
 msgstr "Démarrage rapide"
 
@@ -106,6 +106,22 @@ msgstr "Clair"
 #: partials/toggle-switch-dark.html.twig:6
 msgid "Dark"
 msgstr "Sombre"
+
+#: themes.html.twig:7
+msgid "Themes"
+msgstr "Thèmes"
+
+#: themes.html.twig:19
+msgid "License:"
+msgstr "Licence :"
+
+#: themes.html.twig:20
+msgid "Author:"
+msgstr "Auteur :"
+
+#: themes.html.twig:22
+msgid "Homepage:"
+msgstr "Home page :"
 
 #~ msgid "Cecil sponsors"
 #~ msgstr "Sponsors de Cecil"
