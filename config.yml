@@ -122,6 +122,8 @@ body:
       enabled: true
     webp:
       enabled: true
+    remote:
+      enabled: true
   notes:
     enabled: true
 assets:

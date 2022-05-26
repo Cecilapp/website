@@ -1,0 +1,101 @@
+[
+  {
+    "name": "theme-netlify",
+    "full_name": "Cecilapp/theme-netlify",
+    "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
+    "url": "https://github.com/Cecilapp/theme-netlify",
+    "license": "MIT License",
+    "homepage": "https://cecil.app",
+    "owner": "Cecilapp",
+    "date": "2022-04-28T12:18:17Z",
+    "default_branch": "main"
+  },
+  {
+    "name": "theme-serviceworker",
+    "full_name": "Cecilapp/theme-serviceworker",
+    "description": "The Service Worker component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
+    "url": "https://github.com/Cecilapp/theme-serviceworker",
+    "license": "MIT License",
+    "homepage": "",
+    "owner": "Cecilapp",
+    "date": "2022-04-20T09:38:43Z",
+    "default_branch": "master"
+  },
+  {
+    "name": "theme-applanding",
+    "full_name": "Cecilapp/theme-applanding",
+    "description": "App Landing is a theme for Cecil, powered by Tailwind CSS.",
+    "url": "https://github.com/Cecilapp/theme-applanding",
+    "license": "MIT License",
+    "homepage": "",
+    "owner": "Cecilapp",
+    "date": "2022-03-21T17:22:44Z",
+    "default_branch": "main"
+  },
+  {
+    "name": "theme-podcast",
+    "full_name": "Cecilapp/theme-podcast",
+    "description": "The Podcast component theme for Cecil provide templates to publish an audio show on the web.",
+    "url": "https://github.com/Cecilapp/theme-podcast",
+    "license": "MIT License",
+    "homepage": "",
+    "owner": "Cecilapp",
+    "date": "2022-01-11T00:18:26Z",
+    "default_branch": "master"
+  },
+  {
+    "name": "theme-netlifycms",
+    "full_name": "Cecilapp/theme-netlifycms",
+    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
+    "url": "https://github.com/Cecilapp/theme-netlifycms",
+    "license": "MIT License",
+    "homepage": "https://cecil.app",
+    "owner": "Cecilapp",
+    "date": "2022-01-10T12:40:45Z",
+    "default_branch": "main"
+  },
+  {
+    "name": "theme-installer",
+    "full_name": "Cecilapp/theme-installer",
+    "description": "Composer installer for Cecil's themes.",
+    "url": "https://github.com/Cecilapp/theme-installer",
+    "license": null,
+    "homepage": "",
+    "owner": "Cecilapp",
+    "date": "2022-01-06T10:54:30Z",
+    "default_branch": "master"
+  },
+  {
+    "name": "theme-garth",
+    "full_name": "Cecilapp/theme-garth",
+    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
+    "url": "https://github.com/Cecilapp/theme-garth",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-garth/",
+    "owner": "Cecilapp",
+    "date": "2022-01-05T00:33:54Z",
+    "default_branch": "master"
+  },
+  {
+    "name": "theme-hyde",
+    "full_name": "Cecilapp/theme-hyde",
+    "description": "The Hyde theme for Cecil is a port the Hyde theme for Jekyll created by Mark Otto.",
+    "url": "https://github.com/Cecilapp/theme-hyde",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-hyde/",
+    "owner": "Cecilapp",
+    "date": "2021-12-29T00:49:52Z",
+    "default_branch": "master"
+  },
+  {
+    "name": "theme-comingsoon",
+    "full_name": "Cecilapp/theme-comingsoon",
+    "description": "Coming Soon is a theme for Cecil, powered by Bootstrap.",
+    "url": "https://github.com/Cecilapp/theme-comingsoon",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "owner": "Cecilapp",
+    "date": "2021-12-29T00:30:46Z",
+    "default_branch": "main"
+  }
+]
