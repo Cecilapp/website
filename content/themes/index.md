@@ -1,6 +1,6 @@
 ---
 title: Themes
-description: "Ready to uses themes for Cecil."
+description: "Ready to use themes for Cecil."
 #redirect: https://github.com/cecilapp?q=theme#org-repositories
 ---
 ## Fetch themes from GitHub API
