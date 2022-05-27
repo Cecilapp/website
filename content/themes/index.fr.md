@@ -1,4 +1,4 @@
 ---
 title: Thèmes
-layout: themes
+description: "Thèmes prêt à l'emploi pour Cecil."
 ---
