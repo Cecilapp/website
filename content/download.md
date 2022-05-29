@@ -15,6 +15,7 @@ You can download `cecil.phar` by clicking on the "Download" button or with the f
 
 ```bash
 curl -LO https://cecil.app/cecil.phar
+php cecil.phar --version
 ```
 
 > [PHP](https://www.php.net/manual/en/install.php) 7.1+ is required.  
