@@ -2,14 +2,13 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2020-06-03
+updated: 2022-05-29
 layout: download
 alias: install
 menu:
   main:
     weight: 20
 ---
-
 # Download
 
 You can download `cecil.phar` by clicking on the "Download" button or with the following command from your terminal:
@@ -44,7 +43,7 @@ chmod +x /usr/local/bin/cecil
 The easiest way to update Cecil to the last version is to use the dedicated command:
 
 ```bash
-php cecil self-update
+cecil self-update
 ```
 
 ## Get a specific version
