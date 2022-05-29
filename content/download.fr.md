@@ -2,13 +2,13 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
+updated: 2022-05-29
 layout: download
 menu:
   main:
     weight: 20
 slug: telecharger
 ---
-
 # Télécharger
 
 Vous pouvez télécharger `cecil.phar` en cliquant sur le bouton "Télécharger" ou via la commande suivante depuis votre terminal :
@@ -18,7 +18,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 > [PHP](https://www.php.net/manual/fr/install.php) 7.1+ est requis.  
-> L’intégrité du fichier peut être vérifié via le fichier `SHA1`, en cliquant sur le bouton "Somme de contrôle des fichiers".
+> L’intégrité du fichier peut être vérifié via le fichier `SHA1`, en cliquant sur le bouton "Somme de contrôle du fichier".
 
 ## Installation globale
 
@@ -56,4 +56,3 @@ curl -LO https://cecil.app/download/4.0.0/cecil.phar
 ```
 
 > Voir la ["releases list"](https://github.com/Cecilapp/Cecil/releases) sur GitHub.
-
