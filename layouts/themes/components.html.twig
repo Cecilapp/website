@@ -3,7 +3,7 @@
 {% block content %}
         <div class="mx-auto">
           <div class="mx-auto max-w-screen-md markdown dark:markdown-dark">
-            {% include 'partials/themes-nav.html.Twig' %}
+            {% include 'partials/themes-nav.html.twig' %}
             <h1>{{ page.title }}</h1>
             {%- for theme in site.data.themes|filter(t => 'theme-component' in t.topics) ~%}
             <h2>{{ theme.name|split('-')[1]|capitalize }}</h2>
