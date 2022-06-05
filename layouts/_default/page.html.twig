@@ -53,7 +53,7 @@
           <a class="md:hidden hover:text-white" href="{{ url('news') }}">{{ site.menus.main.news.name }}</a>
           {%- endif ~%}
           {%- for entry in site.menus.main|sort_by_weight ~%}
-          <a class="hidden md:inline-block hover:text-white" href="{{ url(entry.url) }}">
+          <a class="hidden md:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">
             {%- if entry.id == 'documentation' ~%}
             <span class="hidden sm:inline-block">{{ entry.name }}</span>
             <span class="sm:hidden">{% trans %}Docs{% endtrans %}</span>

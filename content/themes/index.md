@@ -1,7 +1,11 @@
 ---
 title: Themes
 description: "Ready to use themes for Cecil."
-menu: [main, themes]
+menu: 
+  main:
+    weight: 40
+  themes:
+    weight: 0
 #redirect: https://github.com/cecilapp?q=theme#org-repositories
 ---
 <!--

@@ -6,7 +6,7 @@ updated: 2022-05-29
 layout: download
 menu:
   main:
-    weight: 20
+    weight: 30
 slug: telecharger
 ---
 # Télécharger
