@@ -126,6 +126,8 @@ body:
       enabled: true
   notes:
     enabled: true
+  highlight:
+    enabled: true
 assets:
   images:
     optimize:
