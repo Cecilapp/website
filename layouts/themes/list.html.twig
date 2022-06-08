@@ -9,19 +9,15 @@
             {%- for theme in site.data.themes|filter(t => 'composer-installer' not in t.topics and 'theme-component' not in t.topics) ~%}
             <h2>{{ theme.name|split('-')[1]|capitalize }}</h2>
             <p>{{ theme.description }}</p>
+            <a class="btn btn-sm" href="{{ theme.url }}#readme" role="button">{% trans %}Download{% endtrans %}</a>
+            {%- if theme.homepage ~%}
+            <a class="btn btn-sm" href="{{ theme.homepage }}" role="button">{% trans %}Demo{% endtrans %}</a>
+            {%- endif ~%}
             {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ theme.full_name ~ '/' ~ theme.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
             {% if screenshot.size > 0 ~%}
-            <p>
-              {{ screenshot|html({alt: theme.name}) }}
-            </p>
+            <p>{{ screenshot|html({alt: theme.name}) }}</p>
             {%- endif ~%}
-            <ul>
-              {%- if theme.homepage ~%}
-              <li><a href="{{ theme.homepage }}">{% trans %}Demo{% endtrans %}</a></li>
-              {%- endif ~%}
-              <li><a href="{{ theme.url }}#readme">Documentaton</a></li>
-              <li>{{ theme.license }}</li>
-            </ul>
+            <p>{{ theme.license }}</p>
             {%- endfor ~%}
           </div>
         </div>
