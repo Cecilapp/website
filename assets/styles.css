@@ -1363,6 +1363,10 @@ a.btn-gold:hover {
   margin-top: 2.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1381,10 +1385,6 @@ a.btn-gold:hover {
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .mt-1 {
@@ -1525,22 +1525,6 @@ a.btn-gold:hover {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.scroll-m-\[15px\] {
-  scroll-margin: 15px;
-}
-
-.scroll-mb-\[15px\] {
-  scroll-margin-bottom: 15px;
-}
-
-.scroll-mt-\[15px\] {
-  scroll-margin-top: 15px;
-}
-
-.scroll-mt-\[25px\] {
-  scroll-margin-top: 25px;
 }
 
 .scroll-mt-\[50px\] {
@@ -2551,10 +2535,6 @@ a.btn-gold:hover {
     width: 60%;
   }
 
-  .md\:w-3\/4 {
-    width: 75%;
-  }
-
   .md\:flex-\[1_1_25\%\] {
     flex: 1 1 25%;
   }
@@ -2606,6 +2586,12 @@ a.btn-gold:hover {
     --tw-space-x-reverse: 0;
     margin-right: calc(4rem * var(--tw-space-x-reverse));
     margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
