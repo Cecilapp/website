@@ -1,4 +1,5 @@
-            <p>
-              <a class="btn btn-sm" href="{{ url(site.menus.themes['themes'].url) }}" role="button">{{ site.menus.themes['themes'].name }}</a>
-              <a class="btn btn-sm" href="{{ url(site.menus.themes['themes/components'].url) }}" role="button">{{ site.menus.themes['themes/components'].name }}</a>
-            </p>
+            <nav class="flex mb-2 space-x-2 md:space-x-4">
+              <a class="no-underline" href="{{ url(site.menus.themes['themes'].url) }}">{{ site.menus.themes['themes'].name }}</a>
+              <span>|</span>
+              <a class="no-underline" href="{{ url(site.menus.themes['themes/components'].url) }}">{{ site.menus.themes['themes/components'].name }}</a>
+            </nav>
