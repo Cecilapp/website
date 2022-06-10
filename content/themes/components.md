@@ -1,8 +1,9 @@
 ---
-title: Component themes
+title: Theme Components
 layout: themes/components
-description: "Component themes for Cecil."
+description: "Theme Components for Cecil."
 menu:
   themes:
     weight: 10
 ---
+Theme Components are partial themes, which add features to an existing site, such as a Service Worker, an audio player, integration in Netlify, etc.
