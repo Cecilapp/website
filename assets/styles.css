@@ -2345,6 +2345,10 @@ a.btn-gold:hover {
   color: rgb(9 47 68 / var(--tw-text-opacity));
 }
 
+.markdown-headings\:pt-2 :is(:where(h1, h2, h3, h4, th):not(:where([class~="not-markdown"] *))) {
+  padding-top: 0.5rem;
+}
+
 .markdown-h2\:m-0 :is(:where(h2):not(:where([class~="not-markdown"] *))) {
   margin: 0px;
 }
