@@ -63,7 +63,7 @@ output:
       extension: 'phar.sha1'
     - name: algolia
       mediatype: 'application/json'
-      suffix: 'algolia'
+      filename: 'algolia'
       extension: 'json'
     - name: bash
       mediatype: 'text/plain'
