@@ -1064,7 +1064,7 @@
       "releases_url": "https://api.github.com/repos/Cecilapp/theme-pwa/releases{/id}",
       "deployments_url": "https://api.github.com/repos/Cecilapp/theme-pwa/deployments",
       "created_at": "2022-07-04T14:14:52Z",
-      "updated_at": "2022-07-04T14:17:44Z",
+      "updated_at": "2022-07-04T20:40:52Z",
       "pushed_at": "2022-07-04T16:46:29Z",
       "git_url": "git://github.com/Cecilapp/theme-pwa.git",
       "ssh_url": "git@github.com:Cecilapp/theme-pwa.git",
@@ -1096,7 +1096,11 @@
       "is_template": false,
       "web_commit_signoff_required": false,
       "topics": [
-
+        "cecil",
+        "pwa",
+        "service-worker",
+        "theme",
+        "theme-component"
       ],
       "visibility": "public",
       "forks": 0,
