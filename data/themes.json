@@ -8,7 +8,13 @@
     "homepage": "",
     "date": "2022-07-04T16:46:29Z",
     "default_branch": "master",
-    "topics": []
+    "topics": [
+      "cecil",
+      "pwa",
+      "service-worker",
+      "theme",
+      "theme-component"
+    ]
   },
   {
     "name": "theme-serviceworker",
