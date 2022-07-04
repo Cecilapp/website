@@ -1,5 +1,62 @@
 [
   {
+    "name": "theme-pwa",
+    "full_name": "Cecilapp/theme-pwa",
+    "description": "The PWA component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
+    "url": "https://github.com/Cecilapp/theme-pwa",
+    "license": "MIT License",
+    "homepage": "",
+    "date": "2022-07-04T16:46:29Z",
+    "default_branch": "master",
+    "topics": []
+  },
+  {
+    "name": "theme-serviceworker",
+    "full_name": "Cecilapp/theme-serviceworker",
+    "description": "The Service Worker component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
+    "url": "https://github.com/Cecilapp/theme-serviceworker",
+    "license": "MIT License",
+    "homepage": "",
+    "date": "2022-07-04T14:15:29Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "pwa",
+      "service-worker",
+      "theme",
+      "theme-component"
+    ]
+  },
+  {
+    "name": "theme-comingsoon",
+    "full_name": "Cecilapp/theme-comingsoon",
+    "description": "Coming Soon is a theme for Cecil, powered by Bootstrap.",
+    "url": "https://github.com/Cecilapp/theme-comingsoon",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "date": "2022-05-27T00:07:16Z",
+    "default_branch": "main",
+    "topics": [
+      "bootstrap",
+      "cecil",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-garth",
+    "full_name": "Cecilapp/theme-garth",
+    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
+    "url": "https://github.com/Cecilapp/theme-garth",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-garth/",
+    "date": "2022-05-27T00:05:49Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-installer",
     "full_name": "Cecilapp/theme-installer",
     "description": "Composer installer for Cecil's themes.",
@@ -30,20 +87,6 @@
     ]
   },
   {
-    "name": "theme-garth",
-    "full_name": "Cecilapp/theme-garth",
-    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
-    "url": "https://github.com/Cecilapp/theme-garth",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-garth/",
-    "date": "2022-05-26T18:32:57Z",
-    "default_branch": "master",
-    "topics": [
-      "cecil",
-      "theme"
-    ]
-  },
-  {
     "name": "theme-applanding",
     "full_name": "Cecilapp/theme-applanding",
     "description": "App Landing is a theme for Cecil, powered by Tailwind CSS.",
@@ -56,38 +99,6 @@
       "cecil",
       "tailwindcss",
       "theme"
-    ]
-  },
-  {
-    "name": "theme-comingsoon",
-    "full_name": "Cecilapp/theme-comingsoon",
-    "description": "Coming Soon is a theme for Cecil, powered by Bootstrap.",
-    "url": "https://github.com/Cecilapp/theme-comingsoon",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
-    "date": "2022-05-26T18:19:22Z",
-    "default_branch": "main",
-    "topics": [
-      "bootstrap",
-      "cecil",
-      "theme"
-    ]
-  },
-  {
-    "name": "theme-serviceworker",
-    "full_name": "Cecilapp/theme-serviceworker",
-    "description": "The Service Worker component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
-    "url": "https://github.com/Cecilapp/theme-serviceworker",
-    "license": "MIT License",
-    "homepage": "",
-    "date": "2022-05-13T23:40:44Z",
-    "default_branch": "master",
-    "topics": [
-      "cecil",
-      "pwa",
-      "service-worker",
-      "theme",
-      "theme-component"
     ]
   },
   {
