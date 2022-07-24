@@ -19,3 +19,5 @@ body:
       enabled: false
     webp:
       enabled: false
+  highlight:
+    enabled: true
