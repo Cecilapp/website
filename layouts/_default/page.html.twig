@@ -28,7 +28,8 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}" />
     {%- endif ~%}
-    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css') }}" />
+    {#-<link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css') }}" />~#}
+    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false})|html({title: 'Animate CSS'}, {preload: true}) }}
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
@@ -148,7 +149,7 @@
     <script async defer src="{{ asset('https://buttons.github.io/buttons.js') }}"></script>
     {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
-    {%~ include 'partials/highlight.js.twig' only ~%}
+    {%~ include 'partials/highlight.js.twig' only -%}
     {%~ endblock footer_scripts ~%}
     <style>{% apply minify_css %}
       {% block footer_css %}
