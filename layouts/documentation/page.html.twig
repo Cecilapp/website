@@ -51,7 +51,6 @@
 
 {% block footer_scripts %}
     {{ parent() }}
-    {%~ include 'partials/highlight.js.twig' only ~%}
     <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.css', {minify: false}) }}">
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/tocbot/' ~ site.tocbot.version ~ '/tocbot.min.js', {minify: false}) }}"></script>
     <script>{% apply minify_js %}
