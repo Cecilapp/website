@@ -154,8 +154,10 @@
     <style>{% apply minify_css %}
       {% block footer_css %}
       {#- Fix highlight.js with Typography ~#}
+      pre code.hljs {
+        padding: initial;
+      }
       .hljs {
-        padding: 0;
         background: transparent;
       }
       {% endblock footer_css %}
