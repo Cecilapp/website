@@ -9,6 +9,7 @@
   @scroll.window="scrolledFromTop = (window.pageYOffset >= 21) ? true : false"
 >
   <head>
+    {%- block head ~%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,9 +29,8 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}" />
     {%- endif ~%}
-    {#-<link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css') }}" />~#}
-    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false})|html({title: 'Animate CSS'}, {preload: true}) }}
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
+    {%~ endblock head ~%}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
     <header class="sticky top-0 md:-top-[15px] z-[100] px-6 py-2 md:pt-6 md:pb-2 bg-blue dark:bg-dark"
