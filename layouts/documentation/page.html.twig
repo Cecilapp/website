@@ -26,6 +26,7 @@
               {%- endif ~%}
             </div>
             {#- prev/next page ~#}
+            {%- if page.prev is defined or page.next is defined ~%}
             <div class="mx-auto max-w-screen-md pt-2 border-slate-200 border-t mt-4">
               {%- if page.prev is defined ~%}
               <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
@@ -38,6 +39,7 @@
               </a>
               {%- endif ~%}
             </div>
+            {%- endif ~%}
           </div>
           {#- toc ~#}
           <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
