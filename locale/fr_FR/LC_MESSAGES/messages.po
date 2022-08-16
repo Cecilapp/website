@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-29 23:55+0200\n"
-"PO-Revision-Date: 2022-05-29 23:56+0200\n"
+"POT-Creation-Date: 2022-08-16 02:54+0200\n"
+"PO-Revision-Date: 2022-08-16 02:55+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,31 +22,31 @@ msgstr "Désolé, la page n’existe pas…"
 msgid "Home"
 msgstr "Accueil"
 
-#: _default/page.html.twig:59
+#: _default/page.html.twig:60
 msgid "Docs"
 msgstr "Doc"
 
-#: _default/page.html.twig:70
+#: _default/page.html.twig:71
 msgid "Documentation:"
 msgstr "Documentation :"
 
-#: _default/page.html.twig:105
+#: _default/page.html.twig:109
 msgid "About"
 msgstr "À propos"
 
-#: _default/page.html.twig:108
+#: _default/page.html.twig:112
 msgid "Open source"
 msgstr "Open source"
 
-#: _default/page.html.twig:118
+#: _default/page.html.twig:122
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: _default/page.html.twig:124
+#: _default/page.html.twig:128
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
-#: _default/page.html.twig:130
+#: _default/page.html.twig:134
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
@@ -59,7 +59,8 @@ msgstr "Documentation"
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: download.html.twig:7 index.html.twig:16
+#: download.html.twig:7 index.html.twig:24 themes/components.html.twig:12
+#: themes/list.html.twig:12
 msgid "Download"
 msgstr "Télécharger"
 
@@ -67,9 +68,13 @@ msgstr "Télécharger"
 msgid "File checksum"
 msgstr "Somme de contrôle du fichier"
 
-#: index.html.twig:13 index.html.twig:63
+#: index.html.twig:21 index.html.twig:71
 msgid "Quick Start"
 msgstr "Démarrage rapide"
+
+#: index.html.twig:61
+msgid "Start with the CLI"
+msgstr "Commencez avec l'ICL"
 
 #: news/list.html.twig:6
 msgid "News"
@@ -83,7 +88,7 @@ msgstr "Notes de version sur GitHub"
 msgid "Get started"
 msgstr "Commencer"
 
-#: partials/flags.html.twig:4
+#: partials/language-selector.html.twig:4
 msgid "Language:"
 msgstr "Langue :"
 
@@ -107,7 +112,7 @@ msgstr "Clair"
 msgid "Dark"
 msgstr "Sombre"
 
-#: themes/list.html.twig:20
+#: themes/list.html.twig:14
 msgid "Demo"
 msgstr "Démo"
 
