@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-08-16 02:54+0200\n"
-"PO-Revision-Date: 2022-08-16 02:55+0200\n"
+"PO-Revision-Date: 2022-08-16 02:58+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -74,7 +74,7 @@ msgstr "Démarrage rapide"
 
 #: index.html.twig:61
 msgid "Start with the CLI"
-msgstr "Commencez avec l'ICL"
+msgstr "Commencer avec la ligne de commande"
 
 #: news/list.html.twig:6
 msgid "News"
