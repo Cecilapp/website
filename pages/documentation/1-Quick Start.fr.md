@@ -2,7 +2,7 @@
 title: Démarrage rapide
 description: "Créez un nouveau site et prévisualiser le localement."
 date: 2021-11-03
-updated: 2022-08-14
+updated: 2022-08-15
 slug: demarrage-rapide
 menu: home
 -->
@@ -29,7 +29,7 @@ Si votre objectif est de gérer rapidement le contenu, et de décider plus tard 
 
 Comment créer créer un site Web - à partir de zéro - en quelques étapes.
 
-### Installer Cecil
+### Télécharger Cecil
 
 Téléchargez `cecil.phar` depuis votre terminal:
 
@@ -37,16 +37,16 @@ Téléchargez `cecil.phar` depuis votre terminal:
 curl -LO https://cecil.app/cecil.phar
 ```
 
-Vous pouvez également [télécharger Cecil](https://cecil.app/download/) manuellement depuis le site web.
+Vous pouvez également [télécharger Cecil](https://cecil.app/download/) manuellement.
 
 > [PHP](https://php.net/manual/fr/install.php) 7.4+ est requis.
 
 ### Créer un nouveau site
 
-Exécutez la commande `new:site` :
+Créez un répertoire pour le site Web (ex : `<monsiteweb>`), placez y `cecil.phar`, puis exécutez la commande `new:site` :
 
 ```bash
-php cecil.phar new:site <monsiteweb>
+php cecil.phar new:site
 ```
 
 ### Ajouter du contenu
@@ -54,36 +54,40 @@ php cecil.phar new:site <monsiteweb>
 Exécutez la commande `new:page` :
 
 ```bash
-php cecil.phar new:page ma-première-page.md <monsiteweb>
+php cecil.phar new:page ma-premiere-page.md
 ```
 
-Vous pouvez maintenant modifier la page nouvellement créée avec votre éditeur Markdown favoris (je recommande [Typora](https://www.typora.io)): `<monsiteweb>/pages/ma-première-page.md`.
+Vous pouvez maintenant modifier la page nouvellement créée avec votre éditeur Markdown : `<monsiteweb>/pages/ma-premiere-page.md`.
+
+:::tip
+Nous vous recommandons d’utiliser [Typora](https://www.typora.io) pour éditer vos fichiers Markdown.
+:::
 
 ### Vérifier l’aperçu
 
 Exécutez la commande suivante pour créer un aperçu du site Web :
 
 ```bash
-php cecil.phar serve <monsiteweb>
+php cecil.phar serve
 ```
 
 Naviguez ensuite sur `http://localhost:8000`.
 
 :::info
-La commande `serve` démarre un serveur HTTP local et un observateur : si un fichier (une page, un template ou la config) est modifié, la page active du navigateur est rechargée.
+La commande `serve` démarre un serveur HTTP local et un observateur : si un fichier (une page, un template ou la config) est modifié, la page active du navigateur est automatiquement rechargée.
 :::
 
-### Créer et déployer
+### Générer et déployer
 
-Quand vous êtes satisfait du résultat, vous pouvez générer le site Web afin de le déployer sur le Web.
+Quand vous êtes satisfait du résultat, vous pouvez générer le site afin de le déployer sur le Web.
 
-Exécutez la commande suivante pour générer le site Web :
+Exécutez la commande suivante pour générer le site :
 
 ```bash
-php cecil.phar build <monsiteweb>
+php cecil.phar build
 ```
 
-Vous pouvez maintenant copier le contenu du répertoire `_site` sur votre serveur Web 🎉
+Vous pouvez maintenant copier le contenu du répertoire `_site` sur un serveur Web 🎉
 
 :::tip
 La documentation complète est disponible, en anglais, à l'adresse suivante : <https://cecil.app/documentation/>

@@ -1,7 +1,7 @@
 <!--
 description: "Create content and organize it."
 date: 2021-05-07
-updated: 2022-08-10
+updated: 2022-08-15
 -->
 
 # Content
@@ -9,20 +9,18 @@ updated: 2022-08-10
 There is different kinds of content in Cecil:
 
 **Pages**
-: Markdown (or plain text) files.
+: Pages are the main content of the site, written in Markdown (or plain text).
 
 **Assets**
-: Handled assets files (i.e.: resized images, compiled Sass, minified scripts, etc.).
+: Assets are handled files (i.e.: resized images, compiled Sass, minified scripts, etc.).
 
 **Static**
-: Files copied as is.
+: Static files are copied as is in the generated site.
 
 **Data**
-: Custom variables collections.
+: Data are custom variables collections.
 
 ## Files organization
-
-Pages should be organized in a manner that reflects the rendered website.
 
 ### File system tree
 
@@ -44,8 +42,9 @@ Pages should be organized in a manner that reflects the rendered website.
    └─ authors.yml     <- Data collection
 ```
 
-**Explanation:**
+**Explanations:**
 
+- Pages should be organized in a manner that reflects the rendered website
 - Each folder in the root of `pages/` is called a **_Section_** (e.g.: “Blog“, “Project“, etc.)
 - You can override _Section_’s default variables by creating an `index.md` file in its directory (e.g.: `blog/index.md`)
 - Files in `assets/` are handled with the [`asset()`](3-Templates.md#asset) function in templates
@@ -268,7 +267,7 @@ Is converted to:
 ```
 
 :::info
-**Info:** Ratio is preserved, the original file is not altered, and the resized version is stored in `/assets/thumbnails/<width>/image.jpg`.  
+**Info:** Ratio is preserved, the original file is not altered, and the resized version is stored in `/assets/thumbnails/<width>/image.jpg`.
 :::
 
 :::important
@@ -321,6 +320,10 @@ Is converted to:
 
 :::important
 **Important:** This feature requires [WebP](https://developers.google.com/speed/webp) be supported by PHP installation.
+:::
+
+:::info
+**Info:** You can combine `webp` and `responsive` options.
 :::
 
 #### Caption
