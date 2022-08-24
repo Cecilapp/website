@@ -8,21 +8,22 @@
 
 {% extends 'page.html.twig' %}
 
+{% set title = page.title %}
+
 {% block content %}
-    <div class="container">
-      <div class="columns">
-        <div class="four-fourths column markdown-body">
-          {%- for p in pages -%}
-          <div class="page">
-            <h2 class="page-title">
-              <a href="{{ url(p) }}">{{ p.title|e }}</a>
-            </h2>
-            <span class="page-date">{{ p.date|date("j M Y") }}</span>
-            {{ p.content|excerpt_html }}
-          </div>
-          {%- endfor -%}
+        {#- content ~#}
+        <div class="markdown markdown-a:no-underline hover:markdown-a:no-underline markdown-h2:m-0 markdown-h2:mb-4 max-w-screen-md mx-auto dark:markdown-dark">
+          <h1>{% trans title %}</h1>
+          <p>{{ page.content }}</p>
+          {%- for p in pages ~%}
+          <article class="border-slate-200{% if loop.index > 1 %} border-t{% endif %}">
+            <div class="text-sm text-slate-300 font-medium mt-6">{{ p.date|localizeddate('long', 'none') }}</div>
+            <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
+            <div class="mb-6">
+              {{ p.description|default('')|markdown_to_html }}
+            </div>
+          </article>
+          {%- endfor ~%}
+          {%~ include 'partials/pagination.html.twig' ~%}
         </div>
-      </div>
-    </div>
-    {%~ include 'partials/pagination.html.twig' ~%}
 {% endblock content %}
