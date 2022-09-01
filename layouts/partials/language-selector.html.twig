@@ -2,7 +2,7 @@
 {%- if page.translations|length >= 1 ~%}
 {# mobile #}
           <label class="sr-only" for="language">{% trans %}Language:{% endtrans %}</label>
-          <select id="language" class="md:hidden w-14 border-0 p-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
+          <select id="language" onchange="setLanguageCookie(value)" class="md:hidden w-14 border-0 p-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
             <option value="{{ url(page) }}" class="bg-darkblue dark:bg-dark">{{ page.language|upper }}</option>
             {%- for p in page.translations ~%}
               {%- if p.language is defined ~%}
@@ -58,10 +58,25 @@
               >
                 {%- for p in page.translations ~%}
                   {%- if p.language is defined ~%}
-                <a href="{{ url(p) }}" class="block w-full px-4 py-2 text-left hover:bg-gold hover:text-blue">{{ site.language.name(p.language) }}</a>
+                <a href="{{ url(p) }}" onclick="setLanguageCookie('{{ p.language }}')" class="block w-full px-4 py-2 text-left hover:bg-gold hover:text-blue">{{ site.language.name(p.language) }}</a>
                   {%- endif ~%}
                 {%- endfor ~%}
               </div>
             </div>
           </div>
+          <script>
+            function setLanguageCookie(language) {
+              language = trimSlashes(language);
+              if (language.length === 0) {
+                language = 'en'; // default
+              }
+              document.cookie = 'nf_lang=' + language + '; path=/';
+              console.log('nf_lang: ' + language);
+            }
+            function trimSlashes(str){
+              str = str.startsWith('/') ? str.substr(1) : str;
+              str = str.endsWith('/') ? str.substr(0, str.length - 1) : str;
+              return str;
+            }
+          </script>
 {%- endif %}
