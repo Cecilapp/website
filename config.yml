@@ -79,6 +79,7 @@ netlify:
       to: https://cecil.app/:splat
       status: 301
       force: true
+  redirect_by_language: true
 static:
   exclude:
     - 'cecil-demo.png'
