@@ -77,7 +77,7 @@
           </select>
           {%- endif ~%}
           {%- if site.menus.main.themes is defined ~%}
-            <a class="md:hidden hover:text-white" href="{{ url('themes') }}">{{ site.menus.main.themes.name }}</a>
+            <a class="md:hidden hover:text-white" href="{{ url(site.menus.main.themes.url) }}">{{ site.menus.main.themes.name }}</a>
           {%- endif ~%}
           {%~ include 'partials/language-selector.html.twig' ~%}
           <a href="https://twitter.com/{{ site.social.twitter.site }}" aria-label="{{ site.title }} on Twitter">
