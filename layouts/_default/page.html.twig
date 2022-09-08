@@ -107,10 +107,10 @@
         <ul>
           {%- if site.menus.footer is defined -%}
             {%- if site.menus.footer.about is defined ~%}
-          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans "About" %}</a></li>
+          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans %}About{% endtrans %}</a></li>
             {%- endif -%}
             {%- if site.menus.footer.github.url is defined -%}
-          <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans "Open source" %}</a></li>
+          <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans %}Open source{% endtrans %}</a></li>
             {%- endif -%}
           {%- endif -%}
           {%- if page.translations|length >= 1 -%}
@@ -120,13 +120,13 @@
         <ul>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
           <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a></li>
-          <li class="inline">{% trans %}Logo by {{ logo_by }}{% endtrans ~%}</li>
+          <li class="inline">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
         </ul>
         <div>
           {%- set powered_by -%}
           <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://animate.style">Animate.css</a>, <a href="https://alpinejs.dev">Alpine.js</a>, <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
           {%- endset ~%}
-          {% trans %}Powered by {{ powered_by }}{% endtrans ~%}
+          {% trans %}Powered by %powered_by%{% endtrans ~%}
         </div>
         {%~ include 'partials/toggle-switch-dark.html.twig' ~%}
       </div>

@@ -6,7 +6,7 @@
             <option value="{{ url(page) }}" class="bg-darkblue dark:bg-dark">{{ page.language|upper }}</option>
             {%- for p in page.translations ~%}
               {%- if p.language is defined ~%}
-            <option value="{{ url(p) }}" class="bg-darkblue dark:bg-dark">{{ site.language.name(p.language) }}</option>
+            <option value="{{ url(p) }}" class="bg-darkblue dark:bg-dark">{{ p.language|language_name(site.language.locale(p.language))|capitalize }}</option>
               {%- endif ~%}
             {%- endfor ~%}
           </select>
@@ -58,7 +58,7 @@
               >
                 {%- for p in page.translations ~%}
                   {%- if p.language is defined ~%}
-                <a href="{{ url(p) }}" onclick="setLanguageCookie('{{ p.language }}')" class="block w-full px-4 py-2 text-left hover:bg-gold hover:text-blue">{{ site.language.name(p.language) }}</a>
+                <a href="{{ url(p) }}" onclick="setLanguageCookie('{{ p.language }}')" class="block w-full px-4 py-2 text-left hover:bg-gold hover:text-blue">{{ p.language|language_name(site.language.locale(p.language))|capitalize }}</a>
                   {%- endif ~%}
                 {%- endfor ~%}
               </div>

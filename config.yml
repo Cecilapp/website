@@ -32,6 +32,8 @@ languages:
           - id: documentation
             name: Documentation
             weight: 20
+          - id: index
+            enabled: false
         footer:
         - id: github
           url: https://github.com/Cecilapp/

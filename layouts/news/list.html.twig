@@ -6,7 +6,7 @@
           <h1>{% trans %}News{% endtrans %}</h1>
           {%- for news in pages ~%}
           <article class="border-slate-200{% if loop.index > 1 %} border-t{% endif %}">
-            <div class="text-sm text-slate-300 font-medium mt-6">{{ news.date|localizeddate('long', 'none') }}</div>
+            <div class="text-sm text-slate-300 font-medium mt-6">{{ news.date|format_date('long') }}</div>
             <h2><a href="{{ url(news) }}">{{ news.title }}</a></h2>
             {%- if loop.index == 1 ~%}
             <div class="mb-6">
