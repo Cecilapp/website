@@ -141,5 +141,8 @@ assets:
       enabled: true
 paths:
   - section: news
-    path: :section/:year/:month/:day/:slug/
+    path: :section/:year/:month/:day/:slug
+  - section: news
+    language: fr
+    path: actualites/:year/:month/:day/:slug
 editor: typora
