@@ -6,8 +6,6 @@
             <h2 class="page-title">
               <a href="{{ url(p) }}">{{ p.title|e }}</a>
             </h2>
-            {{ p.content|excerpt_html }}
           </div>
           {%- endfor -%}
-    {%~ include 'partials/pagination.html.twig' ~%}
 {% endblock content %}
