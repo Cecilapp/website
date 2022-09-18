@@ -14,12 +14,12 @@
           {#- prev/next page ~#}
           <div class="border-slate-200 border-t pt-2">
             {%- if page.prev is defined ~%}
-            <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
+            <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev) }}" role="button" title="Previous">
               ← {{ page.prev.title }}
             </a>
             {%- endif -%}
             {%- if page.next is defined ~%}
-            <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
+            <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next) }}" role="button" title="Next">
               {{ page.next.title }} →
             </a>
             {%- endif ~%}
