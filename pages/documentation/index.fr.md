@@ -4,6 +4,7 @@ description: "Documentation officielle de Cecil."
 sortby: weight
 pagination:
   enabled: false
+path: documentation
 ---
 Vous trouverez ci-dessous les pages les plus utiles de notre documentation.
 
