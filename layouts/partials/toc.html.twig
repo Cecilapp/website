@@ -2,5 +2,5 @@
               <strong>{% trans %}What's on this Page{% endtrans %}</strong>
             </div>
             <div id="table-of-contents" class="toc">
-              {% trans %}Table of contents{% endtrans ~%}
+              {{ page.body|toc }}
             </div>
