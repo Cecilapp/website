@@ -1,5 +1,6 @@
             <nav class="flex mb-2 space-x-2 md:space-x-4">
-              <a class="no-underline" href="{{ url(site.menus.themes['themes'].url) }}">{{ site.menus.themes['themes'].name }}</a>
-              <span>|</span>
-              <a class="no-underline" href="{{ url(site.menus.themes['themes/components'].url) }}">{{ site.menus.themes['themes/components'].name }}</a>
+            {% for entry in site.menus.themes|sort_by_weight %}
+              <a class="no-underline" href="{{ url(entry.url) }}">{{ entry.name }}</a>
+              {% if not loop.last %}<span>|</span>{% endif %}
+            {% endfor %}
             </nav>
