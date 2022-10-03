@@ -43,7 +43,7 @@
           </div>
           {#- toc ~#}
           <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
-            {%~ include 'partials/toc.html.twig' only ~%}
+            {%~ include 'partials/toc.html.twig' with {'page': page} only ~%}
             <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
               {{ octicon.svg('arrow-up') }}
             </a>
