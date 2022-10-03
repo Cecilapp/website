@@ -15,6 +15,10 @@
             {#- content ~#}
             <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
               {%~ include 'partials/search-box.html.twig' ~%}
+              <details class="mb-4 xl:hidden">
+                <summary><strong>{% trans %}What's on this page{% endtrans %}</strong></summary>
+                {{ page.body|toc }}
+              </details>
               {{ page.content }}
               {#- suggest a modification ~#}
               {%- if site.docs_repo is defined and page.filepath is defined ~%}
