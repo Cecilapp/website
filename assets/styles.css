@@ -1694,10 +1694,6 @@ a.btn-gold:hover {
   display: flex;
 }
 
-.contents {
-  display: contents;
-}
-
 .hidden {
   display: none;
 }
@@ -2978,6 +2974,10 @@ a.btn-gold:hover {
 @media (min-width: 1280px) {
   .xl\:block {
     display: block;
+  }
+
+  .xl\:hidden {
+    display: none;
   }
 
   .xl\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
