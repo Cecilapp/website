@@ -8,6 +8,7 @@ alias: install
 menu:
   main:
     weight: 30
+  footer:
 ---
 # Download
 
