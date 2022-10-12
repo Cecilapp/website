@@ -101,19 +101,22 @@
       </div>
     </main>
     {%~ block features %}{% endblock ~%}
-    {%~ block sponsors %}{% endblock ~%}
+    {%- block sponsors %}{% endblock %}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         <ul>
-          {%- if site.menus.footer is defined -%}
+          {%- if site.menus.footer is defined ~%}
             {%- if site.menus.footer.about is defined ~%}
           <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans %}About{% endtrans %}</a></li>
-            {%- endif -%}
-            {%- if site.menus.footer.github.url is defined -%}
+            {%- endif ~%}
+            {%- if site.menus.footer.download is defined ~%}
+          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.download.url) }}">{% trans %}Download{% endtrans %}</a></li>
+            {%- endif ~%}
+            {%- if site.menus.footer.github.url is defined ~%}
           <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans %}Open source{% endtrans %}</a></li>
-            {%- endif -%}
-          {%- endif -%}
-          {%- if page.translations|length >= 1 -%}
+            {%- endif ~%}
+          {%- endif ~%}
+          {%- if page.translations|length >= 1 ~%}
           <li class="inline">{% include 'partials/languages.html.twig' %}</li>
           {%- endif ~%}
         </ul>
@@ -131,7 +134,7 @@
         {%~ include 'partials/toggle-switch-dark.html.twig' ~%}
       </div>
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
-        <div class="flex flex-col md:flex-row items-start md:align-middle md:justify-between md:w-3/5 lg:w-1/2">
+        <div class="flex flex-col md:flex-row items-start md:align-middle md:justify-between w-[22rem]">
           <span>{% trans %}Cecil is generously supported by{% endtrans %}</span>
           <div class="mt-2 md:mt-0">
           {%- for block in site.pages[site.home].blocks.sponsor|default({})|filter(b => b.visible != false) -%}
@@ -139,8 +142,8 @@
             {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(55) ~%}
             {%- apply spaceless ~%}
             <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}" class="pr-2 md:pr-4">
-              <img class="inline-block dark:hidden" src="{{ sponsor_logo }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
-              <img class="hidden dark:inline-block" src="{{ sponsor_logo_dark }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="inline-block dark:hidden" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
             </a>
             {%- endapply -%}
           {%- endfor -%}
