@@ -2277,6 +2277,7 @@ a.btn-gold:hover {
 
 [class*="note-"] {
   padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 [class*="note-"]:before {
