@@ -1698,10 +1698,6 @@ a.btn-gold:hover {
   display: none;
 }
 
-.h-28 {
-  height: 7rem;
-}
-
 .h-12 {
   height: 3rem;
 }
@@ -1760,6 +1756,10 @@ a.btn-gold:hover {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-\[22rem\] {
+  width: 22rem;
 }
 
 .max-w-screen-md {
@@ -1937,11 +1937,6 @@ a.btn-gold:hover {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.bg-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
-}
-
 .bg-gold {
   --tw-bg-opacity: 1;
   background-color: rgb(242 208 127 / var(--tw-bg-opacity));
@@ -1959,6 +1954,11 @@ a.btn-gold:hover {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 60 86 / var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -2083,11 +2083,6 @@ a.btn-gold:hover {
   line-height: 1.25rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2096,6 +2091,11 @@ a.btn-gold:hover {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-xs {
@@ -2850,10 +2850,6 @@ a.btn-gold:hover {
     width: 3rem;
   }
 
-  .md\:w-3\/5 {
-    width: 60%;
-  }
-
   .md\:flex-\[1_1_25\%\] {
     flex: 1 1 25%;
   }
@@ -2965,10 +2961,6 @@ a.btn-gold:hover {
 @media (min-width: 1024px) {
   .lg\:block {
     display: block;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 }
 
