@@ -7,6 +7,7 @@ layout: download
 menu:
   main:
     weight: 30
+  footer:
 slug: telecharger
 ---
 # Télécharger
