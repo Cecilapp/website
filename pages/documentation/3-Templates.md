@@ -661,7 +661,7 @@ _Examples:_
 Reads characters before `<!-- excerpt -->` or `<!-- break -->` tag.
 
 ```twig
-{{ string|excerpt_html(separator, capture) }}
+{{ string|excerpt_html({separator, capture}) }}
 ```
 
 | Option    | Description                                           | Type    | Default         |
@@ -673,7 +673,8 @@ _Examples:_
 
 ```twig
 {{ variable|excerpt_html }}
-{{ variable|excerpt_html('excerpt|break', 'before') }}
+{{ variable|excerpt_html({separator: 'excerpt|break', capture:'before'}) }}
+{{ variable|excerpt_html({capture:'after'}) }}
 ```
 
 ### to_css
