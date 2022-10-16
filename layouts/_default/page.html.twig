@@ -157,6 +157,7 @@
     {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
     {%~ include 'partials/highlight.js.twig' only -%}
+    {%~ include 'partials/cloudflareinsights.js.twig' with {token: site.cloudflareinsights} only -%}
     {%~ endblock footer_scripts ~%}
     <style>{% apply minify_css %}
       {% block footer_css %}

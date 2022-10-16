@@ -93,6 +93,7 @@ release:
   sha1: cecil.phar.sha1
 docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
 #googleanalytics: UA-387892-21
+cloudflareinsights: 601e6965b5bc43b782058112c5312906
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 highlight:
   version: 11.5.1
