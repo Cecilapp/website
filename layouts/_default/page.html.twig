@@ -108,21 +108,22 @@
           {%- if site.menus.footer is defined ~%}
             {%- if site.menus.footer.about is defined ~%}
           <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans %}About{% endtrans %}</a></li>
-            {%- endif ~%}
-            {%- if site.menus.footer.download is defined ~%}
+            {%- endif -%}
+            {%- if site.menus.footer.download is defined -%}
           <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.download.url) }}">{% trans %}Download{% endtrans %}</a></li>
-            {%- endif ~%}
-            {%- if site.menus.footer.github.url is defined ~%}
+            {%- endif -%}
+            {%- if site.menus.footer.github.url is defined -%}
           <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans %}Open source{% endtrans %}</a></li>
-            {%- endif ~%}
-          {%- endif ~%}
-          {%- if page.translations|length >= 1 ~%}
+            {%- endif -%}
+          {%- endif -%}
+          {%- if page.translations|length >= 1 -%}
           <li class="inline">{% include 'partials/languages.html.twig' %}</li>
           {%- endif ~%}
         </ul>
         <ul>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
           <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a></li>
+          {#--#}
           <li class="inline">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
         </ul>
         <div>
