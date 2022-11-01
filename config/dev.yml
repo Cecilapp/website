@@ -8,9 +8,9 @@ metatags:
 body:
   images:
     lazy:
-      enabled: false
+      enabled: true
     caption:
-      enabled: false
+      enabled: true
     remote:
       enabled: false
     resize:
