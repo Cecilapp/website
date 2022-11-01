@@ -626,6 +626,16 @@ img {
   margin-bottom: 0.25rem;
 }
 
+figcaption {
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+video {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
