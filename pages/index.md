@@ -40,8 +40,8 @@ blocks:
       visible: true
     - title: Easy to deploy
       description: "Create & deploy a new blog in 1 minute.  \n
-        [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg \"Deploy to Netlify\")](/hosting/netlify/deploy/) 
-        [![Deploy to Vercel](https://vercel.com/button/default.svg \"Deploy to Vercel\")](/hosting/vercel/deploy/)"
+        [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](/hosting/netlify/deploy/ \"Deploy to Netlify\") 
+        [![Deploy to Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Deploy to Vercel\")"
       icon: rocket
       visible: true
   feature:
