@@ -32,6 +32,12 @@
   img {
     @apply mb-1;
   }
+  figcaption {
+    @apply text-center italic !important;
+  }
+  video {
+    @apply my-0 !important;
+  }
 }
 
 @layer components {
