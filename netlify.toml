@@ -24,7 +24,6 @@
 [context.deploy-preview.environment]
   CECIL_ENV = "preview"
 
-
 #[[plugins]]
 #  package = "netlify-plugin-refresh-algolia"
 #  [plugins.inputs]
@@ -37,3 +36,8 @@
 #  [context.algolia.plugins.inputs]
 #    appId = "PVTO81KCEC"
 #    indexName = "documentation-preview"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  [plugins.inputs]
+    output_path = "lighthouse.html"
