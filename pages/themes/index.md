@@ -7,6 +7,7 @@ menu:
   themes:
     weight: 0
 #redirect: https://github.com/cecilapp?q=theme#org-repositories
+output: html
 ---
 <!--
 ```bash
