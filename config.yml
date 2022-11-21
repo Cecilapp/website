@@ -77,6 +77,7 @@ output:
     section: ['html', 'atom']
 theme:
   - netlify
+  - pwa
 netlify:
   redirects:
     - from: https://cecilapp.netlify.app/*
@@ -84,6 +85,9 @@ netlify:
       status: 301
       force: true
   redirect_by_language: true
+manifest:
+  background_color: '#163C56'
+  theme_color: '#163C56'
 static:
   exclude:
     - 'cecil-demo.png'

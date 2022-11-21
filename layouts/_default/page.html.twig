@@ -31,6 +31,9 @@
     {%- endif ~%}
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
     {%~ endblock head ~%}
+    <link rel="manifest" href="{{ url('manifest') }}">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#163C56" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111827" />
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
     <header class="sticky top-0 md:-top-[15px] z-[100] px-6 py-2 md:pt-6 md:pb-2 bg-blue dark:bg-dark"
