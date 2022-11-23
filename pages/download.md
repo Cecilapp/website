@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-[PHP](https://www.php.net/manual/en/install.php) 7.1+ is required.
+[PHP](https://www.php.net/manual/en/install.php) 7.4+ is required.
 :::
 
 :::tip
