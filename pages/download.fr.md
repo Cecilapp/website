@@ -16,21 +16,27 @@ Vous pouvez télécharger `cecil.phar` en cliquant sur le bouton "Télécharger"
 
 ```bash
 curl -LO https://cecil.app/cecil.phar
-php cecil.phar --version
 ```
 
-> [PHP](https://www.php.net/manual/fr/install.php) 7.1+ est requis.  
-> L’intégrité du fichier peut être vérifié via le fichier `SHA1`, en cliquant sur le bouton "Somme de contrôle du fichier".
+:::important
+[PHP](https://www.php.net/manual/fr/install.php) 7.4+ est requis.
+:::
+
+:::tip
+L’intégrité du fichier peut être vérifié via le fichier `SHA1`, en cliquant sur le bouton "Somme de contrôle du fichier".
+:::
 
 ## Installation globale
 
 Pour plus de confort vous devriez installer Cecil globalement.
 
-### macOS et Linux
+### macOS
+
+Vous pouvez installer Cecil sur macOS avec 🍺[Homebrew](https://brew.sh):
 
 ```bash
-mv cecil.phar /usr/local/bin/cecil
-chmod +x /usr/local/bin/cecil
+brew tap cecilapp/cecil
+brew install cecil
 ```
 
 ### Windows
@@ -39,6 +45,13 @@ chmod +x /usr/local/bin/cecil
 2. Renommez `cecil.phar` vers `cecil`
 3. Ajoutez `;C:\bin` à votre variable d’environnement `PATH`
 4. Créez un ["wrapping batch script"](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
+
+### Linux
+
+```bash
+mv cecil.phar /usr/local/bin/cecil
+chmod +x /usr/local/bin/cecil
+```
 
 ## Mise à jour
 
@@ -51,10 +64,12 @@ php cecil self-update
 ## Obtenir une version spécifique
 
 Si vous souhaitez télécharger une version spécifique vous pouvez la spécifier dans le chemin de l’URL.  
-Par exemple, si vous souhaitez installer la version `4.0.0` vous devez ajouter `download/4.0.0/` dans l’URL :
+Par exemple, si vous souhaitez installer la version `7.0.0` vous devez ajouter `download/7.0.0/` dans l’URL :
 
 ```bash
-curl -LO https://cecil.app/download/4.0.0/cecil.phar
+curl -LO https://cecil.app/download/7.0.0/cecil.phar
 ```
 
-> Voir la ["releases list"](https://github.com/Cecilapp/Cecil/releases) sur GitHub.
+:::info
+La _[releases list](https://github.com/Cecilapp/Cecil/releases)_ est disponible sur GitHub.
+:::
