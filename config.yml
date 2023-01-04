@@ -74,7 +74,7 @@ output:
       extension: 'sh'
   pagetypeformats:
     homepage: ['html', 'atom', 'algolia']
-    section: ['html', 'atom']
+    section: ['html', 'atom', 'jsonfeed']
 theme:
   - netlify
   - pwa
