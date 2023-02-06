@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: Montserrat, sans-serif;
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -410,6 +413,12 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -470,7 +479,6 @@ select {
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
           print-color-adjust: exact;
 }
 
@@ -481,7 +489,6 @@ select {
   background-size: initial;
   padding-right: 0.75rem;
   -webkit-print-color-adjust: unset;
-     color-adjust: unset;
           print-color-adjust: unset;
 }
 
@@ -491,7 +498,6 @@ select {
           appearance: none;
   padding: 0;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
           print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
@@ -583,7 +589,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5rem;
 }
 
-h1,  h2 {
+h1, h2 {
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -608,17 +614,16 @@ header a {
   color: rgb(242 208 127 / var(--tw-text-opacity));
 }
 
-main a:hover:not(.btn):not(.menu-item):not(.doc-item), 
+main a:hover:not(.btn):not(.menu-item):not(.doc-item),
   footer a:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 p {
   margin-bottom: 1rem;
 }
 
-img,  svg {
+img, svg {
   display: inline-block;
 }
 
@@ -637,53 +642,6 @@ video {
 }
 
 *, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-
-::-webkit-backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -796,6 +754,11 @@ video {
 .markdown {
   color: #092F44;
   max-width: 65ch;
+}
+
+.markdown :where(p):not(:where([class~="not-markdown"] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 
 .markdown :where([class~="lead"]):not(:where([class~="not-markdown"] *)) {
@@ -1153,11 +1116,6 @@ video {
   line-height: 1.75;
 }
 
-.markdown :where(p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
 .markdown :where(video):not(:where([class~="not-markdown"] *)) {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -1279,151 +1237,6 @@ video {
   color: #d1d5db;
 }
 
-.markdown-sm :where(.markdown > ul > li p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0.5714286em;
-  margin-bottom: 0.5714286em;
-}
-
-.markdown-sm :where(.markdown > ul > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.1428571em;
-}
-
-.markdown-sm :where(.markdown > ul > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.1428571em;
-}
-
-.markdown-sm :where(.markdown > ol > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.1428571em;
-}
-
-.markdown-sm :where(.markdown > ol > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.1428571em;
-}
-
-.markdown-sm :where(.markdown > :first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0;
-}
-
-.markdown-sm :where(.markdown > :last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 0;
-}
-
-.markdown-base :where(.markdown > ul > li p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-}
-
-.markdown-base :where(.markdown > ul > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.25em;
-}
-
-.markdown-base :where(.markdown > ul > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.25em;
-}
-
-.markdown-base :where(.markdown > ol > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.25em;
-}
-
-.markdown-base :where(.markdown > ol > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.25em;
-}
-
-.markdown-base :where(.markdown > :first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0;
-}
-
-.markdown-base :where(.markdown > :last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 0;
-}
-
-.markdown-lg :where(.markdown > ul > li p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0.8888889em;
-  margin-bottom: 0.8888889em;
-}
-
-.markdown-lg :where(.markdown > ul > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.3333333em;
-}
-
-.markdown-lg :where(.markdown > ul > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.3333333em;
-}
-
-.markdown-lg :where(.markdown > ol > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.3333333em;
-}
-
-.markdown-lg :where(.markdown > ol > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.3333333em;
-}
-
-.markdown-lg :where(.markdown > :first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0;
-}
-
-.markdown-lg :where(.markdown > :last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 0;
-}
-
-.markdown-xl :where(.markdown > ul > li p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
-}
-
-.markdown-xl :where(.markdown > ul > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.2em;
-}
-
-.markdown-xl :where(.markdown > ul > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.2em;
-}
-
-.markdown-xl :where(.markdown > ol > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.2em;
-}
-
-.markdown-xl :where(.markdown > ol > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.2em;
-}
-
-.markdown-xl :where(.markdown > :first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0;
-}
-
-.markdown-xl :where(.markdown > :last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 0;
-}
-
-.markdown-2xl :where(.markdown > ul > li p):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0.8333333em;
-  margin-bottom: 0.8333333em;
-}
-
-.markdown-2xl :where(.markdown > ul > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.3333333em;
-}
-
-.markdown-2xl :where(.markdown > ul > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.3333333em;
-}
-
-.markdown-2xl :where(.markdown > ol > li > *:first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 1.3333333em;
-}
-
-.markdown-2xl :where(.markdown > ol > li > *:last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 1.3333333em;
-}
-
-.markdown-2xl :where(.markdown > :first-child):not(:where([class~="not-markdown"] *)) {
-  margin-top: 0;
-}
-
-.markdown-2xl :where(.markdown > :last-child):not(:where([class~="not-markdown"] *)) {
-  margin-bottom: 0;
-}
-
 .jumbotron {
   --tw-bg-opacity: 1;
   background-color: rgb(22 60 86 / var(--tw-bg-opacity));
@@ -1465,8 +1278,7 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .dark .btn {
@@ -1488,8 +1300,7 @@ video {
 }
 
 a.btn {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .btn-sm {
@@ -1585,7 +1396,6 @@ a.btn-gold:hover {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -2172,8 +1982,7 @@ a.btn-gold:hover {
 }
 
 .no-underline {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .shadow {
@@ -2210,9 +2019,9 @@ a.btn-gold:hover {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2402,7 +2211,6 @@ a.btn-gold:hover {
 /* ToC */
 
 .toc {
-  position: -webkit-sticky;
   position: sticky;
   top: 75px;
 }
@@ -2422,7 +2230,6 @@ a.btn-gold:hover {
 
 .back-to-top-link {
   position: fixed;
-  position: -webkit-sticky;
   position: sticky;
   pointer-events: all;
   top: calc(100vh - 3rem);
@@ -2480,19 +2287,19 @@ a.btn-gold:hover {
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
-.dark .algolia-autocomplete .aa-input, .dark 
+.dark .algolia-autocomplete .aa-input,.dark 
 .algolia-autocomplete .aa-hint {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
-.algolia-autocomplete .aa-input:focus, 
+.algolia-autocomplete .aa-input:focus,
 .algolia-autocomplete .aa-hint:focus {
   --tw-border-opacity: 1;
   border-color: rgb(22 60 86 / var(--tw-border-opacity));
 }
 
-.dark .algolia-autocomplete .aa-input:focus, .dark 
+.dark .algolia-autocomplete .aa-input:focus,.dark 
 .algolia-autocomplete .aa-hint:focus {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -2646,8 +2453,7 @@ a.btn-gold:hover {
 }
 
 .hover\:no-underline:hover {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .hover\:shadow-lg:hover {
@@ -2696,13 +2502,11 @@ a.btn-gold:hover {
 }
 
 .markdown-a\:no-underline :is(:where(a):not(:where([class~="not-markdown"] *))) {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .hover\:markdown-a\:no-underline :is(:where(a):not(:where([class~="not-markdown"] *))):hover {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .markdown-ul\:m-0 :is(:where(ul):not(:where([class~="not-markdown"] *))) {
@@ -2711,22 +2515,6 @@ a.btn-gold:hover {
 
 .markdown-ul\:list-none :is(:where(ul):not(:where([class~="not-markdown"] *))) {
   list-style-type: none;
-}
-
-.dark .dark\:markdown-dark {
-  color: #d1d5db;
-}
-
-.dark .dark\:markdown-dark :where(h1, h2, h3, h4, code, blockquote, strong):not(:where([class~="not-markdown"] *)) {
-  color: #d1d5db;
-}
-
-.dark .dark\:markdown-dark :where(a, a:hover, a code):not(:where([class~="not-markdown"] *)) {
-  color: #d1d5db;
-}
-
-.dark .dark\:markdown-dark :where(thead th):not(:where([class~="not-markdown"] *)) {
-  color: #d1d5db;
 }
 
 .dark .dark\:inline-block {
@@ -2786,9 +2574,30 @@ a.btn-gold:hover {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+.dark .dark\:markdown-dark {
+  color: #d1d5db;
+}
+
+.dark .dark\:markdown-dark :where(h1, h2, h3, h4, code, blockquote, strong):not(:where([class~="not-markdown"] *)) {
+  color: #d1d5db;
+}
+
+.dark .dark\:markdown-dark :where(a, a:hover, a code):not(:where([class~="not-markdown"] *)) {
+  color: #d1d5db;
+}
+
+.dark .dark\:markdown-dark :where(thead th):not(:where([class~="not-markdown"] *)) {
+  color: #d1d5db;
+}
+
 .dark .dark\:shadow-slate-500\/40 {
   --tw-shadow-color: rgb(100 116 139 / 0.4);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark .dark\:brightness-90 {
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .dark .dark\:hover\:bg-black:hover {
