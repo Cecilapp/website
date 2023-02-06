@@ -134,6 +134,7 @@ body:
       enabled: true
     remote:
       enabled: true
+    class: dark:brightness-90
   notes:
     enabled: true
   highlight:
