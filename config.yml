@@ -88,6 +88,8 @@ netlify:
 manifest:
   background_color: '#163C56'
   theme_color: '#163C56'
+serviceworker:
+  enabled: true
 static:
   exclude:
     - 'cecil-demo.png'
