@@ -81,4 +81,5 @@ blocks:
 pagination:
   enabled: false
 pagesfrom: news
+cache: false
 ---
