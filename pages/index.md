@@ -62,6 +62,17 @@ blocks:
       shadow: false
       webp: false
       visible: true
+    - title: Broadcast your podcast simply
+      description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
+      path: https://staticast.cecil.app
+      image: https://github.com/Cecilapp/staticast.cecil.app/raw/main/assets/staticast-preview.png
+      shadow: false
+      visible: true
+    - title: Self hosted photo stream
+      description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
+      path: https://photo-stream.cecil.app
+      image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
+      visible: true
   sponsor:
     - title: studio cecillie
       logo: /images/logos/cecillie.png
