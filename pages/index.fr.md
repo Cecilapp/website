@@ -44,7 +44,7 @@ blocks:
       visible: true
   feature:
     - title: Expérience d’écriture intuitive
-      description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d'écrire votre contenu. Il est facile à apprendre et facile à utiliser."
+      description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
       visible: true
