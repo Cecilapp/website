@@ -23,8 +23,7 @@ else
   cat "$CECIL_CACHE_DIR/$CSS_INPUT.sha1"
 fi
 
-# Fetch themes
-echo "Fetch themes"
+echo "Fetches themes"
 curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=theme+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/themes.json
 
 if [[ $CECIL_ENV == "production" ]]; then
