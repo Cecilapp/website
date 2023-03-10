@@ -16,7 +16,7 @@
             {%- if shadow -%}
               {%- set class = 'box-shadow' -%}
             {%- endif ~%}
-            {{ image_template|html({alt: title, loading: 'lazy', class}, {webp}) }}
+            {{ image_template|html({alt: title, loading: 'lazy', class, decoding: 'async'}, {webp}) }}
           </a>
         </div>
       </div>
