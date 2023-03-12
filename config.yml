@@ -124,7 +124,7 @@ metatags:
   articles: news
 body:
   images:
-    class: "image dark:brightness-90"
+    class: "markdown dark:brightness-90"
     resize:
       enabled: true
     responsive:
@@ -147,7 +147,7 @@ assets:
       enabled: true
       widths: [768, 1024]
       sizes:
-        image: "(max-width: 800px) 768px, 1024px"
+        markdown: "(max-width: 800px) 768px, 1024px"
     webp:
       enabled: true
 paths:
