@@ -9,17 +9,15 @@ metatags:
     enabled: false
 body:
   images:
-    lazy:
-      enabled: true
-    caption:
-      enabled: true
-    remote:
-      enabled: true
     resize:
       enabled: false
     responsive:
       enabled: false
     webp:
       enabled: false
+    caption:
+      enabled: true
+    remote:
+      enabled: true
   highlight:
     enabled: true
