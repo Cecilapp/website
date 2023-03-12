@@ -12,11 +12,11 @@
         <div class="basis-1/2 text-center animate-on-scroll">
           {%- set image_template = asset(image) ~%}
           <a href="{{ url(path) }}" title="{% trans %}Get started{% endtrans %}">
-            {%- set class = '' -%}
+            {%- set class = 'home' -%}
             {%- if shadow -%}
-              {%- set class = 'home box-shadow' -%}
+              {%- set class = class ~ ' box-shadow' -%}
             {%- endif ~%}
-            {{ image_template|html({alt: title, loading: 'lazy', class, decoding: 'async'}, {webp}) }}
+            {{ image_template|html({alt: title, loading: 'lazy', decoding: 'async', class}, {webp}) }}
           </a>
         </div>
       </div>
