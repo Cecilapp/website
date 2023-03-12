@@ -124,19 +124,17 @@ metatags:
   articles: news
 body:
   images:
-    lazy:
-      enabled: true
-    caption:
-      enabled: true
+    class: "image dark:brightness-90"
     resize:
       enabled: true
     responsive:
       enabled: true
     webp:
       enabled: true
+    caption:
+      enabled: true
     remote:
       enabled: true
-    class: dark:brightness-90
   notes:
     enabled: true
   highlight:
@@ -147,6 +145,9 @@ assets:
       enabled: true
     responsive:
       enabled: true
+      widths: [768, 1024]
+      sizes:
+        image: "(max-width: 800px) 768px, 1024px"
     webp:
       enabled: true
 paths:
