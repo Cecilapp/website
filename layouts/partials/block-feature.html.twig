@@ -14,7 +14,7 @@
           <a href="{{ url(path) }}" title="{% trans %}Get started{% endtrans %}">
             {%- set class = '' -%}
             {%- if shadow -%}
-              {%- set class = 'box-shadow' -%}
+              {%- set class = 'home box-shadow' -%}
             {%- endif ~%}
             {{ image_template|html({alt: title, loading: 'lazy', class, decoding: 'async'}, {webp}) }}
           </a>
