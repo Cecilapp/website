@@ -102,15 +102,15 @@ docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
 cloudflareinsights: 601e6965b5bc43b782058112c5312906
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 highlight:
-  version: 11.5.1
+  version: 11.7.0
   styles: atom-one-dark
   languages: twig
 anchor:
-  version: 4.3.1
+  version: 5.0.0
 tocbot:
-  version: 4.12.3
+  version: 4.20.1
 alpinejs:
-  version: 3.8.1
+  version: 3.12.0
 algolia:
   enabled: true
   version: '@4'
