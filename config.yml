@@ -148,6 +148,7 @@ assets:
       widths: [768, 1024]
       sizes:
         markdown: "(max-width: 800px) 768px, 1024px"
+        home: "(max-width: 767px) 768px, 50vw"
     webp:
       enabled: true
 paths:
