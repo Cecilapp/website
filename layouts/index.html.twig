@@ -73,8 +73,8 @@ php cecil.phar serve</pre>
 
 {% block features %}
     <div id="features">
-    {%~ include 'partials/block-feature.html.twig' with {loop, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow ?? true, webp:block.webp ?? true} only ~%}
     {%- for block in page.blocks.features|default({})|filter(b => b.visible != false) ~%}
+    {%~ include 'partials/block-feature.html.twig' with {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow ?? true, webp:block.webp ?? true} only ~%}
     {%- endfor ~%}
     </div>
 {% endblock %}

@@ -44,31 +44,36 @@ blocks:
         [![Deploy to Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Deploy to Vercel\")"
       icon: rocket
       visible: true
-    - title: Intuitive writing experience
   features:
+    - id: markdown
+      title: Intuitive writing experience
       description: "Cecil’s [Markdown](/documentation/content/#body) parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
       visible: true
-    - title: Modern template engine
+    - id: twig
+      title: Modern template engine
       description: "Cecil’s templating, powered by [Twig](/documentation/templates/), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
       visible: true
-    - title: A ready to use blog
+    - id: the-butler
+      title: A ready to use blog
       description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog with a user friendly CMS, powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
       webp: false
       visible: true
-    - title: Broadcast your podcast simply
+    - id: staticast
+      title: Broadcast your podcast simply
       description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
       path: https://staticast.cecil.app
       image: https://github.com/Cecilapp/staticast.cecil.app/raw/main/assets/staticast-preview.png
       shadow: false
       visible: true
-    - title: Self hosted photo stream
+    - id: photo-stream
+      title: Self hosted photo stream
       description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
       path: https://photo-stream.cecil.app
       image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png

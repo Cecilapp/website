@@ -42,31 +42,36 @@ blocks:
         [![Déployer sur Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Déployer sur Vercel\")"
       icon: rocket
       visible: true
-    - title: Expérience d’écriture intuitive
   features:
+    - id: markdown
+      title: Expérience d’écriture intuitive
       description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
       visible: true
-    - title: Moteur de template moderne
+    - id: twig
+      title: Moteur de template moderne
       description: "Les modèles de Cecil, propulsés par [Twig](/documentation/templates/), offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
       visible: true
-    - title: Un blog prêt à l’emploi
+    - id: the-butler
+      title: Un blog prêt à l’emploi
       description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un CMS convivial, propulsé par Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
       webp: false
       visible: true
-    - title: Diffuser son podcast simplement
+    - id: staticast
+      title: Diffuser son podcast simplement
       description: "Staticast est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
       path: https://staticast.cecil.app
       image: https://github.com/Cecilapp/staticast.cecil.app/raw/main/assets/staticast-preview.png
       shadow: false
       visible: true
-    - title: Flux de photos auto-hébergé
+    - id: photo-stream
+      title: Flux de photos auto-hébergé
       description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
       path: https://photo-stream.cecil.app
       image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
