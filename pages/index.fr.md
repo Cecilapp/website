@@ -42,8 +42,8 @@ blocks:
         [![Déployer sur Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Déployer sur Vercel\")"
       icon: rocket
       visible: true
-  feature:
     - title: Expérience d’écriture intuitive
+  features:
       description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
@@ -71,7 +71,7 @@ blocks:
       path: https://photo-stream.cecil.app
       image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
       visible: true
-  sponsor:
+  sponsors:
     - title: studio cecillie
       logo: /images/logos/cecillie.png
       logo_dark: /images/logos/cecillie-dark.png

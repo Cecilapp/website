@@ -44,8 +44,8 @@ blocks:
         [![Deploy to Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Deploy to Vercel\")"
       icon: rocket
       visible: true
-  feature:
     - title: Intuitive writing experience
+  features:
       description: "Cecil’s [Markdown](/documentation/content/#body) parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
@@ -73,7 +73,7 @@ blocks:
       path: https://photo-stream.cecil.app
       image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
       visible: true
-  sponsor:
+  sponsors:
     - title: studio cecillie
       logo: /images/logos/cecillie.png
       logo_dark: /images/logos/cecillie-dark.png
