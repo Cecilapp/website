@@ -86,7 +86,7 @@ netlify:
       force: true
   redirect_by_language: true
 manifest:
-  background_color: '#063C58'
+  background_color: '#092F44'
   theme_color: '#163C56'
   shortcuts: true
 serviceworker:
