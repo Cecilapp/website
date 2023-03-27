@@ -7,6 +7,14 @@
               </div>
               <script>
                 document.querySelector('div.search-container').style.display = 'block';
+                window.addEventListener('offline', (e) => {
+                  console.log('Browser is offline');
+                  document.querySelector('div.search-container').style.display = 'none';
+                });
+                window.addEventListener('online', (e) => {
+                  console.log('Browser is online');
+                  document.querySelector('div.search-container').style.display = 'block';
+                });
               </script>
               <script src="{{ asset('https://cdn.jsdelivr.net/npm/algoliasearch' ~ site.algolia.version ~ '/dist/algoliasearch-lite.umd.js',{minify:false}) }}"></script>
               <script src="{{ asset('https://cdn.jsdelivr.net/autocomplete.js/' ~ site.algolia.autocomplete.version ~ '/autocomplete.min.js',{minify:false}) }}"></script>
