@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a434562d990483c849b8bbd22f573aed",
+    "content-hash": "163018bf9c7001de6567104a20ff0a5b",
     "packages": [
         {
             "name": "cecil/theme-installer",
@@ -132,16 +132,16 @@
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "1.14.2",
+            "version": "1.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "6336e01358cd6811f2e3165920a8376648a298f1"
+                "reference": "feddf0c99c0343b246454cd1d5b3031847c3cd38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/6336e01358cd6811f2e3165920a8376648a298f1",
-                "reference": "6336e01358cd6811f2e3165920a8376648a298f1",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/feddf0c99c0343b246454cd1d5b3031847c3cd38",
+                "reference": "feddf0c99c0343b246454cd1d5b3031847c3cd38",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/1.14.2"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/1.15.1"
             },
             "funding": [
                 {
@@ -182,7 +182,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-03-27T10:32:06+00:00"
+            "time": "2023-04-04T08:55:31+00:00"
         }
     ],
     "packages-dev": [],

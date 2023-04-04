@@ -91,6 +91,8 @@ manifest:
   shortcuts: true
 serviceworker:
   enabled: true
+  notification:
+    enabled: true
 static:
   exclude:
     - 'cecil-demo.png'
