@@ -92,7 +92,7 @@ manifest:
 serviceworker:
   enabled: true
   notification:
-    enabled: true
+    enabled: false
 static:
   exclude:
     - 'cecil-demo.png'
