@@ -1,6 +1,6 @@
 ---
-redirect: download/7.35.2/cecil.phar.sha1
+redirect: download/7.36.0/cecil.phar.sha1
 slug: cecil
 output: sha1
-date: 2023-04-12
+date: 2023-04-14
 ---
