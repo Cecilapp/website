@@ -1,0 +1,18 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+        <div class="mx-auto">
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+            <p>
+              <a id="download-button" class="btn btn-sm" href="{{ url(site.release.name) }}" role="button">{% trans %}Download{% endtrans %}</a>
+              <a class="btn btn-sm" href="{{ url(site.release.sha1) }}" role="button">{% trans %}File checksum{% endtrans %}</a>
+            </p>
+            {{ page.content }}
+          </div>
+        </div>
+{% endblock content %}
+
+{% block footer_scripts %}
+    {{ parent() }}
+    {%~ include 'partials/version.js.twig' only ~%}
+{% endblock footer_scripts %}

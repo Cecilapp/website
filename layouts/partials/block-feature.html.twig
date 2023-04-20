@@ -1,0 +1,22 @@
+{# Variables: id, title, description, path, image, shadow, webp #}
+      <div id="feature-{{ id }}" class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-gold dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
+        <div class="basis-1/2 text-center align-middle">
+          <h2 class="text-4xl mb-8">{{ title }}</h2>
+          <div class="text-2xl mb-8">
+            {{ description|markdown_to_html }}
+          </div>
+          <div>
+            <a class="text-xl" href="{{ url(path) }}">{% trans %}Get started{% endtrans %}</a>
+          </div>
+        </div>
+        <div class="basis-1/2 text-center animate-on-scroll">
+          {%- set image_template = asset(image) ~%}
+          <a href="{{ url(path) }}" title="{% trans %}Get started{% endtrans %}">
+            {%- set class = 'home' -%}
+            {%- if shadow -%}
+              {%- set class = class ~ ' box-shadow' -%}
+            {%- endif ~%}
+            {{ image_template|html({alt: title, loading: 'lazy', decoding: 'async', class}, {webp}) }}
+          </a>
+        </div>
+      </div>

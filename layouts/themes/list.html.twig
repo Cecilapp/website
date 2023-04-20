@@ -1,0 +1,24 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+        <div class="mx-auto">
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+            {% include 'partials/themes-nav.html.twig' %}
+            <h1>{{ page.title }}</h1>
+            {{- page.content ~}}
+            {%- for theme in site.data.themes|filter(t => 'composer-installer' not in t.topics and 'theme-component' not in t.topics) ~%}
+            <h2>{{ theme.name|split('-')[1]|capitalize }}</h2>
+            <p>{{ theme.description }}</p>
+            <a class="btn btn-sm" href="{{ theme.url }}#readme" role="button">{% trans %}Download{% endtrans %}</a>
+            {%- if theme.homepage ~%}
+            <a class="btn btn-sm" href="{{ theme.homepage }}" role="button">{% trans %}Demo{% endtrans %}</a>
+            {%- endif ~%}
+            {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ theme.full_name ~ '/' ~ theme.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot.size > 0 ~%}
+            <p>{{ screenshot|html({alt: theme.name}) }}</p>
+            {%- endif ~%}
+            <p>{{ theme.license }}</p>
+            {%- endfor ~%}
+          </div>
+        </div>
+{% endblock %}
