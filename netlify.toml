@@ -1,7 +1,6 @@
 [build]
   publish = "_site"
   command = "bash ./scripts/netlify-build.sh"
-
 [build.environment]
   #PHP_VERSION = "7.4"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
@@ -10,6 +9,9 @@
   CSS_INPUT = "assets/tailwind.css"
   CSS_OUPUT = "assets/styles.css"
   #ALGOLIA_INDEX = "_site/algolia.json"
+
+[context."8.x-dev".environment]
+  CECIL_BASEURL = "https://8-x-dev.cecil.app/"
 
 [context.production.environment]
   CECIL_ENV = "production"
