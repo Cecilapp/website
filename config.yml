@@ -129,23 +129,24 @@ algolia:
 metatags:
   jsonld: true
   articles: news
-body:
-  images:
-    class: "markdown dark:brightness-90"
-    resize:
+pages:
+  body:
+    images:
+      class: "markdown dark:brightness-90"
+      resize:
+        enabled: true
+      responsive:
+        enabled: true
+      webp:
+        enabled: true
+      caption:
+        enabled: true
+      remote:
+        enabled: true
+    notes:
       enabled: true
-    responsive:
+    highlight:
       enabled: true
-    webp:
-      enabled: true
-    caption:
-      enabled: true
-    remote:
-      enabled: true
-  notes:
-    enabled: true
-  highlight:
-    enabled: true
 assets:
   images:
     optimize:
