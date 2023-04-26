@@ -5,9 +5,6 @@ sortby: weight
 pagination:
   enabled: false
 path: documentation
-image: images/cecil-card-docs.png
-cascade:
-  image: images/cecil-card-docs.png
 ---
 Vous trouverez ci-dessous les principales pages de notre documentation.
 
