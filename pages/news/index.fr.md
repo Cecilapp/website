@@ -6,8 +6,5 @@ sortby:
   desc_title: true
 pagination:
   enabled: false
-image: images/cecil-card-news.png
-cascade:
-  image: images/cecil-card-news.png
 path: actualites
 ---
