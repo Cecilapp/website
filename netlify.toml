@@ -6,7 +6,7 @@
   #PHP_VERSION = "7.4"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
   CECIL_CACHE_DIR = "/opt/build/cache/"
-  NODE_VERSION = "12.16"
+  #NODE_VERSION = "12.16"
   CSS_INPUT = "assets/tailwind.css"
   CSS_OUPUT = "assets/styles.css"
   #ALGOLIA_INDEX = "_site/algolia.json"
