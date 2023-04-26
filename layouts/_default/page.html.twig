@@ -1,3 +1,8 @@
+{% if page.section %}
+  {%- set section = page.section %}
+  {%- if page.section == 'documentation' %}{% set section = 'docs' %}{% endif %}
+  {%- set image = asset('https://res.cloudinary.com/aligny/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_610,y_480,l_text:montserrat_120_ultrabold_line_spacing_-30:' ~ section|title|replace({',': ' '})|url_encode ~ '/cecil/cecil-card.png', {filename: 'assets/cards/' ~ section|slugify  ~ '.png'}) %}
+{% endif %}
 {% import 'macros/octicon.twig' as octicon %}
 <!DOCTYPE html>
 <html lang="{{ site.language }}" class="scroll-pt-[60px]"
