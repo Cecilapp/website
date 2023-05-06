@@ -1,7 +1,7 @@
 <!--
 description: "Working with layouts and templates."
 date: 2021-05-07
-updated: 2023-04-19
+updated: 2023-05-05
 alias: documentation/layouts
 -->
 # Templates
@@ -771,7 +771,6 @@ _Examples:_
 
 ```twig
 {{ asset('styles.scss')|to_css }}
-{{ 'styles.scss'|to_css }} {# deprecated #}
 ```
 
 ### fingerprint
@@ -787,7 +786,6 @@ _Examples:_
 
 ```twig
 {{ asset('styles.css')|fingerprint }}
-{{ 'styles.css'|fingerprint }} {# deprecated #}
 ```
 
 ### minify
@@ -796,14 +794,12 @@ Minifying a CSS or a JavaScript file.
 
 ```twig
 {{ asset(path)|minify }}
-{{ path|minify }} {# deprecated #}
 ```
 
 _Examples:_
 
 ```twig
 {{ asset('styles.css')|minify }}
-{{ 'styles.css'|minify }} {# deprecated #}
 {{ asset('scripts.js')|minify }}
 ```
 
@@ -909,7 +905,6 @@ Resizes an image to a specified with.
 
 ```twig
 {{ asset(image_path)|resize(integer) }}
-{{ <image_path>|resize(integer) }} {# deprecated #}
 ```
 
 :::info
@@ -1179,9 +1174,6 @@ php cecil.phar util:extract
 
 [`partials/languages.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/languages.html.twig)
 :   Switcher between [languages](4-Configuration.md#languages).
-
-[`partials/googleanalytics.js.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/googleanalytics.js.twig)
-:   Google Analytics traking script. See [configuration](4-Configuration.md#googleanalytics).
 
 ## Custom extension
 
