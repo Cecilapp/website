@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2022-03-07
+updated: 2023-10-20
 blocks:
   about:
     - title: Rapide & sécurisé
@@ -94,5 +94,5 @@ blocks:
       visible: true
 pagination:
   enabled: false
-output: ['html', 'atom']
+pagesfrom: news
 ---
