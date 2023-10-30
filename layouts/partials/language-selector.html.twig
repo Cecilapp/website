@@ -1,6 +1,6 @@
-{# Language switcher #}
-{%- if page.translations|length >= 1 ~%}
-{# mobile #}
+          {#- Language switcher -#}
+          {%- if page.translations|length >= 1 -%}
+          {#- mobile ~#}
           <label class="sr-only" for="language">{% trans %}Language:{% endtrans %}</label>
           <select id="language" onchange="setLanguageCookie(value)" class="md:hidden w-14 border-0 p-0 bg-transparent text-gold dark:text-white" @change="document.location.href=$event.target.value">
             <option value="{{ url(page) }}" class="bg-darkblue dark:bg-dark">{{ page.language|upper }}</option>
@@ -10,7 +10,7 @@
               {%- endif ~%}
             {%- endfor ~%}
           </select>
-{#- desktop #}
+          {#- desktop ~#}
           <div class="hidden md:flex justify-center">
             <div
               x-data="{
@@ -78,4 +78,4 @@
               return str;
             }
           </script>
-{%- endif %}
+          {%- endif ~%}
