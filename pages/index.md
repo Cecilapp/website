@@ -44,6 +44,10 @@ blocks:
         [![Deploy to Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Deploy to Vercel\")"
       icon: rocket
       visible: true
+    - title: Open source
+      description: "Participate in development of Cecil via [GitHub](https://github.com/Cecilapp/Cecil)."
+      icon: mark-github
+      visible: true
   features:
     - id: markdown
       title: Intuitive writing experience
