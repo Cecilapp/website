@@ -1,12 +1,13 @@
 {% extends '_default/page.html.twig' %}
 
-{% block head %}
-    {{ parent() }}
+{%- block head ~%}
+    {{- parent() ~}}
     <style>{{- asset('animate.css')|inline -}}</style>
+    {#- Animate JS ~#}
     {{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false})|html({title: 'Animate CSS'}, {preload: true}) ~}}
-{% endblock head %}
+{%- endblock head ~%}
 
-{% block jumbotron %}
+{%- block jumbotron ~%}
     <div class="jumbotron">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row -mx-4">
@@ -39,9 +40,9 @@
         {%- endfor ~%}
       </div>
     </div>
-{% endblock %}
+{%- endblock ~%}
 
-{% block content %}
+{%- block content ~%}
         {#- about blocks ~#}
         <div id="about" class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
@@ -69,17 +70,17 @@ php cecil.phar serve</pre>
           <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn font-medium">{% trans %}Quick Start{% endtrans %}</a>
         </div>
         {%- endif ~%}
-{% endblock %}
+{%- endblock ~%}
 
-{% block features %}
+{%- block features ~%}
     <div id="features">
     {%- for block in page.blocks.features|default({})|filter(b => b.visible != false) ~%}
     {%~ include 'partials/block-feature.html.twig' with {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow ?? true, webp:block.webp ?? true} only ~%}
     {%- endfor ~%}
     </div>
-{% endblock %}
+{%- endblock ~%}
 
-{% block sponsors %}
+{%- block sponsors ~%}
     <div id="sponsors" class="p-10 md:p-16">
       <div class="container mx-auto">
         <div class="text-xl font-bold pb-10 md:pb-16 text-center">{% trans %}Cecil is generously supported by{% endtrans %}</div>
@@ -97,10 +98,10 @@ php cecil.phar serve</pre>
         </div>
       </div>
     </div>
-{% endblock %}
+{%- endblock ~%}
 
-{% block footer_scripts %}
+{%- block footer_scripts ~%}
     {{ parent() }}
     {%~ include 'partials/version.js.twig' only ~%}
     {%~ include 'partials/animation.js.twig' only ~%}
-{% endblock footer_scripts %}
+{%- endblock footer_scripts ~%}
