@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1439,6 +1439,11 @@ a.btn-gold:hover {
 
 .box-shadow {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+img.markdown {
+  height: auto;
+  max-width: 100%;
 }
 
 .sr-only {
