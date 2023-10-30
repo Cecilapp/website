@@ -33,7 +33,7 @@
     <div id="news" class="bg-darkblue dark:bg-black">
       <div class="container mx-auto flex flex-wrap flex-row">
         {%- for news in site.pages.showable|filter_by('section', 'news')|sort_by_date(desc_title=true)|slice(0, 4) ~%}
-        <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold hover:shadow-lg group{% if loop.index > 2 %} hidden md:block{% endif %}" href="{{ url(news) }}" title="{{ news.description|default() }}">
+        <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold hover:shadow-lg group{% if loop.index > 2 %} hidden md:block{% endif %}" href="{{ url(news) }}" title="{{ news.description|default()|replace({'"':"'"}) }}">
           <div class="text-slate-300 group-hover:text-blue mb-1">{{ news.date|format_date('long') }}</div>
           <div class="font-medium text-white group-hover:text-darkblue">{{ news.title }}</div>
         </a>
