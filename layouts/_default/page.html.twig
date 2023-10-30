@@ -74,8 +74,11 @@
           <label class="sr-only" for="documentation">{% trans %}Documentation:{% endtrans %}</label>
           <select id="documentation" class="md:hidden flex w-full border-0 p-0 bg-transparent text-gold dark:text-white bg-none" @change="document.location.href=$event.target.value">
             <option value="{{ url(site.menus.main.documentation.url) }}" class="bg-darkblue dark:bg-dark" selected="selected">Docs</option>
-            {%- for d in site.pages|filter_by('section', 'documentation') ~%}
+            {%- for d in site.pages|filter_by('section', 'documentation')|sort_by_weight ~%}
+            {#-<optgroup label="Configuration" class="bg-darkblue dark:bg-dark font-normal">
+            |filter(f => f.path matches '/^photos/')~#}
             <option value="{{ url(d) }}" class="bg-darkblue dark:bg-dark">{{ d.title }}</option>
+            {#-</optgroup>~#}
             {%- endfor ~%}
           </select>
           {%- endif ~%}
@@ -160,7 +163,7 @@
         </div>
       </div>
       {#- GitHub Stars ~#}
-      <div>
+      <div class="container mx-auto">
         <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">{% trans %}Star{% endtrans %}</a>
       </div>
     </footer>
