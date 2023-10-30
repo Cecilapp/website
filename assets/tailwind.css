@@ -74,6 +74,9 @@
   .box-shadow {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
+  img.markdown {
+    @apply max-w-full h-auto;
+  }
 }
 
 /* terminal buttons */
