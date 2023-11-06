@@ -5,7 +5,7 @@
 {% endif %}
 {% import 'macros/octicon.twig' as octicon %}
 <!DOCTYPE html>
-<html lang="{{ site.language }}" class="scroll-pt-[60px]"
+<html lang="{{ site.language }}" class="scroll-pt-[45px] md:scroll-pt-[60px]"
   x-data="{'darkMode': false, scrolledFromTop: false}"
   x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
