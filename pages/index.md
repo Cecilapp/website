@@ -67,7 +67,7 @@ blocks:
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
-      webp: false
+      webp: true
       visible: true
     - id: staticast
       title: Broadcast your podcast simply
