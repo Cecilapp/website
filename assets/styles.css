@@ -634,8 +634,12 @@ header a {
   color: rgb(242 208 127 / var(--tw-text-opacity));
 }
 
-main a:hover:not(.btn):not(.menu-item):not(.doc-item),
-  footer a:hover {
+main a:not(.btn):not(.menu-item):not(.doc-item),
+  #features p > a {
+  text-decoration-line: underline;
+}
+
+footer a:hover {
   text-decoration-line: underline;
 }
 

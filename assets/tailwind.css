@@ -19,7 +19,10 @@
   header a {
     @apply text-gold;
   }
-  main a:hover:not(.btn):not(.menu-item):not(.doc-item),
+  main a:not(.btn):not(.menu-item):not(.doc-item),
+  #features p > a {
+    @apply underline;
+  }
   footer a:hover {
     @apply underline;
   }
