@@ -12,7 +12,8 @@
       "cecil",
       "font",
       "icons",
-      "theme"
+      "theme",
+      "theme-component"
     ]
   },
   {
