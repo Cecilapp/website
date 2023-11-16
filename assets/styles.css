@@ -643,6 +643,10 @@ main details a {
   text-decoration-line: none !important;
 }
 
+main a[role="button"] {
+  text-decoration-line: none !important;
+}
+
 footer a:hover {
   text-decoration-line: underline;
 }

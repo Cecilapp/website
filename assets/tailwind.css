@@ -26,6 +26,9 @@
   main details a {
     @apply no-underline !important;
   }
+  main a[role="button"] {
+    @apply no-underline !important;
+  }
   footer a:hover {
     @apply underline;
   }
