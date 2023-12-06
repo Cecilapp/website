@@ -130,6 +130,12 @@ metatags:
   jsonld: true
   articles: news
 pages:
+  paths:
+    - section: news
+      path: :section/:year/:month/:day/:slug
+    - section: news
+      language: fr
+      path: actualites/:year/:month/:day/:slug
   body:
     images:
       class: "markdown dark:brightness-90"
@@ -163,10 +169,4 @@ assets:
       enabled: false
       account: 'aligny'
       url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
-paths:
-  - section: news
-    path: :section/:year/:month/:day/:slug
-  - section: news
-    language: fr
-    path: actualites/:year/:month/:day/:slug
 editor: typora
