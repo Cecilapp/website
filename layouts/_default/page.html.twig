@@ -157,7 +157,6 @@
     </footer>
     {%- block footer_scripts ~%}
     <script async defer src="{{ asset('https://buttons.github.io/buttons.js') }}"></script>
-    {%~ include 'partials/googleanalytics.js.twig' -%}
     {%~ include 'partials/anchor.js.twig' only -%}
     {%~ include 'partials/highlight.js.twig' only -%}
     {%~ include 'partials/cloudflareinsights.js.twig' with {token: site.cloudflareinsights} only -%}
