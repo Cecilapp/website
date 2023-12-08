@@ -27,7 +27,7 @@ echo "Fetches themes data"
 curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=theme+in:name+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/themes.json
 
 if [[ $CECIL_ENV == "production" ]]; then
-  php cecil.phar build -v --baseurl=$URL --postprocess
+  php cecil.phar build -v --baseurl=$URL --optimize
 else
   php cecil.phar build -vv --baseurl=$DEPLOY_PRIME_URL --drafts || { sleep 30; false; }
 fi

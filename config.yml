@@ -57,6 +57,12 @@ menus:
   footer:
     - id: github
       url: https://github.com/Cecilapp/
+paths:
+  - section: news
+    path: :section/:year/:month/:day/:slug
+  - section: news
+    language: fr
+    path: actualites/:year/:month/:day/:slug
 output:
   formats:
     - name: phar
@@ -129,23 +135,24 @@ algolia:
 metatags:
   jsonld: true
   articles: news
-body:
-  images:
-    class: "markdown dark:brightness-90"
-    resize:
+pages:
+  body:
+    images:
+      class: "markdown dark:brightness-90"
+      resize:
+        enabled: true
+      responsive:
+        enabled: true
+      webp:
+        enabled: true
+      caption:
+        enabled: true
+      remote:
+        enabled: true
+    notes:
       enabled: true
-    responsive:
+    highlight:
       enabled: true
-    webp:
-      enabled: true
-    caption:
-      enabled: true
-    remote:
-      enabled: true
-  notes:
-    enabled: true
-  highlight:
-    enabled: true
 assets:
   images:
     optimize:
@@ -162,10 +169,4 @@ assets:
       enabled: false
       account: 'aligny'
       url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
-paths:
-  - section: news
-    path: :section/:year/:month/:day/:slug
-  - section: news
-    language: fr
-    path: actualites/:year/:month/:day/:slug
 editor: typora
