@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2022-05-29
+updated: 2023-12-09
 layout: download
 menu:
   main:
@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-[PHP](https://www.php.net/manual/fr/install.php) 7.4+ est requis.
+[PHP](https://www.php.net/manual/fr/install.php) 8.1+ est requis.
 :::
 
 :::tip
@@ -64,10 +64,10 @@ php cecil self-update
 ## Obtenir une version spécifique
 
 Si vous souhaitez télécharger une version spécifique vous pouvez la spécifier dans le chemin de l’URL.  
-Par exemple, si vous souhaitez installer la version `7.0.0` vous devez ajouter `download/7.0.0/` dans l’URL :
+Par exemple, si vous souhaitez installer la version `7.55.0` vous devez ajouter `download/7.55.0/` dans l’URL :
 
 ```bash
-curl -LO https://cecil.app/download/7.0.0/cecil.phar
+curl -LO https://cecil.app/download/7.55.0/cecil.phar
 ```
 
 :::info
