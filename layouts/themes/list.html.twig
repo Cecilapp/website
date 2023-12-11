@@ -1,9 +1,9 @@
 {% extends 'page.html.twig' %}
 
-{% block content %}
+        {%- block content ~%}
         <div class="mx-auto">
           <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
-            {% include 'partials/themes-nav.html.twig' %}
+            {%- include 'partials/themes-nav.html.twig' ~%}
             <h1>{{ page.title }}</h1>
             {{- page.content ~}}
             {%- for theme in site.data.themes|filter(t => 'composer-installer' not in t.topics and 'theme-component' not in t.topics) ~%}
@@ -30,4 +30,4 @@
             {%- endfor ~%}
           </div>
         </div>
-{% endblock %}
+        {%- endblock ~%}
