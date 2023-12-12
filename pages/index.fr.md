@@ -71,14 +71,14 @@ blocks:
       title: Diffuser son podcast simplement
       description: "Staticast est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
       path: https://staticast.cecil.app
-      image: https://github.com/Cecilapp/staticast.cecil.app/raw/main/assets/staticast-preview.png
+      image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
       shadow: false
       visible: true
     - id: photo-stream
       title: Flux de photos auto-hébergé
       description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
       path: https://photo-stream.cecil.app
-      image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
+      image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
       visible: true
   sponsors:
     - title: studio cecillie
