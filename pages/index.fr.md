@@ -61,7 +61,7 @@ blocks:
       visible: true
     - id: the-butler
       title: Un blog prêt à l’emploi
-      description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un CMS convivial, propulsé par Cecil."
+      description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un [CMS](https://v1.netlifycms.org) convivial, propulsé par Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
@@ -69,20 +69,20 @@ blocks:
       visible: true
     - id: staticast
       title: Diffuser son podcast simplement
-      description: "Staticast est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
+      description: "[Staticast](https://staticast.cecil.app) est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
       path: https://staticast.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
       shadow: false
       visible: true
     - id: photo-stream
       title: Flux de photos auto-hébergé
-      description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
+      description: "[Photo Stream](https://photo-stream.cecil.app) est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
       path: https://photo-stream.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
       visible: true
     - id: links
       title: Restez propriétaire de vos liens
-      description: "Links est un clone open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
+      description: "[Links](https://links.cecil.app) est un clone open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
       path: https://links.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
       visible: true
