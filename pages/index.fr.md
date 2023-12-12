@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2023-10-20
+updated: 2023-12-12
 blocks:
   about:
     - title: Rapide & sécurisé
@@ -79,6 +79,12 @@ blocks:
       description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
       path: https://photo-stream.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
+      visible: true
+    - id: links
+      title: Restez propriétaire de vos liens
+      description: "Links est un clone open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
+      path: https://links.cecil.app
+      image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
       visible: true
   sponsors:
     - title: studio cecillie
