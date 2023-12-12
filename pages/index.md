@@ -9,13 +9,11 @@ blocks:
       icon: zap
       visible: true
     - title: Files only
-      description: Your content is stored in [Markdown](/documentation/content/#body) flat files
-        with a [front matter](/documentation/content/#front-matter).
+      description: Your content is stored in [Markdown](/documentation/content/#body) flat files with a [front matter](/documentation/content/#front-matter).
       icon: markdown
       visible: true
     - title: Customisable
-      description: Powered by [Twig](/documentation/templates/), a
-        flexible template engine, with [themes](https://github.com/Cecilapp?q=theme#org-repositories) support.
+      description: Powered by [Twig](/documentation/templates/), a flexible template engine, with [themes](https://github.com/Cecilapp?q=theme#org-repositories) support.
       icon: paintbrush
       visible: true
     - title: Multiples generators
@@ -73,14 +71,14 @@ blocks:
       title: Broadcast your podcast simply
       description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
       path: https://staticast.cecil.app
-      image: https://github.com/Cecilapp/staticast.cecil.app/raw/main/assets/staticast-preview.png
+      image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
       shadow: false
       visible: true
     - id: photo-stream
       title: Self hosted photo stream
       description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
       path: https://photo-stream.cecil.app
-      image: https://github.com/Cecilapp/photo-stream.cecil.app/raw/main/assets/preview.png
+      image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
       visible: true
   sponsors:
     - title: studio cecillie
