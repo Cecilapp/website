@@ -61,7 +61,7 @@ blocks:
       visible: true
     - id: the-butler
       title: A ready to use blog
-      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog with a user friendly CMS, powered by Cecil."
+      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog with a user friendly [CMS](https://v1.netlifycms.org), powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
@@ -69,20 +69,20 @@ blocks:
       visible: true
     - id: staticast
       title: Broadcast your podcast simply
-      description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
+      description: "[Staticast](https://staticast.cecil.app) is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
       path: https://staticast.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
       shadow: false
       visible: true
     - id: photo-stream
       title: Self hosted photo stream
-      description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
+      description: "[Photo Stream](https://photo-stream.cecil.app) is a self hosted static website for your photos, with really goods loading performances."
       path: https://photo-stream.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
       visible: true
     - id: links
       title: Stay the owner of your links
-      description: "Links is an open source Linktree clone powered by Cecil, Tailwind CSS and Font Awesome."
+      description: "[Links](https://links.cecil.app) is an open source Linktree clone powered by Cecil, Tailwind CSS and Font Awesome."
       path: https://links.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
       visible: true
