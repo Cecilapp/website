@@ -1,0 +1,24 @@
+pages:
+  body:
+    images:
+      resize:
+        enabled: false
+      responsive:
+        enabled: false
+      webp:
+        enabled: false
+      caption:
+        enabled: true
+      remote:
+        enabled: true
+    highlight:
+      enabled: true
+static:
+  exclude:
+    - '*.phar*' # dev only
+serviceworker:
+  enabled: true
+metatags:
+  jsonld: false
+  favicon:
+    enabled: false

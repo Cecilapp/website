@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5rem;
+  }
+  h1, h2 {
+    @apply mb-4;
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue dark:text-white;
+  }
+  header a {
+    @apply text-gold;
+  }
+  main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
+  #features p > a {
+    @apply underline;
+  }
+  main details a {
+    @apply no-underline !important;
+  }
+  main a[role="button"] {
+    @apply no-underline !important;
+  }
+  footer a:hover {
+    @apply underline;
+  }
+  p {
+    @apply mb-4;
+  }
+  img, svg {
+    @apply inline-block;
+  }
+  img {
+    @apply mb-1;
+  }
+  figcaption {
+    @apply text-center italic !important;
+  }
+  video {
+    @apply my-0 !important;
+  }
+}
+
+@layer components {
+  .jumbotron {
+    @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
+  }
+  .btn {
+    @apply inline-block mb-2 py-3 px-6 no-underline border bg-white dark:bg-transparent border-blue dark:border-white rounded;
+  }
+  .btn:hover {
+    @apply bg-blue dark:bg-black text-white;
+  }
+  a.btn {
+    @apply no-underline;
+  }
+  .btn-sm {
+    @apply py-1 px-3;
+  }
+  .btn-gold {
+    @apply bg-gold dark:bg-gold border-gold dark:border-gold text-darkblue dark:text-darkblue;
+  }
+  .btn-gold:hover {
+    @apply bg-white dark:bg-white border-white dark:border-white;
+  }
+  a.btn-gold:hover {
+    @apply text-darkblue;
+  }
+  .btn-trans {
+    @apply bg-transparent dark:hover:bg-white text-white border-white;
+  }
+  .btn-trans:hover {
+    @apply bg-white text-darkblue;
+  }
+  .box-shadow {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  img.markdown {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* terminal buttons */
+.termBtns {
+  line-height: 11px;
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 1rem
+}
+.termBtns>span {
+  display: inline-block;
+  vertical-align: top;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 6px
+}
+.termBtns>span:first-child {
+  background: #f35f56
+}
+.termBtns>span:nth-child(2) {
+  background: #fce35f
+}
+.termBtns>span:nth-child(3) {
+  background: #56cc7e
+}
+
+/* Note block in Markdown */
+.note {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  @apply border border-l-4 border-blue dark:border-white;
+}
+.note > p {
+  margin: 0;
+}
+[class*="note-"] {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+[class*="note-"]:before {
+  position: absolute;
+  top: 1.3rem;
+  left: 0.8rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  mask-image: url(/images/icons/info.svg);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  content: "";
+  @apply bg-blue dark:bg-white;
+}
+.note-info {
+  @apply border border-l-4 border-sky-700 dark:border-sky-400 bg-sky-50 dark:bg-sky-900;
+}
+.note-info:before {
+  mask-image: url(/images/icons/info.svg);
+  @apply bg-sky-700 dark:bg-sky-400;
+}
+.note-tip {
+  @apply border border-l-4 border-lime-700 dark:border-lime-400 bg-lime-50 dark:bg-lime-900;
+}
+.note-tip:before {
+  mask-image: url(/images/icons/light-bulb.svg);
+  @apply bg-lime-700 dark:bg-lime-400;
+}
+.note-important {
+  @apply border border-l-4 border-red-700 dark:border-red-400 bg-red-50 dark:bg-red-900;
+}
+.note-important:before {
+  mask-image: url(/images/icons/stop.svg);
+  @apply bg-red-700 dark:bg-red-400;
+}
+
+/* ToC */
+.toc {
+  @apply sticky top-[75px];
+}
+
+/* Back to top */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+.back-to-top-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+.back-to-top-link {
+  position: fixed;
+  position: sticky;
+  pointer-events: all;
+  top: calc(100vh - 3rem);
+}
+
+/* Terminal */
+.shell-wrap {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  width: 450px;
+  height: 323px;
+  background: #000000;
+}
+.shell-top-bar {
+  text-align: center;
+  color: #525252;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  font-size: 0.65em;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #b8b8b8 100%); /* Chrome10+, Safari5.1+ */
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #b8b8b8 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f7f7f7 0%, #b8b8b8 100%);
+}
+.shell-body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* Algolia search box */
+.algolia-autocomplete {
+  width: 100%;
+  font-size: small;
+  margin-bottom: 1rem;
+}
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+  width: 100%;
+  padding: .5em 0 .5em .75em;
+  background-color: unset;
+  border-radius: 4px;
+  @apply border-2 border-slate-200 dark:border-slate-300;
+  @apply focus:border-blue dark:focus:border-white;
+}
+.algolia-autocomplete .aa-input {
+  padding-left: 2rem;
+}
+.algolia-autocomplete .aa-input::placeholder {
+  @apply text-slate-200;
+}
+.algolia-autocomplete .aa-hint {
+  @apply text-blue dark:text-white;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 100%;
+  border-radius: 4px;
+  border-top: 0;
+  @apply bg-white dark:bg-dark;
+  @apply border border-blue dark:border-white;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: .25em .5em .25em .5em;
+  width: 100%;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  border-radius: 4px;
+  @apply bg-gold dark:bg-black;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .aa-tpl-suggestion {
+  padding-bottom: 10px;
+  border-bottom: 0.1rem solid;
+}
+.search-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0.1rem;
+}
+.search-icon {
+  position: absolute;
+  top: 38%;
+  left: .6rem;
+  height: 1rem;
+  width: 1rem;
+  transform: translateY(-50%);
+  @apply fill-slate-200;
+}
+.aa-tpl-title {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.aa-tpl-page {
+  font-weight: bold;
+  font-size: .75em;
+  @apply text-slate-600 dark:text-slate-400;
+}
+.aa-tpl-footer {
+  font-size: .75em;
+  text-align: right;
+  float: right;
+  margin-right: 1em;
+  padding: 0
+}
