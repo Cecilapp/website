@@ -135,6 +135,7 @@ algolia:
 metatags:
   jsonld: true
   articles: news
+editor: typora
 pages:
   body:
     images:
@@ -169,4 +170,3 @@ assets:
       enabled: false
       account: 'aligny'
       url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
-editor: typora
