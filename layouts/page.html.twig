@@ -72,7 +72,7 @@
           {#- mobile navigation ~#}
           {%- if site.menus.main.documentation is defined ~%}
           <label class="sr-only" for="documentation">{% trans %}Documentation:{% endtrans %}</label>
-          <select id="documentation" class="md:hidden flex w-full border-0 p-0 bg-transparent text-gold dark:text-white bg-none" @change="document.location.href=$event.target.value">
+          <select id="documentation" class="md:hidden flex w-full border-0 p-0 bg-transparent text-gold hover:text-white bg-none" @change="document.location.href=$event.target.value">
             <option value="{{ url(site.menus.main.documentation.url) }}" class="bg-darkblue dark:bg-dark" selected="selected">Docs</option>
             {%- for d in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
             {%- set path_as_array = d.path|split('/') -%}
