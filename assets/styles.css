@@ -2635,6 +2635,10 @@ img.markdown {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+.hover\:fill-white:hover {
+  fill: #fff;
+}
+
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(22 60 86 / var(--tw-text-opacity));
@@ -2951,10 +2955,6 @@ img.markdown {
 :is(:where(.dark) .dark\:bg-slate-600) {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-:is(:where(.dark) .dark\:fill-white) {
-  fill: #fff;
 }
 
 :is(:where(.dark) .dark\:text-slate-300) {
