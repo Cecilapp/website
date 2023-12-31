@@ -22,3 +22,5 @@ metatags:
   jsonld: false
   favicon:
     enabled: false
+optimize:
+  enabled: false
