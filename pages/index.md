@@ -86,6 +86,12 @@ blocks:
       path: https://links.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
       visible: true
+    - id: statidocs
+      title: Build a documentation website quickly
+      description: "[Statidocs](https://github.com/Cecilapp/statidocs#readme) is a powerful documentation starter on top of Cecil."
+      path: https://github.com/Cecilapp/statidocs#readme
+      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/docs/screenshot.png
+      visible: true
   sponsors:
     - title: studio cecillie
       logo: /images/logos/cecillie.png
