@@ -13,11 +13,13 @@
             {%- if starter.demo ~%}
             <a class="btn btn-sm" href="{{ starter.demo }}" role="button">{% trans %}Demo{% endtrans %}</a>
             {%- endif ~%}
-            <pre>composer create-project cecil/{{ starter.name|lower }} myproject</pre>
             {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ starter.full_name ~ '/' ~ starter.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
             {% if screenshot.size > 0 ~%}
             <p>{{ screenshot|html({alt: starter.name}) }}</p>
             {%- endif ~%}
+            <h3>Quick start</h3>
+            <pre><code>composer create-project cecil/{{ starter.name|lower }} myproject
+php cecil.phar serve</code></pre>
             <p>{{ starter.license }}</p>
             {%- endfor ~%}
           </div>
