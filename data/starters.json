@@ -1,0 +1,103 @@
+[
+  {
+    "name": "statidocs",
+    "full_name": "Cecilapp/statidocs",
+    "description": "Build a documentation website quickly.",
+    "url": "https://github.com/Cecilapp/statidocs",
+    "license": "MIT License",
+    "demo": "https://cecilapp.github.io/statidocs/",
+    "date": "2024-01-04T16:19:24Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "documentation",
+      "static-site"
+    ]
+  },
+  {
+    "name": "Links",
+    "full_name": "Cecilapp/Links",
+    "description": "Links is a Linktree clone powered by Cecil, Tailwind CSS and Font Awesome.",
+    "url": "https://github.com/Cecilapp/Links",
+    "license": "MIT License",
+    "demo": "https://links.cecil.app",
+    "date": "2024-01-04T16:10:06Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "static-site",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "URL",
+    "full_name": "Cecilapp/URL",
+    "description": "URL manager and shortener, powered by Cecil.",
+    "url": "https://github.com/Cecilapp/URL",
+    "license": "MIT License",
+    "demo": "https://url.cecil.app",
+    "date": "2024-01-04T14:53:39Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "netlify",
+      "shorten-urls",
+      "shorturl",
+      "static-site"
+    ]
+  },
+  {
+    "name": "photo-stream",
+    "full_name": "Cecilapp/photo-stream",
+    "description": "Super simple self hosted photo stream, powered by Cecil.",
+    "url": "https://github.com/Cecilapp/photo-stream",
+    "license": "MIT License",
+    "demo": "https://photo-stream.cecil.app",
+    "date": "2024-01-04T14:47:26Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "galery",
+      "photos",
+      "static-site"
+    ]
+  },
+  {
+    "name": "staticast",
+    "full_name": "Cecilapp/staticast",
+    "description": "The easiest way to publish your podcast.",
+    "url": "https://github.com/Cecilapp/staticast",
+    "license": "MIT License",
+    "demo": "https://staticast.cecil.app",
+    "date": "2024-01-04T14:42:19Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "podcast",
+      "static-site"
+    ]
+  },
+  {
+    "name": "the-butler",
+    "full_name": "Cecilapp/the-butler",
+    "description": "The Butler is a ready to use starter blog, powered by Cecil, your content driven static site generator.",
+    "url": "https://github.com/Cecilapp/the-butler",
+    "license": "MIT License",
+    "demo": "https://the-butler.cecil.app",
+    "date": "2023-12-09T02:23:31Z",
+    "default_branch": "master",
+    "topics": [
+      "blog",
+      "cecil",
+      "cecil-demo",
+      "cecil-starter",
+      "netlify",
+      "static-site"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+{% extends 'page.html.twig' %}
+
+        {%- block content ~%}
+        <div class="mx-auto">
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+            <h1>{{ page.title }}</h1>
+            {{- page.content ~}}
+            {%- for starter in site.data.starters ~%}
+            <h2>{{ starter.name }}</h2>
+            {{- d(starter) ~}}
+            <p>{{ starter.description }}</p>
+            <a class="btn btn-sm" href="{{ starter.url }}#readme" role="button">{% trans %}Download{% endtrans %}</a>
+            {%- if starter.demo ~%}
+            <a class="btn btn-sm" href="{{ starter.demo }}" role="button">{% trans %}Demo{% endtrans %}</a>
+            {%- endif ~%}
+            <pre>composer create-project cecil/{{ starter.name|lower }} myproject</pre>
+            {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ starter.full_name ~ '/' ~ starter.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot.size > 0 ~%}
+            <p>{{ screenshot|html({alt: starter.name}) }}</p>
+            {%- endif ~%}
+            <p>{{ starter.license }}</p>
+            {%- endfor ~%}
+          </div>
+        </div>
+        {%- endblock ~%}

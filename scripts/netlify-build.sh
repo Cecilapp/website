@@ -25,6 +25,8 @@ fi
 
 echo "Fetches themes data"
 curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=theme+in:name+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, demo: .homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/themes.json
+echo "Fetches starters data"
+curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=cecil-starter+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, demo: .homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/starters.json
 
 if [[ $CECIL_ENV == "production" ]]; then
   php cecil.phar build -v --baseurl=$URL --optimize
