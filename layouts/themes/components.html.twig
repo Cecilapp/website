@@ -1,26 +1,5 @@
-{% extends 'page.html.twig' %}
+{% extends 'themes/list.html.twig' %}
 
-        {%- block content ~%}
-        <div class="mx-auto">
-          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
-            {%- include 'partials/themes-nav.html.twig' ~%}
-            <h1>{{ page.title }}</h1>
-            {{- page.content ~}}
-            {%- for theme in site.data.themes|filter(t => 'theme-component' in t.topics) ~%}
-            {%- set yaml_asset = asset('https://raw.githubusercontent.com/' ~ theme.full_name ~ '/' ~ theme.default_branch ~ '/theme.yml', {ignore_missing: true}) -%}
-            {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
-            {{- d(yaml) -}}
-            {%- if yaml.name|default -%}
-              {%- set theme = theme|merge({'name': yaml.name}) -%}
-            <h2>{{ theme.name }}</h2>
-            {%- else -%}
-            <h2>{{ theme.name|split('-')[1]|capitalize }}</h2>
-            {%- endif -%}
-            {{- d(theme) ~}}
-            <p>{{ theme.description }}</p>
-            <a class="btn btn-sm" href="{{ theme.url }}#readme" role="button">{% trans %}Download{% endtrans %}</a>
-            <p>{{ theme.license }}</p>
-            {%- endfor ~%}
-          </div>
-        </div>
-        {%- endblock ~%}
+{% set repos = site.data.components %}
+
+            {%- block website %}{% endblock ~%}
