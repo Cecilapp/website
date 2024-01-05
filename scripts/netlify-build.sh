@@ -24,9 +24,11 @@ else
 fi
 
 echo "Fetches themes data"
-curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=theme+in:name+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, demo: .homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/themes.json
+curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=topic:cecil-theme+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, github: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/themes.json
+echo "Fetches component themes data"
+curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=topic:cecil-theme-component+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, github: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/components.json
 echo "Fetches starters data"
-curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=cecil-starter+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, url: .html_url, license: .license.name, demo: .homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/starters.json
+curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=topic:cecil-starter+org:Cecilapp+fork:true' | jq '[.items[] | {name, full_name, description, github: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/starters.json
 
 if [[ $CECIL_ENV == "production" ]]; then
   php cecil.phar build -v --baseurl=$URL --optimize
