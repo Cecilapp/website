@@ -22,7 +22,7 @@ curl -LO https://cecil.app/cecil.phar
 [PHP](https://www.php.net/manual/en/install.php) 8.1+ is required.
 :::
 
-:::tip
+:::info
 File integrity can be checked with the `SHA1` file, by clicking on the "File checksum" button.
 :::
 
