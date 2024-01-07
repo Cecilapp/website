@@ -139,7 +139,7 @@ editor: typora
 pages:
   body:
     images:
-      class: "markdown dark:brightness-90"
+      class: "dark:brightness-90"
       resize:
         enabled: true
       responsive:
