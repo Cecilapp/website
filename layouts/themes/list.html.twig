@@ -1,0 +1,47 @@
+{% extends 'page.html.twig' %}
+
+{% if not repos is defined %}
+{% set repos = site.data.themes %}
+{% endif %}
+
+        {%- block content ~%}
+        <div class="mx-auto">
+          <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+            {%- block nav ~%}
+            {%- include 'partials/themes-nav.html.twig' ~%}
+            {%- endblock ~%}
+            <h1>{{ page.title }}</h1>
+            {{- page.content ~}}
+            {%- for repo in repos ~%}
+            {%- block name ~%}
+            {%- set yaml_asset = asset('https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/theme.yml', {ignore_missing: true}) -%}
+            {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
+            {%- if yaml.name|default -%}
+              {%- set repo = repo|merge({'name': yaml.name}) -%}
+            <h2>{{ repo.name }}</h2>
+            {%- else -%}
+            <h2>{{ repo.name|split('-')[1]|capitalize }}</h2>
+            {%- endif -%}
+            {%- endblock ~%}
+            <p>{{ repo.description }}</p>
+            {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot.size > 0 ~%}
+            <p>{{ screenshot|html({alt: repo.name}) }}</p>
+            {%- endif ~%}
+            <a class="btn btn-sm" href="{{ repo.github }}" role="button">{% trans %}Source code{% endtrans %}</a>
+            <a class="btn btn-sm" href="{{ repo.github }}#readme" role="button">{% trans %}Documentation{% endtrans %}</a>
+            {%- block website ~%}
+            {%- if repo.homepage ~%}
+            <a class="btn btn-sm" href="{{ repo.homepage }}" role="button">{% trans %}Demo{% endtrans %}</a>
+            {%- endif ~%}
+            {%- endblock ~%}
+
+            {%- block command ~%}
+            <h3>Quick download</h3>
+            <pre><code>composer require cecil/{{ repo.name|lower }}</code></pre>
+            {%- endblock ~%}
+            <p>{{ repo.license }}</p>
+            {%- endfor ~%}
+          </div>
+        </div>
+        {%- endblock ~%}
