@@ -1,5 +1,21 @@
 [
   {
+    "name": "statidocs",
+    "full_name": "Cecilapp/statidocs",
+    "description": "Build a documentation website quickly.",
+    "github": "https://github.com/Cecilapp/statidocs",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/statidocs/",
+    "date": "2024-01-12T18:42:41Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "documentation",
+      "static-site"
+    ]
+  },
+  {
     "name": "the-butler",
     "full_name": "Cecilapp/the-butler",
     "description": "The Butler is a ready to use starter blog, powered by Cecil, your content driven static site generator.",
@@ -82,22 +98,6 @@
       "cecil-starter",
       "static-site",
       "tailwindcss"
-    ]
-  },
-  {
-    "name": "statidocs",
-    "full_name": "Cecilapp/statidocs",
-    "description": "Build a documentation website quickly.",
-    "github": "https://github.com/Cecilapp/statidocs",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/statidocs/",
-    "date": "2024-01-04T16:37:18Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "documentation",
-      "static-site"
     ]
   }
 ]
