@@ -3,6 +3,7 @@
 {% block content %}
 <div class="dark:markdown-dark hover:markdown-a:no-underline markdown markdown-a:no-underline markdown-h2:m-0 markdown-h2:mb-4 max-w-screen-md mx-auto">
   {{ page.content }}
+  <h3>Live example</h3>
+  {{ asset('images/cecil-logo-1000.png')|html(attributes={alt: 'Cecil logo'}, options={responsive: true, webp: false}) }}
 </div>
-{{ asset('images/cecil-logo-1000.png')|html(attributes={alt: 'Cecil logo'}, options={responsive: true, webp: false}) }}
 {% endblock %}
