@@ -4,4 +4,4 @@
     <script>hljs.highlightAll({
       languages: ['plaintext', 'bash', 'markdown', 'twig', 'yaml'],
     });</script>~#}
-    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlight.version ~ '/styles/' ~ site.highlight.styles ~ '.min.css', {minify: false})|html({}, {preload: true}) }}
+    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.highlight.version ~ '/styles/' ~ site.highlight.styles ~ '.min.css', {minify: false})|html(options={preload: true}) }}
