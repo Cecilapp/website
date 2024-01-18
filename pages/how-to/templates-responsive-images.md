@@ -1,10 +1,10 @@
 ---
 title: How to render responsive images in templates?
-layout: responsive-image
+layout: responsive-images
 ---
 # How to render responsive images in templates?
 
-The easiest way is with the [html filter](https://cecil.app/documentation/templates/#html):
+The easiest way to render [responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) in templates is with the [html filter](https://cecil.app/documentation/templates/#html):
 
 ```twig
 {{ asset('image.jpg')|html(attributes={alt: 'Alternative description'}, options={responsive: true}) }}
