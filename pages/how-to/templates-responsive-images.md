@@ -22,7 +22,16 @@ Bellow an example with a PNG image 1000x1000 pixels.
 {{ asset('images/cecil-logo-1000.png')|html(attributes={alt: 'Cecil logo'}, options={responsive: true}) }}
 ```
 
-Generated HTML:
+### Configuration
+
+```yaml
+assets:
+  images:
+    responsive:
+      widths: [768, 1024]
+```
+
+### Generated HTML
 
 ```html
 <img
