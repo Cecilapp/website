@@ -30,16 +30,16 @@
         {% if 'Experimental' in content %}
         {%- set experimental = 1 -%}
         {% endif %}
-  {{- _self.dataset(
-    p.id ~ '#' ~ anchor,
-    p.title,
-    title,
-    description|json_encode,
-    content|json_encode,
-    p.date|date('c'),
-    url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor,
-    experimental|default(0)
-  ) -}}
+        {{- _self.dataset(
+          p.id ~ '#' ~ anchor,
+          p.title,
+          title,
+          description|json_encode,
+          content|json_encode,
+          p.date|date('c'),
+          url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor,
+          experimental|default(0)
+        ) -}}
         {%- if not loop.last %},{% endif ~%}
         {%- set count = count + 1 -%}
       {%- endif -%}
