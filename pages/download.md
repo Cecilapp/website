@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2023-12-09
+updated: 2024-01-29
 layout: download
 alias: install
 menu:
@@ -35,8 +35,7 @@ For more comfort you should install Cecil globally.
 You can install Cecil on macOS with 🍺[Homebrew](https://brew.sh):
 
 ```bash
-brew tap cecilapp/cecil
-brew install cecil
+brew install cecilapp/tap/cecil
 ```
 
 ### Windows
