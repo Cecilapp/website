@@ -90,7 +90,7 @@ blocks:
       title: Créez rapidement un site de documentation
       description: "[Statidocs](https://github.com/Cecilapp/statidocs#readme) est un puissant starter de documentation créé via Cecil."
       path: https://github.com/Cecilapp/statidocs#readme
-      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/docs/screenshot.png
+      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/screenshot.png
       visible: true
   sponsors:
     - title: studio cecillie
