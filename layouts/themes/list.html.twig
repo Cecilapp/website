@@ -13,8 +13,9 @@
             <h1>{{ page.title }}</h1>
             {{- page.content ~}}
             {%- for repo in repos ~%}
+            {%- set repo_basepath = 'https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/' ~%}
             {%- block name ~%}
-            {%- set yaml_asset = asset('https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/theme.yml', {ignore_missing: true}) -%}
+            {%- set yaml_asset = asset(repo_basepath ~ 'theme.yml', {ignore_missing: true}) -%}
             {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
             {%- if yaml.name|default -%}
               {%- set repo = repo|merge({'name': yaml.name}) -%}
@@ -24,8 +25,11 @@
             {%- endif -%}
             {%- endblock ~%}
             <p>{{ repo.description }}</p>
-            {%- set screenshot = asset('https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/docs/screenshot.png', {ignore_missing: true}) %}
-            {% if screenshot.size > 0 ~%}
+            {%- set screenshot = asset(repo_basepath ~ 'docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot['missing'] ~%}
+            {% set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) %}
+            {% endif %}
+            {% if not screenshot['missing'] ~%}
             <p>{{ screenshot|html({alt: repo.name}) }}</p>
             {%- endif ~%}
             <a class="btn btn-sm" href="{{ repo.github }}" role="button">{% trans %}Source code{% endtrans %}</a>
