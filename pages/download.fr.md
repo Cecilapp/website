@@ -52,10 +52,12 @@ mv cecil.phar /usr/local/bin/cecil
 chmod +x /usr/local/bin/cecil
 ```
 
-### [PHIVE](https://phar.io)
+### PHIVE
+
+> The PHAR Installation and Verification Environment ([PHIVE](https://phar.io)).
 
 ```bash
-phive install cecilapp/cecil
+phive install cecil
 ```
 
 ## Mise à jour
@@ -66,8 +68,11 @@ La manière la plus simple de mettre à jour Cecil vers la dernière version est
 php cecil self-update
 ```
 
-:::important
-Avec Homebrew vous devez utiliser `brew upgrade`.
+:::info
+
+- Homebrew: `brew upgrade`
+- PHIVE: `phive update cecil`
+
 :::
 
 ## Obtenir une version spécifique
