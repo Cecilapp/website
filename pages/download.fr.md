@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2024-01-29
+updated: 2024-01-31
 layout: download
 menu:
   main:
@@ -52,6 +52,12 @@ mv cecil.phar /usr/local/bin/cecil
 chmod +x /usr/local/bin/cecil
 ```
 
+### [PHIVE](https://phar.io)
+
+```bash
+phive install cecilapp/cecil
+```
+
 ## Mise à jour
 
 La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée :
@@ -59,6 +65,10 @@ La manière la plus simple de mettre à jour Cecil vers la dernière version est
 ```bash
 php cecil self-update
 ```
+
+:::important
+Avec Homebrew vous devez utiliser `brew upgrade`.
+:::
 
 ## Obtenir une version spécifique
 
