@@ -1,12 +1,28 @@
 [
   {
+    "name": "Links",
+    "full_name": "Cecilapp/Links",
+    "description": "Links is a Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome.",
+    "github": "https://github.com/Cecilapp/Links",
+    "license": "MIT License",
+    "homepage": "https://links.cecil.app",
+    "date": "2024-02-01T16:51:06Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "static-site",
+      "tailwindcss"
+    ]
+  },
+  {
     "name": "statidocs",
     "full_name": "Cecilapp/statidocs",
     "description": "Build a documentation website quickly.",
     "github": "https://github.com/Cecilapp/statidocs",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/statidocs/",
-    "date": "2024-01-12T18:42:41Z",
+    "date": "2024-02-01T15:09:17Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -82,22 +98,6 @@
       "shorten-urls",
       "shorturl",
       "static-site"
-    ]
-  },
-  {
-    "name": "Links",
-    "full_name": "Cecilapp/Links",
-    "description": "Links is a Linktree clone powered by Cecil, Tailwind CSS and Font Awesome.",
-    "github": "https://github.com/Cecilapp/Links",
-    "license": "MIT License",
-    "homepage": "https://links.cecil.app",
-    "date": "2024-01-04T22:21:28Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "static-site",
-      "tailwindcss"
     ]
   }
 ]
