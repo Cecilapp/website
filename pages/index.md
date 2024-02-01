@@ -82,7 +82,7 @@ blocks:
       visible: true
     - id: links
       title: Stay the owner of your links
-      description: "[Links](https://links.cecil.app) is an open source Linktree clone powered by Cecil, Tailwind CSS and Font Awesome."
+      description: "[Links](https://links.cecil.app) is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
       path: https://links.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
       visible: true
