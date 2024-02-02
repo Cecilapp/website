@@ -668,6 +668,11 @@ header a {
   color: rgb(242 208 127 / var(--tw-text-opacity));
 }
 
+:is(.dark header a) {
+  --tw-text-opacity: 1;
+  color: rgb(242 208 127 / var(--tw-text-opacity));
+}
+
 main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
   #features p > a {
   text-decoration-line: underline;
