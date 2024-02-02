@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2023-12-12
+updated: 2024-01-02
 blocks:
   about:
     - title: Rapide & sécurisé
@@ -52,12 +52,14 @@ blocks:
       description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
+      shadow: false
       visible: true
     - id: twig
       title: Moteur de template moderne
       description: "Les modèles de Cecil, propulsés par [Twig](/documentation/templates/), offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
+      shadow: false
       visible: true
     - id: the-butler
       title: Un blog prêt à l’emploi
@@ -78,7 +80,8 @@ blocks:
       title: Flux de photos auto-hébergé
       description: "[Photo Stream](https://photo-stream.cecil.app) est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
       path: https://photo-stream.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
+      image: images/photo-stream.png
+      shadow: false
       visible: true
     - id: links
       title: Restez propriétaire de vos liens
