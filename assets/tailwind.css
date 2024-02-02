@@ -17,7 +17,7 @@
     @apply text-blue dark:text-white;
   }
   header a {
-    @apply text-gold;
+    @apply text-gold dark:text-gold;
   }
   main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
   #features p > a {
