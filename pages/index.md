@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2023-12-12
+updated: 2024-02-02
 blocks:
   about:
     - title: Fast & Secure
@@ -52,12 +52,14 @@ blocks:
       description: "Cecil’s [Markdown](/documentation/content/#body) parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#body
       image: images/cecil-markdown-content.png
+      shadow: false
       visible: true
     - id: twig
       title: Modern template engine
       description: "Cecil’s templating, powered by [Twig](/documentation/templates/), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
+      shadow: false
       visible: true
     - id: the-butler
       title: A ready to use blog
@@ -78,7 +80,8 @@ blocks:
       title: Self hosted photo stream
       description: "[Photo Stream](https://photo-stream.cecil.app) is a self hosted static website for your photos, with really goods loading performances."
       path: https://photo-stream.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/photo-stream.cecil.app/main/assets/preview.png
+      image: images/photo-stream.png
+      shadow: false
       visible: true
     - id: links
       title: Stay the owner of your links
