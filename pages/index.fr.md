@@ -113,5 +113,5 @@ blocks:
       visible: true
 pagination:
   enabled: false
-pagesfrom: news
+pagesfrom: fr/news
 ---
