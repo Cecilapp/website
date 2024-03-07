@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-[PHP](https://www.php.net/manual/fr/install.php) 8.1+ est requis.
+PHP 8.1+ est requis.
 :::
 
 :::info
