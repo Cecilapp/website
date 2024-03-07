@@ -13,7 +13,7 @@ blocks:
       icon: markdown
       visible: true
     - title: Personnalisable
-      description: Propulsé par [Twig](/documentation/templates/), un moteur de template flexible, et supporte les [themes](https://github.com/Cecilapp?q=theme#org-repositories).
+      description: Propulsé par [Twig](/documentation/templates/), un moteur de template flexible, et supporte les [themes](/fr/themes/).
       icon: paintbrush
       visible: true
     - title: Générateurs multiples
