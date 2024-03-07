@@ -14,5 +14,5 @@ The [first version](https://github.com/Cecilapp/Cecil/commit/58cd48bcc72baa7636f
 
 ## License
 
-- [Cecil](https://github.com/Cecilapp/Cecil/) is a free software distributed under the terms of the [MIT license](https://github.com/Cecilapp/Cecil/blob/master/LICENSE)
-- The website [cecil.app](https://cecil.app) is distribued under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- _Cecil_ is a free software distributed under the terms of the [MIT license](/LICENSE)
+- The website _cecil.app_ is distribued under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
