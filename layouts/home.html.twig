@@ -101,7 +101,7 @@ php cecil.phar serve</pre>
 {%- endblock ~%}
 
 {%- block footer_scripts ~%}
-    {{ parent() }}
+    {{- parent() ~}}
     {%~ include 'partials/version.js.twig' only ~%}
     {%~ include 'partials/animation.js.twig' only ~%}
 {%- endblock footer_scripts ~%}

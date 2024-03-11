@@ -13,6 +13,6 @@
 {% endblock content %}
 
 {% block footer_scripts %}
-    {{ parent() }}
+    {{- parent() ~}}
     {%~ include 'partials/version.js.twig' only ~%}
 {% endblock footer_scripts %}
