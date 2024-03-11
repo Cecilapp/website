@@ -1,4 +1,3 @@
-{%- if site.cloudflareinsights is defined ~%}
-    <!-- Cloudflare Web Analytics -->
+{%- if token ~%}
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ token }}"}'></script>
 {%- endif ~%}
