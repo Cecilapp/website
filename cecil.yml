@@ -152,6 +152,7 @@ pages:
         enabled: true
       remote:
         enabled: true
+      placeholder: lqip
     notes:
       enabled: true
     highlight:
