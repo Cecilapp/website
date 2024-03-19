@@ -1,0 +1,32 @@
+{% set title = "Documentation"|trans ~ ' &middot; ' ~ site.title %}
+
+{% extends 'page.html.twig' %}
+
+{% block content %}
+        {#- content ~#}
+        <div class="markdown markdown-slate markdown-a:no-underline hover:markdown-a:no-underline markdown-h2:mt-3 markdown-ul:m-0 markdown-ul:list-none markdown-code:max-w-screen-md dark:markdown-dark mx-auto max-w-screen-md">
+          {%~ include 'partials/search-box.html.twig' ~%}
+          <h1>{% trans %}Documentation{% endtrans %}</h1>
+          <p>{{ page.content }}</p>
+          <div class="flex flex-wrap flex-row">
+            {%- for doc in site.pages.showable|filter_by('section', 'documentation')|sort_by_weight -%}
+            <div class="flex-auto w-96 p-2 hover:bg-gold group hover:rounded-md dark:hover:bg-black">
+            <a href="{{ url(doc) }}" class="doc-item hover:no-underline">
+              <h2>{{ doc.title|e }}</h2>
+              <div class="pb-4{% if not loop.last %}{% endif %}">
+                {%- if doc.description is defined -%}
+                {{ doc.description|e }}
+                {%- endif -%}
+              </div>
+            </a>
+            <details class="border-b border-slate-200 group-hover:border-gold dark:border-black dark:group-hover:border-black">
+              <summary class="cursor-pointer">
+                {% trans %}What's on this page{% endtrans %}
+              </summary>
+              {{ doc.body|toc(url=url(doc)) }}
+            </details>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+{% endblock content %}

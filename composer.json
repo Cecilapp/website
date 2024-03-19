@@ -1,0 +1,11 @@
+{
+  "require": {
+    "cecil/theme-netlify": "^2.0",
+    "cecil/theme-pwa": "^2.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}
