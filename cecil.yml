@@ -96,7 +96,7 @@ netlify:
       to: https://8-x-dev.cecil.app/:splat
       status: 301
       force: true
-  redirect_by_language: true
+  redirect_by_language: false
 manifest:
   background_color: '#163C56'
   theme_color: '#163C56'
