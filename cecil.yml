@@ -103,8 +103,12 @@ manifest:
   shortcuts: true
 serviceworker:
   enabled: true
-  notification:
-    enabled: false
+  update:
+    snackbar:
+      enabled: true
+  offline:
+    snackbar:
+      enabled: true
 static:
   exclude:
     - 'cecil-demo.png'
