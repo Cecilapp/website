@@ -91,8 +91,8 @@ blocks:
       visible: true
     - id: statidocs
       title: Build a documentation website quickly
-      description: "[Statidocs](https://github.com/Cecilapp/statidocs#readme) is a powerful documentation starter on top of Cecil."
-      path: https://github.com/Cecilapp/statidocs#readme
+      description: "[Statidocs](https://statidocs.cecil.app) is a powerful documentation starter on top of Cecil."
+      path: https://statidocs.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/screenshot.png
       visible: true
   sponsors:
