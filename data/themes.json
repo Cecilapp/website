@@ -1,0 +1,96 @@
+[
+  {
+    "name": "theme-docs",
+    "full_name": "Cecilapp/theme-docs",
+    "description": "Documentation theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-docs",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/statidocs/",
+    "date": "2024-02-01T15:08:25Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-comingsoon",
+    "full_name": "Cecilapp/theme-comingsoon",
+    "description": "Coming Soon is a landing page theme for Cecil, powered by Bootstrap.",
+    "github": "https://github.com/Cecilapp/theme-comingsoon",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "date": "2024-01-22T16:44:07Z",
+    "default_branch": "main",
+    "topics": [
+      "bootstrap",
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-applanding",
+    "full_name": "Cecilapp/theme-applanding",
+    "description": "App Landing is a theme for Cecil, powered by Tailwind CSS.",
+    "github": "https://github.com/Cecilapp/theme-applanding",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-applanding/",
+    "date": "2023-12-12T10:53:44Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-resume",
+    "full_name": "Cecilapp/theme-resume",
+    "description": "The Resume theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-resume",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/resume-demo/",
+    "date": "2023-11-21T13:46:22Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-hyde",
+    "full_name": "Cecilapp/theme-hyde",
+    "description": "The Hyde theme for Cecil is a port the Hyde theme for Jekyll created by Mark Otto.",
+    "github": "https://github.com/Cecilapp/theme-hyde",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-hyde/",
+    "date": "2023-11-21T13:33:09Z",
+    "default_branch": "master",
+    "topics": [
+      "blog",
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-garth",
+    "full_name": "Cecilapp/theme-garth",
+    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
+    "github": "https://github.com/Cecilapp/theme-garth",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-garth/",
+    "date": "2023-11-20T17:32:38Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  }
+]
