@@ -55,7 +55,7 @@ Or manually:
 
 ### PHIVE
 
-Cecil is available through [PHIVE](https://phar.io) (The PHAR Installation and Verification Environment).
+Cecil is available through [PHIVE](https://phar.io) (The PHAR Installation and Verification Environment):
 
 ```bash
 phive install cecil
