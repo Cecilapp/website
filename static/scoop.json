@@ -6,17 +6,17 @@
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/8.12.4/cecil.phar",
-  "version": "8.12.4",
-  "hash": "sha1:987288aab0ddd19cc4b26a5bcbcfe2fdf1e31f60",
+  "url": "https://cecil.app/download/8.12.5/cecil.phar",
+  "version": "8.12.5",
+  "hash": "sha1:370c83b69c7eda545c9d57d54f3cb1a9414c054c",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\d.]+)"
   },
   "autoupdate": {
-    "url": "https://cecil.app/download//cecil.phar",
+    "url": "https://cecil.app/download/$version/cecil.phar",
     "hash": {
-      "url": ".sha1"
+      "url": "$url.sha1"
     }
   }
 }
