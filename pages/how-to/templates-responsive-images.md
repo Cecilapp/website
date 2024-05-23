@@ -4,14 +4,14 @@ layout: responsive-images
 ---
 # How to render responsive images in templates?
 
-The easiest way to render [responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) in templates is with the [html filter](https://cecil.app/documentation/templates/#html):
+The easiest way to render [responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) in templates is with the [html filter](/documentation/templates/#html):
 
 ```twig
 {{ asset('image.jpg')|html(attributes={alt: 'Alternative description'}, options={responsive: true}) }}
 ```
 
 :::important
-The default width values of the generated images are 480, 640, 768, 1024, 1366, 1600 and 1920. They can be modified in the _assets_ section of the [configuration](https://cecil.app/documentation/configuration/#assets).
+The default width values of the generated images are 480, 640, 768, 1024, 1366, 1600 and 1920. They can be modified in the _assets_ section of the [configuration](/documentation/configuration/#assets).
 :::
 
 ## Example
