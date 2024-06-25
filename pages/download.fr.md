@@ -1,0 +1,98 @@
+---
+title: Télécharger
+description: "Comment télécharger Cecil."
+date: 2021-10-26
+updated: 2024-05-15
+layout: download
+menu:
+  main:
+    weight: 30
+  footer:
+slug: telecharger
+---
+# Télécharger
+
+Vous pouvez télécharger `cecil.phar` en cliquant sur le bouton ["Télécharger"](/cecil.phar) ou via la commande suivante depuis votre terminal :
+
+```bash
+curl -LO https://cecil.app/cecil.phar
+```
+
+:::important
+PHP 8.1+ est requis.
+:::
+
+:::info
+L’intégrité du fichier peut être vérifié via le [fichier `SHA1`](/cecil.phar.sha1).
+:::
+
+## Installation globale
+
+Pour plus de confort vous devriez installer Cecil globalement.
+
+### macOS
+
+Vous pouvez installer Cecil sur macOS avec 🍺[Homebrew](https://brew.sh):
+
+```bash
+brew install cecilapp/tap/cecil
+```
+
+### Windows
+
+Vous pouvez installer Cecil sur Windows avec 🍨[Scoop](https://scoop.sh):
+
+```bash
+scoop install https://cecil.app/scoop.json
+```
+
+Ou manuellement :
+
+1. Déplacez `cecil.phar` dans un dossier dédié tel que `C:\bin`
+2. Renommez `cecil.phar` vers `cecil`
+3. Ajoutez `;C:\bin` à votre variable d’environnement `PATH`
+4. Créez un ["wrapping batch script"](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
+
+### PHIVE
+
+Cecil est disponible via [PHIVE](https://phar.io) (The PHAR Installation and Verification Environment) :
+
+```bash
+phive install cecil
+```
+
+### Linux
+
+```bash
+mv cecil.phar /usr/local/bin/cecil
+chmod +x /usr/local/bin/cecil
+```
+
+## Mise à jour
+
+La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée :
+
+```bash
+php cecil self-update
+```
+
+:::
+
+- Homebrew : `brew upgrade`
+- Scoop : `scoop update cecil`
+- PHIVE : `phive update cecil`
+
+:::
+
+## Obtenir une version spécifique
+
+Si vous souhaitez télécharger une version spécifique vous pouvez la spécifier dans le chemin de l’URL.  
+Par exemple, si vous souhaitez installer la version `8.0.0` vous devez ajouter `download/8.0.0/` dans l’URL :
+
+```bash
+curl -LO https://cecil.app/download/8.0.0/cecil.phar
+```
+
+:::info
+La [releases list](https://github.com/Cecilapp/Cecil/releases) est disponible sur GitHub.
+:::
