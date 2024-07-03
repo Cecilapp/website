@@ -23,7 +23,7 @@
               <summary class="cursor-pointer">
                 {% trans %}What's on this page{% endtrans %}
               </summary>
-              {{ doc.body|toc(url=url(doc)) }}
+              {{ doc.body|toc(selectors=['h2'], url=url(doc)) }}
             </details>
             </div>
             {%- endfor -%}

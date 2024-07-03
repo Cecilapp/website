@@ -19,7 +19,7 @@
                 <summary class="cursor-pointer">
                   <strong>{% trans %}What's on this page{% endtrans %}</strong>
                 </summary>
-                {{ page.body|toc }}
+                {{ page.body|toc(selectors=['h2']) }}
               </details>
               {{ page.content }}
               {#- suggest a modification ~#}
