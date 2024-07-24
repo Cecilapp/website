@@ -1,5 +1,5 @@
 title: "Cecil"
-baseline: "Your content driven static site generator."
+baseline: "A simple and powerful content-driven static site generator."
 description: "Cecil is a command-line PHP application that merges Markdown pages, medias and Twig templates to generate a static website."
 baseurl: "https://cecil.app/"
 author:
@@ -25,7 +25,7 @@ languages:
     name: Français
     locale: fr_FR
     config:
-      baseline: "Votre générateur de site statique centré sur le contenu."
+      baseline: "Un générateur de site statique simple et puissant, axé sur le contenu."
       description: "Cecil est une application PHP en ligne de commande qui fusionne des pages Markdown, des médias et des templates Twig afin de générer un site Web statique."
       menus:
         main:
