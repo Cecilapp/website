@@ -150,8 +150,7 @@ pages:
         enabled: true
       responsive:
         enabled: true
-      webp:
-        enabled: true
+      formats: ['webp']
       caption:
         enabled: true
       remote:
@@ -171,8 +170,7 @@ assets:
       sizes:
         markdown: "(max-width: 800px) 768px, 1024px"
         home: "(max-width: 768px) 768px, 50vw"
-    webp:
-      enabled: true
+    formats: ['webp']
     cdn:
       enabled: false
       account: 'aligny'
