@@ -69,6 +69,18 @@ blocks:
       shadow: false
       webp: true
       visible: true
+    - id: statidocs
+      title: Build a documentation website quickly
+      description: "[Statidocs](https://statidocs.cecil.app) is a powerful documentation starter on top of Cecil."
+      path: https://statidocs.cecil.app
+      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/screenshot.png
+      visible: true
+    - id: links
+      title: Stay the owner of your links
+      description: "[Links](https://links.cecil.app) is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
+      path: https://links.cecil.app
+      image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
+      visible: true
     - id: staticast
       title: Broadcast your podcast simply
       description: "[Staticast](https://staticast.cecil.app) is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
@@ -82,18 +94,6 @@ blocks:
       path: https://photo-stream.cecil.app
       image: images/photo-stream.png
       shadow: false
-      visible: true
-    - id: links
-      title: Stay the owner of your links
-      description: "[Links](https://links.cecil.app) is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
-      path: https://links.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
-      visible: true
-    - id: statidocs
-      title: Build a documentation website quickly
-      description: "[Statidocs](https://statidocs.cecil.app) is a powerful documentation starter on top of Cecil."
-      path: https://statidocs.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/screenshot.png
       visible: true
   sponsors:
     - title: studio cecillie
