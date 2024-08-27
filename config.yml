@@ -129,6 +129,7 @@ algolia:
 metatags:
   jsonld: true
   articles: news
+  robots: "noindex,nofollow"
 pages:
   paths:
     - section: news
