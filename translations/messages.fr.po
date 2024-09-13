@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-01-05 01:47+0100\n"
-"PO-Revision-Date: 2024-01-05 01:47+0100\n"
+"POT-Creation-Date: 2024-09-13 16:18+0200\n"
+"PO-Revision-Date: 2024-09-13 16:18+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ../layouts\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -23,7 +23,7 @@ msgid "Home"
 msgstr "Accueil"
 
 #: documentation/list.html.twig:1 documentation/list.html.twig:9
-#: documentation/page.html.twig:1 themes/list.html.twig:32
+#: documentation/page.html.twig:1 themes/list.html.twig:36
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -92,7 +92,7 @@ msgstr "Propulsé par %powered_by%"
 msgid "Star"
 msgstr "Favoris"
 
-#: partials/block-feature.html.twig:9 partials/block-feature.html.twig:14
+#: partials/block-feature.html.twig:10 partials/block-feature.html.twig:15
 msgid "Get started"
 msgstr "Commencer"
 
@@ -116,11 +116,11 @@ msgstr "Sombre"
 msgid "Homepage"
 msgstr "Page d'accueil"
 
-#: themes/list.html.twig:31
+#: themes/list.html.twig:35
 msgid "Source code"
 msgstr "Code source"
 
-#: themes/list.html.twig:35
+#: themes/list.html.twig:39
 msgid "Demo"
 msgstr "Démo"
 
