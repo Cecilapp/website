@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2024-05-15
+updated: 2024-09-14
 layout: download
 alias: install
 menu:
@@ -43,7 +43,7 @@ brew install cecilapp/tap/cecil
 You can install Cecil on Windows with 🍨[Scoop](https://scoop.sh):
 
 ```bash
-scoop install https://cecil.app/scoop.json
+scoop install https://cecil.app/cecil.json
 ```
 
 Or manually:
