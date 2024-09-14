@@ -11,7 +11,7 @@
   "hash": "sha1:f6ff4b0830715916486a7028c35468e1e5ca46fb",
   "checkver": {
     "url": "https://cecil.app/VERSION",
-    "regex": "([\d.]+)"
+    "regex": "([\\d.]+)"
   },
   "autoupdate": {
     "url": "https://cecil.app/download/$version/cecil.phar",
