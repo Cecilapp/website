@@ -53,9 +53,11 @@
         </div>
         {#- content ~#}
         <div id="content" class="container mx-auto md:w-2/4 mt-10 px-0 md:px-8 py-5 leading-loose">
+          {%- if page.content ~%}
           <div class="mb-4 markdown">
             {{ page.content }}
           </div>
+          {%- endif ~%}
           {#- terminal ~#}
           <div id="terminal" class="text-xl text-center mb-2 font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
           <div class="bg-[#1f2937] p-4 rounded-md text-white font-mono text-sm">
