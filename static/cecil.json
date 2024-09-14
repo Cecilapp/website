@@ -1,17 +1,17 @@
 {
-  "description": "Your content driven static site generator.",
+  "description": "A simple and powerful content-driven static site generator.",
   "homepage": "https://cecil.app",
   "license": "MIT",
   "bin": "cecil.phar",
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/8.17.1/cecil.phar",
-  "version": "8.17.1",
-  "hash": "sha1:f6ff4b0830715916486a7028c35468e1e5ca46fb",
+  "url": "https://cecil.app/download/8.17.2/cecil.phar",
+  "version": "8.17.2",
+  "hash": "sha1:ff151732fff3d37e8e251e071fb07ba0b9af5082",
   "checkver": {
     "url": "https://cecil.app/VERSION",
-    "regex": "([\\d.]+)"
+    "regex": "([\d.]+)"
   },
   "autoupdate": {
     "url": "https://cecil.app/download/$version/cecil.phar",
