@@ -22,10 +22,6 @@ curl -LO https://cecil.app/cecil.phar
 PHP 8.1+ is required.
 :::
 
-:::info
-File integrity can be checked with the [`SHA1` file](/cecil.phar.sha1).
-:::
-
 ## Install globally
 
 For more comfort you should install Cecil globally.
