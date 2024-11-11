@@ -716,11 +716,11 @@ video {
 
 /* markdown external link */
 
-.markdown a[href^='http']:not(.btn):not(:has(img)) {
+.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
   padding-right: 1.25em;
 }
 
-.markdown a[href^='http']:not(.btn):not(:has(img))::after {
+.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img))::after {
   position: absolute;
   content: '';
   display: inline-block;
