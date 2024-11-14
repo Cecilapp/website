@@ -87,7 +87,11 @@
             <a class="md:hidden hover:text-white" href="{{ url(site.menus.main.themes.url) }}">{{ site.menus.main.themes.name }}</a>
           {%- endif ~%}~#}
           {#- search icon ~#}
-          <a id="search-icon" href="{{ url(site.menus.main.documentation.url) }}#" aria-label="{{ site.menus.main.documentation.name }}">
+          {%- set search_icon_path = url(site.menus.main.documentation.url) ~ '#top' ~%}
+          {%- if page.section == 'documentation' and page.type != 'section' ~%}
+            {%- set search_icon_path = '#top' ~%}
+          {%- endif ~%}
+          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name }}">
             {{- octicon.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
           </a>
           <script>
