@@ -1,0 +1,109 @@
+{% extends 'page.html.twig' %}
+
+{%- block head ~%}
+    {{- parent() ~}}
+    <style>{{- asset('animate.css')|inline -}}</style>
+    {#- Animate JS ~#}
+    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false})|html({title: 'Animate CSS'}, {preload: true}) ~}}
+{%- endblock head ~%}
+
+{%- block jumbotron ~%}
+    <div class="jumbotron">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row -mx-4">
+          <div class="md:w-1/2 mx-4">
+            <h1>
+              <div class="text-6xl mb-4">{{ site.title }}</div>
+              <div class="font-medium text-xl md:text-2xl">{{ site.baseline }}</div>
+            </h1>
+            {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+            <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn btn-gold mb-4 mr-2">{% trans %}Quick Start{% endtrans %}</a>
+            {%- endif ~%}
+            {%- if site.menus.main.download is defined ~%}
+            <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-trans mr-2 hidden sm:inline-block">{% trans %}Download{% endtrans %}</a>
+            {%- endif ~%}
+          </div>
+          <div class="md:w-1/2 mx-4 hidden md:inline-flex">
+            {%~ include 'partials/terminal.html.twig' ~%}
+          </div>
+        </div>
+      </div>
+    </div>
+    {#- news ~#}
+    <div id="news" class="bg-darkblue dark:bg-black">
+      <div class="container mx-auto flex flex-wrap flex-row">
+        {%- for news in site.pages.showable|filter_by('section', 'news')|sort_by_date(desc_title=true)|slice(0, 4) ~%}
+        <a class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 hover:bg-gold hover:shadow-lg group{% if loop.index > 2 %} hidden md:block{% endif %}" href="{{ url(news) }}" title="{{ news.description|default()|replace({'"':"'"}) }}">
+          <div class="text-slate-300 group-hover:text-blue mb-1">{{ news.date|format_date('long') }}</div>
+          <div class="font-medium text-white group-hover:text-darkblue">{{ news.title }}</div>
+        </a>
+        {%- endfor ~%}
+      </div>
+    </div>
+{%- endblock ~%}
+
+{%- block content ~%}
+        {#- about blocks ~#}
+        <div id="about" class="mt-6 md:mt-10">
+          <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
+            {%- for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
+            {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
+            {%- endfor ~%}
+          </div>
+        </div>
+        {#- content ~#}
+        <div id="content" class="container mx-auto md:w-2/4 mt-10 px-0 md:px-8 py-5 leading-loose">
+          {%- if page.content ~%}
+          <div class="mb-4 markdown">
+            {{ page.content }}
+          </div>
+          {%- endif ~%}
+          {#- terminal ~#}
+          <div id="terminal" class="text-xl text-center mb-2 font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
+          <div class="bg-[#1f2937] p-4 rounded-md text-white font-mono text-sm">
+            <div class="termBtns"><span></span><span></span><span></span></div>
+            <pre class="leading-normal">curl -LO https://cecil.app/cecil.phar
+php cecil.phar new:site
+php cecil.phar serve</pre>
+          </div>
+        </div>
+        {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+        <div class="text-center mt-4 md:mt-6">
+          <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn font-medium">{% trans %}Quick Start{% endtrans %}</a>
+        </div>
+        {%- endif ~%}
+{%- endblock ~%}
+
+{%- block features ~%}
+    <div id="features">
+    {%- for block in page.blocks.features|default({})|filter(b => b.visible != false) ~%}
+    {%~ include 'partials/block-feature.html.twig' with {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default('images/cecil-card.png'), shadow:block.shadow ?? true, webp:block.webp ?? true} only ~%}
+    {%- endfor ~%}
+    </div>
+{%- endblock ~%}
+
+{%- block sponsors ~%}
+    <div id="sponsors" class="p-10 md:p-16">
+      <div class="container mx-auto">
+        <div class="text-xl font-bold pb-10 md:pb-16 text-center">{% trans %}Cecil is generously supported by{% endtrans %}</div>
+        <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-16 items-center">
+        {%- for block in page.blocks.sponsors|default({})|filter(b => b.visible != false) ~%}
+          {%- set sponsor_logo = asset(block.logo)|resize(250) -%}
+          {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(250) ~%}
+          <div class="grow md:h-auto text-center hover:scale-125 ease-in-out duration-700">
+            <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}">
+              <img class="inline-block dark:hidden" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+            </a>
+          </div>
+        {%- endfor ~%}
+        </div>
+      </div>
+    </div>
+{%- endblock ~%}
+
+{%- block footer_scripts ~%}
+    {{- parent() ~}}
+    {%~ include 'partials/version.js.twig' only ~%}
+    {%~ include 'partials/animation.js.twig' only ~%}
+{%- endblock footer_scripts ~%}
