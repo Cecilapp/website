@@ -189,8 +189,8 @@
     {{- include('partials/highlight.js.twig', with_context = false) ~}}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
     {%- endblock footer_scripts ~%}
-    <style>{% apply minify_css %}
-      {% block footer_css %}
+    <style>{% apply minify_css ~%}
+      {%- block footer_css ~%}
       {#- Fix highlight.js with Typography ~#}
       pre code.hljs {
         padding: initial;
@@ -198,7 +198,7 @@
       .hljs {
         background: transparent;
       }
-      {% endblock footer_css %}
+      {%- endblock footer_css ~%}
     {% endapply %}</style>
   </body>
 </html>
