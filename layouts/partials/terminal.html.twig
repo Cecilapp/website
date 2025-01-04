@@ -17,7 +17,7 @@
                 </noscript>
               </div>
             </div>
-            <script>{% apply minify_js %}
+            <script>{% apply minify_js ~%}
               if (window.matchMedia("(min-width: 768px)").matches) {
                 console.log('Loading video');
                 var source = document.getElementById('video-demo').getElementsByTagName('source')[0];
