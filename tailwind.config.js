@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    './layouts/**/*.html.twig',
-    './themes/**/layouts/**/*.html.twig',
+    './layouts/**/*.twig',
+    './themes/**/layouts/**/*.twig',
   ],
   safelist: [
     'anchorjs-link',
