@@ -16,11 +16,17 @@
               <div class="text-6xl mb-4">{{ site.title }}</div>
               <div class="font-medium text-xl md:text-2xl">{{ site.baseline }}</div>
             </h1>
+            {#- Quick Start link ~#}
             {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-            <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn btn-gold mb-4 mr-2">{% trans %}Quick Start{% endtrans %}</a>
+            {%- x:button with {url: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold mb-4 mr-2'} ~%}
+              {% trans %}Quick Start{% endtrans %}
+            {%- endx ~%}
             {%- endif ~%}
+            {#- Download link ~#}
             {%- if site.menus.main.download is defined ~%}
-            <a id="download-button" href="{{ url(site.menus.main.download.url) }}" class="btn btn-trans mr-2 hidden sm:inline-block">{% trans %}Download{% endtrans %}</a>
+            {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans mr-2 hidden sm:inline-block'} ~%}
+              {% trans %}Download{% endtrans %}
+            {%- endx ~%}
             {%- endif ~%}
           </div>
           <div class="md:w-1/2 mx-4 hidden md:inline-flex">
@@ -69,7 +75,9 @@ php cecil.phar serve</pre>
         </div>
         {%- if site.menus.home['documentation/quick-start'] is defined ~%}
         <div class="text-center mt-4 md:mt-6">
-          <a href="{{ url(site.menus.home['documentation/quick-start'].url) }}" class="btn font-medium">{% trans %}Quick Start{% endtrans %}</a>
+          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'font-medium'} ~%}
+            {% trans %}Quick Start{% endtrans %}
+          {%- endx ~%}
         </div>
         {%- endif ~%}
 {%- endblock ~%}
