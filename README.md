@@ -34,13 +34,13 @@ php cecil.phar new:page news/cecil-X.Y.0-released --prefix
 ### Preview locally
 
 ```bash
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css --watch
-php cecil.phar serve -v --config=config/dev.yml
+npx tailwindcss -i ./tailwind.css -o ./assets/styles.css --watch
+php cecil.phar serve -v --config=config/dev.yml --clear-cache=css
 ```
 
 ### Build for production
 
 ```bash
-CECIL_ENV=production npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
+CECIL_ENV=production npx tailwindcss -i ./tailwind.css -o ./assets/styles.css
 php cecil.phar build
 ```
