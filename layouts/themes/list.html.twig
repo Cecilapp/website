@@ -32,14 +32,21 @@
             {% if not screenshot['missing'] ~%}
             <p>{{ screenshot|html({alt: repo.name}) }}</p>
             {%- endif ~%}
-            <a class="btn btn-sm" href="{{ repo.github }}" role="button">{% trans %}Source code{% endtrans %}</a>
-            <a class="btn btn-sm" href="{{ repo.github }}#readme" role="button">{% trans %}Documentation{% endtrans %}</a>
-            {%- block website ~%}
-            {%- if repo.homepage ~%}
-            <a class="btn btn-sm" href="{{ repo.homepage }}" role="button">{% trans %}Demo{% endtrans %}</a>
-            {%- endif ~%}
-            {%- endblock ~%}
-
+            <p class="flex space-x-2">
+              {%- x:button with {href: repo.github, class: 'btn-sm', role: 'button'} ~%}
+                {% trans %}Source code{% endtrans %}
+              {%- endx ~%}
+              {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
+                {% trans %}Documentation{% endtrans %}
+              {%- endx ~%}
+              {%- block website ~%}
+                {%- if repo.homepage ~%}
+                  {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                    {% trans %}Demo{% endtrans %}
+                  {%- endx ~%}
+                {%- endif ~%}
+              {%- endblock ~%}
+            </p>
             {%- block command ~%}
             <h3>Quick download</h3>
             <pre><code>composer require cecil/{{ repo.name|lower }}</code></pre>
