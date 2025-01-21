@@ -9,9 +9,11 @@
             {%- endblock ~%}
 
             {%- block website ~%}
-            {%- if repo.homepage ~%}
-            <a class="btn btn-sm" href="{{ repo.homepage }}" role="button">{% trans %}Homepage{% endtrans %}</a>
-            {%- endif ~%}
+              {%- if repo.homepage ~%}
+                {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                  {% trans %}Homepage{% endtrans %}
+                {%- endx ~%}
+              {%- endif ~%}
             {%- endblock ~%}
 
             {%- block command ~%}
