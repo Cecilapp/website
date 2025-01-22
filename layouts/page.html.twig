@@ -81,9 +81,11 @@
             {%- endfor ~%}
           </select>
           {%- endif ~%}
-          {#-{%- if site.menus.main.themes is defined ~%}
+          {#-
+          {%- if site.menus.main.themes is defined ~%}
             <a class="md:hidden hover:text-white" href="{{ url(site.menus.main.themes.url) }}">{{ site.menus.main.themes.name }}</a>
-          {%- endif ~%}~#}
+          {%- endif ~%}
+          ~#}
           {#- search icon ~#}
           {%- set search_icon_path = url(site.menus.main.documentation.url) ~ '#top' ~%}
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
