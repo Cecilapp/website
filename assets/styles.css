@@ -1611,14 +1611,6 @@ img.markdown {
   visibility: visible;
 }
 
-.static {
-  position: static;
-}
-
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -2219,10 +2211,6 @@ img.markdown {
 
 .no-underline {
   text-decoration-line: none;
-}
-
-.opacity-0 {
-  opacity: 0;
 }
 
 .shadow {
