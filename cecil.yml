@@ -180,3 +180,6 @@ optimize:
   enabled: true
   js:
     enabled: false
+layouts:
+  components:
+    ext: 'html.twig'
