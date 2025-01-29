@@ -825,7 +825,7 @@ Supported formats: YAML, JSON, XML and CSV.
 
 ### static
 
-Where static files are stored (CSS, images, PDF, etc.).
+Where static files are stored (PDF, fonts, etc.).
 
 ```yaml
 static:
@@ -835,17 +835,17 @@ static:
   load: false # enables `site.static` collection (`false` by default)
 ```
 
-:::tip
-If you use [Bootstrap](https://getbootstrap.com) (or [Bootstrap Icons](https://icons.getbootstrap.com)) you can exclude the `node_modules` except specific directories, like `node_modules/bootstrap`, with a regular expression:
+:::important
+You should put your assets files, used by [`asset()`](3-Templates.md#asset), in the [`assets` directory](4-Configuration.md#assets) to avoid unnecessary files copy.
+:::
+
+:::tips
+If you use [Bootstrap](https://getbootstrap.com) you can exclude the `node_modules` except specific directories, like `node_modules/bootstrap`, with a regular expression:
 
 ```yaml
 exclude: ['sass', 'scss', '*.scss', 'package*.json', '#node_modules/(?!bootstrap.*)#']
 ```
 
-:::
-
-:::important
-You should put your assets files, used by [`asset()`](3-Templates.md#asset), in the [`assets` directory](4-Configuration.md#assets) to avoid unnecessary files copy.
 :::
 
 _Example:_
