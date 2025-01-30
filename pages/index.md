@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2024-02-02
+updated: 2025-01-31
 blocks:
   about:
     - title: Fast & Secure
@@ -105,12 +105,12 @@ blocks:
       logo: /images/logos/netlify.png
       logo_dark: /images/logos/netlify-dark.png
       url: https://www.netlify.com
-      visible: false
+      visible: true
     - title: Vercel
       logo: /images/logos/vercel.png
       logo_dark: /images/logos/vercel-dark.png
       url: https://vercel.com/?utm_source=cecil&utm_campaign=oss
-      visible: true
+      visible: false
 pagination:
   enabled: false
 pagesfrom: news
