@@ -1,6 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config './tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility jumbotron {
+  /* jumbotron */
+  @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
+}
+
+@utility btn {
+  /* buttons */
+  @apply mb-2 py-3 px-6;
+  @apply inline-block;
+  @apply no-underline;
+  @apply bg-white dark:bg-transparent;
+  @apply border border-blue dark:border-white rounded-sm;
+  &:hover {
+    @apply bg-blue dark:bg-black text-white;
+  }
+}
+
+@utility btn-sm {
+  /* SM button */
+  @apply py-1 px-3;
+}
+
+@utility btn-gold {
+  /* gold button */
+  @apply bg-gold dark:bg-gold text-darkblue dark:text-darkblue;
+  @apply border-gold dark:border-gold;
+  &:hover {
+    @apply bg-white dark:bg-white text-darkblue;
+    @apply border-white dark:border-white;
+  }
+}
+
+@utility btn-trans {
+  /* transparent button */
+  @apply bg-transparent dark:hover:bg-white text-white;
+  @apply border-white;
+  &:hover {
+    @apply bg-white text-darkblue;
+  }
+}
+
+@utility box-shadow {
+  /* shadow */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
@@ -24,10 +88,10 @@
     @apply underline;
   }
   main details a {
-    @apply no-underline !important;
+    @apply no-underline!;
   }
   main a[role="button"] {
-    @apply no-underline !important;
+    @apply no-underline!;
   }
   footer a:hover {
     @apply underline;
@@ -42,10 +106,10 @@
     @apply mb-1;
   }
   figcaption {
-    @apply text-center italic !important;
+    @apply text-center! italic!;
   }
   video {
-    @apply my-0 !important;
+    @apply my-0!;
   }
   /* External links in Markdown */
   .markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
@@ -65,49 +129,6 @@
   /* images in Markdown */
   img.markdown {
     @apply max-w-full h-auto;
-  }
-}
-
-@layer components {
-  /* jumbotron */
-  .jumbotron {
-    @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
-  }
-  /* buttons */
-  .btn {
-    @apply mb-2 py-3 px-6;
-    @apply inline-block;
-    @apply no-underline;
-    @apply bg-white dark:bg-transparent;
-    @apply border border-blue dark:border-white rounded;
-  }
-  .btn:hover {
-    @apply bg-blue dark:bg-black text-white;
-  }
-  /* SM button */
-  .btn-sm {
-    @apply py-1 px-3;
-  }
-  /* gold button */
-  .btn-gold {
-    @apply bg-gold dark:bg-gold text-darkblue dark:text-darkblue;
-    @apply border-gold dark:border-gold;
-  }
-  .btn-gold:hover {
-    @apply bg-white dark:bg-white text-darkblue;
-    @apply border-white dark:border-white;
-  }
-  /* transparent button */
-  .btn-trans {
-    @apply bg-transparent dark:hover:bg-white text-white;
-    @apply border-white;
-  }
-  .btn-trans:hover {
-    @apply bg-white text-darkblue;
-  }
-  /* shadow */
-  .box-shadow {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
 }
 

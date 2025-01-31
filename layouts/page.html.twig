@@ -38,7 +38,7 @@
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
-    <header class="sticky top-0 md:-top-[15px] z-[100] px-6 py-2 md:pt-6 md:pb-2 bg-blue dark:bg-dark"
+    <header class="sticky top-0 md:-top-[15px] z-100 px-6 py-2 md:pt-6 md:pb-2 bg-blue dark:bg-dark"
       :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl dark:shadow-slate-500/40': scrolledFromTop}"
     >
       <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
@@ -120,11 +120,11 @@
       </div>
     </header>
     {%- block jumbotron %}{% endblock ~%}
-    <main class="flex-grow px-6 py-8 scroll-mt-[50px]">
+    <main class="grow px-6 py-8 scroll-mt-[50px]">
       <div class="container mx-auto">
         {%- block content ~%}
         {#- content ~#}
-        <div class="markdown max-w-screen-md mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+        <div class="markdown max-w-(--breakpoint-md) mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
           <h1>{{ page.title }}</h1>
           {{ page.content }}
         </div>

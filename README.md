@@ -34,7 +34,7 @@ php cecil.phar new:page news/cecil-X.Y.0-released --prefix
 ### Preview locally
 
 ```bash
-npx tailwindcss -i ./tailwind.css -o ./assets/styles.css --watch
+npx @tailwindcss/cli -i ./tailwind.css -o ./assets/styles.css --watch
 php cecil.phar serve -v --config=config/dev.yml --clear-cache=css
 ```
 
