@@ -3,7 +3,7 @@
   command = "bash ./scripts/netlify-build.sh"
 
 [build.environment]
-  PHP_VERSION = "8.1"
+  PHP_VERSION = "8.3"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
   CECIL_CACHE_DIR = "/opt/build/cache/"
   NODE_VERSION = "18"
