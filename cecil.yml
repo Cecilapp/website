@@ -131,7 +131,7 @@ highlight:
 anchor:
   version: 5.0.0
 tocbot:
-  version: 4.25.0
+  version: v4.34.0
 alpinejs:
   version: 3.14.8
 algolia:
