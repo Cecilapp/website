@@ -133,7 +133,7 @@ anchor:
 tocbot:
   version: 4.25.0
 alpinejs:
-  version: 3.13.3
+  version: 3.14.8
 algolia:
   enabled: true
   version: '@4'
