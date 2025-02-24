@@ -9,7 +9,7 @@
                 {% trans %}Download{% endtrans %}
               {%- endx ~%}
               {#- SHA1 ~#}
-              {%- x:button with {id: 'download-button', href: url(site.release.sha1, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
+              {%- x:button with {id: 'sha1-button', href: url(site.release.sha1, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
                 {% trans %}File checksum{% endtrans %}
               {%- endx ~%}
             </p>
