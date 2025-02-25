@@ -6,9 +6,9 @@
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/3.31.0/cecil.phar",
-  "version": "3.31.0",
-  "hash": "sha1:d09b6913afe7d786aa7421af64ffb5fa1825fc29",
+  "url": "https://cecil.app/download/3.31.1/cecil.phar",
+  "version": "3.31.1",
+  "hash": "sha1:89f76f9bdd8fd9f840a139733527a7f94dfb290f",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\\d.]+)"
