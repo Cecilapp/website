@@ -1,9 +1,10 @@
 vendor
 node_modules
-/themes
-/_site
-/.cecil
-/.cache
+themes/
+_site/
+.cecil/
+.cache/
+.debug/
 static/cecil.phar
 static/cecil.phar.version
 cecil.phar
