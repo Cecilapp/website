@@ -117,6 +117,7 @@ static:
   exclude:
     - 'cecil-demo.png'
     - '*.mp4'
+    - 'archives'
 release:
   name: cecil.phar
   sha1: cecil.phar.sha1
