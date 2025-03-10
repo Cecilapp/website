@@ -181,7 +181,7 @@ assets:
       account: 'aligny'
       url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
 optimize:
-  enabled: true
+  #enabled: true
   js:
     enabled: false
 layouts:
