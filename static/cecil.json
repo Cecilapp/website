@@ -7,9 +7,9 @@
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/8.33.0/cecil.phar",
-  "version": "8.33.0",
-  "hash": "sha1:21e602f5c69e77a65403e6343589e73ca01fde02",
+  "url": "https://cecil.app/download/8.33.1/cecil.phar",
+  "version": "8.33.1",
+  "hash": "sha1:2e45212829d557a069e92f41cd7e586badf98975",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\\d.]+)"
@@ -24,6 +24,6 @@
     "@(",
     "  'if ($args.length -eq 1 -and $args -eq \"self-update\") { & scoop update cecil }'",
     "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
-    ") | Add-Content -Path \"$dir\cecil.phar\""
+    ") | Add-Content -Path \"$dir\$DIST_FILE\""
   ]
 }
