@@ -9,7 +9,7 @@
   },
   "url": "https://cecil.app/download/8.33.0/cecil.phar",
   "version": "8.33.0",
-  "hash": "sha1:33cd757d5ef9042ae444f04f610bc85d50dbd62c",
+  "hash": "sha1:21e602f5c69e77a65403e6343589e73ca01fde02",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\\d.]+)"
@@ -24,6 +24,6 @@
     "@(",
     "  'if ($args.length -eq 1 -and $args -eq \"self-update\") { & scoop update cecil }'",
     "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
-    ") | Add-Content -Path \"$dir\\cecil.phar\""
+    ") | Add-Content -Path \"$dir\cecil.phar\""
   ]
 }
