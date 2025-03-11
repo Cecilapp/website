@@ -24,6 +24,6 @@
     "@(",
     "  'if ($args.length -eq 1 -and $args -eq \"self-update\") { & scoop update cecil }'",
     "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
-    ") | Add-Content -Path \"$dir\$DIST_FILE\""
+    ") | Add-Content -Path \"$dir\\cecil.phar\""
   ]
 }
