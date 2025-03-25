@@ -1,0 +1,20 @@
+{
+  "name": "cecil.app",
+  "devDependencies": {
+    "@netlify/plugin-lighthouse": "^5.0",
+    "@tailwindcss/forms": "^0.5",
+    "@tailwindcss/typography": "^0.5",
+    "netlify-plugin-refresh-algolia": "^1.0",
+    "postcss": "^8.4",
+    "tailwindcss": "^4.0"
+  },
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css",
+    "css:watch": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css --watch",
+    "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
+    "serve": "cecil serve --config=config/dev.yml"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0"
+  }
+}

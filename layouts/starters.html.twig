@@ -1,0 +1,23 @@
+{% extends 'themes/list.html.twig' %}
+
+{% set repos = site.data.starters %}
+
+            {%- block nav %}{% endblock ~%}
+
+            {%- block name ~%}
+            <h2>{{ repo.name }}</h2>
+            {%- endblock ~%}
+
+            {%- block website ~%}
+              {%- if repo.homepage ~%}
+                {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                  {% trans %}Homepage{% endtrans %}
+                {%- endx ~%}
+              {%- endif ~%}
+            {%- endblock ~%}
+
+            {%- block command ~%}
+            <h3>Quick download and preview</h3>
+            <pre><code>composer create-project cecil/{{ repo.name|lower }} --ask
+php cecil.phar serve</code></pre>
+            {%- endblock ~%}
