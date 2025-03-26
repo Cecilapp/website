@@ -1,0 +1,47 @@
+[build]
+  publish = "_site"
+  command = "bash ./scripts/netlify-build.sh"
+
+[build.environment]
+  PHP_VERSION = "8.3"
+  CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
+  CECIL_CACHE_DIR = "/opt/build/cache/"
+  NODE_VERSION = "18"
+  CSS_INPUT = "tailwind.css"
+  CSS_OUPUT = "assets/styles.css"
+  #ALGOLIA_INDEX = "_site/algolia.json"
+
+[context."8.x-dev".environment]
+  CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/download/8.0.0-beta.7/cecil.phar"
+  CECIL_BASEURL = "https://8-x-dev.cecil.app/"
+
+[context.production.environment]
+  CECIL_ENV = "production"
+
+[[context.production.plugins]]
+  package = "netlify-plugin-refresh-algolia"
+  [context.production.plugins.inputs]
+    appId = "PVTO81KCEC"
+    indexName = "documentation"
+    #filePath = "_site/algolia.json"
+
+[context.deploy-preview.environment]
+  CECIL_ENV = "preview"
+
+#[[plugins]]
+#  package = "netlify-plugin-refresh-algolia"
+#  [plugins.inputs]
+#    appId = "PVTO81KCEC"
+#    indexName = "documentation.fr"
+#    filePath = "_site/fr/algolia.json"
+
+#[[context.algolia.plugins]]
+#  package = "netlify-plugin-refresh-algolia"
+#  [context.algolia.plugins.inputs]
+#    appId = "PVTO81KCEC"
+#    indexName = "documentation-preview"
+
+#[[plugins]]
+#  package = "@netlify/plugin-lighthouse"
+#  [plugins.inputs]
+#    output_path = "lighthouse.html"

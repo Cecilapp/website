@@ -1,0 +1,29 @@
+{
+  "description": "A simple and powerful content-driven static site generator.",
+  "homepage": "https://cecil.app",
+  "license": "MIT",
+  "bin": "cecil.phar",
+  "notes": "'cecil self-update' is aliased to 'scoop update cecil'",
+  "suggest": {
+    "PHP": ["php"]
+  },
+  "url": "https://cecil.app/download/8.34.3/cecil.phar",
+  "version": "8.34.3",
+  "hash": "sha1:f80ee4982ef0becd63fcfc856f7b9882ab811c56",
+  "checkver": {
+    "url": "https://cecil.app/VERSION",
+    "regex": "([\\d.]+)"
+  },
+  "autoupdate": {
+    "url": "https://cecil.app/download/$version/cecil.phar",
+    "hash": {
+      "url": "$url.sha1"
+    }
+  },
+  "pre_install": [
+    "@(",
+    "  'if ($args.length -eq 1 -and $args -eq \"self-update\") { & scoop update cecil }'",
+    "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
+    ")"
+  ]
+}
