@@ -44,6 +44,10 @@ languages:
             url: https://github.com/Cecilapp/
       algolia:
         enabled: false
+      pages:
+        paths:
+          - section: news
+            path: actualites/:year/:month/:day/:slug
 menus:
   main:
     - id: news
@@ -145,9 +149,6 @@ pages:
   paths:
     - section: news
       path: :section/:year/:month/:day/:slug
-    - section: news
-      language: fr
-      path: actualites/:year/:month/:day/:slug
   body:
     images:
       class: "dark:brightness-90"
