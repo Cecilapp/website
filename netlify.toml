@@ -28,9 +28,6 @@
 [context.deploy-preview.environment]
   CECIL_ENV = "preview"
 
-[[plugins]]
-  package = "netlify-plugin-cecil-cache"
-
 #[[plugins]]
 #  package = "netlify-plugin-refresh-algolia"
 #  [plugins.inputs]
