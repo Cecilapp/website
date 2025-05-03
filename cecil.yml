@@ -166,6 +166,9 @@ pages:
       enabled: true
     highlight:
       enabled: true
+    links:
+      external:
+        blank: true
 assets:
   images:
     optimize:
