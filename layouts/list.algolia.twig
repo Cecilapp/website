@@ -20,7 +20,7 @@
       {%- if loop.index0 > 0 -%}
         {%- set section_content = sections[loop.index0]|split('</' ~ balise ~ '>') -%}
         {%- set title = section_content[0]|striptags|trim -%}
-        {%- set anchor = title|lower|replace({':': '', ' ': '-', '_': '-', '.': '-'}) -%}
+        {%- set anchor = title|lower|replace({':': '', ' ': '-', '_': '-', '.': '-', '--': '-'}) -%}
         {%- set content = section_content[1]|striptags|trim ~%}
         {%- set description = '' -%}
         {%- if section_content[1]|trim starts with '<p>' -%}
