@@ -1,6 +1,8 @@
 ---
 title: How to render responsive images in templates?
 layout: responsive-images
+date: 2024-01-18
+updated: 2025-05-12
 ---
 # How to render responsive images in templates?
 
@@ -11,7 +13,7 @@ The easiest way to render [responsive images](https://developer.mozilla.org/docs
 ```
 
 :::important
-The default width values of the generated images are 480, 640, 768, 1024, 1366, 1600 and 1920. They can be modified in the _assets_ section of the [configuration](/documentation/configuration/#assets).
+The default width values of the generated images are 480, 640, 768, 1024, 1366, 1600 and 1920. They can be modified in the _assets_ section of the [configuration](/documentation/configuration/#assets-images).
 :::
 
 ## Example
