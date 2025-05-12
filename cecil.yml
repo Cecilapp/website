@@ -41,6 +41,7 @@ languages:
             enabled: false
         footer:
           - id: github
+            name: Open source
             url: https://github.com/Cecilapp/
       algolia:
         enabled: false
@@ -68,6 +69,7 @@ menus:
       enabled: false
   footer:
     - id: github
+      name: Open source
       url: https://github.com/Cecilapp/
 pages:
   paths:
