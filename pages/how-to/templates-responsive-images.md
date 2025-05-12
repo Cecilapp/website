@@ -21,7 +21,7 @@ The default width values of the generated images are 480, 640, 768, 1024, 1366, 
 Bellow an example with a PNG image 1000x1000 pixels.
 
 ```twig
-{{ asset('images/cecil-logo-1000.png')|html(attributes={alt: 'Cecil logo'}, options={responsive: true}) }}
+{{ html(asset('images/cecil-logo-1000.png'), attributes={alt: 'Cecil logo'}, options={responsive: true}) }}
 ```
 
 ### Configuration
