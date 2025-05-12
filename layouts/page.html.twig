@@ -136,29 +136,30 @@
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         <ul>
-          {%- if site.menus.footer is defined -%}
-            {#- About -#}
-            {%- if site.menus.footer.about is defined ~%}
+          {#- Footer menu -#}
+        {%- if site.menus.footer is defined -%}
+          {#- About -#}
+          {%- if site.menus.footer.about is defined -%}
           <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.about.url) }}">{% trans %}About{% endtrans %}</a></li>
-            {%- endif -%}
-            {#- Download -#}
-            {%- if site.menus.footer.download is defined ~%}
-          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.download.url) }}">{% trans %}Download{% endtrans %}</a></li>
-            {%- endif -%}
-            {#- Open source (GitHub) -#}
-            {%- if site.menus.footer.github.url is defined ~%}
-          <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans %}Open source{% endtrans %}</a></li>
-            {%- endif -%}
           {%- endif -%}
-          {#- Language switcher -#}
-          {%- if page.translations|length >= 1 ~%}
+          {#- Download -#}
+          {%- if site.menus.footer.download is defined -%}
+          <li class="inline after:content-['\00a0\00B7\00a0']"><a href="{{ url(site.menus.footer.download.url) }}">{% trans %}Download{% endtrans %}</a></li>
+          {%- endif -%}
+          {#- Open source (GitHub) -#}
+          {%- if site.menus.footer.github.url is defined -%}
+          <li class="inline{% if page.translations|length >= 1 %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(site.menus.footer.github.url) }}">{% trans %}Open source{% endtrans %}</a></li>
+          {%- endif -%}
+        {%- endif -%}
+        {#- Language switcher -#}
+        {%- if page.translations|length >= 1 -%}
           <li class="inline">{{ include('partials/languages.html.twig') }}</li>
-          {%- endif ~%}
+        {%- endif -%}
         </ul>
         {#- Authors ~#}
         <ul>
           <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a></li>
-          {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
+          {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' -%}
           <li class="inline">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
         </ul>
         {#- Powered by ~#}
