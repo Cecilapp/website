@@ -135,22 +135,20 @@
     {%- block sponsors %}{% endblock ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
-        {#- Theme switcher ~#}
-        {{- include('partials/toggle-switch-dark.html.twig') ~}}
-        {#- Language switcher ~#}
-        {%- if page.translations|length >= 1 -%}
-        <div>
-          {{ include('partials/languages.html.twig') }}
-        </div>
-        {%- endif -%}
         {#- Footer menu -#}
         {%- if site.menus.footer is defined -%}
         <ul>
           {%- for entry in site.menus.footer|sort_by_weight -%}
           <li class="inline{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name|trans }}</a></li>
           {%- endfor -%}
+          {#- Language switcher ~#}
+          {%- if page.translations|length >= 1 -%}
+          <li class="inline before:content-['\00a0\00B7\00a0']">{{ include('partials/languages.html.twig') }}</li>
+          {%- endif -%}
         </ul>
         {%- endif -%}
+        {#- Theme switcher ~#}
+        <div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>
       </div>
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
         {#- Authors ~#}
