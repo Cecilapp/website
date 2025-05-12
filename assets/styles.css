@@ -1512,6 +1512,13 @@
       }
     }
   }
+  .before\:content-\[\'\\00a0\\00B7\\00a0\'\] {
+    &::before {
+      content: var(--tw-content);
+      --tw-content: '\00a0\00B7\00a0';
+      content: var(--tw-content);
+    }
+  }
   .after\:content-\[\'\\00a0\\00B7\\00a0\'\] {
     &::after {
       content: var(--tw-content);
