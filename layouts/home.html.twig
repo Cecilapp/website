@@ -4,7 +4,7 @@
     {{- parent() ~}}
     <style>{{- asset('animate.css')|inline -}}</style>
     {#- Animate JS ~#}
-    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false})|html({title: 'Animate CSS'}, {preload: true}) ~}}
+    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {minify: false}), {title: 'Animate CSS'}, {preload: true}) ~}}
 {%- endblock head ~%}
 
 {%- block jumbotron ~%}
