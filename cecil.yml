@@ -151,35 +151,25 @@ pages:
       path: :section/:year/:month/:day/:slug
   body:
     images:
+      formats: ['avif', 'webp']
+      responsive: true
       class: "dark:brightness-90"
-      resize:
-        enabled: true
-      responsive:
-        enabled: true
-      formats: ['webp']
-      caption:
-        enabled: true
-      remote:
-        enabled: true
+      caption: true
+      remote: true
       placeholder: lqip
-    notes:
-      enabled: true
-    highlight:
-      enabled: true
+    notes: true
+    highlight: true
     links:
       external:
         blank: true
 assets:
   images:
-    optimize:
-      enabled: true
+    optimize: true
     responsive:
-      enabled: true
       widths: [768, 1024]
       sizes:
         markdown: "(max-width: 800px) 768px, 1024px"
         home: "(max-width: 767px) 768px, 33vw"
-    formats: ['webp']
     cdn:
       enabled: false
       account: 'aligny'
@@ -189,5 +179,8 @@ optimize:
   js:
     enabled: false
 layouts:
+  images:
+    formats: ['avif', 'webp']
+    responsive: true
   components:
     ext: 'html.twig'
