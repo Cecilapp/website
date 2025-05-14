@@ -30,7 +30,7 @@
             {% set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) %}
             {% endif %}
             {% if not screenshot['missing'] ~%}
-            <p>{{ screenshot|html({alt: repo.name}) }}</p>
+            <p>{{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}</p>
             {%- endif ~%}
             <p class="flex space-x-2">
               {%- x:button with {href: repo.github, class: 'btn-sm', role: 'button'} ~%}
