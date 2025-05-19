@@ -1,0 +1,26 @@
+            <div class="shell-wrap">
+              <p class="shell-top-bar">/Users/aligny</p>
+              <div class="shell-body">
+                <video id="video-demo" width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}">
+                  <source data-src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
+                </video>
+                <noscript>
+                  <style>
+                    #video-demo {
+                      display: none;
+                    }
+                  </style>
+                  <video width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}">
+                    <source src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ asset('videos/cecil-demo.mp4')|url }}">link to the video</a> instead.</p>
+                  </video>
+                </noscript>
+              </div>
+            </div>
+            <script>{% apply minify_js ~%}
+              if (window.matchMedia("(min-width: 768px)").matches) {
+                console.log('Loading video');
+                var source = document.getElementById('video-demo').getElementsByTagName('source')[0];
+                source.src = source.getAttribute('data-src');
+              }
+            {% endapply %}</script>

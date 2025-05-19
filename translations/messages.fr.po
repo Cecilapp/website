@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2024-09-13 16:18+0200\n"
+"PO-Revision-Date: 2024-09-13 16:18+0200\n"
+"Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ../layouts\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.html.twig:6
+msgid "Sorry, page doesn't exist…"
+msgstr "Désolé, la page n’existe pas…"
+
+#: 404.html.twig:7 page.html.twig:48
+msgid "Home"
+msgstr "Accueil"
+
+#: documentation/list.html.twig:1 documentation/list.html.twig:9
+#: documentation/page.html.twig:1 themes/list.html.twig:36
+msgid "Documentation"
+msgstr "Documentation"
+
+#: documentation/list.html.twig:24 documentation/page.html.twig:20
+#: partials/toc.html.twig:2
+msgid "What's on this page"
+msgstr "Sur cette page"
+
+#: documentation/page.html.twig:29
+msgid "Suggest a modification"
+msgstr "Suggérer une modification"
+
+#: download.html.twig:7 home.html.twig:23 page.html.twig:126
+msgid "Download"
+msgstr "Télécharger"
+
+#: download.html.twig:8
+msgid "File checksum"
+msgstr "Somme de contrôle du fichier"
+
+#: home.html.twig:20 home.html.twig:70
+msgid "Quick Start"
+msgstr "Démarrage rapide"
+
+#: home.html.twig:60
+msgid "Start with the CLI"
+msgstr "Commencer avec la ligne de commande"
+
+#: home.html.twig:86 page.html.twig:157
+msgid "Cecil is generously supported by"
+msgstr "Cecil est généreusement soutenu par"
+
+#: news/list.html.twig:6
+msgid "News"
+msgstr "Actualités"
+
+#: news/page.html.twig:11
+msgid "Release notes on GitHub"
+msgstr "Notes de version sur GitHub"
+
+#: page.html.twig:63
+msgid "Docs"
+msgstr "Doc"
+
+#: page.html.twig:74
+msgid "Documentation:"
+msgstr "Documentation :"
+
+#: page.html.twig:122
+msgid "About"
+msgstr "À propos"
+
+#: page.html.twig:130
+msgid "Open source"
+msgstr "Open source"
+
+#: page.html.twig:142
+msgid "Logo by %logo_by%"
+msgstr "Logo par %logo_by%"
+
+#: page.html.twig:149
+msgid "Powered by %powered_by%"
+msgstr "Propulsé par %powered_by%"
+
+#: page.html.twig:174
+msgid "Star"
+msgstr "Favoris"
+
+#: partials/block-feature.html.twig:10 partials/block-feature.html.twig:15
+msgid "Get started"
+msgstr "Commencer"
+
+#: partials/language-selector.html.twig:4
+msgid "Language:"
+msgstr "Langue :"
+
+#: partials/search-box.html.twig:3
+msgid "Search the Docs [Alt+S]"
+msgstr "Rechercher dans la doc [Alt+S]"
+
+#: partials/toggle-switch-dark.html.twig:3
+msgid "Light"
+msgstr "Clair"
+
+#: partials/toggle-switch-dark.html.twig:7
+msgid "Dark"
+msgstr "Sombre"
+
+#: starters.html.twig:13
+msgid "Homepage"
+msgstr "Page d'accueil"
+
+#: themes/list.html.twig:35
+msgid "Source code"
+msgstr "Code source"
+
+#: themes/list.html.twig:39
+msgid "Demo"
+msgstr "Démo"
+
+#~ msgid "Cecil’s sponsors"
+#~ msgstr "Sponsors de Cecil"
+
+#~ msgid "Sponsored by %sponsor_title%"
+#~ msgstr "Sponsorisé par %sponsor_title%"
+
+#~ msgid "Table of contents"
+#~ msgstr "Table des matières"
