@@ -7,9 +7,9 @@
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/8.45.0/cecil.phar",
-  "version": "8.45.0",
-  "hash": "sha1:cb735a87be97a646824c12165622cf4cbe4b04c5",
+  "url": "https://cecil.app/download/8.45.1/cecil.phar",
+  "version": "8.45.1",
+  "hash": "sha1:3e9c6915771f1728f35e9fec717a2d267a9472ad",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\\d.]+)"
@@ -27,6 +27,6 @@
     ")"
   ],
   "post_install": [
-    "Write-Host \"Run  to get started\""
+    "Write-Host \"Run 'cecil' to get started\""
   ]
 }
