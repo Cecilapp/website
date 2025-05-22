@@ -2,13 +2,13 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2024-09-14
+updated: 2025-05-22
 layout: download
+slug: telecharger
 menu:
   main:
     weight: 30
   footer:
-slug: telecharger
 ---
 # Télécharger
 
@@ -41,6 +41,16 @@ Vous pouvez installer Cecil sur Windows avec 🍨[Scoop](https://scoop.sh):
 ```bash
 scoop install https://cecil.app/scoop/cecil.json
 ```
+
+:::warning
+Avant le 22 mai 2025, le manifeste était disponible depuis `https://cecil.app/cecil.json`, donc si vous l’avez déjà installé, vous devez le désinstaller et le réinstaller avec la nouvelle URL:
+
+```bash
+scoop uninstall cecil
+scoop install https://cecil.app/scoop/cecil.json
+```
+
+:::
 
 Ou manuellement :
 
