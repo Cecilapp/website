@@ -5,8 +5,8 @@
   "bin": "cecil.phar",
   "notes": [
     "Run 'cecil' to get started",
-    "Command 'cecil self-update' is aliased to 'scoop update cecil'",
-  ]
+    "Command 'cecil self-update' is aliased to 'scoop update cecil'"
+  ],
   "suggest": {
     "PHP": ["php"]
   },
