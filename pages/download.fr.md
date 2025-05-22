@@ -39,7 +39,7 @@ brew install cecilapp/tap/cecil
 Vous pouvez installer Cecil sur Windows avec 🍨[Scoop](https://scoop.sh):
 
 ```bash
-scoop install https://cecil.app/cecil.json
+scoop install https://cecil.app/scoop/cecil.json
 ```
 
 Ou manuellement :
