@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2024-09-14
+updated: 2025-05-22
 layout: download
 alias: install
 menu:
@@ -41,6 +41,16 @@ You can install Cecil on Windows with 🍨[Scoop](https://scoop.sh):
 ```bash
 scoop install https://cecil.app/scoop/cecil.json
 ```
+
+:::warning
+Before 22 mai 2025, the manifest was available at `https://cecil.app/cecil.json`, so if you have installed it before, you need to uninstall it and install it again with the new URL:
+
+```bash
+scoop uninstall cecil
+scoop install https://cecil.app/scoop/cecil.json
+```
+
+:::
 
 Or manually:
 
