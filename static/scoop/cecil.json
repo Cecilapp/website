@@ -3,13 +3,16 @@
   "homepage": "https://cecil.app",
   "license": "MIT",
   "bin": "cecil.phar",
-  "notes": "'cecil self-update' is aliased to 'scoop update cecil'",
+  "notes": [
+    "Run 'cecil' to get started",
+    "Command 'cecil self-update' is aliased to 'scoop update cecil'",
+  ]
   "suggest": {
     "PHP": ["php"]
   },
-  "url": "https://cecil.app/download/8.45.5/cecil.phar",
-  "version": "8.45.5",
-  "hash": "sha1:38f1599b94e0702f4a565277e8554f3b2316f0e6",
+  "url": "https://cecil.app/download/8.45.6/cecil.phar",
+  "version": "8.45.6",
+  "hash": "sha1:66e833c88f027b02ceed6aa9fbfe114df3c77b38",
   "checkver": {
     "url": "https://cecil.app/VERSION",
     "regex": "([\\d.]+)"
@@ -25,8 +28,5 @@
     "  'if ($args.length -eq 1 -and $args -eq \"self-update\") { & scoop update cecil }'",
     "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
     ")"
-  ],
-  "post_install": [
-    "Write-Host \"Run 'cecil' to get started\""
   ]
 }
