@@ -5,7 +5,7 @@
   "bin": "cecil.phar",
   "notes": [
     "Run 'cecil' to get started",
-    "Command 'cecil self-update' is aliased to 'scoop update cecil'"
+    "Run 'scoop update cecil' instead of 'cecil self-update' to update"
   ],
   "suggest": {
     "PHP": ["php"]
@@ -22,11 +22,5 @@
     "hash": {
       "url": "$url.sha1"
     }
-  },
-  "pre_install": [
-    "@(",
-    "  'if ($args.length -eq 1 -and ($args -eq \"selfupdate\" -or $args -eq \"self-update\")) { & scoop update cecil }'",
-    "  'else { & php (Join-Path $PSScriptRoot \"cecil.phar\") @args }'",
-    ") | Add-Content -Path \"$dir\\cecil.phar\""
-  ]
+  }
 }
