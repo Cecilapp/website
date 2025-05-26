@@ -1,5 +1,5 @@
     {#- sidebar ~#}
-    <div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-darkblue dark:bg-dark text-slate-300 shadow-md lg:shadow-none -translate-x-full transition-all duration-200 ease-out">
+    <div id="sidebar" class="flex flex-col fixed z-50 lg:z-0 top-0 lg:top-auto w-80 lg:max-w-72 h-screen overflow-auto bg-blue dark:bg-dark text-slate-300 shadow-md lg:shadow-none -translate-x-full transition-all duration-200 ease-out">
       <div class="lg:hidden flex items-center h-14 pl-4 py-3">
         {#- sidebar mobile button ~#}
         <button class="navbar-item flex lg:hidden items-center mr-3" onclick="toggleMenu()">
@@ -7,7 +7,7 @@
             <title>{% trans %}Close menu{% endtrans %}</title><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
-        {#{- include('partials/title.html.twig') ~}#}
+        {{- include('partials/logo.html.twig') ~}}
       </div>
       <nav class="px-4 divide-y divide-secondary-400 lg:divide-y-0">
         {#- main menu ~#}
