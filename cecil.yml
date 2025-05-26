@@ -32,13 +32,13 @@ languages:
       description: "Cecil est une application PHP en ligne de commande qui fusionne des pages Markdown, des médias et des templates Twig afin de générer un site Web statique."
       menus:
         main:
+          - id: index
+            enabled: false
           - id: news
             weight: 10
           - id: documentation
             name: Documentation
             weight: 20
-          - id: index
-            enabled: false
         footer:
           - id: github
             name: Open source
@@ -54,18 +54,16 @@ metatags:
   articles: news
 menus:
   main:
+    - id: index
+      enabled: false
     - id: news
       weight: 10
     - id: documentation
       name: Documentation
       weight: 20
-    - id: index
-      enabled: false
     - id: cms
       enabled: false
     - id: hosting
-      enabled: false
-    - id: how-to
       enabled: false
   footer:
     - id: github

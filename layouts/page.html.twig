@@ -38,10 +38,20 @@
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
-    <header class="sticky top-0 md:-top-[15px] z-100 px-6 py-2 md:pt-6 md:pb-2 bg-blue dark:bg-dark"
+    {#- sidebar ~#}
+    {%- block sidebar ~%}
+      {%- embed 'partials/sidebar.html.twig' %}{% endembed ~%}
+    {%- endblock sidebar ~%}
+    <header class="sticky top-0 md:-top-[4px] z-100 px-4 py-2 md:pt-2 md:pb-2 bg-blue dark:bg-dark text-slate-300"
       :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl dark:shadow-slate-500/40': scrolledFromTop}"
     >
       <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
+        {#- sidebar mobile button ~#}
+        <button class="navbar-item flex lg:hidden items-center mr-3" onclick="toggleMenu()">
+          <svg id="sidebar-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+            <title>{% trans %}Open menu{% endtrans %}</title><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+        </button>
         {#- logo ~#}
         <a class="flex flex-row items-center justify-center" href="{{ url(site.home) }}" title="{{ 'Home'|trans }}">
           <img class="w-8 md:w-12 m-0" src="{{ asset('logo.svg') }}" alt="{{ site.title }} logo" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
@@ -49,45 +59,14 @@
             :class="{'hidden': !scrolledFromTop, 'hidden md:inline-block': scrolledFromTop}"
           >{{ site.title }}</span>
         </a>
+        <div class="grow"></div>
         {#- navigation ~#}
         <nav class="flex mt-0 pt-0 space-x-4 md:space-x-6">
-          {#-
-          {%- if site.menus.main.news is defined ~%}
-          <a class="md:hidden hover:text-white" href="{{ url(site.menus.main.news.url) }}">{{ site.menus.main.news.name }}</a>
-          {%- endif ~%}
-          ~#}
           {%- for entry in site.menus.main|sort_by_weight ~%}
-          <a class="hidden md:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">
-            {%- if entry.id == 'documentation' ~%}
-            <span class="hidden sm:inline-block">{{ entry.name }}</span>
-            <span class="sm:hidden">{% trans %}Docs{% endtrans %}</span>
-            {%- elseif entry.id == 'download' ~%}
-            <span class="hidden sm:inline-block">{{ entry.name }}</span>
-            <span class="sm:hidden"><span class="sr-only">{{ entry.name }}</span>{{ octicon.svg('download', 16, 'w-5 h-5') }}</span>
-            {%- else ~%}
+          <a class="hidden lg:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">
             {{ entry.name }}
-            {%- endif ~%}
           </a>
           {%- endfor -%}
-          {#- mobile navigation ~#}
-          {%- if site.menus.main.documentation is defined ~%}
-          <label class="sr-only" for="documentation">{% trans %}Documentation:{% endtrans %}</label>
-          <select id="documentation" class="md:hidden flex w-full border-0 p-0 bg-transparent text-gold hover:text-white bg-none" @change="document.location.href=$event.target.value">
-            <option value="{{ url(site.menus.main.documentation.url) }}" class="bg-darkblue dark:bg-dark" selected="selected">Docs</option>
-            {%- for d in site.pages|filter_by('section', 'documentation')|sort_by_weight -%}
-            {%- set path_as_array = d.path|split('/') -%}
-            {#- documenation/ root pages only -#}
-            {%- if path_as_array|length < 3 ~%}
-            <option value="{{ url(d) }}" class="bg-darkblue dark:bg-dark">{{ d.title }}</option>
-            {%- endif -%}
-            {%- endfor ~%}
-          </select>
-          {%- endif ~%}
-          {#-
-          {%- if site.menus.main.themes is defined ~%}
-            <a class="md:hidden hover:text-white" href="{{ url(site.menus.main.themes.url) }}">{{ site.menus.main.themes.name }}</a>
-          {%- endif ~%}
-          ~#}
           {#- search icon ~#}
           {%- set search_icon_path = url(site.menus.main.documentation.url) ~ '#top' ~%}
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
