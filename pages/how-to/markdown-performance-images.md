@@ -1,5 +1,5 @@
 ---
-title: How to optimize Markdown images for performance?
+title: How to optimize images in Markdown?
 date: 2025-06-01
 ---
 One of the most effective ways to improve the performance of your website is to optimize images.
