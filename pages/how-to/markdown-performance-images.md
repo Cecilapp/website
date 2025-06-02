@@ -1,10 +1,11 @@
 ---
 title: How to optimize images in Markdown?
 date: 2025-06-01
+updated: 2025-06-02
 ---
 One of the most effective ways to improve the performance of your website is to optimize images.
 
-Cecil can manages the following optimizations for images in Markdown:
+Cecil can manages the following optimizations for images in Markdown, automatically:
 
 1. **Dimensions**: Images dimensions are set to ensure proper layout and prevent layout shifts
 2. **Compression**: The image is compressed to reduce file size without significant loss of quality
@@ -13,6 +14,10 @@ Cecil can manages the following optimizations for images in Markdown:
 5. **Lazy loading**: The image is set to load lazily, meaning it will only load when it comes into the viewport
 6. **Decoding**: The image is set to decode asynchronously, improving the initial page load time
 7. **Placeholder**: A color placeholder is used while the image is loading
+
+:::info
+See documentation for more details on the [global assets configuration](/documentation/configuration/#assets-images) and the [pages configuration](/documentation/configuration/#pages-body-images).
+:::
 
 ## Example
 
@@ -27,6 +32,13 @@ Bellow an example with a PNG image 1920x1276 pixels.
 ### Configuration
 
 ```yaml
+# global assets configuration
+assets:
+  images:
+    optimize: true
+    responsive:
+      widths: [768, 1024]
+# images in Markdown configuration
 pages:
   body:
     images:
@@ -35,11 +47,6 @@ pages:
       lazy: true
       decoding: true
       placeholder: color
-assets:
-  images:
-    optimize: true
-    responsive:
-      widths: [768, 1024]
 ```
 
 ### Generated HTML
