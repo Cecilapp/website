@@ -6,6 +6,16 @@ One of the most effective ways to improve the performance of your website is to 
 
 Cecil provides several methods to help you achieve this, including lazy loading, resizing, generating multiple formats, generating responsive images and placeholder.
 
+Cecil can manages the following optimizations for images in Markdown:
+
+1. **Dimensions**: Images dimensions are set to ensure proper layout and prevent layout shifts
+2. **Compression**: The image is compressed to reduce file size without significant loss of quality
+3. **Image formats**: Cecil generates AVIF and WebP formats for the image
+4. **Responsive images**: Cecil generates two different sizes of the image (768px and 1024px)
+5. **Lazy loading**: The image is set to load lazily, meaning it will only load when it comes into the viewport
+6. **Decoding**: The image is set to decode asynchronously, improving the initial page load time
+7. **Placeholder**: A color placeholder is used while the image is loading
+
 ## Example
 
 Bellow an example with a PNG image 1920x1276 pixels.
@@ -29,6 +39,7 @@ pages:
       placeholder: color
 assets:
   images:
+    optimize: true
     responsive:
       widths: [768, 1024]
 ```
