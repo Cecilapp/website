@@ -4,8 +4,6 @@ date: 2025-06-01
 ---
 One of the most effective ways to improve the performance of your website is to optimize images.
 
-Cecil provides several methods to help you achieve this, including lazy loading, resizing, generating multiple formats, generating responsive images and placeholder.
-
 Cecil can manages the following optimizations for images in Markdown:
 
 1. **Dimensions**: Images dimensions are set to ensure proper layout and prevent layout shifts
