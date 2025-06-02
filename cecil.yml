@@ -22,7 +22,7 @@ language: en
 languages:
   - code: en
     name: English
-    locale: en_US
+    locale: en
   - code: fr
     enabled: true
     name: Français
