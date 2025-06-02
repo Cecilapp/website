@@ -9,7 +9,7 @@ Cecil can manages the following optimizations for images in Markdown:
 1. **Dimensions**: Images dimensions are set to ensure proper layout and prevent layout shifts
 2. **Compression**: The image is compressed to reduce file size without significant loss of quality
 3. **Image formats**: Cecil generates AVIF and WebP formats for the image
-4. **Responsive images**: Cecil generates two different sizes of the image (768px and 1024px)
+4. **Responsive images**: Cecil generates two different sizes of the image (based on the configuration) to serve the appropriate size for different devices
 5. **Lazy loading**: The image is set to load lazily, meaning it will only load when it comes into the viewport
 6. **Decoding**: The image is set to decode asynchronously, improving the initial page load time
 7. **Placeholder**: A color placeholder is used while the image is loading
