@@ -32,13 +32,13 @@ Bellow an example with a PNG image 1920x1276 pixels.
 ### Configuration
 
 ```yaml
-# global assets configuration
+# assets global configuration
 assets:
   images:
     optimize: true
     responsive:
       widths: [768, 1024]
-# images in Markdown configuration
+# configuration of images in Markdown
 pages:
   body:
     images:
