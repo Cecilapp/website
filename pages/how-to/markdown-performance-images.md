@@ -8,13 +8,13 @@ Cecil provides several methods to help you achieve this, including lazy loading,
 
 ## Example
 
-Bellow an example with a PNG image 2272x1760 pixels.
+Bellow an example with a PNG image 1920x1276 pixels.
 
 ```twig
-![Photo Stream screenshot](/images/photo-stream.png)
+![Photo by Arnaud Girault](/images/arnaud-girault-IjEtFjxXweE-unsplash.jpg)
 ```
 
-![Photo Stream screenshot](../../assets/images/photo-stream.png){placeholder=color}
+![Photo by Arnaud Girault](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg){placeholder=color}
 
 ### Configuration
 
@@ -39,27 +39,26 @@ assets:
 <picture>
   <source
     type="image/avif"
-    srcset="/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.avif 1024w, /thumbnails/768/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.avif 768w"
+    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 1024w, /thumbnails/768/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 768w"
     sizes="100vw"
     width="1024"
-    height="793"
+    height="681"
   >
   <source
     type="image/webp"
-    srcset="/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.webp 1024w, /thumbnails/768/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.webp 768w"
+    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 1024w, /thumbnails/768/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 768w"
     sizes="100vw"
     width="1024"
-    height="793"
+    height="681"
   >
-  <img
-    src="/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.png"
-    alt="Photo Stream screenshot"
+  <img src="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg"
+    alt="Photo by Arnaud Girault"
     loading="lazy"
     decoding="async"
     width="1024"
-    height="793"
-    style=";max-width:100%;height:auto;background-color:rgba(255, 255, 255, 0.0);"
-    srcset="/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.png 1024w, /thumbnails/768/thumbnails/1024/images/photo-stream.2ac467efc00ba19217fb82398d1b2f16.png 768w"
+    height="681"
+    style=";max-width:100%;height:auto;background-color:rgb(58, 56, 44);"
+    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 1024w, /thumbnails/768/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 768w"
     sizes="100vw"
   >
 </picture>
