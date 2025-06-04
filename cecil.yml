@@ -1,0 +1,187 @@
+title: "Cecil"
+baseline: "A simple and powerful content-driven static site generator."
+description: "Cecil is a command-line PHP application that merges Markdown pages, medias and Twig templates to generate a static website."
+baseurl: "https://cecil.app/"
+author:
+  name: "Arnaud Ligny"
+  url: "https://arnaudligny.fr"
+keywords: ["static site generator", "SSG", "website", "PHP", "Twig", "CLI"]
+social:
+  github:
+    repo: https://github.com/Cecilapp/Cecil
+    url: https://github.com/Cecilapp/Cecil
+  bluesky:
+    username: cecil.app
+    url: https://bsky.app/profile/cecil.app
+  twitter:
+    site: Cecil_Static
+    creator: ArnaudLigny
+    url: https://twitter.com/Cecil_Static
+image: /images/cecil-card.png
+language: en
+languages:
+  - code: en
+    name: English
+    locale: en
+  - code: fr
+    enabled: true
+    name: Français
+    locale: fr_FR
+    config:
+      baseline: "Un générateur de site statique simple et puissant, axé sur le contenu."
+      description: "Cecil est une application PHP en ligne de commande qui fusionne des pages Markdown, des médias et des templates Twig afin de générer un site Web statique."
+      menus:
+        main:
+          - id: index
+            enabled: false
+          - id: news
+            weight: 10
+          - id: documentation
+            name: Documentation
+            weight: 20
+        footer:
+          - id: github
+            name: Open source
+            url: https://github.com/Cecilapp/
+      algolia:
+        enabled: false
+      pages:
+        paths:
+          - section: news
+            path: actualites/:year/:month/:day/:slug
+metatags:
+  jsonld: true
+  articles: news
+menus:
+  main:
+    - id: index
+      enabled: false
+    - id: news
+      weight: 10
+    - id: documentation
+      name: Documentation
+      weight: 20
+    - id: cms
+      enabled: false
+    - id: hosting
+      enabled: false
+  footer:
+    - id: github
+      name: Open source
+      url: https://github.com/Cecilapp/
+pages:
+  paths:
+    - section: news
+      path: :section/:year/:month/:day/:slug
+  body:
+    images:
+      formats: ['avif', 'webp']
+      responsive: true
+      class: "dark:brightness-90"
+      caption: true
+      remote: true
+      placeholder: lqip
+    notes: true
+    highlight: true
+    links:
+      external:
+        blank: true
+assets:
+  images:
+    optimize: true
+    responsive:
+      widths: [768, 1024]
+      sizes:
+        markdown: "(max-width: 800px) 768px, 1024px"
+        home: "(max-width: 767px) 768px, 33vw"
+    cdn:
+      enabled: false
+      account: 'aligny'
+      url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
+static:
+  exclude:
+    - 'cecil-demo.png'
+    - '*.mp4'
+    - 'archives'
+layouts:
+  images:
+    formats: ['avif', 'webp']
+    responsive: true
+output:
+  formats:
+    - name: phar
+      mediatype: 'application/octet-stream'
+      extension: 'phar'
+    - name: sha1
+      mediatype: 'text/plain'
+      extension: 'phar.sha1'
+    - name: algolia
+      mediatype: 'application/json'
+      filename: 'algolia'
+      extension: 'json'
+    - name: bash
+      mediatype: 'text/plain'
+      extension: 'sh'
+  pagetypeformats:
+    homepage: ['html', 'atom', 'algolia']
+    section: ['html', 'atom', 'jsonfeed']
+optimize:
+  #enabled: true
+  js:
+    enabled: false
+theme:
+  - netlify
+  - pwa
+manifest:
+  background_color: '#163C56'
+  theme_color: '#163C56'
+  theme_color_dark: '#111827'
+  shortcuts: true
+serviceworker:
+  enabled: true
+  update:
+    snackbar: true
+  offline:
+    snackbar: true
+netlify:
+  redirects:
+    - from: https://cecilapp.netlify.app/*
+      to: https://cecil.app/:splat
+      status: 301
+      force: true
+    - from: https://8-x-dev--cecilapp.netlify.app/*
+      to: https://8-x-dev.cecil.app/:splat
+      status: 301
+      force: true
+  redirect_by_language: false
+editor: typora
+
+release:
+  name: cecil.phar
+  sha1: cecil.phar.sha1
+docs_repo: https://github.com/Cecilapp/Cecil/edit/master/docs/
+
+#googleanalytics: UA-387892-21
+cloudflareinsights: 601e6965b5bc43b782058112c5312906
+gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
+
+algolia:
+  enabled: true
+  version: '@4'
+  autocomplete:
+    version: 0
+  application_id: 'PVTO81KCEC'
+  search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
+  index: 'documentation'
+
+libs:
+  highlight:
+    version: 11.9.0
+    styles: atom-one-dark
+    languages: twig
+  anchor:
+    version: 5.0.0
+  tocbot:
+    version: v4.34.0
+  alpinejs:
+    version: 3.14.8
