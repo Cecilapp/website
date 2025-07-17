@@ -137,6 +137,13 @@ manifest:
   theme_color: '#163C56'
   theme_color_dark: '#111827'
   shortcuts: true
+  icons:
+    - icon-192x192.png
+    - icon-512x512.png
+    - src: icon-192x192.png
+      purpose: maskable
+    - src: icon-512x512.png
+      purpose: maskable
 serviceworker:
   enabled: true
   update:
