@@ -1,6 +1,6 @@
 ---
-redirect: download/8.50.2/cecil.phar
+redirect: download/8.50.3/cecil.phar
 slug: cecil
 output: phar
-date: 2025-06-15
+date: 2025-07-21
 ---
