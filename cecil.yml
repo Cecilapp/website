@@ -136,6 +136,7 @@ manifest:
   background_color: '#163C56'
   theme_color: '#163C56'
   theme_color_dark: '#111827'
+  display_override: 'minimal-ui'
   shortcuts: true
 serviceworker:
   enabled: true
