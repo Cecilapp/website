@@ -4,8 +4,6 @@ layout: responsive-images
 date: 2024-01-18
 updated: 2025-05-12
 ---
-# How to render responsive images in templates?
-
 The easiest way to render [responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) in templates is with the [html function](/documentation/templates/#html):
 
 ```twig
