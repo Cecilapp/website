@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="dark:markdown-dark markdown-a:hover:no-underline markdown markdown-a:no-underline markdown-h2:m-0 markdown-h2:mb-4 max-w-(--breakpoint-md) mx-auto">
+  <h1>{{ page.title }}</h1>
   {{ page.content }}
   <h3>Live example</h3>
   {{ html(asset('images/cecil-logo-1000.png'), attributes={alt: 'Cecil logo'}, options={responsive: true, formats: []}) }}
