@@ -3,8 +3,6 @@ title: How to generate multiple formats of an images in templates?
 layout: image-formats
 date: 2025-06-01
 ---
-# How to generate multiple formats of an images in templates?
-
 For performance and bandwidth optimization, Cecil can generate multiple formats of an image, such as AVIF and WebP. This allows the browser to select the best format based on its capabilities:
 
 ```twig
