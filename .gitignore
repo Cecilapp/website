@@ -2,6 +2,7 @@ vendor
 node_modules
 themes/
 _site/
+_preview/
 .cecil/
 .cache/
 .debug/
