@@ -1,7 +1,7 @@
 {% if page.section %}
   {%- set section = site.page(page.section).title %}
   {%- if section == 'Documentation' %}{% set section = 'Docs' %}{% endif %}
-  {%- set image = asset('https://res.cloudinary.com/aligny/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_610,y_480,l_text:montserrat_100_ultrabold_line_spacing_-30:' ~ section[:10]|url_encode|replace({'%2C':'%252C'}) ~ '/cecil/og/cecil-card.png', {filename: 'assets/cards/' ~ site.language ~ '/' ~ section|slugify ~ '.png'}) %}
+  {%- set image = asset('https://res.cloudinary.com/aligny/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_580,y_480,l_text:montserrat_100_ultrabold_line_spacing_-30:' ~ section[:10]|url_encode|replace({'%2C':'%252C'}) ~ '/cecil/og/cecil-card.png', {filename: 'assets/cards/' ~ site.language ~ '/' ~ section|slugify ~ '.png'}) %}
 {% endif %}
 {% import 'macros/octicon.twig' as octicon %}
 <!DOCTYPE html>
