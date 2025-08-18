@@ -124,9 +124,9 @@
         <div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>
       </div>
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
-        {#- authors ~#}
+        {#- copyright ~#}
         <ul>
-          <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="{{ site.author.url }}">{{ site.author.name }}</a></li>
+          <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="https://arnaudligny.fr">Arnaud Ligny</a></li>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' -%}
           <li class="inline">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
         </ul>
