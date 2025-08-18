@@ -33,7 +33,7 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
-    <script defer src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/' ~ site.libs.alpinejs.version ~ '/cdn.min.js', {minify: false})|url }}"></script>
+    <script defer src="{{ url(asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/%s/cdn.min.js'|format(site.libs.alpinejs.version), {minify: false})) }}"></script>
     {%- endblock head ~%}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
