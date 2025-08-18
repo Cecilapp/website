@@ -16,8 +16,8 @@
                   document.querySelector('div.search-container').style.display = 'block';
                 });
               </script>
-              <script src="{{ asset('https://cdn.jsdelivr.net/npm/algoliasearch' ~ site.algolia.version ~ '/dist/algoliasearch-lite.umd.js',{minify:false}) }}"></script>
-              <script src="{{ asset('https://cdn.jsdelivr.net/autocomplete.js/' ~ site.algolia.autocomplete.version ~ '/autocomplete.min.js',{minify:false}) }}"></script>
+              <script src="{{ asset('https://cdn.jsdelivr.net/npm/algoliasearch%s/dist/algoliasearch-lite.umd.js'|format(site.algolia.version), {minify: false}) }}"></script>
+              <script src="{{ asset('https://cdn.jsdelivr.net/autocomplete.js/%s/autocomplete.min.js'|format(site.algolia.autocomplete.version), {minify: false}) }}"></script>
               <script>{% apply minify_js %}
                 var client = algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_api_key }}');
                 var index = client.initIndex('{{ site.algolia.index }}');
