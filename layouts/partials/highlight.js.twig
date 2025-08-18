@@ -1,7 +1,1 @@
-    {#-<link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.libs.highlight.version ~ '/styles/' ~ site.libs.highlight.styles ~ '.min.css', {minify: false}) }}">
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.libs.highlight.version ~ '/highlight.min.js', {minify: false}) }}"></script>
-    <script charset="UTF-8" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.libs.highlight.version ~ '/languages/' ~ site.libs.highlight.languages ~ '.min.js', {minify: false}) }}"></script>
-    <script>hljs.highlightAll({
-      languages: ['plaintext', 'bash', 'markdown', 'twig', 'yaml'],
-    });</script>~#}
-    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/' ~ site.libs.highlight.version ~ '/styles/' ~ site.libs.highlight.styles ~ '.min.css', {minify: false}), options={preload: true}) }}
+    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.min.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false}), options={preload: true}) }}
