@@ -18,6 +18,9 @@ social:
     creator: ArnaudLigny
     url: https://twitter.com/Cecil_Static
 image: /images/cecil-logo-og.png
+cloudinary:
+  account: aligny
+  asset: cecil/og/cecil-card.png
 language: en
 languages:
   - code: en
