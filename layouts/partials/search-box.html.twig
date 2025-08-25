@@ -37,6 +37,7 @@
                 autocomplete('#search-input', { hint: false }, [
                   {
                     source: newHitsSource(index, {
+                      filters: 'NOT experimental:1',
                       hitsPerPage: 4,
                       attributesToHighlight: ['description', 'page', 'title'],
                       highlightPreTag: '<strong>',
