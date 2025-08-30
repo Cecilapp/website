@@ -9,7 +9,7 @@ blocks:
       icon: zap
       visible: true
     - title: Files only
-      description: Your content is stored in [Markdown](/documentation/content/#body) flat files with a [front matter](/documentation/content/#front-matter).
+      description: Your content is stored in [Markdown](/documentation/content/#markdown) flat files with a [front matter](/documentation/content/#front-matter).
       icon: markdown
       visible: true
     - title: Customisable
@@ -21,7 +21,7 @@ blocks:
       icon: hubot
       visible: true
     - title: Images optimization
-      description: "[Responsive images](/documentation/content/#responsive) are generated automatically, converted to [WebP](/documentation/content/#webp) and [compressed](/documentation/configuration/#assets) to reduce load time."
+      description: "[Responsive images](/documentation/content/#responsive) are generated automatically, converted to [WebP and AVIF](/documentation/content/#formats) and [compressed](/documentation/configuration/#assets-images) to reduce load time."
       icon: image
       visible: true
     - title: Internationalization & localization
@@ -49,8 +49,8 @@ blocks:
   features:
     - id: markdown
       title: Intuitive writing experience
-      description: "Cecil’s [Markdown](/documentation/content/#body) parser provides a simple way to write your content. It’s easy to learn and easy to use."
-      path: documentation/content/#body
+      description: "Cecil’s [Markdown](/documentation/content/#markdown) parser provides a simple way to write your content. It’s easy to learn and easy to use."
+      path: documentation/content/#markdown
       image: images/cecil-markdown-content.png
       shadow: false
       visible: true
@@ -63,7 +63,7 @@ blocks:
       visible: true
     - id: the-butler
       title: A ready to use blog
-      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog with a user friendly [CMS](https://v1.netlifycms.org), powered by Cecil."
+      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog, powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
