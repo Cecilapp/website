@@ -25,6 +25,7 @@
     --color-violet-400: oklch(70.2% 0.183 293.541);
     --color-violet-700: oklch(49.1% 0.27 292.581);
     --color-violet-900: oklch(38% 0.189 293.745);
+    --color-pink-400: oklch(71.8% 0.202 349.761);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-400: oklch(70.4% 0.04 256.788);
@@ -1624,6 +1625,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-slate-200);
+      }
+    }
+  }
+  .hover\:fill-pink-400 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-pink-400);
       }
     }
   }
