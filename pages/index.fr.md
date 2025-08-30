@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2025-01-31
+updated: 2025-08-30
 blocks:
   about:
     - title: Rapide & sécurisé
