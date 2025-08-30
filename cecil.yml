@@ -4,18 +4,19 @@ description: "Cecil is a command-line PHP application that merges Markdown pages
 baseurl: "https://cecil.app/"
 keywords: ["static site generator", "SSG", "website", "PHP", "Twig", "CLI"]
 social:
-  github:
-    repo: https://github.com/Cecilapp/Cecil
-    url: https://github.com/Cecilapp/Cecil
-  #bluesky:
-  #  username: cecil.app
-  #  url: https://bsky.app/profile/cecil.app
   #twitter:
   #  site: Cecil_Static
   #  creator: ArnaudLigny
   #  url: https://twitter.com/Cecil_Static
+  #bluesky:
+  #  username: cecil.app
+  #  url: https://bsky.app/profile/cecil.app
   opencollective:
     url: https://opencollective.com/cecil
+  github:
+    repo: https://github.com/Cecilapp/Cecil
+    url: https://github.com/Cecilapp/Cecil
+    sponsor: https://github.com/sponsors/ArnaudLigny
 image: /images/cecil-logo-og.png
 cloudinary:
   account: aligny
