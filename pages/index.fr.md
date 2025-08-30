@@ -9,7 +9,7 @@ blocks:
       icon: zap
       visible: true
     - title: Uniquement des fichiers
-      description: Votre contenu est stocké dans des fichiers plat au format [Markdown](/documentation/content/#body) avec un [front matter](/documentation/content/#front-matter).
+      description: Votre contenu est stocké dans des fichiers plat au format [Markdown](/documentation/content/#markdown) avec un [front matter](/documentation/content/#front-matter).
       icon: markdown
       visible: true
     - title: Personnalisable
@@ -21,7 +21,7 @@ blocks:
       icon: hubot
       visible: true
     - title: Optimisation des images
-      description: "Les [images adaptatives](/documentation/content/#responsive) sont générées automatiquement, convertiss en [WebP](/documentation/content/#webp) et [compressées](/documentation/configuration/#assets) afin de réduire le temps de chargement."
+      description: "Les [images adaptatives](/documentation/content/#responsive) sont générées automatiquement, convertis en [WebP et AVIF](/documentation/content/#formats) et [compressées](/documentation/configuration/#assets-images) afin de réduire le temps de chargement."
       icon: image
       visible: true
     - title: Internationalisation & localisation
@@ -49,8 +49,8 @@ blocks:
   features:
     - id: markdown
       title: Expérience d’écriture intuitive
-      description: "L’analyseur [Markdown](/documentation/content/#body) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
-      path: documentation/content/#body
+      description: "L’analyseur [Markdown](/documentation/content/#markdown) de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
+      path: documentation/content/#markdown
       image: images/cecil-markdown-content.png
       shadow: false
       visible: true
@@ -63,7 +63,7 @@ blocks:
       visible: true
     - id: the-butler
       title: Un blog prêt à l’emploi
-      description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi avec un [CMS](https://v1.netlifycms.org) convivial, propulsé par Cecil."
+      description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi, propulsé par Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
