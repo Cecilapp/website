@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2025-01-31
+updated: 2025-08-30
 blocks:
   about:
     - title: Fast & Secure
