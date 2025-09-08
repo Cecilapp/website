@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d157c356722467a662e47b4967a01da8",
+    "content-hash": "998e3de2a8647eaa80fd4bcca5708cbf",
     "packages": [
         {
             "name": "cecil/theme-installer",
@@ -124,16 +124,16 @@
         },
         {
             "name": "cecil/theme-octicons",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-octicons.git",
-                "reference": "709690bc0a0d989b30d407e794b61a743a8a9a1e"
+                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/709690bc0a0d989b30d407e794b61a743a8a9a1e",
-                "reference": "709690bc0a0d989b30d407e794b61a743a8a9a1e",
+                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
+                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
                 "shasum": ""
             },
             "require": {
@@ -158,7 +158,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-octicons/issues",
-                "source": "https://github.com/Cecilapp/theme-octicons/tree/0.1.0"
+                "source": "https://github.com/Cecilapp/theme-octicons/tree/1.0.0"
             },
             "funding": [
                 {
@@ -170,7 +170,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-09-08T13:53:03+00:00"
+            "time": "2025-09-08T15:58:07+00:00"
         },
         {
             "name": "cecil/theme-pwa",
