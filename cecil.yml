@@ -133,8 +133,9 @@ optimize:
   js:
     enabled: false
 theme:
-  - netlify
+  - octicons
   - pwa
+  - netlify
 manifest:
   background_color: '#163C56'
   theme_color: '#163C56'

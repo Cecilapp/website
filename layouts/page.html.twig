@@ -4,7 +4,7 @@
   {%- set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_580,y_480,l_text:montserrat_100_ultrabold_line_spacing_-30:%s/%s'|format(site.cloudinary.account, section[:10]|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
   {%- set image = asset(cloudinary_url, {filename: 'assets/cards/%s/%s.png'|format(site.language, section|slugify)}) %}
 {% endif %}
-{% import 'macros/octicon.twig' as octicon %}
+{% import 'macros/octicons.twig' as octicons %}
 <!DOCTYPE html>
 <html lang="{{ site.language }}" class="scroll-pt-[43px] md:scroll-pt-[60px]"
   x-data="{'darkMode': false, scrolledFromTop: false}"
@@ -67,7 +67,7 @@
             {%- set search_icon_path = '#top' ~%}
           {%- endif ~%}
           <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name }}">
-            {{- octicon.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
+            {{- octicons.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
           </a>
           <script>
             document.getElementById('search-icon').addEventListener('click', () => {
@@ -94,12 +94,12 @@
           {%- endif ~%}
           {%- if site.social.github.sponsor is defined ~%}
           <a href="{{ url(site.social.github.sponsor) }}" aria-label="Become a sponsor">
-            {{- octicon.svg('heart', 24, 'w-5 h-5 fill-pink-gold hover:fill-pink-400') ~}}
+            {{- octicons.svg('heart', 24, 'w-5 h-5 fill-pink-gold hover:fill-pink-400') ~}}
           </a>
           {%- endif ~%}
           {%- if site.social.github.repo is defined ~%}
           <a href="{{ url(site.social.github.repo) }}" aria-label="{{ site.title }} on GitHub">
-            {{- octicon.svg('mark-github', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
+            {{- octicons.svg('mark-github', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
           </a>
           {%- endif ~%}
         </nav>

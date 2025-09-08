@@ -1,5 +1,5 @@
 {% set title = page.title ~ ' &middot; ' ~ "Documentation"|trans ~ ' &middot; ' ~ site.title %}
-{% import 'macros/octicon.twig' as octicon %}
+{% import 'macros/octicons.twig' as octicons %}
 
 {% extends 'page.html.twig' %}
 
@@ -26,7 +26,7 @@
               {%- if site.docs_repo is defined and page.filepath is defined ~%}
               <p>
                 <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-                  {{ octicon.svg('mark-github', 16, 'w-7 pr-2') }}{% trans %}Suggest a modification{% endtrans ~%}
+                  {{ octicons.svg('mark-github', 16, 'w-7 pr-2') }}{% trans %}Suggest a modification{% endtrans ~%}
                 </a>
               </p>
               {%- endif ~%}
@@ -51,7 +51,7 @@
           <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
             {%~ include 'partials/toc.html.twig' with {'page': page} only ~%}
             <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-              {{ octicon.svg('arrow-up') }}
+              {{ octicons.svg('arrow-up', 24, 'w-12 h-12') }}
             </a>
           </div>
         </div>

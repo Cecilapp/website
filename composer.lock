@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dbbf94346fce94933980529351ebd33",
+    "content-hash": "d157c356722467a662e47b4967a01da8",
     "packages": [
         {
             "name": "cecil/theme-installer",
@@ -121,6 +121,56 @@
                 }
             ],
             "time": "2025-06-11T22:50:06+00:00"
+        },
+        {
+            "name": "cecil/theme-octicons",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-octicons.git",
+                "reference": "709690bc0a0d989b30d407e794b61a743a8a9a1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/709690bc0a0d989b30d407e794b61a743a8a9a1e",
+                "reference": "709690bc0a0d989b30d407e794b61a743a8a9a1e",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4||^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "octicons",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Octicons",
+            "keywords": [
+                "cecil",
+                "icons",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-octicons/issues",
+                "source": "https://github.com/Cecilapp/theme-octicons/tree/0.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-09-08T13:53:03+00:00"
         },
         {
             "name": "cecil/theme-pwa",
