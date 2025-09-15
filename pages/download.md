@@ -107,7 +107,5 @@ The [releases list](https://github.com/Cecilapp/Cecil/releases) is available on 
 
 The preview version is the not yet deployed version, but ready for test.
 
-```bash
 - Homebrew: `brew install cecilapp/tap/cecil@preview`
 - Scoop: `scoop install https://cecil.app/scoop/cecil-preview.json`
-```
