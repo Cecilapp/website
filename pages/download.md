@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2025-05-22
+updated: 2025-09-15
 layout: download
 alias: install
 menu:
@@ -90,7 +90,7 @@ cecil self-update
 
 :::
 
-## Get a specific version
+## Download a specific version
 
 If you want to download a specific version you can specify it in the URL path.  
 For instance, if you want to install the `8.0.0` version you need to put `download/8.0.0/` in the URL:
@@ -102,3 +102,12 @@ curl -LO https://cecil.app/download/8.0.0/cecil.phar
 :::info
 The [releases list](https://github.com/Cecilapp/Cecil/releases) is available on GitHub.
 :::
+
+## Download the preview version
+
+The preview version is the not yet deployed version, but ready for test.
+
+```bash
+- Homebrew: `brew install cecilapp/tap/cecil@preview`
+- Scoop: `scoop install https://cecil.app/scoop/cecil-preview.json`
+```
