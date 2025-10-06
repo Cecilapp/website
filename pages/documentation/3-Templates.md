@@ -1,7 +1,7 @@
 <!--
 description: "Working with layouts, templates and components."
 date: 2021-05-07
-updated: 2025-09-18
+updated: 2025-10-07
 alias: documentation/layouts
 -->
 # Templates
@@ -251,7 +251,7 @@ Can be displayed in a template with:
 | `site.debug`          | Debug mode: `true` or `false`.                         |
 
 :::important
-In some case you can encounter conflicts between configuration and built-in variables (e.g.: `pages.default` configuration), so you can use `config.<variable>` (with `<variable>` is the name/path of the variable) to access directly to the raw configuration).
+In some case you can encounter conflicts between configuration and built-in variables (e.g.: `pages.default` configuration), so you can use `config.<variable>` (with `<variable>` is the name/path of the variable) to access directly to the raw configuration.
 
 Example:
 
@@ -301,7 +301,7 @@ e.g.: `site.language.name('fr')`.
 
 #### site.static
 
-The static files collection can be accessed via `site.static` if the [_static load_](4-configuration.md#static) is enabled.
+The static files collection can be accessed via `site.static` if the [_static load_](4-configuration.md#static-load) is enabled.
 
 Each file exposes the following properties:
 
@@ -311,8 +311,11 @@ Each file exposes the following properties:
 - `name`: name (e.g.: `img-1.jpg`)
 - `basename`: name without extension (e.g.: `img-1`)
 - `ext`: extension (e.g.: `jpg`)
+- `type`: media type (e.g.: `image`)
+- `subtype`: media sub type (e.g.: `image/jpeg`)
 - `exif`: image EXIF data (_array_)
 - `audio`: [Mp3Info](https://github.com/wapmorgan/Mp3Info#audio-information) object
+- `video`: array of basic video information (duration in seconds, width and height)
 
 #### site.data
 
