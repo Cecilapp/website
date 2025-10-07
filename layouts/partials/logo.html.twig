@@ -1,0 +1,7 @@
+        {#- logo ~#}
+        <a class="flex flex-row items-center justify-center" href="{{ url(site.home) }}" title="{{ 'Home'|trans }}">
+          <img class="w-8 md:w-12 m-0" src="{{ asset('logo.svg') }}" alt="{{ site.title }} logo" width="250" height="250" :class="{'md:scale-100': !scrolledFromTop, 'md:scale-75': scrolledFromTop}" />
+          <span class="hidden ml-2 text-2xl text-gold align-middle font-bold"
+            :class="{'hidden': !scrolledFromTop, 'hidden md:inline-block': scrolledFromTop}"
+          >{{ site.title }}</span>
+        </a>

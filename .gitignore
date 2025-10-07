@@ -1,0 +1,11 @@
+vendor
+node_modules
+themes/
+_site/
+_preview/
+.cecil/
+.cache/
+.debug/
+static/cecil.phar
+static/cecil.phar.version
+cecil.phar

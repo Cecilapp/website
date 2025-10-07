@@ -1,0 +1,23 @@
+{% extends '_default/list.html.twig' %}
+
+{% block content %}
+        {#- content ~#}
+        <div class="markdown markdown-a:no-underline markdown-a:hover:no-underline markdown-h2:m-0 markdown-h2:mb-4 max-w-(--breakpoint-md) mx-auto dark:markdown-dark">
+          <h1>{% trans %}News{% endtrans %}</h1>
+          {%- for news in pages ~%}
+          <article class="border-slate-200{% if loop.index > 1 %} border-t{% endif %}">
+            <div class="text-sm text-slate-300 font-medium mt-6">{{ news.date|format_date('long') }}</div>
+            <h2><a href="{{ url(news) }}">{{ news.title }}</a></h2>
+            {%- if loop.index == 1 ~%}
+            <div class="mb-6">
+              {{ news.content }}
+            </div>
+            {%- else ~%}
+            <div class="mb-6">
+              {{ news.description|default('')|markdown_to_html }}
+            </div>
+            {%- endif ~%}
+          </article>
+          {%- endfor ~%}
+        </div>
+{% endblock content %}

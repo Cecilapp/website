@@ -1,0 +1,235 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "998e3de2a8647eaa80fd4bcca5708cbf",
+    "packages": [
+        {
+            "name": "cecil/theme-installer",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-installer.git",
+                "reference": "588ec8523a978229d23e10a0b8e0b6420192c154"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-installer/zipball/588ec8523a978229d23e10a0b8e0b6420192c154",
+                "reference": "588ec8523a978229d23e10a0b8e0b6420192c154",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": ">=2.0"
+            },
+            "require-dev": {
+                "composer/composer": ">=2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Cecil\\Installer\\Composer\\CecilPlugin",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cecil\\Installer\\Composer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnaud Ligny",
+                    "email": "arnaud@ligny.fr",
+                    "homepage": "https://arnaudligny.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Installer for Cecil's themes",
+            "keywords": [
+                "cecil",
+                "installer",
+                "themes"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-installer/issues",
+                "source": "https://github.com/Cecilapp/theme-installer/tree/2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-01-09T14:53:24+00:00"
+        },
+        {
+            "name": "cecil/theme-netlify",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-netlify.git",
+                "reference": "291491312e26724b76eac0d3f8f3e1a53f15fc3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/291491312e26724b76eac0d3f8f3e1a53f15fc3e",
+                "reference": "291491312e26724b76eac0d3f8f3e1a53f15fc3e",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4|^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "netlify",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Netlify",
+            "keywords": [
+                "cecil",
+                "netlify",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-netlify/issues",
+                "source": "https://github.com/Cecilapp/theme-netlify/tree/2.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-06-11T22:50:06+00:00"
+        },
+        {
+            "name": "cecil/theme-octicons",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-octicons.git",
+                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
+                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4||^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "octicons",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Octicons",
+            "keywords": [
+                "cecil",
+                "icons",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-octicons/issues",
+                "source": "https://github.com/Cecilapp/theme-octicons/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-09-08T15:58:07+00:00"
+        },
+        {
+            "name": "cecil/theme-pwa",
+            "version": "2.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-pwa.git",
+                "reference": "4579664d6525c7eea8f649c01ea17264e10c244f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/4579664d6525c7eea8f649c01ea17264e10c244f",
+                "reference": "4579664d6525c7eea8f649c01ea17264e10c244f",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4||^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "pwa",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme PWA",
+            "keywords": [
+                "cecil",
+                "pwa",
+                "service worker",
+                "theme"
+            ],
+            "support": {
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2025-08-06T15:16:06+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
