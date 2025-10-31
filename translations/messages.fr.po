@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-10-07 22:20+0200\n"
-"PO-Revision-Date: 2025-10-07 22:20+0200\n"
+"POT-Creation-Date: 2025-10-31 01:13+0100\n"
+"PO-Revision-Date: 2025-10-31 01:13+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -111,6 +111,10 @@ msgstr "Code source"
 #: themes/list.html.twig:45
 msgid "Demo"
 msgstr "Démo"
+
+#: themes/list.html.twig:102
+msgid "Copied!"
+msgstr "Copié !"
 
 #~ msgid "Sorry, page doesn't exist…"
 #~ msgstr "Désolé, la page n’existe pas…"
