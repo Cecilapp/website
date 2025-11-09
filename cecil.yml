@@ -78,7 +78,7 @@ pages:
       path: :section/:year/:month/:day/:slug
   body:
     images:
-      formats: ['avif', 'webp']
+      formats: [avif, webp]
       responsive: true
       class: "dark:brightness-90"
       caption: true
@@ -108,7 +108,7 @@ static:
     - 'archives'
 layouts:
   images:
-    formats: ['avif', 'webp']
+    formats: [avif, webp]
     responsive: true
 output:
   formats:
