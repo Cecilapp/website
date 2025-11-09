@@ -24,10 +24,10 @@ See documentation for more details on the [global assets configuration](/documen
 Bellow an example with a PNG image 1920x1276 pixels.
 
 ```twig
-![Photo by Arnaud Girault](/images/arnaud-girault-IjEtFjxXweE-unsplash.jpg)
+![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
 ```
 
-![Photo by Arnaud Girault](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg){placeholder=color}
+![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
 
 ### Configuration
 
