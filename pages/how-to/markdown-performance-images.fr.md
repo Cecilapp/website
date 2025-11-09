@@ -29,7 +29,7 @@ Ci-dessous un exemple avec une image PNG 1920x1276 pixels.
 ![Une région de formation d’étoiles dans le ciel](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo de Arnaud Girault"){placeholder=color}
 ```
 
-![Une région de formation d’étoiles dans le ciel](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo de Arnaud Girault"){placeholder=color}
+![Une région de formation d’étoiles dans le ciel](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo de [Arnaud Girault](https://unsplash.com/fr/photos/une-region-de-formation-detoiles-dans-le-ciel-IjEtFjxXweE)"){placeholder=color}
 
 ### Configuration
 
