@@ -27,7 +27,7 @@ Bellow an example with a PNG image 1920x1276 pixels.
 ![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
 ```
 
-![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
+![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by [Arnaud Girault](https://unsplash.com/photos/a-star-forming-region-in-the-sky-IjEtFjxXweE)"){placeholder=color}
 
 ### Configuration
 
