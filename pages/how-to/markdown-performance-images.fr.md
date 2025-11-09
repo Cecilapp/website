@@ -26,10 +26,10 @@ Consultez la documentation pour plus de détails sur la [configuration des resso
 Ci-dessous un exemple avec une image PNG 1920x1276 pixels.
 
 ```twig
-![Photo de Arnaud Girault](/images/arnaud-girault-IjEtFjxXweE-unsplash.jpg)
+![Une région de formation d’étoiles dans le ciel](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo de Arnaud Girault"){placeholder=color}
 ```
 
-![Photo by Arnaud Girault](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg){placeholder=color}
+![Une région de formation d’étoiles dans le ciel](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo de Arnaud Girault"){placeholder=color}
 
 ### Configuration
 
