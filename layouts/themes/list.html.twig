@@ -1,0 +1,112 @@
+{% extends 'page.html.twig' %}
+
+{% if not repos is defined %}
+{% set repos = site.data.themes %}
+{% endif %}
+
+        {%- block content ~%}
+        <div class="mx-auto">
+          <div class="markdown max-w-(--breakpoint-md) mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
+            {%- block nav ~%}
+            {%- include 'partials/themes-nav.html.twig' ~%}
+            {%- endblock ~%}
+            <h1>{{ page.title }}</h1>
+            {{- page.content ~}}
+            {%- for repo in repos ~%}
+            {%- set repo_basepath = 'https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/' ~%}
+            {%- block name ~%}
+            {%- set yaml_asset = asset(repo_basepath ~ 'theme.yml', {ignore_missing: true}) -%}
+            {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
+            {%- if yaml.name|default -%}
+              {%- set repo = repo|merge({'name': yaml.name}) -%}
+            <h2>{{ repo.name }}</h2>
+            {%- else -%}
+            <h2>{{ repo.name|split('-')[1]|capitalize }}</h2>
+            {%- endif -%}
+            {%- endblock ~%}
+            <p>{{ repo.description }}</p>
+            {%- set screenshot = asset(repo_basepath ~ 'docs/screenshot.png', {ignore_missing: true}) %}
+            {% if screenshot['missing'] ~%}
+            {% set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) %}
+            {% endif %}
+            {% if not screenshot['missing'] ~%}
+            <p>{{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}</p>
+            {%- endif ~%}
+            {%- block command ~%}
+            {% import 'macros/octicons.twig' as octicons %}
+            <div class="copy-link">
+              <input type="text" class="copy-link-input" value="composer require cecil/{{ repo.name|lower }}" readonly>
+              <button type="button" class="copy-link-button">
+                {{ octicons.svg('copy', 16) }}
+              </button>
+            </div>
+            {%- endblock ~%}
+            <p class="flex space-x-2">
+              {%- x:button with {href: repo.github, class: 'btn-sm', role: 'button'} ~%}
+                {% trans %}Source code{% endtrans %}
+              {%- endx ~%}
+              {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
+                {% trans %}Documentation{% endtrans %}
+              {%- endx ~%}
+              {%- block website ~%}
+                {%- if repo.homepage ~%}
+                  {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                    {% trans %}Demo{% endtrans %}
+                  {%- endx ~%}
+                {%- endif ~%}
+              {%- endblock ~%}
+            </p>
+            <p>{{ repo.license }}</p>
+            {%- endfor ~%}
+          </div>
+        </div>
+        <style>
+          .copy-link {
+            --height: 36px;
+            --spacing: .25rem;
+            display: flex;
+            max-width: 400px;
+            gap: calc(var(--spacing) * 2);
+          }
+          .copy-link-input {
+            flex-grow: 1;
+            padding: 0 8px;
+            font-size: 14px;
+            border: 1px solid #cccccc;
+            outline: none;
+            background: unset;
+          }
+          .copy-link-button {
+            flex-shrink: 0;
+            width: var(--height);
+            height: var(--height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: unset;
+            color: #333333;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 10px 10px 0;
+          }
+          /*@media (prefers-color-scheme: dark) {
+            .copy-link-button {
+              color: #ffffff;
+            }
+          }*/
+        </style>
+        <script>
+          document.querySelectorAll('.copy-link').forEach((copyLinkParent) => {
+            const inputField = copyLinkParent.querySelector('.copy-link-input');
+            const copyButton = copyLinkParent.querySelector('.copy-link-button');
+            const text = inputField.value;
+            inputField.addEventListener('focus', () => inputField.select());
+            copyButton.addEventListener('click', () => {
+              inputField.select();
+              navigator.clipboard.writeText(text);
+              inputField.value = '{% trans %}Copied!{% endtrans %}';
+              setTimeout(() => (inputField.value = text), 2000);
+            });
+          });
+        </script>
+        {%- endblock ~%}
