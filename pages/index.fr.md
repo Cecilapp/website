@@ -61,6 +61,13 @@ blocks:
       image: images/cecil-twig-template.png
       shadow: false
       visible: true
+    - id: responsive
+      title: Images adaptatives automatiques
+      description: "Cecil génère automatiquement des images adaptatives dans plusieurs formats (WebP, AVIF) et tailles afin d'optimiser les temps de chargement sur tous les appareils."
+      path: fr/comment-faire/markdown-performance-images/
+      image: images/cecil-responsive-images.png
+      shadow: true
+      visible: true
     - id: the-butler
       title: Un blog prêt à l’emploi
       description: "[The Butler](https://the-butler.cecil.app \"Le site web de The Butler\") est un blog de démarrage prêt à l’emploi, propulsé par Cecil."
@@ -79,7 +86,8 @@ blocks:
       title: Restez propriétaire de vos liens
       description: "[Links](https://links.cecil.app) est une alternative open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
       path: https://links.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/links.cecil.app/main/assets/preview.png
+      image: images/cecil-links.png
+      shadow: false
       visible: true
     - id: staticast
       title: Diffuser son podcast simplement
