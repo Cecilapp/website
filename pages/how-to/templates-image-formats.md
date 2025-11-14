@@ -22,15 +22,15 @@ For performance and bandwidth optimization, Cecil can generate multiple formats 
 Bellow an example of how to generate AVIF and WebP formats of an image:
 
 ```twig
-{{ html(asset('images/cecil-logo.png'), attributes={alt: 'Cecil logo'}, options={formats: ['avif', 'webp']}) }}
+{{ html(asset('cecil-logo.png'), attributes={alt: 'Cecil logo'}, options={formats: ['avif', 'webp']}) }}
 ```
 
 ### Generated HTML
 
 ```html
 <picture>
-  <source type="image/avif" srcset="/images/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.avif">
-  <source type="image/webp" srcset="/images/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.webp">
-  <img src="/images/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.png" width="250" height="250" alt="Cecil logo">
+  <source type="image/avif" srcset="/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.avif">
+  <source type="image/webp" srcset="/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.webp">
+  <img src="/cecil-logo.c1af8a129a0cde81f9b94ffbf452e10b.png" width="250" height="250" alt="Cecil logo">
 </picture>
 ```

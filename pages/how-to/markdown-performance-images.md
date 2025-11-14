@@ -24,10 +24,10 @@ See documentation for more details on the [global assets configuration](/documen
 Bellow an example with a PNG image 1920x1276 pixels.
 
 ```twig
-![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
+![A star forming region in the sky](../../assets/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by Arnaud Girault"){placeholder=color}
 ```
 
-![A star forming region in the sky](../../assets/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by [Arnaud Girault](https://unsplash.com/photos/a-star-forming-region-in-the-sky-IjEtFjxXweE)"){placeholder=color}
+![A star forming region in the sky](../../assets/arnaud-girault-IjEtFjxXweE-unsplash.jpg "Photo by [Arnaud Girault](https://unsplash.com/photos/a-star-forming-region-in-the-sky-IjEtFjxXweE)"){placeholder=color}
 
 ### Configuration
 
@@ -55,29 +55,29 @@ pages:
 <picture>
   <source
     type="image/avif"
-    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 1024w,
-            /thumbnails/768/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 768w"
+    srcset="/thumbnails/1024/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 1024w,
+            /thumbnails/768/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.avif 768w"
     sizes="100vw"
     width="1024"
     height="681"
   >
   <source
     type="image/webp"
-    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 1024w,
-            /thumbnails/768/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 768w"
+    srcset="/thumbnails/1024/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 1024w,
+            /thumbnails/768/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.webp 768w"
     sizes="100vw"
     width="1024"
     height="681"
   >
-  <img src="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg"
+  <img src="/thumbnails/1024/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg"
     alt="Photo by Arnaud Girault"
     loading="lazy"
     decoding="async"
     width="1024"
     height="681"
     style=";max-width:100%;height:auto;background-color:rgb(58, 56, 44);"
-    srcset="/thumbnails/1024/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 1024w,
-            /thumbnails/768/images/examples/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 768w"
+    srcset="/thumbnails/1024/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 1024w,
+            /thumbnails/768/arnaud-girault-IjEtFjxXweE-unsplash.c0bdd31264ac3d0d364d02bced31038f.jpg 768w"
     sizes="100vw"
   >
 </picture>
