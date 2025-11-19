@@ -103,8 +103,8 @@ assets:
       url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
 static:
   exclude:
-    - 'cecil-demo.png'
-    - '*.mp4'
+    #- 'cecil-demo.png'
+    #- '*.mp4'
     - 'archives'
 layouts:
   images:
