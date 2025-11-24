@@ -20,12 +20,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{- include('partials/metatags.html.twig', {title: title|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
+    {#- Google font ~#}
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
-    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
-    </noscript>
+    {{ html(asset('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap'), attributes={preload: true}) }}
+    {#- main CSS ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>
       {{- asset('styles.css')|inline ~}}
@@ -33,9 +32,19 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
-    <script defer src="{{ url(asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/%s/cdn.min.js'|format(site.libs.alpinejs.version), {minify: false})) }}"></script>
-    {%- endblock head ~%}
+    {#- highlight CSS ~#}
+    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.min.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false}), options={preload: false}) }}
+    <style>{% apply minify_css ~%}
+      pre code.hljs {
+        padding: initial !important;
+      }
+      .hljs {
+        background: transparent !important;
+      }
+    {% endapply %}</style>
+    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/%s/cdn.min.js'|format(site.libs.alpinejs.version), {minify: false}), attributes={defer: ''}) }}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
+    {%- endblock head ~%}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-dark dark:text-slate-300">
     {#- sidebar ~#}
@@ -178,16 +187,5 @@
     {{- include('partials/highlight.js.twig', with_context = false) ~}}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
     {%- endblock footer_scripts ~%}
-    <style>{% apply minify_css ~%}
-      {%- block footer_css ~%}
-      {#- fix highlight.js with typography ~#}
-      pre code.hljs {
-        padding: initial;
-      }
-      .hljs {
-        background: transparent;
-      }
-      {%- endblock footer_css ~%}
-    {% endapply %}</style>
   </body>
 </html>
