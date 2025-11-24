@@ -1,7 +1,7 @@
             <div class="shell-wrap">
               <p class="shell-top-bar">/Users/aligny</p>
               <div class="shell-body">
-                <video id="video-demo" width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}">
+                <video id="video-demo" width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" fetchpriority=high>
                   <source data-src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
                 </video>
                 <noscript>
@@ -10,7 +10,7 @@
                       display: none;
                     }
                   </style>
-                  <video width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}">
+                  <video width="100%" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" fetchpriority=high>
                     <source src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
                     <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ asset('videos/cecil-demo.mp4')|url }}">link to the video</a> instead.</p>
                   </video>
