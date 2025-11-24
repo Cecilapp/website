@@ -3,6 +3,32 @@
 
 {% extends 'page.html.twig' %}
 
+{% block head %}
+    {{ parent() }}
+    <style>{% apply minify_css ~%}
+      /* ToC */
+      :root {
+        --toc-before-color: #e5e7eb;
+        --toc-before-active-color: #163C56;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --toc-before-color: #374151;
+          --toc-before-active-color: #374151;
+        }
+      }
+      .toc-link::before {
+        background-color: var(--toc-before-color);
+      }
+      .is-active-link::before {
+        background-color: var(--toc-before-active-color);
+      }
+      a.toc-link {
+        text-decoration: none;
+      }
+    {% endapply %}</style>
+{% endblock head %}
+
 {% block content %}
         {#- content ~#}
         <div class="flex flex-row xl:space-x-8">
@@ -73,27 +99,3 @@
       });
     {% endapply %}</script>
 {% endblock footer_scripts %}
-
-{% block footer_css %}
-      {{ parent() }}
-      /* ToC */
-      :root {
-        --toc-before-color: #e5e7eb;
-        --toc-before-active-color: #163C56;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --toc-before-color: #374151;
-          --toc-before-active-color: #374151;
-        }
-      }
-      .toc-link::before {
-        background-color: var(--toc-before-color);
-      }
-      .is-active-link::before {
-        background-color: var(--toc-before-active-color);
-      }
-      a.toc-link {
-        text-decoration: none;
-      }
-{% endblock footer_css %}
