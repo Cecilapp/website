@@ -6,13 +6,7 @@
 {% endif %}
 {% import 'macros/octicons.twig' as octicons %}
 <!DOCTYPE html>
-<html lang="{{ site.language }}" class="scroll-pt-[43px] md:scroll-pt-[60px]"
-  x-data="{'darkMode': false, scrolledFromTop: false}"
-  x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')) || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-  :class="{'dark': darkMode === true}"
-  @scroll.window="scrolledFromTop = (window.pageYOffset >= 21) ? true : false"
->
+<html lang="{{ site.language }}" class="scroll-pt-[43px] md:scroll-pt-[60px]">
   <head>
     {%- block head ~%}
     <meta charset="UTF-8">
@@ -42,7 +36,6 @@
         background: transparent !important;
       }
     {% endapply %}</style>
-    {{ html(asset('https://cdnjs.cloudflare.com/ajax/libs/alpinejs/%s/cdn.min.js'|format(site.libs.alpinejs.version), {minify: false}), attributes={defer: ''}) }}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     {%- endblock head ~%}
   </head>
@@ -51,10 +44,8 @@
     {%- block sidebar ~%}
       {%- embed 'partials/sidebar.html.twig' %}{% endembed ~%}
     {%- endblock sidebar ~%}
-    <header class="sticky top-0 md:-top-[4px] z-20 px-4 py-2 md:pt-2 md:pb-2 bg-blue dark:bg-dark text-slate-300"
-      :class="{'shadow-none': !scrolledFromTop, 'transition duration-100 shadow-2xl dark:shadow-slate-500/40': scrolledFromTop}"
-    >
-      <div class="sticky top-0 container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
+    <header class="fixed top-0 inset-x-0 z-30 flex items-center h-14 px-4 py-2 bg-blue dark:bg-dark text-slate-300">
+      <div class="container mx-auto flex flex-row items-center justify-center md:justify-between space-x-4">
         {#- sidebar mobile button ~#}
         <button class="navbar-item flex lg:hidden items-center mr-3" onclick="toggleMenu()">
           <svg id="sidebar-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
@@ -64,7 +55,7 @@
         {{- include('partials/logo.html.twig') ~}}
         <div class="grow"></div>
         {#- navigation ~#}
-        <nav class="flex mt-0 pt-0 space-x-4 md:space-x-6">
+        <nav class="flex items-center mt-0 pt-0 space-x-4 md:space-x-6">
           {%- for entry in site.menus.main|sort_by_weight ~%}
           <a class="hidden lg:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">
             {{ entry.name }}
@@ -83,8 +74,11 @@
               document.getElementById('search-input').focus();
             });
           </script>
+          {#- theme selector ~#}
+          {{- include('partials/selector-theme-icon.html.twig') ~}}
           {#- language selector ~#}
-          {{- include('partials/language-selector.html.twig') ~}}
+          {#-{{- include('partials/language-selector.html.twig') ~}}~#}
+          {#-{{- include('partials/selector-language.html.twig') ~}}~#}
           {#- social icons ~#}
           {%- if site.social.twitter.url is defined ~%}
           <a href="{{ url(site.social.twitter.url) }}" aria-label="{{ site.title }} on Twitter">
@@ -115,7 +109,7 @@
       </div>
     </header>
     {%- block jumbotron %}{% endblock ~%}
-    <main class="grow px-6 py-8 scroll-mt-[50px]">
+    <main class="grow px-6 py-8{% if page.type != 'homepage' %} mt-14{% endif %}">
       <div class="container mx-auto">
         {%- block content ~%}
         {#- content ~#}
@@ -143,7 +137,7 @@
         </ul>
         {%- endif -%}
         {#- theme switcher ~#}
-        <div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>
+        {#-<div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>~#}
       </div>
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
         {#- copyright ~#}
@@ -155,7 +149,7 @@
         {#- powered by ~#}
         <div>
           {%- set powered_by ~%}
-          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://animate.style">Animate.css</a>, <a href="https://alpinejs.dev">Alpine.js</a>, <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
+          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>, <a href="https://animate.style">Animate.css</a>, <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
           {%- endset -%}
           {%- trans %}Powered by %powered_by%{% endtrans ~%}
         </div>
