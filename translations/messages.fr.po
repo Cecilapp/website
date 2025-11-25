@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-10-31 01:13+0100\n"
-"PO-Revision-Date: 2025-10-31 01:13+0100\n"
+"POT-Creation-Date: 2025-11-25 01:16+0100\n"
+"PO-Revision-Date: 2025-11-25 01:16+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,25 +10,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ../layouts\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: documentation/list.html.twig:1 documentation/list.html.twig:9
-#: documentation/page.html.twig:1 themes/list.html.twig:40
+#: documentation/page.html.twig:1 themes/list.html.twig:49
 msgid "Documentation"
 msgstr "Documentation"
 
-#: documentation/list.html.twig:24 documentation/page.html.twig:20
+#: documentation/list.html.twig:24 documentation/page.html.twig:47
 #: partials/toc.html.twig:2
 msgid "What's on this page"
 msgstr "Sur cette page"
 
-#: documentation/page.html.twig:29
+#: documentation/page.html.twig:56
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: download.html.twig:9 home.html.twig:28
+#: download.html.twig:9 home.html.twig:27
 msgid "Download"
 msgstr "Télécharger"
 
@@ -36,15 +36,15 @@ msgstr "Télécharger"
 msgid "File checksum"
 msgstr "Somme de contrôle du fichier"
 
-#: home.html.twig:22 home.html.twig:79
+#: home.html.twig:21 home.html.twig:78
 msgid "Quick Start"
 msgstr "Démarrage rapide"
 
-#: home.html.twig:68
+#: home.html.twig:67
 msgid "Start with the CLI"
 msgstr "Commencer avec la ligne de commande"
 
-#: home.html.twig:96 page.html.twig:157
+#: home.html.twig:95 page.html.twig:161
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
@@ -56,19 +56,19 @@ msgstr "Actualités"
 msgid "Release notes on GitHub"
 msgstr "Notes de version sur GitHub"
 
-#: page.html.twig:52
+#: page.html.twig:53
 msgid "Open menu"
 msgstr "Ouvrir le menu"
 
-#: page.html.twig:144
+#: page.html.twig:148
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: page.html.twig:151
+#: page.html.twig:155
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
-#: page.html.twig:172
+#: page.html.twig:176
 msgid "Star"
 msgstr "Favoris"
 
@@ -77,6 +77,7 @@ msgid "Get started"
 msgstr "Commencer"
 
 #: partials/language-selector.html.twig:4
+#: partials/selector-language.html.twig:4
 msgid "Language:"
 msgstr "Langue :"
 
@@ -84,9 +85,17 @@ msgstr "Langue :"
 msgid "Home"
 msgstr "Accueil"
 
+#: partials/logo.html.twig:3
+msgid "%site_title% logo"
+msgstr "Logo de %site_title%"
+
 #: partials/search-box.html.twig:3
 msgid "Search the Docs [Alt+S]"
 msgstr "Rechercher dans la doc [Alt+S]"
+
+#: partials/selector-theme-icon.html.twig:1
+msgid "Change theme color"
+msgstr "Changer la couleur du thème"
 
 #: partials/sidebar.html.twig:7
 msgid "Close menu"
@@ -104,15 +113,15 @@ msgstr "Sombre"
 msgid "Homepage"
 msgstr "Page d'accueil"
 
-#: themes/list.html.twig:37
+#: themes/list.html.twig:46
 msgid "Source code"
 msgstr "Code source"
 
-#: themes/list.html.twig:45
+#: themes/list.html.twig:54
 msgid "Demo"
 msgstr "Démo"
 
-#: themes/list.html.twig:102
+#: themes/list.html.twig:107
 msgid "Copied!"
 msgstr "Copié !"
 
