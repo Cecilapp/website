@@ -61,11 +61,11 @@
           <a class="hidden lg:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">{{ entry.name }}</a>
           {%- endfor -%}
           {#- search icon ~#}
-          {%- set search_icon_path = url(site.menus.main.documentation.url) ~ '#top' ~%}
+          {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
             {%- set search_icon_path = '#top' ~%}
           {%- endif ~%}
-          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name }}">{{ octicons.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') }}</a>
+          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">{{ octicons.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') }}</a>
           <script>
             document.getElementById('search-icon').addEventListener('click', () => {
               document.getElementById('search-input').focus();
