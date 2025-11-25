@@ -14,10 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{- include('partials/metatags.html.twig', {title: title|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
-    {#- Google font ~#}
+    {#- Google Fonts ~#}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
-    {{ html(asset('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap'), attributes={preload: true}) }}
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
     {#- main CSS ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>
