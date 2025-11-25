@@ -19,11 +19,9 @@
       </nav>
     </div>
     <div id="sidebar-cloudywrapper" class="hidden lg:hidden fixed top-0 z-40 w-full h-full bg-black opacity-50" onclick="toggleMenu()"></div>
-    <script>
-      {%- apply minify_js ~%}
+    <script>{% apply minify_js ~%}
       function toggleMenu() {
         document.getElementById('sidebar').classList.toggle('-translate-x-full');
         document.getElementById('sidebar-cloudywrapper').classList.toggle('hidden');
       }
-      {%- endapply ~%}
-    </script>
+    {% endapply %}</script>
