@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -949,6 +949,9 @@
   }
   .max-w-\(--breakpoint-md\) {
     max-width: var(--breakpoint-md);
+  }
+  .min-w-8 {
+    min-width: calc(var(--spacing) * 8);
   }
   .flex-\[1_1_100\%\] {
     flex: 1 1 100%;
