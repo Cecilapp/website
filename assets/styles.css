@@ -1059,6 +1059,11 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .overflow-auto {
     overflow: auto;
   }
@@ -2051,6 +2056,9 @@
     height: auto;
     max-width: 100%;
   }
+}
+#sidebar a {
+  color: var(--color-slate-300);
 }
 .termBtns {
   line-height: 11px;
