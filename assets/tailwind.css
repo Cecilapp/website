@@ -112,6 +112,10 @@
   }
 }
 
+#sidebar a {
+  @apply text-slate-300;
+}
+
 /* terminal buttons */
 .termBtns {
   line-height: 11px;
