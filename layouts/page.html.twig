@@ -58,7 +58,7 @@
         {#- navigation ~#}
         <nav class="flex items-center mt-0 pt-0 space-x-4 md:space-x-6">
           {%- for entry in site.menus.main|sort_by_weight ~%}
-          <a class="hidden lg:inline-block hover:text-white" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">{{ entry.name }}</a>
+          <a class="hidden lg:inline-block hover:text-white truncate" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">{{ entry.name }}</a>
           {%- endfor -%}
           {#- search icon ~#}
           {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
