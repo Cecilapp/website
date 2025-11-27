@@ -60,6 +60,12 @@
           {%- for entry in site.menus.main|sort_by_weight ~%}
           <a class="hidden lg:inline-block hover:text-white truncate" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}">{{ entry.name }}</a>
           {%- endfor -%}
+          {#- language switcher ~#}
+          {%- if page.translations|length >= 1 ~%}
+          <div class="hidden lg:inline-block">
+            {{ include('partials/languages.html.twig') }}
+          </div>
+          {%- endif ~%}
           {#- search icon ~#}
           {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
