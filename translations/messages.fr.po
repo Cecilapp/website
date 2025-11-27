@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-11-25 02:00+0100\n"
-"PO-Revision-Date: 2025-11-25 02:03+0100\n"
+"POT-Creation-Date: 2025-11-27 01:16+0100\n"
+"PO-Revision-Date: 2025-11-27 01:16+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -115,7 +115,7 @@ msgstr "Sombre"
 
 #: starters.html.twig:14
 msgid "Homepage"
-msgstr "Page d'accueil"
+msgstr "Page d’accueil"
 
 #: themes/list.html.twig:46
 msgid "Source code"
