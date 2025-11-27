@@ -63,7 +63,7 @@
           {#- language switcher ~#}
           {%- if page.translations|length >= 1 ~%}
           <div class="hidden lg:inline-block">
-            {{ include('partials/languages.html.twig') }}
+            {{ include('partials/languages.html.twig', {label: 'code'}) }}
           </div>
           {%- endif ~%}
           {#- search icon ~#}
