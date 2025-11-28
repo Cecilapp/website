@@ -269,14 +269,14 @@
   padding: .5em 0 .5em .75em;
   background-color: unset;
   border-radius: 4px;
-  @apply border-2 border-slate-200 dark:border-slate-300;
+  @apply border-2 border-slate-400 dark:border-slate-500;
   @apply focus:border-blue dark:focus:border-white;
 }
 .algolia-autocomplete .aa-input {
   padding-left: 2rem;
 }
 .algolia-autocomplete .aa-input::placeholder {
-  @apply text-slate-200;
+  @apply text-slate-400;
 }
 .algolia-autocomplete .aa-hint {
   @apply text-blue dark:text-white;
@@ -314,7 +314,7 @@
   height: 1rem;
   width: 1rem;
   transform: translateY(-50%);
-  @apply fill-slate-200;
+  @apply fill-slate-400;
 }
 .aa-tpl-title {
   font-weight: bold;
