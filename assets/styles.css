@@ -990,8 +990,8 @@
   .resize {
     resize: both;
   }
-  .scroll-pt-\[43px\] {
-    scroll-padding-top: 43px;
+  .scroll-pt-\[46px\] {
+    scroll-padding-top: 46px;
   }
   .flex-col {
     flex-direction: column;
@@ -1649,9 +1649,9 @@
       flex: 1 1 25%;
     }
   }
-  .md\:scroll-pt-\[60px\] {
+  .md\:scroll-pt-\[56px\] {
     @media (width >= 48rem) {
-      scroll-padding-top: 60px;
+      scroll-padding-top: 56px;
     }
   }
   .md\:grid-cols-2 {
@@ -2304,9 +2304,9 @@
   border-radius: 4px;
   border-style: var(--tw-border-style);
   border-width: 2px;
-  border-color: var(--color-slate-200);
+  border-color: var(--color-slate-400);
   &:is(.dark *) {
-    border-color: var(--color-slate-300);
+    border-color: var(--color-slate-500);
   }
   &:focus {
     border-color: #163C56;
@@ -2321,7 +2321,7 @@
   padding-left: 2rem;
 }
 .algolia-autocomplete .aa-input::placeholder {
-  color: var(--color-slate-200);
+  color: var(--color-slate-400);
 }
 .algolia-autocomplete .aa-hint {
   color: #163C56;
@@ -2373,7 +2373,7 @@
   height: 1rem;
   width: 1rem;
   transform: translateY(-50%);
-  fill: var(--color-slate-200);
+  fill: var(--color-slate-400);
 }
 .aa-tpl-title {
   font-weight: bold;
