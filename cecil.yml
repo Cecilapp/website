@@ -93,10 +93,10 @@ assets:
   images:
     optimize: true
     responsive:
-      widths: [768, 1024]
+      widths: [480, 768, 1024]
       sizes:
         markdown: "(max-width: 800px) 768px, 1024px"
-        home: "(max-width: 767px) 768px, 33vw"
+        home: "(max-width: 767px) 480px, 33vw"
     cdn:
       enabled: false
       account: 'aligny'
