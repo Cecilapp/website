@@ -1,5 +1,5 @@
 {# Variables: id, title, description, path, image, shadow, webp #}
-      <div id="feature-{{ id }}" class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-16{% if loop.index0 is even %} bg-gold dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
+      <div id="feature-{{ id }}" class="flex flex-col md:flex-row p-10 md:p-28 space-y-10 md:space-y-0 space-x-0 md:space-x-8{% if loop.index0 is even %} bg-gold dark:bg-black{% else %} md:flex-row-reverse md:space-x-reverse{% endif %}">
         {%- set image_template = asset(image, {ignore_missing: true}) ~%}
         <div class="basis-{% if not image_template['missing'] %}1/2{% else %}full{% endif %} text-center align-middle">
           <a href="#feature-{{ id }}"><h2 class="text-4xl mb-8">{{ title }}</h2></a>
@@ -11,7 +11,7 @@
           </div>
         </div>
         {%- if not image_template['missing'] ~%}
-        <div class="basis-1/2 text-center animate-on-scroll">
+        <div class="basis-1/2 text-center animate-on-scroll -mx-10 md:mx-0">
           <a href="{{ url(path) }}" title="{% trans %}Get started{% endtrans %}">
             {%- set class = 'home' -%}
             {%- if shadow -%}
