@@ -990,8 +990,8 @@
   .resize {
     resize: both;
   }
-  .scroll-pt-\[46px\] {
-    scroll-padding-top: 46px;
+  .scroll-pt-14 {
+    scroll-padding-top: calc(var(--spacing) * 14);
   }
   .flex-col {
     flex-direction: column;
@@ -1647,11 +1647,6 @@
   .md\:flex-\[1_1_25\%\] {
     @media (width >= 48rem) {
       flex: 1 1 25%;
-    }
-  }
-  .md\:scroll-pt-\[56px\] {
-    @media (width >= 48rem) {
-      scroll-padding-top: 56px;
     }
   }
   .md\:grid-cols-2 {
