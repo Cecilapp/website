@@ -144,13 +144,10 @@
 /* Note block in Markdown */
 .note {
   position: relative;
-  padding: 1rem;
+  padding: 0 1rem;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   @apply border border-l-4 border-blue dark:border-white;
-}
-.note > p {
-  margin: 0;
 }
 [class*="note-"] {
   padding-left: 2.5rem;
