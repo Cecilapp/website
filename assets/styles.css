@@ -1797,6 +1797,15 @@
       max-width: calc(var(--spacing) * 72);
     }
   }
+  .lg\:space-x-6 {
+    @media (width >= 64rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
+        margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+  }
   .lg\:divide-y-0 {
     @media (width >= 64rem) {
       :where(& > :not(:last-child)) {
