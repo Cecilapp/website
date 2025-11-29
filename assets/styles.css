@@ -2111,7 +2111,7 @@
 }
 .note {
   position: relative;
-  padding: 1rem;
+  padding: 0 1rem;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   border-style: var(--tw-border-style);
@@ -2122,9 +2122,6 @@
   &:is(.dark *) {
     border-color: var(--color-white);
   }
-}
-.note > p {
-  margin: 0;
 }
 [class*="note-"] {
   padding-left: 2.5rem;
