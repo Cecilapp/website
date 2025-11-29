@@ -6,7 +6,7 @@
 {% block head %}
     {{ parent() }}
     <style>{% apply minify_css ~%}
-      /* ToC */
+      /* ToC CSS */
       {{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.css'|format(site.libs.tocbot.version), {minify: false})|inline ~}}
       :root {
         --toc-before-color: #e5e7eb;
@@ -31,15 +31,13 @@
 {% endblock head %}
 
 {% block content %}
-        {#- content ~#}
-        <div class="flex flex-row lg:space-x-6 xl:space-x-8">
-          {#- menu ~#}
-          <div class="flex-none w-48 hidden lg:block">
+        <div class="flex flex-row">
+          {#- docs navigation ~#}
+          <div class="flex-none w-48 lg:mr-6 xl:mr-8 hidden lg:block">
             {%~ include 'partials/docs-menu.html.twig' ~%}
           </div>
-          {#- markdown ~#}
+          {#- markdown content ~#}
           <div class="grow overflow-y-auto">
-            {#- content ~#}
             <div class="markdown markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md) dark:markdown-dark mx-auto max-w-(--breakpoint-md)">
               {%~ include 'partials/search-box.html.twig' ~%}
               <details class="mb-4 xl:hidden">
@@ -53,7 +51,7 @@
               {%- if site.docs_repo is defined and page.filepath is defined ~%}
               <p>
                 <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-                  {{ octicons.svg('mark-github', 16, 'w-7 pr-2') }}{% trans %}Suggest a modification{% endtrans ~%}
+                  {{- octicons.svg('mark-github', 16, 'w-7 pr-2') }}{% trans %}Suggest a modification{% endtrans -%}
                 </a>
               </p>
               {%- endif ~%}
@@ -62,24 +60,18 @@
             {%- if page.prev is defined or page.next is defined ~%}
             <div class="mx-auto max-w-(--breakpoint-md) pt-2 border-slate-200 border-t mt-4">
               {%- if page.prev is defined ~%}
-              <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">
-                ← {{ page.prev.title }}
-              </a>
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev.path) }}" role="button" title="Previous">← {{ page.prev.title }}</a>
               {%- endif -%}
               {%- if page.next is defined ~%}
-              <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next.path) }}" role="button" title="Next">
-                {{ page.next.title }} →
-              </a>
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next.path) }}" role="button" title="Next">{{ page.next.title }} →</a>
               {%- endif ~%}
             </div>
             {%- endif ~%}
           </div>
           {#- toc ~#}
-          <div class="flex-none w-48 hidden xl:block xl:back-to-top-wrapper">
+          <div class="flex-none w-48 lg:ml-6 xl:ml-8 hidden xl:block xl:back-to-top-wrapper">
             {%~ include 'partials/toc.html.twig' with {'page': page} only ~%}
-            <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">
-              {{ octicons.svg('arrow-up', 24, 'w-12 h-12') }}
-            </a>
+            <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">{{ octicons.svg('arrow-up', 24, 'w-12 h-12') }}</a>
           </div>
         </div>
 {% endblock content %}
