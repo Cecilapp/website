@@ -72,11 +72,11 @@
             {%- set search_icon_path = '#top' ~%}
           {%- endif ~%}
           <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">{{ octicons.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') }}</a>
-          <script>
+          <script>{% apply minify_js ~%}
             document.getElementById('search-icon').addEventListener('click', () => {
               document.getElementById('search-input').focus();
             });
-          </script>
+          {% endapply %}</script>
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}
           {#- language selector ~#}
