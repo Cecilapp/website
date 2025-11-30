@@ -1,0 +1,113 @@
+@config '../../tailwind.config.js';
+@import 'tailwindcss';
+@import './notes.css';
+@import './terminal.css';
+@import './algolia.css';
+@import './buttons' layer(utilities);
+
+@layer base {
+  html {
+    @apply overflow-y-scroll;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5rem;
+  }
+  h1, h2 {
+    @apply mb-4;
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue dark:text-white;
+  }
+  header a {
+    @apply text-gold dark:text-gold;
+  }
+  main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
+  #features p > a {
+    @apply underline;
+  }
+  main details a {
+    @apply no-underline!;
+  }
+  main a[role="button"] {
+    @apply no-underline!;
+  }
+  footer a:hover {
+    @apply underline;
+  }
+  p {
+    @apply mb-4;
+  }
+  img, svg {
+    @apply inline-block;
+  }
+  img {
+    @apply mb-1;
+  }
+  figcaption {
+    @apply text-center! italic!;
+  }
+  video {
+    @apply my-0!;
+  }
+}
+
+#sidebar a {
+  @apply text-slate-300;
+}
+
+/* External links in Markdown */
+.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
+  padding-right: 1.25em;
+}
+.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img))::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.25em;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath d='M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: white;
+  transform: translateY(0.25em);
+}
+/* images in Markdown */
+img.markdown {
+  @apply max-w-full h-auto;
+}
+
+/* ToC */
+.toc {
+  @apply sticky top-[75px];
+}
+
+/* Back to top */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+.back-to-top-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+.back-to-top-link {
+  position: fixed;
+  position: sticky;
+  pointer-events: all;
+  top: calc(100vh - 3rem);
+}
+
+@layer components {
+  .jumbotron {
+    @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
+  }
+}
+
+@utility box-shadow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}

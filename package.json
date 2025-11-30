@@ -10,8 +10,8 @@
     "tailwindcss": "^4.1"
   },
   "scripts": {
-    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css",
-    "css:watch": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css --watch",
+    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind/tailwind.css -o ./assets/styles.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i ./assets/tailwind/tailwind.css -o ./assets/styles.css --watch",
     "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
     "serve": "cecil serve --config=config/dev.yml"
   }
