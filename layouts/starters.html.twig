@@ -8,16 +8,21 @@
             <h2>{{ repo.name }}</h2>
             {%- endblock ~%}
 
-            {%- block website ~%}
+            {%- block command ~%}
+            <h3>Installation</h3>
+            {% import 'macros/octicons.twig' as octicons %}
+            <div class="copy-link">
+              <input id="{{ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
+              <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
+                {{ octicons.svg('copy', 16) }}
+              </button>
+            </div>
+            {%- endblock ~%}
+
+            {%- block button_website ~%}
               {%- if repo.homepage ~%}
                 {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
                   {% trans %}Homepage{% endtrans %}
                 {%- endx ~%}
               {%- endif ~%}
-            {%- endblock ~%}
-
-            {%- block command ~%}
-            <h3>Quick download and preview</h3>
-            <pre><code>composer create-project cecil/{{ repo.name|lower }} --ask
-php cecil.phar serve</code></pre>
             {%- endblock ~%}
