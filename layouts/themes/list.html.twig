@@ -71,3 +71,8 @@
           </div>
         </div>
         {%- endblock ~%}
+
+    {%- block footer_scripts ~%}
+    {{ parent() }}
+    {{- include('partials/copy-link.js.twig', with_context = false) ~}}
+    {%- endblock ~%}
