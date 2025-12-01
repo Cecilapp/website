@@ -4,6 +4,7 @@
 @import './terminal.css';
 @import './algolia.css';
 @import './buttons' layer(utilities);
+@import './copy-link.css';
 
 @layer base {
   html {
