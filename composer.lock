@@ -124,16 +124,16 @@
         },
         {
             "name": "cecil/theme-octicons",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-octicons.git",
-                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d"
+                "reference": "3993278c2f125ee176155f7cc46f3fde861500fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
-                "reference": "b1c23e30c20b9fa8321050e84d5ea1dd650f638d",
+                "url": "https://api.github.com/repos/Cecilapp/theme-octicons/zipball/3993278c2f125ee176155f7cc46f3fde861500fb",
+                "reference": "3993278c2f125ee176155f7cc46f3fde861500fb",
                 "shasum": ""
             },
             "require": {
@@ -158,7 +158,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-octicons/issues",
-                "source": "https://github.com/Cecilapp/theme-octicons/tree/1.0.0"
+                "source": "https://github.com/Cecilapp/theme-octicons/tree/1.0.1"
             },
             "funding": [
                 {
@@ -170,7 +170,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-09-08T15:58:07+00:00"
+            "time": "2025-12-01T09:30:06+00:00"
         },
         {
             "name": "cecil/theme-pwa",
@@ -231,5 +231,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
