@@ -100,12 +100,12 @@
           {%- endif ~%}
           {%- if site.social.github.sponsor is defined ~%}
           <a href="{{ url(site.social.github.sponsor) }}" aria-label="Become a sponsor">
-            {{- octicons.svg('heart', 24, 'w-5 h-5 fill-pink-gold hover:fill-pink-400') ~}}
+            {{ octicons.svg('heart', 24, 'w-5 h-5 fill-pink-gold hover:fill-pink-400') ~}}
           </a>
           {%- endif ~%}
           {%- if site.social.github.repo is defined ~%}
           <a href="{{ url(site.social.github.repo) }}" aria-label="{{ site.title }} on GitHub">
-            {{- octicons.svg('mark-github', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
+            {{ octicons.svg('mark-github', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
           </a>
           {%- endif ~%}
         </nav>
