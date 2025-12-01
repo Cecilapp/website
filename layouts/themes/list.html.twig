@@ -35,8 +35,8 @@
             {%- block command ~%}
             {% import 'macros/octicons.twig' as octicons %}
             <div class="copy-link">
-              <input type="text" class="copy-link-input" value="composer require cecil/{{ repo.name|lower }}" readonly>
-              <button type="button" class="copy-link-button">
+              <input id="{{ repo.name|lower }}" type="text" class="copy-link-input" value="composer require cecil/{{ repo.name|lower }}" readonly>
+              <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
                 {{ octicons.svg('copy', 16) }}
               </button>
             </div>
@@ -78,8 +78,8 @@
           }
           .copy-link-button {
             flex-shrink: 0;
-            width: var(--height);
-            height: var(--height);
+            width: calc(var(--height) * .75);
+            height: calc(var(--height) * .75);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,7 +104,7 @@
             copyButton.addEventListener('click', () => {
               inputField.select();
               navigator.clipboard.writeText(text);
-              inputField.value = '{% trans %}Copied{% endtrans %}';
+              inputField.value = '{% trans %}Copied to clipboard{% endtrans %}';
               setTimeout(() => (inputField.value = text), 2000);
             });
           });
