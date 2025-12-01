@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-11-30 02:02+0100\n"
-"PO-Revision-Date: 2025-11-30 02:02+0100\n"
+"POT-Creation-Date: 2025-12-01 15:06+0100\n"
+"PO-Revision-Date: 2025-12-01 15:07+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -113,6 +113,10 @@ msgstr "Sombre"
 msgid "Homepage"
 msgstr "Page d’accueil"
 
+#: themes/list.html.twig:39
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papier"
+
 #: themes/list.html.twig:46
 msgid "Source code"
 msgstr "Code source"
@@ -122,8 +126,11 @@ msgid "Demo"
 msgstr "Démo"
 
 #: themes/list.html.twig:107
-msgid "Copied"
-msgstr "Copié"
+msgid "Copied to clipboard"
+msgstr "Copié dans le presse-papier"
+
+#~ msgid "Copied"
+#~ msgstr "Copié"
 
 #~ msgid "Star"
 #~ msgstr "Favoris"
