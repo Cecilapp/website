@@ -189,6 +189,7 @@
     {%- block footer_scripts ~%}
     <script async defer src="{{ asset('https://buttons.github.io/buttons.js') }}"></script>
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
+    {{- include('partials/copy-link.js.twig', with_context = false) ~}}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
     {%- endblock footer_scripts ~%}
   </body>
