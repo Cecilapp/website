@@ -1,6 +1,11 @@
 /* Note block (in Markdown content) */
 .note {
-  @apply relative px-4 mb-4 border border-l-4 border-blue dark:border-white;
+  @apply relative px-4 mb-4 border border-l-4;
+  @apply border-blue-700 dark:border-white;
+}
+.note a {
+  @apply text-inherit dark:text-inherit;
+  @apply underline;
 }
 [class*="note-"] {
   @apply pl-10
@@ -11,7 +16,7 @@
   @apply mask-(--svg);
   @apply absolute top-5 left-3 block w-4 h-4;
   @apply content-[''];
-  @apply bg-blue dark:bg-white;
+  @apply border-blue-700 dark:bg-white;
 }
 .note-info {
   @apply border-sky-700 dark:border-sky-400 bg-sky-50 dark:bg-sky-900;
