@@ -9,6 +9,14 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    container: {
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '1280px',
+        xl: '1280px',
+      }
+    },
     extend: {
       colors: {
         blue: '#163C56',
@@ -29,24 +37,8 @@ module.exports = {
           css: {
             fontSize: '.875rem',
             color: theme('colors.darkblue'),
-            'h2 a': {
-              fontWeight: 700,
-              textDecoration: 'none',
-            },
-            '.readmore': {
-              textDecoration: 'none',
-            },
             'h1, h2, h3, h4': {
               color: theme('colors.darkblue'),
-            },
-            'a, a:hover': {
-              color: theme('colors.blue'),
-            },
-            'a.anchorjs-link, a.anchorjs-link:hover': {
-              textDecoration: 'none',
-            },
-            '.anchorjs-link': {
-              color: theme('colors.gray.300'),
             },
             h1: {
               fontWeight: '700',
@@ -57,6 +49,23 @@ module.exports = {
             img: {
               margin: 'auto',
             },
+            'a, a:hover': {
+              color: theme('colors.blue'),
+            },
+            'h2 a': {
+              fontWeight: 700,
+              textDecoration: 'none',
+            },
+            'a.anchorjs-link, a.anchorjs-link:hover': {
+              textDecoration: 'none',
+            },
+            '.readmore': {
+              textDecoration: 'none',
+            },
+            '.anchorjs-link': {
+              color: theme('colors.gray.300'),
+            },
+
           },
         },
         dark: {
@@ -74,14 +83,6 @@ module.exports = {
           },
         },
       }),
-    },
-    container: {
-      screens: {
-        sm: '100%',
-        md: '100%',
-        lg: '1280px',
-        xl: '1280px',
-      }
     }
   },
   plugins: [
