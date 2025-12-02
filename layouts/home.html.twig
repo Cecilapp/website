@@ -1,3 +1,4 @@
+{% import 'macros/octicons.twig' as octicons %}
 {% extends 'page.html.twig' %}
 
 {%- block head ~%}
@@ -19,13 +20,13 @@
               {#- Quick Start link ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} ~%}
-                {%- trans %}Quick Start{% endtrans -%}
+                <span class="hidden md:max-lg:inline mr-4">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
               {#- Download link ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} ~%}
-                {%- trans %}Download{% endtrans -%}
+                <span class="hidden md:max-lg:inline mr-4">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
             </div>
