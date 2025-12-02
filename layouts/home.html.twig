@@ -15,18 +15,20 @@
               <div class="text-6xl mb-4">{{ site.title }}</div>
               <div class="font-medium text-xl md:text-2xl">{{ site.baseline }}</div>
             </h1>
-            {#- Quick Start link ~#}
-            {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-            {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold mb-4 mr-2'} ~%}
-              {%- trans %}Quick Start{% endtrans -%}
-            {%- endx ~%}
-            {%- endif ~%}
-            {#- Download link ~#}
-            {%- if site.menus.main.download is defined ~%}
-            {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans mr-2 hidden sm:inline-block'} ~%}
-              {%- trans %}Download{% endtrans -%}
-            {%- endx ~%}
-            {%- endif ~%}
+            <div class="flex flex-col lg:flex-row px-6 md:px-0 space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+              {#- Quick Start link ~#}
+              {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+              {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} ~%}
+                {%- trans %}Quick Start{% endtrans -%}
+              {%- endx ~%}
+              {%- endif ~%}
+              {#- Download link ~#}
+              {%- if site.menus.main.download is defined ~%}
+              {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} ~%}
+                {%- trans %}Download{% endtrans -%}
+              {%- endx ~%}
+              {%- endif ~%}
+            </div>
           </div>
           {#- Terminal video demo ~#}
           <div class="md:w-1/2 mx-4 hidden md:inline-flex">
