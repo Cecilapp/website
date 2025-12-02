@@ -22,12 +22,8 @@
   justify-content: center;
   background: unset;
   color: #333333;
+  @apply dark:text-gray-300;
   outline: none;
   cursor: pointer;
   padding: 10px 10px 10px 0;
 }
-/*@media (prefers-color-scheme: dark) {
-  .copy-link-button {
-    color: #ffffff;
-  }
-}*/
