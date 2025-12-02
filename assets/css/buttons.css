@@ -1,0 +1,29 @@
+/* Buttons */
+.btn {
+  @apply mb-2 py-3 px-6;
+  @apply inline-block;
+  @apply no-underline;
+  @apply bg-white dark:bg-transparent;
+  @apply border border-blue dark:border-white rounded-sm;
+  &:hover {
+    @apply bg-blue dark:bg-black text-white;
+  }
+}
+.btn-sm {
+  @apply py-1 px-3;
+}
+.btn-gold {
+  @apply bg-gold dark:bg-gold text-darkblue dark:text-darkblue;
+  @apply border-gold dark:border-gold;
+  &:hover {
+    @apply bg-white dark:bg-white text-darkblue;
+    @apply border-white dark:border-white;
+  }
+}
+.btn-trans {
+  @apply bg-transparent dark:hover:bg-white text-white;
+  @apply border-white;
+  &:hover {
+    @apply bg-white text-darkblue;
+  }
+}

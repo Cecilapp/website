@@ -1,0 +1,22 @@
+    <script>{% apply minify_js ~%}
+      document.addEventListener('DOMContentLoaded', () => {
+        const buttonId = 'download-button';
+        const button = document.getElementById(buttonId);
+        if (null !== button) {
+          fetch('/VERSION')
+            .then(response => {
+              let version = response.text();
+              if (!response.ok) {
+                console.log('problem to fetch VERSION');
+                version = 'X.X.X';
+              }
+              return version;
+            })
+            .then(version => {
+              console.log('VERSION: ' + version);
+              text = document.getElementById(buttonId).innerHTML;
+              document.getElementById(buttonId).innerHTML = text + ' <span class="text-xs">(' + version.trim() + ')</span>';
+            })
+        }
+      });
+    {% endapply %}</script>

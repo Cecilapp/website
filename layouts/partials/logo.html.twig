@@ -1,0 +1,5 @@
+        {#- logo ~#}
+        <a class="flex flex-row items-center justify-center" href="{{ url(site.home) }}" title="{{ 'Home'|trans }}">
+          <img src="{{ asset('logo.svg') }}" alt="{% trans with {'%site_title%': site.title} %}%site_title% logo{% endtrans %}" width="32" height="32" fetchpriority="high" class="min-w-8 m-0" />
+          <span class="hidden md:block ml-2 text-xl text-gold align-middle font-bold">{{ site.title }}</span>
+        </a>

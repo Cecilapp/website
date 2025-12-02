@@ -1,0 +1,53 @@
+/* Terminal */
+.shell-wrap {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  width: 450px;
+  height: 314px;
+  background: #000000;
+}
+.shell-top-bar {
+  text-align: center;
+  color: #525252;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  font-size: 0.65em;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #b8b8b8 100%); /* Chrome10+, Safari5.1+ */
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #b8b8b8 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f7f7f7 0%, #b8b8b8 100%);
+}
+.shell-body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* terminal buttons */
+.termBtns {
+  line-height: 11px;
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 1rem
+}
+.termBtns>span {
+  display: inline-block;
+  vertical-align: top;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 6px
+}
+.termBtns>span:first-child {
+  background: #f35f56
+}
+.termBtns>span:nth-child(2) {
+  background: #fce35f
+}
+.termBtns>span:nth-child(3) {
+  background: #56cc7e
+}
