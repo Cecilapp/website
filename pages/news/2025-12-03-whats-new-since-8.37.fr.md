@@ -8,7 +8,7 @@ typora-copy-images-to: ../../assets/images/news
 ### Nouvelles fonctionnalités majeures
 
 - **Support amélioré des images responsives** — ajout du support de la *pixel density* (densité de pixels / DPR) pour les images responsive (permet d’optimiser les srcset en fonction des écrans à haute densité).
-- **Possibilité d’outrepasser `robots.txt`** — possibilité de créer une page `pages/robots.md` afin de remplacer le `robots.txt` par défaut. Pratique pour gérer exclusions d’indexation par projet.
+- **Possibilité d’outrepasser robots.txt** — possibilité de créer une page `pages/robots.md` afin de remplacer le `robots.txt` par défaut. Pratique pour gérer exclusions d’indexation par projet.
 - **Amélioration du post-processing** — poursuite des capacités d’extensions/post-processors (héritées de la branche 8.x) pour permettre des traitements finaux des sorties.
 
 ### Améliorations & ergonomie
