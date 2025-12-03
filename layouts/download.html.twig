@@ -1,3 +1,4 @@
+{% import 'macros/octicons.twig' as octicons %}
 {% extends 'page.html.twig' %}
 
 {% block content %}
@@ -6,11 +7,11 @@
             <p class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-2 text-center">
               {#- Download ~#}
               {%- x:button with {id: 'download-button', href: url(site.release.name, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
-                {% trans %}Download{% endtrans %}
+                <span class="inline mr-2">{{ octicons.svg('download', 24, 'size-4') }}</span>{% trans %}Download{% endtrans %}
               {%- endx ~%}
-              {#- SHA1 ~#}
+              {#- SHA-1 ~#}
               {%- x:button with {id: 'sha1-button', href: url(site.release.sha1, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
-                {% trans %}File checksum{% endtrans %}
+                <span class="inline mr-2">{{ octicons.svg('file-binary', 24, 'size-4') }}</span>{% trans %}File checksum{% endtrans %} <span class="text-xs">(SHA-1)</span>
               {%- endx ~%}
             </p>
           </div>
@@ -18,9 +19,9 @@
             {{ page.content }}
           </div>
         </div>
-{% endblock content %}
+{% endblock %}
 
 {% block footer_scripts %}
     {{- parent() ~}}
     {%~ include 'partials/version.js.twig' only ~%}
-{% endblock footer_scripts %}
+{% endblock %}
