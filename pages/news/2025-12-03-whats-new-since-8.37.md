@@ -8,7 +8,7 @@ typora-copy-images-to: ../../assets/images/news
 ### Major new features
 
 - **Improved support for responsive images** — Added support for pixel density (DPR) for responsive images (allows optimization of srcset for high-density screens).
-- **Ability to override `robots.txt`** — Ability to create a `pages/robots.md` page to replace the default `robots.txt`. Useful for managing indexing exclusions per project.
+- **Ability to override robots.txt** — Ability to create a `pages/robots.md` page to replace the default `robots.txt`. Useful for managing indexing exclusions per project.
 - **Improved post-processing** — Continued use of extension/post-processor capabilities (inherited from the 8.x branch) to enable final output processing.
 
 ### Improvements & usability
