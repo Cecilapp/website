@@ -49,6 +49,10 @@ module.exports = {
             img: {
               margin: 'auto',
             },
+            hr: {
+              marginTop: '2em',
+              marginBottom: '2em',
+            },
             'a, a:hover': {
               color: theme('colors.blue'),
             },
