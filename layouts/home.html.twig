@@ -5,7 +5,7 @@
     {{- parent() ~}}
     <link rel="preload" href="{{ asset('videos/cecil-demo-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px)">
     <style>{{- asset('css/animation.css')|inline -}}</style>
-{%- endblock head ~%}
+{%- endblock ~%}
 
 {%- block jumbotron ~%}
     <div class="jumbotron mt-14">
@@ -117,4 +117,4 @@ php cecil.phar serve</pre>
     {{- parent() ~}}
     {%~ include 'partials/version.js.twig' only ~%}
     {%~ include 'partials/animation.js.twig' only ~%}
-{%- endblock footer_scripts ~%}
+{%- endblock ~%}
