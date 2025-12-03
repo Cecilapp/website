@@ -4,6 +4,7 @@ description: "Listes des changements depuis la sortie de Cecil 8.37.0"
 date: 2025-12-03
 typora-copy-images-to: ../../assets/images/news
 ---
+
 ### Nouvelles fonctionnalités majeures
 
 - **Support amélioré des images responsives** — ajout du support de la *pixel density* (densité de pixels / DPR) pour les images responsive (permet d’optimiser les srcset en fonction des écrans à haute densité).
