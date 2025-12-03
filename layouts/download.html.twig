@@ -11,7 +11,7 @@
               {%- endx ~%}
               {#- SHA-1 ~#}
               {%- x:button with {id: 'sha1-button', href: url(site.release.sha1, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
-                <span class="inline mr-2">{{ octicons.svg('file-binary', 24, 'size-4') }}</span>{% trans %}File checksum{% endtrans %} <span class="text-xs">(SHA-1)</span>
+                <span class="inline mr-2">{{ octicons.svg('file-check', 24, 'size-4') }}</span>{% trans %}File checksum{% endtrans %} <span class="text-xs">(SHA-1)</span>
               {%- endx ~%}
             </p>
           </div>
