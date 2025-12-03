@@ -111,7 +111,7 @@
         </nav>
       </div>
     </header>
-    {%- block jumbotron %}{% endblock ~%}
+    {%- block jumbotron %}{% endblock jumbotron ~%}
     <main class="grow px-6 py-8{% if page.type != 'homepage' %} mt-14{% endif %}">
       <div class="container mx-auto">
         {%- block content ~%}
@@ -120,11 +120,11 @@
           <h1>{{ page.title }}</h1>
           {{ page.content }}
         </div>
-        {%- endblock ~%}
+        {%- endblock content ~%}
       </div>
     </main>
-    {%- block features %}{% endblock ~%}
-    {%- block sponsors %}{% endblock ~%}
+    {%- block features %}{% endblock features ~%}
+    {%- block sponsors %}{% endblock sponsors ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {#- footer menu -#}
