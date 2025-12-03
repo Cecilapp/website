@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2025-09-15
+updated: 2025-12-03
 layout: download
 slug: telecharger
 menu:
@@ -79,16 +79,14 @@ chmod +x /usr/local/bin/cecil
 La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée :
 
 ```bash
-php cecil self-update
+cecil self-update
+# Homebrew
+brew upgrade
+# Scoop
+scoop update cecil
+# PHIVE
+phive update cecil
 ```
-
-:::
-
-- Homebrew : `brew upgrade`
-- Scoop : `scoop update cecil`
-- PHIVE : `phive update cecil`
-
-:::
 
 ## Télécharger une version spécifique
 
