@@ -1,5 +1,5 @@
 ---
-title: "What's New Since Version 8.37.0?"
+title: "What's new since version 8.37.0?"
 description: "List of changes since the release of Cecil 8.37.0"
 date: 2025-12-03
 typora-copy-images-to: ../../assets/images/news
