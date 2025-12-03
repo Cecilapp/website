@@ -1,10 +1,9 @@
 /* Terminal */
 .shell-wrap {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
-  width: 450px;
-  height: 314px;
-  background: #000000;
+  @apply bg-black;
+  @apply rounded-sm;
+  @apply overflow-hidden;
+  @apply shadow-[0_0_30px_rgba(0,0,0,0.4)] dark:shadow-gray-600;
 }
 .shell-top-bar {
   text-align: center;
