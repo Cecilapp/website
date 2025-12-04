@@ -92,16 +92,6 @@ img.markdown {
     scroll-behavior: smooth;
   }
 }
-.back-to-top-wrapper {
-  position: relative;
-  pointer-events: none;
-}
-.back-to-top-link {
-  position: fixed;
-  position: sticky;
-  pointer-events: all;
-  top: calc(100vh - 3rem);
-}
 
 @layer components {
   .jumbotron {
