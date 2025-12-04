@@ -40,7 +40,7 @@
             {%- endif ~%}
             {#- Buttons ~#}
             <div class="flex space-x-2">
-              {%- x:button with {href: repo.github, class: 'btn-sm', role: 'button'} ~%}
+              {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
                 {% trans %}Source code{% endtrans %}
               {%- endx ~%}
               {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
