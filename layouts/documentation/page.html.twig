@@ -69,9 +69,8 @@
             {%- endif ~%}
           </div>
           {#- toc ~#}
-          <div class="flex-none w-48 lg:ml-6 xl:ml-8 hidden xl:block xl:back-to-top-wrapper">
+          <div class="flex-none w-48 lg:ml-6 xl:ml-8 hidden xl:block">
             {%~ include 'partials/toc.html.twig' with {'page': page} only ~%}
-            <a href="#top" class="back-to-top-link" aria-label="Scroll to Top">{{ octicons.svg('arrow-up', 24, 'w-12 h-12') }}</a>
           </div>
         </div>
 {% endblock content %}
