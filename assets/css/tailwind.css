@@ -1,10 +1,38 @@
 @config '../../tailwind.config.js';
+
 @import 'tailwindcss';
 @import './notes.css';
 @import './terminal.css';
 @import './algolia.css';
 @import './buttons' layer(utilities);
 @import './copy-link.css';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography' {
+  className: markdown;
+}
+
+@source './layouts/**/*.html.twig';
+@source './themes/**/layouts/**/*.html.twig';
+@source inline('anchorjs-link');
+@source inline('dark:brightness-90');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: Montserrat, sans-serif;
+  --color-blue: #163C56;
+  --color-gold: #F2D07F;
+  --color-darkblue: #092F44;
+  --color-bluegray: #7B99A9;
+  --color-dark: #111827;
+  --color-darkgray: #374151;
+  --container-sm: 100%;
+  --container-md: 100%;
+  --container-lg: 1280px;
+  --container-xl: 1280px;
+  --shadow-3xl: 0 35px 60px -15px rgb(0 0 0 / 0.3);
+}
 
 @layer base {
   html {

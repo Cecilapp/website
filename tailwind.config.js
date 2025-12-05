@@ -1,37 +1,6 @@
 module.exports = {
-  content: [
-    './layouts/**/*.html.twig',
-    './themes/**/layouts/**/*.html.twig',
-  ],
-  safelist: [
-    'anchorjs-link',
-    'dark:brightness-90'
-  ],
-  darkMode: 'class',
   theme: {
-    container: {
-      screens: {
-        sm: '100%',
-        md: '100%',
-        lg: '1280px',
-        xl: '1280px',
-      }
-    },
     extend: {
-      colors: {
-        blue: '#163C56',
-        gold: '#F2D07F',
-        darkblue: '#092F44',
-        bluegray: '#7B99A9',
-        dark: '#111827',
-        darkgray: '#374151',
-      },
-      fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-      },
-      boxShadow: {
-        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -88,11 +57,5 @@ module.exports = {
         },
       }),
     }
-  },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')({
-      className: 'markdown',
-    }),
-  ],
+  }
 }
