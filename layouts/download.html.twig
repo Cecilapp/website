@@ -23,5 +23,5 @@
 
 {% block footer_scripts %}
     {{- parent() ~}}
-    {%~ include 'partials/version.js.twig' only ~%}
+    {{- include('partials/version.js.twig', with_context: false) ~}}
 {% endblock %}

@@ -1,4 +1,5 @@
-{% if site.algolia.enabled %}
+{# Search box partial using Algolia Autocomplete #}
+            {% if site.algolia.enabled %}
               <div class="search-container" style="display:none">
                 <input type="text" id="search-input" placeholder="{% trans %}Search the Docs [Alt+S]{% endtrans %}" accesskey="s" />
                 <svg class="search-icon" viewbox="654 -372 1664 1664" width="50" height="50">
@@ -61,4 +62,4 @@
                   window.location.href = '{{ url() }}' + suggestion.href;
                 });
               {% endapply %}</script>
-{% endif %}
+            {% endif %}

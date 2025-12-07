@@ -34,7 +34,7 @@
           </div>
           {#- Terminal video demo ~#}
           <div class="md:w-1/2 mx-4 hidden md:inline-flex">
-            {%- include 'partials/terminal-demo.html.twig' ~%}
+            {{- include('partials/terminal-demo.html.twig', with_context: false) ~}}
           </div>
         </div>
       </div>
@@ -56,8 +56,8 @@
         {#- about blocks ~#}
         <div id="about" class="mt-6 md:mt-10">
           <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
-            {%- for block in page.blocks.about|default({})|filter(b => b.visible != false) ~%}
-            {%~ include 'partials/block-about.html.twig' with {loop, icon:block.icon, title:block.title, description:block.description} only ~%}
+            {%- for block in page.blocks.about|default([])|filter(b => b.visible != false) ~%}
+            {{- include('partials/block-about.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
             {%- endfor ~%}
           </div>
         </div>
@@ -116,6 +116,6 @@ php cecil.phar serve</pre>
 
 {%- block footer_scripts ~%}
     {{- parent() ~}}
-    {%~ include 'partials/version.js.twig' only ~%}
-    {%~ include 'partials/animation.js.twig' only ~%}
+    {{- include('partials/version.js.twig', with_context: false) ~}}
+    {{- include('partials/animation.js.twig', with_context: false) ~}}
 {%- endblock ~%}
