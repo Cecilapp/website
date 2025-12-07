@@ -1,4 +1,4 @@
-{# Animation on scroll using Intersection Observer API #}
+    {#- Animation on scroll using Intersection Observer API ~#}
     <script>{% apply minify_js ~%}
       const callback = function (entries) {
         entries.forEach((entry) => {
@@ -10,7 +10,7 @@
       const observer = new IntersectionObserver(callback);
       const targets = document.querySelectorAll('.animate-on-scroll');
       targets.forEach(function (target) {
-        /*target.classList.add("opacity-0");*/
+        /*target.classList.add('opacity-0');*/
         observer.observe(target);
       });
     {% endapply %}</script>

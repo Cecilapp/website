@@ -20,13 +20,13 @@
             <div class="flex flex-col xl:flex-row px-12 md:px-0 space-x-0 xl:space-x-4 space-y-4 xl:space-y-0">
               {#- Quick Start link ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-              {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} ~%}
+              {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} -%}
                 <span class="hidden sm:inline mr-4">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
               {#- Download link ~#}
               {%- if site.menus.main.download is defined ~%}
-              {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} ~%}
+              {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} -%}
                 <span class="hidden sm:inline mr-4">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
@@ -88,7 +88,7 @@ php cecil.phar serve</pre>
 
 {%- block features ~%}
     <div id="features">
-    {%- for block in page.blocks.features|default({})|filter(b => b.visible != false) ~%}
+    {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
       {{- include('partials/block-feature.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}
     {%- endfor ~%}
     </div>

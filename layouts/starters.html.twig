@@ -10,7 +10,7 @@
 
             {%- block command ~%}
             <h3>Create project</h3>
-            {% import 'macros/octicons.twig' as octicons %}
+            {%- import 'macros/octicons.twig' as octicons ~%}
             <div class="copy-link">
               <input id="{{ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
               <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
