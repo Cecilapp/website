@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2025-08-30
+updated: 2025-12-07
 blocks:
   about:
     - title: Rapide & sécurisé
@@ -66,6 +66,13 @@ blocks:
       description: "Cecil génère automatiquement des images adaptatives dans plusieurs formats (WebP, AVIF) et tailles afin d'optimiser les temps de chargement sur tous les appareils."
       path: fr/comment-faire/markdown-performance-images/
       image: images/cecil-responsive-images.png
+      shadow: true
+      visible: true
+    - id: seo
+      title: SEO simplifié
+      description: "Cecil vous aide à améliorer votre SEO avec la génération automatique de meta éléments, de balises Open Graph, de Twitter cards et de données structurées."
+      path: documentation/configuration/#metatags
+      image: images/cecil-seo-fr.png
       shadow: true
       visible: true
     - id: the-butler

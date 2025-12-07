@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2025-08-30
+updated: 2025-12-07
 blocks:
   about:
     - title: Fast & Secure
@@ -66,6 +66,13 @@ blocks:
       description: "Cecil automatically generates responsive images in multiple formats (WebP, AVIF) and sizes to optimize loading times on all devices."
       path: how-to/markdown-performance-images/
       image: images/cecil-responsive-images.png
+      shadow: true
+      visible: true
+    - id: seo
+      title: SEO made easy
+      description: "Cecil helps you to improve your SEO with automatic generation of meta tags, Open Graph tags, Twitter cards and structured data."
+      path: documentation/configuration/#metatags
+      image: images/cecil-seo.png
       shadow: true
       visible: true
     - id: the-butler
