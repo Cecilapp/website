@@ -2,7 +2,7 @@
             <div class="shell-wrap">
               <p class="shell-top-bar">/Users/aligny</p>
               <div class="shell-body">
-                <video id="video-demo" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="{{ asset('videos/cecil-demo.mp4').video.width }}" height="{{ asset('videos/cecil-demo.mp4').video.height }}" fetchpriority="high">
+                <video id="video-demo" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="{{ asset('videos/cecil-demo.mp4').width }}" height="{{ asset('videos/cecil-demo.mp4').height }}" fetchpriority="high">
                   <source data-src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
                 </video>
                 <script>{% apply minify_js ~%}
@@ -20,7 +20,7 @@
                 {% endapply %}</script>
                 <noscript>
                   <style>#video-demo{display:none;}</style>
-                  <video autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="100%" fetchpriority="high">
+                  <video autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="{{ asset('videos/cecil-demo.mp4').width }}" height="{{ asset('videos/cecil-demo.mp4').height }}" fetchpriority="high">
                     <source src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
                     <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ url(asset('videos/cecil-demo.mp4')) }}">link to the video</a> instead.</p>
                   </video>
