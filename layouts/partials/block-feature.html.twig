@@ -1,6 +1,6 @@
-{#- Variables: id, title, description, path, image, shadow, webp ~#}
+      {#- Variables: id, title, description, path, image, shadow, webp ~#}
       <div id="feature-{{ id }}" class="p-10 lg:p-28{% if loop.index0 is even %} bg-gold dark:bg-black{% endif %}">
-        <div class="container mx-auto flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-8{% if loop.index0 is odd %} md:flex-row-reverse md:space-x-reverse{% endif %}">
+        <div class="container mx-auto flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-8{% if loop.index0 is odd %} md:flex-row-reverse md:space-x-reverse{% endif %} items-center">
           {%- set image_template = asset(image, {ignore_missing: true}) ~%}
           <div class="basis-{% if not image_template['missing'] %}1/2{% else %}full{% endif %} text-center align-middle">
             <a href="#feature-{{ id }}"><h2 class="text-4xl mb-8">{{ title }}</h2></a>
