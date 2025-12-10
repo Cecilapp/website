@@ -12,7 +12,7 @@
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row -mx-4">
           <div class="md:w-1/2 mx-4">
-            <h1 class="sm:max-md:mb-6">
+            <h1 class="max-md:mb-6">
               <div class="text-6xl mb-4">{{ site.title }}</div>
               <div class="font-medium text-xl md:text-2xl">{{ site.baseline }}</div>
             </h1>
@@ -54,15 +54,15 @@
 
 {%- block content ~%}
         {#- about blocks ~#}
-        <div id="about" class="mt-6 md:mt-10">
-          <div class="space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-5">
+        <div id="about" class="pt-6 md:pt-10">
+          <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
             {%- for block in page.blocks.about|default([])|filter(b => b.visible != false) ~%}
             {{- include('partials/block-about.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
             {%- endfor ~%}
           </div>
         </div>
         {#- content ~#}
-        <div id="content" class="container mx-auto md:w-3/4 lg:w-2/4 mt-10 px-0 md:px-8 py-5 leading-loose">
+        <div id="content" class="container mx-auto md:w-3/4 lg:w-2/4 mt-8 px-0 md:px-8 py-5 leading-loose">
           {%- if page.content ~%}
           <div class="mb-4 markdown">
             {{ page.content }}
