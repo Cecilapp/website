@@ -18,13 +18,13 @@
             </h1>
             <div class="hidden xl:block font-medium text-2xl mb-4">{{ site.description }}</div>
             <div class="flex flex-col xl:flex-row px-12 md:px-0 space-x-0 xl:space-x-4 space-y-4 xl:space-y-0">
-              {#- Quick Start link ~#}
+              {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} -%}
                 <span class="hidden sm:inline mr-4">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
-              {#- Download link ~#}
+              {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} -%}
                 <span class="hidden sm:inline mr-4">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
@@ -32,7 +32,7 @@
               {%- endif ~%}
             </div>
           </div>
-          {#- Terminal video demo ~#}
+          {#- terminal video demo ~#}
           <div class="md:w-1/2 mx-4 hidden md:inline-flex">
             {{- include('partials/terminal-demo.html.twig', with_context: false) ~}}
           </div>
@@ -53,7 +53,7 @@
 {%- endblock ~%}
 
 {%- block content ~%}
-        {#- about blocks ~#}
+        {#- about ~#}
         <div id="about" class="pt-6 md:pt-10">
           <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
             {%- for block in page.blocks.about|default([])|filter(b => b.visible != false) ~%}
