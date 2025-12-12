@@ -1,6 +1,7 @@
 /* Buttons */
 .btn {
   @apply py-3 px-6;
+  @apply font-medium;
   @apply no-underline;
   @apply bg-white dark:bg-transparent;
   @apply border border-blue dark:border-white rounded-sm;
