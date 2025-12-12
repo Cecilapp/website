@@ -83,8 +83,10 @@
   }
 }
 
-#sidebar a {
-  @apply text-slate-300;
+#sidebar a,
+#sidebar svg {
+  /*@apply text-slate-300;*/
+  @apply text-gold dark:text-gold hover:text-white;
 }
 
 /* External links in Markdown */
