@@ -7,7 +7,10 @@
                 </svg>
               </div>
               <script>{% apply minify_js ~%}
-                document.querySelector('div.search-container').style.display = 'block';
+                document.querySelector('div.search-container').style.display = 'none';
+                if (navigator.onLine) {
+                  document.querySelector('div.search-container').style.display = 'block';
+                }
                 window.addEventListener('offline', (e) => {
                   console.log('Browser is offline');
                   document.querySelector('div.search-container').style.display = 'none';
