@@ -57,6 +57,7 @@
         <div class="grow"></div>
         {#- navigation ~#}
         <nav class="flex items-center mt-0 pt-0 space-x-4 md:space-x-6 overflow-x-auto">
+          {#- main menu ~#}
           {%- for entry in site.menus.main|sort_by_weight ~%}
           <a class="hidden lg:inline-block truncate" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}" title="{{ entry.name }}">{{ entry.name }}</a>
           {%- endfor -%}
@@ -71,7 +72,9 @@
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
             {%- set search_icon_path = '#top' ~%}
           {%- endif ~%}
-          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">{{ octicons.svg('search', 16, 'w-5 h-5 fill-gold hover:fill-white') }}</a>
+          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">
+            {{ octicons.svg('search', 16) }}
+          </a>
           <script>{% apply minify_js ~%}
             document.getElementById('search-icon').addEventListener('click', () => {
               document.getElementById('search-input').focus();
@@ -79,33 +82,30 @@
           {% endapply %}</script>
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}
-          {#- language selector ~#}
-          {#-{{- include('partials/language-selector.html.twig') ~}}~#}
-          {#-{{- include('partials/selector-language.html.twig') ~}}~#}
           {#- social icons ~#}
           {%- if site.social.twitter.url is defined ~%}
           <a href="{{ url(site.social.twitter.url) }}" aria-label="{{ site.title }} on Twitter">
-            <svg class="w-5 h-5 fill-gold hover:fill-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/></svg>
           </a>
           {%- endif ~%}
           {%- if site.social.bluesky.url is defined ~%}
           <a href="{{ url(site.social.bluesky.url) }}" aria-label="{{ site.title }} on Bluesky">
-            <svg class="w-5 h-5 fill-gold hover:fill-white" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 511.999 452.266"><path fill-rule="nonzero" d="M110.985 30.442c58.695 44.217 121.837 133.856 145.013 181.961 23.176-48.105 86.322-137.744 145.016-181.961 42.361-31.897 110.985-56.584 110.985 21.96 0 15.681-8.962 131.776-14.223 150.628-18.272 65.516-84.873 82.228-144.112 72.116 103.55 17.68 129.889 76.238 73 134.8-108.04 111.223-155.288-27.905-167.385-63.554-3.489-10.262-2.991-10.498-6.561 0-12.098 35.649-59.342 174.777-167.382 63.554-56.89-58.562-30.551-117.12 72.999-134.8-59.239 10.112-125.84-6.6-144.112-72.116C8.962 184.178 0 68.083 0 52.402c0-78.544 68.633-53.857 110.985-21.96z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 511.999 452.266"><path fill-rule="nonzero" d="M110.985 30.442c58.695 44.217 121.837 133.856 145.013 181.961 23.176-48.105 86.322-137.744 145.016-181.961 42.361-31.897 110.985-56.584 110.985 21.96 0 15.681-8.962 131.776-14.223 150.628-18.272 65.516-84.873 82.228-144.112 72.116 103.55 17.68 129.889 76.238 73 134.8-108.04 111.223-155.288-27.905-167.385-63.554-3.489-10.262-2.991-10.498-6.561 0-12.098 35.649-59.342 174.777-167.382 63.554-56.89-58.562-30.551-117.12 72.999-134.8-59.239 10.112-125.84-6.6-144.112-72.116C8.962 184.178 0 68.083 0 52.402c0-78.544 68.633-53.857 110.985-21.96z"/></svg>
           </a>
           {%- endif ~%}
           {%- if site.social.opencollective.url is defined ~%}
           <a href="{{ url(site.social.opencollective.url) }}" aria-label="Become a sponsor">
-            <svg class="w-5 h-5 fill-gold hover:fill-white" height="1em" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M 7,1 C 3.6862915,1 1,3.686292 1,7 c 0,3.313708 2.6862915,6 6,6 1.2698255,0 2.4472377,-0.394558 3.416941,-1.06764 L 8.8632814,10.378084 C 8.3110136,10.683293 7.6756458,10.857319 7,10.857319 4.8697587,10.857319 3.1426809,9.130241 3.1426809,7 3.1426809,4.869759 4.8697587,3.142681 7,3.142681 c 0.6756458,0 1.3110136,0.174026 1.8632814,0.479235 L 10.416941,2.06764 C 9.4472377,1.394558 8.2698255,1 7,1 Z m 4.93236,2.583059 -1.554276,1.55366 c 0.267058,0.483234 0.433793,1.029899 0.471217,1.611636 0.0053,0.08311 0.008,0.167189 0.008,0.251645 0,0.675646 -0.174026,1.311014 -0.479235,1.863281 l 1.554276,1.55366 C 12.605442,9.447238 13,8.269825 13,7 13,5.730175 12.605442,4.552762 11.93236,3.583059 Z"/></svg>
+            <svg class="hover:text-[#3989FF]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true"><path d="M 7,1 C 3.6862915,1 1,3.686292 1,7 c 0,3.313708 2.6862915,6 6,6 1.2698255,0 2.4472377,-0.394558 3.416941,-1.06764 L 8.8632814,10.378084 C 8.3110136,10.683293 7.6756458,10.857319 7,10.857319 4.8697587,10.857319 3.1426809,9.130241 3.1426809,7 3.1426809,4.869759 4.8697587,3.142681 7,3.142681 c 0.6756458,0 1.3110136,0.174026 1.8632814,0.479235 L 10.416941,2.06764 C 9.4472377,1.394558 8.2698255,1 7,1 Z m 4.93236,2.583059 -1.554276,1.55366 c 0.267058,0.483234 0.433793,1.029899 0.471217,1.611636 0.0053,0.08311 0.008,0.167189 0.008,0.251645 0,0.675646 -0.174026,1.311014 -0.479235,1.863281 l 1.554276,1.55366 C 12.605442,9.447238 13,8.269825 13,7 13,5.730175 12.605442,4.552762 11.93236,3.583059 Z"/></svg>
           </a>
           {%- endif ~%}
           {%- if site.social.github.sponsor is defined ~%}
           <a href="{{ url(site.social.github.sponsor) }}" aria-label="Become a sponsor">
-            {{ octicons.svg('heart', 24, 'w-5 h-5 fill-pink-gold hover:fill-pink-400') ~}}
+            {{ octicons.svg('heart', 24, 'hover:fill-pink-400') ~}}
           </a>
           {%- endif ~%}
           {%- if site.social.github.repo is defined ~%}
           <a href="{{ url(site.social.github.repo) }}" aria-label="{{ site.title }} on GitHub">
-            {{ octicons.svg('mark-github', 16, 'w-5 h-5 fill-gold hover:fill-white') ~}}
+            {{ octicons.svg('mark-github', 16) ~}}
           </a>
           {%- endif ~%}
         </nav>
