@@ -66,6 +66,7 @@
     @apply text-gold dark:text-gold hover:text-white;
   }
   header svg {
+    @apply size-5;
     @apply text-gold dark:text-gold hover:text-white;
   }
   main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
