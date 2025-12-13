@@ -22,7 +22,7 @@
   justify-content: center;
   background: unset;
   color: #333333;
-  @apply dark:text-gray-300;
+  @apply dark:text-slate-300;
   outline: none;
   cursor: pointer;
   padding: 10px 10px 10px 0;
