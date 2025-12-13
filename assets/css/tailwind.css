@@ -47,6 +47,21 @@
   a {
     @apply text-blue dark:text-white;
   }
+  p {
+    @apply mb-4;
+  }
+  img, svg {
+    @apply inline-block;
+  }
+  img {
+    @apply mb-1;
+  }
+  figcaption {
+    @apply text-center! italic!;
+  }
+  video {
+    @apply my-0!;
+  }
   header a {
     @apply text-gold dark:text-gold hover:text-white;
   }
@@ -66,26 +81,13 @@
   footer a:hover {
     @apply underline;
   }
-  p {
-    @apply mb-4;
-  }
-  img, svg {
-    @apply inline-block;
-  }
-  img {
-    @apply mb-1;
-  }
-  figcaption {
-    @apply text-center! italic!;
-  }
-  video {
-    @apply my-0!;
+  details ul {
+    @apply m-0!;
   }
 }
 
 #sidebar a,
 #sidebar svg {
-  /*@apply text-slate-300;*/
   @apply text-gold dark:text-gold hover:text-white;
 }
 
