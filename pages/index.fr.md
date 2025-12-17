@@ -87,7 +87,7 @@ blocks:
       title: Créez rapidement un site de documentation
       description: "[Statidocs](https://statidocs.cecil.app) est un puissant starter de documentation créé via Cecil."
       path: https://statidocs.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/statidocs/main/screenshot.png
+      image: images/statidocs.png
       visible: true
     - id: links
       title: Restez propriétaire de vos liens
