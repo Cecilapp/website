@@ -1,5 +1,5 @@
-      {%- import 'macros/octicons.twig' as octicons -%}
-      {#- Variables: id, title, description, path, image, shadow, webp ~#}
+      {#- Variables: id, title, description, path, image, shadow, webp -#}
+      {%- import 'macros/octicons.twig' as octicons ~%}
       <div id="feature-{{ id }}" class="p-10 lg:p-28{% if loop.index0 is even %} bg-gold dark:bg-black{% endif %}">
         <div class="container mx-auto flex flex-col space-y-10 md:space-y-0 space-x-0 md:space-x-10 lg:space-x-14 xl:space-x-20{% if loop.index0 is even %} md:flex-row{% else %} md:flex-row-reverse md:space-x-reverse lg:space-x-reverse xl:space-x-reverse{% endif %} items-center">
           {%- set image_template = asset(image, {ignore_missing: true}) ~%}
