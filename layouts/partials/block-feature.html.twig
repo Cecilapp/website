@@ -1,15 +1,17 @@
+      {%- import 'macros/octicons.twig' as octicons -%}
       {#- Variables: id, title, description, path, image, shadow, webp ~#}
       <div id="feature-{{ id }}" class="p-10 lg:p-28{% if loop.index0 is even %} bg-gold dark:bg-black{% endif %}">
-        <div class="container mx-auto flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-8{% if loop.index0 is odd %} md:flex-row-reverse md:space-x-reverse{% endif %} items-center">
+        <div class="container mx-auto flex flex-col space-y-10 md:space-y-0 space-x-0 md:space-x-10 lg:space-x-14 xl:space-x-20{% if loop.index0 is even %} md:flex-row{% else %} md:flex-row-reverse md:space-x-reverse lg:space-x-reverse xl:space-x-reverse{% endif %} items-center">
           {%- set image_template = asset(image, {ignore_missing: true}) ~%}
-          <div class="basis-{% if not image_template['missing'] %}1/2{% else %}full{% endif %} text-center align-middle">
+          <div class="basis-{% if not image_template['missing'] %}1/2{% else %}full{% endif %} text-center md:text-left align-middle">
             <a href="#feature-{{ id }}"><h2 class="text-4xl mb-8">{{ title }}</h2></a>
             <div class="text-2xl mb-8">
               {{ description|markdown_to_html ~}}
             </div>
-            <div>
-              <a class="text-xl" href="{{ url(path, {language: 'en'}) }}">{% trans %}Get started{% endtrans %}</a>
-            </div>
+            <a href="{{ url(path, {language: 'en'}) }}" class="inline-flex items-center space-x-2">
+              <span class="text-xl font-medium">{% trans %}Learn more{% endtrans %}</span>
+              <span class="w-5">{{ octicons.svg('arrow-right', 24) }}</span>
+            </a>
           </div>
           {%- if not image_template['missing'] ~%}
           <div class="basis-1/2 text-center animate-on-scroll -mx-10 md:mx-0">
