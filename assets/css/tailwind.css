@@ -127,7 +127,7 @@ img.markdown {
 
 @layer components {
   .jumbotron {
-    @apply bg-blue text-white px-6 py-10 md:py-20 text-xl text-center md:text-left font-medium dark:bg-dark;
+    @apply px-6 py-10 md:py-20 text-xl font-medium text-center md:text-left text-white bg-blue dark:bg-dark;
   }
 }
 
