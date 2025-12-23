@@ -17,7 +17,7 @@ static:
   exclude:
     - '*.phar*' # dev only
 serviceworker:
-  enabled: true
+  enabled: false
 metatags:
   jsonld: false
   favicon:
