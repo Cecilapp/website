@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2025-12-07
+updated: 2025-12-23
 blocks:
   about:
     - title: Fast & Secure
@@ -37,9 +37,7 @@ blocks:
       icon: desktop-download
       visible: true
     - title: Easy to deploy
-      description: "Create & deploy a new blog in 1 minute.  \n
-        [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](/hosting/netlify/deploy/ \"Deploy to Netlify\") 
-        [![Deploy to Vercel](https://vercel.com/button/default.svg)](/hosting/vercel/deploy/ \"Deploy to Vercel\")"
+      description: "Create & [deploy](/deploy) a new website in minutes, on Netlify, Vercel, statichost and more."
       icon: rocket
       visible: true
     - title: Open source
@@ -49,14 +47,14 @@ blocks:
   features:
     - id: markdown
       title: Intuitive writing experience
-      description: "Cecil’s [Markdown](/documentation/content/#markdown) parser provides a simple way to write your content. It’s easy to learn and easy to use."
+      description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#markdown
       image: images/cecil-markdown-content.png
       shadow: false
       visible: true
     - id: twig
       title: Modern template engine
-      description: "Cecil’s templating, powered by [Twig](/documentation/templates/), provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
+      description: "Cecil’s templating, powered by Twig, provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
       image: images/cecil-twig-template.png
       shadow: false
@@ -77,7 +75,7 @@ blocks:
       visible: true
     - id: the-butler
       title: A ready to use blog
-      description: "[The Butler](https://the-butler.cecil.app \"The Butler’s website\") is a ready to use starter blog, powered by Cecil."
+      description: "The Butler is a ready to use starter blog, powered by Cecil."
       path: https://the-butler.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
       shadow: false
@@ -85,27 +83,27 @@ blocks:
       visible: true
     - id: statidocs
       title: Build a documentation website quickly
-      description: "[Statidocs](https://statidocs.cecil.app) is a powerful documentation starter on top of Cecil."
+      description: "Statidocs is a powerful documentation starter on top of Cecil."
       path: https://statidocs.cecil.app
       image: images/statidocs.png
       visible: true
     - id: links
       title: Stay the owner of your links
-      description: "[Links](https://links.cecil.app) is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
+      description: "Links is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
       path: https://links.cecil.app
       image: images/cecil-links.png
       shadow: false
       visible: true
     - id: staticast
       title: Broadcast your podcast simply
-      description: "[Staticast](https://staticast.cecil.app) is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
+      description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
       path: https://staticast.cecil.app
       image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
       shadow: false
       visible: true
     - id: photo-stream
       title: Self hosted photo stream
-      description: "[Photo Stream](https://photo-stream.cecil.app) is a self hosted static website for your photos, with really goods loading performances."
+      description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
       path: https://photo-stream.cecil.app
       image: images/photo-stream.png
       shadow: false
