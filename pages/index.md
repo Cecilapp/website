@@ -37,7 +37,7 @@ blocks:
       icon: desktop-download
       visible: true
     - title: Easy to deploy
-      description: "Create & [deploy](/deploy) a new website in minutes, on Netlify, Vercel, statichost and more."
+      description: "Create & [deploy](/documentation/deploy) a new website in minutes, on Netlify, Vercel, statichost and more."
       icon: rocket
       visible: true
     - title: Open source
