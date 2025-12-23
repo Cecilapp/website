@@ -71,6 +71,8 @@
           </div>
           {%- endif ~%}
           {#- search icon ~#}
+          {#- only show search icon on English site for now ~#}
+          {%- if site.language == 'en' ~%}
           {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
           {%- if page.section == 'documentation' and page.type != 'section' ~%}
             {%- set search_icon_path = '#top' ~%}
@@ -83,6 +85,7 @@
               document.getElementById('search-input').focus();
             });
           {% endapply %}</script>
+          {%- endif ~%}
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}
           {#- social icons ~#}
