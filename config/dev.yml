@@ -1,26 +1,26 @@
+metatags:
+  jsonld: false
+  favicon: false
 pages:
   body:
     images:
-      resize:
-        enabled: false
-      responsive:
-        enabled: false
-      webp:
-        enabled: false
-      caption:
-        enabled: true
-      remote:
-        enabled: true
-    highlight:
-      enabled: true
+      formats: []
+      responsive: false
+      caption: true
+      remote: true
+      placeholder: none
+    highlight: true
+assets:
+  images:
+    optimize: false
 static:
   exclude:
-    - '*.phar*' # dev only
+    - '*.phar*'
+layouts:
+  images:
+    formats: []
+    responsive: false
 serviceworker:
   enabled: false
-metatags:
-  jsonld: false
-  favicon:
-    enabled: false
 optimize:
   enabled: false
