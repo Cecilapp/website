@@ -20,7 +20,7 @@ social:
 image: /images/cecil-logo-og.png
 cloudinary:
   account: aligny
-  asset: cecil/og/cecil-card.png
+  asset: cecil/og/cecil-card-2.png
 language: en
 languages:
   - code: en

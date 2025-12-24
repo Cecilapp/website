@@ -1,10 +1,13 @@
-{%- if page.section -%}
-  {%- set section = site.page(page.section).title %}
-  {%- if section == 'Documentation' %}{% set section = 'Docs' %}{% endif %}
-  {%- set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_580,y_480,l_text:montserrat_100_ultrabold_line_spacing_-30:%s/%s'|format(site.cloudinary.account, section[:10]|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
-  {%- set image = asset(cloudinary_url, {filename: 'assets/cards/%s/%s.png'|format(site.language, section|slugify)}) %}
-{%- endif -%}
-{%- import 'macros/octicons.twig' as octicons -%}
+{# social image for metatags #}
+{% if page.id != 'index' %}
+{% set img_txt = page.title %}
+{% if page.section == 'documentation' and page.type != 'section' -%}
+{% set img_txt = site.page(page.section).title ~ '\n' ~ img_txt %}
+{% endif %}
+{% set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/w_1100,c_fit,co_white,g_north_west,x_100,y_100,l_text:montserrat_100_ultrabold_line_spacing_-20:%s/%s'|format(site.cloudinary.account, img_txt|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
+{% set image = asset(cloudinary_url, {filename: 'assets/cards/%s/%s.png'|format(site.language, page.title|slugify)}) %}
+{% endif %}
+{% import 'macros/octicons.twig' as octicons -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}" class="scroll-pt-14">
   <head>
