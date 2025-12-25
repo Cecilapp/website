@@ -26,7 +26,7 @@
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
-              {%- x:button with {id: 'download-button', href: url(site.menus.main.download.url), class: 'btn-trans hidden sm:inline-block'} -%}
+              {%- x:button with {href: url(site.menus.main.download.url), class: 'version btn-trans hidden sm:inline-block'} -%}
                 <span class="hidden sm:inline mr-4">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}

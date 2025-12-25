@@ -1,23 +1,22 @@
-    {#- Fetch the current version from the VERSION file and display it next to the download button ~#}
+    {#- Fetch the current version from the VERSION file and display it in each tag with a "version" class ~#}
     <script>{% apply minify_js ~%}
       document.addEventListener('DOMContentLoaded', () => {
-        const buttonId = 'download-button';
-        const button = document.getElementById(buttonId);
-        if (null !== button) {
-          fetch('/VERSION')
-            .then(response => {
-              let version = response.text();
-              if (!response.ok) {
-                console.log('problem to fetch VERSION');
-                version = 'X.X.X';
-              }
-              return version;
-            })
-            .then(version => {
-              console.log('VERSION: ' + version);
-              text = document.getElementById(buttonId).innerHTML;
-              document.getElementById(buttonId).innerHTML = text + ' <span class="text-xs">(' + version.trim() + ')</span>';
-            })
-        }
+        fetch('/VERSION')
+          .then(response => {
+            let version = response.text();
+            if (!response.ok) {
+              console.log('Impossible to fetch VERSION');
+              version = 'X.X.X';
+            }
+            return version;
+          })
+          .then(version => {
+            console.log('VERSION', version);
+            const versions = document.getElementsByClassName('version');
+            for (const el of versions) {
+              text = el.innerHTML;
+              el.innerHTML = text + ' <span class="text-xs">(' + version.trim() + ')</span>';
+            }
+          })
       });
     {% endapply %}</script>

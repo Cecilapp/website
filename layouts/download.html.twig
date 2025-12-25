@@ -6,7 +6,7 @@
           <div class="max-w-(--breakpoint-md) mx-auto">
             <p class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-2 text-center">
               {#- Download ~#}
-              {%- x:button with {id: 'download-button', href: url(site.release.name, {language: 'en'}), class: 'btn-sm', role: 'button'} ~%}
+              {%- x:button with {href: url(site.release.name, {language: 'en'}), class: 'version btn-sm', role: 'button'} ~%}
                 <span class="inline mr-2">{{ octicons.svg('download', 24, 'size-4') }}</span>{% trans %}Download{% endtrans %}
               {%- endx ~%}
               {#- SHA-1 ~#}
