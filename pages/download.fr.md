@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2025-12-03
+updated: 2025-12-26
 layout: download
 slug: telecharger
 menu:
@@ -81,7 +81,7 @@ La manière la plus simple de mettre à jour Cecil vers la dernière version est
 ```bash
 cecil self-update
 # Homebrew
-brew upgrade
+brew install cecilapp/tap/cecil
 # Scoop
 scoop update cecil
 # PHIVE
