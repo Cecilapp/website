@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-12-22 22:14+0100\n"
-"PO-Revision-Date: 2025-12-22 22:14+0100\n"
+"POT-Creation-Date: 2025-12-25 23:52+0100\n"
+"PO-Revision-Date: 2025-12-25 23:52+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -28,7 +28,7 @@ msgstr "Sur cette page"
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: download.html.twig:10 home.html.twig:30
+#: download.html.twig:10 home.html.twig:35
 msgid "Download"
 msgstr "Télécharger"
 
@@ -36,15 +36,19 @@ msgstr "Télécharger"
 msgid "File checksum"
 msgstr "Somme de contrôle du fichier"
 
-#: home.html.twig:24 home.html.twig:83
+#: home.html.twig:17
+msgid "Last release is out"
+msgstr "La dernière version est sortie"
+
+#: home.html.twig:29 home.html.twig:88
 msgid "Quick Start"
 msgstr "Démarrage rapide"
 
-#: home.html.twig:72
+#: home.html.twig:77
 msgid "Start with the CLI"
 msgstr "Commencer avec la ligne de commande"
 
-#: home.html.twig:100 page.html.twig:171
+#: home.html.twig:105 page.html.twig:180
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
@@ -56,19 +60,19 @@ msgstr "Actualités"
 msgid "Release notes on GitHub"
 msgstr "Notes de version sur GitHub"
 
-#: page.html.twig:53
+#: page.html.twig:56
 msgid "Open menu"
 msgstr "Ouvrir le menu"
 
-#: page.html.twig:150
+#: page.html.twig:159
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: page.html.twig:158
+#: page.html.twig:167
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
-#: page.html.twig:164
+#: page.html.twig:173
 msgid "Hosted by %hosted_by%"
 msgstr "Hébergé par %hosted_by%"
 

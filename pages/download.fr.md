@@ -22,7 +22,7 @@ curl -LO https://cecil.app/cecil.phar
 PHP 8.1+ est requis.
 :::
 
-## Installation globale
+## Installation globale {#install}
 
 Pour plus de confort vous devriez installer Cecil globalement.
 
@@ -74,7 +74,7 @@ mv cecil.phar /usr/local/bin/cecil
 chmod +x /usr/local/bin/cecil
 ```
 
-## Mise à jour
+## Mise à jour {#update}
 
 La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée :
 
