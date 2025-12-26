@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2025-12-23
+updated: 2025-12-26
 blocks:
   about:
     - title: Rapide & sécurisé
@@ -33,7 +33,7 @@ blocks:
       icon: search
       visible: true
     - title: Pas d’installation
-      description: "[Téléchargez](/fr/download/) un fichier et exécutez le avec PHP."
+      description: "[Téléchargez](/fr/telecharger/) un fichier et exécutez le avec PHP."
       icon: desktop-download
       visible: true
     - title: Facile à déployer
