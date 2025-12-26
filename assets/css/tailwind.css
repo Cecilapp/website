@@ -85,6 +85,9 @@
   details ul {
     @apply m-0!;
   }
+  dd p {
+    @apply mb-0;
+  }
 }
 
 @layer components {
