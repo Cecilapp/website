@@ -1,10 +1,10 @@
 /* Buttons */
 .btn {
-  @apply py-3 px-6;
+  @apply py-2.5 px-6;
   @apply font-medium;
   @apply no-underline;
   @apply bg-white dark:bg-transparent;
-  @apply border border-blue dark:border-white rounded-sm;
+  @apply border border-blue dark:border-white rounded-lg;
   &:hover {
     @apply bg-blue dark:bg-black text-white;
   }
