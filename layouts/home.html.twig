@@ -22,7 +22,7 @@
             {#- description ~#}
             <div class="hidden xl:inline-block text-2xl font-normal mb-8">{{ site.description }}</div>
             {#- buttons ~#}
-            <div class="flex flex-col xl:flex-row px-12 md:px-0 md:max-xl:pr-12 space-x-0 xl:space-x-4 space-y-4 xl:space-y-0">
+            <div class="flex flex-col xl:flex-row px-12 md:px-0 md:max-xl:pr-12 gap-4">
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-gold'} -%}
