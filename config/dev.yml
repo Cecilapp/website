@@ -7,8 +7,9 @@ pages:
       formats: []
       responsive: false
       caption: true
-      remote: true
       placeholder: none
+      remote:
+        enabled: false
     highlight: true
 assets:
   images:
