@@ -7,7 +7,7 @@
     {{ parent() }}
     <style>{% apply minify_css ~%}
       /* ToC CSS */
-      {{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.css'|format(site.libs.tocbot.version), {minify: false})|inline ~}}
+      {{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.css'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true})|inline ~}}
       :root {
         --toc-before-color: #e5e7eb;
         --toc-before-active-color: #163C56;
@@ -77,7 +77,7 @@
 
 {% block footer_scripts %}
     {{- parent() ~}}
-    <script src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false}) }}"></script>
+    <script src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
     <script>{% apply minify_js ~%}
       tocbot.init({
         tocSelector: '.toc',

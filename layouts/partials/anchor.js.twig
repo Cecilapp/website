@@ -1,5 +1,5 @@
     {#- AnchorJS ~#}
-    <script defer src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/anchor-js/%s/anchor.min.js'|format(site.libs.anchor.version), {minify: false}) }}"></script>
+    <script defer src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/anchor-js/%s/anchor.min.js'|format(site.libs.anchor.version), {minify: false, ignore_missing: true}) }}"></script>
     <script>{% apply minify_js ~%}
       document.addEventListener('DOMContentLoaded', () => {
         anchors.options = {
