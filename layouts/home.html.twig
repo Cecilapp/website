@@ -15,7 +15,7 @@
             {#- last release badge ~#}
             {%- if site.menus.main.download is defined ~%}
             <a href="{{ url(site.menus.main.download.url) ~ '#update' }}" class="flex flex-row items-center mb-4 px-4 py-1.5 w-fit rounded-full text-sm font-light text-slate-950 dark:text-slate-100 bg-slate-300 dark:bg-slate-700 space-x-1 hover:underline">
-              <div class="version">{% trans %}Last release is out{% endtrans %}</div>
+              <div class="version">{% trans %}Update available{% endtrans %}</div>
               {{ octicons.svg('arrow-right', 16, 'size-3') }}
             </a>
             {%- endif ~%}
