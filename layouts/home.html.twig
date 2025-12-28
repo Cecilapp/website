@@ -28,13 +28,13 @@
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold'} -%}
-                <span class="hidden sm:inline mr-4">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
+                <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {href: url(site.menus.main.download), class: 'version btn-trans hidden sm:inline-block'} -%}
-                <span class="hidden sm:inline mr-4">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
+                <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
             </div>
