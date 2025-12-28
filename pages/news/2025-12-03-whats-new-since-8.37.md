@@ -4,6 +4,7 @@ description: "List of changes since the release of Cecil 8.37.0."
 date: 2025-12-03
 typora-copy-images-to: ../../assets/images/news
 ---
+The latest version is **8.74**, released on December 2, 2025. Here are the main new features and changes since version 8.37.
 
 ### Major new features
 
