@@ -6,5 +6,6 @@ menu:
     weight: 50
   themes:
     weight: 0
+layout: themes
 output: html
 ---

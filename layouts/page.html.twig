@@ -43,6 +43,30 @@
         background: transparent !important;
       }
     {% endapply %}</style>
+    {#- ToC CSS ~#}
+    <style>{% apply minify_css ~%}
+      {{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.css'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true})|inline ~}}
+      :root {
+        --toc-before-color: #e5e7eb;
+        --toc-before-active-color: #163C56;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --toc-before-color: #374151;
+          --toc-before-active-color: #374151;
+        }
+      }
+      .toc-link::before {
+        background-color: var(--toc-before-color);
+      }
+      .is-active-link::before {
+        background-color: var(--toc-before-active-color);
+      }
+      a.toc-link {
+        text-decoration: none;
+      }
+    {% endapply %}</style>
+    {#- PWA ~#}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     {%- endblock head ~%}
   </head>
@@ -125,13 +149,65 @@
     {%- block jumbotron %}{% endblock jumbotron ~%}
     <main class="grow px-6 py-6{% if page.type != 'homepage' %} mt-14{% endif %}">
       <div class="container mx-auto">
-        {%- block content ~%}
-        {#- content ~#}
-        <div class="markdown max-w-(--breakpoint-md) mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
-          <h1>{{ page.title }}</h1>
-          {{ page.content }}
+        {%- block main ~%}
+        <div class="flex flex-row">
+          {#- pages navigation -#}
+          {%- if page.section ~%}
+          <div class="flex-none w-48 lg:mr-6 xl:mr-8 hidden lg:block">
+            {{- include('partials/pages-navigation.html.twig') ~}}
+          </div>
+          {%- endif -%}
+          {#- markdown content ~#}
+          <div class="grow overflow-y-auto">
+            {%- block head_content %}{% endblock ~%}
+            <div class="mx-auto max-w-(--breakpoint-md) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md)">
+              {#- Search in documentation ~#}
+              {%- if page.section == 'documentation' ~%}
+              {{- include('partials/search-box.html.twig') ~}}
+              {%- endif ~%}
+              {#- toc ~#}
+              {%- block toc ~%}
+              <details class="mb-4 xl:hidden">
+                <summary class="cursor-pointer">
+                  <strong>{% trans %}What's on this page{% endtrans %}</strong>
+                </summary>
+                {{ page.body|toc(selectors=['h2']) }}
+              </details>
+              {%- endblock toc ~%}
+              {#- content -#}
+              {%- block content ~%}
+              <h1>{{ page.title }}</h1>
+              {{ page.content }}
+              {%- endblock content -%}
+              {#- suggest a documentation modification ~#}
+              {%- if page.section == 'documentation' and site.docs_repo is defined and page.filepath is defined ~%}
+              <p>
+                <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
+                  {{- octicons.svg('mark-github', 16, 'w-6 pr-2') }}{% trans %}Suggest a modification{% endtrans -%}
+                </a>
+              </p>
+              {%- endif ~%}
+            </div>
+            {#- prev/next page -#}
+            {%- if page.prev is defined or page.next is defined ~%}
+            <div class="mx-auto max-w-(--breakpoint-md) pt-2 border-slate-200 border-t mt-4">
+              {%- if page.prev is defined ~%}
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev) }}" role="button" title="Previous">← {{ page.prev.title }}</a>
+              {%- endif -%}
+              {%- if page.next is defined ~%}
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next) }}" role="button" title="Next">{{ page.next.title }} →</a>
+              {%- endif ~%}
+            </div>
+            {%- endif ~%}
+          </div>
+          {#- xl:toc ~#}
+          {%- block xltoc ~%}
+          <div class="flex-none w-48 lg:ml-6 xl:ml-8 hidden xl:block">
+            {{- include('partials/toc.html.twig', {page}, with_context: false) ~}}
+          </div>
+          {%- endblock xltoc ~%}
         </div>
-        {%- endblock content ~%}
+        {%- endblock main ~%}
       </div>
     </main>
     {%- block features %}{% endblock features ~%}
@@ -197,11 +273,23 @@
         <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">GitHub</a>
       </div>
     </footer>
-    {%- include('partials/back-to-top.html.twig') ~%}
     {%- block footer_scripts ~%}
-    <script async defer src="{{ asset('https://buttons.github.io/buttons.js', {ignore_missing: true}) }}"></script>
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
+    <script src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
+    <script>{% apply minify_js ~%}
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.markdown',
+        headingSelector: 'h2, h3, h4',
+        hasInnerContainers: true,
+        scrollSmooth: false,
+        headingsOffset: 75,
+        scrollSmoothOffset: -75
+      });
+    {% endapply %}</script>
+    {%- include('partials/back-to-top.html.twig') ~%}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
-    {%- endblock footer_scripts ~%}
+    <script async defer src="{{ asset('https://buttons.github.io/buttons.js', {ignore_missing: true}) }}"></script>
+    {%- endblock ~%}
   </body>
 </html>

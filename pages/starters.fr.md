@@ -1,10 +1,10 @@
 ---
 title: Démarreurs
 description: "Démarreurs pour Cecil."
-layout: starters
 menu:
   main:
     weight: 40
+layout: starters
 output: html
 slug: demarreurs
 ---

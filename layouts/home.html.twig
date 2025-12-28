@@ -1,13 +1,13 @@
 {% import 'macros/octicons.twig' as octicons %}
 {% extends 'page.html.twig' %}
 
-{%- block head ~%}
+    {%- block head ~%}
     {{- parent() ~}}
     <link rel="preload" href="{{ asset('videos/cecil-demo-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px)">
     <style>{{- asset('css/animation.css')|inline -}}</style>
-{%- endblock ~%}
+    {%- endblock ~%}
 
-{%- block jumbotron ~%}
+    {%- block jumbotron ~%}
     <div class="jumbotron">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row space-x-0 md:space-x-10">
@@ -57,9 +57,9 @@
         {%- endfor ~%}
       </div>
     </div>
-{%- endblock ~%}
+    {%- endblock ~%}
 
-{%- block content ~%}
+        {%- block main ~%}
         {#- about ~#}
         <div id="about" class="pt-6 md:pt-10">
           <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
@@ -91,17 +91,17 @@ php cecil.phar serve</pre>
           {%- endx ~%}
         </div>
         {%- endif ~%}
-{%- endblock ~%}
+        {%- endblock ~%}
 
-{%- block features ~%}
+    {%- block features ~%}
     <div id="features">
     {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
       {{- include('partials/block-feature.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}
     {%- endfor ~%}
     </div>
-{%- endblock ~%}
+    {%- endblock ~%}
 
-{%- block sponsors ~%}
+    {%- block sponsors ~%}
     <div id="sponsors" class="p-10 md:p-16">
       <div class="container mx-auto">
         <div class="text-xl font-bold pb-10 md:pb-16 text-center">{% trans %}Cecil is generously supported by{% endtrans %}</div>
@@ -119,10 +119,10 @@ php cecil.phar serve</pre>
         </div>
       </div>
     </div>
-{%- endblock ~%}
+    {%- endblock ~%}
 
-{%- block footer_scripts ~%}
+    {%- block footer_scripts ~%}
     {{- parent() ~}}
     {{- include('partials/version.js.twig', with_context: false) ~}}
     {{- include('partials/animation.js.twig', with_context: false) ~}}
-{%- endblock ~%}
+    {%- endblock ~%}

@@ -1,28 +1,12 @@
 {% extends 'page.html.twig' %}
 
-{%~ block content ~%}
-        {#- content ~#}
-        <div class="markdown max-w-(--breakpoint-md) mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
-          <div class="mb-1 text-sm text-slate-400 font-medium">{{ page.date|format_date('long') }}</div>
-          <h1>{{ page.title }}</h1>
-          {{ page.content }}
-          {%- if page.github_release|default('') is not empty ~%}
-          <blockquote>
-            <a href="{{ page.github_release }}">{% trans %}Release notes on GitHub{% endtrans %}</a>
-          </blockquote>
-          {%- endif ~%}
-          {#- prev/next page ~#}
-          <div class="border-slate-200 border-t mt-8 pt-2">
-            {%- if page.prev is defined ~%}
-            <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev) }}" role="button" title="Previous">
-              ← {{ page.prev.title }}
-            </a>
-            {%- endif -%}
-            {%- if page.next is defined ~%}
-            <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next) }}" role="button" title="Next">
-              {{ page.next.title }} →
-            </a>
-            {%- endif ~%}
-          </div>
-        </div>
-{%- endblock ~%}
+              {%- block content ~%}
+              <div class="mb-1 text-sm text-slate-400 font-medium">{{ page.date|format_date('long') }}</div>
+              <h1>{{ page.title }}</h1>
+              {{ page.content }}
+              {%- if page.github_release|default ~%}
+              <blockquote>
+                <a href="{{ page.github_release }}">{% trans %}Release notes on GitHub{% endtrans %}</a>
+              </blockquote>
+              {%- endif ~%}
+              {%- endblock ~%}

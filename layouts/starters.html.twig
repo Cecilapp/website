@@ -1,28 +1,28 @@
-{% extends 'themes/list.html.twig' %}
+{% extends 'themes.html.twig' %}
+{% import 'macros/octicons.twig' as octicons %}
 
 {% set repos = site.data.starters %}
 
-            {%- block nav %}{% endblock ~%}
+              {%- block nav %}{% endblock ~%}
 
-            {%- block name ~%}
-            <h2>{{ repo.name }}</h2>
-            {%- endblock ~%}
+              {%- block name ~%}
+              <h2>{{ repo.name }}</h2>
+              {%- endblock ~%}
 
-            {%- block command ~%}
-            <h3>Create project</h3>
-            {%- import 'macros/octicons.twig' as octicons ~%}
-            <div class="copy-link">
-              <input id="{{ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
-              <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
-                {{ octicons.svg('copy', 16) }}
-              </button>
-            </div>
-            {%- endblock ~%}
+              {%- block command ~%}
+              <strong>Create project</strong>
+              <div class="copy-link">
+                <input id="{{ 'input-' ~ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
+                <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
+                  {{ octicons.svg('copy', 16) }}
+                </button>
+              </div>
+              {%- endblock ~%}
 
-            {%- block button_website ~%}
-              {%- if repo.homepage ~%}
-                {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
-                  {% trans %}Homepage{% endtrans %}
-                {%- endx ~%}
-              {%- endif ~%}
-            {%- endblock ~%}
+              {%- block button_website ~%}
+                {%- if repo.homepage ~%}
+                  {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                    {% trans %}Homepage{% endtrans %}
+                  {%- endx ~%}
+                {%- endif ~%}
+              {%- endblock ~%}
