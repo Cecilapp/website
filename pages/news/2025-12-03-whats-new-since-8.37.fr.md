@@ -6,6 +6,7 @@ typora-copy-images-to: ../../assets/images/news
 slug: quoi-de-neuf-depuis-la-version-8-37
 alias: actualites/2025/12/03/quoi-de-neuf-depuis-la-version-8-37-0
 ---
+La dernière version en date est la **8.74**, sortie le 2 décembre 2025. Voici les principales nouveautés et changements depuis la version 8.37.
 
 ### Nouvelles fonctionnalités majeures
 
