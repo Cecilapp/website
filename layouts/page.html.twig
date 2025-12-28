@@ -275,7 +275,7 @@
     </footer>
     {%- block footer_scripts ~%}
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
-    <script src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
+    <script async defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
     <script>{% apply minify_js ~%}
       tocbot.init({
         tocSelector: '.toc',
