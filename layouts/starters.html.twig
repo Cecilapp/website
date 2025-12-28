@@ -10,13 +10,13 @@
               {%- endblock ~%}
 
               {%- block command ~%}
-              <strong>Create project</strong>
-              <div class="copy-link">
-                <input id="{{ 'input-' ~ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
+              <p class="copy-link">
+                <label for="{{ 'cmd-' ~ repo.name|lower }}" class="font-bold">{% trans %}Create project{% endtrans %}</label>
+                <input id="{{ 'cmd-' ~ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
                 <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
                   {{ octicons.svg('copy', 16) }}
                 </button>
-              </div>
+              </p>
               {%- endblock ~%}
 
               {%- block button_website ~%}

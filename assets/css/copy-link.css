@@ -2,7 +2,7 @@
   --height: 36px;
   --spacing: .25rem;
   display: flex;
-  max-width: 400px;
+  /*max-width: 400px;*/
   gap: calc(var(--spacing) * 2);
 }
 .copy-link-input {
