@@ -92,16 +92,14 @@
 
 @layer components {
   .jumbotron {
-    @apply px-6 pb-10 md:pb-20 pt-24 md:pt-32 text-xl font-medium text-center md:text-left text-white bg-blue dark:bg-dark;
+    @apply px-6 pt-32 pb-12 md:pb-20;
+    @apply text-xl font-medium text-center md:text-left;
+    @apply text-white bg-blue dark:bg-dark;
   }
 }
 
 @utility box-shadow {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-}
-
-@utility no-scrollbar {
-  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
 @utility mini-scrollbar {
@@ -114,6 +112,9 @@
   @apply [&::-webkit-scrollbar-thumb]:bg-slate-300;
   @apply dark:[&::-webkit-scrollbar-track]:bg-slate-700;
   @apply dark:[&::-webkit-scrollbar-thumb]:bg-slate-500;
+}
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
 /* sidebar links */
