@@ -59,6 +59,9 @@ module.exports = {
             'thead th': {
               color: theme('colors.slate.300'),
             },
+            blockquote: {
+              borderLeftColor: theme('colors.slate.600'),
+            },
           },
         },
       }),

@@ -160,7 +160,7 @@
           {#- markdown content ~#}
           <div class="grow overflow-y-auto">
             {%- block head_content %}{% endblock ~%}
-            <div class="mx-auto max-w-(--breakpoint-md) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md)">
+            <div class="mx-auto max-w-(--breakpoint-md) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md) markdown-blockquote:font-normal">
               {#- Search in documentation ~#}
               {%- if page.section == 'documentation' ~%}
               {{- include('partials/search-box.html.twig') ~}}
