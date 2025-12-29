@@ -100,6 +100,22 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@utility mini-scrollbar {
+  @apply [&::-webkit-scrollbar]:h-2;
+  @apply [&::-webkit-scrollbar]:w-2;
+  @apply [&::-webkit-scrollbar]:cursor-pointer;
+  @apply [&::-webkit-scrollbar-track]:rounded-full;
+  @apply [&::-webkit-scrollbar-track]:bg-slate-100;
+  @apply [&::-webkit-scrollbar-thumb]:rounded-full;
+  @apply [&::-webkit-scrollbar-thumb]:bg-slate-300;
+  @apply dark:[&::-webkit-scrollbar-track]:bg-slate-700;
+  @apply dark:[&::-webkit-scrollbar-thumb]:bg-slate-500;
+}
+
 /* sidebar links */
 #sidebar a,
 #sidebar svg {
