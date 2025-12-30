@@ -216,13 +216,13 @@
       <div class="container mx-auto">
         {#- footer menu -#}
         {%- if site.menus.footer is defined ~%}
-        <ul>
+        <ul class="text-[0px]">
           {%- for entry in site.menus.footer|sort_by_weight ~%}
-          <li class="inline{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name|trans }}</a></li>
+          <li class="inline text-base{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name|trans }}</a></li>
           {%- endfor ~%}
           {#- language switcher ~#}
           {%- if page.translations|length >= 1 ~%}
-          <li class="inline before:content-['\00a0\00B7\00a0']">{{ include('partials/languages.html.twig') }}</li>
+          <li class="inline text-base before:content-['\00a0\00B7\00a0']">{{ include('partials/languages.html.twig') }}</li>
           {%- endif ~%}
         </ul>
         {%- endif -%}
@@ -231,24 +231,24 @@
       </div>
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
         {#- copyright ~#}
-        <ul>
-          <li class="inline after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="https://arnaudligny.fr">Arnaud Ligny</a></li>
+        <ul class="text-[0px]">
+          <li class="inline text-base after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="https://arnaudligny.fr">Arnaud Ligny</a></li>
           {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
-          <li class="inline">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
+          <li class="inline text-base">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
         </ul>
         {#- powered by ~#}
-        <ul>
-          <li class="inline after:content-['\00a0\00B7\00a0']">
-            {% set powered_by -%}
+        <ul class="text-[0px]">
+          <li class="inline text-base after:content-['\00a0\00B7\00a0']">
+            {%- set powered_by -%}
             <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>
             {%- endset -%}
-            {%- trans %}Powered by %powered_by%{% endtrans ~%}
+            {%- trans %}Powered by %powered_by%{% endtrans -%}
           </li>
-          <li class="inline">
-            {% set hosted_by -%}
+          <li class="inline text-base">
+            {%- set hosted_by -%}
             <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
             {%- endset -%}
-            {%- trans %}Hosted by %hosted_by%{% endtrans ~%}
+            {%- trans %}Hosted by %hosted_by%{% endtrans -%}
           </li>
         </ul>
       </div>
