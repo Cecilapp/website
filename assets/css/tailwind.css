@@ -142,9 +142,6 @@ img.markdown {
 }
 
 /* external links in markdown */
-/*.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
-  padding-right: 1.25em;
-}*/
 .markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img))::after {
   /*position: absolute;
   content: '';
@@ -158,3 +155,6 @@ img.markdown {
   transform: translateY(0.25em);*/
   content: ' ↗';
 }
+/*.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
+  padding-right: 1.25em;
+}*/
