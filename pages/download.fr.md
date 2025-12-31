@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2025-12-28
+updated: 2025-12-31
 layout: download
 slug: telecharger
 menu:
@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-PHP 8.1+ est requis.
+PHP 8.2+ est requis.
 :::
 
 ## Installation globale {#install}
