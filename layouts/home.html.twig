@@ -24,16 +24,16 @@
             {#- description ~#}
             <div class="hidden xl:inline-block text-2xl font-normal mb-8">{{ site.description }}</div>
             {#- buttons ~#}
-            <div class="flex flex-col xl:flex-row px-12 md:px-0 md:max-xl:pr-12 gap-4">
+            <div class="flex flex-col xl:flex-row px-12 md:px-0 gap-4">
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-              {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold'} -%}
+              {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold min-w-64 text-center'} -%}
                 <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
-              {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans'} -%}
+              {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans min-w-64 text-center'} -%}
                 <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
               {%- endx ~%}
               {%- endif ~%}
