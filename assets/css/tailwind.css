@@ -95,7 +95,7 @@
     @apply px-6 pt-32 pb-12 md:pb-20;
     @apply text-xl font-medium text-center md:text-left;
     @apply text-white bg-blue dark:bg-dark;
-    @apply flex items-center min-h-[calc(100vh-12rem)] sm:min-h-[calc(100vh-6rem)];
+    @apply flex items-center min-h-[calc(100dvh-12rem)] sm:min-h-[calc(100dvh-6rem)];
   }
 }
 
