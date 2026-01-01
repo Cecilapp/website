@@ -28,15 +28,17 @@
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold min-w-64 text-center'} -%}
-                <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{%- trans %}Quick Start{% endtrans -%}
+                <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{% trans %}Quick Start{% endtrans %}
               {%- endx ~%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans min-w-64 text-center'} -%}
-                <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{%- trans %}Download{% endtrans -%}
+                <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{% trans %}Download{% endtrans %}
               {%- endx ~%}
               {%- endif ~%}
+              {#- go to about ~#}
+              <a href="#about" title="{% trans %}Go to about section{% endtrans %}" aria-label="{% trans %}Go to about section{% endtrans %}" class="hidden max-sm:flex items-center justify-center text-white hover:text-gold">{{ octicons.svg('chevron-down', 12, 'size-10') }}</a>
             </div>
           </div>
           {#- terminal video demo ~#}
