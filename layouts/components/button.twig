@@ -1,4 +1,4 @@
 {#- button component ~#}
-<a {{ attributes.merge({class: 'btn'}) }} role="button">
+<a href="{{ href }}" class="btn {{ class|default }}" role="button">
   {{ slot }}
 </a>

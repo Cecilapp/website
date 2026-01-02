@@ -1,5 +1,6 @@
 /* Buttons */
 .btn {
+  @apply flex flex-row gap-3 items-center justify-center;
   @apply py-2.5 px-6;
   @apply font-medium;
   @apply no-underline;
@@ -12,6 +13,7 @@
   }
 }
 .btn-sm {
+  @apply gap-2;
   @apply rounded-full;
   @apply py-1.5 px-3;
 }

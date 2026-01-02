@@ -14,8 +14,8 @@
           <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8">
             {#- last release badge ~#}
             {%- if site.menus.main.download is defined -%}
-            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-sm text-sm'} -%}
-              <span class="version">{% trans %}Update available{% endtrans %}</span><span>{{ octicons.svg('arrow-right', 16, 'size-3') }}</span>
+            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-sm text-sm gap-1!'} -%}
+              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16, 'size-3') }}
             {%- endx -%}
             {%- endif ~%}
             {#- baseline ~#}
@@ -27,13 +27,13 @@
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold min-w-64 text-center'} -%}
-                <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{% trans %}Quick Start{% endtrans %}
+                {{ octicons.svg('arrow-right', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Quick Start{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans min-w-64 text-center'} -%}
-                <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{% trans %}Download{% endtrans %}
+                {{ octicons.svg('download', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Download{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
               {#- go to features ~#}
@@ -78,12 +78,6 @@
           {%- endif ~%}
           {#- start with the CLI ~#}
           <div class="mb-4 text-xl text-center font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
-          {#-<div class="p-4 rounded-md text-sm font-mono bg-[#1f2937] text-white">
-            <div class="termBtns"><span></span><span></span><span></span></div>
-            <pre class="leading-normal">curl -LO https://cecil.app/cecil.phar
-php cecil.phar new:site
-php cecil.phar serve</pre>
-          </div>~#}
           <div class="flex justify-center">
             <div class="shell-wrap">
               <div class="shell-top-bar">
@@ -99,9 +93,9 @@ php cecil.phar serve</pre>
           </div>
         </div>
         {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-        <div class="mt-4 lg:mt-6 mb-2 lg:mb-4 text-center">
+        <div class="flex justify-center mt-4 mb-2 lg:mb-4">
           {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url)} -%}
-            {% trans %}Quick Start{% endtrans %}
+            <div>{% trans %}Quick Start{% endtrans %}</div>
           {%- endx ~%}
         </div>
         {%- endif ~%}
