@@ -4,7 +4,7 @@
     {%- block head ~%}
     {{- parent() ~}}
     <link rel="preload" href="{{ asset('videos/cecil-demo-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px)">
-    {#-<style>{{- asset('css/animation.css')|inline -}}</style>~#}
+    <style>{{- asset('css/animation.css')|inline -}}</style>
     {%- endblock ~%}
 
     {%- block jumbotron ~%}
@@ -138,5 +138,5 @@ php cecil.phar serve</pre>
     {%- block footer_scripts ~%}
     {{- parent() ~}}
     {{- include('partials/version.js.twig', with_context: false) ~}}
-    {#-{{- include('partials/animation.js.twig', with_context: false) ~}}~#}
+    {{- include('partials/animation.js.twig', with_context: false) ~}}
     {%- endblock ~%}
