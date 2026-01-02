@@ -87,7 +87,7 @@ php cecil.phar serve</pre>
         </div>
         {%- if site.menus.home['documentation/quick-start'] is defined ~%}
         <div class="mt-4 lg:mt-6 mb-2 lg:mb-4 text-center">
-          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-sm'} -%}
+          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url)} -%}
             {% trans %}Quick Start{% endtrans %}
           {%- endx ~%}
         </div>
