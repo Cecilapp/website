@@ -11,38 +11,37 @@
     <div class="jumbotron">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row space-x-0 md:space-x-6 lg:space-x-10">
-          <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+          <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8">
             {#- last release badge ~#}
-            {%- if site.menus.main.download is defined ~%}
-            <a href="{{ url(site.menus.main.download.url) ~ '#update' }}" class="flex flex-row items-center mb-6 px-4 py-1.5 w-fit rounded-full text-sm font-light text-slate-950 dark:text-slate-100 bg-slate-300 dark:bg-slate-700 space-x-1 hover:underline">
-              <div class="version">{% trans %}Update available{% endtrans %}</div>
-              {{ octicons.svg('arrow-right', 16, 'size-3') }}
-            </a>
+            {%- if site.menus.main.download is defined -%}
+            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-sm text-sm'} -%}
+              <span class="version">{% trans %}Update available{% endtrans %}</span><span>{{ octicons.svg('arrow-right', 16, 'size-3') }}</span>
+            {%- endx -%}
             {%- endif ~%}
             {#- baseline ~#}
-            <h1 class="mb-6 lg:mb-8 text-3xl xl:text-5xl">{{ site.baseline }}</h1>
+            <h1 class="lg:mb-8 text-3xl xl:text-5xl">{{ site.baseline }}</h1>
             {#- description ~#}
-            <div class="hidden xl:inline-block text-2xl font-normal mb-8">{{ site.description }}</div>
+            <div class="hidden xl:inline-block text-2xl font-normal">{{ site.description }}</div>
             {#- buttons ~#}
             <div class="flex flex-col xl:flex-row px-12 md:px-0 gap-4">
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold min-w-64 text-center'} -%}
                 <span class="hidden sm:inline mr-3">{{ octicons.svg('arrow-right', 24, 'size-6') }}</span>{% trans %}Quick Start{% endtrans %}
-              {%- endx ~%}
+              {%- endx -%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans min-w-64 text-center'} -%}
                 <span class="hidden sm:inline mr-3">{{ octicons.svg('download', 24, 'size-6') }}</span>{% trans %}Download{% endtrans %}
-              {%- endx ~%}
+              {%- endx -%}
               {%- endif ~%}
               {#- go to about ~#}
               <a href="#about" title="{% trans %}Go to about section{% endtrans %}" aria-label="{% trans %}Go to about section{% endtrans %}" class="hidden max-sm:flex items-center justify-center text-white hover:text-gold">{{ octicons.svg('chevron-down', 12, 'size-10') }}</a>
             </div>
           </div>
           {#- terminal video demo ~#}
-          <div class="hidden md:inline-flex md:w-1/2">
+          <div class="md:w-1/2 hidden md:block">
             {{- include('partials/terminal-demo.html.twig', with_context: false) ~}}
           </div>
         </div>
@@ -88,8 +87,8 @@ php cecil.phar serve</pre>
         </div>
         {%- if site.menus.home['documentation/quick-start'] is defined ~%}
         <div class="mt-4 lg:mt-6 mb-2 lg:mb-4 text-center">
-          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'font-medium'} ~%}
-            {%- trans %}Quick Start{% endtrans -%}
+          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-sm'} -%}
+            {% trans %}Quick Start{% endtrans %}
           {%- endx ~%}
         </div>
         {%- endif ~%}
