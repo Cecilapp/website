@@ -62,7 +62,7 @@
 
         {%- block main ~%}
         {#- features ~#}
-        <div id="features" class="pt-6 md:pt-10">
+        <div id="features" class="py-6 md:py-10">
           <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
             {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
             {{- include('partials/block-feature.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
@@ -70,35 +70,39 @@
           </div>
         </div>
         {#- content ~#}
-        <div id="content" class="container mx-auto md:w-3/4 lg:w-2/4 mt-8 px-0 md:px-8 py-5 leading-loose">
+        <div id="content" class="container mx-auto md:w-3/4 lg:w-2/4 py-6 md:py-10 leading-loose">
           {%- if page.content ~%}
-          <div class="mb-4 markdown">
+          <div class="mb-6 md:mb-10 markdown dark:text-white">
             {{ page.content }}
           </div>
           {%- endif ~%}
           {#- start with the CLI ~#}
-          <div class="mb-4 text-xl text-center font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
-          <div class="flex justify-center">
-            <div class="shell-wrap">
-              <div class="shell-top-bar">
-                <div class="shell-top-bar-btn"><span></span><span></span><span></span></div>
-                <div class="shell-top-bar-title">/Users/aligny</div>
-              </div>
-              <div class="shell-body">
-                <pre class="p-3">curl -LO https://cecil.app/cecil.phar
+          <div id="cli" class="pt-6 mb-6 md:mb-10">
+            <div class="mb-4 text-xl text-center font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
+            <div class="flex justify-center">
+              <div class="shell-wrap">
+                <div class="shell-top-bar">
+                  <div class="shell-top-bar-btn"><span></span><span></span><span></span></div>
+                  <div class="shell-top-bar-title">/Users/aligny</div>
+                </div>
+                <div class="shell-body">
+                  <pre class="p-3">
+curl -LO https://cecil.app/cecil.phar
 php cecil.phar new:site
 php cecil.phar serve</pre>
+                </div>
               </div>
             </div>
           </div>
+          {#- quick start button ~#}
+          {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+          <div class="flex justify-center">
+            {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url)} -%}
+              <div>{% trans %}Quick Start{% endtrans %}</div>
+            {%- endx ~%}
+          </div>
+          {%- endif ~%}
         </div>
-        {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-        <div class="flex justify-center mt-4 mb-2 lg:mb-4">
-          {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url)} -%}
-            <div>{% trans %}Quick Start{% endtrans %}</div>
-          {%- endx ~%}
-        </div>
-        {%- endif ~%}
         {%- endblock ~%}
 
     {%- block services ~%}
