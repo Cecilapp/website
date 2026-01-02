@@ -3,7 +3,7 @@ title: Accueil
 date: 2021-11-01
 updated: 2025-12-26
 blocks:
-  about:
+  features:
     - title: Rapide & sécurisé
       description: 'Pas de base de données, pas de serveur, pas de dépendance : performance et sécurité.'
       icon: zap
@@ -44,7 +44,7 @@ blocks:
       description: "Participez au développement de Cecil via [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
-  features:
+  services:
     - id: markdown
       title: Expérience d’écriture intuitive
       description: "L’analyseur Markdown de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."

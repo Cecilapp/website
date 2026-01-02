@@ -61,11 +61,11 @@
     {%- endblock ~%}
 
         {%- block main ~%}
-        {#- about ~#}
-        <div id="about" class="pt-6 md:pt-10">
+        {#- features ~#}
+        <div id="features" class="pt-6 md:pt-10">
           <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
-            {%- for block in page.blocks.about|default([])|filter(b => b.visible != false) ~%}
-            {{- include('partials/block-about.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
+            {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
+            {{- include('partials/block-feature.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
             {%- endfor ~%}
           </div>
         </div>
@@ -107,10 +107,10 @@ php cecil.phar serve</pre>
         {%- endif ~%}
         {%- endblock ~%}
 
-    {%- block features ~%}
-    <div id="features">
-    {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
-      {{- include('partials/block-feature.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}
+    {%- block services ~%}
+    <div id="services">
+    {%- for block in page.blocks.services|default([])|filter(b => b.visible != false) ~%}
+      {{- include('partials/block-service.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}
     {%- endfor ~%}
     </div>
     {%- endblock ~%}

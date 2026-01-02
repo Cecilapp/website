@@ -3,7 +3,7 @@ title: Homepage
 date: 2019-03-14
 updated: 2025-12-23
 blocks:
-  about:
+  features:
     - title: Fast & Secure
       description: 'No database, no server, no dependency: performance and security.'
       icon: zap
@@ -44,7 +44,7 @@ blocks:
       description: "Participate in development of Cecil via [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
-  features:
+  services:
     - id: markdown
       title: Intuitive writing experience
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
