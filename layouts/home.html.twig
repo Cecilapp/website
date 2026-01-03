@@ -14,8 +14,8 @@
           <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8">
             {#- last release badge ~#}
             {%- if site.menus.main.download is defined -%}
-            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-sm text-sm gap-1!'} -%}
-              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16, 'size-3') }}
+            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-lbl'} -%}
+              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16, 'size-4') }}
             {%- endx -%}
             {%- endif ~%}
             {#- baseline ~#}
@@ -26,13 +26,13 @@
             <div class="flex flex-col xl:flex-row px-12 md:px-0 gap-4">
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
-              {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-gold min-w-64 text-center'} -%}
+              {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-lg btn-gold'} -%}
                 {{ octicons.svg('arrow-right', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Quick Start{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
-              {%- x:button with {href: url(site.menus.main.download), class: 'btn-trans min-w-64 text-center'} -%}
+              {%- x:button with {href: url(site.menus.main.download), class: 'btn-lg btn-trans'} -%}
                 {{ octicons.svg('download', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Download{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
@@ -97,7 +97,7 @@ php cecil.phar serve</pre>
           {#- quick start button ~#}
           {%- if site.menus.home['documentation/quick-start'] is defined ~%}
           <div class="flex justify-center">
-            {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url)} -%}
+            {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-lg'} -%}
               <div>{% trans %}Quick Start{% endtrans %}</div>
             {%- endx ~%}
           </div>

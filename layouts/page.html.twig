@@ -181,11 +181,11 @@
               {%- endblock content -%}
               {#- suggest a documentation modification ~#}
               {%- if page.section == 'documentation' and site.docs_repo is defined and page.filepath is defined ~%}
-              <p>
-                <a class="btn btn-sm" href="{{ site.docs_repo }}{{ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}) }}" role="button">
-                  {{- octicons.svg('mark-github', 16, 'w-6 pr-2') }}{% trans %}Suggest a modification{% endtrans -%}
-                </a>
-              </p>
+              <div>
+                {%- x:button with {href: url(site.docs_repo ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}))} -%}
+                  {{- octicons.svg('mark-github', 16, 'w-6') }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
+                {%- endx ~%}
+              </div>
               {%- endif ~%}
             </div>
             {#- prev/next page -#}
