@@ -2,6 +2,7 @@
 .btn {
   @apply flex flex-row gap-3 items-center justify-center;
   @apply py-2.5 px-6;
+  @apply w-fit;
   @apply font-medium;
   @apply no-underline;
   @apply rounded-lg;
