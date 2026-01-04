@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-12-28 17:26+0100\n"
-"PO-Revision-Date: 2025-12-28 17:27+0100\n"
+"POT-Creation-Date: 2026-01-04 23:44+0100\n"
+"PO-Revision-Date: 2026-01-04 23:44+0100\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,11 +24,11 @@ msgstr "Documentation"
 msgid "What's on this page"
 msgstr "Sur cette page"
 
-#: download.html.twig:9 home.html.twig:37
+#: download.html.twig:10 home.html.twig:36
 msgid "Download"
 msgstr "Télécharger"
 
-#: download.html.twig:13
+#: download.html.twig:14
 msgid "File checksum"
 msgstr "Somme de contrôle du fichier"
 
@@ -36,15 +36,19 @@ msgstr "Somme de contrôle du fichier"
 msgid "Update available"
 msgstr "Mise à jour disponible"
 
-#: home.html.twig:31 home.html.twig:90
+#: home.html.twig:30 home.html.twig:101
 msgid "Quick Start"
 msgstr "Démarrage rapide"
 
-#: home.html.twig:79
+#: home.html.twig:40
+msgid "Go to features section"
+msgstr "Aller à la section des fonctionnalités"
+
+#: home.html.twig:81
 msgid "Start with the CLI"
 msgstr "Commencer avec la ligne de commande"
 
-#: home.html.twig:107 page.html.twig:258
+#: home.html.twig:119 page.html.twig:263
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
@@ -60,19 +64,19 @@ msgstr "Notes de version sur GitHub"
 msgid "Open menu"
 msgstr "Ouvrir le menu"
 
-#: page.html.twig:186
+#: page.html.twig:191
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: page.html.twig:237
+#: page.html.twig:242
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: page.html.twig:245
+#: page.html.twig:250
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
-#: page.html.twig:251
+#: page.html.twig:256
 msgid "Hosted by %hosted_by%"
 msgstr "Hébergé par %hosted_by%"
 
@@ -80,11 +84,11 @@ msgstr "Hébergé par %hosted_by%"
 msgid "Back to top"
 msgstr "Retour en haut"
 
-#: partials/block-feature.html.twig:12
+#: partials/block-service.html.twig:11 partials/block-service.html.twig:12
 msgid "Learn more"
 msgstr "En savoir plus"
 
-#: partials/block-feature.html.twig:18
+#: partials/block-service.html.twig:18
 msgid "Get started"
 msgstr "Commencer"
 
