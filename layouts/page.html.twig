@@ -179,13 +179,18 @@
               <h1>{{ page.title }}</h1>
               {{ page.content }}
               {%- endblock content -%}
-              {#- suggest a documentation modification ~#}
-              {%- if page.section == 'documentation' and site.docs_repo is defined and page.filepath is defined ~%}
-              <div>
-                {%- x:button with {href: url(site.docs_repo ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''}))} -%}
-                  {{- octicons.svg('mark-github', 16, 'w-6') }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
-                {%- endx ~%}
-              </div>
+              {#- suggest a documentation modification -#}
+              {%- if page.filepath|default and site.repo|length > 0 -%}
+                {%- if page.section == 'documentation' and site.repo.docs|default -%}
+                  {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
+                {%- else -%}
+                  {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+                {%- endif ~%}
+                <div class="mt-4">
+                  {%- x:button with {href: url} -%}
+                    {{- octicons.svg('mark-github', 16, 'w-6') }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
+                  {%- endx ~%}
+                </div>
               {%- endif ~%}
             </div>
             {#- prev/next page -#}
