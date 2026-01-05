@@ -15,7 +15,7 @@
             {#- last release badge ~#}
             {%- if site.menus.main.download is defined -%}
             {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-lbl'} -%}
-              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16, 'size-4') }}
+              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16) }}
             {%- endx -%}
             {%- endif ~%}
             {#- baseline ~#}
@@ -27,13 +27,13 @@
               {#- Quick Start ~#}
               {%- if site.menus.home['documentation/quick-start'] is defined ~%}
               {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-lg btn-gold'} -%}
-                {{ octicons.svg('arrow-right', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Quick Start{% endtrans %}</div>
+                {{ octicons.svg('arrow-right', 24, 'hidden sm:inline') }}<div>{% trans %}Quick Start{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
               {#- Download ~#}
               {%- if site.menus.main.download is defined ~%}
               {%- x:button with {href: url(site.menus.main.download), class: 'btn-lg btn-trans'} -%}
-                {{ octicons.svg('download', 24, 'hidden sm:inline size-6') }}<div>{% trans %}Download{% endtrans %}</div>
+                {{ octicons.svg('download', 24, 'hidden sm:inline') }}<div>{% trans %}Download{% endtrans %}</div>
               {%- endx -%}
               {%- endif ~%}
               {#- go to features ~#}

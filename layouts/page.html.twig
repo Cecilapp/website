@@ -187,8 +187,8 @@
                   {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
                 {%- endif ~%}
                 <div class="mt-4">
-                  {%- x:button with {href: url} -%}
-                    {{- octicons.svg('mark-github', 16, 'w-6') }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
+                  {%- x:button with {href: url, class: 'btn-sm'} -%}
+                    {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
                   {%- endx ~%}
                 </div>
               {%- endif ~%}
