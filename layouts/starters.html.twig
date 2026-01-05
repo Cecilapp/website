@@ -22,7 +22,7 @@
               {%- block button_website ~%}
                 {%- if repo.homepage ~%}
                   {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
-                    {% trans %}Homepage{% endtrans %}
+                    {{- octicons.svg('home', 16) }}<div>{% trans %}Homepage{% endtrans %}</div>
                   {%- endx ~%}
                 {%- endif ~%}
               {%- endblock ~%}
