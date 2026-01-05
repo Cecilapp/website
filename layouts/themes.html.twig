@@ -41,15 +41,15 @@
               {#- buttons ~#}
               <div class="flex space-x-2">
                 {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
-                  {%- trans %}Source code{% endtrans %}
+                  {{- octicons.svg('mark-github', 16) }}<div>{%- trans %}Source code{% endtrans %}</div>
                 {%- endx ~%}
                 {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
-                  {%- trans %}Documentation{% endtrans %}
+                  {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
                 {%- endx ~%}
                 {%- block button_website -%}
                   {%- if repo.homepage -%}
                     {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} -%}
-                      {%- trans %}Demo{% endtrans %}
+                      {{- octicons.svg('eye', 16) }}<div>{%- trans %}Demo{% endtrans %}</div>
                     {%- endx -%}
                   {%- endif -%}
                 {%- endblock ~%}
