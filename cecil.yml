@@ -190,3 +190,5 @@ libs:
     version: 5.0.0
   tocbot:
     version: v4.34.0
+
+snow: true

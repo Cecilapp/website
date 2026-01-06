@@ -69,6 +69,9 @@
     {#- PWA ~#}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     {%- endblock head ~%}
+    {%- if site.snow|default ~%}
+    <script type="module" src="{{ asset('js/snow-fall.js') }}"></script>
+    {%- endif ~%}
   </head>
   <body class="flex flex-col min-h-screen text-darkblue dark:bg-[#152031] dark:text-slate-300">
     {#- sidebar ~#}
@@ -148,6 +151,9 @@
     </header>
     {%- block jumbotron %}{% endblock jumbotron ~%}
     <main class="grow px-6 py-6{% if page.type != 'homepage' %} mt-14{% endif %}">
+      {%- if site.snow|default ~%}
+      <snow-fall></snow-fall>
+      {%- endif ~%}
       <div class="container mx-auto">
         {%- block main ~%}
         <div class="flex flex-row">
