@@ -191,4 +191,4 @@ libs:
   tocbot:
     version: v4.34.0
 
-snow: true
+snow: false
