@@ -27,16 +27,16 @@
               {%- else ~%}
               <h2>{{ repo.name|split('-')[1]|capitalize }}</h2>
               {%- endif -%}
-              {%- endblock -%}
+              {%- endblock name -%}
               {#- description ~#}
               <p>{{ repo.description }}</p>
               {%- set screenshot = asset(repo_basepath ~ 'docs/screenshot.png', {ignore_missing: true}) -%}
               {%- if screenshot['missing'] -%}
-              {%- set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) -%}
+                {%- set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) -%}
               {%- endif -%}
               {#- screenshot -#}
               {%- if not screenshot['missing'] ~%}
-              <p>{{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}</p>
+              {{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}
               {%- endif ~%}
               {#- buttons ~#}
               <div class="flex flex-col md:flex-row gap-2">
@@ -46,7 +46,7 @@
                       {{- octicons.svg('eye', 16) }}<div>{%- trans %}Demo{% endtrans %}</div>
                     {%- endx -%}
                   {%- endif -%}
-                {%- endblock ~%}
+                {%- endblock button_website ~%}
                 {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
                   {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
                 {%- endx ~%}
@@ -63,7 +63,7 @@
                   {{ octicons.svg('copy', 16) }}
                 </button>
               </p>
-              {%- endblock -%}
+              {%- endblock command -%}
               {#- license ~#}
               <p>{{ repo.license }}</p>
               {%- endfor -%}
