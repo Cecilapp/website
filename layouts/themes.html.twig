@@ -27,34 +27,34 @@
               {%- else ~%}
               <h2>{{ repo.name|split('-')[1]|capitalize }}</h2>
               {%- endif -%}
-              {%- endblock ~%}
+              {%- endblock -%}
               {#- description ~#}
               <p>{{ repo.description }}</p>
               {%- set screenshot = asset(repo_basepath ~ 'docs/screenshot.png', {ignore_missing: true}) -%}
               {%- if screenshot['missing'] -%}
               {%- set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) -%}
               {%- endif -%}
-              {#- screenshot ~#}
+              {#- screenshot -#}
               {%- if not screenshot['missing'] ~%}
               <p>{{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}</p>
               {%- endif ~%}
               {#- buttons ~#}
-              <div class="flex space-x-2">
-                {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
-                  {{- octicons.svg('mark-github', 16) }}<div>{%- trans %}Source code{% endtrans %}</div>
-                {%- endx ~%}
-                {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
-                  {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
-                {%- endx ~%}
+              <div class="flex flex-col md:flex-row gap-2">
                 {%- block button_website -%}
                   {%- if repo.homepage -%}
-                    {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} -%}
+                    {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
                       {{- octicons.svg('eye', 16) }}<div>{%- trans %}Demo{% endtrans %}</div>
                     {%- endx -%}
                   {%- endif -%}
                 {%- endblock ~%}
+                {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
+                  {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
+                {%- endx ~%}
+                {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
+                  {{- octicons.svg('mark-github', 16) }}<div>{%- trans %}Source code{% endtrans %}</div>
+                {%- endx ~%}
               </div>
-              {#- installation command ~#}
+              {#- installation command -#}
               {%- block command ~%}
               <p class="copy-link">
                 <label for="{{ 'cmd-' ~ repo.name|lower }}" class="font-bold">{% trans %}Install{% endtrans %}</label>
@@ -63,7 +63,7 @@
                   {{ octicons.svg('copy', 16) }}
                 </button>
               </p>
-              {%- endblock ~%}
+              {%- endblock -%}
               {#- license ~#}
               <p>{{ repo.license }}</p>
               {%- endfor -%}
