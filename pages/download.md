@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2025-12-31
+updated: 2026-01-15
 layout: download
 alias: install
 menu:
@@ -82,7 +82,7 @@ The easiest way to update Cecil to the last version is to use the dedicated comm
 
 ```bash
 # PHAR
-cecil self-update
+php cecil.phar self-update
 # Homebrew
 brew install cecilapp/tap/cecil
 # Scoop
