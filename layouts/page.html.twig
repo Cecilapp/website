@@ -97,12 +97,6 @@
         <div class="grow"></div>
         {#- tools and links ~#}
         <nav class="flex items-center mt-0 pt-0 gap-4">
-          {#- language switcher ~#}
-          {%- if page.translations|length >= 1 ~%}
-          <div class="hidden md:inline-block">
-            {{ include('partials/languages.html.twig', {label: 'code'}) }}
-          </div>
-          {%- endif ~%}
           {#- search icon - only show search icon on English site for now ~#}
           {%- if site.language == 'en' ~%}
           {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
@@ -145,6 +139,12 @@
           <a href="{{ url(site.social.github.repo) }}" aria-label="{{ site.title }} on GitHub">
             {{ octicons.svg('mark-github', 16) ~}}
           </a>
+          {%- endif ~%}
+          {#- language switcher ~#}
+          {%- if page.translations|length >= 1 ~%}
+          <div class="hidden md:inline-block">
+            {{ include('partials/languages.html.twig', {label: 'code'}) }}
+          </div>
           {%- endif ~%}
         </nav>
       </div>
