@@ -137,4 +137,14 @@ php cecil.phar serve</pre>
     {{- parent() ~}}
     {{- include('partials/version.js.twig', with_context: false) ~}}
     {{- include('partials/animation.js.twig', with_context: false) ~}}
+    <script>{% apply minify_js ~%}
+      function videos() {
+        for (const video of document.querySelectorAll('video')) {
+          video.controls = false
+          video.addEventListener('mouseover', () => { video.controls = 'controls' })
+          video.addEventListener('mouseout', () => { video.controls = false })
+        }
+      }
+      window.addEventListener('load', videos, false)
+    {% endapply %}</script>
     {%- endblock ~%}
