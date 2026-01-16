@@ -81,7 +81,6 @@ chmod +x /usr/local/bin/cecil
 The easiest way to update Cecil to the last version is to use the dedicated command:
 
 ```bash
-# PHAR
 php cecil.phar self-update
 # Homebrew
 brew install cecilapp/tap/cecil
