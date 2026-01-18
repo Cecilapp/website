@@ -1,0 +1,161 @@
+@config '../../tailwind.config.js';
+
+@import 'tailwindcss';
+@import './notes.css';
+@import './terminal.css';
+@import './algolia.css';
+@import './buttons' layer(utilities);
+@import './copy-link.css';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography' {
+  className: markdown;
+}
+
+@source './layouts/**/*.html.twig';
+@source './themes/**/layouts/**/*.html.twig';
+@source inline('anchorjs-link');
+@source inline('dark:brightness-90');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: Montserrat, sans-serif;
+  --color-blue: #163C56;
+  --color-gold: #F2D07F;
+  --color-darkblue: #092F44;
+  --color-bluegray: #7B99A9;
+  --color-dark: #111827;
+  --color-darkgray: #374151;
+  --shadow-3xl: 0 35px 60px -15px rgb(0 0 0 / 0.3);
+}
+
+@layer base {
+  html {
+    @apply overflow-y-scroll;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5rem;
+  }
+  h1, h2 {
+    @apply mb-4;
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue dark:text-white;
+  }
+  p {
+    @apply mb-4;
+  }
+  img, svg {
+    @apply inline-block;
+  }
+  img {
+    @apply mb-1;
+  }
+  figcaption {
+    @apply text-center! italic!;
+  }
+  video {
+    @apply my-0!;
+  }
+  header a {
+    @apply text-gold dark:text-gold hover:text-white;
+  }
+  header svg {
+    @apply size-5;
+    @apply text-gold dark:text-gold hover:text-white;
+  }
+  main a:not(.btn):not(.menu-item):not(.doc-item):not(.toc-link),
+  #features p > a {
+    @apply underline;
+  }
+  main details a {
+    @apply no-underline!;
+  }
+  main a[role="button"] {
+    @apply no-underline!;
+  }
+  footer a:hover {
+    @apply underline;
+  }
+  details ul {
+    @apply m-0!;
+  }
+  dd p {
+    @apply mb-0;
+  }
+}
+
+@layer components {
+  .jumbotron {
+    @apply px-6 pt-32 pb-12 md:pb-20;
+    @apply text-xl font-medium text-center md:text-left;
+    @apply text-white bg-blue dark:bg-dark;
+    @apply flex items-center min-h-[calc(100svh-12rem)] sm:min-h-[calc(100Svh-6rem)];
+  }
+}
+
+@utility box-shadow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+@utility mini-scrollbar {
+  @apply [&::-webkit-scrollbar]:h-2;
+  @apply [&::-webkit-scrollbar]:w-2;
+  @apply [&::-webkit-scrollbar]:cursor-pointer;
+  @apply [&::-webkit-scrollbar-track]:rounded-full;
+  @apply [&::-webkit-scrollbar-track]:bg-slate-100;
+  @apply [&::-webkit-scrollbar-thumb]:rounded-full;
+  @apply [&::-webkit-scrollbar-thumb]:bg-slate-300;
+  @apply dark:[&::-webkit-scrollbar-track]:bg-slate-700;
+  @apply dark:[&::-webkit-scrollbar-thumb]:bg-slate-500;
+}
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+/* sidebar links */
+#sidebar a,
+#sidebar svg {
+  @apply text-gold dark:text-gold hover:text-white;
+}
+
+/* Markdown images */
+img.markdown {
+  @apply max-w-full h-auto;
+}
+
+/* ToC sticky */
+.toc {
+  @apply sticky top-18.75;
+}
+
+/* back to top scroll */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
+/* external links in markdown */
+.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img))::after {
+  /*position: absolute;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.25em;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath d='M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: white;
+  transform: translateY(0.25em);*/
+  content: ' ↗';
+  font-size: x-small;
+}
+/*.markdown a[href^='http']:not(a[href*='localhost']):not(a[href*='cecil.app']):not(.btn):not(:has(img)) {
+  padding-right: 1.25em;
+}*/
