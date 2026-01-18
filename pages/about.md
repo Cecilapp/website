@@ -1,12 +1,12 @@
 ---
 title: About
 date: 2019-03-11
-updated: 2025-12-29
+updated: 2026-01-18
 menu: footer
 ---
 Cecil is a CLI application, powered by [PHP](https://www.php.net), that merge plain text files (written in [Markdown](https://daringfireball.net/projects/markdown/)), images and [Twig](https://twig.symfony.com) templates to generate a [static website](https://en.wikipedia.org/wiki/Static_web_page).
 
-> The [first functional version](https://github.com/Cecilapp/Cecil/tree/58cd48bcc72baa7636ffdd0520d26c2847130537) was published in Sep 2013 and was a simple PHP 5.3 script powered by [Zend Framework Console component](https://github.com/zendframework/zend-console) and [Twig](https://twig.symfony.com).
+> The [first functional version](https://github.com/Cecilapp/Cecil/tree/58cd48bcc72baa7636ffdd0520d26c2847130537) of Cecil (then named PHPoole) was published in Sep 2013 and was a simple PHP 5.3 script powered by [Zend Framework Console component](https://github.com/zendframework/zend-console) and [Twig](https://twig.symfony.com).
 
 ## Authors
 
