@@ -1,0 +1,25 @@
+{% extends 'page.html.twig' %}
+
+              {%- block toc ~%}
+              <details class="mb-4 xl:hidden">
+                <summary class="cursor-pointer">
+                  <strong>{% trans %}What's on this page{% endtrans %}</strong>
+                </summary>
+                {%- set selectors = ['h2'] -%}
+                {%- if page.section == 'news' -%}
+                {%- set selectors = ['h3'] -%}
+                {%- endif -%}
+                {{ page.body|toc(selectors=['h3']) ~}}
+              </details>
+              {%- endblock ~%}
+
+              {%- block content ~%}
+              <div class="mb-1 text-sm text-slate-400 font-medium">{{ page.date|format_date('long') }}</div>
+              <h1>{{ page.title }}</h1>
+              {{ page.content }}
+              {%- if page.github_release|default ~%}
+              <blockquote>
+                <a href="{{ page.github_release }}">{% trans %}Release notes on GitHub{% endtrans %}</a>
+              </blockquote>
+              {%- endif ~%}
+              {%- endblock ~%}

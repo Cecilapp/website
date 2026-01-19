@@ -1,0 +1,308 @@
+{# social image for metatags #}
+{% if page.type != 'homepage' %}
+  {%- set img_txt = page.title %}
+  {%- if page.section == 'documentation' and page.type != 'section' -%}
+    {%- set img_txt = site.page(page.section).title ~ '\n' ~ img_txt %}
+  {%- endif %}
+  {%- set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/c_fit,w_1100,g_north_west,x_80,y_80,co_white,l_text:montserrat_100_ultrabold_line_spacing_-10:%s/%s'|format(site.cloudinary.account, img_txt|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
+  {%- set og_image = asset(cloudinary_url, {filename: 'assets/cards/%s/%s.png'|format(site.language, page.title|slugify), ignore_missing: true}) %}
+  {%- if not og_image['missing'] %}
+    {%- set image = og_image %}
+  {%- endif %}
+{% endif %}
+{% import 'macros/octicons.twig' as octicons -%}
+<!DOCTYPE html>
+<html lang="{{ site.language }}" class="scroll-pt-14">
+  <head>
+    {%- block head ~%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{- include('partials/metatags.html.twig', {title: title|default}) ~}}
+    <meta name="google-site-verification" content="{{ site.gsv }}">
+    {#- Google Fonts ~#}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
+    {#- main CSS ~#}
+    {%- if getenv('CECIL_ENV') == 'production' ~%}
+    <style>
+      {{- asset('styles.css')|inline ~}}
+    </style>
+    {%- else ~%}
+    <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
+    {%- endif ~%}
+    {#- highlight CSS ~#}
+    <style>{% apply minify_css ~%}
+      {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false, ignore_missing: true})|inline ~}}
+      pre code.hljs {
+        padding: initial !important;
+      }
+      .hljs {
+        background: transparent !important;
+      }
+    {% endapply %}</style>
+    {#- ToC CSS ~#}
+    <style>{% apply minify_css ~%}
+      {{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.css'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true})|inline ~}}
+      :root {
+        --toc-before-color: #e5e7eb;
+        --toc-before-active-color: #163C56;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --toc-before-color: #374151;
+          --toc-before-active-color: #374151;
+        }
+      }
+      .toc-link::before {
+        background-color: var(--toc-before-color);
+      }
+      .is-active-link::before {
+        background-color: var(--toc-before-active-color);
+      }
+      a.toc-link {
+        text-decoration: none;
+      }
+    {% endapply %}</style>
+    {#- PWA ~#}
+    {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
+    {%- endblock head ~%}
+    {%- if site.snow|default ~%}
+    <script type="module" src="{{ asset('js/snow-fall.js') }}"></script>
+    {%- endif ~%}
+  </head>
+  <body class="flex flex-col min-h-screen text-darkblue dark:bg-[#152031] dark:text-slate-300">
+    {#- sidebar ~#}
+    {%- block sidebar ~%}
+      {%- embed 'partials/sidebar.html.twig' %}{% endembed ~%}
+    {%- endblock sidebar ~%}
+    <header class="fixed top-0 inset-x-0 z-30 flex items-center h-14 px-4 py-2 bg-blue dark:bg-dark text-slate-300">
+      <div class="container mx-auto flex flex-row items-center justify-center md:justify-between space-x-6">
+        {#- sidebar mobile button ~#}
+        <button class="navbar-item flex lg:hidden items-center mr-3 cursor-pointer" onclick="toggleMenu()">
+          <svg id="sidebar-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+            <title>{% trans %}Open menu{% endtrans %}</title><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+        </button>
+        {#- logo ~#}
+        {{- include('partials/logo.html.twig') ~}}
+        {#- main menu ~#}
+        <nav class="hidden lg:flex items-center mt-0 pt-0 space-x-6 overflow-x-auto truncate mini-scrollbar">
+          {%- for entry in site.menus.main|sort_by_weight ~%}
+          <a class="w-max" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}" title="{{ entry.name }}">{{ entry.name }}</a>
+          {%- endfor -%}
+        </nav>
+        <div class="grow"></div>
+        {#- tools and links ~#}
+        <nav class="flex items-center mt-0 pt-0 gap-4">
+          {#- search icon - only show search icon on English site for now ~#}
+          {%- if site.language == 'en' ~%}
+          {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
+          {%- if page.section == 'documentation' and page.type != 'section' ~%}
+            {%- set search_icon_path = '#top' ~%}
+          {%- endif ~%}
+          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">
+            {{ octicons.svg('search', 16) }}
+          </a>
+          <script>{% apply minify_js ~%}
+            document.getElementById('search-icon').addEventListener('click', () => {
+              document.getElementById('search-input').focus();
+            });
+          {% endapply %}</script>
+          {%- endif ~%}
+          {#- theme selector ~#}
+          {{- include('partials/selector-theme-icon.html.twig') ~}}
+          {#- social icons ~#}
+          {%- if site.social.twitter.url is defined ~%}
+          <a href="{{ url(site.social.twitter.url) }}" aria-label="{{ site.title }} on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1.2em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+          </a>
+          {%- endif ~%}
+          {%- if site.social.bluesky.url is defined ~%}
+          <a href="{{ url(site.social.bluesky.url) }}" aria-label="{{ site.title }} on Bluesky">
+            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 511.999 452.266"><path fill-rule="nonzero" d="M110.985 30.442c58.695 44.217 121.837 133.856 145.013 181.961 23.176-48.105 86.322-137.744 145.016-181.961 42.361-31.897 110.985-56.584 110.985 21.96 0 15.681-8.962 131.776-14.223 150.628-18.272 65.516-84.873 82.228-144.112 72.116 103.55 17.68 129.889 76.238 73 134.8-108.04 111.223-155.288-27.905-167.385-63.554-3.489-10.262-2.991-10.498-6.561 0-12.098 35.649-59.342 174.777-167.382 63.554-56.89-58.562-30.551-117.12 72.999-134.8-59.239 10.112-125.84-6.6-144.112-72.116C8.962 184.178 0 68.083 0 52.402c0-78.544 68.633-53.857 110.985-21.96z"/></svg>
+          </a>
+          {%- endif ~%}
+          {%- if site.social.opencollective.url is defined ~%}
+          <a href="{{ url(site.social.opencollective.url) }}" aria-label="Become a sponsor">
+            <svg class="hover:text-[#3989FF]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true"><path d="M 7,1 C 3.6862915,1 1,3.686292 1,7 c 0,3.313708 2.6862915,6 6,6 1.2698255,0 2.4472377,-0.394558 3.416941,-1.06764 L 8.8632814,10.378084 C 8.3110136,10.683293 7.6756458,10.857319 7,10.857319 4.8697587,10.857319 3.1426809,9.130241 3.1426809,7 3.1426809,4.869759 4.8697587,3.142681 7,3.142681 c 0.6756458,0 1.3110136,0.174026 1.8632814,0.479235 L 10.416941,2.06764 C 9.4472377,1.394558 8.2698255,1 7,1 Z m 4.93236,2.583059 -1.554276,1.55366 c 0.267058,0.483234 0.433793,1.029899 0.471217,1.611636 0.0053,0.08311 0.008,0.167189 0.008,0.251645 0,0.675646 -0.174026,1.311014 -0.479235,1.863281 l 1.554276,1.55366 C 12.605442,9.447238 13,8.269825 13,7 13,5.730175 12.605442,4.552762 11.93236,3.583059 Z"/></svg>
+          </a>
+          {%- endif ~%}
+          {%- if site.social.github.sponsor is defined ~%}
+          <a href="{{ url(site.social.github.sponsor) }}" aria-label="Become a sponsor">
+            {{ octicons.svg('heart', 24, 'hover:fill-pink-400') ~}}
+          </a>
+          {%- endif ~%}
+          {%- if site.social.github.repo is defined ~%}
+          <a href="{{ url(site.social.github.repo) }}" aria-label="{{ site.title }} on GitHub">
+            {{ octicons.svg('mark-github', 16) ~}}
+          </a>
+          {%- endif ~%}
+          {#- language switcher ~#}
+          {%- if page.translations|length >= 1 ~%}
+          <div class="hidden md:inline-block">
+            {{ include('partials/languages.html.twig', {label: 'code'}) }}
+          </div>
+          {%- endif ~%}
+        </nav>
+      </div>
+    </header>
+    {%- block jumbotron %}{% endblock jumbotron ~%}
+    <main class="grow px-6 py-6{% if page.type != 'homepage' %} mt-14{% endif %}">
+      {%- if site.snow|default ~%}
+      <snow-fall></snow-fall>
+      {%- endif ~%}
+      <div class="container mx-auto">
+        {%- block main ~%}
+        <div class="flex flex-row">
+          {#- pages navigation -#}
+          {%- if page.section ~%}
+          <div class="flex-none w-48 lg:mr-6 xl:mr-8 hidden lg:block">
+            {{- include('partials/pages-navigation.html.twig') ~}}
+          </div>
+          {%- endif -%}
+          {#- markdown content ~#}
+          <div class="grow overflow-y-auto">
+            {%- block head_content %}{% endblock ~%}
+            <div class="mx-auto max-w-(--breakpoint-md) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md) markdown-blockquote:font-normal">
+              {#- Search in documentation ~#}
+              {%- if page.section == 'documentation' ~%}
+              {{- include('partials/search-box.html.twig') ~}}
+              {%- endif ~%}
+              {#- toc ~#}
+              {%- block toc ~%}
+              <details class="mb-4 xl:hidden">
+                <summary class="cursor-pointer">
+                  <strong>{% trans %}What's on this page{% endtrans %}</strong>
+                </summary>
+                {{ page.body|toc(selectors=['h2']) }}
+              </details>
+              {%- endblock toc ~%}
+              {#- content -#}
+              {%- block content ~%}
+              <h1>{{ page.title }}</h1>
+              {{ page.content }}
+              {%- endblock content -%}
+              {#- suggest a documentation modification -#}
+              {%- if page.filepath|default and site.repo|length > 0 -%}
+                {%- if page.section == 'documentation' and site.repo.docs|default -%}
+                  {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
+                {%- else -%}
+                  {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+                {%- endif ~%}
+                <div class="mt-4">
+                  {%- x:button with {href: url, class: 'btn-sm'} -%}
+                    {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
+                  {%- endx ~%}
+                </div>
+              {%- endif ~%}
+            </div>
+            {#- prev/next page -#}
+            {%- if page.prev is defined or page.next is defined ~%}
+            <div class="mx-auto max-w-(--breakpoint-md) pt-2 border-slate-200 border-t mt-4">
+              {%- if page.prev is defined ~%}
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev) }}" role="button" title="Previous">← {{ page.prev.title }}</a>
+              {%- endif -%}
+              {%- if page.next is defined ~%}
+              <a class="text-blue dark:text-slate-300 font-bold no-underline float-right" href="{{ url(page.next) }}" role="button" title="Next">{{ page.next.title }} →</a>
+              {%- endif ~%}
+            </div>
+            {%- endif ~%}
+          </div>
+          {#- xl:toc ~#}
+          {%- block xltoc ~%}
+          <div class="flex-none w-48 lg:ml-6 xl:ml-8 hidden xl:block">
+            {{- include('partials/toc.html.twig', {page}, with_context: false) ~}}
+          </div>
+          {%- endblock xltoc ~%}
+        </div>
+        {%- endblock main ~%}
+      </div>
+    </main>
+    {%- block services %}{% endblock services ~%}
+    {%- block sponsors %}{% endblock sponsors ~%}
+    <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
+      <div class="container mx-auto">
+        {#- footer menu -#}
+        {%- if site.menus.footer is defined ~%}
+        <ul class="text-[0px]">
+          {%- for entry in site.menus.footer|sort_by_weight ~%}
+          <li class="inline text-base{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name|trans }}</a></li>
+          {%- endfor ~%}
+          {#- language switcher ~#}
+          {%- if page.translations|length >= 1 ~%}
+          <li class="inline text-base before:content-['\00a0\00B7\00a0']">{{ include('partials/languages.html.twig') }}</li>
+          {%- endif ~%}
+        </ul>
+        {%- endif -%}
+        {#- theme switcher ~#}
+        {#-<div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>~#}
+      </div>
+      <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
+        {#- copyright ~#}
+        <ul class="text-[0px]">
+          <li class="inline text-base after:content-['\00a0\00B7\00a0']">© 2013-{{ 'now'|date('Y') }} <a href="https://arnaudligny.fr">Arnaud Ligny</a></li>
+          {%- set logo_by = '<a href="https://www.cecillie.fr">Cécile Ricordeau</a>' ~%}
+          <li class="inline text-base">{% trans %}Logo by %logo_by%{% endtrans ~%}</li>
+        </ul>
+        {#- powered by ~#}
+        <ul class="text-[0px]">
+          <li class="inline text-base after:content-['\00a0\00B7\00a0']">
+            {%- set powered_by -%}
+            <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://primer.style/octicons/">Octicons</a>, <a href="https://heroicons.com">Heroicons</a>
+            {%- endset -%}
+            {%- trans %}Powered by %powered_by%{% endtrans -%}
+          </li>
+          <li class="inline text-base">
+            {%- set hosted_by -%}
+            <a href="https://github.com">GitHub</a>, <a href="https://www.netlify.com">Netlify</a>
+            {%- endset -%}
+            {%- trans %}Hosted by %hosted_by%{% endtrans -%}
+          </li>
+        </ul>
+      </div>
+      {#- sponsors ~#}
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row items-start md:align-middle md:justify-between w-[24rem]">
+          <span>{% trans %}Cecil is generously supported by{% endtrans %}</span>
+          <div class="mt-2 md:mt-0">
+          {%- for block in site.page(site.home).blocks.sponsors|default({})|filter(b => b.visible != false) -%}
+            {%- set sponsor_logo = asset(block.logo)|resize(55) -%}
+            {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(55) ~%}
+            <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}" class="pr-2 md:pr-4">
+              <img class="inline-block dark:hidden" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+            </a>
+          {%- endfor ~%}
+          </div>
+        </div>
+      </div>
+      {#- GitHub Stars ~#}
+      <div class="container mx-auto">
+        <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">GitHub</a>
+      </div>
+    </footer>
+    {%- block footer_scripts ~%}
+    {{- include('partials/anchor.js.twig', with_context = false) ~}}
+    <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
+    <script>{% apply minify_js ~%}
+      document.addEventListener('DOMContentLoaded', () => {
+        tocbot.init({
+          tocSelector: '.toc',
+          contentSelector: '.markdown',
+          headingSelector: 'h2, h3, h4',
+          hasInnerContainers: true,
+          scrollSmooth: false,
+          headingsOffset: 75,
+          scrollSmoothOffset: -75
+        });
+      });
+    {% endapply %}</script>
+    {%- include('partials/back-to-top.html.twig') ~%}
+    {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
+    <script async defer src="{{ asset('https://buttons.github.io/buttons.js', {ignore_missing: true}) }}"></script>
+    {%- endblock ~%}
+  </body>
+</html>
