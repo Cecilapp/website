@@ -7,7 +7,7 @@
           {%- for news in pages ~%}
           <article class="pt-6 border-slate-200{% if loop.index > 1 %} border-t{% endif %}">
             <div class="mb-1 text-sm text-slate-400 font-medium">{{ news.date|format_date('long') }}</div>
-            <h2><a href="{{ url(news) }}">{{ news.title }}</a></h2>
+            <a href="{{ url(news) }}"><h2 style="view-transition-name: {{ news.slug|replace({'.': '-'}) }}" id="{{ news.slug|replace({'.': '-'}) }}" class="page-transition">{{ news.title }}</h2></a>
             {%- if loop.index == 1 ~%}
             <div class="mb-6">
               {{ news.content }}

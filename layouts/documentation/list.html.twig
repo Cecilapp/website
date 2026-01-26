@@ -11,7 +11,7 @@
             {%- for doc in site.pages.showable|filter_by('section', 'documentation')|sort_by_weight ~%}
             <div class="flex-auto w-96 p-2 lg:p-4 hover:bg-gold group hover:rounded-md dark:hover:bg-black">
             <a href="{{ url(doc) }}" class="doc-item hover:no-underline">
-              <h2>{{ doc.title|e }}</h2>
+              <h2 style="view-transition-name: {{ doc.slug|replace({'.': '-'}) }}" class="page-transition">{{ doc.title|e }}</h2>
               <div class="pb-2{% if not loop.last %}{% endif %}">
                 {%- if doc.description is defined ~%}
                 {{- doc.description|e ~}}
