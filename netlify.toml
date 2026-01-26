@@ -5,7 +5,7 @@
 [build.environment]
   #PHP_VERSION = "8.3"
   CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/latest/download/cecil.phar"
-  CECIL_CACHE_DIR = "opt/build/cache/"
+  CECIL_CACHE_DIR = "test"
   #NODE_VERSION = "18"
   CSS_INPUT = "assets/tailwind.css"
   CSS_OUPUT = "assets/styles.css"
