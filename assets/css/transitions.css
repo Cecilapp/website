@@ -3,31 +3,18 @@
 }
 
 @layer view-transitions {
-  /*::view-transition-old(*) {
-    animation: fade 0.2s linear forwards;
-  }
-
-  ::view-transition-new(*) {
-    animation: fade 0.3s linear reverse;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }*/
-
   /*.page-transition[id] {
     view-transition-name: ident(attr(id));
     view-transition-class: page-transition;
   }*/
-}
 
-/*
-@media not (prefers-reduced-motion: reduce) {
-	.page-transition { view-transition-name: TEST }
+  ::view-transition-group(.page-transition) {
+    animation-duration: 0.6s;
+  }
+
+  /*
+  @media not (prefers-reduced-motion: reduce) {
+    .page-transition { view-transition-name: TEST }
+  }
+  */
 }
-*/
