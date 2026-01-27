@@ -10,6 +10,7 @@
   CSS_INPUT = "assets/tailwind.css"
   CSS_OUPUT = "assets/styles.css"
   #ALGOLIA_INDEX = "_site/algolia.json"
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
 
 #[context."8.x-dev".environment]
 #  CECIL_PHAR_URL = "https://github.com/Cecilapp/Cecil/releases/download/8.0.0-beta.7/cecil.phar"
