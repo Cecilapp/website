@@ -1,14 +1,12 @@
 <!--
 description: "Deploy (publish) your website."
 date: 2020-12-19
-updated: 2025-01-29
+updated: 2026-01-14
 alias: documentation/publish
 -->
 # Deploy
 
-:::info
-By default your static site is built in the `_site` directory, and can be deployed as is.
-:::
+By default your static site is built in the **`_site`** directory, and **can be deployed as is**.
 
 Below are some recipes to automate build and/or deployment of a static site.
 
@@ -26,9 +24,6 @@ _netlify.toml_:
 [build]
   publish = "_site"
   command = "curl -sSOL https://cecil.app/build.sh && bash ./build.sh"
-
-[build.environment]
-  PHP_VERSION = "8.1"
 
 [context.production.environment]
   CECIL_ENV = "production"
@@ -49,27 +44,34 @@ _vercel.json_:
 
 ```json
 {
-  "builds": [{
-    "src": "package.json",
-    "use": "@vercel/static-build",
-    "config": { "distDir": "_site" }
-  }]
-}
-```
-
-_package.json_:
-
-```json
-{
-  "scripts": {
-    "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh"
-  }
+  "buildCommand": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
+  "outputDirectory": "_site"
 }
 ```
 
 [Official documentation](https://vercel.com/docs/concepts/deployments/build-step#build-command)
 
+### statichost
+
+> Modern static site hosting with European servers and absolutely no personal data collection!
+
+➡️ <https://statichost.eu>
+
+_statichost.yml_:
+
+```yml
+image: wordpress:cli-php8.4
+command: curl -sSOL https://cecil.app/build.sh && bash ./build.sh
+public: _site
+```
+
+[Official documentation](https://www.statichost.eu/docs/)
+
 ### Cloudflare Pages
+
+:::caution
+Cloudflare Pages no longer supports PHP.
+:::
 
 > Cloudflare Pages is a JAMstack platform for frontend developers to collaborate and deploy websites.
 
@@ -84,6 +86,10 @@ Build configurations:
 [Official documentation](https://developers.cloudflare.com/pages/)
 
 ### Render
+
+:::caution
+Render no longer supports PHP.
+:::
 
 > Render is a unified cloud to build and run all your apps and websites with free TLS certificates, global CDN, private networks and auto deploys from Git.
 
@@ -104,7 +110,7 @@ services:
 
 [Official documentation](https://render.com/docs/static-sites)
 
-## Continuous build & hosting
+## Continuous build & deploy
 
 ### GitHub Pages
 
@@ -122,9 +128,6 @@ on:
     branches: [master, main]
   workflow_dispatch:
 
-permissions:
-  pages: write
-  id-token: write
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -138,14 +141,35 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
-          extensions: mbstring, gd, imagick, intl, gettext
+          php-version: pre-installed
+          extensions: mbstring, fileinfo, gd, imagick, intl, gettext
+      - name: Restore Cecil cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ./.cache
+          key: cecil-cache-
+          restore-keys: |
+            cecil-cache-
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Build with Cecil
         uses: Cecilapp/Cecil-Action@v3
+        with:
+          args: '-v --baseurl="${{ steps.pages.outputs.base_url }}/"'
+      - name: Save Cecil cache
+        uses: actions/cache/save@v4
+        with:
+          path: ./.cache
+          key: cecil-cache-${{ hashFiles('./.cache/**/*') }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
   deploy:
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -167,33 +191,27 @@ jobs:
 _.gitlab-ci.yml_:
 
 ```yml
-image: phpdocker/phpdocker:8.1
-
-before_script:
-  - |
-    echo "Downloading Cecil..."
-    if [[ -z "$CECIL_VERSION" ]]; then
-      curl -sSOL https://cecil.app/cecil.phar
-    else
-      curl -sSOL https://cecil.app/download/$CECIL_VERSION/cecil.phar
-    fi
-  - php cecil.phar --version
-  - COMPOSER_CACHE_DIR=composer-cache composer install --prefer-dist --no-dev --no-progress --no-interaction
+image: wordpress:cli-php8.4
 
 test:
   stage: test
+  variables:
+    CECIL_OUTPUT_DIR: test
   script:
-    - php cecil.phar build --verbose --output=test
+    - curl -sSOL https://cecil.app/build.sh && bash ./build.sh
   artifacts:
     paths:
-      - test
+     - test
   except:
-    - master
+   - master
 
 pages:
   stage: deploy
+  variables:
+    CECIL_ENV: production
+    CECIL_OUTPUT_DIR: public
   script:
-    - php cecil.phar build --output=public
+    - curl -sSOL https://cecil.app/build.sh && bash ./build.sh
   artifacts:
     paths:
       - public

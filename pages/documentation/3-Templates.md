@@ -1,7 +1,7 @@
 <!--
 description: "Working with layouts, templates and components."
 date: 2021-05-07
-updated: 2025-02-26
+updated: 2026-01-14
 alias: documentation/layouts
 -->
 # Templates
@@ -54,9 +54,9 @@ layouts/(<section>/)<type>|<layout>.<format>(.<language>).twig
 :  The language of the page (e.g.: `fr`).
 
 `<format>`
-:  The [output format](4-Configuration.md#formats) of the rendered page (e.g.: `html`, `rss`, `json`, `xml`, etc.).
+:  The [output format](4-Configuration.md#output-formats) of the rendered page (e.g.: `html`, `rss`, `json`, `xml`, etc.).
 
-".twig"
+`.twig`
 :  The mandatory Twig file extension.
 
 _Examples:_
@@ -97,8 +97,8 @@ layouts/blog/list.rss.twig   # `section` is "blog" and `format` is "rss"
 
 Cecil comes with a set of [built-in templates](https://github.com/Cecilapp/Cecil/tree/master/resources/layouts).
 
-:::tips
-If you need to modify built-in templates, you can easily extract them via the following command: they will be copied in the "layouts" directory of your site.
+:::tip
+If you need to modify built-in templates, you can easily extract them via the following command: they will be copied in the `layouts` directory of your site.
 
 ```bash
 php cecil.phar util:templates:extract
@@ -123,14 +123,14 @@ php cecil.phar util:templates:extract
 [`_default/vocabulary.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/vocabulary.html.twig)
 :   A simple list of all terms of a vocabulary.
 
-[`_default/sitemap.xml.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/sitemap.xml.twig)
-:   The `sitemap.xml` template: list all pages sorted by date.
-
-[`_default/robots.txt.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/robots.txt.twig)
-:   The `robots.txt` template: allow all pages except 404, with a reference to the XML sitemap.
-
 [`_default/404.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/404.html.twig)
 :   A basic error 404 ("Page not found") template.
+
+[`_default/sitemap.xml.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/sitemap.xml.twig)
+:   The [`sitemap.xml`](https://www.sitemaps.org) template: list of all pages sorted by date.
+
+[`_default/robots.txt.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/robots.txt.twig)
+:   The [`robots.txt`](https://en.wikipedia.org/wiki/Robots.txt) template: allow all pages except 404, and add a reference to the sitemap.
 
 [`_default/redirect.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/_default/redirect.html.twig)
 :   The redirect template.
@@ -144,10 +144,10 @@ php cecil.phar util:templates:extract
 :   A simple paginated navigation for list templates with "Previous" and "Next" links.
 
 [`partials/metatags.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/metatags.html.twig)
-:   All metatags in one template: title, description, canonical, open-graph, twitter card, etc. See [configuration](4-Configuration.md#metatags).
+:   All metatags in one template: title, description, canonical, open-graph, twitter card, etc. See [_metatags_ configuration](4-Configuration.md#metatags).
 
 [`partials/languages.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/languages.html.twig)
-:   A basic switcher between [languages](4-Configuration.md#languages).
+:   A basic [languages](4-Configuration.md#languages) switcher.
 
 ## Lookup rules
 
@@ -182,8 +182,8 @@ All rules are detailed below, for each page type, in the priority order.
 1. `<section>/<layout>.<format>.twig`
 2. `<layout>.<format>.twig`
 3. `<section>/page.<format>.twig`
-4. `page.<format>.twig`
-5. `_default/<layout>.<format>.twig`
+4. `_default/<layout>.<format>.twig`
+5. `page.<format>.twig`
 6. `_default/page.<format>.twig`
 
 ### Type _section_
@@ -193,19 +193,22 @@ All rules are detailed below, for each page type, in the priority order.
 3. `<section>/list.<format>.twig`
 4. `section/<section>.<format>.twig`
 5. `_default/section.<format>.twig`
-6. `_default/list.<format>.twig`
+6. `list.<format>.twig`
+7. `_default/list.<format>.twig`
 
 ### Type _vocabulary_
 
 1. `taxonomy/<plural>.<format>.twig`
-2. `_default/vocabulary.<format>.twig`
+2. `vocabulary.<format>.twig`
+3. `_default/vocabulary.<format>.twig`
 
 ### Type _term_
 
 1. `taxonomy/<term>.<format>.twig`
 2. `taxonomy/<singular>.<format>.twig`
-3. `_default/term.<format>.twig`
-4. `_default/list.<format>.twig`
+3. `term.<format>.twig`
+4. `_default/term.<format>.twig`
+5. `_default/list.<format>.twig`
 
 :::info
 Most of those layouts are available by default, see [built-in templates](#built-in-templates).
@@ -213,8 +216,7 @@ Most of those layouts are available by default, see [built-in templates](#built-
 
 ## Variables
 
-> The application passes variables to the templates for manipulation in the template. Variables may have attributes or elements you can access, too.
->
+> The application passes variables to the templates for manipulation in the template. Variables may have attributes or elements you can access, too.  
 > Use a dot (.) to access attributes of a variable: `{{ foo.bar }}`
 
 You can use variables from different scopes: [`site`](#site), [`page`](#page), [`cecil`](#cecil).
@@ -249,7 +251,7 @@ Can be displayed in a template with:
 | `site.debug`          | Debug mode: `true` or `false`.                         |
 
 :::important
-In some case you can encounter conflicts between configuration and built-in variables (e.g.: `pages.default` configuration), so you can use `config.<variable>` (with `<variable>` is the name/path of the variable) to access directly to the raw configuration).
+In some case you can encounter conflicts between configuration and built-in variables (e.g.: `pages.default` configuration), so you can use `config.<variable>` (with `<variable>` is the name/path of the variable) to access directly to the raw configuration.
 
 Example:
 
@@ -299,7 +301,7 @@ e.g.: `site.language.name('fr')`.
 
 #### site.static
 
-The static files collection can be accessed via `site.static` if the [_static load_](4-configuration.md#static) is enabled.
+The static files collection can be accessed via `site.static` if the [_static load_](4-configuration.md#static-load) is enabled.
 
 Each file exposes the following properties:
 
@@ -309,8 +311,11 @@ Each file exposes the following properties:
 - `name`: name (e.g.: `img-1.jpg`)
 - `basename`: name without extension (e.g.: `img-1`)
 - `ext`: extension (e.g.: `jpg`)
+- `type`: media type (e.g.: `image`)
+- `subtype`: media sub type (e.g.: `image/jpeg`)
 - `exif`: image EXIF data (_array_)
 - `audio`: [Mp3Info](https://github.com/wapmorgan/Mp3Info#audio-information) object
+- `video`: array of basic video information (duration in seconds, width and height)
 
 #### site.data
 
@@ -450,32 +455,34 @@ Variables available in _vocabulary_ and _term_ templates.
 
 ### url
 
-Creates a valid URL for a page, an asset, a page ID or a path.
+Creates a valid URL for a page, a menu entry, an asset, a page ID or a path.
 
 ```twig
 {{ url(value, {options}) }}
 ```
 
-| Option    | Description                                                                 | Type    | Default |
-| --------- | --------------------------------------------------------------------------- | ------- | ------- |
-| canonical | Prefixes path with [`baseurl`](4-Configuration.md#baseurl) or use [`canonical.url`](4-Configuration.md#metatags-options-and-variables). | boolean | `false` |
-| format    | Defines page [output format](4-Configuration.md#formats) (e.g.: `json`).    | string  | `html`  |
-| language  | Trying to force page [language](4-Configuration.md#languages) (e.g.: `fr`). | string  | null    |
+| Option    | Description                                                                | Type    | Default |
+| --------- | -------------------------------------------------------------------------- | ------- | ------- |
+| canonical | Prefix URL with [`baseurl`](4-Configuration.md#baseurl) or use [`canonical.url`](4-Configuration.md#metatags-options) if exists. | boolean | `false` |
+| format    | Defines page [output format](4-Configuration.md#output-formats) (e.g.: `json`).   | string  | `html`  |
+| language  | Defines page [language](4-Configuration.md#language) (e.g.: `fr`). | string  | null    |
 
 _Examples:_
 
 ```twig
-# page
+{# page #}
 {{ url(page) }}
 {{ url(page, {canonical: true}) }}
 {{ url(page, {format: json}) }}
 {{ url(page, {language: fr}) }}
-# asset
+{# menu entry #}
+{{ url(site.menus.main.about) }}
+{# asset #}
 {{ url(asset('styles.css')) }}
-# page ID
+{# page ID #}
 {{ url('page-id') }}
-# path
-{{ url(menu.url) }}
+{# path #}
+{{ url('about-me/') }}
 {{ url('tags/' ~ tag) }}
 ```
 
@@ -483,10 +490,10 @@ _Examples:_
 For convenience the `url` function is also available as a filter:
 
 ```twig
-# page
+{# page #}
 {{ page|url }}
 {{ page|url({canonical: true, format: json, language: fr}) }}
-# asset
+{# asset #}
 {{ asset('styles.css')|url }}
 ```
 
@@ -494,85 +501,194 @@ For convenience the `url` function is also available as a filter:
 
 ### asset
 
-An asset is a resource useable in templates, i.e.: CSS, JavaScript, image, audio, etc.
+An asset is a resource useable in templates, like CSS, JavaScript, image, audio, video, etc.
 
 The `asset()` function creates an _asset_ object from a file path, an array of files path (bundle) or an URL (remote file), and are processed (minified, fingerprinted, etc.) according to the [configuration](4-Configuration.md#assets).
 
-Local files must be stored in the `assets/` (or `static/`)  directory.
+Resource files must be stored in the `assets/` (or `static/`)  directory.
 
 ```twig
 {{ asset(path, {options}) }}
 ```
 
-| Option          | Description                                         | Type    | Default |
-| --------------- | --------------------------------------------------- | ------- | ------- |
-| fingerprint     | Add the file content finger print to the file name. | boolean | `true`  |
-| minify          | Compress file content (CSS or JavaScript).          | boolean | `true`  |
-| filename        | File where to save content.                         | string  | `styles.css` or `scripts.js` |
-| ignore_missing  | Do not stop build if file don't exists.             | boolean | `false` |
-| remote_fallback | Load a local asset if the remote one don't exists.  | string  | `null`  |
+| Option         | Description                                     | Type    | Default  |
+| -------------- | ----------------------------------------------- | ------- | -------- |
+| filename       | Save bundle to a custom file name.              | string  | `styles.css` or `scripts.js` |
+| leading_slash  | Add a leading slash to the $path.               | string  | `true`   |
+| ignore_missing | Do not stop build if file is not found.         | boolean | `false`  |
+| fingerprint    | Add content hash to the file name.              | boolean | `true`   |
+| minify         | Compress CSS or JavaScript.                     | boolean | `true`   |
+| optimize       | Compress image.                                 | boolean | `false`  |
+| fallback       | Load a local asset if remote file is not found. | string  | ``       |
+| useragent      | User agent key (from [Assets configuration](4-Configuration.md#assets-remote-useragent)). | string | `default`|
 
 :::tip
-Uses [filters](#filters) to manipulate assets.
+You can use [filters](#filters) to manipulate assets.
 :::
 
-:::important
-Be carreful about the cache ([enabled by default](4-Configuration.md#cache)): if an asset is modified but keeps the same name, then the cached version will be used. Cache can be cleared with the [command](5-Commands.md) `php cecil.phar cache:clear:assets`.
+:::info
+You don't need to clear the [cache](#cache) after modifying an asset: the cache is automatically cleared when the file is modified or when the file name is changed.
 :::
 
 _Examples:_
 
 ```twig
-# CSS
+{# CSS #}
 {{ asset('styles.css') }}
-# CSS bundle
+{# CSS bundle #}
 {{ asset(['poole.css', 'hyde.css'], {filename: styles.css}) }}
-# JavaScript
+{# JavaScript #}
 {{ asset('scripts.js') }}
-# image
+{# image #}
 {{ asset('image.jpeg') }}
-# remote file
+{# audio #}
+{{ asset('audio.mp3') }}
+{# video #}
+{{ asset('video.mp4') }}
+{# remote file #}
 {{ asset('https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js', {minify: false}) }}
-# with filter
+{# with filter #}
 {{ asset('styles.css')|minify }}
 {{ asset('styles.scss')|to_css|minify }}
 ```
 
 #### Asset attributes
 
-Assets created with the `asset()` function expose some useful attributes:
+Assets created with the `asset()` function expose some useful attributes.
+
+Common:
 
 - `file`: filesystem path
-- `files`: array of filesystem path in case of bundle
-- `filename`: file name
-- `path_source`: relative path before processing
-- `path`: relative path
-- `missing`: `true` if file not found, but missing is ollowed
-- `ext`: extension
+- `missing`: `true` if file is not found but missing is allowed
+- `path`: public path
+- `ext`: file extension
 - `type`: media type (e.g.: `image`)
 - `subtype`: media sub type (e.g.: `image/jpeg`)
 - `size`: size in octets
-- `content_source`: content before processing
 - `content`: file content
+- `hash`: file content hash (md5)
+- `dataurl`: data URL encoded in Base64
 - `integrity`: integrity hash
-- `width`: image width
-- `height`: image height
+
+Remote:
+
+- `url`: URL of the remote file
+
+Bundle:
+
+- `files`: array of filesystem path in case of a bundle
+
+Image:
+
+- `width`: image width in pixels
+- `height`: image height in pixels
 - `exif`: image EXIF data as array
-- `audio`: [Mp3Info](https://github.com/wapmorgan/Mp3Info#audio-information) object
-- `video`: array of video dimensions (width and height)
+
+Audio:
+
+- `duration`: duration in seconds.microseconds
+- `bitrate`: bitrate in bps
+- `channel`: 'stereo', 'dual_mono', 'joint_stereo' or 'mono'
+
+Video:
+
+- `duration`: duration in seconds
+- `width`: width in pixels
+- `height`: height in pixels
 
 _Examples:_
 
 ```twig
-# image width in pixels
+{# image width in pixels #}
 {{ asset('image.png').width }}px
-# photo's date in seconds
+{# photo's date in seconds #}
 {{ asset('photo.jpeg').exif.EXIF.DateTimeOriginal|date('U') }}
-# MP3 song duration in minutes
-{{ asset('title.mp3').audio.duration|round }} min
-# file integrity hash
+{# audio duration in seconds #}
+{{ asset('song.mp3').duration|round }} s
+{# video duration in seconds #}
+{{ asset('movie.mp4').duration|round }} s
+{# file integrity hash #}
 {% set integrity = asset('styles.scss').integrity %}
 ```
+
+### integrity
+
+Creates the hash (`sha384`) of a file (from an asset or a path).
+
+```twig
+{{ integrity(asset) }}
+```
+
+Used for SRI ([Subresource Integrity](https://developer.mozilla.org/fr/docs/Web/Security/Subresource_Integrity)).
+
+_Example:_
+
+```twig
+{{ integrity('styles.css') }}
+{# sha384-oGDH3qCjzMm/vI+jF4U5kdQW0eAydL8ZqXjHaLLGduOsvhPRED9v3el/sbiLa/9g #}
+```
+
+### html
+
+Creates an HTML element from an asset (or an array of assets with custom attributes).
+
+```twig
+{{ html(asset, {attributes}, {options}) }}
+{# dedicated functions for each common type of asset #}
+{{ css(asset) }}
+{{ js(asset) }}
+{{ image(asset) }}
+{{ audio(asset) }}
+{{ video(asset) }}
+```
+
+| Option     | Description                                     | Type  |
+| ---------- | ----------------------------------------------- | ----- |
+| attributes | Adds `name="value"` couple to the HTML element. | array |
+| options    | `{preload: boolean}`: preloads.<br>For images:<br>`{formats: array}`: adds alternative formats.<br>`{responsive: bool|string}`: adds responsive images (based on `width` or pixels `density`). | array |
+
+:::warning
+Since version ++8.42.0++, the `html` function replace the deprecated `html` filter.
+:::
+
+:::tip
+You can define a global default behavior of images options (`formats` and `responsive`) through the [layouts configuration](4-Configuration.md#layouts-images).
+:::
+
+_Examples:_
+
+```twig
+{# CSS with an attribute #}
+{{ html(asset('print.css'), {media: 'print'}) }}
+{# CSS with an attribute and an option #}
+{{ html(asset('styles.css'), {title: 'Main theme'}, {preload: true}) }}
+{# Array of assets with media query #}
+{{ html([
+  {asset: asset('css/style.css')},
+  {asset: asset('css/style-dark.css'), attributes: {media: '(prefers-color-scheme: dark)'}}
+]) }}
+{# JavaScript #}
+{{ html(asset('script.js')) }}
+{# image without specific attributes nor options #}
+{{ html(asset('image.png')) }}
+{# image with specific attributes, responsive images and alternative formats #}
+{{ html(asset('image.jpg'), {alt: 'Description', loading: 'lazy'}, {responsive: true, formats: ['avif', 'webp']}) }}
+{# image with responsive pixels density images #}
+{{ html(asset('image.jpg'), options={responsive: 'density'}, attributes={width: 256}) }}
+{# Audio #}
+{{ html(asset('audio.mp3')) }}
+{# Video #}
+{{ html(asset('video.mp4')) }}
+```
+
+:::info
+For convenience the `html` function stay available as a filter (but is considered as deprecated):
+
+```twig
+{{ asset|html({attributes}, {options}) }}
+```
+
+:::
 
 ### image_srcset
 
@@ -605,20 +721,18 @@ _Examples:_
 <img src="{{ url(asset) }}" width="{{ asset.width }}" height="{{ asset.height }}" alt="" class="asset" srcset="{{ image_srcset(asset) }}" sizes="{{ image_sizes('asset') }}">
 ```
 
-### integrity
+### image_from_website
 
-Creates the hash (`sha384`) of a file (from an asset or a path).
+Builds the HTML img element from a website URL by extracting the image from meta tags.
 
 ```twig
-{{ integrity(asset) }}
+image_from_website('<url>')
 ```
 
-Used for SRI ([Subresource Integrity](https://developer.mozilla.org/fr/docs/Web/Security/Subresource_Integrity)).
-
-_Example:_
+_Examples:_
 
 ```twig
-{{ integrity('styles.css') }}
+{{ image_from_website('https://example.com/page-with-image.html') }}
 ```
 
 ### readtime
@@ -626,7 +740,7 @@ _Example:_
 Determines read time of a text, in minutes.
 
 ```twig
-{{ readtime(text) }}
+{{ readtime(value) }}
 ```
 
 _Example:_
@@ -705,13 +819,13 @@ Sorts a collection by date (most recent first).
 _Example:_
 
 ```twig
-# sort by date
+{# sort by date #}
 {{ site.pages|sort_by_date }}
-# sort by updated variable instead of date
+{# sort by updated variable instead of date #}
 {{ site.pages|sort_by_date(variable='updated') }}
-# sort items with the same date by desc title
+{# sort items with the same date by desc title #}
 {{ site.pages|sort_by_date(desc_title=true) }}
-# reverse sort
+{# reverse sort #}
 {{ site.pages|sort_by_date|reverse }}
 ```
 
@@ -800,17 +914,20 @@ _Examples:_
 
 ### toc
 
-Extracts table of content from a Markdown string, in the given format ("html" or "json", "html" by default) and an optional base URL.
+Extracts only headings matching the given `selectors` (h2, h3, etc.), or those defined in config `pages.body.toc` if not specified.  
+The `format` parameter defines the output format: `html` or `json`.  
+The `url` parameter is used to build links to headings.
 
 ```twig
-{{ markdown|toc(format, url) }}
+{{ markdown|toc(format, selectors, url) }}
 ```
 
 _Examples:_
 
 ```twig
 {{ page.body|toc }}
-{{ page.body|toc('json') }}
+{{ page.body|toc('html') }}
+{{ page.body|toc(selectors=['h2']) }}
 {{ page.body|toc(url=url(page)) }}
 ```
 
@@ -854,12 +971,51 @@ Converts a string to a slug.
 {{ string|slugify }}
 ```
 
+### u
+
+Wraps a text in a `UnicodeString` object to give access to [methods of the class](https://symfony.com/doc/current/components/string.html).
+
+_Example:_
+
+```twig
+{{ 'cecil_string with twig'|u.camel.title }}
+```
+
+> CecilStringWithTwig
+
+### singular
+
+The `singular` filter transforms a given noun in its plural form into its singular version:
+
+```twig
+{{ 'partitions'|singular() }}
+```
+
+> partition
+
+### plural
+
+The `plural` filter transforms a given noun in its singular form into its plural version:
+
+```twig
+{{ 'animal'|plural() }}
+```
+
+> animals
+
+```twig
+{# English (en) rules are used by default #}
+{{ 'animal'|plural('fr') }}
+```
+
+> animaux
+
 ### excerpt
 
 Truncates a string and appends suffix.
 
 ```twig
-{{ string|excerpt(integer, suffix) }}
+{{ string|excerpt(length, suffix) }}
 ```
 
 | Option | Description                                | Type    | Default |
@@ -894,6 +1050,20 @@ _Examples:_
 {{ variable|excerpt_html }}
 {{ variable|excerpt_html({separator: 'excerpt|break', capture: 'before'}) }}
 {{ variable|excerpt_html({capture: 'after'}) }}
+```
+
+### highlight
+
+Highlights a code string with [highlight.php](https://github.com/scrivo/highlight.php).
+
+```twig
+{{ code|highlight(language) }}
+```
+
+_Examples:_
+
+```twig
+{{ '<?php echo $highlighted->value; ?>'|highlight('php') }}
 ```
 
 ### to_css
@@ -1039,20 +1209,65 @@ _Examples:_
 
 ### resize
 
-Resizes an image to a specified with.
+Resizes an image to a specified width (in pixels) or/and height (in pixels).
+
+- If only the width is specified, the height is calculated to preserve the aspect ratio
+- If only the height is specified, the width is calculated to preserve the aspect ratio
+- If both width and height are specified, the image is resized to fit within the given dimensions, image is cropped and centered if necessary
+- If remove_animation is true, any animation in the image (e.g., GIF) will be removed
 
 ```twig
-{{ asset(image_path)|resize(integer) }}
+{{ asset(image_path)|resize(width: width, height: height, remove_animation: bool) }}
 ```
 
 :::info
-Aspect ratio is preserved, the original file is not altered and the resized version is stored in `/assets/thumbnails/<integer>/images/image.jpg`.
+The original file is not altered and the resized version is saved at `/thumbnails/<width>x<height>/image.jpg`.
 :::
+
+_Examples:_
+
+```twig
+{{ asset(page.image)|resize(300) }}
+{# equivalent to: #}
+{{ asset(page.image)|resize(width: 300) }}
+{# resizes to 300px width, height auto-calculated to preserve aspect ratio #}
+{{ asset(page.image)|resize(height: 200) }}
+{# resizes to 300px width and 200px height, and crops if necessary #}
+{{ asset(page.image)|resize(300, 200) }}
+{# removes any animation from the image #}
+{{ asset(page.image)|resize(width: 1200, height: 630, remove_animation: true) }}
+```
+
+### cover
+
+Resizes an image to a specified width and height, cropping it if necessary.
+
+:::warning
+The `cover` filter is deprecated since version ++8.77++ and will be removed in future versions. Use the [`resize`](#resize) filter instead, with both width and height parameters.
+:::
+
+```twig
+{{ asset(image_path)|cover(width, height) }}
+```
 
 _Example:_
 
 ```twig
-{{ asset(page.image)|resize(300) }}
+{{ asset(page.image)|cover(1200, 630) }}
+```
+
+### maskable
+
+Adds padding, in pourcentages, to an image to make it maskable.
+
+```twig
+{{ asset(image_path)|maskable(padding) }}
+```
+
+_Example:_
+
+```twig
+{{ asset('icon.png')|maskable }}
 ```
 
 ### webp
@@ -1100,11 +1315,10 @@ Returns a [Low Quality Image Placeholder](https://www.guypo.com/introducing-lqip
 
 ### dominant_color
 
-Returns the dominant hexadecimal color of an image.
+Returns the dominant [hexadecimal color](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color) of an image.
 
 ```twig
 {{ asset(image_path)|dominant_color }}
-# #F2D07F
 ```
 
 ### inline
@@ -1119,48 +1333,6 @@ _Example:_
 
 ```twig
 {{ asset('styles.css')|inline }}
-```
-
-### html
-
-Converts an asset into an HTML element.
-
-```twig
-{{ asset(path)|html({attributes, options}) }}
-```
-
-| Option     | Description                                     | Type  |
-| ---------- | ----------------------------------------------- | ----- |
-| attributes | Adds `name="value"` couple to the HTML element. | array |
-| options    | `{preload: boolean}`: preloads CSS.<br>`{responsive: boolean}`: creates responsives images.<br>`{formats: array}`: creates image alternative formats. | array |
-
-_Examples:_
-
-```twig
-{# image without specific attributes nor options #}
-{{ asset('image.png')|html }}
-```
-
-```twig
-{# image with specific attributes and options #}
-{{ asset('image.jpg')|html({alt: 'Description', loading: 'lazy'}, {responsive: true, formats: ['avif','webp']}) }}
-```
-
-```twig
-{# with named argument `options` #}
-{{ asset('image.jpg')|html(options={responsive: true}) }}
-```
-
-```twig
-{{ asset('styles.css')|html({media: 'print'}) }}
-```
-
-```twig
-{{ asset('styles.css')|html({title: 'Main theme'}, {preload: true}) }}
-```
-
-```twig
-{{ asset('script.js')|html }}
 ```
 
 ### preg_split
@@ -1264,7 +1436,7 @@ _Example:_
 ```
 
 :::info
-You can easyly extract translations from your templates with the following command:
+You can easily extract translations from your templates with the following command:
 
 ```bash
 php cecil.phar util:translations:extract
@@ -1277,7 +1449,7 @@ php cecil.phar util:translations:extract
 :::
 
 :::important
-Be carreful about the cache ([enabled by default](4-Configuration.md#cache)) when you update translations files.
+Be careful about the [cache](#cache) when you update translations files.
 
 Cache can be cleared with with the following command:
 
@@ -1293,7 +1465,7 @@ Uses the Twig [`format_date`](https://twig.symfony.com/doc/3.x/filters/format_da
 
 ```twig
 {{ page.date|format_date('long') }}
-# September 30, 2022
+{# September 30, 2022 #}
 ```
 
 Supported values are: `short`, `medium`, `long`, and `full`.
@@ -1304,28 +1476,41 @@ If you want to use the `format_date` filter **with other locales than "en"**, yo
 
 ## Components
 
-Cecil provides a components logic to help you build your templates with the _Twig components extension_.
+Cecil provides a components logic to give you the power making reusable template "units".
 
-### Twig components extension
+:::info
+The components feature is provided by the [_Twig components extension_](https://github.com/giorgiopogliani/twig-components) created by Giorgio Pogliani.
+:::
+
+### Components syntax
+
+Components are just Twig templates stored in the `components/` subdirectory and can be used anywhere in your templates:
 
 ```twig
 {# /components/button.twig #}
 <button {{ attributes.merge({class: 'rounded px-4'}) }}>
     {{ slot }}
 </button>
+```
 
+> The slot variable is any content you will add between the opening and the close tag.
+
+To reach a component you need to use the dedicated tag `x` followed by `:` and the filename of your component without extension:
+
+```twig
 {# /index.twig #}
 {% x:button with {class: 'text-white'} %}
     <strong>Click me</strong>
 {% endx %}
+```
 
-{# Rendered #}
+It will render:
+
+```twig
 <button class="text-white rounded px-4">
     <strong>Click me</strong>
 </button>
 ```
-
-See official _Twig components extension_ documentation: <https://github.com/giorgiopogliani/twig-components#readme>.
 
 ## Cache
 
@@ -1344,25 +1529,31 @@ php cecil.phar cache:clear:templates     # clear templates cache
 php cecil.phar cache:clear:translations  # clear translations cache
 ```
 
-In practice you don't need to clear the cache manually, Cecil does it for you when needed.
+:::important
+In practice you don't need to clear the cache manually, Cecil does it for you when needed (e.g. when files change).
+:::
 
 ### Fragments cache
 
-Cecil caches fragments of the pages to avoid re-rendering the same content multiple times.
+Cecil provides a way to cache parts of templates rendering to avoid re-rendering the same partial content multiple times.
 
-To use fragments cache, you must wrap the content you want to cache with the `cache` tag.
+To use _fragments_ cache, you must wrap the content you want to cache with the `cache` tag.
 
 ```twig
 {% cache 'unique-key' %}
-    {# content #}
+{# content #}
 {% endcache %}
 ```
 
 :::info
-More details on the official _Twig cache extension_ documentation: <https://twig.symfony.com/doc/tags/cache.html>.
+More details on the official [_Twig cache extension_ documentation](https://twig.symfony.com/doc/tags/cache.html).
 :::
 
-Fragments cache is aggressive, so in development you may need to clear it between each generation, with the following command:
+:::important
+Fragments cache is persistent, so if the cache key is too generic, you may end up with wrong content displayed.
+:::
+
+To clear fragments cache only:
 
 ```bash
 php cecil.phar cache:clear:templates --fragments
@@ -1370,15 +1561,22 @@ php cecil.phar cache:clear:templates --fragments
 
 ### Disable cache
 
-You can disable templates cache with the [configuration](4-Configuration.md#cache).
+You can disable cache with the [configuration](4-Configuration.md#cache).
 
 :::warning
-Disabling cache can slow down the generation process, so it's not recommended for production.
+Disabling cache can slow down the generation process, so it's not recommended.
 
-During local development, if you need to clear templates cache between each generation, you can use the following option:
+During local development, if you need to clear cache before each generation, you can use the following option:
 
 ```bash
-php cecil.phar serve --clear-cache
+php cecil.phar serve --clear-cache          # clear all caches
+php cecil.phar serve --clear-cache=<regex>  # clear cache for cache key matches with the regular expression <regex>
+```
+
+Example:
+
+```bash
+php cecil.phar serve --clear-cache=css  # clear cache for all CSS files
 ```
 
 :::
@@ -1387,13 +1585,11 @@ php cecil.phar serve --clear-cache
 
 ### Functions and filters
 
-:::tip
-You can add custom [functions](3-Templates.md#functions) and [filters](3-Templates.md#filters) with a [_Twig extension_](7-Extend.md#twig-extension).
-:::
+You can add custom [functions](3-Templates.md#functions) and custom [filters](3-Templates.md#filters) with a [**_Twig extension_**](7-Extend.md#twig-extension).
 
 ### Theme
 
-It’s easy to build a theme: you just have to create a folder `<theme>` with the following structure:
+It’s easy to build a theme, you just have to create a folder `<theme>` with the following structure (like a website but without pages):
 
 ```plaintext
 <mywebsite>
