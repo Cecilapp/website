@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
     {#- others CSS ~#}
-    {%- cache 'css' ~ '__' ~ cecil.build ~ '__' ~ cecil.version ~%}
+    {%- cache 'css-' ~ site.build ~%}
     {#- highlight CSS ~#}
     <style>{% apply minify_css ~%}
       {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false, ignore_missing: true})|inline ~}}
@@ -226,7 +226,7 @@
     </main>
     {%- block services %}{% endblock services ~%}
     {%- block sponsors %}{% endblock sponsors ~%}
-    {%- cache 'footer' ~ '__' ~ cecil.build ~ '__' ~ cecil.version ~%}
+    {%- cache 'footer-' ~ site.build ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {#- footer menu -#}
