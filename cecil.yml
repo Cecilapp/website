@@ -73,6 +73,7 @@ menus:
       name: Open source
       url: https://github.com/Cecilapp/
 pages:
+  pagination: false
   paths:
     - section: news
       path: :section/:year/:month/:day/:slug

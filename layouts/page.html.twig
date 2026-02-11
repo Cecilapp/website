@@ -5,7 +5,7 @@
     {%- set img_txt = site.page(page.section).title ~ '\n' ~ img_txt %}
   {%- endif %}
   {%- set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/c_fit,w_1100,g_north_west,x_80,y_80,co_white,l_text:montserrat_100_ultrabold_line_spacing_-10:%s/%s'|format(site.cloudinary.account, img_txt|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
-  {%- set og_image = asset(cloudinary_url, {filename: 'assets/cards/%s/%s.png'|format(site.language, page.title|slugify), ignore_missing: true}) %}
+  {%- set og_image = asset(cloudinary_url, {filename: 'cards/%s.png'|format(page.id), ignore_missing: true}) %}
   {%- if not og_image['missing'] %}
     {%- set image = og_image %}
   {%- endif %}
@@ -33,6 +33,8 @@
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
+    {#- others CSS ~#}
+    {%- cache 'css;' ~ site.build ~%}
     {#- highlight CSS ~#}
     <style>{% apply minify_css ~%}
       {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false, ignore_missing: true})|inline ~}}
@@ -66,6 +68,7 @@
         text-decoration: none;
       }
     {% endapply %}</style>
+    {%- endcache ~%}
     {#- PWA ~#}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     {%- endblock head ~%}
@@ -223,6 +226,7 @@
     </main>
     {%- block services %}{% endblock services ~%}
     {%- block sponsors %}{% endblock sponsors ~%}
+    {%- cache 'footer;' ~ site.build ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {#- footer menu -#}
@@ -284,6 +288,7 @@
         <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">GitHub</a>
       </div>
     </footer>
+    {%- endcache ~%}
     {%- block footer_scripts ~%}
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
     <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
