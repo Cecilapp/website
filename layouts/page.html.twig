@@ -226,7 +226,6 @@
     </main>
     {%- block services %}{% endblock services ~%}
     {%- block sponsors %}{% endblock sponsors ~%}
-    {%- cache 'footer;' ~ hash(page.translations) ~ ';' ~ site.build ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {#- footer menu -#}
@@ -244,6 +243,7 @@
         {#- theme switcher ~#}
         {#-<div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>~#}
       </div>
+      {%- cache 'footer;' ~ site.language ~ ';' ~ site.build ~%}
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
         {#- copyright ~#}
         <ul class="text-[0px]">
@@ -283,12 +283,12 @@
           </div>
         </div>
       </div>
+      {%- endcache ~%}
       {#- GitHub Stars ~#}
       <div class="container mx-auto">
         <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">GitHub</a>
       </div>
     </footer>
-    {%- endcache ~%}
     {%- block footer_scripts ~%}
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
     <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
