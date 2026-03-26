@@ -1,6 +1,6 @@
 ﻿<!--
-title: "Étendre"
-description: "Étendre Cecil."
+title: Étendre
+description: "Étendre les capacités de Cecil."
 date: 2026-03-27
 slug: etendre
 -->
