@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 title: Déployer
 description: "Déployer (publier) votre site web."
 date: 2026-03-27

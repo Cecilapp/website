@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 title: Contenu
 description: "Créer du contenu et l’organiser."
 date: 2026-03-27

@@ -1,5 +1,5 @@
-﻿<!--
-title: Bibliothèque
+<!--
+title: "Bibliothèque"
 description: "Utilisez Cecil comme bibliothèque PHP."
 date: 2026-03-27
 slug: bibliotheque
