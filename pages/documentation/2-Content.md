@@ -1,7 +1,7 @@
 <!--
 description: "Create content and organize it."
 date: 2021-05-07
-updated: 2026-02-04
+updated: 2026-04-15
 -->
 # Content
 
@@ -591,7 +591,7 @@ A page can be added to a [menu](4-Configuration.md#menus).
 
 The entry name is the page `title` and the URL is the page `path`.
 
-A same page could be added to severals menus, and the position of each entry can be defined with the `weight` key (the lightest first).
+A same page could be added to severals menus, and the position of each entry can be defined with the `weight` key (the lightest first). The `name` key can be used to override the default entry name per menu.
 
 _Examples:_
 
@@ -617,6 +617,18 @@ menu:
 ---
 ```
 
+```yaml
+---
+title: 'Our Expertise'
+menu:
+  main:
+    weight: 15
+  footer:
+    weight: 15
+    name: "Expertise" # override the entry name in this menu
+---
+```
+
 ### Taxonomy
 
 Taxonomy allows you to connect, relate and classify your website’s content.  
@@ -624,13 +636,17 @@ In Cecil, these terms are gathered within vocabularies.
 
 Vocabularies are declared in the [_Configuration_](4-Configuration.md#taxonomies).
 
-A page can contain several vocabularies (e.g.: `tags`) and terms (e.g.: `Tag 1`).
+Vocabulary
+: A categorization of content (e.g.: `tags`, `categories`, etc.).
+
+Term
+: A term is an item of a vocabulary (e.g.: `Development`, `PHP`, etc.).
 
 _Example:_
 
 ```yaml
 ---
-tags: ["Tag 1", "Tag 2"]
+tags: ["Development", "PHP"]
 ---
 ```
 

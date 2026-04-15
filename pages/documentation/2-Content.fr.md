@@ -2,6 +2,7 @@
 title: Contenu
 description: "Créer du contenu et l’organiser."
 date: 2026-03-27
+updated: 2026-04-15
 slug: contenu
 -->
 # Contenu
@@ -592,7 +593,7 @@ Une page peut être ajoutée à un [menu](4-Configuration.md#menus).
 
 Le nom de l’entrée est le `title` de la page et l’URL est le `path` de la page.
 
-Une même page peut être ajoutée à plusieurs menus, et la position de chaque entrée peut être définie avec la clé `weight` (la plus faible en premier).
+Une même page peut être ajoutée à plusieurs menus, et la position de chaque entrée peut être définie avec la clé `weight` (la plus faible en premier). La clé `name` peut être utilisée pour personnaliser le nom de l’entrée par menu.
 
 _Exemples :_
 
@@ -618,6 +619,18 @@ menu:
 ---
 ```
 
+```yaml
+---
+title: 'Notre expertise'
+menu:
+  main:
+    weight: 15
+  footer:
+    weight: 15
+    name: "Expertise" # personnalise le nom de l'entrée dans ce menu
+---
+```
+
 ### Taxonomie
 
 La taxonomie permet de connecter, relier et classer le contenu de votre site Web.  
@@ -625,13 +638,17 @@ Dans Cecil, ces termes sont regroupés dans des vocabulaires.
 
 Les vocabulaires sont déclarés dans la [_Configuration_](4-Configuration.md#taxonomies).
 
-Une page peut contenir plusieurs vocabulaires (ex. : `tags`) et termes (ex. : `Tag 1`).
+Vocabulaire
+: Une catégorisation du contenu (ex. : `tags`, `categories`, etc.).
+
+Terme
+: Un terme est un élément d’un vocabulaire (ex. : `Développement`, `PHP`, etc.).
 
 _Exemple :_
 
 ```yaml
 ---
-tags: ["Tag 1", "Tag 2"]
+tags: ["Développement", "PHP"]
 ---
 ```
 
