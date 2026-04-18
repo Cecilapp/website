@@ -1,0 +1,27 @@
+metatags:
+  jsonld: false
+  favicon: false
+pages:
+  body:
+    images:
+      formats: []
+      responsive: false
+      caption: true
+      placeholder: none
+      remote:
+        enabled: false
+    highlight: true
+assets:
+  images:
+    optimize: false
+static:
+  exclude:
+    - '*.phar*'
+layouts:
+  images:
+    formats: []
+    responsive: false
+serviceworker:
+  enabled: false
+optimize:
+  enabled: false
