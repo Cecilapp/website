@@ -752,7 +752,7 @@ Le nom de fichier peut contenir un préfixe pour définir les variables `date` o
 :::info
 Séparateurs de préfixe par défaut : `_` et `-`.
 
-Vous pouvez les personnaliser avec l’option [`pages.prefix.separator`](4-Configuration.fr.md#pagesprefixseparator).
+Vous pouvez les personnaliser avec l’option [`pages.prefix.separator`](4-Configuration.fr.md#pages-prefix-separator).
 :::
 
 #### date

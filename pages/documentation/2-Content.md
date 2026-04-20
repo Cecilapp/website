@@ -750,7 +750,7 @@ The filename can contain a prefix to define `date` or `weight` variables of the 
 :::info
 Default prefix separators: `_` and `-`.
 
-You can customize them with the [`pages.prefix.separator`](4-Configuration.md#pagesprefixseparator) option.
+You can customize them with the [`pages.prefix.separator`](4-Configuration.md#pages-prefix-separator) option.
 
 :::
 
