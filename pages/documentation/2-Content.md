@@ -1,7 +1,7 @@
 <!--
 description: "Create content and organize it."
 date: 2021-05-07
-updated: 2026-04-15
+updated: 2026-04-20
 -->
 # Content
 
@@ -408,6 +408,18 @@ Is converted to:
 Caption supports Markdown content.
 :::
 
+#### Localized image
+
+For translated pages, Cecil first looks for a language-suffixed file when resolving Markdown image paths.
+
+_Example:_
+
+```markdown
+![](/images/cecil-logo.png)
+```
+
+With a French page (`fr`), Cecil tries `/images/cecil-logo.fr.png` first, then falls back to `/images/cecil-logo.png`.
+
 #### Placeholder
 
 As images are typically heavier and slower resources, and they don’t block rendering, we should attempt to give users something to look at while they wait for the image to arrive.
@@ -736,10 +748,10 @@ external: "https://raw.githubusercontent.com/Cecilapp/Cecil/master/README.md"
 The filename can contain a prefix to define `date` or `weight` variables of the page (used by [`sortby`](3-Templates.md#sort-by-date)).
 
 :::info
-Available prefix separators:
+Default prefix separators: `_` and `-`.
 
-- date prefix: `_` and `-`
-- weight prefix: `_` only
+You can customize them with the [`pages.prefix.separator`](4-Configuration.md#pagesprefixseparator) option.
+
 :::
 
 #### date

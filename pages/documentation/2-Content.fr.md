@@ -2,7 +2,7 @@
 title: Contenu
 description: "Créer du contenu et l’organiser."
 date: 2026-03-27
-updated: 2026-04-15
+updated: 2026-04-20
 slug: contenu
 -->
 # Contenu
@@ -410,6 +410,18 @@ Est converti en :
 La légende prend en charge le contenu Markdown.
 :::
 
+#### Image localisée
+
+Pour les pages traduites, Cecil recherche d’abord un fichier suffixé par la langue lors de la résolution des chemins d’image Markdown.
+
+_Exemple :_
+
+```markdown
+![](/images/cecil-logo.png)
+```
+
+Avec une page française (`fr`), Cecil essaie d’abord `/images/cecil-logo.fr.png`, puis revient à `/images/cecil-logo.png`.
+
 #### Placeholder
 
 Comme les images sont généralement des ressources plus lourdes et plus lentes, et qu’elles ne bloquent pas le rendu, il est préférable de donner aux utilisateurs quelque chose à voir pendant qu’ils attendent leur chargement.
@@ -738,10 +750,9 @@ external: "https://raw.githubusercontent.com/Cecilapp/Cecil/master/README.md"
 Le nom de fichier peut contenir un préfixe pour définir les variables `date` ou `weight` de la page (utilisé par [`sortby`](3-Templates.md#sort-by-date)).
 
 :::info
-Séparateurs de préfixe disponibles :
+Séparateurs de préfixe par défaut : `_` et `-`.
 
-- préfixe de date : `_` et `-`
-- préfixe de poids : `_` uniquement
+Vous pouvez les personnaliser avec l’option [`pages.prefix.separator`](4-Configuration.fr.md#pagesprefixseparator).
 :::
 
 #### date
