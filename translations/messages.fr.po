@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-01-05 11:15+0100\n"
-"PO-Revision-Date: 2026-01-05 11:16+0100\n"
+"POT-Creation-Date: 2026-05-13 00:48+0200\n"
+"PO-Revision-Date: 2026-05-13 00:49+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,16 +10,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ../layouts\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: documentation/list.html.twig:1 documentation/list.html.twig:8
-#: documentation/page.html.twig:1 themes.html.twig:47
+#: documentation/page.html.twig:1 themes.html.twig:51
 msgid "Documentation"
 msgstr "Documentation"
 
-#: documentation/list.html.twig:23 news/page.html.twig:6 page.html.twig:172
+#: documentation/list.html.twig:22 news/page.html.twig:6 page.html.twig:181
 #: partials/toc.html.twig:3
 msgid "What's on this page"
 msgstr "Sur cette page"
@@ -48,7 +48,7 @@ msgstr "Aller à la section des fonctionnalités"
 msgid "Start with the CLI"
 msgstr "Commencer avec la ligne de commande"
 
-#: home.html.twig:119 page.html.twig:263
+#: home.html.twig:119 page.html.twig:284
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
@@ -60,23 +60,27 @@ msgstr "Actualités"
 msgid "Release notes on GitHub"
 msgstr "Notes de version sur GitHub"
 
-#: page.html.twig:83
+#: page.html.twig:89
 msgid "Open menu"
 msgstr "Ouvrir le menu"
 
-#: page.html.twig:191
+#: page.html.twig:196
+msgid "View as Markdown"
+msgstr "Afficher en Markdown"
+
+#: page.html.twig:210
 msgid "Suggest a modification"
 msgstr "Suggérer une modification"
 
-#: page.html.twig:242
+#: page.html.twig:263
 msgid "Logo by %logo_by%"
 msgstr "Logo par %logo_by%"
 
-#: page.html.twig:250
+#: page.html.twig:271
 msgid "Powered by %powered_by%"
 msgstr "Propulsé par %powered_by%"
 
-#: page.html.twig:256
+#: page.html.twig:277
 msgid "Hosted by %hosted_by%"
 msgstr "Hébergé par %hosted_by%"
 
@@ -141,13 +145,13 @@ msgstr "Copier dans le presse-papier"
 msgid "Homepage"
 msgstr "Page d’accueil"
 
-#: themes.html.twig:44
-msgid "Source code"
-msgstr "Code source"
-
-#: themes.html.twig:52
+#: themes.html.twig:46
 msgid "Demo"
 msgstr "Démo"
+
+#: themes.html.twig:54
+msgid "Source code"
+msgstr "Code source"
 
 #: themes.html.twig:60
 msgid "Install"
