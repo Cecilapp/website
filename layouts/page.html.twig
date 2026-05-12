@@ -188,19 +188,30 @@
               <h1>{{ page.title }}</h1>
               {{ page.content }}
               {%- endblock content -%}
-              {#- suggest a documentation modification -#}
-              {%- if page.filepath|default and site.repo|length > 0 -%}
-                {%- if page.section == 'documentation' and site.repo.docs|default -%}
-                  {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
-                {%- else -%}
-                  {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+              <div class="flex flex-row gap-2.5">
+                {#- LLM -#}
+                {%- if 'md' in page.output -%}
+                  <div class="mt-4">
+                    {%- x:button with {href: url(page, {format: 'md', canonical: true}), class: 'btn-sm'} -%}
+                      {{- octicons.svg('markdown', 16) }}<div>{% trans %}View as Markdown{% endtrans %}</div>
+                    {%- endx ~%}
+                  </div>
                 {%- endif ~%}
-                <div class="mt-4">
-                  {%- x:button with {href: url, class: 'btn-sm'} -%}
-                    {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
-                  {%- endx ~%}
-                </div>
-              {%- endif ~%}
+                <div class="grow"></div>
+                {#- suggest a documentation modification -#}
+                {%- if page.filepath|default and site.repo|length > 0 -%}
+                  {%- if page.section == 'documentation' and site.repo.docs|default -%}
+                    {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
+                  {%- else -%}
+                    {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+                  {%- endif ~%}
+                  <div class="mt-4">
+                    {%- x:button with {href: url, class: 'btn-sm'} -%}
+                      {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
+                    {%- endx ~%}
+                  </div>
+                {%- endif ~%}
+              </div>
             </div>
             {#- prev/next page -#}
             {%- if page.prev is defined or page.next is defined ~%}

@@ -126,6 +126,9 @@ output:
     - name: bash
       mediatype: 'text/plain'
       extension: 'sh'
+    - name: md
+      mediatype: 'text/plain'
+      extension: 'md'
   pagetypeformats:
     homepage: ['html', 'atom', 'algolia']
     section: ['html', 'atom', 'jsonfeed']
