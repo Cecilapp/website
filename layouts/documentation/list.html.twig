@@ -1,4 +1,5 @@
 {% set title = "Documentation"|trans ~ ' &middot; ' ~ site.title %}
+{% set docs = site.pages.showable|filter_by('section', 'documentation')|sort_by_weight %}
 
 {% extends 'page.html.twig' %}
 
@@ -8,7 +9,6 @@
           <h1>{% trans %}Documentation{% endtrans %}</h1>
           <p>{{ page.content }}</p>
           <div class="flex flex-wrap flex-row">
-            {%- set docs = site.pages.showable|filter_by('section', 'documentation')|sort_by_weight ~%}
             {%- for doc in docs ~%}
             <div class="flex-auto w-96 p-2 lg:p-4 hover:bg-gold group hover:rounded-md dark:hover:bg-black">
             <a href="{{ url(doc) }}" class="doc-item hover:no-underline">
