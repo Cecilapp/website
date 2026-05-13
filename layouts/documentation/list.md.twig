@@ -8,6 +8,6 @@
 {{ page.body }}
 
 {% for doc in docs %}
-* [{{ doc.title }}]({{ url(doc, {format: 'md', canonical: true}) }})
+- [{{ doc.title }}]({{ url(doc, {format: 'md', canonical: true}) }})
 {% endfor %}
 {% endblock %}
