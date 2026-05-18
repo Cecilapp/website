@@ -3,12 +3,11 @@
     "cecil/theme-netlify": "^2.2",
     "cecil/theme-pwa": "^2.20",
     "cecil/theme-octicons": "^1.1",
-    "aligny/composer-tailwind-plugin": "^1.0"
+    "aligny/tailwind-builder": "^1.0"
   },
   "config": {
     "allow-plugins": {
-      "cecil/theme-installer": true,
-      "aligny/composer-tailwind-plugin": true
+      "cecil/theme-installer": true
     }
   }
 }
