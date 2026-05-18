@@ -33,13 +33,13 @@ php cecil.phar new:page --name=news/cecil-X.Y.0-released --prefix
 ### Preview locally
 
 ```bash
-vendor/bin/tailwind-build assets/css/tailwind.css -o assets/styles.css --watch
+composer run tailwind:watch
 php cecil.phar serve -v --config=config/dev.yml
 ```
 
 ### Build for production
 
 ```bash
-CECIL_ENV=production vendor/bin/tailwind-build assets/css/tailwind.css -o assets/styles.css --minify
+composer run tailwind:build
 php cecil.phar build
 ```
