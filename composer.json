@@ -11,7 +11,6 @@
     }
   },
   "scripts": {
-    "tailwind:watch": "vendor/bin/tailwind-build assets/css/tailwind.css -o assets/styles.css --watch",
     "tailwind:build": [
       "@putenv CECIL_ENV=production",
       "vendor/bin/tailwind-build assets/css/tailwind.css -o assets/styles.css --minify"
