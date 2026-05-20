@@ -130,7 +130,7 @@ output:
       mediatype: 'text/plain'
       extension: 'md'
   pagetypeformats:
-    homepage: ['html', 'atom', 'algolia']
+    homepage: ['html', 'atom', 'algolia', 'md']
     section: ['html', 'atom', 'jsonfeed']
 optimize:
   #enabled: true
