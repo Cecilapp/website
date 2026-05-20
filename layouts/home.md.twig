@@ -1,10 +1,13 @@
 # {{ site.title }}
 
 > {{ site.description }}
-{% for section in site.pages|filter(p => p.type == 'section') ~%}
+{% for section in site.pages|filter(p => p.type == 'section') %}
+  {% set pages = section.pages.showable|sort_by_date %}
+  {% if pages|length > 0 ~%}
 ## {{ section.title ~}}
-  {% for page in section.pages.showable|sort_by_date -%}
-    {% if 'md' in page.output %}{% set page_output = 'md' %}{% else %}{% set page_output = 'html' %}{% endif ~%}
+    {% for page in pages -%}
+      {% if 'md' in page.output %}{% set page_output = 'md' %}{% else %}{% set page_output = 'html' %}{% endif ~%}
 - [{{ page.title }}]({{ url(page, {format: page_output, canonical: true}) }}){% if page.description|default %}: {{ page.description }}{% endif %}
-  {%- endfor ~%}
+    {%- endfor ~%}
+  {% endif %}
 {% endfor %}
