@@ -30,5 +30,5 @@ The [first functional version](https://github.com/Cecilapp/Cecil/tree/58cd48bcc7
 
 ## License
 
-- _Cecil_ is a free software distributed under the terms of the [MIT license](/LICENSE)
-- The website _cecil.app_ is distributed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- _Cecil_ is a free software distributed under the terms of the [EUPL-1.2](https://github.com/Cecilapp/Cecil/blob/master/LICENSE) license.
+- The content of the website _cecil.app_ is distributed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
