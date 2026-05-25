@@ -1,0 +1,150 @@
+{% import 'macros/octicons.twig' as octicons %}
+{% extends 'page.html.twig' %}
+
+    {%- block head ~%}
+    {{- parent() ~}}
+    <link rel="preload" href="{{ asset('videos/cecil-demo-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px)">
+    <style>{{- asset('css/animation.css')|inline -}}</style>
+    {%- endblock ~%}
+
+    {%- block jumbotron ~%}
+    <div class="jumbotron">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row space-x-0 md:space-x-6 lg:space-x-10">
+          <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8">
+            {#- last release badge ~#}
+            {%- if site.menus.main.download is defined -%}
+            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-lbl'} -%}
+              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16) }}
+            {%- endx -%}
+            {%- endif ~%}
+            {#- baseline ~#}
+            <h1 class="lg:mb-8 text-3xl xl:text-5xl">{{ site.baseline }}</h1>
+            {#- description ~#}
+            <div class="hidden xl:inline-block text-2xl font-normal">{{ site.description }}</div>
+            {#- buttons ~#}
+            <div class="flex flex-col xl:flex-row px-12 md:px-0 gap-4">
+              {#- Quick Start ~#}
+              {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+              {%- x:button with {href: url(site.menus.home['documentation/quick-start']), class: 'btn-lg btn-gold'} -%}
+                {{ octicons.svg('arrow-right', 24, 'hidden sm:inline') }}<div>{% trans %}Quick Start{% endtrans %}</div>
+              {%- endx -%}
+              {%- endif ~%}
+              {#- Download ~#}
+              {%- if site.menus.main.download is defined ~%}
+              {%- x:button with {href: url(site.menus.main.download), class: 'btn-lg btn-trans'} -%}
+                {{ octicons.svg('download', 24, 'hidden sm:inline') }}<div>{% trans %}Download{% endtrans %}</div>
+              {%- endx -%}
+              {%- endif ~%}
+              {#- go to features ~#}
+              <a href="#features" title="{% trans %}Go to features section{% endtrans %}" aria-label="{% trans %}Go to features section{% endtrans %}" class="hidden max-sm:flex items-center justify-center text-white hover:text-gold">{{ octicons.svg('chevron-down', 12, 'size-10') }}</a>
+            </div>
+          </div>
+          {#- terminal video demo ~#}
+          <div class="md:w-1/2 hidden md:flex items-center">
+            {{- include('partials/terminal-demo.html.twig', with_context: false) ~}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {#- news ~#}
+    <div id="news" class="bg-darkblue dark:bg-black">
+      <div class="container mx-auto flex flex-wrap flex-row">
+        {%- for news in site.pages.showable|filter_by('section', 'news')|sort_by_date(desc_title=true)|slice(0, 4) ~%}
+        <a href="{{ url(news) }}" title="{{ news.description|default|replace({'"':"'"}) }}" class="flex-[1_1_100%] md:flex-[1_1_25%] w-64 p-6 truncate hover:bg-gold hover:shadow-lg group{% if loop.index == 3 %} hidden md:block{% endif %}{% if loop.index >= 4 %} hidden lg:block{% endif %}">
+          <div class="text-slate-300 group-hover:text-blue mb-1">{{ news.date|format_date('long') }}</div>
+          <div style="view-transition-name: {{ news.slug|replace({'.': '-'}) }}" id="{{ news.slug|replace({'.': '-'}) }}" class="page-transition font-medium text-white group-hover:text-darkblue truncate">{{ news.title }}</div>
+        </a>
+        {%- endfor ~%}
+      </div>
+    </div>
+    {%- endblock ~%}
+
+        {%- block main ~%}
+        {#- features ~#}
+        <div id="features" class="py-6 md:py-10">
+          <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-10">
+            {%- for block in page.blocks.features|default([])|filter(b => b.visible != false) ~%}
+            {{- include('partials/block-feature.html.twig', {loop, icon:block.icon, title:block.title, description:block.description}, with_context: false) ~}}
+            {%- endfor ~%}
+          </div>
+        </div>
+        {#- content ~#}
+        <div id="content" class="container mx-auto md:w-3/4 lg:w-2/4 py-6 md:py-10 leading-loose">
+          {%- if page.content ~%}
+          <div class="mb-6 md:mb-10 markdown dark:text-white">
+            {{ page.content }}
+          </div>
+          {%- endif ~%}
+          {#- start with the CLI ~#}
+          <div id="cli" class="pt-6 mb-6 md:mb-10">
+            <div class="mb-4 text-xl text-center font-bold">{% trans %}Start with the CLI{% endtrans %}</div>
+            <div class="flex justify-center">
+              <div class="shell-wrap min-w-[360px] min-h-[130px]">
+                <div class="shell-top-bar">
+                  <div class="shell-top-bar-btn"><span></span><span></span><span></span></div>
+                  <div class="shell-top-bar-title">/Users/aligny</div>
+                </div>
+                <div class="shell-body">
+                  <pre class="p-3">
+curl -LO https://cecil.app/cecil.phar
+php cecil.phar new:site
+php cecil.phar serve</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          {#- quick start button ~#}
+          {%- if site.menus.home['documentation/quick-start'] is defined ~%}
+          <div class="flex justify-center">
+            {%- x:button with {href: url(site.menus.home['documentation/quick-start'].url), class: 'btn-lg'} -%}
+              <div>{% trans %}Quick Start{% endtrans %}</div>
+            {%- endx ~%}
+          </div>
+          {%- endif ~%}
+        </div>
+        {%- endblock ~%}
+
+    {%- block services ~%}
+    <div id="services">
+    {%- for block in page.blocks.services|default([])|filter(b => b.visible != false) ~%}
+      {{- include('partials/block-service.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}
+    {%- endfor ~%}
+    </div>
+    {%- endblock ~%}
+
+    {%- block sponsors ~%}
+    <div id="sponsors" class="p-10 md:p-16">
+      <div class="container mx-auto">
+        <div class="text-xl font-bold pb-10 md:pb-16 text-center">{% trans %}Cecil is generously supported by{% endtrans %}</div>
+        <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 space-x-0 md:space-x-16 items-center">
+        {%- for block in page.blocks.sponsors|default({})|filter(b => b.visible != false) ~%}
+          {%- set sponsor_logo = asset(block.logo)|resize(250) -%}
+          {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(250) ~%}
+          <div class="grow md:h-auto text-center hover:scale-125 ease-in-out duration-700">
+            <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}">
+              <img class="inline-block dark:hidden" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+            </a>
+          </div>
+        {%- endfor ~%}
+        </div>
+      </div>
+    </div>
+    {%- endblock ~%}
+
+    {%- block footer_scripts ~%}
+    {{- parent() ~}}
+    {{- include('partials/version.js.twig', with_context: false) ~}}
+    {{- include('partials/animation.js.twig', with_context: false) ~}}
+    <script>{% apply minify_js ~%}
+      function videos() {
+        for (const video of document.querySelectorAll('video')) {
+          video.controls = false
+          video.addEventListener('mouseover', () => { video.controls = 'controls' })
+          video.addEventListener('mouseout', () => { video.controls = false })
+        }
+      }
+      window.addEventListener('load', videos, false)
+    {% endapply %}</script>
+    {%- endblock ~%}
