@@ -6,3 +6,19 @@
               {%- block content ~%}
               {{ page.content }}
               {%- endblock ~%}
+
+
+    {%- block footer_scripts ~%}
+    {{- parent() ~}}
+    {#- mermaid ~#}
+    {{- html(asset('https://cdn.jsdelivr.net/npm/mermaid@' ~ site.mermaid.version ~ '/dist/mermaid.min.js', {minify: false}), {id: 'mermaid', defer: 'true'}) ~}}
+    <script>{% apply minify_js ~%}
+      mermaid.addEventListener('load', function () {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync('pre:has(> code.language-mermaid){background-color: inherit;}');
+        document.adoptedStyleSheets.push(sheet);
+        mermaid.initialize({ startOnLoad: false, theme: document.documentElement.dataset.theme == 'dark' ? 'dark' : 'default' });
+        mermaid.run({querySelector: '.language-mermaid'});
+      });
+    {% endapply %}</script>
+    {%- endblock ~%}

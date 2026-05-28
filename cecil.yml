@@ -197,3 +197,6 @@ libs:
     version: v4.34.0
 
 snow: false
+
+mermaid:
+  version: 11
