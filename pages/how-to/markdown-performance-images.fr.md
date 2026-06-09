@@ -1,5 +1,6 @@
 ---
 title: Comment optimiser les images dans Markdown ?
+description: Optimiser les images Markdown dans Cecil avec tailles responsives, formats et chargement différé.
 path: comment-faire/markdown-performance-images
 date: 2025-07-25
 ---

@@ -1,5 +1,6 @@
 ---
 title: Comment rendre des images réactives dans des modèles ?
+description: Rendre des images réactives dans les modèles Cecil avec la fonction html.
 path: comment-faire/templates-responsive-images
 layout: responsive-images
 date: 2025-07-25

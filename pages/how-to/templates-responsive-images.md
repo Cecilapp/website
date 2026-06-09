@@ -1,5 +1,6 @@
 ---
 title: How to render responsive images in templates?
+description: Render responsive images in Cecil templates with the html function.
 layout: responsive-images
 date: 2024-01-18
 updated: 2025-05-12

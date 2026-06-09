@@ -1,5 +1,6 @@
 ---
 title: How to generate multiple formats of an images in templates?
+description: Generate AVIF and WebP image formats in Cecil templates.
 layout: image-formats
 date: 2025-06-01
 ---
