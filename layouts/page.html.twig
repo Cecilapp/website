@@ -21,15 +21,15 @@
     {{- include('partials/metatags.html.twig', {title: title|default, image: image|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
     {#- Google Fonts ~#}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
+    <style>{% apply minify_css ~%}
+      {{ asset('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap')|inline }}
+    {% endapply %}</style>
     {#- main CSS ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
-    <style>
-      {{- asset('styles.css')|inline ~}}
-    </style>
+    <style>{% apply minify_css ~%}
+      {{ asset('styles.css')|inline }}
+    {% endapply %}</style>
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
