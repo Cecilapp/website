@@ -12,8 +12,8 @@
   }
 {%- endmacro -%}
 [
+{%- set is_first = true -%}
 {%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
-  {%- set count = 0 -%}
   {%- set sections = p.content|preg_split('/<' ~ balise ~ '[^>]*>/') -%}
   {%- if sections|length > 0 -%}
     {%- for section in sections -%}
@@ -22,15 +22,17 @@
         {%- set title = section_content[0]|striptags|trim -%}
         {%- set anchor = title|lower|replace({':': '', '’': '', ' ': '-', '_': '-', '.': '-'}) -%}
         {%- set anchor = anchor|replace({'--': '-'}) -%}
-        {%- set content = section_content[1]|striptags|trim ~%}
+        {%- set section_html = section_content[1]|default('') -%}
+        {%- set content = section_html|striptags|trim -%}
         {%- set description = '' -%}
-        {%- if section_content[1]|trim starts with '<p>' -%}
-        {%- set description = section_content[1]|trim|split('</p>')|first|striptags|trim -%}
+        {%- if section_html|trim starts with '<p>' -%}
+        {%- set description = section_html|trim|split('</p>')|first|striptags|trim -%}
         {%- endif -%}
         {%- set experimental = 0 -%}
         {% if 'Experimental' in content %}
         {%- set experimental = 1 -%}
         {% endif %}
+        {%- if not is_first %},{% endif -%}
         {{- _self.dataset(
           p.id ~ '#' ~ anchor,
           p.title,
@@ -41,11 +43,9 @@
           url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor,
           experimental|default(0)
         ) -}}
-        {%- if not loop.last %},{% endif ~%}
-        {%- set count = count + 1 -%}
+        {%- set is_first = false -%}
       {%- endif -%}
     {%- endfor -%}
-    {%- if not loop.last and count > 0 %},{% endif ~%}
   {%- endif -%}
 {%- endfor ~%}
 ]
