@@ -176,12 +176,14 @@
               {%- endif ~%}
               {#- toc ~#}
               {%- block toc ~%}
+              {%- if page.body|toc(format: 'json', selectors: ['h2', 'h3'])|json_decode|length > 0 ~%}
               <details class="mb-4 xl:hidden">
                 <summary class="cursor-pointer">
                   <strong>{% trans %}What's on this page{% endtrans %}</strong>
                 </summary>
-                {{ page.body|toc(selectors=['h2']) }}
+                {{ page.body|toc(selectors: ['h2', 'h3']) }}
               </details>
+              {%- endif ~%}
               {%- endblock toc ~%}
               {#- content -#}
               {%- block content ~%}
