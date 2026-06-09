@@ -1,5 +1,5 @@
 ---
-title: How to apply SEO features in templates?
+title: Apply SEO features in templates
 description: Add Cecil SEO features to templates with the metatags partial.
 date: 2026-06-09
 ---

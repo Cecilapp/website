@@ -1,5 +1,5 @@
 ---
-title: How to render responsive images in templates?
+title: Render responsive images in templates
 description: Render responsive images in Cecil templates with the html function.
 layout: responsive-images
 date: 2024-01-18
@@ -17,7 +17,7 @@ The default width values of the generated images are 480, 640, 768, 1024, 1366, 
 
 ## Example
 
-Bellow an example with a PNG image 1000x1000 pixels.
+Below an example with a PNG image 1000x1000 pixels.
 
 ```twig
 {{ html(asset('cecil-logo-1000.png'), attributes={alt: 'Cecil logo'}, options={responsive: true}) }}

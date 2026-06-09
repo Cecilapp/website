@@ -1,5 +1,5 @@
 ---
-title: How to generate multiple formats of an images in templates?
+title: Generate multiple formats of an image in templates
 description: Generate AVIF and WebP image formats in Cecil templates.
 layout: image-formats
 date: 2025-06-01
@@ -20,7 +20,7 @@ For performance and bandwidth optimization, Cecil can generate multiple formats 
 
 ## Example
 
-Bellow an example of how to generate AVIF and WebP formats of an image:
+Below an example of how to generate AVIF and WebP formats of an image:
 
 ```twig
 {{ html(asset('cecil-logo.png'), attributes={alt: 'Cecil logo'}, options={formats: ['avif', 'webp']}) }}

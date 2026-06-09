@@ -1,5 +1,5 @@
 ---
-title: Comment appliquer la feature SEO dans les templates ?
+title: Appliquer les fonctionnalités SEO dans les templates
 description: Ajouter les fonctionnalités SEO de Cecil aux templates avec le partial metatags.
 path: comment-faire/templates-metatags
 date: 2026-06-09

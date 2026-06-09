@@ -1,5 +1,5 @@
 ---
-title: Comment générer plusieurs formats d'images dans des modèles ?
+title: Générer plusieurs formats d'images dans des modèles
 description: Générer des formats d'image AVIF et WebP dans les modèles Cecil.
 path: comment-faire/templates-image-formats
 layout: image-formats
