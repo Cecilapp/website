@@ -11,3 +11,4 @@ cascade:
   image: images/cecil-card-news.png
 path: actualites
 ---
+Actualités à propos de Cecil.

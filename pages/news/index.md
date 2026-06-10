@@ -10,3 +10,4 @@ image: images/cecil-card-news.png
 cascade:
   image: images/cecil-card-news.png
 ---
+News about Cecil.

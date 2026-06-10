@@ -6,3 +6,4 @@ menu:
   main:
     weight: 60
 ---
+Articles et tutoriels pour réaliser les tâches courantes avec Cecil.
