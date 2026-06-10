@@ -136,7 +136,8 @@ output:
       extension: 'txt'
   pagetypeformats:
     homepage: ['html', 'atom', 'algolia', 'md', 'llms']
-    section: ['html', 'atom', 'jsonfeed']
+    section: ['html', 'atom', 'jsonfeed', 'md']
+    page: ['html', 'md']
 optimize:
   #enabled: true
   js:
