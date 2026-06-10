@@ -130,8 +130,12 @@ output:
     - name: md
       mediatype: 'text/plain'
       extension: 'md'
+    - name: llms
+      mediatype: 'text/plain'
+      filename: 'llms'
+      extension: 'txt'
   pagetypeformats:
-    homepage: ['html', 'atom', 'algolia', 'md']
+    homepage: ['html', 'atom', 'algolia', 'md', 'llms']
     section: ['html', 'atom', 'jsonfeed']
 optimize:
   #enabled: true
