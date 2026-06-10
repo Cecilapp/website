@@ -2,7 +2,7 @@
 
 > {{ site.description }}
 {% for section in site.pages|filter(p => p.type == 'section') %}
-  {% set pages = section.pages.showable|sort_by_date %}
+  {% set pages = section.pages.showable|sort_by_weight %}
   {% if pages|length > 0 ~%}
 ## {{ section.title ~}}
     {% for page in pages -%}
