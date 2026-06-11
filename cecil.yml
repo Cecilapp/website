@@ -138,10 +138,6 @@ output:
     homepage: ['html', 'atom', 'algolia', 'md', 'llms']
     section: ['html', 'atom', 'jsonfeed', 'md']
     page: ['html', 'md']
-optimize:
-  #enabled: true
-  js:
-    enabled: false
 theme:
   - octicons
   - pwa
