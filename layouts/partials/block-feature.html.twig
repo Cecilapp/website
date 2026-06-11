@@ -1,0 +1,15 @@
+            {#- Variables: icon, title, description -#}
+            {%- import 'macros/octicons.twig' as octicons ~%}
+            <div class="flex items-center space-x-4 md:space-x-6">
+              <div class="size-12 text-blue dark:text-slate-300">
+                {{ octicons.svg(icon, 16, 'size-12') }}
+              </div>
+              <dl>
+                <dt class="text-lg leading-6 font-medium">
+                  {{ title }}
+                </dt>
+                <dd class="mt-2 text-sm">
+                  {{ description|markdown_to_html }}
+                </dd>
+              </dl>
+            </div>
