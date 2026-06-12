@@ -18,7 +18,7 @@ Available commands:
   help                       Display help for a command
   self-update                [selfupdate] Updates Cecil to the latest version
   serve                      Starts the built-in server
-  stop                       Stops the background server
+  serve:stop                 Stops the background server
  cache
   cache:clear                Removes all cache files
   cache:clear:assets         Removes assets cache
@@ -33,56 +33,6 @@ Available commands:
  util
   util:templates:extract     Extracts built-in templates
   util:translations:extract  Extracts translations from templates
-```
-
-## doctor:seo
-
-Audits rendered HTML pages for common SEO issues.
-
-```plaintext
-Description:
-  Audits rendered HTML pages for common SEO issues
-
-Usage:
-  doctor:seo [options] [--] [<path>]
-
-Arguments:
-  path                  Use the given path as working directory
-
-Options:
-  -c, --config=CONFIG   Set the path to an extra configuration file
-  -p, --page=PAGE       Audit a single page relative to the pages directory
-      --format=FORMAT   Output format: text (default) or json
-      --include-virtual Include virtual pages (paginated, taxonomies) in audit
-```
-
-The command builds the site in dry-run mode, then audits the rendered HTML output for a focused set of checks: title tag, meta description, canonical URL, heading structure, Open Graph tags, image alt attributes and estimated content length.
-
-By default, virtual pages (paginated, taxonomy pages) are excluded from the audit. Use `--include-virtual` to include them.
-
-Output results as JSON for CI integration using `--format=json`.
-
-### Configuration
-
-Customize audit thresholds and enabled checks in your configuration file:
-
-```yaml
-doctor:
-  seo:
-    title.min: 30
-    title.max: 60
-    description.min: 120
-    description.max: 160
-    content.min_words: 300
-    checks:
-      title: true
-      description: true
-      canonical: true
-      h1: true
-      og_tags: true
-      img_alt: true
-      content_length: true
-      lang_attribute: true
 ```
 
 ## new:site
@@ -263,7 +213,7 @@ Help:
 
   Then stop it with:
 
-    cecil.phar stop
+    cecil.phar serve:stop
 
   In background mode, file changes are not watched automatically.
 ```
@@ -363,4 +313,52 @@ Help:
   To inspect a site with an extra configuration file, run:
 
     cecil.phar doctor --config=config.yml
+```
+
+## doctor:seo
+
+Audits rendered HTML pages for common SEO issues.
+
+```plaintext
+Description:
+  Audits rendered HTML pages for common SEO issues
+
+Usage:
+  doctor:seo [options] [--] [<path>]
+
+Arguments:
+  path                  Use the given path as working directory
+
+Options:
+  -c, --config=CONFIG   Set the path to an extra configuration file
+  -p, --page=PAGE       Audit a single page relative to the pages directory
+      --format=FORMAT   Output format: text (default) or json
+      --include-virtual Include virtual pages (paginated, taxonomies) in audit
+```
+
+The command builds the site in dry-run mode, then audits the rendered HTML output for a focused set of checks: title tag, meta description, canonical URL, heading structure, Open Graph tags, image alt attributes and estimated content length.
+
+By default, virtual pages (paginated, taxonomy pages) are excluded from the audit. Use `--include-virtual` to include them.
+
+Output results as JSON for CI integration using `--format=json`.
+
+### Configuration
+
+Customize audit thresholds and enabled checks in your configuration file:
+
+```yaml
+doctor:
+  seo:
+    title: { min: 30, max: 60 }
+    description: { min: 120, max: 160 }
+    content: { min_words: 300 }
+    checks:
+      title: true
+      description: true
+      canonical: true
+      h1: true
+      og_tags: true
+      img_alt: true
+      content_length: true
+      lang_attribute: true
 ```
