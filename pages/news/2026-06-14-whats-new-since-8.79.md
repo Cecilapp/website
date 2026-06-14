@@ -14,26 +14,26 @@ The latest major release is **8.106.0**. Here is a focused summary of the main f
 
 ### Better template rendering
 
-- **Dark-mode image variant support** (8.95.0): templates can now handle dedicated image variants for dark mode, improving visual adaptation.
-- **`layouts.autoescape` option** (8.97.0): this setting provides finer control over template escaping behavior.
+- **Dark-mode image variant support** (8.95.0): templates can now handle dedicated image variants for dark mode, improving visual adaptation. ([docs](https://cecil.app/documentation/configuration/#layouts-images))
+- **`layouts.autoescape` option** (8.97.0): this setting provides finer control over template escaping behavior. ([docs](https://cecil.app/documentation/configuration/#layouts-autoescape))
 - **Translation disabled inside code blocks** (8.98.0): inline and fenced code are no longer translated, which helps preserve technical content accurately.
-- **`cache_key` Twig helper** (8.88.0): templates can generate explicit cache keys for more predictable cache behavior.
+- **`cache_key` Twig helper** (8.88.0): templates can generate explicit cache keys for more predictable cache behavior. ([docs](https://cecil.app/documentation/templates/#cache-key))
 
 ### Content and image pipeline improvements
 
-- **Front matter menu `name` support** (8.90.0): menu entries can now define a dedicated `name` property.
-- **`libvips` image driver support** (8.91.0): image processing can now use libvips as a driver option.
-- **Localized Markdown image assets** (8.92.0): image assets can now be localized for translated pages.
+- **Front matter menu `name` support** (8.90.0): menu entries can now define a dedicated `name` property. ([docs](https://cecil.app/documentation/content/#menu))
+- **`libvips` image driver support** (8.91.0): image processing can now use libvips as a driver option. ([docs](https://cecil.app/documentation/content/#images))
+- **Localized Markdown image assets** (8.92.0): image assets can now be localized for translated pages. ([docs](https://cecil.app/documentation/content/#localized-image))
 
 ### Quality and diagnostics tooling
 
-- **New `doctor` command** (8.103.0): a dedicated diagnostics command was introduced to make project issues easier to identify.
-- **New `doctor:seo` command** (8.105.0): a dedicated SEO audit command was added with matching documentation and tests.
+- **New `doctor` command** (8.103.0): a dedicated diagnostics command was introduced to make project issues easier to identify. ([docs](https://cecil.app/documentation/commands/#doctor))
+- **New `doctor:seo` command** (8.105.0): a dedicated SEO audit command was added with matching documentation and tests. ([docs](https://cecil.app/documentation/commands/#doctor-seo))
 
 ### Better development workflow
 
-- **Background `serve` mode and stop command** (8.104.0): the development server now supports background execution and explicit shutdown through `serve:stop`.
-- **`.env` loading support** (8.106.0): environment configuration can now be loaded through dotenv, simplifying local variable management.
+- **Background `serve` mode and stop command** (8.104.0): the development server now supports background execution and explicit shutdown through `serve:stop`. ([docs](https://cecil.app/documentation/commands/#serve))
+- **`.env` loading support** (8.106.0): environment configuration can now be loaded through dotenv, simplifying local variable management. ([docs](https://cecil.app/documentation/configuration/#environment-variables))
 
 ### Breaking change to keep in mind
 
