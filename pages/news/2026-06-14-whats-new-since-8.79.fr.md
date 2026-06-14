@@ -11,6 +11,7 @@ La dernière version majeure disponible est la **8.106.0**. Voici une synthèse 
 - **Indicateur de progression du build** (8.101.0) : l'exécution des builds affiche désormais une barre de progression, ce qui améliore la lisibilité des traitements longs.
 - **Sortie de métriques enrichie** (8.101.0) : les métriques incluent désormais une ligne de durée totale avec comparaison entre exécutions, pratique pour suivre l'évolution des performances.
 - **Temps bruts et diffs de métriques** (8.87.0) : la sortie des métriques expose des temps bruts et des écarts, facilitant la détection des régressions et des gains.
+- **Évolutions autour de l'identifiant de build et du cache** (8.80.x) : l'identifiant de build est exposé et intégré à la logique de cache, avec une évolution des mécanismes de hachage pour améliorer la cohérence du cache.
 
 ### Meilleur rendu des templates
 
@@ -18,6 +19,12 @@ La dernière version majeure disponible est la **8.106.0**. Voici une synthèse 
 - **Option `layouts.autoescape`** (8.97.0) : ce réglage apporte un contrôle plus fin du comportement d'échappement des templates.
 - **Traduction des blocs de code désactivée** (8.98.0) : le code inline et les blocs fenced ne sont plus traduits, ce qui évite les altérations involontaires du contenu technique.
 - **Helper Twig `cache_key`** (8.88.0) : les templates peuvent générer des clés de cache explicites pour un comportement plus prévisible du cache.
+
+### Améliorations du pipeline contenu et images
+
+- **Support de la propriété `name` dans les menus du front matter** (8.90.0) : les entrées de menu peuvent désormais définir un nom dédié via `name`.
+- **Support du driver image `libvips`** (8.91.0) : le traitement d'images peut désormais utiliser libvips comme option de driver.
+- **Localisation des images Markdown pour les pages traduites** (8.92.0) : les assets d'images Markdown peuvent désormais être localisés selon la langue des pages.
 
 ### Outils de qualité et de diagnostic
 
@@ -28,3 +35,7 @@ La dernière version majeure disponible est la **8.106.0**. Voici une synthèse 
 
 - **Mode `serve` en arrière-plan et commande d'arrêt** (8.104.0) : le serveur de développement supporte l'exécution en arrière-plan et un arrêt explicite via `serve:stop`.
 - **Support du chargement `.env`** (8.106.0) : la configuration d'environnement peut désormais être chargée via dotenv pour simplifier la gestion des variables locales.
+
+### Breaking change à prendre en compte
+
+- **Suppression de l'option `assets.leading_slash`** (8.81.0) : cette option a été retirée et peut nécessiter une mise à jour de configuration.
