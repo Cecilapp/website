@@ -76,7 +76,7 @@ chmod +x /usr/local/bin/cecil
 
 ## Update {#update}
 
-**Changelog of the [latest release](https://github.com/Cecilapp/Cecil/releases/latest) is available on [GitHub](https://github.com/Cecilapp/Cecil/releases).**
+**Changelog of the <span class="version">latest release</span> is available on [GitHub](https://github.com/Cecilapp/Cecil/releases/latest).**
 
 The easiest way to update Cecil to the last version is to use the dedicated command:
 
