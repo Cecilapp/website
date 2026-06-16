@@ -7,6 +7,7 @@
 @import './algolia.css';
 @import './buttons' layer(utilities);
 @import './copy-link.css';
+@import './fonts.css';
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography' {
