@@ -113,6 +113,7 @@ blocks:
       description: "Cecil provides ready to use starter kits to help you build your website quickly."
       path: starter-kits/
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
+      shadow: false
       visible: true
   sponsors:
     - title: studio cecillie

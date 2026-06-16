@@ -113,6 +113,7 @@ blocks:
       description: "Cecil fournit des kits de démarrage prêts à l'emploi pour vous aider à créer votre site Web rapidement."
       path: fr/kits-de-demarrage/
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
+      shadow: false
       visible: true
   sponsors:
     - title: studio cecillie
