@@ -1,0 +1,95 @@
+[
+  {
+    "name": "theme-pwa",
+    "full_name": "Cecilapp/theme-pwa",
+    "description": "The PWA component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
+    "github": "https://github.com/Cecilapp/theme-pwa",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2024-01-01T23:38:27Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "pwa",
+      "service-worker"
+    ]
+  },
+  {
+    "name": "theme-fontawesome",
+    "full_name": "Cecilapp/theme-fontawesome",
+    "description": "The Font Awesome component theme for Cecil provides helpers to use Font Awesome icons.",
+    "github": "https://github.com/Cecilapp/theme-fontawesome",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2023-12-11T23:31:27Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "font",
+      "icons"
+    ]
+  },
+  {
+    "name": "theme-netlifycms",
+    "full_name": "Cecilapp/theme-netlifycms",
+    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
+    "github": "https://github.com/Cecilapp/theme-netlifycms",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2023-12-11T23:28:46Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "netlify"
+    ]
+  },
+  {
+    "name": "theme-podcast",
+    "full_name": "Cecilapp/theme-podcast",
+    "description": "The Podcast component theme for Cecil provide templates to publish an audio show on the web.",
+    "github": "https://github.com/Cecilapp/theme-podcast",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2023-12-09T01:37:11Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "podcast"
+    ]
+  },
+  {
+    "name": "theme-netlify",
+    "full_name": "Cecilapp/theme-netlify",
+    "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
+    "github": "https://github.com/Cecilapp/theme-netlify",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2023-12-09T01:12:33Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "netlify"
+    ]
+  },
+  {
+    "name": "theme-serviceworker",
+    "full_name": "Cecilapp/theme-serviceworker",
+    "description": "[Deprecated] The Service Worker component theme for Cecil provides helpers to implement a service worker to turn a website into a Progressive Web App.",
+    "github": "https://github.com/Cecilapp/theme-serviceworker",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2022-09-01T17:50:53Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "pwa",
+      "service-worker"
+    ]
+  }
+]
