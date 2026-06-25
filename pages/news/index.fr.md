@@ -10,4 +10,6 @@ image: images/cecil-card-news.png
 cascade:
   image: images/cecil-card-news.png
 path: actualites
+llms: false
 ---
+Actualités à propos de Cecil.

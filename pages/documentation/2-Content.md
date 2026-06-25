@@ -1,11 +1,11 @@
 <!--
 description: "Create content and organize it."
 date: 2021-05-07
-updated: 2026-02-04
+updated: 2026-04-20
 -->
 # Content
 
-There is different kinds of content in Cecil:
+There are different kinds of content in Cecil:
 
 **Pages**
 : Pages are the main content of the site, written in [Markdown](#markdown).
@@ -87,7 +87,7 @@ URL:
 ```
 
 :::important
-Two kind of prefix can alter URL, see [File prefix section](#file-prefix) below.
+Two kinds of prefixes can alter the URL. See the [File prefix section](#file-prefix) below.
 :::
 
 ## Pages
@@ -137,7 +137,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 ## Sub-Header 3
 
 :::tip
-This is an advice.
+This is advice.
 :::
 ```
 
@@ -168,7 +168,7 @@ sit amet.
 
 ### Links
 
-You can create a link with the syntax `[Text](url)` with "url" can be a path, a relative path to a Markdown file, an external URL, etc.
+You can create a link with the syntax `[Text](url)`, where `url` can be a path, a relative path to a Markdown file, an external URL, etc.
 
 _Example:_
 
@@ -202,10 +202,10 @@ You can change this behavior with [`pages.body.links.external` options](4-Config
 
 #### Embedded links
 
-You can let Cecil tries to turns a link into an embedded content by using the `{embed}` attribute or by setting the global configuration option `pages.body.links.embed.enabled` to `true`.
+Cecil can try to turn a link into embedded content by using the `{embed}` attribute or by setting the global configuration option `pages.body.links.embed.enabled` to `true`.
 
 :::important
-Only **YouTube**, **Vimeo**, **Dailymotion** and **GitHub Gits** links are supported.
+Only **YouTube**, **Vimeo**, **Dailymotion**, and **GitHub Gists** links are supported.
 :::
 
 _Example:_
@@ -308,7 +308,7 @@ Ratio is preserved (`height` attribute is calculated automatically), the origina
 :::
 
 :::important
-This feature requires [GD extension](https://www.php.net/manual/book.image.php) (otherwise it only add a `width` HTML attribute to the `img` tag).
+This feature requires [GD](https://www.php.net/manual/book.image.php). [Imagick](https://www.php.net/manual/book.imagick.php) and [libvips](https://www.libvips.org/) can also be used as optional backends when available; otherwise it only adds a `width` HTML attribute to the `img` tag.
 :::
 
 #### Formats
@@ -337,7 +337,7 @@ Please note that **not all image formats** are always included in the PHP image 
 
 #### Responsive
 
-If the [`responsive` option](4-Configuration.md#pages-body-images) is enabled, then all images in the _body_ will be automatically "responsived".
+If the [`responsive` option](4-Configuration.md#pages-body-images) is enabled, then all images in the _body_ will be made responsive automatically.
 
 _Example:_
 
@@ -360,7 +360,7 @@ will be converted to:
 Because a body image is converted into an [Asset](3-Templates.md#asset), the different widths must be defined in [assets configuration](4-Configuration.md#assets).
 :::
 
-The `sizes` attribute take the value of the `assets.images.responsive.sizes.default` configuration option, but can be changed by creating a new entry named with a _class_ added to the image.
+The `sizes` attribute takes the value of the `assets.images.responsive.sizes.default` configuration option, but it can be changed by creating a new entry named after a _class_ added to the image.
 
 _Example:_
 
@@ -408,11 +408,23 @@ Is converted to:
 Caption supports Markdown content.
 :::
 
+#### Localized image
+
+For translated pages, Cecil first looks for a language-suffixed file when resolving Markdown image paths.
+
+_Example:_
+
+```markdown
+![](/images/cecil-logo.png)
+```
+
+With a French page (`fr`), Cecil tries `/images/cecil-logo.fr.png` first, then falls back to `/images/cecil-logo.png`.
+
 #### Placeholder
 
 As images are typically heavier and slower resources, and they don’t block rendering, we should attempt to give users something to look at while they wait for the image to arrive.
 
-The `placeholder` attribute accept 2 options:
+The `placeholder` attribute accepts two options:
 
 1. `color`: display a colored background (based on image dominant color)
 2. `lqip`: [Low-Quality Image Placeholder](https://www.guypo.com/introducing-lqip-low-quality-image-placeholders)
@@ -441,7 +453,7 @@ You can add a table of contents with the following Markdown syntax:
 ```
 
 :::info
-By default the ToC extract H2 et H3 headers. You can change this behavior with [body options](4-Configuration.md#pages-body).
+By default, the ToC extracts H2 and H3 headings. You can change this behavior with [body options](4-Configuration.md#pages-body).
 :::
 
 ### Excerpt
@@ -466,7 +478,7 @@ _Example:_
 
 ```markdown
 :::tip
-**Tip:** This is an advice.
+**Tip:** This is advice.
 :::
 ```
 
@@ -475,13 +487,13 @@ Is converted to:
 ```html
 <aside class="note note-tip">
   <p>
-    <strong>Tip:</strong> This is an advice.
+    <strong>Tip:</strong> This is advice.
   </p>
 </aside>
 ```
 
 :::tip
-**Tip:** This is an advice.
+**Tip:** This is advice.
 :::
 
 _Others examples:_
@@ -591,7 +603,7 @@ A page can be added to a [menu](4-Configuration.md#menus).
 
 The entry name is the page `title` and the URL is the page `path`.
 
-A same page could be added to severals menus, and the position of each entry can be defined with the `weight` key (the lightest first).
+The same page can be added to multiple menus, and each entry's position can be set with the `weight` key (lowest first). The `name` key can be used to override the default entry name per menu.
 
 _Examples:_
 
@@ -617,6 +629,18 @@ menu:
 ---
 ```
 
+```yaml
+---
+title: 'Our Expertise'
+menu:
+  main:
+    weight: 15
+  footer:
+    weight: 15
+    name: "Expertise" # override the entry name in this menu
+---
+```
+
 ### Taxonomy
 
 Taxonomy allows you to connect, relate and classify your website’s content.  
@@ -624,13 +648,17 @@ In Cecil, these terms are gathered within vocabularies.
 
 Vocabularies are declared in the [_Configuration_](4-Configuration.md#taxonomies).
 
-A page can contain several vocabularies (e.g.: `tags`) and terms (e.g.: `Tag 1`).
+Vocabulary
+: A categorization of content (e.g.: `tags`, `categories`, etc.).
+
+Term
+: A term is an item of a vocabulary (e.g.: `Development`, `PHP`, etc.).
 
 _Example:_
 
 ```yaml
 ---
-tags: ["Tag 1", "Tag 2"]
+tags: ["Development", "PHP"]
 ---
 ```
 
@@ -720,7 +748,10 @@ external: "https://raw.githubusercontent.com/Cecilapp/Cecil/master/README.md"
 The filename can contain a prefix to define `date` or `weight` variables of the page (used by [`sortby`](3-Templates.md#sort-by-date)).
 
 :::info
-Available prefix separator are `_` and `-`.
+Default prefix separators: `_` and `-`.
+
+You can customize them with the [`pages.prefix.separator`](4-Configuration.md#pages-prefix-separator) option.
+
 :::
 
 #### date

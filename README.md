@@ -16,7 +16,6 @@ Install dependencies
 
 ```bash
 composer install
-npm install
 ```
 
 ## Usage
@@ -34,13 +33,13 @@ php cecil.phar new:page --name=news/cecil-X.Y.0-released --prefix
 ### Preview locally
 
 ```bash
-npm run css:watch
+vendor/bin/tailwind-builder assets/css/tailwind.css -o assets/styles.css --watch
 php cecil.phar serve -v --config=config/dev.yml
 ```
 
 ### Build for production
 
 ```bash
-CECIL_ENV=production npm run css:build
+vendor/bin/tailwind-builder assets/css/tailwind.css -o assets/styles.css --minify
 php cecil.phar build
 ```

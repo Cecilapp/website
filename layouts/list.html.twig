@@ -9,7 +9,7 @@
           {#-<article class="border-slate-300{% if loop.index > 1 %} border-t{% endif %}">~#}
           <article>
             {#-<div class="text-sm text-slate-400 font-medium mt-6">{{ p.date|format_date('long') }}</div>~#}
-            <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
+            <h2 style="view-transition-name: {{ p.slug|replace({'.': '-'}) }}" id="{{ p.slug|replace({'.': '-'}) }}" class="page-transition"><a href="{{ url(p) }}">{{ p.title }}</a></h2>
             <div class="mb-6">
               {{ p.description|default|markdown_to_html }}
             </div>

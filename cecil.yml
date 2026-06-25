@@ -85,6 +85,7 @@ pages:
       caption: true
       remote: true
       placeholder: lqip
+      dark_suffix: .dark
     notes: true
     highlight: true
     links:
@@ -126,13 +127,17 @@ output:
     - name: bash
       mediatype: 'text/plain'
       extension: 'sh'
+    - name: md
+      mediatype: 'text/plain'
+      extension: 'md'
+    - name: llms
+      mediatype: 'text/plain'
+      filename: 'llms'
+      extension: 'txt'
   pagetypeformats:
-    homepage: ['html', 'atom', 'algolia']
-    section: ['html', 'atom', 'jsonfeed']
-optimize:
-  #enabled: true
-  js:
-    enabled: false
+    homepage: ['html', 'atom', 'algolia', 'md', 'llms']
+    section: ['html', 'atom', 'jsonfeed', 'md']
+    page: ['html', 'md']
 theme:
   - octicons
   - pwa
@@ -166,8 +171,8 @@ release:
   name: cecil.phar
   sha1: cecil.phar.sha1
 repo:
-  docs: https://github.com/Cecilapp/Cecil/edit/master/docs/
-  website: https://github.com/Cecilapp/website/edit/master/pages/
+  docs: https://github.com/Cecilapp/Cecil/blob/master/docs/
+  website: https://github.com/Cecilapp/website/blob/master/pages/
 
 #googleanalytics: UA-387892-21
 cloudflareinsights: 601e6965b5bc43b782058112c5312906
@@ -193,3 +198,6 @@ libs:
     version: v4.34.0
 
 snow: false
+
+mermaid:
+  version: 11

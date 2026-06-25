@@ -18,23 +18,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{- include('partials/metatags.html.twig', {title: title|default}) ~}}
+    {{- include('partials/metatags.html.twig', {title: title|default, image: image|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
-    {#- Google Fonts ~#}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap">
     {#- main CSS ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
-    <style>
-      {{- asset('styles.css')|inline ~}}
-    </style>
+    <style>{% apply minify_css ~%}
+      {{ asset('styles.css')|inline }}
+    {% endapply %}</style>
     {%- else ~%}
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
     {#- others CSS ~#}
-    {%- cache 'css;' ~ site.build ~%}
+    {%- cache cache_key('css') ~%}
     {#- highlight CSS ~#}
     <style>{% apply minify_css ~%}
       {{ asset('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/%s.css'|format(site.libs.highlight.version, site.libs.highlight.styles), {minify: false, ignore_missing: true})|inline ~}}
@@ -94,7 +89,7 @@
         {#- main menu ~#}
         <nav class="hidden lg:flex items-center mt-0 pt-0 space-x-6 overflow-x-auto truncate mini-scrollbar">
           {%- for entry in site.menus.main|sort_by_weight ~%}
-          <a class="w-max" href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}" title="{{ entry.name }}">{{ entry.name }}</a>
+          <a class="w-max" href="{{ url(entry) }}" data-weight="{{ entry.weight }}" title="{{ entry.name }}">{{ entry.name }}</a>
           {%- endfor -%}
         </nav>
         <div class="grow"></div>
@@ -176,31 +171,44 @@
               {%- endif ~%}
               {#- toc ~#}
               {%- block toc ~%}
+              {%- if page.body|toc(format: 'json', selectors: ['h2', 'h3'])|json_decode|length > 0 ~%}
               <details class="mb-4 xl:hidden">
                 <summary class="cursor-pointer">
                   <strong>{% trans %}What's on this page{% endtrans %}</strong>
                 </summary>
-                {{ page.body|toc(selectors=['h2']) }}
+                {{ page.body|toc(selectors: ['h2', 'h3']) }}
               </details>
+              {%- endif ~%}
               {%- endblock toc ~%}
               {#- content -#}
               {%- block content ~%}
-              <h1>{{ page.title }}</h1>
+              <h1 style="view-transition-name: {{ page.slug|replace({'.': '-'}) }}" id="{{ page.slug|replace({'.': '-'}) }}" class="page-transition">{{ page.title }}</h1>
               {{ page.content }}
               {%- endblock content -%}
-              {#- suggest a documentation modification -#}
-              {%- if page.filepath|default and site.repo|length > 0 -%}
-                {%- if page.section == 'documentation' and site.repo.docs|default -%}
-                  {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
-                {%- else -%}
-                  {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+              <div class="flex flex-col md:flex-row md:gap-2.5">
+                {#- LLM -#}
+                {%- if 'md' in page.output -%}
+                <div class="mt-4">
+                  {%- x:button with {href: url(page, {format: 'md', canonical: true}), class: 'btn-sm'} -%}
+                    {{- octicons.svg('markdown', 16) }}<div>{% trans %}View as Markdown{% endtrans %}</div>
+                  {%- endx ~%}
+                </div>
+                <div class="grow"></div>
                 {%- endif ~%}
+                {#- suggest a documentation modification -#}
+                {%- if page.filepath|default and site.repo|length > 0 -%}
+                  {%- if page.section == 'documentation' and site.repo.docs|default -%}
+                    {%- set url = url(site.repo.docs ~ page.filepath|replace({'\\':'/'})|replace({'documentation/':''})) -%}
+                  {%- else -%}
+                    {%- set url = url(site.repo.website ~ page.filepath|replace({'\\':'/'})) -%}
+                  {%- endif ~%}
                 <div class="mt-4">
                   {%- x:button with {href: url, class: 'btn-sm'} -%}
                     {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Suggest a modification{% endtrans %}</div>
                   {%- endx ~%}
                 </div>
-              {%- endif ~%}
+                {%- endif ~%}
+              </div>
             </div>
             {#- prev/next page -#}
             {%- if page.prev is defined or page.next is defined ~%}
@@ -226,14 +234,13 @@
     </main>
     {%- block services %}{% endblock services ~%}
     {%- block sponsors %}{% endblock sponsors ~%}
-    {%- cache 'footer;' ~ site.build ~%}
     <footer id="footer" class="px-6 py-6 leading-6 text-xs text-left text-slate-500 dark:text-slate-300 font-light border-t border-slate-200 dark:bg-black">
       <div class="container mx-auto">
         {#- footer menu -#}
         {%- if site.menus.footer is defined ~%}
         <ul class="text-[0px]">
           {%- for entry in site.menus.footer|sort_by_weight ~%}
-          <li class="inline text-base{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name|trans }}</a></li>
+          <li class="inline text-base{% if not loop.last %} after:content-['\00a0\00B7\00a0']{% endif %}"><a href="{{ url(entry) }}">{{ entry.name }}</a></li>
           {%- endfor ~%}
           {#- language switcher ~#}
           {%- if page.translations|length >= 1 ~%}
@@ -244,6 +251,7 @@
         {#- theme switcher ~#}
         {#-<div class="inline">{{- include('partials/toggle-switch-dark.html.twig') ~}}</div>~#}
       </div>
+      {%- cache cache_key('footer') ~%}
       <div class="container mx-auto mt-6 pt-6 border-t border-slate-200 dark:bg-black">
         {#- copyright ~#}
         <ul class="text-[0px]">
@@ -283,12 +291,12 @@
           </div>
         </div>
       </div>
+      {%- endcache ~%}
       {#- GitHub Stars ~#}
       <div class="container mx-auto">
         <a class="github-button" href="{{ site.social.github.repo }}" data-show-count="true" aria-label="Star {{ site.title }} on GitHub">GitHub</a>
       </div>
     </footer>
-    {%- endcache ~%}
     {%- block footer_scripts ~%}
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
     <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>

@@ -1,11 +1,12 @@
 ---
-title: How to optimize images in Markdown?
+title: Optimize images in Markdown
+description: Optimize Markdown images in Cecil with responsive sizes, formats, and lazy loading.
 date: 2025-06-01
 updated: 2025-06-02
 ---
 One of the most effective ways to improve the performance of your website is to optimize images.
 
-Cecil can manages the following optimizations for images in Markdown, automatically:
+Cecil can manage the following optimizations for images in Markdown, automatically:
 
 1. **Dimensions**: Images dimensions are set to ensure proper layout and prevent layout shifts
 2. **Compression**: The image is compressed to reduce file size without significant loss of quality

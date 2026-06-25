@@ -73,39 +73,46 @@ blocks:
       image: images/cecil-seo-fr.png
       shadow: true
       visible: true
-    - id: the-butler
-      title: Un blog prêt à l’emploi
-      description: "The Butler est un blog de démarrage prêt à l’emploi, propulsé par Cecil."
-      path: https://the-butler.cecil.app
+    #- id: the-butler
+    #  title: Un blog prêt à l’emploi
+    #  description: "The Butler est un blog de démarrage prêt à l’emploi, propulsé par Cecil."
+    #  path: https://the-butler.cecil.app
+    #  image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
+    #  shadow: false
+    #  webp: true
+    #  visible: true
+    #- id: statidocs
+    #  title: Créez rapidement un site de documentation
+    #  description: "Statidocs est un puissant starter de documentation créé via Cecil."
+    #  path: https://statidocs.cecil.app
+    #  image: images/statidocs.png
+    #  visible: true
+    #- id: links
+    #  title: Restez propriétaire de vos liens
+    #  description: "Links est une alternative open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
+    #  path: https://links.cecil.app
+    #  image: images/cecil-links.png
+    #  shadow: false
+    #  visible: true
+    #- id: staticast
+    #  title: Diffuser son podcast simplement
+    #  description: "Staticast est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
+    #  path: https://staticast.cecil.app
+    #  image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
+    #  shadow: false
+    #  visible: true
+    #- id: photo-stream
+    #  title: Flux de photos auto-hébergé
+    #  description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
+    #  path: https://photo-stream.cecil.app
+    #  image: images/photo-stream.png
+    #  shadow: false
+    #  visible: true
+    - id: kits-de-demarrage
+      title: Kits de démarrage
+      description: "Cecil fournit des kits de démarrage prêts à l'emploi pour vous aider à créer votre site Web rapidement."
+      path: fr/kits-de-demarrage/
       image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
-      shadow: false
-      webp: true
-      visible: true
-    - id: statidocs
-      title: Créez rapidement un site de documentation
-      description: "Statidocs est un puissant starter de documentation créé via Cecil."
-      path: https://statidocs.cecil.app
-      image: images/statidocs.png
-      visible: true
-    - id: links
-      title: Restez propriétaire de vos liens
-      description: "Links est une alternative open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
-      path: https://links.cecil.app
-      image: images/cecil-links.png
-      shadow: false
-      visible: true
-    - id: staticast
-      title: Diffuser son podcast simplement
-      description: "Staticast est une application Web progressive prête à l’emploi permettant de publier votre podcast, avec un flux RSS prêt pour les plateformes de syndication et un CMS convivial."
-      path: https://staticast.cecil.app
-      image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
-      shadow: false
-      visible: true
-    - id: photo-stream
-      title: Flux de photos auto-hébergé
-      description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
-      path: https://photo-stream.cecil.app
-      image: images/photo-stream.png
       shadow: false
       visible: true
   sponsors:

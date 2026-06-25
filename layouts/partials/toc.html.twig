@@ -1,7 +1,9 @@
             {#- table of contents ~#}
+            {%- if page.body|toc(format: 'json', selectors: ['h2', 'h3'])|json_decode|length > 0 ~%}
             <div class="mb-2">
               <strong>{% trans %}What's on this page{% endtrans %}</strong>
             </div>
             <div id="table-of-contents" class="toc">
-              {{- page.body|toc(selectors=['h2']) ~}}
+              {{- page.body|toc(selectors: ['h2', 'h3']) ~}}
             </div>
+            {%- endif ~%}

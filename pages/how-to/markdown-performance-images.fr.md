@@ -1,5 +1,6 @@
 ---
-title: Comment optimiser les images dans Markdown ?
+title: Optimiser les images dans Markdown
+description: Optimiser les images Markdown dans Cecil avec tailles responsives, formats et chargement différé.
 path: comment-faire/markdown-performance-images
 date: 2025-07-25
 ---
@@ -11,7 +12,7 @@ Cecil gère automatiquement les optimisations suivantes pour les images Markdown
 2. **Compression** : L'image est compressée pour réduire la taille du fichier sans perte significative de qualité.
 3. **Formats d'image** : Cecil génère les formats AVIF et WebP pour l'image.
 4. **Images responsives** : Cecil génère deux tailles d'image différentes (selon la configuration) pour s'adapter à la taille des différents appareils.
-5. **Chargement différé** : L'image est configurée pour se charger différemment, c'est-à-dire uniquement lorsqu'elle apparaît dans la fenêtre d'affichage.
+5. **Chargement différé** : L'image est configurée pour se charger de manière différée, c'est-à-dire uniquement lorsqu'elle apparaît dans la fenêtre d'affichage.
 6. **Décodage** : Le décodage de l'image est configuré pour être asynchrone, ce qui améliore le temps de chargement initial de la page.
 7. **Espace réservé** : Un espace réservé de couleur est utilisé pendant le chargement de l'image.
 

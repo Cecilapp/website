@@ -1,7 +1,7 @@
 <!--
 description: "Configure your website."
 date: 2021-05-07
-updated: 2025-12-09
+updated: 2026-06-13
 -->
 # Configuration
 
@@ -80,7 +80,7 @@ description: "<description>"
 
 Menus are used to create [navigation links in templates](3-Templates.md#site-menus).
 
-A menu is made up of a unique ID and entry’s properties (name, URL, weight).
+A menu is made up of a unique ID and entry properties (name, URL, weight).
 
 ```yaml
 menus:
@@ -159,8 +159,10 @@ taxonomies:
   tags: tag
 ```
 
+Then you can use those vocabularies in your content’s [front matter](2-Content.md#taxonomy).
+
 :::warning
-Since ++version 8.37.0++, default vocabularies `category` and `tag` have been removed.
+Since ++version 8.37.0++, default vocabularies `category` and `tag` have been removed. You must define them in the configuration file if you want to use them.
 :::
 
 :::tip
@@ -260,14 +262,14 @@ language: en
 languages:
   - code: en
     name: English
-    locale: en_EN
+    locale: en_US
   - code: fr
     name: Français
     locale: fr_FR
 ```
 
 :::info
-There is a [locales code list](configuration/locale-codes.md) if needed.
+A [locale code list](configuration/locale-codes.md) is available if needed.
 :::
 
 #### Localize
@@ -296,23 +298,9 @@ If an option is not available in the current language (e.g.: `fr`) it fallback t
 
 ### metatags
 
-_metatags_ are SEO and social helpers that can be automatically  injected in the `<head>`, with the _partial_ template [`metatags.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/metatags.html.twig).
+_metatags_ are SEO and social helpers that can be automatically injected in the `<head>`, with the template [`partials/metatags.html.twig`](https://github.com/Cecilapp/Cecil/blob/master/resources/layouts/partials/metatags.html.twig).
 
 *[SEO]: Search Engine Optimization
-
-_Example:_
-
-```twig
-<html lang="{{ site.language }}">
-  <head>
-    <meta charset="utf-8">
-    {{ include('partials/metatags.html.twig') }}
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-```
 
 This template adds the following meta tags:
 
@@ -334,7 +322,7 @@ This template adds the following meta tags:
 
 #### metatags options
 
-Cecil uses page’s front matter to feed meta tags, and fallbacks to site options if needed.
+Cecil uses page front matter to feed meta tags, and falls back to site options when needed.
 
 ```yaml
 title: "Page/Site title"              # used by title meta
@@ -407,7 +395,7 @@ Enables the _debug mode_, used to display debug information like very verbose lo
 debug: true
 ```
 
-There is 2 others way to enable the _debug mode_:
+There are two other ways to enable _debug mode_:
 
 1. Run a command with the `-vvv` option
 2. Set the `CECIL_DEBUG` environment variable to `true`
@@ -441,6 +429,16 @@ Directories, paths and files name to exclude (accepts globs, strings and regexes
 ```yaml
 pages:
   exclude: ['vendor', 'node_modules', '*.scss', '/\.bck$/']
+```
+
+### pages.prefix.separator
+
+List of characters used as separator between a filename prefix (`date` or `weight`) and the slug.
+
+```yaml
+pages:
+  prefix:
+    separator: ['-', '_']
 ```
 
 ### pages.sortby
@@ -517,7 +515,7 @@ languages:
 
 ### pages.frontmatter
 
-Pages’ front matter format (`yaml` by default, also accepts `ini`, `toml` and `json`).
+Page front matter format (`yaml` by default, also accepts `ini`, `toml` and `json`).
 
 ```yaml
 pages:
@@ -526,7 +524,7 @@ pages:
 
 ### pages.body
 
-Pages’ body options.
+Page body options.
 
 :::info
 To know how those options impacts your content see _[Content > Markdown](2-Content.md#markdown)_ documentation.
@@ -562,12 +560,13 @@ pages:
     images:
       formats: []       # adds alternative image formats as `source` (e.g. `[avif, webp]`, empty array by default)
       resize: 0         # resizes all images to <width> (in pixels, `0` to disable)
-      responsive: false # adds responsives images them to the `srcset` attribute (`false` by default)
+      responsive: false # adds responsive image variants to the `srcset` attribute (`false` by default)
       lazy: true        # adds `loading="lazy"` attribute (`true` by default)
       decoding: true    # adds `decoding="async"` attribute (`true` by default)
       caption: false    # puts the image in a <figure> element and adds a <figcaption> containing the title (`false` by default)
-      placeholder: ''   # fill <img> background before loading ('color' or 'lqip', empty by default)
-      class: ''         # put default class to each image (empty by default)
+      placeholder: ''   # fills the <img> background before loading ('color' or 'lqip', empty by default)
+      class: ''         # sets a default class on each image (empty by default)
+      dark_suffix: ''   # suffix of the dark variant image (e.g. `.dark`), disabled by default
       remote:           # remote image handling (set to `false` to disable)
         fallback:         # path to the fallback image, stored in assets dir (empty by default)
 ```
@@ -582,6 +581,10 @@ Global options, like responsives images widths and sizes, are configurable in th
 
 :::info
 Remote images are downloaded and converted into _Assets_ to be manipulated. You can disable this behavior by setting the option `pages.body.images.remote.enabled` to `false`.
+:::
+
+:::tip
+When `dark_suffix` is set (e.g. `dark_suffix: .dark`), Cecil automatically looks for a dark variant of each image (e.g. `photo.dark.jpg` alongside `photo.jpg`). If found, the image is wrapped in a `<picture>` element with a `<source media="(prefers-color-scheme: dark)">` for automatic light/dark theme switching. Works in combination with `formats` and `responsive`.
 :::
 
 #### pages.body.links
@@ -693,8 +696,10 @@ Each one can be:
 3. excluded from localization: `multilingual: false`
 
 :::tip
-Since version 8.68.0 you can override the default `robots.txt` page by creating a page with the same `path`:  
+Since version 8.68.0 you can override the default `robots.txt` page by creating a page with the same `path`:
+
 _pages/robots.md_
+
 ```yaml
 ---
 layout: robots
@@ -703,6 +708,7 @@ output: txt
 User-agent: AI-bot
 Disallow: /
 ```
+
 :::
 
 ### pages.generators
@@ -995,6 +1001,25 @@ layouts:
   dir: layouts
 ```
 
+### layouts.autoescape
+
+Overrides Twig `autoescape` option (`false` by default).
+
+If set to `null`, Cecil uses an extension-based strategy:
+
+- `*.js.twig` -> `js`
+- `*.css.twig` -> `css`
+- `*.html.twig` and `*.twig` -> `html`
+- any other extension -> `false`
+
+```yaml
+layouts:
+  autoescape: false  # disables automatic escaping (default) 
+  #autoescape: null  # use Cecil automatic strategy by template filename extension 
+  #autoescape: html
+  #autoescape: js
+```
+
 ### layouts.images
 
 Images handling options.
@@ -1004,6 +1029,7 @@ layouts:
   images:
     formats: []       # used by `html` function: adds alternatives image formats as `source` (e.g. `[avif, webp]`, empty array by default)
     responsive: false # used by `html` function: adds responsive images ('width' or 'density', `false` by default)
+    dark_suffix: ''   # suffix of the dark variant image (e.g. `.dark`), disabled by default
 ```
 
 ### layouts.translations
@@ -1058,7 +1084,7 @@ output:
       exclude: [<variable>]   # don’t apply this format to pages identified by listed variables, e.g.: `[redirect, paginated]` (optional)
 ```
 
-Those formats are used in the [`output.pagetypeformats`](#output-pagetypeformats) configuration and in the [`output` page’s variable](2-Content.md#output).
+Those formats are used in the [`output.pagetypeformats`](#output-pagetypeformats) configuration and in the [`output` page variable](2-Content.md#output).
 
 #### Default formats
 
@@ -1296,12 +1322,24 @@ It is also possible to enable this option through CLI when using the "build" and
 
 The configuration can be overridden through [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
 
+At startup, Cecil also attempts to load a `.env` file from the current site path (the current working directory, or the `<path>` argument if provided).
+
+- If the `.env` file does not exist, Cecil continues normally.
+- Variables already defined by the shell/system are preserved.
+
 Each environment variable name must be prefixed with `CECIL_` and the configuration key must be set in uppercase.
 
 For example, the following command set the website’s `baseurl`:
 
 ```bash
 export CECIL_BASEURL="https://example.com/"
+```
+
+You can store the same value in a `.env` file at your project root:
+
+```dotenv
+CECIL_BASEURL="https://example.com/"
+CECIL_TITLE="My Cecil site"
 ```
 
 ### CLI option
