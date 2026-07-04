@@ -186,10 +186,10 @@
               {{ page.content }}
               {%- endblock content -%}
               <div class="flex flex-col md:flex-row md:gap-2.5">
-                {#- LLM -#}
-                {%- if 'md' in page.output -%}
+                {#- view as Markdown -#}
+                {%- if 'markdown' in page.output -%}
                 <div class="mt-4">
-                  {%- x:button with {href: url(page, {format: 'md', canonical: true}), class: 'btn-sm'} -%}
+                  {%- x:button with {href: url(page, {format: 'markdown', canonical: true}), class: 'btn-sm'} -%}
                     {{- octicons.svg('markdown', 16) }}<div>{% trans %}View as Markdown{% endtrans %}</div>
                   {%- endx ~%}
                 </div>
