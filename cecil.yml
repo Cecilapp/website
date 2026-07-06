@@ -112,6 +112,7 @@ layouts:
   images:
     formats: [avif, webp]
     responsive: true
+    dark_suffix: .dark
 output:
   formats:
     - name: phar
