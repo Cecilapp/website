@@ -313,6 +313,15 @@
           scrollSmoothOffset: -75
         });
       });
+      // Add controls on mouseover for all videos
+      function videos() {
+        for (const video of document.querySelectorAll('video')) {
+          video.controls = false
+          video.addEventListener('mouseover', () => { video.controls = 'controls' })
+          video.addEventListener('mouseout', () => { video.controls = false })
+        }
+      }
+      window.addEventListener('load', videos, false)
     {% endapply %}</script>
     {%- include('partials/back-to-top.html.twig') ~%}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
