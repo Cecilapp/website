@@ -301,6 +301,7 @@
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
     <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>
     <script>{% apply minify_js ~%}
+      // Load ToC only on desktop
       document.addEventListener('DOMContentLoaded', () => {
         tocbot.init({
           tocSelector: '.toc',
