@@ -6,8 +6,7 @@
                   <source data-src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
                 </video>
                 <script>{% apply minify_js ~%}
-                  // Load video only on md+ screens
-                  loadVideo();
+                  // Load video only on desktop
                   function loadVideo() {
                     if (window.matchMedia("(min-width: 768px)").matches) {
                       console.log('Loading video');
@@ -16,6 +15,7 @@
                       document.getElementById('video-demo').load();
                     }
                   }
+                  loadVideo();
                   window.addEventListener('resize', loadVideo, false);
                 {% endapply %}</script>
                 <noscript>
