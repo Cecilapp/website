@@ -55,6 +55,7 @@ languages:
 metatags:
   jsonld: true
   articles: news
+  dc: true
 menus:
   main:
     - id: index
