@@ -1,0 +1,51 @@
+{%- set section, balise = 'documentation', 'h3' -%}
+{%- macro dataset(objectID, page, title, description = '', content, date, href, experimental) ~%}
+  {
+    "objectID": "{{ objectID }}",
+    "page": "{{ page }}",
+    "title": "{{ title }}",
+    "description": {{ description }},
+    "content": {{ content }},
+    "date": "{{ date }}",
+    "href": "{{ href }}",
+    "experimental": "{{ experimental }}"
+  }
+{%- endmacro -%}
+[
+{%- set is_first = true -%}
+{%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
+  {%- set sections = p.content|preg_split('/<' ~ balise ~ '[^>]*>/') -%}
+  {%- if sections|length > 0 -%}
+    {%- for section in sections -%}
+      {%- if loop.index0 > 0 -%}
+        {%- set section_content = sections[loop.index0]|split('</' ~ balise ~ '>') -%}
+        {%- set title = section_content[0]|striptags|trim -%}
+        {%- set anchor = title|lower|replace({':': '', '’': '', ' ': '-', '_': '-', '.': '-'}) -%}
+        {%- set anchor = anchor|replace({'--': '-'}) -%}
+        {%- set section_html = section_content[1]|default('') -%}
+        {%- set content = section_html|striptags|trim -%}
+        {%- set description = '' -%}
+        {%- if section_html|trim starts with '<p>' -%}
+        {%- set description = section_html|trim|split('</p>')|first|striptags|trim -%}
+        {%- endif -%}
+        {%- set experimental = 0 -%}
+        {% if 'Experimental' in content %}
+        {%- set experimental = 1 -%}
+        {% endif %}
+        {%- if not is_first %},{% endif -%}
+        {{- _self.dataset(
+          p.id ~ '#' ~ anchor,
+          p.title,
+          title,
+          description|json_encode,
+          content|json_encode,
+          p.date|date('c'),
+          url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor,
+          experimental|default(0)
+        ) -}}
+        {%- set is_first = false -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor ~%}
+]
