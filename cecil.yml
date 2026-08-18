@@ -53,9 +53,9 @@ languages:
           - section: news
             path: actualites/:year/:month/:day/:slug
 metatags:
-  jsonld: true
   articles: news
   dc: true
+  jsonld: true
 menus:
   main:
     - id: index
