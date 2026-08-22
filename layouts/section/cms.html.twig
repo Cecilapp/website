@@ -1,0 +1,11 @@
+{% extends '_default/list.html.twig' %}
+
+{% block main %}
+          {%- for p in pages -%}
+          <div class="page">
+            <h2 class="page-title">
+              <a href="{{ url(p) }}">{{ p.title|e }}</a>
+            </h2>
+          </div>
+          {%- endfor -%}
+{% endblock main %}

@@ -1,0 +1,7 @@
+            {#- themes navigation ~#}
+            <nav class="flex mb-2 space-x-2 md:space-x-4">
+            {%- for entry in site.menus.themes|sort_by_weight ~%}
+              <a class="no-underline" href="{{ url(entry.url) }}">{{ entry.name }}</a>
+              {%- if not loop.last %}<span>|</span>{% endif ~%}
+            {%- endfor ~%}
+            </nav>
