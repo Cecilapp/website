@@ -1,0 +1,21 @@
+{
+  "require": {
+    "cecil/theme-netlify": "^2.2",
+    "cecil/theme-pwa": "^2.21",
+    "cecil/theme-octicons": "^1.1",
+    "aligny/tailwind-builder": "^1.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  },
+  "scripts": {
+    "tailwind:build": [
+      "@putenv CECIL_ENV=production",
+      "vendor/bin/tailwind-builder assets/css/tailwind.css -o assets/styles.css --minify"
+    ],
+    "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
+    "serve": "cecil serve --config=config/dev.yml"
+  }
+}
