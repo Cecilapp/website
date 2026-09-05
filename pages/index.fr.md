@@ -116,6 +116,11 @@ blocks:
       shadow: false
       visible: true
   sponsors:
+    - title: Aperture Lab
+      logo: /images/logos/aperture-lab.png
+      logo_dark: /images/logos/aperture-lab.png
+      url: https://aperturelab.fr
+      visible: true
     - title: studio cecillie
       logo: /images/logos/cecillie.png
       logo_dark: /images/logos/cecillie-dark.png

@@ -43,3 +43,9 @@ php cecil.phar serve -v --config=config/dev.yml
 vendor/bin/tailwind-builder assets/css/tailwind.css -o assets/styles.css --minify
 php cecil.phar build
 ```
+
+### Build CSS
+
+```bash
+composer run css:build
+```

@@ -134,8 +134,8 @@ php cecil.phar serve</pre>
           {%- set sponsor_logo_dark = asset(block.logo_dark)|resize(250) ~%}
           <div class="grow md:h-auto text-center hover:scale-125 ease-in-out duration-700">
             <a href="{{ block.url }}" title="{{ block.title }}" aria-label="{{ block.title }}">
-              <img class="inline-block dark:hidden" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
-              <img class="hidden dark:inline-block" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="inline-block dark:hidden max-w-40" src="{{ url(sponsor_logo) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
+              <img class="hidden dark:inline-block max-w-40" src="{{ url(sponsor_logo_dark) }}" alt="{{ block.title }}" width="{{ sponsor_logo.width }}" height="{{ sponsor_logo.height }}" loading="lazy">
             </a>
           </div>
         {%- endfor ~%}
