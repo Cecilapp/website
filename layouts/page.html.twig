@@ -89,7 +89,7 @@
         {#- main menu ~#}
         <nav class="hidden lg:flex items-center mt-0 pt-0 space-x-6 overflow-x-auto truncate mini-scrollbar">
           {%- for entry in site.menus.main|sort_by_weight ~%}
-          <a class="w-max" href="{{ url(entry) }}" data-weight="{{ entry.weight }}" title="{{ entry.name }}">{{ entry.name }}</a>
+          <a class="w-max" href="{{ url(entry) }}" title="{{ entry.name }}" data-id="{{ entry.id }}" data-weight="{{ entry.weight }}">{{ entry.name }}</a>
           {%- endfor -%}
         </nav>
         <div class="grow"></div>
