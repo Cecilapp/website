@@ -44,7 +44,7 @@ languages:
             weight: 20
         footer:
           - id: github
-            name: Open source
+            name: GitHub
             url: https://github.com/Cecilapp/
       algolia:
         enabled: false
@@ -71,7 +71,7 @@ menus:
       enabled: false
   footer:
     - id: github
-      name: Open source
+      name: GitHub
       url: https://github.com/Cecilapp/
 pages:
   pagination: false
