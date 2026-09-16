@@ -175,8 +175,20 @@ repo:
 cloudflareinsights: 601e6965b5bc43b782058112c5312906
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 
+libs:
+  highlight:
+    version: 11.9.0
+    styles: atom-one-dark
+    languages: twig
+  anchor:
+    version: 5.0.0
+  tocbot:
+    version: v4.34.0
+  mermaid:
+    version: 11
+
 search:
-  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
+  engine: algolia # 'algolia' (hosted) or 'flexsearch' (client side)
 
 algolia:
   enabled: true
@@ -192,17 +204,4 @@ flexsearch:
   version: '0.8.212'
   limit: 8
 
-libs:
-  highlight:
-    version: 11.9.0
-    styles: atom-one-dark
-    languages: twig
-  anchor:
-    version: 5.0.0
-  tocbot:
-    version: v4.34.0
-
 snow: false
-
-mermaid:
-  version: 11

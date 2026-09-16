@@ -11,7 +11,7 @@
     {%- block footer_scripts ~%}
     {{- parent() ~}}
     {#- mermaid ~#}
-    {{- html(asset('https://cdn.jsdelivr.net/npm/mermaid@' ~ site.mermaid.version ~ '/dist/mermaid.min.js', {minify: false}), {id: 'mermaid', defer: 'true'}) ~}}
+    {{- html(asset('https://cdn.jsdelivr.net/npm/mermaid@' ~ site.libs.mermaid.version ~ '/dist/mermaid.min.js', {minify: false}), {id: 'mermaid', defer: 'true'}) ~}}
     <script>{% apply minify_js ~%}
       mermaid.addEventListener('load', function () {
         const sheet = new CSSStyleSheet();
