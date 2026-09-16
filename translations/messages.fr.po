@@ -117,7 +117,7 @@ msgstr "Accueil"
 msgid "%site_title% logo"
 msgstr "Logo de %site_title%"
 
-#: partials/search-box.html.twig:4
+#: partials/search-algolia.html.twig:3
 msgid "Search the Docs [Alt+S]"
 msgstr "Rechercher dans la doc [Alt+S]"
 
@@ -160,6 +160,46 @@ msgstr "Code source"
 #: themes.html.twig:60
 msgid "Install"
 msgstr "Installer"
+
+#: partials/search-flexsearch.html.twig
+msgid "Search the Docs"
+msgstr "Rechercher dans la doc"
+
+#: partials/search-flexsearch.html.twig
+msgid "Close"
+msgstr "Fermer"
+
+#: partials/search-flexsearch.html.twig
+msgid "to select"
+msgstr "pour sélectionner"
+
+#: partials/search-flexsearch.html.twig
+msgid "to navigate"
+msgstr "pour naviguer"
+
+#: partials/search-flexsearch.html.twig
+msgid "to close"
+msgstr "pour fermer"
+
+#: partials/search-flexsearch.html.twig
+msgid "Search by"
+msgstr "Recherche par"
+
+#: partials/search-flexsearch.html.twig
+msgid "Type to start searching."
+msgstr "Saisissez votre recherche."
+
+#: partials/search-flexsearch.html.twig
+msgid "Loading the search index…"
+msgstr "Chargement de l’index de recherche…"
+
+#: partials/search-flexsearch.html.twig
+msgid "No results found."
+msgstr "Aucun résultat."
+
+#: partials/search-flexsearch.html.twig
+msgid "Search is unavailable."
+msgstr "La recherche est indisponible."
 
 #~ msgid "Learn more"
 #~ msgstr "En savoir plus"

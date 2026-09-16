@@ -124,11 +124,15 @@ output:
       mediatype: 'application/json'
       filename: 'algolia'
       extension: 'json'
+    - name: flexsearch
+      mediatype: 'application/json'
+      filename: 'search'
+      extension: 'json'
     - name: bash
       mediatype: 'text/plain'
       extension: 'sh'
   pagetypeformats:
-    homepage: ['html', 'atom', 'algolia', 'markdown', 'llms']
+    homepage: ['html', 'atom', 'algolia', 'flexsearch', 'markdown', 'llms']
     section: ['html', 'atom', 'jsonfeed', 'markdown']
     page: ['html', 'markdown']
 theme:
@@ -171,6 +175,9 @@ repo:
 cloudflareinsights: 601e6965b5bc43b782058112c5312906
 gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
 
+search:
+  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
+
 algolia:
   enabled: true
   version: '@4'
@@ -179,6 +186,11 @@ algolia:
   application_id: 'PVTO81KCEC'
   search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
   index: 'documentation'
+
+flexsearch:
+  enabled: true
+  version: '0.8.212'
+  limit: 8
 
 libs:
   highlight:

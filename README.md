@@ -49,3 +49,32 @@ php cecil.phar build
 ```bash
 composer run css:build
 ```
+
+### Build translations
+
+French strings live in `translations/messages.fr.po` (edited with Poedit). The
+compiled `.mo` can be regenerated without gettext tools:
+
+```bash
+composer run i18n:build
+```
+
+## Search
+
+The documentation search engine is selected in `cecil.yml`:
+
+```yaml
+search:
+  engine: algolia # 'algolia' (hosted) or 'flexsearch' (client side)
+```
+
+|           | `algolia`                                                                                              | `flexsearch`                                                                                                     |
+| --------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Index     | `/algolia.json`, pushed by the `netlify-plugin-refresh-algolia` Netlify plugin                         | `/search.json`, served as a static file                                                                          |
+| Query     | Algolia API (network required)                                                                         | in the browser, works offline                                                                                    |
+| UI        | inline autocomplete ([`partials/search-algolia.html.twig`](layouts/partials/search-algolia.html.twig)) | `Ctrl`/`⌘` + `K` modal ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)) |
+| Languages | English only (`algolia.enabled: false` in the French config)                                           | English and French                                                                                               |
+
+Both indexes are generated at build time from the documentation sections (`<h3>` blocks) by [`list.algolia.twig`](layouts/list.algolia.twig) and [`list.flexsearch.twig`](layouts/list.flexsearch.twig).
+
+When switching to `flexsearch`, the `netlify-plugin-refresh-algolia` plugin and the `algolia` output format can be removed from `netlify.toml` and `cecil.yml`.
