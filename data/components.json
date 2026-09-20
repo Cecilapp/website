@@ -1,0 +1,122 @@
+[
+  {
+    "name": "theme-pwa",
+    "full_name": "Cecilapp/theme-pwa",
+    "description": "The PWA component theme for Cecil provides helpers to implement a Web manifest and a service worker to turn a website into a Progressive Web App.",
+    "github": "https://github.com/Cecilapp/theme-pwa",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-07-05T14:35:56Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "pwa",
+      "service-worker"
+    ]
+  },
+  {
+    "name": "theme-fontawesome",
+    "full_name": "Cecilapp/theme-fontawesome",
+    "description": "The Font Awesome component theme for Cecil provides helpers to use Font Awesome icons.",
+    "github": "https://github.com/Cecilapp/theme-fontawesome",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-02-16T08:50:20Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "font",
+      "icons"
+    ]
+  },
+  {
+    "name": "theme-podcast",
+    "full_name": "Cecilapp/theme-podcast",
+    "description": "The Podcast component theme for Cecil provide templates to publish an audio show on the web.",
+    "github": "https://github.com/Cecilapp/theme-podcast",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-02-03T09:58:59Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "podcast"
+    ]
+  },
+  {
+    "name": "theme-octicons",
+    "full_name": "Cecilapp/theme-octicons",
+    "description": "The Octicons component theme provides a Twig macro to use Primer Octicons icons in Cecil templates.",
+    "github": "https://github.com/Cecilapp/theme-octicons",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2025-12-03T10:38:39Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "icons"
+    ]
+  },
+  {
+    "name": "theme-redirects",
+    "full_name": "Cecilapp/theme-redirects",
+    "description": "The Redirects component theme for Cecil provides support of _redirects file generation.",
+    "github": "https://github.com/Cecilapp/theme-redirects",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2025-09-16T19:16:52Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component"
+    ]
+  },
+  {
+    "name": "theme-headers",
+    "full_name": "Cecilapp/theme-headers",
+    "description": "The Headers component theme for Cecil provides support of _headers file generation.",
+    "github": "https://github.com/Cecilapp/theme-headers",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2025-09-16T19:14:53Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component"
+    ]
+  },
+  {
+    "name": "theme-netlify",
+    "full_name": "Cecilapp/theme-netlify",
+    "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
+    "github": "https://github.com/Cecilapp/theme-netlify",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2025-09-16T13:22:56Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "netlify"
+    ]
+  },
+  {
+    "name": "theme-netlifycms",
+    "full_name": "Cecilapp/theme-netlifycms",
+    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
+    "github": "https://github.com/Cecilapp/theme-netlifycms",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2024-03-12T10:56:47Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "netlify"
+    ]
+  }
+]

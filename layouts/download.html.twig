@@ -1,0 +1,27 @@
+{% import 'macros/octicons.twig' as octicons %}
+{% extends 'page.html.twig' %}
+
+            {%- block head_content ~%}
+            {#- buttons ~#}
+            <div class="max-w-(--breakpoint-md) mx-auto">
+              <div class="flex flex-col sm:flex-row mb-4 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2 text-center">
+                {#- Download ~#}
+                {%- x:button with {href: url(site.release.name, {language: 'en'})} -%}
+                  {{ octicons.svg('download', 24) }}<div class="version">{% trans %}Download{% endtrans %}</div>
+                {%- endx -%}
+                {#- SHA-1 ~#}
+                {%- x:button with {id: 'sha1-button', href: url(site.release.sha1, {language: 'en'})} -%}
+                  {{ octicons.svg('file-check', 24) }}<div>{% trans %}File checksum{% endtrans %} <span class="font-normal">(SHA-1)</span></div>
+                {%- endx ~%}
+              </div>
+            </div>
+            {%- endblock ~%}
+
+              {%- block content ~%}
+              {{ page.content }}
+              {%- endblock ~%}
+
+    {% block footer_scripts %}
+    {{- parent() ~}}
+    {{- include('partials/version.js.twig', with_context: false) ~}}
+    {% endblock %}

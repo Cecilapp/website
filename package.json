@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "netlify-plugin-refresh-algolia": "^1.0"
+  },
+  "scripts": {
+    "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
+    "serve": "cecil serve --config=config/dev.yml"
+  }
+}

@@ -1,0 +1,227 @@
+{# Search box: FlexSearch (client side, DocSearch-like modal) #}
+              <div class="search-wrapper">
+                <button type="button" id="search-trigger" class="search-trigger" accesskey="s" aria-haspopup="dialog" aria-label="{% trans %}Search the Docs{% endtrans %}">
+                  <svg class="search-trigger-icon" viewbox="654 -372 1664 1664" width="20" height="20" aria-hidden="true">
+                    <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
+                  </svg>
+                  <span class="search-trigger-label">{% trans %}Search the Docs{% endtrans %}</span>
+                  <span class="search-trigger-keys"><kbd class="search-kbd" id="search-modifier">Ctrl</kbd><kbd class="search-kbd">K</kbd></span>
+                </button>
+              </div>
+              <dialog id="search-dialog" class="search-dialog" aria-label="{% trans %}Search the Docs{% endtrans %}">
+                <div class="search-panel">
+                  <form class="search-field" role="search" onsubmit="return false;">
+                    <svg class="search-field-icon" viewbox="654 -372 1664 1664" width="20" height="20" aria-hidden="true">
+                      <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
+                    </svg>
+                    <input type="search" id="search-input" class="search-field-input" placeholder="{% trans %}Search the Docs{% endtrans %}"
+                      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"
+                      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+                    <button type="button" id="search-close" class="search-field-close">{% trans %}Close{% endtrans %}</button>
+                  </form>
+                  <div class="search-body">
+                    <p class="search-status" id="search-status"></p>
+                    <ul class="search-results" id="search-results" role="listbox" aria-label="{% trans %}Search the Docs{% endtrans %}"></ul>
+                  </div>
+                  <footer class="search-panel-footer">
+                    <ul class="search-hints">
+                      <li><kbd class="search-kbd">&crarr;</kbd> {% trans %}to select{% endtrans %}</li>
+                      <li><kbd class="search-kbd">&uarr;</kbd><kbd class="search-kbd">&darr;</kbd> {% trans %}to navigate{% endtrans %}</li>
+                      <li><kbd class="search-kbd">esc</kbd> {% trans %}to close{% endtrans %}</li>
+                    </ul>
+                    <span class="search-credit">
+                      {% trans %}Search by{% endtrans %} <a href="https://github.com/nextapps-de/flexsearch" target="_blank" rel="noopener" title="FlexSearch - Next-Generation full-text search library">FlexSearch</a>
+                    </span>
+                  </footer>
+                </div>
+              </dialog>
+              <script>{% apply minify_js ~%}
+                (function () {
+                  var trigger = document.getElementById('search-trigger');
+                  var dialog = document.getElementById('search-dialog');
+                  var input = document.getElementById('search-input');
+                  var results = document.getElementById('search-results');
+                  var status = document.getElementById('search-status');
+                  var close = document.getElementById('search-close');
+                  if (!trigger || !dialog || !dialog.showModal) { return; }
+
+                  var LIB = '{{ asset('https://cdn.jsdelivr.net/npm/flexsearch@%s/dist/flexsearch.bundle.min.js'|format(site.flexsearch.version|default('0.8.212')), {minify: false, ignore_missing: true}) }}';
+                  var INDEX = '{{ url(site.page('index'), {format: 'flexsearch'}) }}';
+                  var BASE = '{{ url() }}';
+                  var LIMIT = {{ site.flexsearch.limit|default(8) }};
+                  var I18N = {
+                    prompt: '{% trans %}Type to start searching.{% endtrans %}',
+                    loading: '{% trans %}Loading the search index…{% endtrans %}',
+                    empty: '{% trans %}No results found.{% endtrans %}',
+                    error: '{% trans %}Search is unavailable.{% endtrans %}'
+                  };
+
+                  var index = null;
+                  var loading = null;
+                  var hits = [];
+                  var cursor = -1;
+                  var timer = null;
+
+                  // macOS shows the ⌘ key instead of Ctrl
+                  if (navigator.platform && navigator.platform.indexOf('Mac') === 0) {
+                    document.getElementById('search-modifier').textContent = '⌘';
+                  }
+
+                  // the dialog must live outside of the prose container to not inherit its styles
+                  document.body.appendChild(dialog);
+
+                  function script(src) {
+                    return new Promise(function (resolve, reject) {
+                      var el = document.createElement('script');
+                      el.src = src;
+                      el.onload = resolve;
+                      el.onerror = function () { reject(new Error('Unable to load ' + src)); };
+                      document.head.appendChild(el);
+                    });
+                  }
+
+                  function load() {
+                    if (loading) { return loading; }
+                    setStatus(I18N.loading);
+                    loading = Promise.all([
+                      window.FlexSearch ? Promise.resolve() : script(LIB),
+                      fetch(INDEX).then(function (response) {
+                        if (!response.ok) { throw new Error('Unable to load ' + INDEX); }
+                        return response.json();
+                      })
+                    ]).then(function (values) {
+                      var docs = values[1];
+                      var idx = new FlexSearch.Document({
+                        tokenize: 'forward',
+                        encoder: FlexSearch.Charset.Normalize,
+                        document: {
+                          id: 'id',
+                          store: true,
+                          index: [
+                            { field: 'title', resolution: 9 },
+                            { field: 'page', resolution: 7 },
+                            { field: 'description', resolution: 5 },
+                            { field: 'content', resolution: 3 }
+                          ]
+                        }
+                      });
+                      for (var i = 0; i < docs.length; i++) { idx.add(docs[i]); }
+                      index = idx;
+                      search();
+                    }).catch(function (error) {
+                      console.error(error);
+                      setStatus(I18N.error);
+                    });
+                    return loading;
+                  }
+
+                  function setStatus(text) {
+                    status.textContent = text || '';
+                    status.hidden = !text;
+                  }
+
+                  function snippet(hit) {
+                    var highlight = hit.highlight || {};
+                    var text = highlight.description || highlight.content || hit.doc.description || hit.doc.content || '';
+                    return text.length > 180 && text.indexOf('<mark>') === -1 ? text.slice(0, 180) + '…' : text;
+                  }
+
+                  function query(text, suggest) {
+                    return index.search({
+                      query: text,
+                      limit: LIMIT,
+                      enrich: true,
+                      merge: true,
+                      suggest: suggest,
+                      highlight: { template: '<mark>$1</mark>', boundary: 160, merge: true, clip: false }
+                    });
+                  }
+
+                  function search() {
+                    var text = input.value.trim();
+                    results.innerHTML = '';
+                    cursor = -1;
+                    hits = [];
+                    input.setAttribute('aria-expanded', 'false');
+                    if (!text) { setStatus(I18N.prompt); return; }
+                    if (!index) { load(); return; }
+                    // strict first, then fall back to fuzzy matching when nothing matches
+                    hits = query(text, false);
+                    if (!hits.length) { hits = query(text, true); }
+                    if (!hits.length) { setStatus(I18N.empty); return; }
+                    setStatus(null);
+                    input.setAttribute('aria-expanded', 'true');
+                    for (var i = 0; i < hits.length; i++) { results.appendChild(item(hits[i], i)); }
+                    select(0);
+                  }
+
+                  function item(hit, i) {
+                    var li = document.createElement('li');
+                    li.className = 'search-result';
+                    li.id = 'search-result-' + i;
+                    li.setAttribute('role', 'option');
+                    var a = document.createElement('a');
+                    a.className = 'search-result-link';
+                    a.href = BASE + hit.doc.href;
+                    var text = snippet(hit);
+                    a.innerHTML = '<span class="search-result-text">'
+                      + '<span class="search-result-page">' + hit.doc.page + '</span>'
+                      + '<span class="search-result-title">' + ((hit.highlight || {}).title || hit.doc.title) + '</span>'
+                      + (text ? '<span class="search-result-snippet">' + text + '</span>' : '')
+                      + '</span>';
+                    a.addEventListener('mouseenter', function () { select(i); });
+                    li.appendChild(a);
+                    return li;
+                  }
+
+                  function select(i) {
+                    var items = results.children;
+                    if (!items.length) { return; }
+                    if (cursor > -1 && items[cursor]) { items[cursor].classList.remove('is-selected'); }
+                    cursor = (i + items.length) % items.length;
+                    items[cursor].classList.add('is-selected');
+                    input.setAttribute('aria-activedescendant', items[cursor].id);
+                    items[cursor].scrollIntoView({ block: 'nearest' });
+                  }
+
+                  function open() {
+                    load();
+                    dialog.showModal();
+                    input.value = '';
+                    setStatus(I18N.prompt);
+                    results.innerHTML = '';
+                    input.focus();
+                  }
+
+                  trigger.addEventListener('click', open);
+                  trigger.addEventListener('pointerenter', load, { once: true });
+                  close.addEventListener('click', function () { dialog.close(); });
+
+                  input.addEventListener('input', function () {
+                    clearTimeout(timer);
+                    timer = setTimeout(search, 120);
+                  });
+
+                  input.addEventListener('keydown', function (event) {
+                    if (event.key === 'ArrowDown') { event.preventDefault(); select(cursor + 1); }
+                    else if (event.key === 'ArrowUp') { event.preventDefault(); select(cursor - 1); }
+                    else if (event.key === 'Enter' && cursor > -1 && hits[cursor]) {
+                      event.preventDefault();
+                      window.location.href = BASE + hits[cursor].doc.href;
+                    }
+                  });
+
+                  // Ctrl+K / ⌘K opens the dialog from anywhere
+                  document.addEventListener('keydown', function (event) {
+                    if (event.key === 'k' && (event.metaKey || event.ctrlKey) && !dialog.open) {
+                      event.preventDefault();
+                      open();
+                    }
+                  });
+
+                  // clicking the backdrop closes the dialog
+                  dialog.addEventListener('click', function (event) {
+                    if (event.target === dialog) { dialog.close(); }
+                  });
+                })();
+              {% endapply %}</script>

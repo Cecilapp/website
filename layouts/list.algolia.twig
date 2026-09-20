@@ -1,0 +1,6 @@
+{#-
+  Algolia index, uploaded to the index queried by `partials/search-algolia.html.twig`.
+  The extraction logic is shared with the FlexSearch index, see
+  `partials/search-index.json.twig`.
+-#}
+{{- include('partials/search-index.json.twig', {id_key: 'objectID', with_date: true}, with_context: false) -}}

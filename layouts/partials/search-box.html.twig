@@ -1,0 +1,7 @@
+{#- Search box: dispatch to the configured search engine (`search.engine`) -#}
+{%- set engine = site.search.engine|default('algolia') -%}
+{%- if engine == 'flexsearch' and site.flexsearch.enabled|default(true) -%}
+{{- include('partials/search-flexsearch.html.twig') -}}
+{%- elseif engine == 'algolia' and site.algolia.enabled|default(false) -%}
+{{- include('partials/search-algolia.html.twig') -}}
+{%- endif -%}

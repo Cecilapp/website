@@ -1,0 +1,22 @@
+    {#- Fetch the current version from the VERSION file and display it in each tag with a "version" class ~#}
+    <script>{% apply minify_js ~%}
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('/VERSION')
+          .then(response => {
+            let version = response.text();
+            if (!response.ok) {
+              console.log('Impossible to fetch VERSION');
+              version = 'X.X.X';
+            }
+            return version;
+          })
+          .then(version => {
+            console.log('VERSION', version);
+            const versions = document.getElementsByClassName('version');
+            for (const el of versions) {
+              text = el.innerHTML;
+              el.innerHTML = text + ' <span class="font-normal">(' + version.trim() + ')</span>';
+            }
+          })
+      });
+    {% endapply %}</script>
