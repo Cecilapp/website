@@ -11,15 +11,15 @@
                 {%- set description = site_item.description[site.language]|default(site_item.description.en) ~%}
                 <li class="flex flex-col overflow-hidden rounded-lg border border-slate-300 dark:border-darkgray bg-white dark:bg-dark shadow-sm hover:shadow-lg transition-shadow">
                   {#- screenshot ~#}
-                  <div class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
+                  <a href="{{ url(site_item.url) }}" class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
                   {%- set screenshot = asset(site_item.screenshot|default(''), {ignore_missing: true}) ~%}
                   {%- if site_item.screenshot is defined and not screenshot['missing'] ~%}
                     {{ html(screenshot, {alt: site_item.title, loading: 'lazy', decoding: 'async', class: 'showcase block w-full h-full object-cover object-top m-0', style: 'background-color:' ~ screenshot|dominant_color}) }}
                   {%- endif ~%}
-                  </div>
+                  </a>
                   <div class="flex flex-col grow p-4">
                     {#- title ~#}
-                    <h2 class="text-base mb-1"><a href="{{ site_item.url }}" class="no-underline">{{ site_item.title }}</a></h2>
+                    <h2 class="text-base mb-1"><a href="{{ url(site_item.url) }}" class="no-underline">{{ site_item.title }}</a></h2>
                     {#- description ~#}
                     <p class="text-sm grow">{{ description }}</p>
                     {#- source code ~#}
