@@ -153,7 +153,7 @@ msgstr "Page d’accueil"
 msgid "Demo"
 msgstr "Démo"
 
-#: themes.html.twig:54
+#: showcase.html.twig:30 themes.html.twig:54
 msgid "Source code"
 msgstr "Code source"
 

@@ -1,0 +1,39 @@
+{% extends 'page.html.twig' %}
+{% import 'macros/octicons.twig' as octicons %}
+
+              {%- block toc %}{% endblock toc ~%}
+
+              {%- block content ~%}
+              <h1>{{ page.title }}</h1>
+              {{- page.content ~}}
+              <ul class="not-markdown grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0">
+              {%- for site_item in site.data.showcase ~%}
+                {%- set description = site_item.description[site.language]|default(site_item.description.en) ~%}
+                <li class="flex flex-col overflow-hidden rounded-lg border border-slate-300 dark:border-darkgray bg-white dark:bg-dark shadow-sm hover:shadow-lg transition-shadow">
+                  {#- screenshot ~#}
+                  <div class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
+                  {%- set screenshot = asset(site_item.screenshot|default(''), {ignore_missing: true}) ~%}
+                  {%- if site_item.screenshot is defined and not screenshot['missing'] ~%}
+                    {{ html(screenshot, {alt: site_item.title, loading: 'lazy', decoding: 'async', class: 'showcase block w-full h-full object-cover object-top m-0', style: 'background-color:' ~ screenshot|dominant_color}) }}
+                  {%- endif ~%}
+                  </div>
+                  <div class="flex flex-col grow p-4">
+                    {#- title ~#}
+                    <h2 class="text-base mb-1"><a href="{{ site_item.url }}" class="no-underline">{{ site_item.title }}</a></h2>
+                    {#- description ~#}
+                    <p class="text-sm grow">{{ description }}</p>
+                    {#- source code ~#}
+                    {%- if site_item.github|default ~%}
+                    <div>
+                      {%- x:button with {href: site_item.github, class: 'btn-sm', role: 'button'} ~%}
+                        {{- octicons.svg('mark-github', 16) }}<div>{% trans %}Source code{% endtrans %}</div>
+                      {%- endx ~%}
+                    </div>
+                    {%- endif ~%}
+                  </div>
+                </li>
+              {%- endfor ~%}
+              </ul>
+              {%- endblock content ~%}
+
+          {%- block xltoc %}{% endblock xltoc ~%}

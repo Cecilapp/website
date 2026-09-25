@@ -1,0 +1,59 @@
+# Websites built with Cecil
+# Source: https://github.com/stars/ArnaudLigny/lists/built-with-cecil
+# Screenshots (1280×800) are stored in assets/images/showcase/.
+- title: Cypht
+  url: https://cypht.org
+  github: https://github.com/cypht-org/cypht-website
+  screenshot: images/showcase/cypht-org-cypht-website.png
+  description:
+    en: Website of Cypht, the open source webmail that gathers all your email accounts in one place.
+    fr: Site de Cypht, le webmail open source qui rassemble tous vos comptes e-mail en un seul endroit.
+- title: libimobiledevice
+  url: https://libimobiledevice.org
+  github: https://github.com/libimobiledevice/libimobiledevice.org
+  screenshot: images/showcase/libimobiledevice-libimobiledevice-org.png
+  description:
+    en: Official website of libimobiledevice, a cross-platform library to communicate with iOS devices.
+    fr: Site officiel de libimobiledevice, une bibliothèque multiplateforme pour communiquer avec les appareils iOS.
+- title: Jamstatic
+  url: https://jamstatic.fr
+  github: https://github.com/jamstatic/jamstatic-fr
+  screenshot: images/showcase/jamstatic-jamstatic-fr.png
+  description:
+    en: French-speaking community website about static sites and decoupled architectures.
+    fr: Site communautaire francophone sur les sites statiques et les architectures découplées.
+- title: Narno.com
+  url: https://narno.com
+  github: https://github.com/ArnaudLigny/narno.com
+  screenshot: images/showcase/arnaudligny-narno-com.png
+  description:
+    en: Personal blog (in French) about urban cycling and video games.
+    fr: Blog personnel sur le vélo urbain et les jeux vidéo.
+- title: Cecillie
+  url: https://www.cecillie.fr
+  github: https://github.com/cecillie/cecillie.fr
+  screenshot: images/showcase/cecillie-cecillie-fr.png
+  description:
+    en: Portfolio of Cécile Ricordeau, art director and illustrator.
+    fr: Portfolio de Cécile Ricordeau, directrice artistique et illustratrice.
+- title: Aperture Lab
+  url: https://aperturelab.fr
+  github: https://github.com/ApertureLab/website
+  screenshot: images/showcase/aperturelab-website.png
+  description:
+    en: Website of Aperture Lab, pragmatic digital solutions.
+    fr: Site d’Aperture Lab, solutions numériques pragmatiques.
+- title: Les aventures de Jean Claude
+  url: https://jeanclaude-aventures.netlify.app
+  github: https://github.com/Univers-detendu/jc-website
+  screenshot: images/showcase/univers-detendu-jc-website.png
+  description:
+    en: The adventures of Jean Claude, the website.
+    fr: Les aventures de Jean Claude, le site web.
+- title: Le sac à dos infini
+  url: https://jeanclaude-sac.netlify.app
+  github: https://github.com/Univers-detendu/jc-sac
+  screenshot: images/showcase/univers-detendu-jc-sac.png
+  description:
+    en: The adventures of Jean Claude, the infinite backpack.
+    fr: Les aventures de Jean Claude, le sac à dos infini.

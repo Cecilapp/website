@@ -100,6 +100,7 @@ assets:
       sizes:
         markdown: "(max-width: 800px) 768px, 1024px"
         home: "(max-width: 767px) 480px, 33vw"
+        showcase: "(max-width: 639px) 100vw, 480px"
     cdn:
       enabled: false
       account: 'aligny'
