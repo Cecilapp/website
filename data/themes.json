@@ -1,0 +1,96 @@
+[
+  {
+    "name": "theme-hyde",
+    "full_name": "Cecilapp/theme-hyde",
+    "description": "The Hyde theme for Cecil is a port the Hyde theme for Jekyll created by Mark Otto.",
+    "github": "https://github.com/Cecilapp/theme-hyde",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-hyde/",
+    "date": "2026-07-06T20:58:19Z",
+    "default_branch": "master",
+    "topics": [
+      "blog",
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-applanding",
+    "full_name": "Cecilapp/theme-applanding",
+    "description": "App Landing is a theme for Cecil, powered by Tailwind CSS.",
+    "github": "https://github.com/Cecilapp/theme-applanding",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-applanding/",
+    "date": "2026-01-07T22:34:27Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-garth",
+    "full_name": "Cecilapp/theme-garth",
+    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
+    "github": "https://github.com/Cecilapp/theme-garth",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-garth/",
+    "date": "2025-12-18T01:01:51Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-comingsoon",
+    "full_name": "Cecilapp/theme-comingsoon",
+    "description": "Coming Soon is a landing page theme for Cecil, powered by Bootstrap.",
+    "github": "https://github.com/Cecilapp/theme-comingsoon",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "date": "2025-12-18T00:41:21Z",
+    "default_branch": "main",
+    "topics": [
+      "bootstrap",
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-docs",
+    "full_name": "Cecilapp/theme-docs",
+    "description": "Documentation theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-docs",
+    "license": "MIT License",
+    "homepage": "https://statidocs.cecil.app",
+    "date": "2025-12-11T01:05:51Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-resume",
+    "full_name": "Cecilapp/theme-resume",
+    "description": "The Resume theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-resume",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/resume-demo/",
+    "date": "2023-11-21T13:46:22Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  }
+]
