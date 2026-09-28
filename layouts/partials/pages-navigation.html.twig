@@ -1,0 +1,19 @@
+            {#- Section pages navigation ~#}
+            <div class="sticky top-18.75 w-48" id="docs-menu">
+              <ul class="list-reset">
+                {%- if page.section == 'documentation' -%}
+                  {%- set items = site.pages.showable|filter_by('section', page.section)|sort_by_weight -%}
+                {%- else -%}
+                  {%- set items = site.pages.showable|filter_by('section', page.section)|sort_by_date|slice(0, 20) -%}
+                {%- endif -%}
+                {%- for item in items ~%}
+                <li>
+                  {%- if url(item) != url(page) ~%}
+                  <a style="view-transition-name: {{ item.slug|replace({'.': '-'}) }}" href="{{ url(item) }}" class="page-transition menu-item block p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
+                  {%- else ~%}
+                  <a class="menu-item block p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if url(page) == url(item) or url(page) == url(item)|trim('/') %} font-bold border-blue{% endif %}">{{ item.title }}</a>
+                  {%- endif ~%}
+                </li>
+                {%- endfor ~%}
+              </ul>
+            </div>
