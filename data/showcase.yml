@@ -57,3 +57,89 @@
   description:
     en: The adventures of Jean Claude, the infinite backpack.
     fr: Les aventures de Jean Claude, le sac à dos infini.
+- title: MozFR
+  url: https://mozfr.org
+  github: https://github.com/mozfr/www
+  screenshot: images/showcase/mozfr-www.png
+  description:
+    en: Website of the French-speaking Mozilla community.
+    fr: Site de la communauté Mozilla francophone.
+- title: UI Storia
+  url: https://ui-storia.com
+  github: https://github.com/IQ2i/storia-bundle
+  screenshot: images/showcase/iq2i-storia-bundle.png
+  description:
+    en: Website of UI Storia, a visual and modular UI development environment for Symfony applications.
+    fr: Site d’UI Storia, un environnement visuel et modulaire de développement d’interfaces pour les applications Symfony.
+- title: Automate
+  url: https://www.automate-deployer.com
+  github: https://github.com/automatephp/automate
+  screenshot: images/showcase/automatephp-automate.png
+  description:
+    en: Website of Automate, a PHP tool to deploy to remote Linux servers.
+    fr: Site d’Automate, un outil PHP de déploiement sur des serveurs Linux distants.
+- title: Olivier Dolbeau
+  url: https://odolbeau.fr
+  github: https://github.com/odolbeau/odolbeau.fr
+  screenshot: images/showcase/odolbeau-odolbeau-fr.png
+  description:
+    en: Personal website and blog of Olivier Dolbeau, freelance web developer.
+    fr: Site personnel et blog d’Olivier Dolbeau, développeur web freelance.
+- title: Kévin Thérage
+  url: https://ktherage.github.io
+  github: https://github.com/ktherage/ktherage.github.io
+  screenshot: images/showcase/ktherage-ktherage-github-io.png
+  description:
+    en: Personal website and blog of Kévin Thérage, Symfony lead developer.
+    fr: Site personnel et blog de Kévin Thérage, lead développeur Symfony.
+- title: Mozilla Hispania
+  url: https://mozhispania.github.io
+  github: https://github.com/mozhispania/mozhispania.github.io
+  screenshot: images/showcase/mozhispania-mozhispania-github-io.png
+  description:
+    en: Contributing to Firefox and Mozilla in Spain.
+    fr: Participer à Firefox et Mozilla en Espagne.
+#- title: Akawaka Documentation Hub
+#  url: https://akawaka.github.io/doc/
+#  github: https://github.com/akawaka/doc
+#  screenshot: images/showcase/akawaka-doc.png
+#  description:
+#    en: Documentation hub of the Akawaka team.
+#    fr: Centre de documentation de l’équipe Akawaka.
+#- title: Doc Partner
+#  url: https://toodiz.github.io/docpartner/
+#  github: https://github.com/toodiz/docpartner
+#  screenshot: images/showcase/toodiz-docpartner.png
+#  description:
+#    en: API documentation for SMS, voice and email sending services.
+#    fr: Documentation d’API pour l’envoi de SMS, messages vocaux et e-mails.
+- title: Thomas Ferney
+  url: https://thomas-ferney.fr
+  screenshot: images/showcase/antiseptikk-thomas-ferney-fr.png
+  description:
+    en: Personal website of Thomas Ferney, web developer and CTO, specialized in Magento 2, Symfony and Sylius.
+    fr: Site personnel de Thomas Ferney, développeur web et directeur technique, spécialisé dans Magento 2, Symfony et Sylius.
+- title: Le Moulin de Prédelles
+  url: https://moulindepredelles.com/fr/
+  screenshot: images/showcase/welcomattic-moulin-de-predelles.png
+  description:
+    en: Charming guesthouse and holiday cottages in the Luberon, Provence.
+    fr: Gîtes et chambres d’hôtes de charme en Luberon.
+- title: Guillaume Le Roy
+  url: https://www.atlza.com
+  screenshot: images/showcase/atlza-atlza-com.png
+  description:
+    en: Photography portfolio of Guillaume Le Roy, photographer based in Rennes.
+    fr: Portfolio photo de Guillaume Le Roy, photographe à Rennes.
+- title: Binome.art
+  url: https://binome.art
+  screenshot: images/showcase/binome-art.png
+  description:
+    en: Photography projects by Guillaume Le Roy and Thomas Guionnet, two photographers from Rennes.
+    fr: Projets photographiques de Guillaume Le Roy et Thomas Guionnet, deux photographes rennais.
+- title: Le K Ludique
+  url: https://k-ludique.fr
+  screenshot: images/showcase/k-ludique-fr.png
+  description:
+    en: Board game media and game nights in Rennes.
+    fr: Média ludique et soirées jeux de société à Rennes.
