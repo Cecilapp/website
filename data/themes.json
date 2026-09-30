@@ -1,12 +1,27 @@
 [
   {
+    "name": "theme-resume",
+    "full_name": "Cecilapp/theme-resume",
+    "description": "Resume is a theme for creating professional resumes with Cecil.",
+    "github": "https://github.com/Cecilapp/theme-resume",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/resume-demo/",
+    "date": "2026-09-30T23:03:13Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-hyde",
     "full_name": "Cecilapp/theme-hyde",
-    "description": "The Hyde theme for Cecil is a port the Hyde theme for Jekyll created by Mark Otto.",
+    "description": "Hyde is a minimalist theme for Cecil, inspired by the simplicity and elegance of the original Hyde theme for Jekyll.",
     "github": "https://github.com/Cecilapp/theme-hyde",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-hyde/",
-    "date": "2026-07-06T20:58:19Z",
+    "date": "2026-09-30T23:01:36Z",
     "default_branch": "master",
     "topics": [
       "blog",
@@ -16,29 +31,13 @@
     ]
   },
   {
-    "name": "theme-applanding",
-    "full_name": "Cecilapp/theme-applanding",
-    "description": "App Landing is a theme for Cecil, powered by Tailwind CSS.",
-    "github": "https://github.com/Cecilapp/theme-applanding",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-applanding/",
-    "date": "2026-01-07T22:34:27Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme",
-      "tailwindcss",
-      "theme"
-    ]
-  },
-  {
     "name": "theme-garth",
     "full_name": "Cecilapp/theme-garth",
-    "description": "The Garth theme for Cecil is a port the Garth theme for Jekyll created by David Darnes.",
+    "description": "Garth is a modern, clean, and responsive theme for Cecil. It is a port of the Garth theme for Jekyll created by David Darnes.",
     "github": "https://github.com/Cecilapp/theme-garth",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-garth/",
-    "date": "2025-12-18T01:01:51Z",
+    "date": "2026-09-30T23:00:37Z",
     "default_branch": "master",
     "topics": [
       "cecil",
@@ -47,29 +46,13 @@
     ]
   },
   {
-    "name": "theme-comingsoon",
-    "full_name": "Cecilapp/theme-comingsoon",
-    "description": "Coming Soon is a landing page theme for Cecil, powered by Bootstrap.",
-    "github": "https://github.com/Cecilapp/theme-comingsoon",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
-    "date": "2025-12-18T00:41:21Z",
-    "default_branch": "main",
-    "topics": [
-      "bootstrap",
-      "cecil",
-      "cecil-theme",
-      "theme"
-    ]
-  },
-  {
     "name": "theme-docs",
     "full_name": "Cecilapp/theme-docs",
-    "description": "Documentation theme for Cecil.",
+    "description": "Docs is a documentation theme for Cecil, designed to provide a modern and responsive interface for your project's documentation.",
     "github": "https://github.com/Cecilapp/theme-docs",
     "license": "MIT License",
     "homepage": "https://statidocs.cecil.app",
-    "date": "2025-12-11T01:05:51Z",
+    "date": "2026-09-30T22:58:39Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -79,15 +62,80 @@
     ]
   },
   {
-    "name": "theme-resume",
-    "full_name": "Cecilapp/theme-resume",
-    "description": "The Resume theme for Cecil.",
-    "github": "https://github.com/Cecilapp/theme-resume",
+    "name": "theme-applanding",
+    "full_name": "Cecilapp/theme-applanding",
+    "description": "App Landing is designed to help you quickly create a landing page for your application.",
+    "github": "https://github.com/Cecilapp/theme-applanding",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/resume-demo/",
-    "date": "2023-11-21T13:46:22Z",
+    "homepage": "https://cecilapp.github.io/theme-applanding/",
+    "date": "2026-09-30T22:55:53Z",
     "default_branch": "main",
     "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-links",
+    "full_name": "Cecilapp/theme-links",
+    "description": "Links is a minimalist theme for creating link-focused pages with Cecil.",
+    "github": "https://github.com/Cecilapp/theme-links",
+    "license": "MIT License",
+    "homepage": "https://links.cecil.app",
+    "date": "2026-09-30T22:53:20Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-coffee",
+    "full_name": "Cecilapp/theme-coffee",
+    "description": "Coffee is a corporate theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-coffee",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-coffee/",
+    "date": "2026-09-30T22:44:53Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-devspace",
+    "full_name": "Cecilapp/theme-devspace",
+    "description": "DevSpace is a theme for Cecil, ported from the DevSpace HTML template by Cruip.",
+    "github": "https://github.com/Cecilapp/theme-devspace",
+    "license": null,
+    "homepage": "https://cruip.com/devspace/",
+    "date": "2026-09-23T08:55:53Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-comingsoon",
+    "full_name": "Cecilapp/theme-comingsoon",
+    "description": "Coming Soon is a landing page theme for Cecil, powered by Start Bootstrap Coming Soon and Bootstrap, with Netlify Forms integration.",
+    "github": "https://github.com/Cecilapp/theme-comingsoon",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "date": "2026-09-06T01:31:39Z",
+    "default_branch": "main",
+    "topics": [
+      "bootstrap",
       "cecil",
       "cecil-theme",
       "theme"
