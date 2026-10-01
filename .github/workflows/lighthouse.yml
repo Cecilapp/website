@@ -1,0 +1,26 @@
+name: Lighthouse CI
+
+on:
+  schedule:
+    # Every day at 06:00 UTC (08:00 in Paris during summer time, 07:00 in winter)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run Lighthouse CI on https://cecil.app
+        run: npx --yes @lhci/cli@0.15.x autorun
