@@ -44,19 +44,19 @@
     en: Website of Aperture Lab, pragmatic digital solutions.
     fr: Site d’Aperture Lab, solutions numériques pragmatiques.
 - title: Les aventures de Jean Claude
-  url: https://jeanclaude-aventures.netlify.app
+  url: https://jeanclaude-aventures.com
   github: https://github.com/Univers-detendu/jc-website
   screenshot: images/showcase/univers-detendu-jc-website.png
   description:
     en: The adventures of Jean Claude, the website.
     fr: Les aventures de Jean Claude, le site web.
-- title: Le sac à dos infini
-  url: https://jeanclaude-sac.netlify.app
-  github: https://github.com/Univers-detendu/jc-sac
-  screenshot: images/showcase/univers-detendu-jc-sac.png
-  description:
-    en: The adventures of Jean Claude, the infinite backpack.
-    fr: Les aventures de Jean Claude, le sac à dos infini.
+#- title: Le sac à dos infini
+#  url: https://jeanclaude-sac.netlify.app
+#  github: https://github.com/Univers-detendu/jc-sac
+#  screenshot: images/showcase/univers-detendu-jc-sac.png
+#  description:
+#    en: The adventures of Jean Claude, the infinite backpack.
+#    fr: Les aventures de Jean Claude, le sac à dos infini.
 - title: MozFR
   url: https://mozfr.org
   github: https://github.com/mozfr/www
@@ -92,27 +92,6 @@
   description:
     en: Personal website and blog of Kévin Thérage, Symfony lead developer.
     fr: Site personnel et blog de Kévin Thérage, lead développeur Symfony.
-- title: Mozilla Hispania
-  url: https://mozhispania.github.io
-  github: https://github.com/mozhispania/mozhispania.github.io
-  screenshot: images/showcase/mozhispania-mozhispania-github-io.png
-  description:
-    en: Contributing to Firefox and Mozilla in Spain.
-    fr: Participer à Firefox et Mozilla en Espagne.
-#- title: Akawaka Documentation Hub
-#  url: https://akawaka.github.io/doc/
-#  github: https://github.com/akawaka/doc
-#  screenshot: images/showcase/akawaka-doc.png
-#  description:
-#    en: Documentation hub of the Akawaka team.
-#    fr: Centre de documentation de l’équipe Akawaka.
-#- title: Doc Partner
-#  url: https://toodiz.github.io/docpartner/
-#  github: https://github.com/toodiz/docpartner
-#  screenshot: images/showcase/toodiz-docpartner.png
-#  description:
-#    en: API documentation for SMS, voice and email sending services.
-#    fr: Documentation d’API pour l’envoi de SMS, messages vocaux et e-mails.
 - title: Thomas Ferney
   url: https://thomas-ferney.fr
   screenshot: images/showcase/antiseptikk-thomas-ferney-fr.png
