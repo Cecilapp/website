@@ -164,7 +164,7 @@
           {#- markdown content ~#}
           <div class="grow overflow-y-auto">
             {%- block head_content %}{% endblock ~%}
-            <div class="mx-auto max-w-(--breakpoint-md) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-md) markdown-blockquote:font-normal">
+            <div class="mx-auto max-w-(--breakpoint-lg) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-lg) markdown-blockquote:font-normal">
               {#- Search in documentation ~#}
               {%- if page.section == 'documentation' ~%}
               {{- include('partials/search-box.html.twig') ~}}
@@ -212,7 +212,7 @@
             </div>
             {#- prev/next page -#}
             {%- if page.prev is defined or page.next is defined ~%}
-            <div class="mx-auto max-w-(--breakpoint-md) pt-2 border-slate-200 border-t mt-4">
+            <div class="mx-auto max-w-(--breakpoint-lg) pt-2 border-slate-200 border-t mt-4">
               {%- if page.prev is defined ~%}
               <a class="text-blue dark:text-slate-300 font-bold no-underline float-left" href="{{ url(page.prev) }}" role="button" title="Previous">← {{ page.prev.title }}</a>
               {%- endif -%}
