@@ -157,6 +157,10 @@ msgstr "Démo"
 msgid "Source code"
 msgstr "Code source"
 
+#: themes.html.twig:39
+msgid "%name%'s screenshot"
+msgstr "Capture d'écran de %name%"
+
 #: themes.html.twig:60
 msgid "Install"
 msgstr "Installer"

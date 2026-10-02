@@ -36,7 +36,7 @@
               {%- endif -%}
               {#- screenshot -#}
               {%- if not screenshot['missing'] ~%}
-              {{ html(screenshot, {alt: repo.name, style: 'background-color:' ~ screenshot|dominant_color}) }}
+              {{ html(screenshot, {alt: "%name%'s screenshot"|trans({'%name%': repo.name}), style: 'background-color:' ~ screenshot|dominant_color}) }}
               {%- endif ~%}
               {#- buttons ~#}
               <div class="flex flex-col md:flex-row gap-2">
