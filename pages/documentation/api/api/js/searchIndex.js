@@ -66,6 +66,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020available\u0020driver\u0020as\u0020\u005Bname,\u0020class\u005D,\u0020or\u0020null\u0020if\u0020none.",
             "url": "classes/Cecil-Asset-Image.html#method_driver"
         },                {
+            "fqsen": "\\Cecil\\Asset\\Image\u003A\u003AisVipsAvailable\u0028\u0029",
+            "name": "isVipsAvailable",
+            "summary": "Checks\u0020if\u0020libvips\u0020can\u0020be\u0020loaded\u0020through\u0020FFI\u0020\u0028php\u002Dvips\u0020v2\u002B\u0020does\u0020not\u0020rely\u0020on\u0020ext\u002Dvips\u0029.",
+            "url": "classes/Cecil-Asset-Image.html#method_isVipsAvailable"
+        },                {
             "fqsen": "\\Cecil\\Asset\\Image\u003A\u003Amanager\u0028\u0029",
             "name": "manager",
             "summary": "Create\u0020new\u0020manager\u0020instance\u0020with\u0020available\u0020driver.",
@@ -85,6 +90,21 @@ Search.appendIndex(
             "name": "extractIcoLargestIcon",
             "summary": "Returns\u0020the\u0020binary\u0020data\u0020\u0028PNG\u0020or\u0020BMP\u0020DIB\u0029\u0020of\u0020the\u0020largest\u0020icon\u0020of\u0020an\u0020ICO\u0020file.",
             "url": "classes/Cecil-Asset-Image.html#method_extractIcoLargestIcon"
+        },                {
+            "fqsen": "\\Cecil\\Asset\\Image\u003A\u003AgetIcoSize\u0028\u0029",
+            "name": "getIcoSize",
+            "summary": "Returns\u0020the\u0020size\u0020\u0028width\u0020and\u0020height\u0029\u0020of\u0020the\u0020largest\u0020icon\u0020of\u0020an\u0020ICO\u0020file.",
+            "url": "classes/Cecil-Asset-Image.html#method_getIcoSize"
+        },                {
+            "fqsen": "\\Cecil\\Asset\\Image\u003A\u003AgetIcoLargestEntry\u0028\u0029",
+            "name": "getIcoLargestEntry",
+            "summary": "Returns\u0020the\u0020directory\u0020entry\u0020of\u0020the\u0020largest\u0020icon\u0020of\u0020an\u0020ICO\u0020file.",
+            "url": "classes/Cecil-Asset-Image.html#method_getIcoLargestEntry"
+        },                {
+            "fqsen": "\\Cecil\\Asset\\Image\u003A\u003AdibToPng\u0028\u0029",
+            "name": "dibToPng",
+            "summary": "Converts\u0020a\u002024\u0020or\u002032\u0020bits\u0020BMP\u0020icon\u0020\u0028DIB\u0020data\u0020of\u0020an\u0020ICO\u0020file\u0029\u0020to\u0020PNG.",
+            "url": "classes/Cecil-Asset-Image.html#method_dibToPng"
         },                {
             "fqsen": "\\Cecil\\Asset\\Image\u003A\u003AbuildIco\u0028\u0029",
             "name": "buildIco",
