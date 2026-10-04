@@ -17,7 +17,7 @@ Cecil can manage the following optimizations for images in Markdown, automatical
 7. **Placeholder**: A color placeholder is used while the image is loading
 
 :::info
-See documentation for more details on the [global assets configuration](/documentation/configuration/#assets-images) and the [pages configuration](/documentation/configuration/#pages-body-images).
+See documentation for more details on the [global assets configuration](/documentation/configuration/#assets-images) and the [pages configuration](/documentation/configuration/#pages-body).
 :::
 
 ## Example

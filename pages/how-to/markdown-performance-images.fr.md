@@ -17,7 +17,7 @@ Cecil gère automatiquement les optimisations suivantes pour les images Markdown
 7. **Espace réservé** : Un espace réservé de couleur est utilisé pendant le chargement de l'image.
 
 :::info
-Consultez la documentation pour plus de détails sur la [configuration des ressources globales](/documentation/configuration/#assets-images) et la [configuration des pages](/documentation/configuration/#pages-body-images).
+Consultez la documentation pour plus de détails sur la [configuration des ressources globales](/documentation/configuration/#assets-images) et la [configuration des pages](/documentation/configuration/#pages-body).
 :::
 
 ## Exemple
