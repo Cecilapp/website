@@ -1,7 +1,8 @@
 name: Scheduled Build
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
+    - cron: '0 7 * * *'
+      timezone: "France/Paris"
   workflow_dispatch:
 jobs:
   build:
