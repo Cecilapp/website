@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2026-01-15
+updated: 2026-10-04
 layout: download
 alias: install
 menu:
@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-PHP 8.2+ is required.
+PHP 8.3+ is required.
 :::
 
 ## Install globally {#install}
