@@ -2,7 +2,7 @@ name: Scheduled Build
 on:
   schedule:
     - cron: '0 7 * * *'
-      timezone: "France/Paris"
+      timezone: "Europe/Paris"
   workflow_dispatch:
 jobs:
   build:
