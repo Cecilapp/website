@@ -24,6 +24,10 @@ msgstr "Documentation"
 msgid "What's on this page"
 msgstr "Sur cette page"
 
+#: partials/docs-children.html.twig:11
+msgid "In this section"
+msgstr "Dans cette section"
+
 #: download.html.twig:10 home.html.twig:36
 msgid "Download"
 msgstr "Télécharger"

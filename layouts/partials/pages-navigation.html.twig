@@ -1,3 +1,6 @@
+{%- if page.section starts with 'documentation' -%}
+{{- include('partials/docs-navigation.html.twig') -}}
+{%- else -%}
             {#- Section pages navigation ~#}
             <div class="sticky top-18.75 w-48" id="docs-menu">
               <ul class="list-reset">
@@ -17,3 +20,4 @@
                 {%- endfor ~%}
               </ul>
             </div>
+{%- endif -%}
