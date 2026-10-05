@@ -1,7 +1,7 @@
 ---
 title: Ajouter une table des matières et des notes
 description: Enrichir les pages Markdown de Cecil avec une table des matières, des blocs de notes et des attributs personnalisés.
-path: comment-faire/markdown-toc-notes
+path: comment-faire/markdown-sommaire-notes
 date: 2026-10-14
 schedule:
   publish: 2026-10-14

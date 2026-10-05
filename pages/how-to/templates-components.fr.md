@@ -1,7 +1,7 @@
 ---
 title: Utiliser les composants Twig
 description: Créer des unités de template réutilisables avec les composants Cecil et la balise x.
-path: comment-faire/templates-components
+path: comment-faire/templates-composants
 date: 2026-10-18
 schedule:
   publish: 2026-10-18

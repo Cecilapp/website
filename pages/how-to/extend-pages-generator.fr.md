@@ -1,7 +1,7 @@
 ---
 title: Créer un générateur de pages personnalisé
 description: Créer des pages Cecil à partir d’une API, d’une base de données ou de toute autre source avec un générateur de pages personnalisé.
-path: comment-faire/extend-pages-generator
+path: comment-faire/extension-generateur-de-pages
 date: 2026-10-22
 schedule:
   publish: 2026-10-22

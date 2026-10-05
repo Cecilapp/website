@@ -1,7 +1,7 @@
 ---
 title: Personnaliser le sitemap et le robots.txt
 description: Contrôler les fichiers sitemap XML et robots.txt générés par Cecil, exclure des pages et surcharger les templates.
-path: comment-faire/output-sitemap-robots
+path: comment-faire/sortie-sitemap-robots
 date: 2026-10-16
 schedule:
   publish: 2026-10-16

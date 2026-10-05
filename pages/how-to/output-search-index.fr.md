@@ -1,7 +1,7 @@
 ---
 title: Ajouter une recherche côté client
 description: Ajouter une recherche côté client à un site statique Cecil avec un index JSON des pages et une petite bibliothèque JavaScript.
-path: comment-faire/output-search-index
+path: comment-faire/sortie-index-de-recherche
 date: 2026-10-08
 schedule:
   publish: 2026-10-08

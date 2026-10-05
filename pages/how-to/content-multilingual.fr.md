@@ -1,7 +1,7 @@
 ---
 title: Traduire un site en plusieurs langues
 description: Traduire les pages, la configuration et les textes des templates d’un site Cecil en plusieurs langues.
-path: comment-faire/content-multilingual
+path: comment-faire/contenu-multilingue
 date: 2026-10-04
 schedule:
   publish: 2026-10-04

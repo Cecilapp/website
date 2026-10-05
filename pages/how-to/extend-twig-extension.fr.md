@@ -1,7 +1,7 @@
 ---
 title: Ajouter une fonction ou un filtre Twig personnalisé
 description: Étendre les templates de Cecil avec vos propres fonctions et filtres Twig grâce à une extension Twig.
-path: comment-faire/extend-twig-extension
+path: comment-faire/extension-twig
 date: 2026-10-21
 schedule:
   publish: 2026-10-21

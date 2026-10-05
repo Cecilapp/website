@@ -1,7 +1,7 @@
 ---
 title: Programmer la publication d’une page
 description: Publier ou dépublier une page Cecil à une date donnée avec la variable de front matter schedule.
-path: comment-faire/content-schedule
+path: comment-faire/contenu-programmation
 date: 2026-10-17
 schedule:
   publish: 2026-10-17

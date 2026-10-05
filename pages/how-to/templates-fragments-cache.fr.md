@@ -1,7 +1,7 @@
 ---
 title: Accélérer les builds avec le cache de fragments
 description: Mettre en cache des parties des templates Cecil pour éviter de générer le même contenu pour chaque page.
-path: comment-faire/templates-fragments-cache
+path: comment-faire/templates-cache-fragments
 date: 2026-10-20
 schedule:
   publish: 2026-10-20

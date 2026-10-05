@@ -1,7 +1,7 @@
 ---
 title: Afficher des placeholders d’images pendant le chargement
 description: Afficher une couleur dominante ou un aperçu flouté pendant le chargement des images dans les templates Cecil.
-path: comment-faire/templates-lqip-placeholder
+path: comment-faire/templates-placeholder-lqip
 date: 2026-10-15
 schedule:
   publish: 2026-10-15

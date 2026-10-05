@@ -1,7 +1,7 @@
 ---
 title: Générer des pages à partir de fichiers de données
 description: Utiliser des fichiers de données YAML, JSON, CSV ou XML pour construire des pages Cecil sans écrire de Markdown pour chaque élément.
-path: comment-faire/content-data-files
+path: comment-faire/contenu-fichiers-de-donnees
 date: 2026-10-19
 schedule:
   publish: 2026-10-19

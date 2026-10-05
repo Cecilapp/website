@@ -1,7 +1,7 @@
 ---
 title: Organiser les pages avec des tags et des catégories
 description: Classer les pages Cecil avec des taxonomies comme les tags et les catégories, et personnaliser leurs pages de liste.
-path: comment-faire/content-taxonomies
+path: comment-faire/contenu-taxonomies
 date: 2026-10-10
 schedule:
   publish: 2026-10-10

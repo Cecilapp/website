@@ -1,7 +1,7 @@
 ---
 title: Publier un flux RSS ou JSON
 description: Publier des flux RSS, Atom ou JSON de votre site Cecil avec les formats de sortie et les templates intégrés.
-path: comment-faire/output-rss-json-feed
+path: comment-faire/sortie-flux-rss-json
 date: 2026-10-06
 schedule:
   publish: 2026-10-06

@@ -1,7 +1,7 @@
 ---
 title: Déployer sur GitHub Pages avec GitHub Actions
 description: Générer et déployer automatiquement un site Cecil sur GitHub Pages avec la GitHub Action de Cecil.
-path: comment-faire/deploy-github-pages
+path: comment-faire/deploiement-github-pages
 date: 2026-10-07
 schedule:
   publish: 2026-10-07

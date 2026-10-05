@@ -1,7 +1,7 @@
 ---
 title: Utiliser des réglages différents selon l’environnement
 description: Surcharger la configuration de Cecil selon l’environnement avec les variables d’environnement CECIL_ et des fichiers de configuration supplémentaires.
-path: comment-faire/config-environments
+path: comment-faire/configuration-environnements
 date: 2026-10-12
 schedule:
   publish: 2026-10-12

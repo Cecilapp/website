@@ -1,7 +1,7 @@
 ---
 title: Rediriger d’anciennes URL
 description: Conserver le fonctionnement des anciens liens dans Cecil avec les variables de front matter redirect et alias.
-path: comment-faire/content-redirect-alias
+path: comment-faire/contenu-redirection-alias
 date: 2026-10-13
 schedule:
   publish: 2026-10-13
