@@ -4,7 +4,6 @@ date: 2019-03-11
 updated: 2026-03-24
 menu: footer
 ---
-
 Cecil is a modern static site generator (SSG), written in PHP, distinguished by its ease of use and its ability to transform Markdown files into complete, ultra-fast websites.
 
 Cecil's strengths:
