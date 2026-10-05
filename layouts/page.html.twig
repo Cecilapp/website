@@ -163,7 +163,12 @@
           {%- endif -%}
           {#- markdown content ~#}
           <div class="grow overflow-y-auto">
-            {%- block head_content %}{% endblock ~%}
+            {%- block head_content ~%}
+            {#- breadcrumb ~#}
+            {%- block breadcrumb ~%}
+            {{- include('partials/breadcrumb.html.twig') ~}}
+            {%- endblock breadcrumb ~%}
+            {%- endblock head_content ~%}
             <div class="mx-auto max-w-(--breakpoint-lg) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-lg) markdown-blockquote:font-normal">
               {#- Search in documentation ~#}
               {%- if page.section == 'documentation' ~%}

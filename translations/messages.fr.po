@@ -109,9 +109,14 @@ msgstr "Copié dans le presse-papier"
 msgid "Language:"
 msgstr "Langue :"
 
+#: partials/breadcrumb.html.twig:13
 #: partials/logo.html.twig:2
 msgid "Home"
 msgstr "Accueil"
+
+#: partials/breadcrumb.html.twig:11
+msgid "Breadcrumb"
+msgstr "Fil d'Ariane"
 
 #: partials/logo.html.twig:3
 msgid "%site_title% logo"

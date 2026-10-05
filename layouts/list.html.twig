@@ -1,6 +1,12 @@
 {% extends '_default/list.html.twig' %}
 
 {% block main %}
+            {%- block head_content ~%}
+            {#- breadcrumb ~#}
+            {%- block breadcrumb ~%}
+            {{- include('partials/breadcrumb.html.twig') ~}}
+            {%- endblock breadcrumb ~%}
+            {%- endblock head_content ~%}
         {#- content ~#}
         <div class="markdown max-w-(--breakpoint-lg) mx-auto dark:markdown-dark markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0">
           <h1>{{ page.title }}</h1>
