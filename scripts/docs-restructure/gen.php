@@ -158,6 +158,14 @@ foreach ($langs as $lang => $sfx) {
     foreach ($src as $k => $f) $parsed[$lang][$k] = parse("$docs/$f$sfx.md");
 }
 
+/* translates the path segments of a documentation URL (relative to documentation/) */
+function localUrl(string $u, string $lang): string
+{
+    global $frSegments;
+    if ($lang == 'en') return $u;
+    return implode('/', array_map(fn ($seg) => $frSegments[$seg] ?? $seg, explode('/', $u)));
+}
+
 /* ---------- build pages ---------- */
 $pages = []; // [lang][url] => [file, fm, lines]
 $dropped = [];
@@ -190,6 +198,7 @@ foreach ($spec as $section => $s) {
             if (!empty($p['index'])) { $fm['weight'] = $s['weight']; $fm['sortby'] = 'weight'; }
             if (isset($p['alias'][$lang])) $fm['alias'] = $p['alias'][$lang];
             if (isset($p['menu'])) $fm['menu'] = $p['menu'];
+            if (localUrl($url, $lang) != $url) $fm['path'] = 'documentation/' . rtrim(localUrl($url, $lang), '/');
             $pages[$lang][$url] = compact('file', 'fm', 'lines', 'url');
         }
     }
@@ -223,9 +232,9 @@ function target(string $k, ?string $anchor, string $lang): string
         $anchor = fixAnchor($k, $anchor, $lang);
         if (isset($anchors[$k][$anchor])) $u = $anchors[$k][$anchor];
         else $unresolved[] = "$k#$anchor";
-        return $urlPrefix[$lang] . $u . (isset($dropped[$k][$anchor]) ? '' : '#' . $anchor);
+        return $urlPrefix[$lang] . localUrl($u, $lang) . (isset($dropped[$k][$anchor]) ? '' : '#' . $anchor);
     }
-    return $urlPrefix[$lang] . $u;
+    return $urlPrefix[$lang] . localUrl($u, $lang);
 }
 // which source key does a generated page mostly come from (for same-page "#anchor" links)
 foreach ($langs as $lang => $sfx) {
@@ -252,7 +261,7 @@ foreach ($langs as $lang => $sfx) {
             foreach (array_unique($srcKeys) as $k) {
                 $m[0] = '](#' . ($m[1] = fixAnchor($k, $m[1], $lang)) . ')';
                 if (isset($anchors[$k][$m[1]])) {
-                    return $anchors[$k][$m[1]] == $url ? $m[0] : '](' . $urlPrefix[$lang] . $anchors[$k][$m[1]] . (isset($dropped[$k][$m[1]]) ? '' : '#' . $m[1]) . ')';
+                    return $anchors[$k][$m[1]] == $url ? $m[0] : '](' . $urlPrefix[$lang] . localUrl($anchors[$k][$m[1]], $lang) . (isset($dropped[$k][$m[1]]) ? '' : '#' . $m[1]) . ')';
                 }
             }
             return $m[0];
@@ -270,7 +279,7 @@ $map = [];
 foreach ($oldSlug as $k => [$en, $fr]) {
     foreach (['en' => $en, 'fr' => $fr] as $lang => $sl) {
         foreach ($anchors[$k] ?? [] as $a => $u) {
-            $map[rtrim($urlPrefix[$lang], '/') . "/$sl/"][$a] = $urlPrefix[$lang] . $u . (isset($dropped[$k][$a]) ? '' : '#' . $a);
+            $map[rtrim($urlPrefix[$lang], '/') . "/$sl/"][$a] = $urlPrefix[$lang] . localUrl($u, $lang) . (isset($dropped[$k][$a]) ? '' : '#' . $a);
         }
     }
 }
@@ -287,6 +296,27 @@ foreach ($pages as $lang => $list) {
         }
         $body = '# ' . $pg['fm']['title'] . "\n\n" . ltrim(preg_replace("/\n{3,}/", "\n\n", $pg['text']));
         file_put_contents($path, "<!--\n$fm-->\n" . rtrim($body) . "\n");
+    }
+}
+// hand-written pages: FR path and links
+foreach ($spec as $section => $s) {
+    foreach ($s['pages'] as $name => $p) {
+        if (empty($p['static'])) continue;
+        foreach ($langs as $lang => $sfx) {
+            if ($lang == 'en') continue;
+            $file = "$docs/$section/{$p['w']}-$name$sfx.md";
+            $text = preg_replace_callback('#\]\(' . preg_quote($urlPrefix[$lang], '#') . '([^)\#]*)#', fn ($m) => '](' . $urlPrefix[$lang] . localUrl($m[1], $lang), file_get_contents($file));
+            $path = 'documentation/' . rtrim(localUrl("$section/$name/", $lang), '/');
+            $text = preg_replace('/^path: .*
+/m', '', $text, 1);
+            $text = preg_replace('/
+-->
+/', "
+path: $path
+-->
+", $text, 1);
+            file_put_contents($file, $text);
+        }
     }
 }
 file_put_contents("$root/data/docs_redirects.json", json_encode($map, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));

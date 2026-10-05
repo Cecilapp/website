@@ -3,6 +3,7 @@ title: "Langues"
 description: "Langue principale et langues supplémentaires d’un site multilingue."
 date: 2026-03-27
 updated: 2026-10-05
+path: documentation/configuration/langues
 -->
 # Langues
 
@@ -29,7 +30,7 @@ Quand `prefix` est défini à `true`, un alias est automatiquement créé pour l
 
 ## languages
 
-Options des langues disponibles, utilisées pour la localisation des [pages](/fr/documentation/content/multilingual/) et des [templates](/fr/documentation/templates/localization/).
+Options des langues disponibles, utilisées pour la localisation des [pages](/fr/documentation/contenu/multilingue/) et des [templates](/fr/documentation/templates/localisation/).
 
 ```yaml
 languages:
@@ -53,7 +54,7 @@ languages:
 ```
 
 :::info
-Une [liste des codes de locale](/fr/documentation/configuration/locale-codes/) est disponible si nécessaire.
+Une [liste des codes de locale](/fr/documentation/configuration/codes-de-locale/) est disponible si nécessaire.
 :::
 
 ### Localiser

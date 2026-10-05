@@ -3,6 +3,7 @@ title: "Pages et sections"
 description: "Anatomie d’une page, préfixe de fichier, sections, sous-sections et page d’accueil."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/contenu/pages
 -->
 # Pages et sections
 
@@ -10,7 +11,7 @@ Une page est un fichier composé d’un [**front matter**](#front-matter) et d�
 
 ## Front matter
 
-Le _front matter_ est une collection de [variables](/fr/documentation/content/front-matter/) (au format _clé/valeur_) entourée par `---`.
+Le _front matter_ est une collection de [variables](/fr/documentation/contenu/front-matter/) (au format _clé/valeur_) entourée par `---`.
 
 _Exemple :_
 
@@ -29,7 +30,7 @@ Vous pouvez aussi utiliser `<!-- -->` ou `+++` comme séparateur.
 
 ## Corps (body)
 
-Le _body_ est le contenu principal d’une page ; il peut être écrit en [Markdown](/fr/documentation/content/markdown/) ou en texte brut.
+Le _body_ est le contenu principal d’une page ; il peut être écrit en [Markdown](/fr/documentation/contenu/markdown/) ou en texte brut.
 
 _Exemple :_
 
@@ -57,7 +58,7 @@ This is advice.
 
 ## Préfixe de fichier
 
-Le nom de fichier peut contenir un préfixe pour définir les variables `date` ou `weight` de la page (utilisé par [`sortby`](/fr/documentation/templates/reference/sorts/#sort-by-date)).
+Le nom de fichier peut contenir un préfixe pour définir les variables `date` ou `weight` de la page (utilisé par [`sortby`](/fr/documentation/templates/reference/tris/#sort-by-date)).
 
 :::info
 Séparateurs de préfixe par défaut : `_` et `-`.

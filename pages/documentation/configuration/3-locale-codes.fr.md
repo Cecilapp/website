@@ -3,10 +3,11 @@ title: "Codes de locale"
 description: "Liste des codes de locale à utiliser avec l’option languages."
 date: 2020-12-19
 updated: 2026-10-02
+path: documentation/configuration/codes-de-locale
 -->
 # Codes de locale
 
-Codes de locale disponibles (`language_COUNTRY`) utilisés par l’option [`languages`](/fr/documentation/configuration/languages/#languages).
+Codes de locale disponibles (`language_COUNTRY`) utilisés par l’option [`languages`](/fr/documentation/configuration/langues/#languages).
 
 | Locale                           | Code     |
 | -------------------------------- | -------- |

@@ -5,9 +5,8 @@ date: 2026-03-27
 updated: 2026-10-02
 weight: 7
 sortby: weight
-alias: 
-  - documentation/publier
-  - documentation/deployer
+alias: documentation/publier
+path: documentation/deployer
 -->
 # Déployer
 

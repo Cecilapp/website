@@ -8,7 +8,7 @@ updated: 2026-10-05
 
 Cecil utilise un système de cache pour accélérer le processus de génération, il peut être désactivé ou effacé.
 
-Il existe trois types de cache dans le cas du rendu des templates : les templates eux-mêmes, [assets](/fr/documentation/assets/#asset) et [translations](/fr/documentation/templates/localization/#fichiers-de-traduction).
+Il existe trois types de cache dans le cas du rendu des templates : les templates eux-mêmes, [assets](/fr/documentation/assets/#asset) et [translations](/fr/documentation/templates/localisation/#fichiers-de-traduction).
 
 ## Vider le cache
 
@@ -38,7 +38,7 @@ Pour utiliser les _fragments_ de cache, vous devez envelopper le contenu que vou
 ```
 
 :::tip
-Vous devez utiliser la fonction [`cache_key`](/fr/documentation/templates/reference/functions/#cache-key) pour être sûr d'avoir une clé de cache unique pour chaque contenu que vous souhaitez mettre en cache.
+Vous devez utiliser la fonction [`cache_key`](/fr/documentation/templates/reference/fonctions/#cache-key) pour être sûr d'avoir une clé de cache unique pour chaque contenu que vous souhaitez mettre en cache.
 :::
 
 :::warning

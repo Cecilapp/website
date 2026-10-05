@@ -3,6 +3,7 @@ title: "Composants"
 description: "Créez des composants de template réutilisables."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/composants
 -->
 # Composants
 

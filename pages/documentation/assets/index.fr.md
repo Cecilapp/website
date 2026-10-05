@@ -31,7 +31,7 @@ Les fichiers de ressources doivent être stockés dans le répertoire `assets/` 
 | agent utilisateur  | Clé de l'agent utilisateur (Voir [Configuration des actifs](/fr/documentation/configuration/assets/#assets-remote-useragent)). | chaîne  | `default`                    |
 
 :::tip
-Vous pouvez utiliser [filters](/fr/documentation/templates/reference/filters/) pour manipuler les actifs.
+Vous pouvez utiliser [filters](/fr/documentation/templates/reference/filtres/) pour manipuler les actifs.
 :::
 
 :::info

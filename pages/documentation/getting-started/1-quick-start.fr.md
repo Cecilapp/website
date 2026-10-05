@@ -5,6 +5,7 @@ date: 2021-11-03
 updated: 2026-10-02
 alias: documentation/demarrage-rapide
 menu: home
+path: documentation/bien-demarrer/demarrage-rapide
 -->
 # Démarrage rapide
 

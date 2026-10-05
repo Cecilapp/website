@@ -3,6 +3,7 @@ title: "Tris"
 description: "Triez des collections de pages, menus ou taxonomies."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/reference/tris
 -->
 # Tris
 

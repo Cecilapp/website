@@ -3,6 +3,7 @@ title: "Build et déploiement continus"
 description: "GitHub Pages et GitLab CI."
 date: 2026-03-27
 updated: 2026-10-02
+path: documentation/deployer/deploiement-continu
 -->
 # Build et déploiement continus
 

@@ -3,6 +3,7 @@ title: "Organisation et règles de recherche"
 description: "Types de templates, convention de nommage, templates intégrés et choix du template d’une page."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/regles-de-recherche
 -->
 # Organisation et règles de recherche
 
@@ -10,7 +11,7 @@ updated: 2026-10-05
 
 ### Types de templates
 
-Il existe trois types de templates, **_layouts_**, **_components_** et **_autres templates_** : _layouts_ sont utilisés pour afficher les [pages](/fr/documentation/content/pages/), et chacun d'eux peut [inclure des templates](https://twig.symfony.com/doc/templates.html#including-other-templates) et [components](/fr/documentation/templates/components/).
+Il existe trois types de templates, **_layouts_**, **_components_** et **_autres templates_** : _layouts_ sont utilisés pour afficher les [pages](/fr/documentation/contenu/pages/), et chacun d'eux peut [inclure des templates](https://twig.symfony.com/doc/templates.html#including-other-templates) et [components](/fr/documentation/templates/composants/).
 
 ### Convention de nommage
 
@@ -27,10 +28,10 @@ layouts/(<section>/)<type>|<layout>.<format>(.<language>).twig
 :  Le type de page : `home` (ou `index`) pour _homepage_, `list` pour _list_, `page` pour _page_, etc. (Voir [_Règles de recherche_](#regles-de-recherche) pour plus de détails).
 
 `<layout>` (_facultatif_)
-:  Le nom de la layout personnalisée défini dans le [front-matter](/fr/documentation/content/pages/#front-matter) de la page (par exemple : `layout: my-layout`).
+:  Le nom de la layout personnalisée défini dans le [front-matter](/fr/documentation/contenu/pages/#front-matter) de la page (par exemple : `layout: my-layout`).
 
 `<format>`
-:  Le [format de sortie](/fr/documentation/configuration/output/#output-formats) de la page rendue (par exemple : `html`, `rss`, `json`, `xml`, etc.).
+:  Le [format de sortie](/fr/documentation/configuration/sortie/#output-formats) de la page rendue (par exemple : `html`, `rss`, `json`, `xml`, etc.).
 
 `<language>` (_facultatif_)
 :  La langue de la page (ex. : `fr`).

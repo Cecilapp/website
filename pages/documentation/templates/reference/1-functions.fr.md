@@ -3,6 +3,7 @@ title: "Fonctions"
 description: "url, html, readtime, hash, cache_key, getenv, dump, etc."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/reference/fonctions
 -->
 # Fonctions
 
@@ -19,8 +20,8 @@ Crée une URL valide pour une page, une entrée de menu, un actif, un ID de page
 | Options   | Descriptif                                                                                                                                  | Tapez   | Par défaut |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
 | canonique | Préfixez l'URL avec [`baseurl`](/fr/documentation/configuration/site/#baseurl) ou utilisez [`canonical.url`](/fr/documentation/configuration/site/#options-metatags) s'il existe. | booléen | `false`    |
-| formats   | Définit la page [format de sortie](/fr/documentation/configuration/output/#output-formats) (par exemple : `json`).                                               | chaîne  | `html`     |
-| langue    | Définit la page [langue](/fr/documentation/configuration/languages/#language) (ex. : `fr`).                                                                         | chaîne  | nul        |
+| formats   | Définit la page [format de sortie](/fr/documentation/configuration/sortie/#output-formats) (par exemple : `json`).                                               | chaîne  | `html`     |
+| langue    | Définit la page [langue](/fr/documentation/configuration/langues/#language) (ex. : `fr`).                                                                         | chaîne  | nul        |
 
 _Exemples :_
 

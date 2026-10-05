@@ -5,6 +5,7 @@ date: 2021-11-03
 updated: 2026-10-02
 weight: 8
 sortby: weight
+path: documentation/developpeurs
 -->
 # Développeurs
 

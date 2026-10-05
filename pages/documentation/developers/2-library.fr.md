@@ -4,6 +4,7 @@ description: "Utilisez Cecil comme bibliothèque PHP : installez-le avec Compose
 date: 2026-03-27
 updated: 2026-10-03
 alias: documentation/bibliotheque
+path: documentation/developpeurs/bibliotheque
 -->
 # Bibliothèque
 

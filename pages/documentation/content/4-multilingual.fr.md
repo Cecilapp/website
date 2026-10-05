@@ -3,14 +3,15 @@ title: "Multilingue"
 description: "Traduisez les pages via le nom de fichier ou le front matter et liez les pages traduites."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/contenu/multilingue
 -->
 # Multilingue
 
-Si vos pages sont disponibles en plusieurs [langues](/fr/documentation/configuration/languages/#languages), il existe 2 façons différentes de le définir :
+Si vos pages sont disponibles en plusieurs [langues](/fr/documentation/configuration/langues/#languages), il existe 2 façons différentes de le définir :
 
 ## Via le nom de fichier
 
-C’est la méthode la plus courante pour traduire une page depuis la [langue](/fr/documentation/configuration/languages/#language) principale vers une autre langue.
+C’est la méthode la plus courante pour traduire une page depuis la [langue](/fr/documentation/configuration/langues/#language) principale vers une autre langue.
 
 Il suffit de dupliquer la page de référence et de lui ajouter en suffixe le `code` de la langue cible (ex. : `fr`).
 

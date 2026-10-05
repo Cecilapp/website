@@ -3,6 +3,7 @@ title: "Structure des dossiers"
 description: "Organisation des fichiers sources, arborescence du site généré et routage des fichiers vers les URL."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/bien-demarrer/structure-des-dossiers
 -->
 # Structure des dossiers
 
@@ -52,7 +53,7 @@ Résultat de la génération.
 :::info
 Par défaut, chaque page est générée sous la forme `nomdufichier-sluglifié/index.html` pour obtenir une « belle » URL comme `https://monsiteweb.tld/section/nomdufichier-sluglifié/`.
 
-Pour obtenir une URL « ugly » (comme `404.html` au lieu de `404/`), définissez `uglyurl: true` dans le [front matter](/fr/documentation/content/pages/#front-matter) de la page.
+Pour obtenir une URL « ugly » (comme `404.html` au lieu de `404/`), définissez `uglyurl: true` dans le [front matter](/fr/documentation/contenu/pages/#front-matter) de la page.
 :::
 
 ## Routage basé sur les fichiers
@@ -70,5 +71,5 @@ URL :
 ```
 
 :::important
-Deux types de préfixes peuvent modifier l’URL, voir la section [Préfixe de fichier](/fr/documentation/content/pages/#prefixe-de-fichier) ci-dessous.
+Deux types de préfixes peuvent modifier l’URL, voir la section [Préfixe de fichier](/fr/documentation/contenu/pages/#prefixe-de-fichier) ci-dessous.
 :::

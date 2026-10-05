@@ -3,6 +3,7 @@ title: "Markdown"
 description: "Syntaxe et extensions Markdown : attributs, liens, images, table des matières, notes, coloration syntaxique, etc."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/contenu/markdown
 -->
 # Markdown
 
@@ -40,6 +41,10 @@ _Exemple :_
 [Link to a Markdown file](/fr/a-propos/)
 [Link to Cecil website](https://cecil.app)
 ```
+
+:::info
+Un lien relatif vers un fichier Markdown est résolu depuis le dossier du fichier courant (comme sur GitHub), puis remplacé par l’URL de la page ciblée.
+:::
 
 ### Lien vers une page
 
@@ -181,7 +186,7 @@ Le support de libvips est optionnel et n’est pas inclus dans `cecil.phar`. Pou
 2. l’extension PHP [FFI](https://www.php.net/manual/book.ffi.php) activée
 3. le paquet `intervention/image-driver-vips` installé avec Cecil
 
-Si Cecil est une dépendance de votre projet (voir [Bibliothèque](/fr/documentation/developers/library/#support-de-libvips)) :
+Si Cecil est une dépendance de votre projet (voir [Bibliothèque](/fr/documentation/developpeurs/bibliotheque/#support-de-libvips)) :
 
 ```bash
 composer require intervention/image-driver-vips
@@ -351,7 +356,7 @@ Introduction.
 Main content.
 ```
 
-Utilisez ensuite le filtre [`excerpt_html`](/fr/documentation/templates/reference/filters/#excerpt-html) dans votre template.
+Utilisez ensuite le filtre [`excerpt_html`](/fr/documentation/templates/reference/filtres/#excerpt-html) dans votre template.
 
 ## Notes
 

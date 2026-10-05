@@ -3,6 +3,7 @@ title: "Hébergement statique"
 description: "Déployer sur un hébergement statique (Surge)."
 date: 2026-03-27
 updated: 2026-10-02
+path: documentation/deployer/hebergement-statique
 -->
 # Hébergement statique
 

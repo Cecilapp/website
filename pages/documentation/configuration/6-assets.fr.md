@@ -99,7 +99,7 @@ assets:
 - `%quality%` remplacé par l’option `assets.images.quality`
 - `%format%` remplacé par le format de l’image
 
-Voir les [**fournisseurs CDN**](/fr/documentation/assets/cdn-providers/).
+Voir les [**fournisseurs CDN**](/fr/documentation/assets/fournisseurs-cdn/).
 
 ## assets.remote.useragent
 

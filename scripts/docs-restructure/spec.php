@@ -36,7 +36,6 @@ $spec = [
             'title' => $t('Content', 'Contenu'),
             'desc' => $t('Create and organize your content: pages, front matter, Markdown, multilingual and dynamic content.', 'Créez et organisez votre contenu : pages, front matter, Markdown, contenu multilingue et dynamique.'),
             'items' => [['C', 'pre']],
-            'alias' => ['fr' => 'documentation/contenu'],
         ],
         'pages' => [
             'pages' => ['w' => 1, 'title' => $t('Pages and sections', 'Pages et sections'),
@@ -169,7 +168,6 @@ $spec = [
             'title' => $t('Commands', 'Commandes'),
             'desc' => $t('Reference of Cecil CLI commands and options.', 'Référence des commandes et options de la CLI de Cecil.'),
             'items' => [['CM', 'pre']],
-            'alias' => ['fr' => 'documentation/commandes'],
         ],
         'pages' => [
             'new-site' => ['w' => 1, 'title' => $t('new:site', 'new:site'), 'desc' => $t('Create a new website.', 'Créer un nouveau site.'), 'items' => [['CM', 'whole', 'new:site']]],
@@ -185,7 +183,7 @@ $spec = [
             'title' => $t('Deploy', 'Déployer'),
             'desc' => $t('Deploy your static website to Jamstack platforms, through continuous deployment or to a static hosting.', 'Déployez votre site statique sur des plateformes Jamstack, via le déploiement continu ou sur un hébergement statique.'),
             'items' => [['D', 'pre']],
-            'alias' => $t('documentation/publish', ['documentation/publier', 'documentation/deployer']),
+            'alias' => $t('documentation/publish', 'documentation/publier'),
         ],
         'pages' => [
             'jamstack-platforms' => ['w' => 1, 'title' => $t('Jamstack platforms', 'Plateformes Jamstack'),
@@ -219,4 +217,17 @@ $spec = [
                 'items' => [['A', 'body']], 'alias' => $t('documentation/architecture', 'documentation/architecture')],
         ],
     ],
+];
+
+// FR translation of URL path segments (segments not listed are kept as is)
+$frSegments = [
+    'getting-started' => 'bien-demarrer', 'quick-start' => 'demarrage-rapide', 'directory-structure' => 'structure-des-dossiers', 'starter-kits' => 'kits-de-demarrage',
+    'content' => 'contenu', 'multilingual' => 'multilingue', 'dynamic-content' => 'contenu-dynamique',
+    'lookup-rules' => 'regles-de-recherche', 'components' => 'composants', 'localization' => 'localisation', 'extend' => 'etendre',
+    'functions' => 'fonctions', 'sorts' => 'tris', 'filters' => 'filtres',
+    'processing' => 'traitements', 'cdn-providers' => 'fournisseurs-cdn',
+    'languages' => 'langues', 'locale-codes' => 'codes-de-locale', 'data-static' => 'donnees-et-statiques', 'output' => 'sortie', 'server' => 'serveur',
+    'commands' => 'commandes',
+    'deploy' => 'deployer', 'jamstack-platforms' => 'plateformes-jamstack', 'continuous-deployment' => 'deploiement-continu', 'static-hosting' => 'hebergement-statique',
+    'developers' => 'developpeurs', 'library' => 'bibliotheque',
 ];

@@ -4,6 +4,7 @@ description: "Diagramme du processus de génération et composants clés."
 date: 2026-05-27
 updated: 2026-10-02
 alias: documentation/architecture
+path: documentation/developpeurs/architecture
 -->
 # Architecture
 

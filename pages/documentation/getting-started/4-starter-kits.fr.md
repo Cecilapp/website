@@ -3,6 +3,7 @@ title: "Kits de démarrage"
 description: "Démarrez rapidement avec un modèle de projet prêt à l’emploi."
 date: 2021-11-03
 updated: 2026-10-02
+path: documentation/bien-demarrer/kits-de-demarrage
 -->
 # Kits de démarrage
 

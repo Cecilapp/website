@@ -5,7 +5,7 @@ date: 2026-03-27
 updated: 2026-10-02
 weight: 6
 sortby: weight
-alias: documentation/commandes
+path: documentation/commandes
 -->
 # Commandes
 

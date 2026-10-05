@@ -75,7 +75,7 @@ Chaque format de traduction définit :
 
 ## layouts.components
 
-Options des [composants de template](/fr/documentation/templates/components/).
+Options des [composants de template](/fr/documentation/templates/composants/).
 
 ```yaml
 layouts:

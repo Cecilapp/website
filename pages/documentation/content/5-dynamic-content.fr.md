@@ -3,6 +3,7 @@ title: "Contenu dynamique"
 description: "Utilisez des variables et expressions Twig dans le contenu des pages."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/contenu/contenu-dynamique
 -->
 # Contenu dynamique
 

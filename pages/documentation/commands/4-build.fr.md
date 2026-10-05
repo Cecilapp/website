@@ -3,6 +3,7 @@ title: "build"
 description: "Générer le site."
 date: 2026-03-27
 updated: 2026-10-02
+path: documentation/commandes/build
 -->
 # build
 

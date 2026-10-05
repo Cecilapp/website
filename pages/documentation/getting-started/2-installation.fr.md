@@ -3,6 +3,7 @@ title: "Installation"
 description: "Prérequis, méthodes d’installation (PHAR, gestionnaires de paquets, Composer), mise à jour et dépannage."
 date: 2026-10-05
 updated: 2026-10-05
+path: documentation/bien-demarrer/installation
 -->
 # Installation
 
@@ -24,7 +25,7 @@ php -m
 
 | Extension | Usage |
 | --------- | ----- |
-| [`intl`](https://www.php.net/manual/fr/book.intl.php) | [Localisation](/fr/documentation/templates/localization/) des dates avec d’autres locales que `en` (améliore les performances sinon). |
+| [`intl`](https://www.php.net/manual/fr/book.intl.php) | [Localisation](/fr/documentation/templates/localisation/) des dates avec d’autres locales que `en` (améliore les performances sinon). |
 | [`imagick`](https://www.php.net/manual/fr/book.imagick.php) | Traitement des images, préféré à GD si disponible. |
 | [`ffi`](https://www.php.net/manual/fr/book.ffi.php) | Traitement des images avec [libvips](https://www.libvips.org/) (nécessite une [installation via Composer](#composer)). |
 
@@ -101,7 +102,7 @@ Assurez-vous que le dossier des binaires globaux de Composer est dans votre `PAT
 :::
 
 :::tip
-Pour utiliser Cecil comme dépendance d’un projet PHP, voir [Bibliothèque](/fr/documentation/developers/library/).
+Pour utiliser Cecil comme dépendance d’un projet PHP, voir [Bibliothèque](/fr/documentation/developpeurs/bibliotheque/).
 :::
 
 ## Vérifier l’installation
@@ -111,7 +112,7 @@ cecil --version
 ```
 
 :::info
-Exécutez `cecil list` pour afficher les [commandes disponibles](/fr/documentation/commands/).
+Exécutez `cecil list` pour afficher les [commandes disponibles](/fr/documentation/commandes/).
 :::
 
 ## Mise à jour
@@ -153,4 +154,4 @@ Le PHP utilisé en ligne de commande peut différer de celui attendu (plusieurs 
 
 ### Diagnostiquer un site
 
-Une fois un site créé, exécutez la commande [`doctor`](/fr/documentation/commands/doctor/) pour diagnostiquer sa configuration.
+Une fois un site créé, exécutez la commande [`doctor`](/fr/documentation/commandes/doctor/) pour diagnostiquer sa configuration.

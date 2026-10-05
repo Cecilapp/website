@@ -3,6 +3,7 @@ title: "Sortie"
 description: "Dossier de sortie, formats et post-traitement."
 date: 2026-03-27
 updated: 2026-10-05
+path: documentation/configuration/sortie
 -->
 # Sortie
 
@@ -32,7 +33,7 @@ output:
       exclude: [<variable>]   # n’applique pas ce format aux pages identifiées par les variables listées, ex. `[redirect, paginated]` (facultatif)
 ```
 
-Ces formats sont utilisés dans la configuration [`output.pagetypeformats`](#output-pagetypeformats) et dans la variable de page [`output`](/fr/documentation/content/front-matter/#output).
+Ces formats sont utilisés dans la configuration [`output.pagetypeformats`](#output-pagetypeformats) et dans la variable de page [`output`](/fr/documentation/contenu/front-matter/#output).
 
 ### Formats par défaut
 
@@ -61,7 +62,7 @@ output:
 ```
 
 :::info
-Pour rendre une page, [Cecil recherche un template](/fr/documentation/templates/lookup-rules/#regles-de-recherche) nommé `<layout>.<format>.twig` (ex. `page.html.twig`).
+Pour rendre une page, [Cecil recherche un template](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche) nommé `<layout>.<format>.twig` (ex. `page.html.twig`).
 :::
 
 ## exemple de output
@@ -89,6 +90,6 @@ output:
 
 ## Post-process
 
-Vous pouvez étendre les capacités de Cecil avec un [post-processeur de sortie](/fr/documentation/developers/extend/#post-processeur-de-rendu) pour modifier les fichiers de sortie après leur génération.
+Vous pouvez étendre les capacités de Cecil avec un [post-processeur de sortie](/fr/documentation/developpeurs/etendre/#post-processeur-de-rendu) pour modifier les fichiers de sortie après leur génération.
 
 ---

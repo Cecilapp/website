@@ -3,6 +3,7 @@ title: "Serveur et optimisation"
 description: "En-têtes du serveur local et optimisation de la sortie."
 date: 2026-03-27
 updated: 2026-10-05
+path: documentation/configuration/serveur
 -->
 # Serveur et optimisation
 

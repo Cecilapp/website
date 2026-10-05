@@ -3,6 +3,7 @@ title: "doctor"
 description: "Diagnostiquer la configuration, le front matter et le SEO."
 date: 2026-03-27
 updated: 2026-10-02
+path: documentation/commandes/doctor
 -->
 # doctor
 

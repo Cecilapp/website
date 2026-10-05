@@ -79,7 +79,7 @@ pages:
 
 ## pages.paths
 
-Applique un [`path`](/fr/documentation/content/front-matter/#variables-predefinies) personnalisé à toutes les pages d’une **_section_**.
+Applique un [`path`](/fr/documentation/contenu/front-matter/#variables-predefinies) personnalisé à toutes les pages d’une **_section_**.
 
 ```yaml
 pages:
@@ -129,7 +129,7 @@ pages:
 Options du corps des pages.
 
 :::info
-Pour savoir comment ces options influencent votre contenu, voir la documentation _[Contenu > Markdown](/fr/documentation/content/markdown/)_.
+Pour savoir comment ces options influencent votre contenu, voir la documentation _[Contenu > Markdown](/fr/documentation/contenu/markdown/)_.
 :::
 
 ### pages.body.toc
@@ -338,7 +338,7 @@ pages:
 ```
 
 :::tip
-Vous pouvez étendre Cecil avec un [générateur de pages](/fr/documentation/developers/extend/#generateur-de-pages).
+Vous pouvez étendre Cecil avec un [générateur de pages](/fr/documentation/developpeurs/etendre/#generateur-de-pages).
 :::
 
 ## pages.subsets

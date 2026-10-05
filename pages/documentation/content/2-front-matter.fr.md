@@ -3,6 +3,7 @@ title: "Front matter"
 description: "Variables de page personnalisées et prédéfinies : menu, taxonomie, planification, redirection, alias, sortie, etc."
 date: 2026-03-27
 updated: 2026-10-03
+path: documentation/contenu/front-matter
 -->
 # Front matter
 
@@ -15,7 +16,7 @@ Il doit se trouver au tout début du fichier et être un [YAML](https://en.wikip
 | Variable    | Description       | Valeur par défaut                                   | Exemple       |
 | ----------- | ----------------- | --------------------------------------------------- | ------------- |
 | `title`     | Titre             | Nom de fichier sans extension.                      | `Post 1`      |
-| `layout`    | Template          | Voir [_Lookup rules_](/fr/documentation/templates/lookup-rules/#regles-de-recherche). | `404`         |
+| `layout`    | Template          | Voir [_Lookup rules_](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche). | `404`         |
 | `date`      | Date de création  | Date de création du fichier (objet PHP _DateTime_). | `2019/04/15`  |
 | `section`   | Section           | _Section_ de la page.                               | `blog`        |
 | `path`      | Chemin            | _Path_ de la page.                                  | `blog/post-1` |
@@ -113,7 +114,7 @@ Cecil génère ensuite, pour chaque vocabulaire :
 - une page listant ses termes, ex. : `/tags/`
 - une page par terme listant ses pages, ex. : `/tags/developpement/` et `/tags/php/`
 
-Voir les [règles de recherche des templates](/fr/documentation/templates/lookup-rules/#type-vocabulary) et les [variables de taxonomie](/fr/documentation/templates/variables/#taxonomie) pour personnaliser ces pages.
+Voir les [règles de recherche des templates](/fr/documentation/templates/regles-de-recherche/#type-vocabulary) et les [variables de taxonomie](/fr/documentation/templates/variables/#taxonomie) pour personnaliser ces pages.
 
 ## Planification
 
@@ -174,7 +175,7 @@ Définit le format de sortie de la page.
 Les formats disponibles sont : `html`, `atom`, `rss`, `json`, `xml`, etc.  
 Vous pouvez définir un ou plusieurs formats dans un tableau.
 
-Il n’est pas obligatoire de définir un format de sortie, mais si vous le faites, il doit correspondre à l’un des formats disponibles définis dans la [_Configuration_](/fr/documentation/configuration/output/#output-formats).
+Il n’est pas obligatoire de définir un format de sortie, mais si vous le faites, il doit correspondre à l’un des formats disponibles définis dans la [_Configuration_](/fr/documentation/configuration/sortie/#output-formats).
 
 _Exemple :_
 

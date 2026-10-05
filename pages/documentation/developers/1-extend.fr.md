@@ -4,6 +4,7 @@ description: "Créez des générateurs de pages, ajoutez des extensions Twig et 
 date: 2026-03-27
 updated: 2026-10-02
 alias: documentation/etendre
+path: documentation/developpeurs/etendre
 -->
 # Étendre
 
@@ -88,7 +89,7 @@ pages:
 
 ## Extension Twig
 
-Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/functions/) et des [filtres](/fr/documentation/templates/reference/filters/) personnalisés :
+Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/fonctions/) et des [filtres](/fr/documentation/templates/reference/filtres/) personnalisés :
 
 1. [créez une extension Twig](https://twig.symfony.com/doc/advanced.html#creating-an-extension) dans l'espace de noms `Cecil\Renderer\Extension`
 2. ajoutez le fichier PHP dans le répertoire `extensions`

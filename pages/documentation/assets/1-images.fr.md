@@ -64,7 +64,7 @@ L'URL de l'image trouvée et l'image téléchargée sont mises en cache (voir [`
 Options :
 
 - `fallback` : chemin (ou URL) de l'image utilisée si aucune image n'est trouvée
-- autres options de [`image`](/fr/documentation/templates/reference/functions/#html) (ex. : `responsive`, `formats`)
+- autres options de [`image`](/fr/documentation/templates/reference/fonctions/#html) (ex. : `responsive`, `formats`)
 
 _Exemples :_
 

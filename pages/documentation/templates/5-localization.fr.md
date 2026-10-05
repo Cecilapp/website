@@ -3,6 +3,7 @@ title: "Localisation"
 description: "Traduisez les textes et localisez les dates dans les templates."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/localisation
 -->
 # Localisation
 
@@ -57,7 +58,7 @@ Pluraliser :
 Les fichiers de traduction doivent être nommés `messages.<locale>.<extension>` et stockés dans le répertoire [`translations`](/fr/documentation/configuration/layouts/).
 Les extensions prises en charge sont définies pour chaque format de traduction dans [`layouts.translations.formats`](/fr/documentation/configuration/layouts/#layouts-translations).
 
-Le code locale (ex. : `fr_FR`) d'une langue est défini dans les entrées [`languages`](/fr/documentation/configuration/languages/#languages) de la configuration.
+Le code locale (ex. : `fr_FR`) d'une langue est défini dans les entrées [`languages`](/fr/documentation/configuration/langues/#languages) de la configuration.
 
 _Exemple:_
 

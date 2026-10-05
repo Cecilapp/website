@@ -3,6 +3,7 @@ title: "Filtres"
 description: "filter_by, markdown_to_html, toc, slugify, excerpt, highlight, preg_*, etc."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/reference/filtres
 -->
 # Filtres
 
@@ -203,7 +204,7 @@ _Exemples :_
 ## excerpt_html
 
 Lit les caractères avant ou après la balise `<!-- excerpt -->` ou `<!-- break -->`.
-Voir [Documentation de contenu](/fr/documentation/content/markdown/#extrait) pour plus de détails.
+Voir [Documentation de contenu](/fr/documentation/contenu/markdown/#extrait) pour plus de détails.
 
 ```twig
 {{ string|excerpt_html({separator, capture}) }}

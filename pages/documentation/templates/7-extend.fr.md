@@ -3,12 +3,13 @@ title: "Étendre"
 description: "Ajoutez des fonctions et filtres personnalisés, ou utilisez un thème."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/templates/etendre
 -->
 # Étendre
 
 ## Fonctions et filtres
 
-Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/functions/) et des [filtres](/fr/documentation/templates/reference/filters/) personnalisés avec une [**_extension Twig_**](/fr/documentation/developers/extend/#extension-twig).
+Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/fonctions/) et des [filtres](/fr/documentation/templates/reference/filtres/) personnalisés avec une [**_extension Twig_**](/fr/documentation/developpeurs/etendre/#extension-twig).
 
 ## Thème
 

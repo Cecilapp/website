@@ -5,14 +5,14 @@ date: 2026-03-27
 updated: 2026-10-03
 weight: 2
 sortby: weight
-alias: documentation/contenu
+path: documentation/contenu
 -->
 # Contenu
 
 Il existe différents types de contenu dans Cecil :
 
 **Pages**
-: Les pages constituent le contenu principal du site, rédigé en [Markdown](/fr/documentation/content/markdown/).
+: Les pages constituent le contenu principal du site, rédigé en [Markdown](/fr/documentation/contenu/markdown/).
 : Les pages doivent être organisées de manière à refléter le site Web généré.
 : Les pages peuvent être organisées en _Sections_ (dossiers racine) (ex. : « Blog », « Projet », etc.).
 

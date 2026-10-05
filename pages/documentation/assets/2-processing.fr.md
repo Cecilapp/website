@@ -3,6 +3,7 @@ title: "CSS, JavaScript et traitements"
 description: "Compilez Sass, minifiez, ajoutez une empreinte, intégrez ou embarquez les assets."
 date: 2026-05-26
 updated: 2026-10-05
+path: documentation/assets/traitements
 -->
 # CSS, JavaScript et traitements
 
