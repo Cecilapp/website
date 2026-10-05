@@ -1,0 +1,65 @@
+{#-
+  Shared body of the search indexes: emits the flat JSON array of documentation
+  sections rendered by `list.flexsearch.twig` and `list.algolia.twig`.
+  Both walk the documentation the same way and only differ in the JSON shape:
+    `id_key`:   name of the identifier field ('id' for FlexSearch, 'objectID' for Algolia)
+    `with_date`: add a `date` field (Algolia only)
+
+  Sections are cut on `<h2>` *and* `<h3>` (a lookahead split keeps the heading
+  at the head of each chunk), so a section never bleeds into the next one and
+  pages without `<h3>` are still indexed.
+  Anchors are read from the `id` attribute emitted by Cecil, never recomputed
+  from the title: the slug rules must not be duplicated here.
+  Beware: Twig runs string literals through `stripcslashes`, so a regex needs
+  `\\s` to reach PCRE as `\s`, and `~` as delimiter to avoid escaping slashes.
+-#}
+{%- set section = 'documentation' -%}
+{%- set balises = 'h[23]' -%}
+{#- `striptags` leaves entities behind: decode the ones Markdown emits (strtr-based, no double decoding) -#}
+{%- set entities = {'&lt;': '<', '&gt;': '>', '&quot;': '"', '&#039;': "'", '&#39;': "'", '&nbsp;': ' ', '&hellip;': '…', '&amp;': '&'} -%}
+{%- macro dataset(id_key, id, page, title, description, content, href, date) ~%}
+  {
+    "{{ id_key }}": {{ id }},
+    "page": {{ page }},
+    "title": {{ title }},
+    "description": {{ description }},
+    "content": {{ content }},
+    "href": {{ href }}
+    {%- if date %},
+    "date": {{ date }}
+    {%- endif %}
+  }
+{%- endmacro -%}
+[
+{%- set is_first = true -%}
+{%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
+  {%- for chunk in p.content|preg_split('~(?=<' ~ balises ~ '[^>]*>)~') -%}
+    {%- if chunk starts with '<h' -%}
+      {%- set parts = chunk|preg_split('~</' ~ balises ~ '>~') -%}
+      {%- set title = parts[0]|striptags|replace(entities)|trim -%}
+      {%- set anchor = chunk|preg_match_all('~^<' ~ balises ~ '[^>]*\\sid="([^"]*)"~', 1)|first|default('') -%}
+      {%- set section_html = parts[1]|default('') -%}
+      {#- stripped block tags (images, code fences…) leave runs of blank lines behind -#}
+      {%- set content = section_html|striptags|replace(entities)|preg_split('~\\s*\\n\\s*\\n\\s*~')|join("\n")|trim -%}
+      {%- set description = '' -%}
+      {%- if section_html|trim starts with '<p>' -%}
+      {%- set description = section_html|trim|split('</p>')|first|striptags|replace(entities)|trim -%}
+      {%- endif -%}
+      {%- if anchor is not empty and content is not empty -%}
+        {%- if not is_first %},{% endif -%}
+        {{- _self.dataset(
+          id_key,
+          (p.id ~ '#' ~ anchor)|json_encode,
+          p.title|json_encode,
+          title|json_encode,
+          description|json_encode,
+          content|json_encode,
+          (url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor)|json_encode,
+          with_date ? p.date|date('c')|json_encode : null
+        ) -}}
+        {%- set is_first = false -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor ~%}
+]
