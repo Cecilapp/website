@@ -4,14 +4,16 @@
   {%- import 'macros/octicons.twig' as octicons -%}
   {%- set children = section.pages|filter(p => p.parent.id|default == section.id) -%}
   {%- set items = children|merge(section.sections|default([]))|sort_by_weight -%}
-  <ul class="list-reset{% if depth > 0 %} pl-3{% endif %}">
+  {#- indents the text, not the left border (literal classes for Tailwind) -#}
+  {%- set indent = ['pl-2', 'pl-5', 'pl-8', 'pl-11'][depth] ?? 'pl-11' -%}
+  <ul class="list-reset">
     {%- for item in items ~%}
     {%- set active = item.id == page.id -%}
     {%- if item.type == 'section' -%}
       {%- set open = active or item.id in page.ancestors|map(a => a.id) ~%}
     <li>
       <details{% if open %} open{% endif %} class="group/nav">
-        <summary class="menu-item flex items-center cursor-pointer list-none [&::-webkit-details-marker]:hidden p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if open %} border-blue dark:border-slate-400{% endif %}">
+        <summary class="menu-item flex items-center cursor-pointer list-none [&::-webkit-details-marker]:hidden py-2 pr-2 {{ indent }} hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if open %} border-blue dark:border-slate-400{% endif %}">
           <a href="{{ url(item) }}" class="grow{% if active %} font-bold{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
           {{- octicons.svg('chevron-right', 16, 'ml-1 size-5 shrink-0 opacity-80 transition-transform group-open/nav:rotate-90') }}
         </summary>
@@ -20,7 +22,7 @@
     </li>
     {%- else ~%}
     <li>
-      <a href="{{ url(item) }}" class="menu-item block p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if active %} font-bold border-blue dark:border-slate-400{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      <a href="{{ url(item) }}" class="menu-item block py-2 pr-2 {{ indent }} hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if active %} font-bold border-blue dark:border-slate-400{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
     </li>
     {%- endif -%}
     {%- endfor ~%}
