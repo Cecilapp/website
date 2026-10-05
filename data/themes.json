@@ -1,12 +1,28 @@
 [
   {
+    "name": "theme-applanding",
+    "full_name": "Cecilapp/theme-applanding",
+    "description": "App Landing is designed to help you quickly create a landing page for your application.",
+    "github": "https://github.com/Cecilapp/theme-applanding",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-applanding/",
+    "date": "2026-10-05T02:17:47Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-resume",
     "full_name": "Cecilapp/theme-resume",
     "description": "Resume is a theme for creating professional resumes with Cecil.",
     "github": "https://github.com/Cecilapp/theme-resume",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/resume-demo/",
-    "date": "2026-09-30T23:03:13Z",
+    "homepage": "https://cecilapp.github.io/theme-resume/",
+    "date": "2026-10-02T01:22:19Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -53,22 +69,6 @@
     "license": "MIT License",
     "homepage": "https://statidocs.cecil.app",
     "date": "2026-09-30T22:58:39Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme",
-      "tailwindcss",
-      "theme"
-    ]
-  },
-  {
-    "name": "theme-applanding",
-    "full_name": "Cecilapp/theme-applanding",
-    "description": "App Landing is designed to help you quickly create a landing page for your application.",
-    "github": "https://github.com/Cecilapp/theme-applanding",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-applanding/",
-    "date": "2026-09-30T22:55:53Z",
     "default_branch": "main",
     "topics": [
       "cecil",
