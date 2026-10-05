@@ -446,12 +446,6 @@
     "/documentation/configuration/": {
         "overview": "/documentation/configuration/",
         "apercu": "/documentation/configuration/",
-        "override-configuration": "/documentation/configuration/#override-configuration",
-        "environment-variables": "/documentation/configuration/#environment-variables",
-        "cli-option": "/documentation/configuration/#cli-option",
-        "surcharge-de-configuration": "/documentation/configuration/#surcharge-de-configuration",
-        "variables-d-environnement": "/documentation/configuration/#variables-d-environnement",
-        "option-cli": "/documentation/configuration/#option-cli",
         "title": "/documentation/configuration/site/#title",
         "baseline": "/documentation/configuration/site/#baseline",
         "baseurl": "/documentation/configuration/site/#baseurl",
@@ -552,17 +546,17 @@
         "server-headers": "/documentation/configuration/server/#server-headers",
         "serveur": "/documentation/configuration/server/#serveur",
         "optimize": "/documentation/configuration/server/#optimize",
-        "optimisation": "/documentation/configuration/server/#optimisation"
+        "optimisation": "/documentation/configuration/server/#optimisation",
+        "environment-variables": "/documentation/configuration/override/#environment-variables",
+        "cli-option": "/documentation/configuration/override/#cli-option",
+        "variables-d-environnement": "/documentation/configuration/override/#variables-d-environnement",
+        "option-cli": "/documentation/configuration/override/#option-cli",
+        "override-configuration": "/documentation/configuration/override/",
+        "surcharge-de-configuration": "/documentation/configuration/override/"
     },
     "/fr/documentation/configuration/": {
         "overview": "/fr/documentation/configuration/",
         "apercu": "/fr/documentation/configuration/",
-        "override-configuration": "/fr/documentation/configuration/#override-configuration",
-        "environment-variables": "/fr/documentation/configuration/#environment-variables",
-        "cli-option": "/fr/documentation/configuration/#cli-option",
-        "surcharge-de-configuration": "/fr/documentation/configuration/#surcharge-de-configuration",
-        "variables-d-environnement": "/fr/documentation/configuration/#variables-d-environnement",
-        "option-cli": "/fr/documentation/configuration/#option-cli",
         "title": "/fr/documentation/configuration/site/#title",
         "baseline": "/fr/documentation/configuration/site/#baseline",
         "baseurl": "/fr/documentation/configuration/site/#baseurl",
@@ -663,7 +657,13 @@
         "server-headers": "/fr/documentation/configuration/serveur/#server-headers",
         "serveur": "/fr/documentation/configuration/serveur/#serveur",
         "optimize": "/fr/documentation/configuration/serveur/#optimize",
-        "optimisation": "/fr/documentation/configuration/serveur/#optimisation"
+        "optimisation": "/fr/documentation/configuration/serveur/#optimisation",
+        "environment-variables": "/fr/documentation/configuration/surcharge/#environment-variables",
+        "cli-option": "/fr/documentation/configuration/surcharge/#cli-option",
+        "variables-d-environnement": "/fr/documentation/configuration/surcharge/#variables-d-environnement",
+        "option-cli": "/fr/documentation/configuration/surcharge/#option-cli",
+        "override-configuration": "/fr/documentation/configuration/surcharge/",
+        "surcharge-de-configuration": "/fr/documentation/configuration/surcharge/"
     },
     "/documentation/commands/": {
         "new-site": "/documentation/commands/new-site/",

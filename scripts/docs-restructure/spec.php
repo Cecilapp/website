@@ -126,8 +126,8 @@ $spec = [
         'weight' => 5,
         'index' => [
             'title' => $t('Configuration', 'Configuration'),
-            'desc' => $t('Configure your website with cecil.yml, and override it with environment variables or CLI option.', 'Configurez votre site avec cecil.yml, et surchargez-le avec des variables d’environnement ou une option CLI.'),
-            'items' => [['CF', 'whole', 'Overview'], ['CF', 'keep', 'Override configuration']],
+            'desc' => $t('Configure your website with the cecil.yml file.', 'Configurez votre site avec le fichier cecil.yml.'),
+            'items' => [['CF', 'whole', 'Overview']],
         ],
         'pages' => [
             'site' => ['w' => 1, 'title' => $t('Site options', 'Options du site'),
@@ -160,6 +160,9 @@ $spec = [
             'server' => ['w' => 10, 'title' => $t('Server and optimization', 'Serveur et optimisation'),
                 'desc' => $t('Local server headers and output optimization.', 'En-têtes du serveur local et optimisation de la sortie.'),
                 'items' => [['CF', 'keep', 'Server'], ['CF', 'keep', 'Optimize']]],
+            'override' => ['w' => 11, 'title' => $t('Override configuration', 'Surcharge de configuration'),
+                'desc' => $t('Override the configuration with environment variables or a CLI option.', 'Surchargez la configuration avec des variables d’environnement ou une option CLI.'),
+                'items' => [['CF', 'whole', 'Override configuration']]],
         ],
     ],
     'commands' => [
@@ -226,7 +229,7 @@ $frSegments = [
     'lookup-rules' => 'regles-de-recherche', 'components' => 'composants', 'localization' => 'localisation', 'extend' => 'etendre',
     'functions' => 'fonctions', 'sorts' => 'tris', 'filters' => 'filtres',
     'processing' => 'traitements', 'cdn-providers' => 'fournisseurs-cdn',
-    'languages' => 'langues', 'locale-codes' => 'codes-de-locale', 'data-static' => 'donnees-et-statiques', 'output' => 'sortie', 'server' => 'serveur',
+    'languages' => 'langues', 'locale-codes' => 'codes-de-locale', 'data-static' => 'donnees-et-statiques', 'output' => 'sortie', 'server' => 'serveur', 'override' => 'surcharge',
     'commands' => 'commandes',
     'deploy' => 'deployer', 'jamstack-platforms' => 'plateformes-jamstack', 'continuous-deployment' => 'deploiement-continu', 'static-hosting' => 'hebergement-statique',
     'developers' => 'developpeurs', 'library' => 'bibliotheque',
