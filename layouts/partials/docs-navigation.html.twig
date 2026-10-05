@@ -4,7 +4,7 @@
   {%- import 'macros/octicons.twig' as octicons -%}
   {%- set children = section.pages|filter(p => p.parent.id|default == section.id) -%}
   {%- set items = children|merge(section.sections|default([]))|sort_by_weight -%}
-  <ul class="list-reset{% if depth > 0 %} pl-6{% endif %}">
+  <ul class="list-reset{% if depth > 0 %} pl-4{% endif %}">
     {%- for item in items ~%}
     {%- set active = item.id == page.id -%}
     {%- if item.type == 'section' -%}
