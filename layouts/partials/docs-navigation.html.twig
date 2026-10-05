@@ -1,18 +1,19 @@
 {#- Documentation navigation: tree of sub-sections and pages -#}
 {%- macro tree(section, page, depth = 0) -%}
   {%- import _self as nav -%}
+  {%- import 'macros/octicons.twig' as octicons -%}
   {%- set children = section.pages|filter(p => p.parent.id|default == section.id) -%}
   {%- set items = children|merge(section.sections|default([]))|sort_by_weight -%}
-  <ul class="list-reset{% if depth > 0 %} ml-3{% endif %}">
+  <ul class="list-reset{% if depth > 0 %} ml-4{% endif %}">
     {%- for item in items ~%}
     {%- set active = item.id == page.id -%}
     {%- if item.type == 'section' -%}
       {%- set open = active or item.id in page.ancestors|map(a => a.id) ~%}
     <li>
       <details{% if open %} open{% endif %} class="group/nav">
-        <summary class="menu-item flex items-center cursor-pointer p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if open %} border-blue dark:border-slate-400{% endif %}">
+        <summary class="menu-item flex items-center cursor-pointer list-none [&::-webkit-details-marker]:hidden p-2 hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if open %} border-blue dark:border-slate-400{% endif %}">
           <a href="{{ url(item) }}" class="grow{% if active %} font-bold{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
-          <span class="ml-1 text-xs opacity-50 transition-transform group-open/nav:rotate-90" aria-hidden="true">▸</span>
+          {{- octicons.svg('chevron-right', 16, 'ml-1 size-5 shrink-0 opacity-80 transition-transform group-open/nav:rotate-90') }}
         </summary>
         {{- nav.tree(item, page, depth + 1) ~}}
       </details>
@@ -29,6 +30,5 @@
 {#- root: farthest ancestor section, or the page itself -#}
 {%- set root = page.ancestors|default([])|last ?: page -%}
             <nav class="sticky top-18.75 w-56 max-h-[calc(100vh-5rem)] overflow-y-auto mini-scrollbar text-sm" id="docs-menu" aria-label="{% trans %}Documentation{% endtrans %}">
-              <a href="{{ url(root) }}" class="block p-2 font-bold uppercase tracking-wide text-xs text-slate-500 dark:text-slate-400 hover:text-blue">{{ root.title }}</a>
               {{- nav.tree(root, page) ~}}
             </nav>
