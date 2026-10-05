@@ -1,0 +1,48 @@
+name: Lighthouse CI
+
+on:
+  schedule:
+    # Every day at 06:00 UTC (08:00 in Paris during summer time, 07:00 in winter)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.15.x
+
+      - name: Collect
+        run: lhci collect
+
+      - name: Upload reports
+        run: |
+          lhci upload
+          lhci upload --target=filesystem --outputDir=./lhci-report
+
+      - name: Annotate results
+        run: |
+          jq -r --slurpfile links .lighthouseci/links.json '
+            def pct(s): if s == null then "-" else (s * 100 | round | tostring) end;
+            .[] | select(.isRepresentativeRun) | .summary as $s |
+            (if ($s.accessibility // 1) < 0.9 then "error"
+             elif ([$s.performance, $s["best-practices"], $s.seo] | map(select(. != null and . < 0.9)) | length) > 0 then "warning"
+             else "notice" end) as $level |
+            "::\($level) title=Lighthouse \(.url)::Performance \(pct($s.performance)) · Accessibility \(pct($s.accessibility)) · Best practices \(pct($s["best-practices"])) · SEO \(pct($s.seo)) → \($links[0][.url] // "no report link")"
+          ' lhci-report/manifest.json
+
+      - name: Assert
+        run: lhci assert
