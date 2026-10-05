@@ -1,9 +1,9 @@
 {% set title = "Documentation"|trans ~ ' &middot; ' ~ site.title %}
 {% set docs = site.pages.showable|filter_by('section', 'documentation')|sort_by_weight %}
 
-{% extends 'page.html.twig' %}
+{% extends 'list.html.twig' %}
 
-        {%- block main ~%}
+        {%- block content ~%}
         <div class="markdown markdown-slate markdown-a:no-underline markdown-a:hover:no-underline markdown-h2:mt-0 markdown-h2:mb-2 markdown-ul:m-0 markdown-ul:list-none markdown-code:max-w-(--breakpoint-lg) dark:markdown-dark mx-auto max-w-(--breakpoint-lg)">
           {{- include('partials/search-box.html.twig') ~}}
           <h1>{% trans %}Documentation{% endtrans %}</h1>
@@ -27,4 +27,4 @@
             {%- endfor ~%}
           </div>
         </div>
-        {% endblock main ~%}
+        {%- endblock content ~%}
