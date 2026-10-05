@@ -113,16 +113,6 @@ layouts:
     formats: [avif, webp]
     responsive: true
     dark_suffix: .dark
-  sections: # documentation sub-sections use the documentation layouts
-    documentation/getting-started: documentation
-    documentation/content: documentation
-    documentation/templates: documentation
-    documentation/templates/reference: documentation
-    documentation/assets: documentation
-    documentation/configuration: documentation
-    documentation/commands: documentation
-    documentation/deploy: documentation
-    documentation/developers: documentation
 output:
   formats:
     - name: phar
