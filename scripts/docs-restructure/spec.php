@@ -21,10 +21,11 @@ $spec = [
                 'desc' => $t('Install Cecil, create a new website, add pages, preview it locally, then build and deploy it.', 'Installez Cecil, créez un site, ajoutez des pages, prévisualisez-le localement, puis générez-le et déployez-le.'),
                 'items' => [['QS', 'keep', 'Create a website']],
                 'alias' => $t('documentation/quick-start', 'documentation/demarrage-rapide'), 'menu' => 'home'],
-            'directory-structure' => ['w' => 2, 'title' => $t('Directory structure', 'Structure des dossiers'),
+            'installation' => ['w' => 2, 'static' => true], // hand-written page, not generated
+            'directory-structure' => ['w' => 3, 'title' => $t('Directory structure', 'Structure des dossiers'),
                 'desc' => $t('How source files are organized, how the built website looks like and how files are routed to URLs.', 'Organisation des fichiers sources, arborescence du site généré et routage des fichiers vers les URL.'),
                 'items' => [['C', 'whole', 'Files organization']]],
-            'starter-kits' => ['w' => 3, 'title' => $t('Starter kits', 'Kits de démarrage'),
+            'starter-kits' => ['w' => 4, 'title' => $t('Starter kits', 'Kits de démarrage'),
                 'desc' => $t('Get started quickly with a ready-to-use project template.', 'Démarrez rapidement avec un modèle de projet prêt à l’emploi.'),
                 'items' => [['QS', 'whole', 'Starter kits']]],
         ],

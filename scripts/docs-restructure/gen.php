@@ -166,6 +166,7 @@ $fileMain = []; // [srcKey] => url
 foreach ($spec as $section => $s) {
     $entries = ['index' => $s['index'] + ['index' => true]] + $s['pages'];
     foreach ($entries as $name => $p) {
+        if (!empty($p['static'])) continue; // hand-written page, kept as is
         $url = $section . '/' . (empty($p['index']) ? $name . '/' : '');
         foreach ($langs as $lang => $sfx) {
             $lines = [];
