@@ -55,6 +55,33 @@
   @apply border border-slate-300 dark:border-slate-600;
 }
 
+/* trigger in the site header (always on a dark background) */
+.header-search .search-wrapper {
+  width: auto;
+  margin-bottom: 0;
+}
+.header-search .search-trigger {
+  padding: .3rem .5rem;
+  border-radius: 6px;
+  @apply border border-slate-500 bg-white/5;
+  @apply hover:border-white;
+}
+.header-search .search-trigger-label {
+  display: none;
+  @apply text-slate-300;
+}
+.header-search .search-trigger .search-kbd {
+  @apply bg-white/10 text-slate-300 border-slate-500;
+}
+@media (min-width: 640px) {
+  .header-search .search-trigger {
+    width: 14rem;
+  }
+  .header-search .search-trigger-label {
+    display: inline;
+  }
+}
+
 /* modal */
 .search-dialog {
   width: 100%;
@@ -100,7 +127,7 @@
 .search-field-input {
   flex: 1 1 auto;
   min-width: 0;
-  padding: .25rem 0;
+  padding: .25rem .5rem;
   font-size: 1.125rem;
   background: none;
   border: 0;

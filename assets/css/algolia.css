@@ -57,6 +57,34 @@
   transform: translateY(-50%);
   @apply fill-slate-400;
 }
+/* search box in the site header (always on a dark background) */
+.header-search .search-container {
+  width: 16rem;
+}
+/* the inline script forces `display: block` when online */
+@media (max-width: 767px) {
+  .header-search .search-container {
+    display: none !important;
+  }
+}
+.header-search .algolia-autocomplete {
+  margin-bottom: 0;
+}
+.header-search .algolia-autocomplete .aa-input,
+.header-search .algolia-autocomplete .aa-hint {
+  padding-top: .3em;
+  padding-bottom: .3em;
+  border-width: 1px;
+  @apply border-slate-500 focus:border-white text-slate-300;
+}
+.header-search .search-icon {
+  top: 50%;
+}
+.header-search .algolia-autocomplete .aa-dropdown-menu {
+  width: 28rem;
+  max-width: calc(100vw - 2rem);
+  @apply text-darkblue dark:text-slate-300;
+}
 .aa-tpl-title {
   font-weight: bold;
   font-size: 1.25em;

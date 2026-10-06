@@ -95,21 +95,10 @@
         <div class="grow"></div>
         {#- tools and links ~#}
         <nav class="flex items-center mt-0 pt-0 gap-4">
-          {#- search icon - only show search icon on English site for now ~#}
-          {%- if site.language == 'en' ~%}
-          {%- set search_icon_path = url(site.menus.main.documentation.url|default) ~ '#top' ~%}
-          {%- if page.section == 'documentation' and page.type != 'section' ~%}
-            {%- set search_icon_path = '#top' ~%}
-          {%- endif ~%}
-          <a id="search-icon" href="{{ search_icon_path }}" aria-label="{{ site.menus.main.documentation.name|default }}">
-            {{ octicons.svg('search', 16) }}
-          </a>
-          <script>{% apply minify_js ~%}
-            document.getElementById('search-icon').addEventListener('click', () => {
-              document.getElementById('search-input').focus();
-            });
-          {% endapply %}</script>
-          {%- endif ~%}
+          {#- search in documentation ~#}
+          <div class="header-search">
+            {{- include('partials/search-box.html.twig') ~}}
+          </div>
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}
           {#- social icons ~#}
@@ -170,10 +159,6 @@
             {%- endblock breadcrumb ~%}
             {%- endblock head_content ~%}
             <div class="mx-auto max-w-(--breakpoint-lg) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-lg) markdown-blockquote:font-normal">
-              {#- Search in documentation ~#}
-              {%- if page.section starts with 'documentation' ~%}
-              {{- include('partials/search-box.html.twig') ~}}
-              {%- endif ~%}
               {#- toc ~#}
               {%- block toc ~%}
               {%- if page.body|toc(format: 'json', selectors: ['h2', 'h3'])|json_decode|length > 0 ~%}

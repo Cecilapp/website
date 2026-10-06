@@ -189,7 +189,7 @@ libs:
     version: 11
 
 search:
-  engine: algolia # 'algolia' (hosted) or 'flexsearch' (client side)
+  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
 
 algolia:
   enabled: true
