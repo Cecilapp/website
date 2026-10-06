@@ -1,8 +1,8 @@
 {# social image for metatags #}
 {% if page.type != 'homepage' %}
   {%- set img_txt = page.title %}
-  {%- if page.section == 'documentation' and page.type != 'section' -%}
-    {%- set img_txt = site.page(page.section).title ~ '\n' ~ img_txt %}
+  {%- if page.section starts with 'documentation' and page.parent|default -%}
+    {%- set img_txt = page.parent.title ~ '\n' ~ img_txt %}
   {%- endif %}
   {%- set cloudinary_url = 'https://res.cloudinary.com/%s/image/upload/f_auto,q_auto/c_fit,w_1100,g_north_west,x_80,y_80,co_white,l_text:montserrat_100_ultrabold_line_spacing_-10:%s/%s'|format(site.cloudinary.account, img_txt|url_encode|replace({'%2C':'%252C'}), site.cloudinary.asset) %}
   {%- set og_image = asset(cloudinary_url, {filename: 'cards/%s.png'|format(page.id), ignore_missing: true}) %}
@@ -157,7 +157,7 @@
         <div class="flex flex-row">
           {#- pages navigation -#}
           {%- if page.section ~%}
-          <div class="flex-none w-48 lg:mr-6 xl:mr-8 hidden lg:block">
+          <div class="flex-none {{ page.section starts with 'documentation' ? 'w-56' : 'w-48' }} lg:mr-6 xl:mr-8 hidden lg:block">
             {{- include('partials/pages-navigation.html.twig') ~}}
           </div>
           {%- endif -%}
@@ -171,7 +171,7 @@
             {%- endblock head_content ~%}
             <div class="mx-auto max-w-(--breakpoint-lg) markdown dark:markdown-dark markdown-slate markdown-headings:pt-3 markdown-headings:mt-0 markdown-h1:pt-0 markdown-code:max-w-(--breakpoint-lg) markdown-blockquote:font-normal">
               {#- Search in documentation ~#}
-              {%- if page.section == 'documentation' ~%}
+              {%- if page.section starts with 'documentation' ~%}
               {{- include('partials/search-box.html.twig') ~}}
               {%- endif ~%}
               {#- toc ~#}

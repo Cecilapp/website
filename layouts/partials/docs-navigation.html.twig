@@ -1,0 +1,36 @@
+{#- Documentation navigation: tree of sub-sections and pages -#}
+{%- macro tree(section, page, depth = 0) -%}
+  {%- import _self as nav -%}
+  {%- import 'macros/octicons.twig' as octicons -%}
+  {%- set children = section.pages|filter(p => p.parent.id|default == section.id) -%}
+  {%- set items = children|merge(section.sections|default([]))|sort_by_weight -%}
+  {#- indents the text, not the left border (literal classes for Tailwind) -#}
+  {%- set indent = ['pl-2', 'pl-5', 'pl-8', 'pl-11'][depth] ?? 'pl-11' -%}
+  <ul class="list-reset">
+    {%- for item in items ~%}
+    {%- set active = item.id == page.id -%}
+    {%- if item.type == 'section' -%}
+      {%- set open = active or item.id in page.ancestors|map(a => a.id) ~%}
+    <li>
+      <details{% if open %} open{% endif %} class="group/nav">
+        <summary class="menu-item flex items-center cursor-pointer list-none [&::-webkit-details-marker]:hidden py-2 pr-2 {{ indent }} hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if open %} border-blue dark:border-slate-400{% endif %}">
+          <a href="{{ url(item) }}" class="grow{% if active %} font-bold{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          {{- octicons.svg('chevron-right', 16, 'ml-1 size-5 shrink-0 opacity-80 transition-transform group-open/nav:rotate-90') }}
+        </summary>
+        {{- nav.tree(item, page, depth + 1) ~}}
+      </details>
+    </li>
+    {%- else ~%}
+    <li>
+      <a href="{{ url(item) }}" class="menu-item block py-2 pr-2 {{ indent }} hover:bg-slate-200 dark:hover:bg-darkgray border-l-2 border-slate-200 dark:border-darkgray{% if active %} font-bold border-blue dark:border-slate-400{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    </li>
+    {%- endif -%}
+    {%- endfor ~%}
+  </ul>
+{%- endmacro -%}
+{%- import _self as nav -%}
+{#- root: farthest ancestor section, or the page itself -#}
+{%- set root = page.ancestors|default([])|last ?: page -%}
+            <nav class="sticky top-18.75 w-56 max-h-[calc(100vh-5rem)] overflow-y-auto mini-scrollbar text-sm" id="docs-menu" aria-label="{% trans %}Documentation{% endtrans %}">
+              {{- nav.tree(root, page) ~}}
+            </nav>
