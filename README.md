@@ -75,16 +75,18 @@ The documentation search engine is selected in `cecil.yml`:
 
 ```yaml
 search:
-  engine: algolia # 'algolia' (hosted) or 'flexsearch' (client side)
+  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
 ```
 
-|           | `algolia`                                                                                              | `flexsearch`                                                                                                     |
-| --------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| Index     | `/algolia.json`, pushed by the `netlify-plugin-refresh-algolia` Netlify plugin                         | `/search.json`, served as a static file                                                                          |
-| Query     | Algolia API (network required)                                                                         | in the browser, works offline                                                                                    |
-| UI        | inline autocomplete ([`partials/search-algolia.html.twig`](layouts/partials/search-algolia.html.twig)) | `Ctrl`/`⌘` + `K` modal ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)) |
-| Languages | English only (`algolia.enabled: false` in the French config)                                           | English and French                                                                                               |
+The search box is displayed in the header by [`partials/search-box.html.twig`](layouts/partials/search-box.html.twig), which dispatches to the configured engine.
 
-Both indexes are generated at build time from the documentation sections (`<h3>` blocks) by [`list.algolia.twig`](layouts/list.algolia.twig) and [`list.flexsearch.twig`](layouts/list.flexsearch.twig).
+|           | `flexsearch` (current)                                                                                                                                          | `algolia`                                                                                              |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Index     | `/search.json`, served as a static file                                                                                                                         | `/algolia.json`, pushed by the `netlify-plugin-refresh-algolia` Netlify plugin                         |
+| Query     | in the browser, works offline                                                                                                                                   | Algolia API (network required)                                                                         |
+| UI        | icon button or `Ctrl`/`⌘` + `K` opening a modal, fullscreen on mobile ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)) | inline autocomplete ([`partials/search-algolia.html.twig`](layouts/partials/search-algolia.html.twig)) |
+| Languages | English and French                                                                                                                                              | English only (`algolia.enabled: false` in the French config)                                           |
 
-When switching to `flexsearch`, the `netlify-plugin-refresh-algolia` plugin and the `algolia` output format can be removed from `netlify.toml` and `cecil.yml`.
+Both indexes are generated at build time by [`list.flexsearch.twig`](layouts/list.flexsearch.twig) and [`list.algolia.twig`](layouts/list.algolia.twig), which share the same extraction logic ([`partials/search-index.json.twig`](layouts/partials/search-index.json.twig)): every documentation page (sub-sections included) is split on its `<h2>` and `<h3>` headings, and its introduction is indexed under the page title.
+
+As long as `flexsearch` is used, the `netlify-plugin-refresh-algolia` plugin and the `algolia` output format can be removed from `netlify.toml` and `cecil.yml`.
