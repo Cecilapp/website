@@ -84,4 +84,18 @@ layouts:
     ext: twig       # extension des fichiers de composants (`twig` par défaut)
 ```
 
+## layouts.sections
+
+Associe une section aux layouts d’une autre section : le nom associé est utilisé à la place de `<section>` par les [règles de recherche](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche) de la section et de ses pages.
+
+```yaml
+layouts:
+  sections:
+    news: blog # la section « news » est rendue avec `blog/list.html.twig` et ses pages avec `blog/page.html.twig`
+```
+
+:::tip
+Une [sous-section](/fr/documentation/contenu/pages/#sous-section) se replie déjà sur les layouts de ses sections parentes : aucune association n’est nécessaire pour cela.
+:::
+
 ---

@@ -84,4 +84,18 @@ layouts:
     ext: twig       # components files extension (`twig` by default)
 ```
 
+## layouts.sections
+
+Maps a section to the layouts of another section: the mapped name is used in place of `<section>` by the [lookup rules](/documentation/templates/lookup-rules/#lookup-rules) of the section and of its pages.
+
+```yaml
+layouts:
+  sections:
+    news: blog # the "news" section is rendered with `blog/list.html.twig` and its pages with `blog/page.html.twig`
+```
+
+:::tip
+A [sub-section](/documentation/content/pages/#sub-section) already falls back to the layouts of its parent sections: no mapping is needed for that.
+:::
+
 ---
