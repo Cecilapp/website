@@ -4,7 +4,6 @@ description: "Liste des codes de locale à utiliser avec l’option languages."
 date: 2020-12-19
 updated: 2026-10-02
 path: documentation/configuration/codes-de-locale
-excluded: true
 -->
 # Codes de locale
 
