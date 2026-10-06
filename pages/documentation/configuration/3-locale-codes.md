@@ -3,6 +3,7 @@ title: "Locale codes"
 description: "List of available locale codes to use with the languages option."
 date: 2020-12-19
 updated: 2026-10-02
+excluded: true
 -->
 # Locale codes
 
