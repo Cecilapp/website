@@ -169,7 +169,7 @@ release:
   name: cecil.phar
   sha1: cecil.phar.sha1
 repo:
-  docs: https://github.com/Cecilapp/Cecil/blob/master/docs/
+  docs: https://github.com/Cecilapp/Cecil/blob/main/docs/
   website: https://github.com/Cecilapp/website/blob/master/pages/
 
 #googleanalytics: UA-387892-21
