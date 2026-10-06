@@ -203,7 +203,7 @@ _Examples:_
 ## excerpt_html
 
 Reads characters before or after `<!-- excerpt -->` or `<!-- break -->` tag.  
-See [Content documentation](/documentation/content/markdown/#excerpt) for details.
+See [Content documentation](../../content/7-markdown.md#excerpt) for details.
 
 ```twig
 {{ string|excerpt_html({separator, capture}) }}

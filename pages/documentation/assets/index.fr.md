@@ -12,7 +12,7 @@ sortby: weight
 
 Un actif est une ressource utilisable dans des templates, comme CSS, JavaScript, image, audio, vidéo, etc.
 
-La fonction `asset()` crée un objet _asset_ à partir d'un chemin de fichier, d'un tableau de chemins de fichiers (bundle) ou d'une URL (fichier distant), et est traité (minifié, empreinte digitale, etc.) selon la [configuration](/fr/documentation/configuration/assets/).
+La fonction `asset()` crée un objet _asset_ à partir d'un chemin de fichier, d'un tableau de chemins de fichiers (bundle) ou d'une URL (fichier distant), et est traité (minifié, empreinte digitale, etc.) selon la [configuration](../configuration/27-assets.fr.md).
 
 Les fichiers de ressources doivent être stockés dans le répertoire `assets/` (ou `static/`).
 
@@ -28,14 +28,14 @@ Les fichiers de ressources doivent être stockés dans le répertoire `assets/` 
 | réduire            | Compressez CSS ou JavaScript.                                                                             | booléen | `true`                       |
 | optimiser          | Compresser l'image.                                                                                       | booléen | `false`                      |
 | repli              | Chargez un actif local si le fichier distant est introuvable.                                             | chaîne  | ``                           |
-| agent utilisateur  | Clé de l'agent utilisateur (Voir [Configuration des actifs](/fr/documentation/configuration/assets/#assets-remote-useragent)). | chaîne  | `default`                    |
+| agent utilisateur  | Clé de l'agent utilisateur (Voir [Configuration des actifs](../configuration/27-assets.fr.md#assets-remote-useragent)). | chaîne  | `default`                    |
 
 :::tip
-Vous pouvez utiliser [filters](/fr/documentation/templates/reference/filtres/) pour manipuler les actifs.
+Vous pouvez utiliser [filters](../templates/reference/14-filters.fr.md) pour manipuler les actifs.
 :::
 
 :::info
-Vous n'avez pas besoin de vider le [cache](/fr/documentation/templates/cache/) après avoir modifié un actif : le cache est automatiquement vidé lorsque le fichier est modifié ou lorsque le nom du fichier est changé.
+Vous n'avez pas besoin de vider le [cache](../templates/17-cache.fr.md) après avoir modifié un actif : le cache est automatiquement vidé lorsque le fichier est modifié ou lorsque le nom du fichier est changé.
 :::
 
 _Exemples :_

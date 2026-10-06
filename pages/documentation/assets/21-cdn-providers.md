@@ -6,7 +6,7 @@ updated: 2026-10-02
 -->
 # CDN providers
 
-Examples of CDN providers [`configuration`](/documentation/configuration/assets/#assets-images-cdn).
+Examples of CDN providers [`configuration`](../configuration/27-assets.md#assets-images-cdn).
 
 ## Cloudinary
 

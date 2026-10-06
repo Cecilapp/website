@@ -11,7 +11,7 @@ Une page est un fichier composé d’un [**front matter**](#front-matter) et d�
 
 ## Front matter
 
-Le _front matter_ est une collection de [variables](/fr/documentation/contenu/front-matter/) (au format _clé/valeur_) entourée par `---`.
+Le _front matter_ est une collection de [variables](6-front-matter.fr.md) (au format _clé/valeur_) entourée par `---`.
 
 _Exemple :_
 
@@ -30,7 +30,7 @@ Vous pouvez aussi utiliser `<!-- -->` ou `+++` comme séparateur.
 
 ## Corps (body)
 
-Le _body_ est le contenu principal d’une page ; il peut être écrit en [Markdown](/fr/documentation/contenu/markdown/) ou en texte brut.
+Le _body_ est le contenu principal d’une page ; il peut être écrit en [Markdown](7-markdown.fr.md) ou en texte brut.
 
 _Exemple :_
 
@@ -58,12 +58,12 @@ This is advice.
 
 ## Préfixe de fichier
 
-Le nom de fichier peut contenir un préfixe pour définir les variables `date` ou `weight` de la page (utilisé par [`sortby`](/fr/documentation/templates/reference/tris/#sort-by-date)).
+Le nom de fichier peut contenir un préfixe pour définir les variables `date` ou `weight` de la page (utilisé par [`sortby`](../templates/reference/13-sorts.fr.md#sort-by-date)).
 
 :::info
 Séparateurs de préfixe par défaut : `_` et `-`.
 
-Vous pouvez les personnaliser avec l’option [`pages.prefix.separator`](/fr/documentation/configuration/pages/#pages-prefix-separator).
+Vous pouvez les personnaliser avec l’option [`pages.prefix.separator`](../configuration/25-pages.fr.md#pages-prefix-separator).
 :::
 
 ### date
@@ -125,7 +125,7 @@ sortby:
 
 ### pagination
 
-La [configuration globale de pagination](/fr/documentation/configuration/pages/#pages-pagination) est utilisée par défaut, mais vous pouvez la modifier pour une _Section_ donnée.
+La [configuration globale de pagination](../configuration/25-pages.fr.md#pages-pagination) est utilisée par défaut, mais vous pouvez la modifier pour une _Section_ donnée.
 
 _Exemple :_
 
@@ -164,7 +164,7 @@ Les variables existantes ne sont pas écrasées.
 
 ### circular
 
-Définissez `circular` à `true` pour activer la navigation circulaire avec [_page.<prev/next>_](/fr/documentation/templates/variables/#page-prev-next).
+Définissez `circular` à `true` pour activer la navigation circulaire avec [_page.<prev/next>_](../templates/11-variables.fr.md#page-prev-next).
 
 _Exemple :_
 
@@ -191,7 +191,7 @@ Un dossier imbriqué qui contient explicitement un fichier `index.md` devient un
 
 Une _sous-section_ :
 
-- est une _Section_ (même type, mêmes variables et même résolution de [gabarit](/fr/documentation/templates/regles-de-recherche/#type-section)) accessible à sa propre URL (ex. : `/blog/2024/`)
+- est une _Section_ (même type, mêmes variables et même résolution de [gabarit](../templates/10-lookup-rules.fr.md#type-section)) accessible à sa propre URL (ex. : `/blog/2024/`)
 - est rendue avec les gabarits de ses _Sections_ parentes si elle n'a pas les siens (ex. : `blog/list.html.twig`)
 - peut être imbriquée à n'importe quelle profondeur (ex. : `blog/2024/06/`)
 - liste ses propres pages, et ses pages appartiennent aussi à chacune de leurs _Sections_ parentes

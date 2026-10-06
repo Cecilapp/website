@@ -32,7 +32,7 @@ output:
       exclude: [<variable>]   # don’t apply this format to pages identified by listed variables, e.g.: `[redirect, paginated]` (optional)
 ```
 
-Those formats are used in the [`output.pagetypeformats`](#output-pagetypeformats) configuration and in the [`output` page variable](/documentation/content/front-matter/#output).
+Those formats are used in the [`output.pagetypeformats`](#output-pagetypeformats) configuration and in the [`output` page variable](../content/6-front-matter.md#output).
 
 ### Default formats
 
@@ -61,7 +61,7 @@ output:
 ```
 
 :::info
-To render a page, [Cecil lookup for a template](/documentation/templates/lookup-rules/#lookup-rules) named `<layout>.<format>.twig` (e.g. `page.html.twig`)
+To render a page, [Cecil lookup for a template](../templates/10-lookup-rules.md#lookup-rules) named `<layout>.<format>.twig` (e.g. `page.html.twig`)
 :::
 
 ## output example
@@ -89,6 +89,6 @@ output:
 
 ## Post process
 
-You can extend Cecil capabilities with an [Output post processor](/documentation/developers/extend/#output-post-processor) to modify the output files after they have been generated.
+You can extend Cecil capabilities with an [Output post processor](../developers/41-extend.md#output-post-processor) to modify the output files after they have been generated.
 
 ---

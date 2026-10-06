@@ -10,7 +10,7 @@ updated: 2026-10-05
 
 ### Kinds of templates
 
-There are three kinds of templates: **_layouts_**, **_components_**, and **_other templates_**. _Layouts_ are used to render [pages](/documentation/content/pages/), and each layout can [include templates](https://twig.symfony.com/doc/templates.html#including-other-templates) and [components](/documentation/templates/components/).
+There are three kinds of templates: **_layouts_**, **_components_**, and **_other templates_**. _Layouts_ are used to render [pages](../content/5-pages.md), and each layout can [include templates](https://twig.symfony.com/doc/templates.html#including-other-templates) and [components](15-components.md).
 
 ### Naming convention
 
@@ -27,10 +27,10 @@ layouts/(<section>/)<type>|<layout>.<format>(.<language>).twig
 :  The page type: `home` (or `index`) for _homepage_, `list` for _list_, `page` for _page_, etc. (See [_Lookup rules_](#lookup-rules) for details).
 
 `<layout>` (_optional_)
-:  The custom layout name defined in the [front matter](/documentation/content/pages/#front-matter) of the page (e.g.: `layout: my-layout`).
+:  The custom layout name defined in the [front matter](../content/5-pages.md#front-matter) of the page (e.g.: `layout: my-layout`).
 
 `<format>`
-:  The [output format](/documentation/configuration/output/#output-formats) of the rendered page (e.g.: `html`, `rss`, `json`, `xml`, etc.).
+:  The [output format](../configuration/29-output.md#output-formats) of the rendered page (e.g.: `html`, `rss`, `json`, `xml`, etc.).
 
 `<language>` (_optional_)
 :  The language of the page (e.g.: `fr`).
@@ -125,7 +125,7 @@ All rules are detailed below, for each page type, in the priority order.
 8. `_default/list.<format>.twig`
 
 :::tip
-The `<section>` of a [sub-section](/documentation/content/pages/#sub-section) is its full path (e.g.: `blog/2024`), and a sub-section falls back to the templates of its parent sections: if `blog/2024/list.html.twig` doesn’t exist, the sub-section `blog/2024` is rendered with `blog/list.html.twig`.
+The `<section>` of a [sub-section](../content/5-pages.md#sub-section) is its full path (e.g.: `blog/2024`), and a sub-section falls back to the templates of its parent sections: if `blog/2024/list.html.twig` doesn’t exist, the sub-section `blog/2024` is rendered with `blog/list.html.twig`.
 :::
 
 ### Type _vocabulary_

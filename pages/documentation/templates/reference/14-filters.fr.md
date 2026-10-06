@@ -204,7 +204,7 @@ _Exemples :_
 ## excerpt_html
 
 Lit les caractères avant ou après la balise `<!-- excerpt -->` ou `<!-- break -->`.
-Voir [Documentation de contenu](/fr/documentation/contenu/markdown/#extrait) pour plus de détails.
+Voir [Documentation de contenu](../../content/7-markdown.fr.md#extrait) pour plus de détails.
 
 ```twig
 {{ string|excerpt_html({separator, capture}) }}

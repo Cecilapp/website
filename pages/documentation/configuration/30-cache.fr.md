@@ -69,7 +69,7 @@ cache:
 ```
 
 :::info
-Voir la [documentation du cache des templates](/fr/documentation/templates/cache/) pour plus de détails.
+Voir la [documentation du cache des templates](../templates/17-cache.fr.md) pour plus de détails.
 :::
 
 ## cache.translations

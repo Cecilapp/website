@@ -8,7 +8,7 @@ updated: 2026-10-05
 
 ## Functions and filters
 
-You can add custom [functions](/documentation/templates/reference/functions/) and custom [filters](/documentation/templates/reference/filters/) with a [**_Twig extension_**](/documentation/developers/extend/#twig-extension).
+You can add custom [functions](reference/12-functions.md) and custom [filters](reference/14-filters.md) with a [**_Twig extension_**](../developers/41-extend.md#twig-extension).
 
 ## Theme
 

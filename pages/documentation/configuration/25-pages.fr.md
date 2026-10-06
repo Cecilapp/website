@@ -79,7 +79,7 @@ pages:
 
 ## pages.paths
 
-Applique un [`path`](/fr/documentation/contenu/front-matter/#variables-predefinies) personnalisé à toutes les pages d’une **_section_**.
+Applique un [`path`](../content/6-front-matter.fr.md#variables-predefinies) personnalisé à toutes les pages d’une **_section_**.
 
 ```yaml
 pages:
@@ -129,7 +129,7 @@ pages:
 Options du corps des pages.
 
 :::info
-Pour savoir comment ces options influencent votre contenu, voir la documentation _[Contenu > Markdown](/fr/documentation/contenu/markdown/)_.
+Pour savoir comment ces options influencent votre contenu, voir la documentation _[Contenu > Markdown](../content/7-markdown.fr.md)_.
 :::
 
 ### pages.body.toc
@@ -180,7 +180,7 @@ Depuis la version ++8.41.0++, l’option `pages.body.images.resize` sert à redi
 :::
 
 :::important
-Les options globales, comme les largeurs et tailles des images responsives, sont configurables dans la section [`assets.images`](/fr/documentation/configuration/assets/#assets-images).
+Les options globales, comme les largeurs et tailles des images responsives, sont configurables dans la section [`assets.images`](27-assets.fr.md#assets-images).
 :::
 
 :::info
@@ -338,7 +338,7 @@ pages:
 ```
 
 :::tip
-Vous pouvez étendre Cecil avec un [générateur de pages](/fr/documentation/developpeurs/etendre/#generateur-de-pages).
+Vous pouvez étendre Cecil avec un [générateur de pages](../developers/41-extend.fr.md#generateur-de-pages).
 :::
 
 ## pages.subsets

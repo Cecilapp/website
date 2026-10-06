@@ -8,7 +8,7 @@ updated: 2026-10-05
 
 Cecil uses a cache system to speed up the generation process, it can be disabled or cleared.
 
-There are three cache types involved in template rendering: templates, [assets](/documentation/assets/#asset), and [translations](/documentation/templates/localization/#translation-files).
+There are three cache types involved in template rendering: templates, [assets](../assets/index.md#asset), and [translations](16-localization.md#translation-files).
 
 ## Clear cache
 
@@ -38,7 +38,7 @@ To use _fragments_ cache, you must wrap the content you want to cache with the [
 ```
 
 :::tip
-You should use the [`cache_key` function](/documentation/templates/reference/functions/#cache-key) to be sure to have a unique cache key for each content you want to cache.
+You should use the [`cache_key` function](reference/12-functions.md#cache-key) to be sure to have a unique cache key for each content you want to cache.
 :::
 
 :::warning
@@ -53,7 +53,7 @@ php cecil.phar cache:clear:templates --fragments
 
 ## Disable cache
 
-You can disable cache with the [configuration](/documentation/configuration/cache/).
+You can disable cache with the [configuration](../configuration/30-cache.md).
 
 :::warning
 Disabling cache can slow down the generation process, so it's not recommended.

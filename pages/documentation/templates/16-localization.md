@@ -54,10 +54,10 @@ Pluralize:
 
 ## Translation files
 
-Translation files must be named `messages.<locale>.<extension>` and stored in the [`translations`](/documentation/configuration/layouts/) directory.  
-Supported file extensions are defined by each translation format in [`layouts.translations.formats`](/documentation/configuration/layouts/#layouts-translations).
+Translation files must be named `messages.<locale>.<extension>` and stored in the [`translations`](../configuration/28-layouts.md) directory.  
+Supported file extensions are defined by each translation format in [`layouts.translations.formats`](../configuration/28-layouts.md#layouts-translations).
 
-The locale code (e.g.: `fr_FR`) of a language is defined in the [`languages`](/documentation/configuration/languages/#languages) entries of the configuration.
+The locale code (e.g.: `fr_FR`) of a language is defined in the [`languages`](../configuration/23-languages.md#languages) entries of the configuration.
 
 _Example:_
 
@@ -84,7 +84,7 @@ Use `--save` instead of (or in addition to) `--show` to save the translations to
 :::
 
 :::important
-Be careful about the [cache](/documentation/templates/cache/) when you update translations files.
+Be careful about the [cache](17-cache.md) when you update translations files.
 
 Cache can be cleared with with the following command:
 

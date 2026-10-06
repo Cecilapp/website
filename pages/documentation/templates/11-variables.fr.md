@@ -13,7 +13,7 @@ Vous pouvez utiliser des variables de différentes portées : [`site`](#site), 
 
 ## site
 
-La variable `site` contient des variables intégrées **et** celles définies dans la [configuration](/fr/documentation/).
+La variable `site` contient des variables intégrées **et** celles définies dans la [configuration](../configuration/index.fr.md).
 
 | Variables         | Descriptif                                                  |
 | ----------------- | ----------------------------------------------------------- |
@@ -92,7 +92,7 @@ Informations sur la langue actuelle.
 | ---------------------- | --------------------------------------------------------------------------- |
 | `site.language`        | Code de langue (ex. : `en`).                                                |
 | `site.language.name`   | Nom de la langue (par exemple : `English`).                                 |
-| `site.language.locale` | Langue [code local](/fr/documentation/configuration/codes-de-locale/) (par exemple : `en_US`). |
+| `site.language.locale` | Langue [code local](../configuration/24-locale-codes.fr.md) (par exemple : `en_US`). |
 | `site.language.weight` | Position de la langue dans la liste `languages`.                            |
 
 :::tip
@@ -102,7 +102,7 @@ par exemple : `site.language.name('fr')`.
 
 ### site.static
 
-La collection de fichiers statiques est accessible via `site.static` si le [_static load_](/fr/documentation/configuration/donnees-et-statiques/#static-load) est activé.
+La collection de fichiers statiques est accessible via `site.static` si le [_static load_](../configuration/26-data-static.fr.md#static-load) est activé.
 
 Chaque fichier expose les propriétés suivantes :
 
@@ -130,7 +130,7 @@ _Exemples :_
 
 ## page
 
-La variable `page` contient les variables intégrées d'une page **et** celles définies dans le [avant-plan](/fr/documentation/contenu/pages/#front-matter).
+La variable `page` contient les variables intégrées d'une page **et** celles définies dans le [avant-plan](../content/5-pages.fr.md#front-matter).
 
 | Variables           | Descriptif                                             | Exemple          |
 | ------------------- | ------------------------------------------------------ | ---------------- |
@@ -162,7 +162,7 @@ _Exemple:_
 
 ### Sections imbriquées
 
-Dans un contexte de [sections imbriquées](/fr/documentation/contenu/pages/#sous-section), les propriétés `page.parent`, `page.ancestors`, `page.sections` et `page.toplevel` facilitent la construction de la navigation.
+Dans un contexte de [sections imbriquées](../content/5-pages.fr.md#sous-section), les propriétés `page.parent`, `page.ancestors`, `page.sections` et `page.toplevel` facilitent la construction de la navigation.
 
 | Variables        | Descriptif                                                      | Exemple      |
 | ---------------- | --------------------------------------------------------------- | ------------ |
@@ -383,7 +383,7 @@ Liens vers les termes de la page courante, dans un template de page :
 ```
 
 :::tip
-La fonction [`url()`](/fr/documentation/templates/reference/fonctions/#url) « slugifie » la chaîne fournie pour trouver la page correspondante : `url('categories/Data Sovereignty')` retourne `/categories/data-sovereignty/`.
+La fonction [`url()`](reference/12-functions.fr.md#url) « slugifie » la chaîne fournie pour trouver la page correspondante : `url('categories/Data Sovereignty')` retourne `/categories/data-sovereignty/`.
 
 Vous pouvez aussi utiliser le partial intégré `{{ include('partials/terms-list.html.twig', {vocabulary: 'categories'}) }}`.
 :::

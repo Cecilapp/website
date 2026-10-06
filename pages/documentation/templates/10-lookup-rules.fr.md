@@ -11,7 +11,7 @@ path: documentation/templates/regles-de-recherche
 
 ### Types de templates
 
-Il existe trois types de templates, **_layouts_**, **_components_** et **_autres templates_** : _layouts_ sont utilisés pour afficher les [pages](/fr/documentation/contenu/pages/), et chacun d'eux peut [inclure des templates](https://twig.symfony.com/doc/templates.html#including-other-templates) et [components](/fr/documentation/templates/composants/).
+Il existe trois types de templates, **_layouts_**, **_components_** et **_autres templates_** : _layouts_ sont utilisés pour afficher les [pages](../content/5-pages.fr.md), et chacun d'eux peut [inclure des templates](https://twig.symfony.com/doc/templates.html#including-other-templates) et [components](15-components.fr.md).
 
 ### Convention de nommage
 
@@ -28,10 +28,10 @@ layouts/(<section>/)<type>|<layout>.<format>(.<language>).twig
 :  Le type de page : `home` (ou `index`) pour _homepage_, `list` pour _list_, `page` pour _page_, etc. (Voir [_Règles de recherche_](#regles-de-recherche) pour plus de détails).
 
 `<layout>` (_facultatif_)
-:  Le nom de la layout personnalisée défini dans le [front-matter](/fr/documentation/contenu/pages/#front-matter) de la page (par exemple : `layout: my-layout`).
+:  Le nom de la layout personnalisée défini dans le [front-matter](../content/5-pages.fr.md#front-matter) de la page (par exemple : `layout: my-layout`).
 
 `<format>`
-:  Le [format de sortie](/fr/documentation/configuration/sortie/#output-formats) de la page rendue (par exemple : `html`, `rss`, `json`, `xml`, etc.).
+:  Le [format de sortie](../configuration/29-output.fr.md#output-formats) de la page rendue (par exemple : `html`, `rss`, `json`, `xml`, etc.).
 
 `<language>` (_facultatif_)
 :  La langue de la page (ex. : `fr`).
@@ -126,7 +126,7 @@ Toutes les règles sont détaillées ci-dessous, pour chaque type de page, par o
 8. `_default/list.<format>.twig`
 
 :::tip
-La `<section>` d’une [sous-section](/fr/documentation/contenu/pages/#sous-section) est son chemin complet (ex. : `blog/2024`), et une sous-section se replie sur les templates de ses sections parentes : si `blog/2024/list.html.twig` n’existe pas, la sous-section `blog/2024` est rendue avec `blog/list.html.twig`.
+La `<section>` d’une [sous-section](../content/5-pages.fr.md#sous-section) est son chemin complet (ex. : `blog/2024`), et une sous-section se replie sur les templates de ses sections parentes : si `blog/2024/list.html.twig` n’existe pas, la sous-section `blog/2024` est rendue avec `blog/list.html.twig`.
 :::
 
 ### Type _vocabulary_

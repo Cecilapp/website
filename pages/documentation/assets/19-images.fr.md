@@ -24,7 +24,7 @@ _Exemples :_
 ## image_sizes
 
 Renvoie l'attribut HTML img `sizes` basé sur un nom de classe CSS.
-Il doit être utilisé conjointement avec la fonction [`image_srcset`](/fr/documentation/assets/images/#image-srcset).
+Il doit être utilisé conjointement avec la fonction [`image_srcset`](19-images.fr.md#image-srcset).
 
 ```twig
 {{ image_sizes('class') }}
@@ -59,12 +59,12 @@ L'image est recherchée dans le HTML de la page avec les fallbacks suivants, le 
 
 Les URL relatives sont résolues par rapport à `<base href>` ou à l'URL de la page.
 
-L'URL de l'image trouvée et l'image téléchargée sont mises en cache (voir [`cache.assets.remote.ttl`](/fr/documentation/configuration/cache/)).
+L'URL de l'image trouvée et l'image téléchargée sont mises en cache (voir [`cache.assets.remote.ttl`](../configuration/30-cache.fr.md)).
 
 Options :
 
 - `fallback` : chemin (ou URL) de l'image utilisée si aucune image n'est trouvée
-- autres options de [`image`](/fr/documentation/templates/reference/fonctions/#html) (ex. : `responsive`, `formats`)
+- autres options de [`image`](../templates/reference/12-functions.fr.md#html) (ex. : `responsive`, `formats`)
 
 _Exemples :_
 

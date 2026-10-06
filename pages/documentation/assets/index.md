@@ -12,7 +12,7 @@ sortby: weight
 
 An asset is a resource useable in templates, like CSS, JavaScript, image, audio, video, etc.
 
-The `asset()` function creates an _asset_ object from a file path, an array of files path (bundle) or an URL (remote file), and are processed (minified, fingerprinted, etc.) according to the [configuration](/documentation/configuration/assets/).
+The `asset()` function creates an _asset_ object from a file path, an array of files path (bundle) or an URL (remote file), and are processed (minified, fingerprinted, etc.) according to the [configuration](../configuration/27-assets.md).
 
 Resource files must be stored in the `assets/` (or `static/`)  directory.
 
@@ -28,14 +28,14 @@ Resource files must be stored in the `assets/` (or `static/`)  directory.
 | minify         | Compress CSS or JavaScript.                                                              | boolean | `true`                       |
 | optimize       | Compress image.                                                                          | boolean | `false`                      |
 | fallback       | Load a local asset if remote file is not found.                                          | string  | ``                           |
-| useragent      | User agent key (See [Assets configuration](/documentation/configuration/assets/#assets-remote-useragent)). | string  | `default`                    |
+| useragent      | User agent key (See [Assets configuration](../configuration/27-assets.md#assets-remote-useragent)). | string  | `default`                    |
 
 :::tip
-You can use [filters](/documentation/templates/reference/filters/) to manipulate assets.
+You can use [filters](../templates/reference/14-filters.md) to manipulate assets.
 :::
 
 :::info
-You don't need to clear the [cache](/documentation/templates/cache/) after modifying an asset: the cache is automatically cleared when the file is modified or when the file name is changed.
+You don't need to clear the [cache](../templates/17-cache.md) after modifying an asset: the cache is automatically cleared when the file is modified or when the file name is changed.
 :::
 
 _Examples:_

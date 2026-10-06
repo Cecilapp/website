@@ -29,7 +29,7 @@ When `prefix` is set to `true`, an alias is automatically created for the home p
 
 ## languages
 
-Options of available languages, used for [pages](/documentation/content/multilingual/) and [templates](/documentation/templates/localization/) localization.
+Options of available languages, used for [pages](../content/8-multilingual.md) and [templates](../templates/16-localization.md) localization.
 
 ```yaml
 languages:
@@ -53,7 +53,7 @@ languages:
 ```
 
 :::info
-A [locale code list](/documentation/configuration/locale-codes/) is available if needed.
+A [locale code list](24-locale-codes.md) is available if needed.
 :::
 
 ### Localize
@@ -76,6 +76,6 @@ languages:
 ```
 
 :::info
-In [templates](/documentation/templates/) you can access to an option with `{{ site.<option> }}`, for example `{{ site.title }}`.  
+In [templates](../templates/index.md) you can access to an option with `{{ site.<option> }}`, for example `{{ site.title }}`.  
 If an option is not available in the current language (e.g.: `fr`) it fallback to the global one (e.g.: `en`).
 :::

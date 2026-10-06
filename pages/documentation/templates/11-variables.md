@@ -13,7 +13,7 @@ You can use variables from different scopes: [`site`](#site), [`page`](#page), [
 
 ## site
 
-The `site` variable contains built-in variables **and** those set in the [configuration](/documentation/).
+The `site` variable contains built-in variables **and** those set in the [configuration](../configuration/index.md).
 
 | Variable              | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
@@ -92,7 +92,7 @@ Information about the current language.
 | ---------------------- | ---------------------------------------------------------------------- |
 | `site.language`        | Language code (e.g.: `en`).                                            |
 | `site.language.name`   | Language name (e.g.: `English`).                                       |
-| `site.language.locale` | Language [locale code](/documentation/configuration/locale-codes/) (e.g.: `en_US`). |
+| `site.language.locale` | Language [locale code](../configuration/24-locale-codes.md) (e.g.: `en_US`). |
 | `site.language.weight` | Language position in the `languages` list.                             |
 
 :::tip
@@ -102,7 +102,7 @@ e.g.: `site.language.name('fr')`.
 
 ### site.static
 
-The static files collection can be accessed via `site.static` if the [_static load_](/documentation/configuration/data-static/#static-load) is enabled.
+The static files collection can be accessed via `site.static` if the [_static load_](../configuration/26-data-static.md#static-load) is enabled.
 
 Each file exposes the following properties:
 
@@ -130,7 +130,7 @@ _Examples:_
 
 ## page
 
-The `page` variable contains built-in variables of a page **and** those set in the [front matter](/documentation/content/pages/#front-matter).
+The `page` variable contains built-in variables of a page **and** those set in the [front matter](../content/5-pages.md#front-matter).
 
 | Variable            | Description                                            | Example          |
 | ------------------- | ------------------------------------------------------ | ---------------- |
@@ -162,7 +162,7 @@ _Example:_
 
 ### Nested sections
 
-In a [nested sections](/documentation/content/pages/#sub-section) context, `page.parent`, `page.ancestors`, `page.sections` and `page.toplevel` help you build navigation.
+In a [nested sections](../content/5-pages.md#sub-section) context, `page.parent`, `page.ancestors`, `page.sections` and `page.toplevel` help you build navigation.
 
 | Variable         | Description                                        | Example      |
 | ---------------- | -------------------------------------------------- | ------------ |
@@ -383,7 +383,7 @@ Links to the terms of the current page, in a page template:
 ```
 
 :::tip
-The [`url()`](/documentation/templates/reference/functions/#url) function slugifies the given string to find the matching page: `url('categories/Data Sovereignty')` returns `/categories/data-sovereignty/`.
+The [`url()`](reference/12-functions.md#url) function slugifies the given string to find the matching page: `url('categories/Data Sovereignty')` returns `/categories/data-sovereignty/`.
 
 You can also use the built-in partial `{{ include('partials/terms-list.html.twig', {vocabulary: 'categories'}) }}`.
 :::

@@ -6,7 +6,7 @@ updated: 2026-10-02
 -->
 # Locale codes
 
-Available locale codes (`language_COUNTRY`) used by the [`languages`](/documentation/configuration/languages/#languages) option.
+Available locale codes (`language_COUNTRY`) used by the [`languages`](23-languages.md#languages) option.
 
 | Locale                           | Code     |
 | -------------------------------- | -------- |

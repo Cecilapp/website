@@ -79,7 +79,7 @@ pages:
 
 ## pages.paths
 
-Apply a custom [`path`](/documentation/content/front-matter/#predefined-variables) for all pages of a **_Section_**.
+Apply a custom [`path`](../content/6-front-matter.md#predefined-variables) for all pages of a **_Section_**.
 
 ```yaml
 pages:
@@ -129,7 +129,7 @@ pages:
 Page body options.
 
 :::info
-To know how those options impacts your content see _[Content > Markdown](/documentation/content/markdown/)_ documentation.
+To know how those options impacts your content see _[Content > Markdown](../content/7-markdown.md)_ documentation.
 :::
 
 ### pages.body.toc
@@ -180,7 +180,7 @@ Since version ++8.41.0++, the `pages.body.images.resize` option is used to resiz
 :::
 
 :::important
-Global options, like responsives images widths and sizes, are configurable in the [`assets.images`](/documentation/configuration/assets/#assets-images) section.
+Global options, like responsives images widths and sizes, are configurable in the [`assets.images`](27-assets.md#assets-images) section.
 :::
 
 :::info
@@ -338,7 +338,7 @@ pages:
 ```
 
 :::tip
-You can extend Cecil with [Pages generator](/documentation/developers/extend/#pages-generator).
+You can extend Cecil with [Pages generator](../developers/41-extend.md#pages-generator).
 :::
 
 ## pages.subsets

@@ -46,7 +46,7 @@ data:
 Management of static files are copied (PDF, fonts, etc.).
 
 :::important
-You should put your assets files, used by [`asset()`](/documentation/assets/#asset), in the [`assets` directory](/documentation/configuration/assets/#assets-dir) to avoid unnecessary files copy.
+You should put your assets files, used by [`asset()`](../assets/index.md#asset), in the [`assets` directory](27-assets.md#assets-dir) to avoid unnecessary files copy.
 :::
 
 ### static.dir

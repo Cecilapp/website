@@ -42,7 +42,7 @@ baseurl: http://localhost:8000/
 
 ## canonicalurl
 
-If set to `true` the [`url()`](/documentation/templates/reference/functions/#url) function will return the absolute URL (`false` by default).
+If set to `true` the [`url()`](../templates/reference/12-functions.md#url) function will return the absolute URL (`false` by default).
 
 ```yaml
 canonicalurl: <true|false> # false by default
@@ -58,7 +58,7 @@ description: "<description>"
 
 ## menus
 
-Menus are used to create [navigation links in templates](/documentation/templates/variables/#site-menus).
+Menus are used to create [navigation links in templates](../templates/11-variables.md#site-menus).
 
 A menu is made up of a unique ID and entry properties (name, URL, weight).
 
@@ -88,11 +88,11 @@ menus:
 ```
 
 :::info
-A `main` menu is automatically created with the home page entry and all sections entries ([See content management](/documentation/content/))
+A `main` menu is automatically created with the home page entry and all sections entries ([See content management](../content/index.md))
 :::
 
 :::tip
-A page can be added to a menu by setting the [`menu` variable](/documentation/content/front-matter/#menu) in its front matter.
+A page can be added to a menu by setting the [`menu` variable](../content/6-front-matter.md#menu) in its front matter.
 :::
 
 ### Override an entry
@@ -139,7 +139,7 @@ taxonomies:
   tags: tag
 ```
 
-Then you can use those vocabularies in your content’s [front matter](/documentation/content/front-matter/#taxonomy).
+Then you can use those vocabularies in your content’s [front matter](../content/6-front-matter.md#taxonomy).
 
 :::warning
 Since ++version 8.37.0++, default vocabularies `category` and `tag` have been removed. You must define them in the configuration file if you want to use them.

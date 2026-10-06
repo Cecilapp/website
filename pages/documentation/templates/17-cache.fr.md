@@ -8,7 +8,7 @@ updated: 2026-10-05
 
 Cecil utilise un système de cache pour accélérer le processus de génération, il peut être désactivé ou effacé.
 
-Il existe trois types de cache dans le cas du rendu des templates : les templates eux-mêmes, [assets](/fr/documentation/assets/#asset) et [translations](/fr/documentation/templates/localisation/#fichiers-de-traduction).
+Il existe trois types de cache dans le cas du rendu des templates : les templates eux-mêmes, [assets](../assets/index.fr.md#asset) et [translations](16-localization.fr.md#fichiers-de-traduction).
 
 ## Vider le cache
 
@@ -38,7 +38,7 @@ Pour utiliser les _fragments_ de cache, vous devez envelopper le contenu que vou
 ```
 
 :::tip
-Vous devez utiliser la fonction [`cache_key`](/fr/documentation/templates/reference/fonctions/#cache-key) pour être sûr d'avoir une clé de cache unique pour chaque contenu que vous souhaitez mettre en cache.
+Vous devez utiliser la fonction [`cache_key`](reference/12-functions.fr.md#cache-key) pour être sûr d'avoir une clé de cache unique pour chaque contenu que vous souhaitez mettre en cache.
 :::
 
 :::warning
@@ -53,7 +53,7 @@ php cecil.phar cache:clear:templates --fragments
 
 ## Désactiver le cache
 
-Vous pouvez désactiver le cache avec la [configuration](/fr/documentation/configuration/cache/).
+Vous pouvez désactiver le cache avec la [configuration](../configuration/30-cache.fr.md).
 
 :::warning
 La désactivation du cache peut ralentir le processus de génération, ce n'est donc pas recommandé.

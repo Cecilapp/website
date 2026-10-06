@@ -15,7 +15,7 @@ It must be the first thing in the file and must be a valid [YAML](https://en.wik
 | Variable    | Description       | Default value                                      | Example       |
 | ----------- | ----------------- | -------------------------------------------------- | ------------- |
 | `title`     | Title             | File name without extension.                       | `Post 1`      |
-| `layout`    | Template          | See [_Lookup rules_](/documentation/templates/lookup-rules/#lookup-rules). | `404`         |
+| `layout`    | Template          | See [_Lookup rules_](../templates/10-lookup-rules.md#lookup-rules). | `404`         |
 | `date`      | Creation date     | File creation date (PHP _DateTime_ object).        | `2019/04/15`  |
 | `section`   | Section           | Page's _Section_.                                  | `blog`        |
 | `path`      | Path              | Page's _path_.                                     | `blog/post-1` |
@@ -45,7 +45,7 @@ Before version 8.80.1, the `updated` variable was a predefined variable. It is n
 
 ## menu
 
-A page can be added to a [menu](/documentation/configuration/site/#menus).
+A page can be added to a [menu](../configuration/22-site.md#menus).
 
 The entry name is the page `title` and the URL is the page `path`.
 
@@ -92,7 +92,7 @@ menu:
 Taxonomy allows you to connect, relate and classify your website’s content.  
 In Cecil, these terms are gathered within vocabularies.
 
-Vocabularies are declared in the [_Configuration_](/documentation/configuration/site/#taxonomies).
+Vocabularies are declared in the [_Configuration_](../configuration/22-site.md#taxonomies).
 
 Vocabulary
 : A categorization of content (e.g.: `tags`, `categories`, etc.).
@@ -113,7 +113,7 @@ Cecil then generates, for each vocabulary:
 - a page listing its terms, e.g.: `/tags/`
 - a page per term listing its pages, e.g.: `/tags/development/` and `/tags/php/`
 
-See [templates lookup rules](/documentation/templates/lookup-rules/#type-vocabulary) and [taxonomy variables](/documentation/templates/variables/#taxonomy) to customize those pages.
+See [templates lookup rules](../templates/10-lookup-rules.md#type-vocabulary) and [taxonomy variables](../templates/11-variables.md#taxonomy) to customize those pages.
 
 ## Schedule
 
@@ -174,7 +174,7 @@ Defines the output format of the page.
 Available formats are: `html`, `atom`, `rss`, `json`, `xml`, etc.  
 You can define one or more formats in an array.
 
-I’s not required to define an output format, but if you do, it must be one of the available formats defined in the [_Configuration_](/documentation/configuration/output/#output-formats).
+I’s not required to define an output format, but if you do, it must be one of the available formats defined in the [_Configuration_](../configuration/29-output.md#output-formats).
 
 _Example:_
 

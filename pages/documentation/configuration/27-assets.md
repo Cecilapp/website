@@ -49,7 +49,7 @@ assets:
 ```
 
 :::info
-`sourcemap` is used to debug SCSS compilation ([debug mode](/documentation/configuration/site/#debug) must be enabled).
+`sourcemap` is used to debug SCSS compilation ([debug mode](22-site.md#debug) must be enabled).
 :::
 
 ## assets.minify
@@ -99,7 +99,7 @@ assets:
 - `%quality%` replaced by the `assets.images.quality` option
 - `%format%` replaced by the image format
 
-See [**CDN providers**](/documentation/assets/cdn-providers/).
+See [**CDN providers**](../assets/21-cdn-providers.md).
 
 ## assets.remote.useragent
 

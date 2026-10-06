@@ -65,7 +65,7 @@ _Example:_
 <a href="<url>" rel="noopener noreferrer">Link to another website</a>
 ```
 
-You can change this behavior with [`pages.body.links.external` options](/documentation/configuration/pages/#pages-body-links).
+You can change this behavior with [`pages.body.links.external` options](../configuration/25-pages.md#pages-body-links).
 
 ### Embedded links
 
@@ -131,7 +131,7 @@ Is converted to:
 ```
 
 :::info
-You can disable this behavior with the attribute `{loading=eager}` or with the [`lazy` option](/documentation/configuration/pages/#pages-body-images).
+You can disable this behavior with the attribute `{loading=eager}` or with the [`lazy` option](../configuration/25-pages.md#pages-body-images).
 :::
 
 ### Decoding
@@ -151,7 +151,7 @@ Is converted to:
 ```
 
 :::info
-You can disable this behavior with the attribute `{decoding=auto}` or with the [`decoding` option](/documentation/configuration/pages/#pages-body-images).
+You can disable this behavior with the attribute `{decoding=auto}` or with the [`decoding` option](../configuration/25-pages.md#pages-body-images).
 :::
 
 ### Resize
@@ -185,7 +185,7 @@ libvips support is optional and is not bundled with `cecil.phar`. To use it, Cec
 2. the PHP [FFI](https://www.php.net/manual/book.ffi.php) extension enabled
 3. the `intervention/image-driver-vips` package installed alongside Cecil
 
-If Cecil is a dependency of your project (see [Library](/documentation/developers/library/#libvips-support)):
+If Cecil is a dependency of your project (see [Library](../developers/42-library.md#libvips-support)):
 
 ```bash
 composer require intervention/image-driver-vips
@@ -200,7 +200,7 @@ composer global require cecil/cecil intervention/image-driver-vips
 
 ### Formats
 
-If the [`formats` option](/documentation/configuration/pages/#pages-body-images) is defined, alternatives images are created and added.
+If the [`formats` option](../configuration/25-pages.md#pages-body-images) is defined, alternatives images are created and added.
 
 _Example:_
 
@@ -224,7 +224,7 @@ Please note that **not all image formats** are always included in the PHP image 
 
 ### Responsive
 
-If the [`responsive` option](/documentation/configuration/pages/#pages-body-images) is enabled, then all images in the _body_ will be made responsive automatically.
+If the [`responsive` option](../configuration/25-pages.md#pages-body-images) is enabled, then all images in the _body_ will be made responsive automatically.
 
 _Example:_
 
@@ -244,7 +244,7 @@ will be converted to:
 ```
 
 :::info
-Because a body image is converted into an [Asset](/documentation/assets/#asset), the different widths must be defined in [assets configuration](/documentation/configuration/assets/).
+Because a body image is converted into an [Asset](../assets/index.md#asset), the different widths must be defined in [assets configuration](../configuration/27-assets.md).
 :::
 
 The `sizes` attribute takes the value of the `assets.images.responsive.sizes.default` configuration option, but it can be changed by creating a new entry named after a _class_ added to the image.
@@ -270,11 +270,11 @@ You can combine `formats` and `responsive` options.
 
 ### CSS class
 
-You can set a default value to the `class` attribute of each image with the [`class` option](/documentation/configuration/pages/#pages-body-images).
+You can set a default value to the `class` attribute of each image with the [`class` option](../configuration/25-pages.md#pages-body-images).
 
 ### Caption
 
-The optional title can be used to create a caption (`figcaption`) automatically by enabling the [`caption` option](/documentation/configuration/pages/#pages-body-images).
+The optional title can be used to create a caption (`figcaption`) automatically by enabling the [`caption` option](../configuration/25-pages.md#pages-body-images).
 
 _Example:_
 
@@ -324,7 +324,7 @@ _Examples:_
 ```
 
 :::tip
-You can set a value to the `placeholder` attribute for each image with the [`placeholder` option](/documentation/configuration/pages/#pages-body-images).
+You can set a value to the `placeholder` attribute for each image with the [`placeholder` option](../configuration/25-pages.md#pages-body-images).
 :::
 
 :::warning
@@ -340,7 +340,7 @@ You can add a table of contents with the following Markdown syntax:
 ```
 
 :::info
-By default, the ToC extracts H2 and H3 headings. You can change this behavior with [body options](/documentation/configuration/pages/#pages-body).
+By default, the ToC extracts H2 and H3 headings. You can change this behavior with [body options](../configuration/25-pages.md#pages-body).
 :::
 
 ## Excerpt
@@ -355,7 +355,7 @@ Introduction.
 Main content.
 ```
 
-Then use the [`excerpt_html` filter](/documentation/templates/reference/filters/#excerpt-html) in your template.
+Then use the [`excerpt_html` filter](../templates/reference/14-filters.md#excerpt-html) in your template.
 
 ## Notes
 
@@ -411,7 +411,7 @@ caution
 
 ## Syntax highlight
 
-Code block syntax highlighting is enabled by default with the [pages.body.highlight](/documentation/configuration/pages/#pages-body-highlight) option.
+Code block syntax highlighting is enabled by default with the [pages.body.highlight](../configuration/25-pages.md#pages-body-highlight) option.
 
 If needed, you can disable it with:
 

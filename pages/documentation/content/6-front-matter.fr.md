@@ -16,7 +16,7 @@ Il doit se trouver au tout début du fichier et être un [YAML](https://en.wikip
 | Variable    | Description       | Valeur par défaut                                   | Exemple       |
 | ----------- | ----------------- | --------------------------------------------------- | ------------- |
 | `title`     | Titre             | Nom de fichier sans extension.                      | `Post 1`      |
-| `layout`    | Template          | Voir [_Lookup rules_](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche). | `404`         |
+| `layout`    | Template          | Voir [_Lookup rules_](../templates/10-lookup-rules.fr.md#regles-de-recherche). | `404`         |
 | `date`      | Date de création  | Date de création du fichier (objet PHP _DateTime_). | `2019/04/15`  |
 | `section`   | Section           | _Section_ de la page.                               | `blog`        |
 | `path`      | Chemin            | _Path_ de la page.                                  | `blog/post-1` |
@@ -46,7 +46,7 @@ Avant la version 8.80.1, la variable `updated` était une variable prédéfinie.
 
 ## menu
 
-Une page peut être ajoutée à un [menu](/fr/documentation/configuration/site/#menus).
+Une page peut être ajoutée à un [menu](../configuration/22-site.fr.md#menus).
 
 Le nom de l’entrée est le `title` de la page et l’URL est le `path` de la page.
 
@@ -93,7 +93,7 @@ menu:
 La taxonomie permet de connecter, relier et classer le contenu de votre site Web.  
 Dans Cecil, ces termes sont regroupés dans des vocabulaires.
 
-Les vocabulaires sont déclarés dans la [_Configuration_](/fr/documentation/configuration/site/#taxonomies).
+Les vocabulaires sont déclarés dans la [_Configuration_](../configuration/22-site.fr.md#taxonomies).
 
 Vocabulaire
 : Une catégorisation du contenu (ex. : `tags`, `categories`, etc.).
@@ -114,7 +114,7 @@ Cecil génère ensuite, pour chaque vocabulaire :
 - une page listant ses termes, ex. : `/tags/`
 - une page par terme listant ses pages, ex. : `/tags/developpement/` et `/tags/php/`
 
-Voir les [règles de recherche des templates](/fr/documentation/templates/regles-de-recherche/#type-vocabulary) et les [variables de taxonomie](/fr/documentation/templates/variables/#taxonomie) pour personnaliser ces pages.
+Voir les [règles de recherche des templates](../templates/10-lookup-rules.fr.md#type-vocabulary) et les [variables de taxonomie](../templates/11-variables.fr.md#taxonomie) pour personnaliser ces pages.
 
 ## Planification
 
@@ -175,7 +175,7 @@ Définit le format de sortie de la page.
 Les formats disponibles sont : `html`, `atom`, `rss`, `json`, `xml`, etc.  
 Vous pouvez définir un ou plusieurs formats dans un tableau.
 
-Il n’est pas obligatoire de définir un format de sortie, mais si vous le faites, il doit correspondre à l’un des formats disponibles définis dans la [_Configuration_](/fr/documentation/configuration/sortie/#output-formats).
+Il n’est pas obligatoire de définir un format de sortie, mais si vous le faites, il doit correspondre à l’un des formats disponibles définis dans la [_Configuration_](../configuration/29-output.fr.md#output-formats).
 
 _Exemple :_
 

@@ -6,11 +6,11 @@ updated: 2026-10-03
 -->
 # Multilingual
 
-If your pages are available in multiple [languages](/documentation/configuration/languages/#languages) there is 2 different ways to define it:
+If your pages are available in multiple [languages](../configuration/23-languages.md#languages) there is 2 different ways to define it:
 
 ## Through file name
 
-This is the common way to translate a page from the main [language](/documentation/configuration/languages/#language) to another language.
+This is the common way to translate a page from the main [language](../configuration/23-languages.md#language) to another language.
 
 You just need to duplicate the reference page and suffix it with the target language `code` (e.g.: `fr`).
 
@@ -50,7 +50,7 @@ language: fr
 
 Each translated page reference the pages in others languages.
 
-Those pages collection is available in [templates](/documentation/templates/variables/#page) with the following variable:
+Those pages collection is available in [templates](../templates/11-variables.md#page) with the following variable:
 
 ```twig
 {{ page.translations }}

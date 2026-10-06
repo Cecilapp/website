@@ -42,7 +42,7 @@ baseurl: http://localhost:8000/
 
 ## canonicalurl
 
-Si la valeur est `true`, la fonction [`url()`](/fr/documentation/templates/reference/fonctions/#url) renverra l’URL absolue (`false` par défaut).
+Si la valeur est `true`, la fonction [`url()`](../templates/reference/12-functions.fr.md#url) renverra l’URL absolue (`false` par défaut).
 
 ```yaml
 canonicalurl: <true|false> # false by default
@@ -58,7 +58,7 @@ description: "<description>"
 
 ## menus
 
-Les menus sont utilisés pour créer des [liens de navigation dans les templates](/fr/documentation/templates/variables/#site-menus).
+Les menus sont utilisés pour créer des [liens de navigation dans les templates](../templates/11-variables.fr.md#site-menus).
 
 Un menu est composé d’un identifiant unique et des propriétés des entrées (nom, URL, poids).
 
@@ -88,11 +88,11 @@ menus:
 ```
 
 :::info
-Un menu `main` est créé automatiquement avec l’entrée de la page d’accueil et toutes les entrées de sections ([Voir la gestion du contenu](/fr/documentation/contenu/)).
+Un menu `main` est créé automatiquement avec l’entrée de la page d’accueil et toutes les entrées de sections ([Voir la gestion du contenu](../content/index.fr.md)).
 :::
 
 :::tip
-Une page peut être ajoutée à un menu en définissant la variable [`menu`](/fr/documentation/contenu/front-matter/#menu) dans son front matter.
+Une page peut être ajoutée à un menu en définissant la variable [`menu`](../content/6-front-matter.fr.md#menu) dans son front matter.
 :::
 
 ### Surcharger une entrée
@@ -139,7 +139,7 @@ taxonomies:
   tags: tag
 ```
 
-Vous pouvez ensuite utiliser ces vocabulaires dans le [front matter](/fr/documentation/contenu/front-matter/#taxonomie) de votre contenu.
+Vous pouvez ensuite utiliser ces vocabulaires dans le [front matter](../content/6-front-matter.fr.md#taxonomie) de votre contenu.
 
 :::warning
 Depuis la ++version 8.37.0++, les vocabulaires par défaut `category` et `tag` ont été supprimés. Vous devez les définir dans le fichier de configuration si vous souhaitez les utiliser.

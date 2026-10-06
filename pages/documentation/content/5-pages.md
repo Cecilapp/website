@@ -10,7 +10,7 @@ A page is a file made up of a [**front matter**](#front-matter) and a [**body**]
 
 ## Front matter
 
-The _front matter_ is a collection of [variables](/documentation/content/front-matter/) (in _key/value_ format) surrounded by `---`.
+The _front matter_ is a collection of [variables](6-front-matter.md) (in _key/value_ format) surrounded by `---`.
 
 _Example:_
 
@@ -29,7 +29,7 @@ You can also use `<!-- -->` or `+++` as separator.
 
 ## Body
 
-_Body_ is the main content of a page, it could be written in [Markdown](/documentation/content/markdown/) or in plain text.
+_Body_ is the main content of a page, it could be written in [Markdown](7-markdown.md) or in plain text.
 
 _Example:_
 
@@ -57,12 +57,12 @@ This is advice.
 
 ## File prefix
 
-The filename can contain a prefix to define `date` or `weight` variables of the page (used by [`sortby`](/documentation/templates/reference/sorts/#sort-by-date)).
+The filename can contain a prefix to define `date` or `weight` variables of the page (used by [`sortby`](../templates/reference/13-sorts.md#sort-by-date)).
 
 :::info
 Default prefix separators: `_` and `-`.
 
-You can customize them with the [`pages.prefix.separator`](/documentation/configuration/pages/#pages-prefix-separator) option.
+You can customize them with the [`pages.prefix.separator`](../configuration/25-pages.md#pages-prefix-separator) option.
 
 :::
 
@@ -125,7 +125,7 @@ sortby:
 
 ### pagination
 
-The global [pagination configuration](/documentation/configuration/pages/#pages-pagination) is used by default, but you can change it for a specific _Section_.
+The global [pagination configuration](../configuration/25-pages.md#pages-pagination) is used by default, but you can change it for a specific _Section_.
 
 _Example:_
 
@@ -164,7 +164,7 @@ Existing variables are not overridden.
 
 ### circular
 
-Set `circular` to `true` to enable circular navigation with [_page.<prev/next>_](/documentation/templates/variables/#page-prev-next).
+Set `circular` to `true` to enable circular navigation with [_page.<prev/next>_](../templates/11-variables.md#page-prev-next).
 
 _Example:_
 
@@ -191,7 +191,7 @@ A nested folder that explicitly contains an `index.md` file is turned into a _su
 
 A _sub-section_:
 
-- is a _Section_ (same type, variables and [layout](/documentation/templates/lookup-rules/#type-section) resolution) available at its own URL (e.g.: `/blog/2024/`)
+- is a _Section_ (same type, variables and [layout](../templates/10-lookup-rules.md#type-section) resolution) available at its own URL (e.g.: `/blog/2024/`)
 - is rendered with the layouts of its parent _Sections_ if it doesn't have its own (e.g.: `blog/list.html.twig`)
 - can be nested at any depth (e.g.: `blog/2024/06/`)
 - lists its own pages, and its pages also belong to each of their parent _Sections_

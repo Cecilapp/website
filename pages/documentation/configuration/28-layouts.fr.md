@@ -75,7 +75,7 @@ Chaque format de traduction définit :
 
 ## layouts.components
 
-Options des [composants de template](/fr/documentation/templates/composants/).
+Options des [composants de template](../templates/15-components.fr.md).
 
 ```yaml
 layouts:
@@ -86,7 +86,7 @@ layouts:
 
 ## layouts.sections
 
-Associe une section aux layouts d’une autre section : le nom associé est utilisé à la place de `<section>` par les [règles de recherche](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche) de la section et de ses pages.
+Associe une section aux layouts d’une autre section : le nom associé est utilisé à la place de `<section>` par les [règles de recherche](../templates/10-lookup-rules.fr.md#regles-de-recherche) de la section et de ses pages.
 
 ```yaml
 layouts:
@@ -95,7 +95,7 @@ layouts:
 ```
 
 :::tip
-Une [sous-section](/fr/documentation/contenu/pages/#sous-section) se replie déjà sur les layouts de ses sections parentes : aucune association n’est nécessaire pour cela.
+Une [sous-section](../content/5-pages.fr.md#sous-section) se replie déjà sur les layouts de ses sections parentes : aucune association n’est nécessaire pour cela.
 :::
 
 ---

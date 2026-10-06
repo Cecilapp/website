@@ -7,7 +7,7 @@ path: documentation/configuration/codes-de-locale
 -->
 # Codes de locale
 
-Codes de locale disponibles (`language_COUNTRY`) utilisés par l’option [`languages`](/fr/documentation/configuration/langues/#languages).
+Codes de locale disponibles (`language_COUNTRY`) utilisés par l’option [`languages`](23-languages.fr.md#languages).
 
 | Locale                           | Code     |
 | -------------------------------- | -------- |

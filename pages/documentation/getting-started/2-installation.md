@@ -24,7 +24,7 @@ php -m
 
 | Extension | Usage |
 | --------- | ----- |
-| [`intl`](https://www.php.net/manual/book.intl.php) | Dates [localization](/documentation/templates/localization/) with other locales than `en` (improves performance otherwise). |
+| [`intl`](https://www.php.net/manual/book.intl.php) | Dates [localization](../templates/16-localization.md) with other locales than `en` (improves performance otherwise). |
 | [`imagick`](https://www.php.net/manual/book.imagick.php) | Image processing, preferred over GD when available. |
 | [`ffi`](https://www.php.net/manual/book.ffi.php) | Image processing with [libvips](https://www.libvips.org/) (requires [Composer installation](#composer)). |
 
@@ -101,7 +101,7 @@ Make sure Composer's global binaries directory is in your `PATH`. Run `composer 
 :::
 
 :::tip
-To use Cecil as a dependency of a PHP project, see [Library](/documentation/developers/library/).
+To use Cecil as a dependency of a PHP project, see [Library](../developers/42-library.md).
 :::
 
 ## Verify the installation
@@ -111,7 +111,7 @@ cecil --version
 ```
 
 :::info
-Run `cecil list` to display the [available commands](/documentation/commands/).
+Run `cecil list` to display the [available commands](../commands/index.md).
 :::
 
 ## Update
@@ -153,4 +153,4 @@ Your PHP CLI may differ from the one you expect (several versions installed): ch
 
 ### Diagnose a website
 
-Once a website is created, run the [`doctor`](/documentation/commands/doctor/) command to diagnose its configuration.
+Once a website is created, run the [`doctor`](../commands/37-doctor.md) command to diagnose its configuration.

@@ -55,10 +55,10 @@ Pluraliser :
 
 ## Fichiers de traduction
 
-Les fichiers de traduction doivent être nommés `messages.<locale>.<extension>` et stockés dans le répertoire [`translations`](/fr/documentation/configuration/layouts/).
-Les extensions prises en charge sont définies pour chaque format de traduction dans [`layouts.translations.formats`](/fr/documentation/configuration/layouts/#layouts-translations).
+Les fichiers de traduction doivent être nommés `messages.<locale>.<extension>` et stockés dans le répertoire [`translations`](../configuration/28-layouts.fr.md).
+Les extensions prises en charge sont définies pour chaque format de traduction dans [`layouts.translations.formats`](../configuration/28-layouts.fr.md#layouts-translations).
 
-Le code locale (ex. : `fr_FR`) d'une langue est défini dans les entrées [`languages`](/fr/documentation/configuration/langues/#languages) de la configuration.
+Le code locale (ex. : `fr_FR`) d'une langue est défini dans les entrées [`languages`](../configuration/23-languages.fr.md#languages) de la configuration.
 
 _Exemple:_
 
@@ -85,7 +85,7 @@ Utilisez `--save` à la place (ou en plus) de `--show` pour enregistrer les trad
 :::
 
 :::important
-Faites attention au [cache](/fr/documentation/templates/cache/) lorsque vous mettez à jour les fichiers de traduction.
+Faites attention au [cache](17-cache.fr.md) lorsque vous mettez à jour les fichiers de traduction.
 
 Le cache peut être vidé avec la commande suivante :
 

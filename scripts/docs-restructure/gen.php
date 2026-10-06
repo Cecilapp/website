@@ -1,7 +1,9 @@
 <?php
 /**
  * Prototype: splits flat documentation pages into sub-sections.
- * Usage: php gen.php <website root>
+ * Usage: php gen.php <root> [--relative]
+ *   <root> contains pages/documentation (flat sources) and data/
+ *   --relative: links between documentation pages are relative links to Markdown files
  */
 $root = rtrim($argv[1] ?? '.', '/');
 $docs = "$root/pages/documentation";
@@ -185,6 +187,7 @@ foreach ($spec as $section => $s) {
                     foreach (headingSlugs(resolve($item, $parsed, $l2)) as $sl) $anchors[$item[0]][$sl] ??= $url;
                 }
                 if (in_array($item[1], ['pre', 'body'])) $fileMain[$item[0]] ??= $url;
+                $firstUrl[$item[0]] ??= $url;
                 if (in_array($item[1], ['whole', 'intro'])) {
                     $i = findH2($parsed['en'][$item[0]], $item[2], $parsed['en'][$item[0]]);
                     foreach ($langs as $l2 => $x) { $sl = slug($parsed[$l2][$item[0]]['h2'][$i]['title']); if (!isset($anchors[$item[0]][$sl])) { $anchors[$item[0]][$sl] = $url; $dropped[$item[0]][$sl] = true; } }
@@ -203,8 +206,8 @@ foreach ($spec as $section => $s) {
         }
     }
 }
-// unmapped files fall back to documentation index
-foreach ($src as $k => $f) $fileMain[$k] ??= '';
+// files without intro: first page using them, otherwise documentation index
+foreach ($src as $k => $f) $fileMain[$k] ??= $firstUrl[$k] ?? '';
 
 /* ---------- rewrite links ---------- */
 $keyByFile = [];
@@ -307,16 +310,42 @@ foreach ($spec as $section => $s) {
             $file = "$docs/$section/{$p['w']}-$name$sfx.md";
             $text = preg_replace_callback('#\]\(' . preg_quote($urlPrefix[$lang], '#') . '([^)\#]*)#', fn ($m) => '](' . $urlPrefix[$lang] . localUrl($m[1], $lang), file_get_contents($file));
             $path = 'documentation/' . rtrim(localUrl("$section/$name/", $lang), '/');
-            $text = preg_replace('/^path: .*
-/m', '', $text, 1);
-            $text = preg_replace('/
--->
-/', "
-path: $path
--->
-", $text, 1);
+            $text = preg_replace('/^path: .*\n/m', '', $text, 1);
+            $text = preg_replace('/\n-->\n/', "\npath: $path\n-->\n", $text, 1);
             file_put_contents($file, $text);
         }
+    }
+}
+
+/* ---------- relative links (optional) ---------- */
+// "--relative": links to documentation pages become relative links to their Markdown file
+// (resolved by Cecil >= 9.7.4, and browsable on GitHub)
+function relPath(string $fromDir, string $toFile): string
+{
+    $from = $fromDir === '' ? [] : explode('/', $fromDir);
+    $to = explode('/', $toFile);
+    while ($from && count($to) > 1 && $from[0] === $to[0]) {
+        array_shift($from);
+        array_shift($to);
+    }
+    return str_repeat('../', count($from)) . implode('/', $to);
+}
+if (in_array('--relative', $argv)) {
+    $fileByUrl = []; // URL => file, relative to the documentation dir
+    foreach ($spec as $section => $s) {
+        foreach (['index' => $s['index'] + ['index' => true]] + $s['pages'] as $name => $p) {
+            $url = $section . '/' . (empty($p['index']) ? $name . '/' : '');
+            foreach ($langs as $lang => $sfx) {
+                $fileByUrl[$urlPrefix[$lang] . localUrl($url, $lang)] = $section . '/' . (empty($p['index']) ? $p['w'] . '-' . $name : 'index') . $sfx . '.md';
+            }
+        }
+    }
+    foreach ($fileByUrl as $file) {
+        $text = preg_replace_callback('#\]\((/(?:fr/)?documentation/[^)\#\s]*)(\#[^)\s]*)?\)#', function ($m) use ($fileByUrl, $file) {
+            if (!isset($fileByUrl[$m[1]])) return $m[0]; // not a documentation page (e.g. API reference)
+            return '](' . relPath(dirname($file), $fileByUrl[$m[1]]) . ($m[2] ?? '') . ')';
+        }, file_get_contents("$docs/$file"));
+        file_put_contents("$docs/$file", $text);
     }
 }
 file_put_contents("$root/data/docs_redirects.json", json_encode($map, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));

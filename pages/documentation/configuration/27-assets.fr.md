@@ -49,7 +49,7 @@ assets:
 ```
 
 :::info
-`sourcemap` sert à déboguer la compilation SCSS ([mode debug](/fr/documentation/configuration/site/#debug) requis).
+`sourcemap` sert à déboguer la compilation SCSS ([mode debug](22-site.fr.md#debug) requis).
 :::
 
 ## assets.minify
@@ -99,7 +99,7 @@ assets:
 - `%quality%` remplacé par l’option `assets.images.quality`
 - `%format%` remplacé par le format de l’image
 
-Voir les [**fournisseurs CDN**](/fr/documentation/assets/fournisseurs-cdn/).
+Voir les [**fournisseurs CDN**](../assets/21-cdn-providers.fr.md).
 
 ## assets.remote.useragent
 

@@ -14,7 +14,7 @@ Comme Cecil repose sur PHP, il est facile d'en étendre les capacités.
 
 Un générateur permet de créer des pages sans fichiers Markdown (avec des données provenant d'une API ou d'une base de données, par exemple), ou de modifier des pages existantes.
 
-Créez simplement une nouvelle classe PHP dans l'espace de noms `Cecil\Generator`, puis ajoutez le nom de la classe à la liste [`pages.generators`](/fr/documentation/configuration/pages/#pages-generators).
+Créez simplement une nouvelle classe PHP dans l'espace de noms `Cecil\Generator`, puis ajoutez le nom de la classe à la liste [`pages.generators`](../configuration/25-pages.fr.md#pages-generators).
 
 **Exemple:**
 
@@ -89,7 +89,7 @@ pages:
 
 ## Extension Twig
 
-Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/fonctions/) et des [filtres](/fr/documentation/templates/reference/filtres/) personnalisés :
+Vous pouvez ajouter des [fonctions](../templates/reference/12-functions.fr.md) et des [filtres](../templates/reference/14-filters.fr.md) personnalisés :
 
 1. [créez une extension Twig](https://twig.symfony.com/doc/advanced.html#creating-an-extension) dans l'espace de noms `Cecil\Renderer\Extension`
 2. ajoutez le fichier PHP dans le répertoire `extensions`

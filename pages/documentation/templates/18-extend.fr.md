@@ -9,7 +9,7 @@ path: documentation/templates/etendre
 
 ## Fonctions et filtres
 
-Vous pouvez ajouter des [fonctions](/fr/documentation/templates/reference/fonctions/) et des [filtres](/fr/documentation/templates/reference/filtres/) personnalisés avec une [**_extension Twig_**](/fr/documentation/developpeurs/etendre/#extension-twig).
+Vous pouvez ajouter des [fonctions](reference/12-functions.fr.md) et des [filtres](reference/14-filters.fr.md) personnalisés avec une [**_extension Twig_**](../developers/41-extend.fr.md#extension-twig).
 
 ## Thème
 

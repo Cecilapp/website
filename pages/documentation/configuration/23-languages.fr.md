@@ -30,7 +30,7 @@ Quand `prefix` est défini à `true`, un alias est automatiquement créé pour l
 
 ## languages
 
-Options des langues disponibles, utilisées pour la localisation des [pages](/fr/documentation/contenu/multilingue/) et des [templates](/fr/documentation/templates/localisation/).
+Options des langues disponibles, utilisées pour la localisation des [pages](../content/8-multilingual.fr.md) et des [templates](../templates/16-localization.fr.md).
 
 ```yaml
 languages:
@@ -54,7 +54,7 @@ languages:
 ```
 
 :::info
-Une [liste des codes de locale](/fr/documentation/configuration/codes-de-locale/) est disponible si nécessaire.
+Une [liste des codes de locale](24-locale-codes.fr.md) est disponible si nécessaire.
 :::
 
 ### Localiser
@@ -77,6 +77,6 @@ languages:
 ```
 
 :::info
-Dans les [templates](/fr/documentation/templates/), vous pouvez accéder à une option avec `{{ site.<option> }}`, par exemple `{{ site.title }}`.  
+Dans les [templates](../templates/index.fr.md), vous pouvez accéder à une option avec `{{ site.<option> }}`, par exemple `{{ site.title }}`.  
 Si une option n’est pas disponible dans la langue actuelle (ex. : `fr`), elle revient à la valeur globale (ex. : `en`).
 :::

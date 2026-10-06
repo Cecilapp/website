@@ -69,7 +69,7 @@ cache:
 ```
 
 :::info
-See [templates cache documentation](/documentation/templates/cache/) for more details.
+See [templates cache documentation](../templates/17-cache.md) for more details.
 :::
 
 ## cache.translations

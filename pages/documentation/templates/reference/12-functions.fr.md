@@ -19,9 +19,9 @@ Crée une URL valide pour une page, une entrée de menu, un actif, un ID de page
 
 | Options   | Descriptif                                                                                                                                  | Tapez   | Par défaut |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| canonique | Préfixez l'URL avec [`baseurl`](/fr/documentation/configuration/site/#baseurl) ou utilisez [`canonical.url`](/fr/documentation/configuration/site/#options-metatags) s'il existe. | booléen | `false`    |
-| formats   | Définit la page [format de sortie](/fr/documentation/configuration/sortie/#output-formats) (par exemple : `json`).                                               | chaîne  | `html`     |
-| langue    | Définit la page [langue](/fr/documentation/configuration/langues/#language) (ex. : `fr`).                                                                         | chaîne  | nul        |
+| canonique | Préfixez l'URL avec [`baseurl`](../../configuration/22-site.fr.md#baseurl) ou utilisez [`canonical.url`](../../configuration/22-site.fr.md#options-metatags) s'il existe. | booléen | `false`    |
+| formats   | Définit la page [format de sortie](../../configuration/29-output.fr.md#output-formats) (par exemple : `json`).                                               | chaîne  | `html`     |
+| langue    | Définit la page [langue](../../configuration/23-languages.fr.md#language) (ex. : `fr`).                                                                         | chaîne  | nul        |
 
 _Exemples :_
 
@@ -83,11 +83,11 @@ Depuis la version ++8.42.0++, la fonction `html` remplace le filtre `html` obsol
 :::
 
 :::tip
-Vous pouvez définir un comportement global par défaut des options d'images (`formats`, `responsive` et `placeholder`) via la [configuration des layouts](/fr/documentation/configuration/layouts/#layouts-images).
+Vous pouvez définir un comportement global par défaut des options d'images (`formats`, `responsive` et `placeholder`) via la [configuration des layouts](../../configuration/28-layouts.fr.md#layouts-images).
 
-Lorsque [`layouts.images.dark_suffix`](/fr/documentation/configuration/layouts/#layouts-images) est configuré (par exemple `.dark`), Cecil recherche automatiquement une variante sombre de chaque image (par exemple `photo.dark.jpg` aux côtés de `photo.jpg`) et génère un élément `<picture>` avec un `<source media="(prefers-color-scheme: dark)">`.
+Lorsque [`layouts.images.dark_suffix`](../../configuration/28-layouts.fr.md#layouts-images) est configuré (par exemple `.dark`), Cecil recherche automatiquement une variante sombre de chaque image (par exemple `photo.dark.jpg` aux côtés de `photo.jpg`) et génère un élément `<picture>` avec un `<source media="(prefers-color-scheme: dark)">`.
 
-De la même manière, lorsque [`layouts.images.mobile_suffix`](/fr/documentation/configuration/layouts/#layouts-images) est configuré (par exemple `.mobile`), Cecil recherche une variante mobile de chaque image (par exemple `photo.mobile.jpg`) et ajoute un `<source>` avec la media query [`layouts.images.mobile_media_query`](/fr/documentation/configuration/layouts/#layouts-images). Si une variante sombre de l’image mobile existe (par exemple `photo.mobile.dark.jpg`), elle est utilisée sur mobile en mode sombre.
+De la même manière, lorsque [`layouts.images.mobile_suffix`](../../configuration/28-layouts.fr.md#layouts-images) est configuré (par exemple `.mobile`), Cecil recherche une variante mobile de chaque image (par exemple `photo.mobile.jpg`) et ajoute un `<source>` avec la media query [`layouts.images.mobile_media_query`](../../configuration/28-layouts.fr.md#layouts-images). Si une variante sombre de l’image mobile existe (par exemple `photo.mobile.dark.jpg`), elle est utilisée sur mobile en mode sombre.
 :::
 
 _Exemples :_
@@ -159,7 +159,7 @@ _Exemple:_
 
 ## cache_key
 
-Calcule une clé de cache pour [_fragments_ cache](/fr/documentation/templates/cache/#fragments-de-cache) en fonction d'un nom et d'une valeur facultative.
+Calcule une clé de cache pour [_fragments_ cache](../17-cache.fr.md#fragments-de-cache) en fonction d'un nom et d'une valeur facultative.
 
 ```twig
 {% cache cache_key(name, value) %}
@@ -192,7 +192,7 @@ La fonction `dump` affiche les informations sur une variable de modèle. Ceci es
 ```
 
 :::important
-Le [_debug mode_](/fr/documentation/configuration/site/#debug) doit être activé.
+Le [_debug mode_](../../configuration/22-site.fr.md#debug) doit être activé.
 :::
 
 ## d
@@ -207,5 +207,5 @@ La fonction `d()` est la version HTML de [`dump()`](#dump) et utilise le [Symfon
 - Les thèmes disponibles sont « clair » (par défaut) et « sombre »
 
 :::important
-Le [_debug mode_](/fr/documentation/configuration/site/#debug) doit être activé.
+Le [_debug mode_](../../configuration/22-site.fr.md#debug) doit être activé.
 :::

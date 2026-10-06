@@ -7,7 +7,7 @@ path: documentation/assets/fournisseurs-cdn
 -->
 # Fournisseurs de CDN
 
-Exemples de configuration de fournisseurs de CDN pour les [`options de configuration`](/fr/documentation/configuration/assets/#assets-images-cdn).
+Exemples de configuration de fournisseurs de CDN pour les [`options de configuration`](../configuration/27-assets.fr.md#assets-images-cdn).
 
 ## Cloudinary
 

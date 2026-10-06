@@ -66,7 +66,7 @@ _Exemple :_
 <a href="<url>" rel="noopener noreferrer">Link to another website</a>
 ```
 
-Vous pouvez modifier ce comportement avec les [options `pages.body.links.external`](/fr/documentation/configuration/pages/#pages-body-links).
+Vous pouvez modifier ce comportement avec les [options `pages.body.links.external`](../configuration/25-pages.fr.md#pages-body-links).
 
 ### Liens intégrés
 
@@ -132,7 +132,7 @@ Est converti en :
 ```
 
 :::info
-Vous pouvez désactiver ce comportement avec l’attribut `{loading=eager}` ou avec l’[option `lazy`](/fr/documentation/configuration/pages/#pages-body-images).
+Vous pouvez désactiver ce comportement avec l’attribut `{loading=eager}` ou avec l’[option `lazy`](../configuration/25-pages.fr.md#pages-body-images).
 :::
 
 ### Decoding
@@ -152,7 +152,7 @@ Est converti en :
 ```
 
 :::info
-Vous pouvez désactiver ce comportement avec l’attribut `{decoding=auto}` ou avec l’[option `decoding`](/fr/documentation/configuration/pages/#pages-body-images).
+Vous pouvez désactiver ce comportement avec l’attribut `{decoding=auto}` ou avec l’[option `decoding`](../configuration/25-pages.fr.md#pages-body-images).
 :::
 
 ### Redimensionnement
@@ -186,7 +186,7 @@ Le support de libvips est optionnel et n’est pas inclus dans `cecil.phar`. Pou
 2. l’extension PHP [FFI](https://www.php.net/manual/book.ffi.php) activée
 3. le paquet `intervention/image-driver-vips` installé avec Cecil
 
-Si Cecil est une dépendance de votre projet (voir [Bibliothèque](/fr/documentation/developpeurs/bibliotheque/#support-de-libvips)) :
+Si Cecil est une dépendance de votre projet (voir [Bibliothèque](../developers/42-library.fr.md#support-de-libvips)) :
 
 ```bash
 composer require intervention/image-driver-vips
@@ -201,7 +201,7 @@ composer global require cecil/cecil intervention/image-driver-vips
 
 ### Formats
 
-Si l’[option `formats`](/fr/documentation/configuration/pages/#pages-body-images) est définie, des images alternatives sont créées et ajoutées.
+Si l’[option `formats`](../configuration/25-pages.fr.md#pages-body-images) est définie, des images alternatives sont créées et ajoutées.
 
 _Exemple :_
 
@@ -225,7 +225,7 @@ Veuillez noter que **tous les formats d’image** ne sont pas toujours inclus da
 
 ### Responsive
 
-Si l’[option `responsive`](/fr/documentation/configuration/pages/#pages-body-images) est activée, alors toutes les images du _body_ seront automatiquement rendues « responsive ».
+Si l’[option `responsive`](../configuration/25-pages.fr.md#pages-body-images) est activée, alors toutes les images du _body_ seront automatiquement rendues « responsive ».
 
 _Exemple :_
 
@@ -245,7 +245,7 @@ sera converti en :
 ```
 
 :::info
-Comme une image du body est convertie en [Asset](/fr/documentation/assets/#asset), les différentes largeurs doivent être définies dans la [configuration des assets](/fr/documentation/configuration/assets/).
+Comme une image du body est convertie en [Asset](../assets/index.fr.md#asset), les différentes largeurs doivent être définies dans la [configuration des assets](../configuration/27-assets.fr.md).
 :::
 
 L’attribut `sizes` prend la valeur de l’option de configuration `assets.images.responsive.sizes.default`, mais peut être modifié en créant une nouvelle entrée nommée d’après une _class_ ajoutée à l’image.
@@ -271,11 +271,11 @@ Vous pouvez combiner les options `formats` et `responsive`.
 
 ### CSS class
 
-Vous pouvez définir une valeur par défaut pour l’attribut `class` de chaque image avec l’[option `class`](/fr/documentation/configuration/pages/#pages-body-images).
+Vous pouvez définir une valeur par défaut pour l’attribut `class` de chaque image avec l’[option `class`](../configuration/25-pages.fr.md#pages-body-images).
 
 ### Caption
 
-Le titre optionnel peut être utilisé pour créer automatiquement une légende (`figcaption`) en activant l’[option `caption`](/fr/documentation/configuration/pages/#pages-body-images).
+Le titre optionnel peut être utilisé pour créer automatiquement une légende (`figcaption`) en activant l’[option `caption`](../configuration/25-pages.fr.md#pages-body-images).
 
 _Exemple :_
 
@@ -325,7 +325,7 @@ _Exemples :_
 ```
 
 :::tip
-Vous pouvez définir une valeur pour l’attribut `placeholder` de chaque image avec l’[option `placeholder`](/fr/documentation/configuration/pages/#pages-body-images).
+Vous pouvez définir une valeur pour l’attribut `placeholder` de chaque image avec l’[option `placeholder`](../configuration/25-pages.fr.md#pages-body-images).
 :::
 
 :::warning
@@ -341,7 +341,7 @@ Vous pouvez ajouter une table des matières avec la syntaxe Markdown suivante :
 ```
 
 :::info
-Par défaut, la ToC extrait les en-têtes H2 et H3. Vous pouvez modifier ce comportement avec les [options de body](/fr/documentation/configuration/pages/#pages-body).
+Par défaut, la ToC extrait les en-têtes H2 et H3. Vous pouvez modifier ce comportement avec les [options de body](../configuration/25-pages.fr.md#pages-body).
 :::
 
 ## Extrait
@@ -356,7 +356,7 @@ Introduction.
 Main content.
 ```
 
-Utilisez ensuite le filtre [`excerpt_html`](/fr/documentation/templates/reference/filtres/#excerpt-html) dans votre template.
+Utilisez ensuite le filtre [`excerpt_html`](../templates/reference/14-filters.fr.md#excerpt-html) dans votre template.
 
 ## Notes
 
@@ -412,7 +412,7 @@ caution
 
 ## Coloration syntaxique
 
-La coloration syntaxique des blocs de code est activée par défaut avec l’option [pages.body.highlight](/fr/documentation/configuration/pages/#pages-body-highlight).
+La coloration syntaxique des blocs de code est activée par défaut avec l’option [pages.body.highlight](../configuration/25-pages.fr.md#pages-body-highlight).
 
 Si besoin, vous pouvez la désactiver avec :
 

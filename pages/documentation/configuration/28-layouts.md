@@ -75,7 +75,7 @@ Each translation format defines:
 
 ## layouts.components
 
-[Templates Components](/documentation/templates/components/) options.
+[Templates Components](../templates/15-components.md) options.
 
 ```yaml
 layouts:
@@ -86,7 +86,7 @@ layouts:
 
 ## layouts.sections
 
-Maps a section to the layouts of another section: the mapped name is used in place of `<section>` by the [lookup rules](/documentation/templates/lookup-rules/#lookup-rules) of the section and of its pages.
+Maps a section to the layouts of another section: the mapped name is used in place of `<section>` by the [lookup rules](../templates/10-lookup-rules.md#lookup-rules) of the section and of its pages.
 
 ```yaml
 layouts:
@@ -95,7 +95,7 @@ layouts:
 ```
 
 :::tip
-A [sub-section](/documentation/content/pages/#sub-section) already falls back to the layouts of its parent sections: no mapping is needed for that.
+A [sub-section](../content/5-pages.md#sub-section) already falls back to the layouts of its parent sections: no mapping is needed for that.
 :::
 
 ---

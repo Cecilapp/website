@@ -18,9 +18,9 @@ Creates a valid URL for a page, a menu entry, an asset, a page ID or a path.
 
 | Option    | Description                                                                                                                      | Type    | Default |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| canonical | Prefix URL with [`baseurl`](/documentation/configuration/site/#baseurl) or use [`canonical.url`](/documentation/configuration/site/#metatags-options) if exists. | boolean | `false` |
-| format    | Defines page [output format](/documentation/configuration/output/#output-formats) (e.g.: `json`).                                                  | string  | `html`  |
-| language  | Defines page [language](/documentation/configuration/languages/#language) (e.g.: `fr`).                                                               | string  | null    |
+| canonical | Prefix URL with [`baseurl`](../../configuration/22-site.md#baseurl) or use [`canonical.url`](../../configuration/22-site.md#metatags-options) if exists. | boolean | `false` |
+| format    | Defines page [output format](../../configuration/29-output.md#output-formats) (e.g.: `json`).                                                  | string  | `html`  |
+| language  | Defines page [language](../../configuration/23-languages.md#language) (e.g.: `fr`).                                                               | string  | null    |
 
 _Examples:_
 
@@ -82,11 +82,11 @@ Since version ++8.42.0++, the `html` function replace the deprecated `html` filt
 :::
 
 :::tip
-You can define a global default behavior of images options (`formats`, `responsive` and `placeholder`) through the [layouts configuration](/documentation/configuration/layouts/#layouts-images).
+You can define a global default behavior of images options (`formats`, `responsive` and `placeholder`) through the [layouts configuration](../../configuration/28-layouts.md#layouts-images).
 
-When [`layouts.images.dark_suffix`](/documentation/configuration/layouts/#layouts-images) is configured (e.g. `.dark`), Cecil automatically looks for a dark variant of each image (e.g. `photo.dark.jpg` alongside `photo.jpg`) and generates a `<picture>` element with a `<source media="(prefers-color-scheme: dark)">`.
+When [`layouts.images.dark_suffix`](../../configuration/28-layouts.md#layouts-images) is configured (e.g. `.dark`), Cecil automatically looks for a dark variant of each image (e.g. `photo.dark.jpg` alongside `photo.jpg`) and generates a `<picture>` element with a `<source media="(prefers-color-scheme: dark)">`.
 
-In the same way, when [`layouts.images.mobile_suffix`](/documentation/configuration/layouts/#layouts-images) is configured (e.g. `.mobile`), Cecil looks for a mobile variant of each image (e.g. `photo.mobile.jpg`) and adds a `<source>` with the [`layouts.images.mobile_media_query`](/documentation/configuration/layouts/#layouts-images) media query. If a dark variant of the mobile image exists (e.g. `photo.mobile.dark.jpg`), it is used on mobile with dark color scheme.
+In the same way, when [`layouts.images.mobile_suffix`](../../configuration/28-layouts.md#layouts-images) is configured (e.g. `.mobile`), Cecil looks for a mobile variant of each image (e.g. `photo.mobile.jpg`) and adds a `<source>` with the [`layouts.images.mobile_media_query`](../../configuration/28-layouts.md#layouts-images) media query. If a dark variant of the mobile image exists (e.g. `photo.mobile.dark.jpg`), it is used on mobile with dark color scheme.
 :::
 
 _Examples:_
@@ -158,7 +158,7 @@ _Example:_
 
 ## cache_key
 
-Calculates a cache key for [_fragments_ cache](/documentation/templates/cache/#fragments-cache) based on a name and an optional value.
+Calculates a cache key for [_fragments_ cache](../17-cache.md#fragments-cache) based on a name and an optional value.
 
 ```twig
 {% cache cache_key(name, value) %}
@@ -191,7 +191,7 @@ The `dump` function dumps information about a template variable. This is mostly 
 ```
 
 :::important
-The [_debug mode_](/documentation/configuration/site/#debug) must be enabled.
+The [_debug mode_](../../configuration/22-site.md#debug) must be enabled.
 :::
 
 ## d
@@ -206,5 +206,5 @@ The `d()` function is the HTML version of [`dump()`](#dump) and use the [Symfony
 - Available themes are « light » (default) and « dark »
 
 :::important
-The [_debug mode_](/documentation/configuration/site/#debug) must be enabled.
+The [_debug mode_](../../configuration/22-site.md#debug) must be enabled.
 :::

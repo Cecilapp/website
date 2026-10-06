@@ -47,7 +47,7 @@ data:
 Gestion des fichiers statiques copiés (PDF, polices, etc.).
 
 :::important
-Vous devez placer les fichiers d’assets, utilisés par [`asset()`](/fr/documentation/assets/#asset), dans le [`répertoire assets`](/fr/documentation/configuration/assets/#assets-dir) afin d’éviter des copies de fichiers inutiles.
+Vous devez placer les fichiers d’assets, utilisés par [`asset()`](../assets/index.fr.md#asset), dans le [`répertoire assets`](27-assets.fr.md#assets-dir) afin d’éviter des copies de fichiers inutiles.
 :::
 
 ### static.dir
