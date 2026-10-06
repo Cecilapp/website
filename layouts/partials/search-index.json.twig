@@ -5,9 +5,13 @@
     `id_key`:   name of the identifier field ('id' for FlexSearch, 'objectID' for Algolia)
     `with_date`: add a `date` field (Algolia only)
 
+  Every page of the section and of its sub-sections (`documentation/*`, whose
+  `index.md` have their own section) is walked.
   Sections are cut on `<h2>` *and* `<h3>` (a lookahead split keeps the heading
   at the head of each chunk), so a section never bleeds into the next one and
-  pages without `<h3>` are still indexed.
+  pages without `<h3>` are still indexed. The intro before the first heading
+  (minus the `<h1>`) is indexed under the page title, without anchor, so pages
+  without any `<h2>` are still indexed.
   Anchors are read from the `id` attribute emitted by Cecil, never recomputed
   from the title: the slug rules must not be duplicated here.
   Beware: Twig runs string literals through `stripcslashes`, so a regex needs
@@ -32,33 +36,39 @@
 {%- endmacro -%}
 [
 {%- set is_first = true -%}
-{%- for p in site.pages|filter(p => p.section == section)|sort_by_weight -%}
+{%- for p in site.pages|filter(p => p.section == section or p.section starts with section ~ '/')|sort_by_weight -%}
   {%- for chunk in p.content|preg_split('~(?=<' ~ balises ~ '[^>]*>)~') -%}
-    {%- if chunk starts with '<h' -%}
+    {%- set is_intro = not (chunk matches '~^<' ~ balises ~ '~') -%}
+    {%- if is_intro -%}
+      {%- set title = p.title -%}
+      {%- set anchor = '' -%}
+      {%- set section_html = chunk|preg_split('~</h1>~')|last -%}
+    {%- else -%}
       {%- set parts = chunk|preg_split('~</' ~ balises ~ '>~') -%}
       {%- set title = parts[0]|striptags|replace(entities)|trim -%}
       {%- set anchor = chunk|preg_match_all('~^<' ~ balises ~ '[^>]*\\sid="([^"]*)"~', 1)|first|default('') -%}
       {%- set section_html = parts[1]|default('') -%}
-      {#- stripped block tags (images, code fences…) leave runs of blank lines behind -#}
-      {%- set content = section_html|striptags|replace(entities)|preg_split('~\\s*\\n\\s*\\n\\s*~')|join("\n")|trim -%}
-      {%- set description = '' -%}
-      {%- if section_html|trim starts with '<p>' -%}
-      {%- set description = section_html|trim|split('</p>')|first|striptags|replace(entities)|trim -%}
-      {%- endif -%}
-      {%- if anchor is not empty and content is not empty -%}
-        {%- if not is_first %},{% endif -%}
-        {{- _self.dataset(
-          id_key,
-          (p.id ~ '#' ~ anchor)|json_encode,
-          p.title|json_encode,
-          title|json_encode,
-          description|json_encode,
-          content|json_encode,
-          (url(p, {canonical: false})|trim('/', 'left') ~ '#' ~ anchor)|json_encode,
-          with_date ? p.date|date('c')|json_encode : null
-        ) -}}
-        {%- set is_first = false -%}
-      {%- endif -%}
+    {%- endif -%}
+    {#- stripped block tags (images, code fences…) leave runs of blank lines behind -#}
+    {%- set content = section_html|striptags|replace(entities)|preg_split('~\\s*\\n\\s*\\n\\s*~')|join("\n")|trim -%}
+    {%- set description = '' -%}
+    {%- if section_html|trim starts with '<p>' -%}
+    {%- set description = section_html|trim|split('</p>')|first|striptags|replace(entities)|trim -%}
+    {%- endif -%}
+    {%- if (is_intro or anchor is not empty) and content is not empty -%}
+      {%- set fragment = anchor is not empty ? '#' ~ anchor : '' -%}
+      {%- if not is_first %},{% endif -%}
+      {{- _self.dataset(
+        id_key,
+        (p.id ~ fragment)|json_encode,
+        p.title|json_encode,
+        title|json_encode,
+        description|json_encode,
+        content|json_encode,
+        (url(p, {canonical: false})|trim('/', 'left') ~ fragment)|json_encode,
+        with_date ? p.date|date('c')|json_encode : null
+      ) -}}
+      {%- set is_first = false -%}
     {%- endif -%}
   {%- endfor -%}
 {%- endfor ~%}
