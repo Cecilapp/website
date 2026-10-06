@@ -17,7 +17,11 @@
                     <input type="search" id="search-input" class="search-field-input" placeholder="{% trans %}Search the Docs{% endtrans %}"
                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"
                       role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
-                    <button type="button" id="search-close" class="search-field-close">{% trans %}Close{% endtrans %}</button>
+                    <button type="button" id="search-close" class="search-field-close" aria-label="{% trans %}Close{% endtrans %}" title="{% trans %}Close{% endtrans %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    </button>
                   </form>
                   <div class="search-body">
                     <p class="search-status" id="search-status"></p>

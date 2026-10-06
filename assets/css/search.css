@@ -142,8 +142,10 @@
 }
 .search-field-close {
   flex: none;
-  padding: .15rem .5rem;
-  font-size: .75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .25rem;
   border-radius: 3px;
   cursor: pointer;
   @apply bg-slate-100 dark:bg-darkgray;
