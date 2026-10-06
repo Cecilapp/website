@@ -107,6 +107,24 @@
   @apply border border-blue dark:border-white;
   @apply text-slate-800 dark:text-slate-200;
 }
+/* mobile: full viewport */
+@media (max-width: 639px) {
+  .search-dialog {
+    max-width: none;
+    max-height: none;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+  }
+  .search-panel {
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+}
 
 /* input */
 .search-field {
