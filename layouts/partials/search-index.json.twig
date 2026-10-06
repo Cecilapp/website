@@ -61,7 +61,7 @@
       {{- _self.dataset(
         id_key,
         (p.id ~ fragment)|json_encode,
-        p.title|json_encode,
+        (p.ancestors|reverse|slice(1)|map(p => "#{p.title}")|join(' > ') ~ ' > ' ~ p.title)|json_encode,
         title|json_encode,
         description|json_encode,
         content|json_encode,

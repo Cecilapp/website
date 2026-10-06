@@ -106,7 +106,6 @@
   @apply bg-white dark:bg-dark;
   @apply border border-blue dark:border-white;
   @apply text-slate-800 dark:text-slate-200;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
 /* input */
