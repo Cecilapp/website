@@ -1,0 +1,29 @@
+{#- top level section: overview; sub-section: rendered as a documentation page followed by its table of contents -#}
+{%- set title = (page.toplevel ? "Documentation"|trans : page.title ~ ' &middot; ' ~ "Documentation"|trans) ~ ' &middot; ' ~ site.title -%}
+
+{% extends page.toplevel ? 'list.html.twig' : 'documentation/page.html.twig' %}
+
+        {%- block content ~%}
+        {%- if page.toplevel ~%}
+        <div class="markdown markdown-slate markdown-a:no-underline markdown-a:hover:no-underline markdown-h2:mt-0 markdown-h2:mb-2 markdown-ul:m-0 markdown-code:max-w-(--breakpoint-lg) dark:markdown-dark mx-auto max-w-(--breakpoint-lg)">
+          {{- include('partials/search-box.html.twig') ~}}
+          <h1>{% trans %}Documentation{% endtrans %}</h1>
+          <p>{{ page.content }}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-4">
+            {%- for section in page.sections|default([])|sort_by_weight ~%}
+            <div class="p-2 lg:p-4 hover:bg-gold group hover:rounded-md dark:hover:bg-black">
+              <a href="{{ url(section) }}" class="doc-item hover:no-underline">
+                <h2 style="view-transition-name: {{ section.slug|replace({'.': '-'}) }}" class="page-transition">{{ section.title|e }}</h2>
+                <div class="pb-2">{{ section.description ?? 'No description' }}</div>
+              </a>
+              {{- include('partials/docs-children.html.twig', {section, compact: true}, with_context: false) ~}}
+            </div>
+            {%- endfor ~%}
+          </div>
+        </div>
+        {%- else ~%}
+        {{ page.content }}
+        {{- include('partials/docs-children.html.twig', {section: page, compact: false}, with_context: false) ~}}
+        {%- endif ~%}
+        {{- include('partials/docs-redirects.js.twig') ~}}
+        {%- endblock content ~%}
