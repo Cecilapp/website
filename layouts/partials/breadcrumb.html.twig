@@ -8,8 +8,8 @@
   {%- else -%}
     {%- set ancestors = [] -%}
   {%- endif ~%}
-            <nav aria-label="{% trans %}Breadcrumb{% endtrans %}" class="mx-auto max-w-(--breakpoint-lg) mb-4 text-sm text-slate-500 dark:text-slate-400">
-              <ol class="flex flex-nowrap items-center gap-1.5 min-w-0">
+            <nav aria-label="{% trans %}Breadcrumb{% endtrans %}" class="mx-auto max-w-(--breakpoint-lg) mb-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+              <ol class="flex flex-1 flex-nowrap items-center gap-1.5 min-w-0">
                 <li class="flex items-center shrink-0">
                   <a href="{{ url(site.home) }}" class="flex items-center hover:text-blue dark:hover:text-slate-200" title="{% trans %}Home{% endtrans %}" aria-label="{% trans %}Home{% endtrans %}">
                     {{ octicons.svg('home', 16, 'w-4 h-4 shrink-0') ~}}
@@ -26,5 +26,10 @@
                   <span aria-current="page" class="text-darkblue dark:text-slate-300 truncate" title="{{ page.title }}">{{ page.title }}</span>
                 </li>
               </ol>
+              {%- if page.type == 'section' and 'atom' in page.output ~%}
+              <a href="{{ url(page, {format: 'atom'}) }}" type="application/atom+xml" class="flex items-center shrink-0 hover:text-blue dark:hover:text-slate-200" title="{% trans %}Atom feed{% endtrans %}" aria-label="{% trans %}Atom feed{% endtrans %}">
+                {{ octicons.svg('rss', 16, 'w-4 h-4 shrink-0') ~}}
+              </a>
+              {%- endif ~%}
             </nav>
 {%- endif ~%}

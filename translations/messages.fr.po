@@ -112,6 +112,10 @@ msgstr "Commencer"
 msgid "Breadcrumb"
 msgstr "Fil d'Ariane"
 
+#: partials/breadcrumb.html.twig:33
+msgid "Atom feed"
+msgstr "Flux Atom"
+
 #: partials/breadcrumb.html.twig:14 partials/logo.html.twig:2
 msgid "Home"
 msgstr "Accueil"
