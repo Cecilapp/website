@@ -19,8 +19,8 @@
   @apply hover:border-blue dark:hover:border-white;
 }
 .search-trigger-icon {
-  height: 1rem;
-  width: 1rem;
+  height: 1.25rem;
+  width: 1.25rem;
   flex: none;
   @apply fill-slate-400;
 }
@@ -60,11 +60,16 @@
   width: auto;
   margin-bottom: 0;
 }
+/* mobile: icon only, like the other header buttons */
 .header-search .search-trigger {
-  padding: .3rem .5rem;
-  border-radius: 6px;
-  @apply border border-slate-500 bg-white/5;
-  @apply hover:border-white;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.header-search .search-trigger-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: currentColor;
 }
 .header-search .search-trigger-label {
   display: none;
@@ -76,6 +81,15 @@
 @media (min-width: 640px) {
   .header-search .search-trigger {
     width: 14rem;
+    padding: .3rem .5rem;
+    border-radius: 6px;
+    @apply border border-slate-500 bg-white/5;
+    @apply hover:border-white;
+  }
+  .header-search .search-trigger-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    @apply fill-slate-400;
   }
   .header-search .search-trigger-label {
     display: inline;
@@ -195,11 +209,6 @@
 .search-group:last-child {
   margin-bottom: 0;
 }
-/* separator between two groups */
-/*.search-group + .search-group {
-  padding-top: 1rem;
-  @apply border-t-2 border-slate-200 dark:border-darkgray;
-}*/
 /* group title: a tinted band, kept visible while scrolling its results */
 .search-group-title {
   position: sticky;
