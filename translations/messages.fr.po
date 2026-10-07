@@ -137,16 +137,12 @@ msgstr "Langue :"
 msgid "%site_title% logo"
 msgstr "Logo de %site_title%"
 
-#: partials/search-algolia.html.twig:3
-msgid "Search [Alt+S]"
-msgstr "Rechercher [Alt+S]"
-
 #: partials/search-flexsearch.html.twig:3
 #: partials/search-flexsearch.html.twig:11
 #: partials/search-flexsearch.html.twig:17
-#: partials/search-flexsearch.html.twig:24
-msgid "Search the Docs"
-msgstr "Rechercher dans la doc"
+#: partials/search-flexsearch.html.twig:28
+msgid "Search the site"
+msgstr "Rechercher sur le site"
 
 #: partials/search-flexsearch.html.twig:7
 msgid "Search"

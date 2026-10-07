@@ -9,7 +9,6 @@
   #NODE_VERSION = "18"
   #CSS_INPUT = "assets/tailwind.css"
   #CSS_OUPUT = "assets/styles.css"
-  #ALGOLIA_INDEX = "_site/algolia.json"
   SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
 
 #[context."8.x-dev".environment]
@@ -19,28 +18,8 @@
 [context.production.environment]
   CECIL_ENV = "production"
 
-[[context.production.plugins]]
-  package = "netlify-plugin-refresh-algolia"
-  [context.production.plugins.inputs]
-    appId = "PVTO81KCEC"
-    indexName = "documentation"
-    #filePath = "_site/algolia.json"
-
 [context.deploy-preview.environment]
   CECIL_ENV = "preview"
-
-#[[plugins]]
-#  package = "netlify-plugin-refresh-algolia"
-#  [plugins.inputs]
-#    appId = "PVTO81KCEC"
-#    indexName = "documentation.fr"
-#    filePath = "_site/fr/algolia.json"
-
-#[[context.algolia.plugins]]
-#  package = "netlify-plugin-refresh-algolia"
-#  [context.algolia.plugins.inputs]
-#    appId = "PVTO81KCEC"
-#    indexName = "documentation-preview"
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"

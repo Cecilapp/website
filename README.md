@@ -71,22 +71,29 @@ curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/sear
 
 ## Search
 
-The documentation search engine is selected in `cecil.yml`:
+The site is searched client side with [FlexSearch](https://github.com/nextapps-de/flexsearch): no service, works offline, in English and French.
+
+The indexed sections are listed in `cecil.yml`, in the order of the result groups:
 
 ```yaml
 search:
-  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
+  sections:
+    documentation:
+      limit: 5 # maximum number of results in the group
+    how-to:
+      limit: 3
+    news:
+      limit: 3
+      split: false # one record per post, not one per heading
+      date: true
 ```
 
-The search box is displayed in the header by [`partials/search-box.html.twig`](layouts/partials/search-box.html.twig), which dispatches to the configured engine.
+| Option   | Default | Description                                                         |
+| -------- | ------- | ------------------------------------------------------------------- |
+| `limit`  | `5`     | maximum number of results displayed in the group                    |
+| `split`  | `true`  | one record per `<h2>`/`<h3>` heading, or a single record per page   |
+| `date`   | `false` | add the page date to its records (displayed instead of the breadcrumb) |
+| `length` | `1000`  | maximum length of the indexed text of an unsplit page               |
 
-|           | `flexsearch` (current)                                                                                                                                          | `algolia`                                                                                              |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Index     | `/search.json`, served as a static file                                                                                                                         | `/algolia.json`, pushed by the `netlify-plugin-refresh-algolia` Netlify plugin                         |
-| Query     | in the browser, works offline                                                                                                                                   | Algolia API (network required)                                                                         |
-| UI        | icon button or `Ctrl`/`⌘` + `K` opening a modal, fullscreen on mobile ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)) | inline autocomplete ([`partials/search-algolia.html.twig`](layouts/partials/search-algolia.html.twig)) |
-| Languages | English and French                                                                                                                                              | English only (`algolia.enabled: false` in the French config)                                           |
-
-Both indexes are generated at build time by [`list.flexsearch.twig`](layouts/list.flexsearch.twig) and [`list.algolia.twig`](layouts/list.algolia.twig), which share the same extraction logic ([`partials/search-index.json.twig`](layouts/partials/search-index.json.twig)): every documentation page (sub-sections included) is split on its `<h2>` and `<h3>` headings, and its introduction is indexed under the page title.
-
-As long as `flexsearch` is used, the `netlify-plugin-refresh-algolia` plugin and the `algolia` output format can be removed from `netlify.toml` and `cecil.yml`.
+- **Index**: `/search.json` (and `/fr/search.json`), generated at build time by [`list.flexsearch.twig`](layouts/list.flexsearch.twig) from [`partials/search-index.json.twig`](layouts/partials/search-index.json.twig). The root page of each section is skipped; split pages are cut on their `<h2>` and `<h3>` headings, and their introduction is indexed under the page title.
+- **UI**: icon button or `Ctrl`/`⌘` + `K` opening a modal, fullscreen on mobile ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)). Results are grouped by section, each section having its own index, so a group is ranked and limited on its own.

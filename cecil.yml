@@ -46,8 +46,6 @@ languages:
           - id: github
             name: GitHub
             url: https://github.com/Cecilapp/
-      algolia:
-        enabled: false
       pages:
         paths:
           - section: news
@@ -121,10 +119,6 @@ output:
     - name: sha1
       mediatype: 'text/plain'
       extension: 'phar.sha1'
-    - name: algolia
-      mediatype: 'application/json'
-      filename: 'algolia'
-      extension: 'json'
     - name: flexsearch
       mediatype: 'application/json'
       filename: 'search'
@@ -133,7 +127,7 @@ output:
       mediatype: 'text/plain'
       extension: 'sh'
   pagetypeformats:
-    homepage: ['html', 'atom', 'algolia', 'flexsearch', 'markdown', 'llms']
+    homepage: ['html', 'atom', 'flexsearch', 'markdown', 'llms']
     section: ['html', 'atom', 'jsonfeed', 'markdown']
     page: ['html', 'markdown']
 theme:
@@ -189,20 +183,19 @@ libs:
     version: 11
 
 search:
-  engine: flexsearch # 'algolia' (hosted) or 'flexsearch' (client side)
-
-algolia:
-  enabled: true
-  version: '@4'
-  autocomplete:
-    version: 0
-  application_id: 'PVTO81KCEC'
-  search_api_key: 'd4f7a88b01ac073e9bb24dc264ead2dc'
-  index: 'documentation'
+  # sections to index, in the order of the result groups
+  sections:
+    documentation:
+      limit: 5 # maximum number of results in the group
+    how-to:
+      limit: 3
+    news:
+      limit: 3
+      split: false # one record per post, not one per heading
+      date: true
 
 flexsearch:
   enabled: true
   version: '0.8.212'
-  limit: 8
 
 snow: false

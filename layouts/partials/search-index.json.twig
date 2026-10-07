@@ -1,29 +1,32 @@
 {#-
-  Shared body of the search indexes: emits the flat JSON array of documentation
-  sections rendered by `list.flexsearch.twig` and `list.algolia.twig`.
-  Both walk the documentation the same way and only differ in the JSON shape:
-    `id_key`:   name of the identifier field ('id' for FlexSearch, 'objectID' for Algolia)
-    `with_date`: add a `date` field (Algolia only)
+  Body of the search index rendered by `list.flexsearch.twig`: a flat JSON array
+  of records, walking every section listed in `search.sections` (in that order).
+  Each section accepts the following options:
+    `split`:  cut pages into one record per heading (default: true)
+    `date`:   add the page `date` to its records (default: false)
+    `length`: maximum length of the `content` of an unsplit page (default: 1000)
 
-  Every page of the section and of its sub-sections (`documentation/*`, whose
+  Every page of the section (except its root page) and of its sub-sections (`documentation/*`, whose
   `index.md` have their own section) is walked.
-  Sections are cut on `<h2>` *and* `<h3>` (a lookahead split keeps the heading
-  at the head of each chunk), so a section never bleeds into the next one and
+  Split pages are cut on `<h2>` *and* `<h3>` (a lookahead split keeps the heading
+  at the head of each chunk), so a record never bleeds into the next one and
   pages without `<h3>` are still indexed. The intro before the first heading
   (minus the `<h1>`) is indexed under the page title, without anchor, so pages
   without any `<h2>` are still indexed.
+  Unsplit pages (news) give a single record: the page title, its `description`
+  and the beginning of its text, as their body often starts with a heading.
   Anchors are read from the `id` attribute emitted by Cecil, never recomputed
   from the title: the slug rules must not be duplicated here.
   Beware: Twig runs string literals through `stripcslashes`, so a regex needs
   `\\s` to reach PCRE as `\s`, and `~` as delimiter to avoid escaping slashes.
 -#}
-{%- set section = 'documentation' -%}
 {%- set balises = 'h[23]' -%}
 {#- `striptags` leaves entities behind: decode the ones Markdown emits (strtr-based, no double decoding) -#}
 {%- set entities = {'&lt;': '<', '&gt;': '>', '&quot;': '"', '&#039;': "'", '&#39;': "'", '&nbsp;': ' ', '&hellip;': '…', '&amp;': '&'} -%}
-{%- macro dataset(id_key, id, page, title, description, content, href, date) ~%}
+{%- macro dataset(id, section, page, title, description, content, href, date) ~%}
   {
-    "{{ id_key }}": {{ id }},
+    "id": {{ id }},
+    "section": {{ section }},
     "page": {{ page }},
     "title": {{ title }},
     "description": {{ description }},
@@ -36,9 +39,14 @@
 {%- endmacro -%}
 [
 {%- set is_first = true -%}
-{%- for p in site.pages|filter(p => p.section == section or p.section starts with section ~ '/')|sort_by_weight -%}
-  {%- for chunk in p.content|preg_split('~(?=<' ~ balises ~ '[^>]*>)~') -%}
-    {%- set is_intro = not (chunk matches '~^<' ~ balises ~ '~') -%}
+{%- for section, options in site.search.sections|default({documentation: {}}) -%}
+{%- set split = options.split ?? true -%}
+{#- the root page of the section only lists its pages: skipped -#}
+{%- for p in site.pages|filter(p => (p.section == section and p.type != 'section') or p.section starts with section ~ '/')|sort_by_weight -%}
+  {#- an unsplit page is a single chunk -#}
+  {%- set chunks = split ? p.content|preg_split('~(?=<' ~ balises ~ '[^>]*>)~') : [p.content] -%}
+  {%- for chunk in chunks -%}
+    {%- set is_intro = not split or not (chunk matches '~^<' ~ balises ~ '~') -%}
     {%- if is_intro -%}
       {%- set title = p.title -%}
       {%- set anchor = '' -%}
@@ -52,24 +60,31 @@
     {#- stripped block tags (images, code fences…) leave runs of blank lines behind -#}
     {%- set content = section_html|striptags|replace(entities)|preg_split('~\\s*\\n\\s*\\n\\s*~')|join("\n")|trim -%}
     {%- set description = '' -%}
-    {%- if section_html|trim starts with '<p>' -%}
-    {%- set description = section_html|trim|split('</p>')|first|striptags|replace(entities)|trim -%}
+    {%- if not split and p.description|default('') is not empty -%}
+      {%- set description = p.description -%}
+    {%- elseif section_html|trim starts with '<p>' -%}
+      {%- set description = section_html|trim|split('</p>')|first|striptags|replace(entities)|trim -%}
+    {%- endif -%}
+    {%- if not split and content|length > options.length|default(1000) -%}
+      {%- set content = content|slice(0, options.length|default(1000))|trim ~ '…' -%}
     {%- endif -%}
     {%- if (is_intro or anchor is not empty) and content is not empty -%}
       {%- set fragment = anchor is not empty ? '#' ~ anchor : '' -%}
       {%- if not is_first %},{% endif -%}
+      {#- the root section is left out of the breadcrumb `page`, as it titles the group of results -#}
       {{- _self.dataset(
-        id_key,
         (p.id ~ fragment)|json_encode,
-        (p.ancestors|reverse|slice(1)|map(p => "#{p.title}")|join(' > ') ~ ' > ' ~ p.title)|json_encode,
+        section|json_encode,
+        (p.ancestors|reverse|slice(1)|map(p => "#{p.title}")|merge([p.title])|join(' > '))|json_encode,
         title|json_encode,
         description|json_encode,
         content|json_encode,
         (url(p, {canonical: false})|trim('/', 'left') ~ fragment)|json_encode,
-        with_date ? p.date|date('c')|json_encode : null
+        options.date|default(false) ? p.date|date('Y-m-d')|json_encode : null
       ) -}}
       {%- set is_first = false -%}
     {%- endif -%}
   {%- endfor -%}
+{%- endfor -%}
 {%- endfor ~%}
 ]
