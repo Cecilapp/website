@@ -67,9 +67,13 @@
   /* mobile: full viewport */
   @apply max-sm:w-screen max-sm:h-dvh max-sm:max-w-none max-sm:max-h-none max-sm:m-0;
   &::backdrop {
-    @apply bg-blue/60 dark:bg-black/70;
+    @apply bg-blue/60;
     @apply backdrop-blur-[2px];
   }
+}
+/* the `dark:` variant can't follow a pseudo-element */
+.dark .search-dialog::backdrop {
+  @apply bg-black/70;
 }
 .search-panel {
   @apply flex flex-col;
