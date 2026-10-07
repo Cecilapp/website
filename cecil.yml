@@ -164,7 +164,7 @@ release:
   sha1: cecil.phar.sha1
 repo:
   docs: https://github.com/Cecilapp/Cecil/blob/main/docs/
-  website: https://github.com/Cecilapp/website/blob/master/pages/
+  website: https://github.com/Cecilapp/website/blob/main/pages/
 
 #googleanalytics: UA-387892-21
 cloudflareinsights: 601e6965b5bc43b782058112c5312906
