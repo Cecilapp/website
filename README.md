@@ -71,22 +71,13 @@ curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/sear
 
 ## Search
 
-The site is searched client side with [FlexSearch](https://github.com/nextapps-de/flexsearch): no service, works offline, in English and French.
+The site is searched client side with the [FlexSearch component theme](https://github.com/Cecilapp/theme-flexsearch) (`cecil/theme-flexsearch`): no service, works offline, in English and French.
 
-Search is configured in `cecil.yml`, under the `search` key; the indexed sections are listed in the order of the result groups:
+Search is configured in `cecil.yml`, under the `flexsearch` key; the indexed sections are listed in the order of the result groups:
 
 ```yaml
-search:
+flexsearch:
   enabled: true # display the search box
-  flexsearch:
-    version: '0.8.212' # FlexSearch library version, loaded from jsDelivr
-    tokenize: forward
-    encoder: Normalize
-    fields:
-      title: 9
-      page: 7
-      description: 5
-      content: 3
   sections:
     documentation:
       limit: 5 # maximum number of results in the group
@@ -99,28 +90,7 @@ search:
       date: true
 ```
 
-FlexSearch options (`search.flexsearch`):
+See the [theme documentation](https://github.com/Cecilapp/theme-flexsearch#configuration) for all the options.
 
-| Option       | Default     | Description                                                                          |
-| ------------ | ----------- | ------------------------------------------------------------------------------------ |
-| `version`    | `0.8.212`   | FlexSearch library version, loaded from jsDelivr                                     |
-| `tokenize`   | `forward`   | tokenizer: `strict`, `forward`, `reverse` or `full`                                  |
-| `encoder`    | `Normalize` | `FlexSearch.Charset` encoder: `Exact`, `Normalize`, `LatinBalance`, `LatinAdvanced`… |
-| `fields`     | see above   | indexed fields and their resolution, from `1` to `9` (`0` to not index the field)    |
-| `suggest`    | `true`      | fall back to fuzzy matching when nothing matches strictly                            |
-| `min_length` | `1`         | minimum length of the query to start searching                                       |
-| `delay`      | `120`       | delay (ms) after typing before searching                                             |
-| `boundary`   | `160`       | maximum length of a highlighted snippet                                              |
-| `snippet`    | `180`       | maximum length of a non highlighted snippet                                          |
-
-Section options:
-
-| Option   | Default | Description                                                            |
-| -------- | ------- | ---------------------------------------------------------------------- |
-| `limit`  | `5`     | maximum number of results displayed in the group                       |
-| `split`  | `true`  | one record per `<h2>`/`<h3>` heading, or a single record per page      |
-| `date`   | `false` | add the page date to its records (displayed instead of the breadcrumb) |
-| `length` | `1000`  | maximum length of the indexed text of an unsplit page                  |
-
-- **Index**: `/search.json` (and `/fr/search.json`), generated at build time by [`list.flexsearch.twig`](layouts/list.flexsearch.twig) from [`partials/search-index.json.twig`](layouts/partials/search-index.json.twig). The root page of each section is skipped; split pages are cut on their `<h2>` and `<h3>` headings, and their introduction is indexed under the page title.
-- **UI**: icon button or `Ctrl`/`⌘` + `K` opening a modal, fullscreen on mobile ([`partials/search-flexsearch.html.twig`](layouts/partials/search-flexsearch.html.twig)). Results are grouped by section, each section having its own index, so a group is ranked and limited on its own.
+- **Index**: `/flexsearch.json` (and `/fr/flexsearch.json`), generated at build time by the theme.
+- **UI**: the search box is included in the header ([`page.html.twig`](layouts/page.html.twig)); its colors and the header trigger button are customized in [`assets/css/search.css`](assets/css/search.css).
