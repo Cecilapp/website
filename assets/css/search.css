@@ -190,24 +190,32 @@
   list-style: none;
 }
 .search-group {
-  margin: 0 0 .75rem 0;
+  margin: 0 0 1.25rem 0;
 }
 .search-group:last-child {
   margin-bottom: 0;
 }
 /* separator between two groups */
 .search-group + .search-group {
-  padding-top: .75rem;
+  padding-top: 1rem;
   @apply border-t-2 border-slate-200 dark:border-darkgray;
 }
+/* group title: a tinted band, kept visible while scrolling its results */
 .search-group-title {
+  position: sticky;
+  top: -.5rem; /* the padding of `.search-body` */
+  z-index: 1;
   display: block;
-  padding: .25rem .75rem;
+  margin-bottom: .5rem;
+  padding: .4rem .75rem;
+  border-radius: 4px;
   font-size: .75rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: .03em;
-  @apply text-slate-500 dark:text-slate-400;
+  letter-spacing: .05em;
+  @apply bg-slate-100 dark:bg-darkgray;
+  @apply text-slate-600 dark:text-slate-300;
+  @apply border-l-4 border-blue dark:border-gold;
 }
 .search-group-results {
   margin: 0;
