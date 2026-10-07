@@ -185,17 +185,29 @@ libs:
 search:
   enabled: true
   flexsearch:
-    version: '0.8.212'
+    version: '0.8.212' # FlexSearch library version, loaded from jsDelivr
+    tokenize: forward # strict, forward, reverse or full
+    encoder: Normalize # FlexSearch.Charset: Exact, Default, Normalize, LatinBalance, LatinAdvanced, LatinExtra, LatinSoundex…
+    fields: # indexed fields and their resolution (weight, from 1 to 9; 0 to not index the field)
+      title: 9
+      page: 7
+      description: 5
+      content: 3
+    suggest: true # fall back to fuzzy matching when nothing matches strictly
+    min_length: 1 # minimum length of the query to start searching
+    delay: 120 # delay (ms) after typing before searching
+    boundary: 160 # maximum length of a highlighted snippet
+    snippet: 180 # maximum length of a non highlighted snippet
   # sections to index, in the order of the result groups
   sections:
     documentation:
       limit: 5 # maximum number of results in the group
     how-to:
       limit: 3
-      split: false
+      split: false # one record per post, not one per heading
     news:
       limit: 3
-      split: false # one record per post, not one per heading
-      date: true
+      split: false
+      date: true # show the date of the post in the search results
 
 snow: false

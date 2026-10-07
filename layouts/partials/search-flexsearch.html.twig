@@ -59,6 +59,19 @@
                     {%- set groups = groups|merge([{name: name, title: site.page(name).title|default(name), limit: options.limit|default(5)}]) -%}
                   {%- endfor ~%}
                   var SECTIONS = {{ groups|json_encode|raw }};
+                  {#- FlexSearch options (`search.flexsearch`) -#}
+                  {%- set flexsearch = site.search.flexsearch|default({}) -%}
+                  {%- set fields = {title: 9, page: 7, description: 5, content: 3}|merge(flexsearch.fields|default({})) ~%}
+                  var OPTIONS = {{ {
+                    tokenize: flexsearch.tokenize|default('forward'),
+                    encoder: flexsearch.encoder|default('Normalize'),
+                    fields: fields,
+                    suggest: flexsearch.suggest ?? true,
+                    min_length: flexsearch.min_length|default(1),
+                    delay: flexsearch.delay|default(120),
+                    boundary: flexsearch.boundary|default(160),
+                    snippet: flexsearch.snippet|default(180)
+                  }|json_encode|raw }};
                   var I18N = {
                     prompt: '{% trans %}Type to start searching.{% endtrans %}',
                     loading: '{% trans %}Loading the search index…{% endtrans %}',
@@ -103,19 +116,19 @@
                       var docs = values[1];
                       // an index per section, so each group is ranked and limited on its own
                       var idx = {};
+                      // indexed fields, weighted by their resolution (0 skips the field)
+                      var fields = [];
+                      for (var field in OPTIONS.fields) {
+                        if (OPTIONS.fields[field] > 0) { fields.push({ field: field, resolution: OPTIONS.fields[field] }); }
+                      }
                       for (var s = 0; s < SECTIONS.length; s++) {
                         idx[SECTIONS[s].name] = new FlexSearch.Document({
-                          tokenize: 'forward',
-                          encoder: FlexSearch.Charset.Normalize,
+                          tokenize: OPTIONS.tokenize,
+                          encoder: FlexSearch.Charset[OPTIONS.encoder] || FlexSearch.Charset.Normalize,
                           document: {
                             id: 'id',
                             store: true,
-                            index: [
-                              { field: 'title', resolution: 9 },
-                              { field: 'page', resolution: 7 },
-                              { field: 'description', resolution: 5 },
-                              { field: 'content', resolution: 3 }
-                            ]
+                            index: fields
                           }
                         });
                       }
@@ -139,7 +152,7 @@
                   function snippet(hit) {
                     var highlight = hit.highlight || {};
                     var text = highlight.description || highlight.content || hit.doc.description || hit.doc.content || '';
-                    return text.length > 180 && text.indexOf('<mark>') === -1 ? text.slice(0, 180) + '…' : text;
+                    return text.length > OPTIONS.snippet && text.indexOf('<mark>') === -1 ? text.slice(0, OPTIONS.snippet) + '…' : text;
                   }
 
                   function query(section, text, suggest) {
@@ -150,7 +163,7 @@
                       enrich: true,
                       merge: true,
                       suggest: suggest,
-                      highlight: { template: '<mark>$1</mark>', boundary: 160, merge: true, clip: false }
+                      highlight: { template: '<mark>$1</mark>', boundary: OPTIONS.boundary, merge: true, clip: false }
                     }).slice(0, section.limit);
                   }
 
@@ -160,12 +173,12 @@
                     cursor = -1;
                     hits = [];
                     input.setAttribute('aria-expanded', 'false');
-                    if (!text) { setStatus(I18N.prompt); return; }
+                    if (text.length < OPTIONS.min_length) { setStatus(I18N.prompt); return; }
                     if (!indexes) { load(); return; }
                     for (var s = 0; s < SECTIONS.length; s++) {
                       // strict first, then fall back to fuzzy matching when nothing matches
                       var found = query(SECTIONS[s], text, false);
-                      if (!found.length) { found = query(SECTIONS[s], text, true); }
+                      if (!found.length && OPTIONS.suggest) { found = query(SECTIONS[s], text, true); }
                       if (!found.length) { continue; }
                       results.appendChild(group(SECTIONS[s], found, hits.length));
                       hits = hits.concat(found);
@@ -245,7 +258,7 @@
 
                   input.addEventListener('input', function () {
                     clearTimeout(timer);
-                    timer = setTimeout(search, 120);
+                    timer = setTimeout(search, OPTIONS.delay);
                   });
 
                   input.addEventListener('keydown', function (event) {
