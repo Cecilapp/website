@@ -4,7 +4,6 @@
 @import './transitions.css';
 @import './notes.css';
 @import './terminal.css';
-@import './algolia.css';
 @import './search.css';
 @import './buttons' layer(utilities);
 @import './copy-link.css';

@@ -1,6 +1,6 @@
               {#- Search box: FlexSearch (client side, DocSearch-like modal) ~#}
               <div class="search-wrapper">
-                <button type="button" id="search-trigger" class="search-trigger" accesskey="s" aria-haspopup="dialog" aria-label="{% trans %}Search the Docs{% endtrans %}">
+                <button type="button" id="search-trigger" class="search-trigger" accesskey="s" aria-haspopup="dialog" aria-label="{% trans %}Search the site{% endtrans %}">
                   <svg class="search-trigger-icon" viewbox="654 -372 1664 1664" width="20" height="20" aria-hidden="true">
                     <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
                   </svg>
@@ -8,13 +8,13 @@
                   <span class="search-trigger-keys"><kbd class="search-kbd" id="search-modifier">Ctrl</kbd><kbd class="search-kbd">K</kbd></span>
                 </button>
               </div>
-              <dialog id="search-dialog" class="search-dialog" aria-label="{% trans %}Search the Docs{% endtrans %}">
+              <dialog id="search-dialog" class="search-dialog" aria-label="{% trans %}Search the site{% endtrans %}">
                 <div class="search-panel">
                   <form class="search-field" role="search" onsubmit="return false;">
                     <svg class="search-field-icon" viewbox="654 -372 1664 1664" width="20" height="20" aria-hidden="true">
                       <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"></path>
                     </svg>
-                    <input type="search" id="search-input" class="search-field-input" placeholder="{% trans %}Search the Docs{% endtrans %}"
+                    <input type="search" id="search-input" class="search-field-input" placeholder="{% trans %}Search the site{% endtrans %}"
                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"
                       role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
                     <button type="button" id="search-close" class="search-field-close" aria-label="{% trans %}Close{% endtrans %}" title="{% trans %}Close{% endtrans %}">
@@ -25,7 +25,7 @@
                   </form>
                   <div class="search-body">
                     <p class="search-status" id="search-status"></p>
-                    <ul class="search-results" id="search-results" role="listbox" aria-label="{% trans %}Search the Docs{% endtrans %}"></ul>
+                    <ul class="search-results" id="search-results" role="listbox" aria-label="{% trans %}Search the site{% endtrans %}"></ul>
                   </div>
                   <footer class="search-panel-footer">
                     <ul class="search-hints">
@@ -52,7 +52,13 @@
                   var LIB = '{{ asset('https://cdn.jsdelivr.net/npm/flexsearch@%s/dist/flexsearch.bundle.min.js'|format(site.flexsearch.version|default('0.8.212')), {minify: false, ignore_missing: true}) }}';
                   var INDEX = '{{ url(site.page('index'), {format: 'flexsearch'}) }}';
                   var BASE = '{{ url() }}';
-                  var LIMIT = {{ site.flexsearch.limit|default(8) }};
+                  var LANG = '{{ site.language }}';
+                  {#- one group of results per indexed section (`search.sections`), titled after the section page -#}
+                  {%- set groups = [] -%}
+                  {%- for name, options in site.search.sections|default({documentation: {}}) -%}
+                    {%- set groups = groups|merge([{name: name, title: site.page(name).title|default(name), limit: options.limit|default(5)}]) -%}
+                  {%- endfor ~%}
+                  var SECTIONS = {{ groups|json_encode|raw }};
                   var I18N = {
                     prompt: '{% trans %}Type to start searching.{% endtrans %}',
                     loading: '{% trans %}Loading the search index…{% endtrans %}',
@@ -60,7 +66,7 @@
                     error: '{% trans %}Search is unavailable.{% endtrans %}'
                   };
 
-                  var index = null;
+                  var indexes = null; // one FlexSearch index per section
                   var loading = null;
                   var hits = [];
                   var cursor = -1;
@@ -95,22 +101,28 @@
                       })
                     ]).then(function (values) {
                       var docs = values[1];
-                      var idx = new FlexSearch.Document({
-                        tokenize: 'forward',
-                        encoder: FlexSearch.Charset.Normalize,
-                        document: {
-                          id: 'id',
-                          store: true,
-                          index: [
-                            { field: 'title', resolution: 9 },
-                            { field: 'page', resolution: 7 },
-                            { field: 'description', resolution: 5 },
-                            { field: 'content', resolution: 3 }
-                          ]
-                        }
-                      });
-                      for (var i = 0; i < docs.length; i++) { idx.add(docs[i]); }
-                      index = idx;
+                      // an index per section, so each group is ranked and limited on its own
+                      var idx = {};
+                      for (var s = 0; s < SECTIONS.length; s++) {
+                        idx[SECTIONS[s].name] = new FlexSearch.Document({
+                          tokenize: 'forward',
+                          encoder: FlexSearch.Charset.Normalize,
+                          document: {
+                            id: 'id',
+                            store: true,
+                            index: [
+                              { field: 'title', resolution: 9 },
+                              { field: 'page', resolution: 7 },
+                              { field: 'description', resolution: 5 },
+                              { field: 'content', resolution: 3 }
+                            ]
+                          }
+                        });
+                      }
+                      for (var i = 0; i < docs.length; i++) {
+                        if (idx[docs[i].section]) { idx[docs[i].section].add(docs[i]); }
+                      }
+                      indexes = idx;
                       search();
                     }).catch(function (error) {
                       console.error(error);
@@ -130,15 +142,16 @@
                     return text.length > 180 && text.indexOf('<mark>') === -1 ? text.slice(0, 180) + '…' : text;
                   }
 
-                  function query(text, suggest) {
-                    return index.search({
+                  function query(section, text, suggest) {
+                    // `limit` applies to each field: merged results can exceed it
+                    return indexes[section.name].search({
                       query: text,
-                      limit: LIMIT,
+                      limit: section.limit,
                       enrich: true,
                       merge: true,
                       suggest: suggest,
                       highlight: { template: '<mark>$1</mark>', boundary: 160, merge: true, clip: false }
-                    });
+                    }).slice(0, section.limit);
                   }
 
                   function search() {
@@ -148,15 +161,44 @@
                     hits = [];
                     input.setAttribute('aria-expanded', 'false');
                     if (!text) { setStatus(I18N.prompt); return; }
-                    if (!index) { load(); return; }
-                    // strict first, then fall back to fuzzy matching when nothing matches
-                    hits = query(text, false);
-                    if (!hits.length) { hits = query(text, true); }
+                    if (!indexes) { load(); return; }
+                    for (var s = 0; s < SECTIONS.length; s++) {
+                      // strict first, then fall back to fuzzy matching when nothing matches
+                      var found = query(SECTIONS[s], text, false);
+                      if (!found.length) { found = query(SECTIONS[s], text, true); }
+                      if (!found.length) { continue; }
+                      results.appendChild(group(SECTIONS[s], found, hits.length));
+                      hits = hits.concat(found);
+                    }
                     if (!hits.length) { setStatus(I18N.empty); return; }
                     setStatus(null);
                     input.setAttribute('aria-expanded', 'true');
-                    for (var i = 0; i < hits.length; i++) { results.appendChild(item(hits[i], i)); }
                     select(0);
+                  }
+
+                  // results of a section, under its title; `offset` keeps a flat numbering across groups
+                  function group(section, found, offset) {
+                    var li = document.createElement('li');
+                    li.className = 'search-group';
+                    li.setAttribute('role', 'group');
+                    li.setAttribute('aria-labelledby', 'search-group-' + section.name);
+                    var title = document.createElement('span');
+                    title.className = 'search-group-title';
+                    title.id = 'search-group-' + section.name;
+                    title.textContent = section.title;
+                    var ul = document.createElement('ul');
+                    ul.className = 'search-group-results';
+                    ul.setAttribute('role', 'none');
+                    for (var i = 0; i < found.length; i++) { ul.appendChild(item(found[i], offset + i)); }
+                    li.appendChild(title);
+                    li.appendChild(ul);
+                    return li;
+                  }
+
+                  // dated records (news) show their date instead of their breadcrumb
+                  function context(doc) {
+                    if (!doc.date) { return doc.page; }
+                    return new Date(doc.date + 'T00:00:00').toLocaleDateString(LANG, { year: 'numeric', month: 'long', day: 'numeric' });
                   }
 
                   function item(hit, i) {
@@ -169,7 +211,7 @@
                     a.href = BASE + hit.doc.href;
                     var text = snippet(hit);
                     a.innerHTML = '<span class="search-result-text">'
-                      + '<span class="search-result-page">' + hit.doc.page + '</span>'
+                      + '<span class="search-result-page">' + context(hit.doc) + '</span>'
                       + '<span class="search-result-title">' + ((hit.highlight || {}).title || hit.doc.title) + '</span>'
                       + (text ? '<span class="search-result-snippet">' + text + '</span>' : '')
                       + '</span>';
@@ -179,7 +221,7 @@
                   }
 
                   function select(i) {
-                    var items = results.children;
+                    var items = results.querySelectorAll('.search-result');
                     if (!items.length) { return; }
                     if (cursor > -1 && items[cursor]) { items[cursor].classList.remove('is-selected'); }
                     cursor = (i + items.length) % items.length;
