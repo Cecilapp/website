@@ -195,6 +195,11 @@
 .search-group:last-child {
   margin-bottom: 0;
 }
+/* separator between two groups */
+.search-group + .search-group {
+  padding-top: .75rem;
+  @apply border-t-2 border-slate-200 dark:border-darkgray;
+}
 .search-group-title {
   display: block;
   padding: .25rem .75rem;

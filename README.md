@@ -73,20 +73,26 @@ curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/sear
 
 The site is searched client side with [FlexSearch](https://github.com/nextapps-de/flexsearch): no service, works offline, in English and French.
 
-The indexed sections are listed in `cecil.yml`, in the order of the result groups:
+Search is configured in `cecil.yml`, under the `search` key; the indexed sections are listed in the order of the result groups:
 
 ```yaml
 search:
+  enabled: true # display the search box
+  flexsearch:
+    version: '0.8.212' # FlexSearch library version, loaded from jsDelivr
   sections:
     documentation:
       limit: 5 # maximum number of results in the group
     how-to:
       limit: 3
+      split: false
     news:
       limit: 3
       split: false # one record per post, not one per heading
       date: true
 ```
+
+Section options:
 
 | Option   | Default | Description                                                         |
 | -------- | ------- | ------------------------------------------------------------------- |

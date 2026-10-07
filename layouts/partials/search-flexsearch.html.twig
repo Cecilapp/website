@@ -49,7 +49,7 @@
                   var close = document.getElementById('search-close');
                   if (!trigger || !dialog || !dialog.showModal) { return; }
 
-                  var LIB = '{{ asset('https://cdn.jsdelivr.net/npm/flexsearch@%s/dist/flexsearch.bundle.min.js'|format(site.flexsearch.version|default('0.8.212')), {minify: false, ignore_missing: true}) }}';
+                  var LIB = '{{ asset('https://cdn.jsdelivr.net/npm/flexsearch@%s/dist/flexsearch.bundle.min.js'|format(site.search.flexsearch.version|default('0.8.212')), {minify: false, ignore_missing: true}) }}';
                   var INDEX = '{{ url(site.page('index'), {format: 'flexsearch'}) }}';
                   var BASE = '{{ url() }}';
                   var LANG = '{{ site.language }}';

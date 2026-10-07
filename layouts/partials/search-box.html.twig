@@ -1,4 +1,4 @@
 {#- Search box: FlexSearch, client side -#}
-{%- if site.flexsearch.enabled|default(true) -%}
+{%- if site.search.enabled|default(true) -%}
 {{- include('partials/search-flexsearch.html.twig') ~}}
 {%- endif -%}

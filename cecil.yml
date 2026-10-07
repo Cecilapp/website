@@ -183,19 +183,19 @@ libs:
     version: 11
 
 search:
+  enabled: true
+  flexsearch:
+    version: '0.8.212'
   # sections to index, in the order of the result groups
   sections:
     documentation:
       limit: 5 # maximum number of results in the group
     how-to:
       limit: 3
+      split: false
     news:
       limit: 3
       split: false # one record per post, not one per heading
       date: true
-
-flexsearch:
-  enabled: true
-  version: '0.8.212'
 
 snow: false
