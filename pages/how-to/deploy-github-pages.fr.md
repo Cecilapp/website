@@ -54,12 +54,6 @@ Le job `build` télécharge Cecil, installe les thèmes (si un fichier `composer
 
 Inutile de modifier `baseurl` dans `cecil.yml` : l’action génère le site avec l’URL fournie par GitHub Pages (par exemple `https://<user>.github.io/<repository>/`), via l’option `--baseurl`.
 
-Conservez une valeur locale pour le développement :
-
-```yaml
-baseurl: http://localhost:8000/
-```
-
 ## Personnaliser la génération
 
 L’action accepte les paramètres optionnels suivants :

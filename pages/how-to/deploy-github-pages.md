@@ -53,12 +53,6 @@ The `build` job downloads Cecil, installs themes (if a `composer.json` file exis
 
 You don’t need to change `baseurl` in `cecil.yml`: the action builds the site with the URL provided by GitHub Pages (e.g. `https://<user>.github.io/<repository>/`), using the `--baseurl` option.
 
-Keep a local value for development:
-
-```yaml
-baseurl: http://localhost:8000/
-```
-
 ## Customize the build
 
 The action accepts the following optional inputs:
