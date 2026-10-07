@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-10-06 17:51+0200\n"
-"PO-Revision-Date: 2026-10-06 17:52+0200\n"
+"POT-Creation-Date: 2026-10-07 14:15+0200\n"
+"PO-Revision-Date: 2026-10-07 14:15+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -23,7 +23,7 @@ msgid "Click here if you are not redirected."
 msgstr "Cliquez ici si vous n'êtes pas redirigé automatiquement."
 
 #: documentation/list.html.twig:2 documentation/list.html.twig:9
-#: documentation/page.html.twig:1 partials/docs-navigation.html.twig:34
+#: documentation/page.html.twig:1 partials/docs-navigation.html.twig:36
 #: themes.html.twig:51
 msgid "Documentation"
 msgstr "Documentation"
@@ -112,13 +112,13 @@ msgstr "Commencer"
 msgid "Breadcrumb"
 msgstr "Fil d'Ariane"
 
-#: partials/breadcrumb.html.twig:33
-msgid "Atom feed"
-msgstr "Flux Atom"
-
 #: partials/breadcrumb.html.twig:14 partials/logo.html.twig:2
 msgid "Home"
 msgstr "Accueil"
+
+#: partials/breadcrumb.html.twig:30
+msgid "Atom feed"
+msgstr "Flux Atom"
 
 #: partials/copy-link.js.twig:11
 msgid "Copied to clipboard"
@@ -152,35 +152,35 @@ msgstr "Rechercher"
 msgid "Close"
 msgstr "Fermer"
 
-#: partials/search-flexsearch.html.twig:28
+#: partials/search-flexsearch.html.twig:32
 msgid "to select"
 msgstr "pour sélectionner"
 
-#: partials/search-flexsearch.html.twig:29
+#: partials/search-flexsearch.html.twig:33
 msgid "to navigate"
 msgstr "pour naviguer"
 
-#: partials/search-flexsearch.html.twig:30
+#: partials/search-flexsearch.html.twig:34
 msgid "to close"
 msgstr "pour fermer"
 
-#: partials/search-flexsearch.html.twig:33
+#: partials/search-flexsearch.html.twig:37
 msgid "Search by"
 msgstr "Recherche par"
 
-#: partials/search-flexsearch.html.twig:53
+#: partials/search-flexsearch.html.twig:63
 msgid "Type to start searching."
 msgstr "Saisissez votre recherche."
 
-#: partials/search-flexsearch.html.twig:54
+#: partials/search-flexsearch.html.twig:64
 msgid "Loading the search index…"
 msgstr "Chargement de l’index de recherche…"
 
-#: partials/search-flexsearch.html.twig:55
+#: partials/search-flexsearch.html.twig:65
 msgid "No results found."
 msgstr "Aucun résultat."
 
-#: partials/search-flexsearch.html.twig:56
+#: partials/search-flexsearch.html.twig:66
 msgid "Search is unavailable."
 msgstr "La recherche est indisponible."
 
