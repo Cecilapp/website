@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aligny/tailwind-builder",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ArnaudLigny/tailwind-builder.git",
-                "reference": "ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21"
+                "reference": "6cb0395f3622d0d70ff3ba0ea61342a22094ba21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21",
-                "reference": "ccc1e5e4a8d6cc756ff5ad7f04a6d20a28b2ad21",
+                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/6cb0395f3622d0d70ff3ba0ea61342a22094ba21",
+                "reference": "6cb0395f3622d0d70ff3ba0ea61342a22094ba21",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ArnaudLigny/tailwind-builder/issues",
-                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.2"
+                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.3"
             },
             "funding": [
                 {
@@ -61,7 +61,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-29T15:02:28+00:00"
+            "time": "2026-10-07T21:37:41+00:00"
         },
         {
             "name": "cecil/theme-installer",
