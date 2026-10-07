@@ -175,6 +175,8 @@ libs:
     version: 11.9.0
     styles: atom-one-dark
     languages: twig
+  highlightjs_copy:
+    version: 1.0.6
   anchor:
     version: 5.0.0
   tocbot:

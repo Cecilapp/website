@@ -1,0 +1,17 @@
+    {#- highlightjs-copy: code blocks are highlighted server side, so the plugin hook is called directly ~#}
+    <script defer src="{{ asset('https://cdn.jsdelivr.net/npm/highlightjs-copy@%s/dist/highlightjs-copy.min.js'|format(site.libs.highlightjs_copy.version), {minify: false, ignore_missing: true}) }}"></script>
+    <script>{% apply minify_js ~%}
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof CopyButtonPlugin === 'undefined') return;
+        const plugin = new CopyButtonPlugin();
+        document.querySelectorAll('pre > code').forEach((el) => {
+          plugin['after:highlightElement']({ el, text: el.textContent });
+          // use the <pre> styles, as the <code> background and padding are reset
+          const container = el.parentElement.querySelector('.hljs-copy-container');
+          if (!container) return;
+          const pre = window.getComputedStyle(el.parentElement);
+          container.style.setProperty('--hljs-theme-background', pre.backgroundColor);
+          container.style.setProperty('--hljs-theme-padding', pre.paddingTop);
+        });
+      });
+    {% endapply %}</script>
