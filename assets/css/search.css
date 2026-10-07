@@ -196,10 +196,10 @@
   margin-bottom: 0;
 }
 /* separator between two groups */
-.search-group + .search-group {
+/*.search-group + .search-group {
   padding-top: 1rem;
   @apply border-t-2 border-slate-200 dark:border-darkgray;
-}
+}*/
 /* group title: a tinted band, kept visible while scrolling its results */
 .search-group-title {
   position: sticky;
