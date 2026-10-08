@@ -2,8 +2,8 @@ name: Lighthouse CI
 
 on:
   schedule:
-    # Every day at 06:00 UTC (08:00 in Paris during summer time, 07:00 in winter)
     - cron: '0 6 * * *'
+      timezone: "Europe/Paris"
   workflow_dispatch:
 
 permissions:
