@@ -8,6 +8,8 @@ layout: showcase
 output: html
 slug: vitrine
 ---
-Découvrez quelques sites Web créés avec Cecil.
+Des sites de projets open source aux portails communautaires en passant par les blogs personnels, découvrez de vrais sites web créés avec Cecil.
 
-> Votre site Web est créé avec Cecil ? [Faites-le nous savoir](https://github.com/Cecilapp/Cecil/discussions).
+Beaucoup d’entre eux sont open source : parcourez leur code pour voir comment ils sont faits, et inspirez-vous-en pour votre propre projet.
+
+> Votre site web est créé avec Cecil ? [Faites-le nous savoir](https://github.com/Cecilapp/Cecil/discussions) et nous l’ajouterons à la vitrine.

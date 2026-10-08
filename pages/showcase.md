@@ -7,6 +7,8 @@ menu:
 layout: showcase
 output: html
 ---
-Discover some websites built with Cecil.
+From open source project websites to community portals and personal blogs, discover real websites built with Cecil.
 
-> Your website is built with Cecil? [Let us know](https://github.com/Cecilapp/Cecil/discussions).
+Many of them are open source: browse their code to see how they are made, and get inspired for your own project.
+
+> Your website is built with Cecil? [Let us know](https://github.com/Cecilapp/Cecil/discussions) and we'll add it to the showcase.
