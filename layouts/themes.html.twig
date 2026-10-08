@@ -8,11 +8,6 @@
               {%- block toc %}{% endblock toc ~%}
 
               {%- block content ~%}
-              {#- navigation ~#}
-              {%- block nav ~%}
-              {%- include('partials/themes-nav.html.twig') ~%}
-              {%- endblock nav ~%}
-              {#- content ~#}
               <h1>{{ page.title }}</h1>
               {{- page.content ~}}
               {#- repository ~#}
