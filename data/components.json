@@ -6,13 +6,29 @@
     "github": "https://github.com/Cecilapp/theme-pwa",
     "license": "MIT License",
     "homepage": "https://cecil.app/themes/components/",
-    "date": "2026-08-28T10:27:02Z",
+    "date": "2026-10-08T10:00:35Z",
     "default_branch": "master",
     "topics": [
       "cecil",
       "cecil-theme-component",
       "pwa",
       "service-worker"
+    ]
+  },
+  {
+    "name": "theme-flexsearch",
+    "full_name": "Cecilapp/theme-flexsearch",
+    "description": "The FlexSearch component theme for Cecil adds a client side full-text search, with an index generated at build time and a DocSearch-like modal.",
+    "github": "https://github.com/Cecilapp/theme-flexsearch",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-10-08T09:31:36Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "flexsearch",
+      "search"
     ]
   },
   {
@@ -97,21 +113,6 @@
     "license": "MIT License",
     "homepage": "https://cecil.app/themes/components/",
     "date": "2025-09-16T13:22:56Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "netlify"
-    ]
-  },
-  {
-    "name": "theme-netlifycms",
-    "full_name": "Cecilapp/theme-netlifycms",
-    "description": "The Netlify CMS component theme for Cecil provide support of Netlify CMS.",
-    "github": "https://github.com/Cecilapp/theme-netlifycms",
-    "license": "MIT License",
-    "homepage": "https://cecil.app/themes/components/",
-    "date": "2024-03-12T10:56:47Z",
     "default_branch": "main",
     "topics": [
       "cecil",

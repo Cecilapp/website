@@ -1,5 +1,37 @@
 [
   {
+    "name": "theme-devspace",
+    "full_name": "Cecilapp/theme-devspace",
+    "description": "DevSpace is a theme for Cecil, ported from the DevSpace HTML template by Cruip.",
+    "github": "https://github.com/Cecilapp/theme-devspace",
+    "license": null,
+    "homepage": "https://cruip.com/devspace/",
+    "date": "2026-10-08T15:16:17Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
+    "name": "theme-links",
+    "full_name": "Cecilapp/theme-links",
+    "description": "Links is a minimalist theme for creating link-focused pages with Cecil.",
+    "github": "https://github.com/Cecilapp/theme-links",
+    "license": "MIT License",
+    "homepage": "https://links.cecil.app",
+    "date": "2026-10-06T22:04:56Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme",
+      "tailwindcss",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-applanding",
     "full_name": "Cecilapp/theme-applanding",
     "description": "App Landing is designed to help you quickly create a landing page for your application.",
@@ -78,22 +110,6 @@
     ]
   },
   {
-    "name": "theme-links",
-    "full_name": "Cecilapp/theme-links",
-    "description": "Links is a minimalist theme for creating link-focused pages with Cecil.",
-    "github": "https://github.com/Cecilapp/theme-links",
-    "license": "MIT License",
-    "homepage": "https://links.cecil.app",
-    "date": "2026-09-30T22:53:20Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme",
-      "tailwindcss",
-      "theme"
-    ]
-  },
-  {
     "name": "theme-coffee",
     "full_name": "Cecilapp/theme-coffee",
     "description": "Coffee is a corporate theme for Cecil.",
@@ -101,22 +117,6 @@
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-coffee/",
     "date": "2026-09-30T22:44:53Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme",
-      "tailwindcss",
-      "theme"
-    ]
-  },
-  {
-    "name": "theme-devspace",
-    "full_name": "Cecilapp/theme-devspace",
-    "description": "DevSpace is a theme for Cecil, ported from the DevSpace HTML template by Cruip.",
-    "github": "https://github.com/Cecilapp/theme-devspace",
-    "license": null,
-    "homepage": "https://cruip.com/devspace/",
-    "date": "2026-09-23T08:55:53Z",
     "default_branch": "main",
     "topics": [
       "cecil",
