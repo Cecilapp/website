@@ -7,7 +7,7 @@ layout: download
 alias: install
 menu:
   main:
-    weight: 30
+    weight: 70
   footer:
 ---
 # Download

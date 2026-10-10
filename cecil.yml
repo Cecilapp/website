@@ -40,7 +40,6 @@ languages:
           - id: news
             weight: 10
           - id: documentation
-            name: Documentation
             weight: 20
         footer:
           - id: github

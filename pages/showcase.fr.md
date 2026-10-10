@@ -3,7 +3,7 @@ title: Vitrine
 description: "Sites Web créés avec Cecil."
 menu:
   main:
-    weight: 70
+    weight: 40
 layout: showcase
 output: html
 slug: vitrine

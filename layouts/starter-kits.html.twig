@@ -5,24 +5,24 @@
 
               {%- block nav %}{% endblock ~%}
 
-              {%- block name ~%}
-              <h2>{{ repo.name }}</h2>
-              {%- endblock ~%}
+                    {%- block name ~%}
+                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" class="no-underline">{{ repo.name }}</a></h2>
+                    {%- endblock ~%}
 
-              {%- block command ~%}
-              <p class="copy-link">
-                <label for="{{ 'cmd-' ~ repo.name|lower }}" class="font-bold">{% trans %}Create project{% endtrans %}</label>
-                <input id="{{ 'cmd-' ~ repo.name|lower }}" type="text" class="copy-link-input" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
-                <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
-                  {{ octicons.svg('copy', 16) }}
-                </button>
-              </p>
-              {%- endblock ~%}
+                    {%- block command ~%}
+                    <p class="copy-link text-sm m-0">
+                      <label for="{{ 'cmd-' ~ repo.name|lower }}" class="font-bold">{% trans %}Create project{% endtrans %}</label>
+                      <input id="{{ 'cmd-' ~ repo.name|lower }}" type="text" class="copy-link-input min-w-0" value="composer create-project cecil/{{ repo.name|lower }} --ask" readonly>
+                      <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
+                        {{ octicons.svg('copy', 16) }}
+                      </button>
+                    </p>
+                    {%- endblock ~%}
 
-              {%- block button_website ~%}
-                {%- if repo.homepage ~%}
-                  {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
-                    {{- octicons.svg('home', 16) }}<div>{% trans %}Homepage{% endtrans %}</div>
-                  {%- endx ~%}
-                {%- endif ~%}
-              {%- endblock ~%}
+                      {%- block button_website ~%}
+                        {%- if repo.homepage ~%}
+                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                            {{- octicons.svg('home', 16) }}<div>{% trans %}Homepage{% endtrans %}</div>
+                          {%- endx ~%}
+                        {%- endif ~%}
+                      {%- endblock ~%}

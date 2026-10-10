@@ -3,7 +3,7 @@ title: Showcase
 description: "Websites built with Cecil."
 menu:
   main:
-    weight: 70
+    weight: 40
 layout: showcase
 output: html
 ---

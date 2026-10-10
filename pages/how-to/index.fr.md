@@ -4,6 +4,6 @@ description: Articles et tutoriels pour réaliser les tâches courantes avec Cec
 path: comment-faire
 menu:
   main:
-    weight: 60
+    weight: 30
 ---
 Articles et tutoriels pour réaliser les tâches courantes avec Cecil.
