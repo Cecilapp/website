@@ -60,7 +60,6 @@ menus:
     - id: news
       weight: 10
     - id: documentation
-      name: Documentation
       weight: 20
     - id: cms
       enabled: false
