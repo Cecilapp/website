@@ -21,7 +21,7 @@
                     {%- set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) -%}
                   {%- endif -%}
                   {%- if screenshot['missing'] -%}
-                    {%- set screenshot = asset('images/cecil-card.png') -%}
+                    {%- set screenshot = asset('images/cecil-logo-placeholder.png') -%}
                   {%- endif ~%}
                   <a href="{{ url(repo_url) }}" class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
                     {{ html(screenshot, {alt: "%name%'s screenshot"|trans({'%name%': repo.name}), loading: 'lazy', decoding: 'async', class: 'showcase block w-full h-full object-cover object-top m-0', style: 'background-color:' ~ screenshot|dominant_color}) }}
