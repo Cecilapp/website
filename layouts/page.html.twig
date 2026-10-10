@@ -20,12 +20,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{- include('partials/metatags.html.twig', {title: title|default, image: image|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
-    {#- main CSS ~#}
+    {#- main CSS (after the search CSS, which it customizes) ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>{% apply minify_css ~%}
+      {{ asset('flexsearch/flexsearch.css')|inline }}
       {{ asset('styles.css')|inline }}
     {% endapply %}</style>
     {%- else ~%}
+    <link rel="stylesheet" href="{{ asset('flexsearch/flexsearch.css', {minify: false, fingerprint: false}) }}">
     <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
     {%- endif ~%}
     {#- others CSS ~#}
@@ -99,9 +101,9 @@
         <div class="grow"></div>
         {#- tools and links ~#}
         <nav class="flex items-center mt-0 pt-0 gap-4">
-          {#- search in documentation ~#}
+          {#- search (FlexSearch component theme) ~#}
           <div class="header-search">
-            {{- include('partials/search-box.html.twig') ~}}
+            {{- include('partials/flexsearch.html.twig') ~}}
           </div>
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}

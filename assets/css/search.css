@@ -1,195 +1,56 @@
-/* FlexSearch search box (DocSearch-like modal) */
+/* Search box: FlexSearch component theme, customized */
 
-/* trigger button */
-.search-wrapper {
-  @apply w-full mb-4;
+/* colors of the site */
+:root {
+  --flexsearch-color: var(--color-slate-800);
+  --flexsearch-bg: var(--color-white);
+  --flexsearch-heading-color: var(--color-blue);
+  --flexsearch-muted: var(--color-slate-500);
+  --flexsearch-subtle: var(--color-slate-400);
+  --flexsearch-border: var(--color-blue);
+  --flexsearch-divider: var(--color-slate-200);
+  --flexsearch-surface: var(--color-slate-100);
+  --flexsearch-surface-color: var(--color-slate-600);
+  --flexsearch-surface-border: var(--color-slate-300);
+  --flexsearch-accent: var(--color-blue);
+  --flexsearch-mark-color: var(--color-blue);
+  --flexsearch-selected-bg: var(--color-gold);
+  --flexsearch-selected-color: var(--color-blue);
+  --flexsearch-backdrop: --alpha(var(--color-blue) / 60%);
 }
-.search-trigger {
-  @apply flex items-center gap-2 w-full;
-  @apply py-2 px-3;
-  @apply text-sm text-left;
-  @apply rounded cursor-pointer;
-  @apply border-2 border-slate-400 dark:border-slate-500;
-  @apply hover:border-blue dark:hover:border-white;
-}
-.search-trigger-icon {
-  @apply flex-none size-5;
-  @apply fill-slate-400;
-}
-.search-trigger-label {
-  @apply flex-auto;
-  @apply text-slate-400;
-}
-.search-trigger-keys {
-  @apply flex-none hidden;
-  @apply sm:inline-flex sm:gap-[.2rem];
-}
-
-/* keyboard keys (the trigger lives in a prose container that also styles kbd) */
-.search-kbd,
-.search-trigger .search-kbd {
-  @apply inline-block min-w-6 px-[.3rem];
-  @apply font-[inherit] text-[.7rem] leading-[1.4rem] text-center;
-  @apply rounded-[3px];
-  @apply bg-slate-100 dark:bg-darkgray;
-  @apply text-slate-600 dark:text-slate-300;
-  @apply border border-slate-300 dark:border-slate-600;
+:root.dark {
+  --flexsearch-color: var(--color-slate-200);
+  --flexsearch-bg: var(--color-dark);
+  --flexsearch-heading-color: var(--color-white);
+  --flexsearch-muted: var(--color-slate-400);
+  --flexsearch-border: var(--color-white);
+  --flexsearch-divider: var(--color-darkgray);
+  --flexsearch-surface: var(--color-darkgray);
+  --flexsearch-surface-color: var(--color-slate-300);
+  --flexsearch-surface-border: var(--color-slate-600);
+  --flexsearch-accent: var(--color-gold);
+  --flexsearch-mark-color: var(--color-gold);
+  --flexsearch-selected-bg: var(--color-black);
+  --flexsearch-selected-color: var(--color-white);
+  --flexsearch-backdrop: --alpha(var(--color-black) / 70%);
 }
 
 /* trigger in the site header (always on a dark background) */
-.header-search .search-wrapper {
-  @apply w-auto mb-0;
-}
 /* mobile: icon only, like the other header buttons */
-.header-search .search-trigger {
-  @apply p-0 border-0 bg-transparent;
+.header-search .flexsearch-trigger {
+  @apply w-auto p-0 border-0 bg-transparent text-current;
   @apply sm:w-56 sm:py-[.3rem] sm:px-2;
   @apply sm:rounded-md sm:border sm:border-slate-500 sm:bg-white/5;
   @apply sm:hover:border-white;
 }
-.header-search .search-trigger-icon {
-  @apply fill-current;
-  @apply sm:fill-slate-400;
+.header-search .flexsearch-trigger-icon {
+  @apply text-current;
+  @apply sm:text-slate-400;
 }
-.header-search .search-trigger-label {
+.header-search .flexsearch-trigger-label {
   @apply hidden text-slate-300;
   @apply sm:inline;
 }
-.header-search .search-trigger .search-kbd {
+.header-search .flexsearch-trigger .flexsearch-kbd {
   @apply bg-white/10 text-slate-300 border-slate-500;
-}
-
-/* modal */
-.search-dialog {
-  @apply w-full max-w-[47.5rem];
-  @apply p-0 border-0 bg-transparent;
-  @apply mt-16 mx-auto;
-  /* mobile: full viewport */
-  @apply max-sm:w-screen max-sm:h-dvh max-sm:max-w-none max-sm:max-h-none max-sm:m-0;
-  &::backdrop {
-    @apply bg-blue/60;
-    @apply backdrop-blur-[2px];
-  }
-}
-/* the `dark:` variant can't follow a pseudo-element */
-.dark .search-dialog::backdrop {
-  @apply bg-black/70;
-}
-.search-panel {
-  @apply flex flex-col;
-  @apply max-h-[calc(100vh-8rem)] mx-4;
-  @apply rounded-lg overflow-hidden;
-  @apply bg-white dark:bg-dark;
-  @apply border border-blue dark:border-white;
-  @apply text-slate-800 dark:text-slate-200;
-  /* mobile: full viewport */
-  @apply max-sm:h-full max-sm:max-h-none max-sm:m-0 max-sm:border-0 max-sm:rounded-none;
-}
-
-/* input */
-.search-field {
-  @apply flex flex-none items-center gap-2;
-  @apply py-3 px-4;
-  @apply border-b border-slate-200 dark:border-darkgray;
-}
-.search-field-icon {
-  @apply flex-none size-5;
-  @apply fill-slate-400;
-}
-.search-field-input {
-  @apply flex-auto min-w-0;
-  @apply py-1 px-2;
-  @apply text-lg;
-  @apply bg-transparent border-0 outline-none appearance-none;
-  @apply text-blue dark:text-white;
-  @apply placeholder:text-slate-400;
-  &::-webkit-search-cancel-button {
-    @apply appearance-none;
-  }
-}
-.search-field-close {
-  @apply flex-none inline-flex items-center justify-center;
-  @apply p-1;
-  @apply rounded-[3px] cursor-pointer;
-  @apply bg-slate-100 dark:bg-darkgray;
-  @apply text-slate-600 dark:text-slate-300;
-  @apply border border-slate-300 dark:border-slate-600;
-}
-
-/* results */
-.search-body {
-  @apply flex-auto overflow-y-auto p-2;
-}
-.search-status {
-  @apply m-0 py-6 px-2;
-  @apply text-sm text-center;
-  @apply text-slate-500 dark:text-slate-400;
-}
-.search-results {
-  @apply m-0 p-0 list-none;
-}
-.search-group {
-  @apply m-0 mb-5;
-  @apply last:mb-0;
-}
-/* group title: a tinted band, kept visible while scrolling its results */
-.search-group-title {
-  @apply sticky -top-2 z-1; /* -top-2: the padding of `.search-body` */
-  @apply block mb-2 py-[.4rem] px-3;
-  @apply rounded;
-  @apply text-xs font-bold uppercase tracking-wider;
-  @apply bg-slate-100 dark:bg-darkgray;
-  @apply text-slate-600 dark:text-slate-300;
-  @apply border-l-4 border-blue dark:border-gold;
-}
-.search-group-results {
-  @apply m-0 p-0 list-none;
-}
-.search-result {
-  @apply m-0 mb-1;
-  & mark {
-    @apply bg-transparent font-bold;
-    @apply text-blue dark:text-gold;
-  }
-}
-.search-result-link {
-  @apply block py-2 px-3;
-  @apply rounded no-underline;
-  @apply text-blue dark:text-white;
-}
-.search-result.is-selected .search-result-link {
-  @apply bg-gold dark:bg-black;
-}
-.search-result-text {
-  @apply block min-w-0;
-}
-.search-result-page {
-  @apply block text-[.7rem] font-bold;
-  @apply text-slate-500 dark:text-slate-400;
-}
-.search-result-title {
-  @apply block text-base font-bold;
-}
-.search-result-snippet {
-  @apply block text-[.8rem] leading-[1.3rem];
-  @apply text-slate-600 dark:text-slate-400;
-}
-
-/* footer */
-.search-panel-footer {
-  @apply flex flex-none flex-wrap items-center justify-between gap-2;
-  @apply py-2 px-4;
-  @apply text-[.7rem];
-  @apply border-t border-slate-200 dark:border-darkgray;
-  @apply text-slate-500 dark:text-slate-400;
-}
-.search-hints {
-  @apply hidden m-0 p-0 list-none;
-  @apply sm:flex sm:gap-4 sm:items-center;
-  & li {
-    @apply flex items-center gap-1;
-  }
-}
-.search-credit a {
-  @apply underline;
 }

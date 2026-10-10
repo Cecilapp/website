@@ -119,21 +119,18 @@ output:
     - name: sha1
       mediatype: 'text/plain'
       extension: 'phar.sha1'
-    - name: flexsearch
-      mediatype: 'application/json'
-      filename: 'search'
-      extension: 'json'
     - name: bash
       mediatype: 'text/plain'
       extension: 'sh'
   pagetypeformats:
-    homepage: ['html', 'atom', 'flexsearch', 'markdown', 'llms']
+    homepage: ['html', 'atom', 'markdown', 'llms']
     section: ['html', 'atom', 'jsonfeed', 'markdown']
     page: ['html', 'markdown']
 theme:
   - octicons
   - pwa
   - netlify
+  - flexsearch
 manifest:
   background_color: '#163C56'
   theme_color: '#163C56'
@@ -184,22 +181,9 @@ libs:
   mermaid:
     version: 11
 
-search:
+# Search (FlexSearch component theme: https://github.com/Cecilapp/theme-flexsearch)
+flexsearch:
   enabled: true
-  flexsearch:
-    version: '0.8.212' # FlexSearch library version, loaded from jsDelivr
-    tokenize: forward # strict, forward, reverse or full
-    encoder: Normalize # FlexSearch.Charset: Exact, Default, Normalize, LatinBalance, LatinAdvanced, LatinExtra, LatinSoundex…
-    fields: # indexed fields and their resolution (weight, from 1 to 9; 0 to not index the field)
-      title: 9
-      page: 7
-      description: 5
-      content: 3
-    suggest: true # fall back to fuzzy matching when nothing matches strictly
-    min_length: 1 # minimum length of the query to start searching
-    delay: 120 # delay (ms) after typing before searching
-    boundary: 160 # maximum length of a highlighted snippet
-    snippet: 180 # maximum length of a non highlighted snippet
   # sections to index, in the order of the result groups
   sections:
     documentation:
