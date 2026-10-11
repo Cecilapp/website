@@ -38,6 +38,9 @@
 
 /* trigger in the site header (always on a dark background) */
 /* mobile: icon only, like the other header buttons */
+.header-search {
+  @apply flex;
+}
 .header-search .flexsearch-trigger {
   @apply w-auto p-0 border-0 bg-transparent;
   @apply sm:w-56 sm:py-[.3rem] sm:px-2;
@@ -46,6 +49,10 @@
 .header-search .flexsearch-trigger:hover,
 .header-search .flexsearch-trigger:focus-visible {
   @apply sm:border-white;
+}
+.flexsearch-trigger-icon {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 .header-search .flexsearch-trigger-icon {
   @apply text-gold sm:text-slate-400;
