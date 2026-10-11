@@ -137,53 +137,6 @@ msgstr "Langue :"
 msgid "%site_title% logo"
 msgstr "Logo de %site_title%"
 
-#: partials/search-flexsearch.html.twig:3
-#: partials/search-flexsearch.html.twig:11
-#: partials/search-flexsearch.html.twig:17
-#: partials/search-flexsearch.html.twig:28
-msgid "Search the site"
-msgstr "Rechercher sur le site"
-
-#: partials/search-flexsearch.html.twig:7
-msgid "Search"
-msgstr "Rechercher"
-
-#: partials/search-flexsearch.html.twig:20
-msgid "Close"
-msgstr "Fermer"
-
-#: partials/search-flexsearch.html.twig:32
-msgid "to select"
-msgstr "pour sélectionner"
-
-#: partials/search-flexsearch.html.twig:33
-msgid "to navigate"
-msgstr "pour naviguer"
-
-#: partials/search-flexsearch.html.twig:34
-msgid "to close"
-msgstr "pour fermer"
-
-#: partials/search-flexsearch.html.twig:37
-msgid "Search by"
-msgstr "Recherche par"
-
-#: partials/search-flexsearch.html.twig:63
-msgid "Type to start searching."
-msgstr "Saisissez votre recherche."
-
-#: partials/search-flexsearch.html.twig:64
-msgid "Loading the search index…"
-msgstr "Chargement de l’index de recherche…"
-
-#: partials/search-flexsearch.html.twig:65
-msgid "No results found."
-msgstr "Aucun résultat."
-
-#: partials/search-flexsearch.html.twig:66
-msgid "Search is unavailable."
-msgstr "La recherche est indisponible."
-
 #: partials/selector-theme-icon.html.twig:2
 msgid "Change theme color"
 msgstr "Changer la couleur du thème"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a80db45469a8c0292a7f2035bd73b344",
+    "content-hash": "6fb4e190aed8ea31aff1702c91c57607",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -62,6 +62,57 @@
                 }
             ],
             "time": "2026-10-07T21:37:41+00:00"
+        },
+        {
+            "name": "cecil/theme-flexsearch",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-flexsearch.git",
+                "reference": "f6afed8ac852692c3c4b69a48a1958b8e68031a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-flexsearch/zipball/f6afed8ac852692c3c4b69a48a1958b8e68031a1",
+                "reference": "f6afed8ac852692c3c4b69a48a1958b8e68031a1",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4||^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "flexsearch",
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme FlexSearch",
+            "keywords": [
+                "FlexSearch",
+                "cecil",
+                "search",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-flexsearch/issues",
+                "source": "https://github.com/Cecilapp/theme-flexsearch/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2026-10-08T09:31:33+00:00"
         },
         {
             "name": "cecil/theme-installer",

@@ -20,6 +20,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{- include('partials/metatags.html.twig', {title: title|default, image: image|default}) ~}}
     <meta name="google-site-verification" content="{{ site.gsv }}">
+    {#- search CSS (before the main CSS, which customizes it) ~#}
+    {%- if site.flexsearch.enabled ?? true ~%}
+    <style>{% apply minify_css ~%}
+      {{ asset('flexsearch/flexsearch.css')|inline }}
+    {% endapply %}</style>
+    {%- endif ~%}
     {#- main CSS ~#}
     {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>{% apply minify_css ~%}
@@ -101,7 +107,7 @@
         <nav class="flex items-center mt-0 pt-0 gap-4">
           {#- search in documentation ~#}
           <div class="header-search">
-            {{- include('partials/search-box.html.twig') ~}}
+            {{- include('partials/flexsearch.html.twig') ~}}
           </div>
           {#- theme selector ~#}
           {{- include('partials/selector-theme-icon.html.twig') ~}}
