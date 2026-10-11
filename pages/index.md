@@ -112,7 +112,7 @@ blocks:
       title: Starter kits
       description: "Cecil provides ready to use starter kits to help you build your website quickly."
       path: starter-kits/
-      image: images/the-butler.png
+      image: images/starter-kits.png
       shadow: false
       visible: true
   sponsors:
