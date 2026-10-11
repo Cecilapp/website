@@ -1,5 +1,5 @@
 {# social image for metatags #}
-{% if page.type != 'homepage' %}
+{% if page.type != 'homepage' and (site.cloudinary.enabled ?? true) %}
   {%- set img_txt = page.title %}
   {%- if page.section starts with 'documentation' and page.parent|default -%}
     {%- set img_txt = page.parent.title ~ '\n' ~ img_txt %}
