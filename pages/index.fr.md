@@ -5,70 +5,70 @@ updated: 2025-12-26
 blocks:
   features:
     - title: Rapide & sécurisé
-      description: 'Pas de base de données, pas de serveur, pas de dépendance : performance et sécurité.'
+      description: 'Pas de base de données, pas de code côté serveur : les fichiers statiques sont rapides à servir et offrent une surface d’attaque minimale.'
       icon: zap
       visible: true
     - title: Uniquement des fichiers
-      description: Votre contenu est stocké dans des fichiers plat au format [Markdown](/documentation/content/#markdown) avec un [front matter](/documentation/content/#front-matter).
+      description: Votre contenu est stocké dans des fichiers plats au format [Markdown](/documentation/content/#markdown), avec un [front matter](/documentation/content/#front-matter).
       icon: markdown
       visible: true
     - title: Personnalisable
-      description: Propulsé par [Twig](/documentation/templates/), un moteur de template flexible, et supporte les [themes](/fr/themes/).
+      description: Propulsé par [Twig](/documentation/templates/), un moteur de template flexible, avec prise en charge des [thèmes](/fr/themes/).
       icon: paintbrush
       visible: true
     - title: Générateurs multiples
-      description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS sont générés automatiquement.
+      description: Pagination, taxonomies, sitemap, flux RSS, robots.txt et redirections sont générés automatiquement.
       icon: hubot
       visible: true
     - title: Optimisation des images
-      description: "Les [images adaptatives](/documentation/content/#responsive) sont générées automatiquement, convertis en [WebP et AVIF](/documentation/content/#formats) et [compressées](/documentation/configuration/#assets-images) afin de réduire le temps de chargement."
+      description: "Les [images adaptatives](/documentation/content/#responsive) sont générées automatiquement, converties en [WebP et AVIF](/documentation/content/#formats) et [compressées](/documentation/configuration/#assets-images) afin de réduire le temps de chargement."
       icon: image
       visible: true
-    - title: Internationalisation & localisation
-      description: "Capacités [multilingue](/documentation/content/#multilingual) avec localisation des contenus et traduction de templates."
+    - title: Multilingue
+      description: "Capacités [multilingues](/documentation/content/#multilingual) avec localisation des contenus et traduction des templates."
       icon: globe
       visible: true
     - title: Orienté SEO
-      description: "Cecil fourni des [aides au SEO](/documentation/configuration/#metatags) en générant les meta éléments Open Graph, les données structurées et plus encore."
+      description: "Des [aides au SEO](/documentation/configuration/#metatags) génèrent les méta-éléments, Open Graph, les données structurées et plus encore."
       icon: search
       visible: true
     - title: Pas d’installation
-      description: "[Téléchargez](/fr/telecharger/) un fichier et exécutez le avec PHP."
+      description: "[Téléchargez](/fr/telecharger/) un seul fichier et exécutez-le avec PHP."
       icon: desktop-download
       visible: true
     - title: Facile à déployer
-      description: "Créez et [déployez](/documentation/deploy) un nouveau site web en quelques minutes, sur Netlify, Vercel, statichost et plus encore."
+      description: "Créez et [déployez](/documentation/deploy/) un site web en quelques minutes, sur Netlify, Vercel, statichost et plus encore."
       icon: rocket
       visible: true
     - title: Open source
-      description: "Participez au développement de Cecil via [GitHub](https://github.com/Cecilapp/Cecil)."
+      description: "Cecil est distribué sous licence EUPL-1.2 : contribuez à son développement sur [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
   services:
     - id: markdown
       title: Expérience d’écriture intuitive
-      description: "L’analyseur Markdown de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
+      description: "Écrivez votre contenu en Markdown, une syntaxe légère facile à apprendre, facile à lire et adaptée au versionnage."
       path: documentation/content/#markdown
       image: images/cecil-markdown-content-fr.svg
       shadow: false
       visible: true
     - id: twig
-      title: Moteur de template moderne
-      description: "Les modèles de Cecil, propulsés par Twig, offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
+      title: Templates flexibles
+      description: "Propulsés par Twig, les templates de Cecil vous permettent de créer tout type de site web : blog, portfolio, documentation, e-commerce…"
       path: documentation/templates
       image: images/cecil-twig-template-fr.svg
       shadow: false
       visible: true
     - id: responsive
       title: Images adaptatives automatiques
-      description: "Cecil génère automatiquement des images adaptatives dans plusieurs formats (WebP, AVIF) et tailles afin d'optimiser les temps de chargement sur tous les appareils."
+      description: "Cecil génère automatiquement des images adaptatives en plusieurs tailles et dans des formats modernes (WebP, AVIF) afin d’accélérer le chargement sur tous les appareils."
       path: fr/comment-faire/markdown-performance-images/
       image: images/cecil-responsive-images.svg
       shadow: false
       visible: true
     - id: seo
       title: SEO simplifié
-      description: "Cecil vous aide à améliorer votre SEO avec la génération automatique de meta éléments, de balises Open Graph, de Twitter cards et de données structurées."
+      description: "Cecil vous aide à améliorer votre SEO en générant automatiquement les méta-éléments, les cartes Open Graph et X (Twitter), ainsi que les données structurées."
       path: documentation/configuration/#metatags
       image: images/cecil-seo-fr.svg
       shadow: false
@@ -83,13 +83,13 @@ blocks:
     #  visible: true
     #- id: statidocs
     #  title: Créez rapidement un site de documentation
-    #  description: "Statidocs est un puissant starter de documentation créé via Cecil."
+    #  description: "Statidocs est un puissant starter de documentation construit avec Cecil."
     #  path: https://statidocs.cecil.app
     #  image: images/statidocs.png
     #  visible: true
     #- id: links
     #  title: Restez propriétaire de vos liens
-    #  description: "Links est une alternative open source de Linktree motorisé par Cecil, Tailwind CSS et Font Awesome."
+    #  description: "Links est une alternative open source à Linktree, propulsée par Cecil, Tailwind CSS et Font Awesome."
     #  path: https://links.cecil.app
     #  image: images/cecil-links.png
     #  shadow: false
@@ -103,14 +103,14 @@ blocks:
     #  visible: true
     #- id: photo-stream
     #  title: Flux de photos auto-hébergé
-    #  description: "Photo Stream est un site Web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
+    #  description: "Photo Stream est un site web statique auto-hébergé pour vos photos, avec de très bonnes performances de chargement."
     #  path: https://photo-stream.cecil.app
     #  image: images/photo-stream.png
     #  shadow: false
     #  visible: true
     - id: kits-de-demarrage
-      title: Kits de démarrage
-      description: "Cecil fournit des kits de démarrage prêts à l'emploi pour vous aider à créer votre site Web rapidement."
+      title: Kits de démarrage prêts à l’emploi
+      description: "Cecil fournit des kits de démarrage prêts à l’emploi pour mettre votre site web en ligne rapidement."
       path: fr/kits-de-demarrage/
       image: images/starter-kits.png
       shadow: false

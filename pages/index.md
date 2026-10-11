@@ -4,78 +4,78 @@ date: 2019-03-14
 updated: 2025-12-23
 blocks:
   features:
-    - title: Fast & Secure
-      description: 'No database, no server, no dependency: performance and security.'
+    - title: Fast & secure
+      description: 'No database, no server-side code: static files are fast to serve and have a minimal attack surface.'
       icon: zap
       visible: true
     - title: Files only
-      description: Your content is stored in [Markdown](/documentation/content/#markdown) flat files with a [front matter](/documentation/content/#front-matter).
+      description: Your content is stored in flat [Markdown](/documentation/content/#markdown) files with [front matter](/documentation/content/#front-matter).
       icon: markdown
       visible: true
-    - title: Customisable
+    - title: Customizable
       description: Powered by [Twig](/documentation/templates/), a flexible template engine, with [themes](/themes/) support.
       icon: paintbrush
       visible: true
-    - title: Multiples generators
-      description: Pagination, sitemap, redirections, robots.txt, taxonomies, RSS are generated automatically.
+    - title: Multiple generators
+      description: Pagination, taxonomies, sitemap, RSS feeds, robots.txt and redirects are generated automatically.
       icon: hubot
       visible: true
-    - title: Images optimization
+    - title: Image optimization
       description: "[Responsive images](/documentation/content/#responsive) are generated automatically, converted to [WebP and AVIF](/documentation/content/#formats) and [compressed](/documentation/configuration/#assets-images) to reduce load time."
       icon: image
       visible: true
-    - title: Internationalization & localization
-      description: "[Multilingual](/documentation/content/#multilingual) capabilities with content localization and templates translation."
+    - title: Multilingual
+      description: "[Multilingual](/documentation/content/#multilingual) capabilities with content localization and template translation."
       icon: globe
       visible: true
-    - title: SEO friendly
-      description: "Cecil provides [SEO helpers](/documentation/configuration/#metatags) to generate Open Graph meta tags, structured data and more."
+    - title: SEO-friendly
+      description: "[SEO helpers](/documentation/configuration/#metatags) generate meta tags, Open Graph, structured data and more."
       icon: search
       visible: true
     - title: No installation
-      description: "[Download](/download/) one file and run it with PHP."
+      description: "[Download](/download/) a single file and run it with PHP."
       icon: desktop-download
       visible: true
     - title: Easy to deploy
-      description: "Create & [deploy](/documentation/deploy) a new website in minutes, on Netlify, Vercel, statichost and more."
+      description: "Create and [deploy](/documentation/deploy/) a website in minutes, on Netlify, Vercel, statichost and more."
       icon: rocket
       visible: true
     - title: Open source
-      description: "Participate in development of Cecil via [GitHub](https://github.com/Cecilapp/Cecil)."
+      description: "Cecil is licensed under EUPL-1.2: contribute to its development on [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
   services:
     - id: markdown
       title: Intuitive writing experience
-      description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
+      description: "Write your content in plain Markdown, a lightweight syntax that’s easy to learn, easy to read and version-friendly."
       path: documentation/content/#markdown
       image: images/cecil-markdown-content.svg
       shadow: false
       visible: true
     - id: twig
-      title: Modern template engine
-      description: "Cecil’s templating, powered by Twig, provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
+      title: Flexible templating
+      description: "Powered by Twig, Cecil’s templates let you build any kind of website: blog, portfolio, documentation, e-commerce…"
       path: documentation/templates
       image: images/cecil-twig-template.svg
       shadow: false
       visible: true
     - id: responsive
       title: Automatic responsive images
-      description: "Cecil automatically generates responsive images in multiple formats (WebP, AVIF) and sizes to optimize loading times on all devices."
+      description: "Cecil automatically generates responsive images in multiple sizes and modern formats (WebP, AVIF) to speed up loading on every device."
       path: how-to/markdown-performance-images/
       image: images/cecil-responsive-images.svg
       shadow: false
       visible: true
     - id: seo
       title: SEO made easy
-      description: "Cecil helps you to improve your SEO with automatic generation of meta tags, Open Graph tags, Twitter cards and structured data."
+      description: "Cecil helps you improve your SEO by generating meta tags, Open Graph and X (Twitter) cards, and structured data automatically."
       path: documentation/configuration/#metatags
       image: images/cecil-seo.svg
       shadow: false
       visible: true
     #- id: the-butler
-    #  title: A ready to use blog
-    #  description: "The Butler is a ready to use starter blog, powered by Cecil."
+    #  title: A ready-to-use blog
+    #  description: "The Butler is a ready-to-use starter blog, powered by Cecil."
     #  path: https://the-butler.cecil.app
     #  image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
     #  shadow: false
@@ -83,7 +83,7 @@ blocks:
     #  visible: true
     #- id: statidocs
     #  title: Build a documentation website quickly
-    #  description: "Statidocs is a powerful documentation starter on top of Cecil."
+    #  description: "Statidocs is a powerful documentation starter built on top of Cecil."
     #  path: https://statidocs.cecil.app
     #  image: images/statidocs.png
     #  visible: true
@@ -96,21 +96,21 @@ blocks:
     #  visible: true
     #- id: staticast
     #  title: Broadcast your podcast simply
-    #  description: "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS."
+    #  description: "Staticast is a ready-to-use Progressive Web App to publish your podcast, with an RSS feed ready for syndication platforms and a user-friendly CMS."
     #  path: https://staticast.cecil.app
     #  image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
     #  shadow: false
     #  visible: true
     #- id: photo-stream
-    #  title: Self hosted photo stream
-    #  description: "Photo Stream is a self hosted static website for your photos, with really goods loading performances."
+    #  title: Self-hosted photo stream
+    #  description: "Photo Stream is a self-hosted static website for your photos, with really good loading performance."
     #  path: https://photo-stream.cecil.app
     #  image: images/photo-stream.png
     #  shadow: false
     #  visible: true
     - id: starter-kits
-      title: Starter kits
-      description: "Cecil provides ready to use starter kits to help you build your website quickly."
+      title: Ready-to-use starter kits
+      description: "Cecil provides ready-to-use starter kits to get your website up and running quickly."
       path: starter-kits/
       image: images/starter-kits.png
       shadow: false
