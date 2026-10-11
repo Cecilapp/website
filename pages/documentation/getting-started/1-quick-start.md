@@ -16,7 +16,7 @@ You can create a new website from scratch in a few minutes.
 
 Follow the steps below to create your first Cecil website.
 
-[![New website example](/images/docs/cecil-newsite.png)](https://cecilapp.github.io/skeleton/)
+[![New website example](/docs/cecil-newsite.png)](https://cecilapp.github.io/skeleton/)
 
 :::info
 Demo of the expected result: <https://cecilapp.github.io/skeleton/>.
