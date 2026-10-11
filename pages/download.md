@@ -12,7 +12,7 @@ menu:
 ---
 # Download
 
-You can download `cecil.phar` by clicking on the ["Download"](/cecil.phar) button or with the following command from your terminal:
+You can download `cecil.phar` by clicking the [Download](/cecil.phar) button, or by running the following command in your terminal:
 
 ```bash
 curl -LO https://cecil.app/cecil.phar
@@ -24,7 +24,7 @@ PHP 8.3+ is required.
 
 ## Install globally {#install}
 
-For more comfort you should install Cecil globally.
+For convenience, we recommend installing Cecil globally.
 
 ### macOS
 
@@ -43,7 +43,7 @@ scoop install https://cecil.app/scoop/cecil.json
 ```
 
 :::warning
-Before 22 mai 2025, the manifest was available at `https://cecil.app/cecil.json`, so if you have installed it before, you need to uninstall it and install it again with the new URL:
+Before May 22, 2025, the manifest was available at `https://cecil.app/cecil.json`. If you installed it before that date, uninstall it and reinstall it with the new URL:
 
 ```bash
 scoop uninstall cecil
@@ -54,20 +54,22 @@ scoop install https://cecil.app/scoop/cecil.json
 
 Or manually:
 
-1. Move `cecil.phar` in a dedicated directory, like `C:\bin`
-2. Rename it from `cecil.phar` to `cecil`
+1. Move `cecil.phar` to a dedicated directory, such as `C:\bin`
+2. Rename `cecil.phar` to `cecil`
 3. Append `;C:\bin` to your `PATH` environment variable
-4. Create a [wrapping batch script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
+4. Create a [batch wrapper script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
 
 ### PHIVE
 
-Cecil is available through [PHIVE](https://phar.io) (The PHAR Installation and Verification Environment):
+Cecil is available through [PHIVE](https://phar.io) (the PHAR Installation and Verification Environment):
 
 ```bash
 phive install cecil
 ```
 
 ### Linux
+
+Move `cecil.phar` to a directory in your `PATH` and make it executable:
 
 ```bash
 mv cecil.phar /usr/local/bin/cecil
@@ -76,14 +78,14 @@ chmod +x /usr/local/bin/cecil
 
 ## Update {#update}
 
-**Changelog of the <span class="version">latest release</span> is available on [GitHub](https://github.com/Cecilapp/Cecil/releases/latest).**
+**The changelog of the <span class="version">latest release</span> is available on [GitHub](https://github.com/Cecilapp/Cecil/releases/latest).**
 
-The easiest way to update Cecil to the last version is to use the dedicated command:
+The easiest way to update Cecil to the latest version is to use the dedicated command, or your package manager:
 
 ```bash
 php cecil.phar self-update
 # Homebrew
-brew install cecilapp/tap/cecil
+brew upgrade cecilapp/tap/cecil
 # Scoop
 scoop update cecil
 # PHIVE
@@ -92,20 +94,20 @@ phive update cecil
 
 ## Download a specific version
 
-If you want to download a specific version you can specify it in the URL path.  
-For instance, if you want to install the `8.0.0` version you need to put `download/8.0.0/` in the URL:
+To download a specific version, add it to the URL path.  
+For instance, to download version `8.0.0`, add `download/8.0.0/` to the URL:
 
 ```bash
 curl -LO https://cecil.app/download/8.0.0/cecil.phar
 ```
 
 :::info
-The [releases list](https://github.com/Cecilapp/Cecil/releases) is available on GitHub.
+The [list of releases](https://github.com/Cecilapp/Cecil/releases) is available on GitHub.
 :::
 
 ## Download the preview version
 
-The preview version is the not yet deployed version, but ready for test.
+The preview version contains the latest changes that have not been released yet, ready for testing.
 
 - Homebrew: `brew install cecilapp/tap/cecil@preview`
 - Scoop: `scoop install https://cecil.app/scoop/cecil-preview.json`
