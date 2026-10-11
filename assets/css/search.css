@@ -43,7 +43,7 @@
 }
 .header-search .flexsearch-trigger {
   @apply w-auto p-0 border-0 bg-transparent;
-  @apply sm:px-0;
+  @apply sm:w-56 sm:py-[.3rem] sm:px-2;
   @apply sm:rounded-md sm:border sm:border-slate-500 sm:bg-white/5;
 }
 .header-search .flexsearch-trigger:hover,
