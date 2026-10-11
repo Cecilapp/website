@@ -1,7 +1,26 @@
 /**
  * Generates the homepage "services" illustrations (SVG, EN + FR) into assets/images/.
- * Texts live in the `i18n` object below; Montserrat is embedded as a subset (an SVG used as <img> cannot load web fonts).
- * Usage: npm run images:services
+ *
+ * Usage:
+ *   npm install                  # once, installs `subset-font` (dev dependency)
+ *   npm run images:services      # or: node scripts/images-home-services.mjs
+ *
+ * Output (overwritten on each run), referenced by `blocks.services[].image` in pages/index.md and pages/index.fr.md:
+ *   cecil-markdown-content.svg, cecil-markdown-content-fr.svg
+ *   cecil-twig-template.svg,    cecil-twig-template-fr.svg
+ *   cecil-responsive-images.svg (no FR version: code only)
+ *   cecil-seo.svg,              cecil-seo-fr.svg
+ *
+ * Editing:
+ *   - texts: the `i18n` object (one entry per language)
+ *   - colors: the `C` object
+ *   - layout: `L` / `R` panels and the arrow badge, on a 960x600 canvas
+ *   - add a file: write a render function and register it in `files`
+ *
+ * Fonts: an SVG displayed with <img> cannot load web fonts, so Montserrat (static/fonts/, weights 400/700/900)
+ * is embedded as a base64 WOFF2 subset of the characters actually used. Code uses the system monospace font.
+ *
+ * After running, check the result with `npm run serve` (images sit on gold and black backgrounds).
  */
 import fs from 'node:fs';
 import path from 'node:path';
