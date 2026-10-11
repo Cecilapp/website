@@ -34,7 +34,7 @@ php cecil.phar new:page --name=news/cecil-X.Y.0-released --prefix
 
 ```bash
 vendor/bin/tailwind-builder assets/css/tailwind.css -o assets/styles.css --watch
-php cecil.phar serve -v --config=config/dev.yml
+XDEBUG_MODE=off php cecil.phar serve -v --config=config/dev.yml
 ```
 
 ### Build for production
