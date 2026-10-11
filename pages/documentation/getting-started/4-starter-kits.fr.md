@@ -16,4 +16,4 @@ Pour démarrer rapidement, utilisez l’un des [kits de démarrage](/fr/kits-de-
 - [Photo Stream](https://github.com/Cecilapp/photo-stream#readme) : flux photo auto-hébergé minimaliste.
 - [Statidocs](https://github.com/Cecilapp/statidocs#readme) : site de documentation prêt à l’emploi.
 
-[![Exemple de starter blog](/docs/cecil-newblog.png)](https://github.com/Cecilapp/the-butler#readme)
+[![Exemple de starter blog](/images/docs/cecil-newblog.png)](https://github.com/Cecilapp/the-butler#readme)

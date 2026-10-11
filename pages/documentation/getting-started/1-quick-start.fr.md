@@ -17,7 +17,7 @@ Vous pouvez créer un nouveau site web en quelques minutes.
 
 Suivez les étapes ci-dessous pour créer votre premier site web Cecil.
 
-[![Example de nouveau site](/docs/cecil-newsite.png)](https://cecilapp.github.io/skeleton/)
+[![Example de nouveau site](/images/docs/cecil-newsite.png)](https://cecilapp.github.io/skeleton/)
 
 :::info
 Démo du résultat attendu : <https://cecilapp.github.io/skeleton/>.

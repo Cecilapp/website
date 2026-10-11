@@ -15,4 +15,4 @@ To get started quickly, use one of Cecil's ready-to-use [starter kits](/starter-
 - [Photo Stream](https://github.com/Cecilapp/photo-stream#readme): a super simple self-hosted photo stream.
 - [Statidocs](https://github.com/Cecilapp/statidocs#readme): build a documentation website quickly.
 
-[![Starter blog example](/docs/cecil-newblog.png)](https://github.com/Cecilapp/the-butler#readme)
+[![Starter blog example](/images/docs/cecil-newblog.png)](https://github.com/Cecilapp/the-butler#readme)
