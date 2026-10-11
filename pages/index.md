@@ -73,41 +73,6 @@ blocks:
       image: images/cecil-seo.svg
       shadow: false
       visible: true
-    #- id: the-butler
-    #  title: A ready-to-use blog
-    #  description: "The Butler is a ready-to-use starter blog, powered by Cecil."
-    #  path: https://the-butler.cecil.app
-    #  image: https://raw.githubusercontent.com/Cecilapp/the-butler/master/assets/images/cecil-preview.png
-    #  shadow: false
-    #  webp: true
-    #  visible: true
-    #- id: statidocs
-    #  title: Build a documentation website quickly
-    #  description: "Statidocs is a powerful documentation starter built on top of Cecil."
-    #  path: https://statidocs.cecil.app
-    #  image: images/statidocs.png
-    #  visible: true
-    #- id: links
-    #  title: Stay the owner of your links
-    #  description: "Links is an open source Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome."
-    #  path: https://links.cecil.app
-    #  image: images/cecil-links.png
-    #  shadow: false
-    #  visible: true
-    #- id: staticast
-    #  title: Broadcast your podcast simply
-    #  description: "Staticast is a ready-to-use Progressive Web App to publish your podcast, with an RSS feed ready for syndication platforms and a user-friendly CMS."
-    #  path: https://staticast.cecil.app
-    #  image: https://raw.githubusercontent.com/Cecilapp/staticast.cecil.app/main/assets/staticast-preview.png
-    #  shadow: false
-    #  visible: true
-    #- id: photo-stream
-    #  title: Self-hosted photo stream
-    #  description: "Photo Stream is a self-hosted static website for your photos, with really good loading performance."
-    #  path: https://photo-stream.cecil.app
-    #  image: images/photo-stream.png
-    #  shadow: false
-    #  visible: true
     - id: starter-kits
       title: Ready-to-use starter kits
       description: "Cecil provides ready-to-use starter kits to get your website up and running quickly."
