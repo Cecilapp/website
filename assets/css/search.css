@@ -37,22 +37,21 @@
 }
 
 /* trigger in the site header (always on a dark background) */
-/* mobile: icon only, like the other header buttons */
+/* mobile: the theme already displays the icon only; no box, like the other header buttons */
+/* `button` in the selector to win over the theme's `button.flexsearch-trigger:not(.flexsearch-trigger-full)` */
 .header-search {
   @apply flex;
 }
-.header-search .flexsearch-trigger {
-  @apply w-auto p-0 border-0 bg-transparent;
-  @apply sm:w-56 sm:py-[.3rem] sm:px-2;
-  @apply sm:rounded-md sm:border sm:border-slate-500 sm:bg-white/5;
+.header-search button.flexsearch-trigger {
+  @apply py-[.3rem] border-slate-500 bg-white/5;
+  @apply max-sm:p-0 max-sm:border-0 max-sm:bg-transparent;
 }
 .header-search .flexsearch-trigger:hover,
 .header-search .flexsearch-trigger:focus-visible {
-  @apply sm:border-white;
+  @apply border-white;
 }
 .flexsearch-trigger-icon {
-  width: 1.55rem;
-  height: 1.55rem;
+  @apply size-[1.55rem];
 }
 .header-search .flexsearch-trigger-icon {
   @apply text-gold sm:text-slate-400;
@@ -61,8 +60,7 @@
   @apply max-sm:text-white;
 }
 .header-search .flexsearch-trigger-label {
-  @apply hidden text-slate-300;
-  @apply sm:inline;
+  @apply text-slate-300;
 }
 .header-search .flexsearch-kbd {
   @apply bg-white/10 text-slate-300 border-slate-500;
