@@ -27,13 +27,9 @@
     {% endapply %}</style>
     {%- endif ~%}
     {#- main CSS ~#}
-    {%- if getenv('CECIL_ENV') == 'production' ~%}
     <style>{% apply minify_css ~%}
       {{ asset('styles.css')|inline }}
     {% endapply %}</style>
-    {%- else ~%}
-    <link rel="stylesheet" href="{{ asset('styles.css', {minify: false, fingerprint: false}) }}">
-    {%- endif ~%}
     {#- others CSS ~#}
     {%- cache cache_key('css') ~%}
     {#- highlight CSS ~#}
