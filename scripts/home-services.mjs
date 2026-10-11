@@ -59,7 +59,8 @@ const picture = (x, y, w, h, r = 10) => {
 };
 
 // --- illustrations -------------------------------------------------------------
-const L = { x: 20, y: 40, w: 430, h: 520 }, R = { x: 510, y: 40, w: 430, h: 520 };
+// panels leave a 22px gap on each side of the arrow badge (centered at x=480, r=30)
+const L = { x: 10, y: 40, w: 418, h: 520 }, R = { x: 532, y: 40, w: 418, h: 520 };
 
 function markdown(t) {
   const lx = L.x + 30, step = 38, y0 = L.y + 112;
