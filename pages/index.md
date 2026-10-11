@@ -49,29 +49,29 @@ blocks:
       title: Intuitive writing experience
       description: "Cecil’s Markdown parser provides a simple way to write your content. It’s easy to learn and easy to use."
       path: documentation/content/#markdown
-      image: images/cecil-markdown-content.png
+      image: images/cecil-markdown-content.svg
       shadow: false
       visible: true
     - id: twig
       title: Modern template engine
       description: "Cecil’s templating, powered by Twig, provides the easiest way to build any website: blog, portfolio, ecommerce, etc."
       path: documentation/templates
-      image: images/cecil-twig-template.png
+      image: images/cecil-twig-template.svg
       shadow: false
       visible: true
     - id: responsive
       title: Automatic responsive images
       description: "Cecil automatically generates responsive images in multiple formats (WebP, AVIF) and sizes to optimize loading times on all devices."
       path: how-to/markdown-performance-images/
-      image: images/cecil-responsive-images.png
-      shadow: true
+      image: images/cecil-responsive-images.svg
+      shadow: false
       visible: true
     - id: seo
       title: SEO made easy
       description: "Cecil helps you to improve your SEO with automatic generation of meta tags, Open Graph tags, Twitter cards and structured data."
       path: documentation/configuration/#metatags
-      image: images/cecil-seo.png
-      shadow: true
+      image: images/cecil-seo.svg
+      shadow: false
       visible: true
     #- id: the-butler
     #  title: A ready to use blog

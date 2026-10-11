@@ -49,29 +49,29 @@ blocks:
       title: Expérience d’écriture intuitive
       description: "L’analyseur Markdown de Cecil fournit un moyen simple d’écrire votre contenu. Il est facile à apprendre et facile à utiliser."
       path: documentation/content/#markdown
-      image: images/cecil-markdown-content.png
+      image: images/cecil-markdown-content-fr.svg
       shadow: false
       visible: true
     - id: twig
       title: Moteur de template moderne
       description: "Les modèles de Cecil, propulsés par Twig, offrent le moyen le plus simple de créer n’importe quel site web : blog, portfolio, e-commerce, etc."
       path: documentation/templates
-      image: images/cecil-twig-template.png
+      image: images/cecil-twig-template-fr.svg
       shadow: false
       visible: true
     - id: responsive
       title: Images adaptatives automatiques
       description: "Cecil génère automatiquement des images adaptatives dans plusieurs formats (WebP, AVIF) et tailles afin d'optimiser les temps de chargement sur tous les appareils."
       path: fr/comment-faire/markdown-performance-images/
-      image: images/cecil-responsive-images.png
-      shadow: true
+      image: images/cecil-responsive-images.svg
+      shadow: false
       visible: true
     - id: seo
       title: SEO simplifié
       description: "Cecil vous aide à améliorer votre SEO avec la génération automatique de meta éléments, de balises Open Graph, de Twitter cards et de données structurées."
       path: documentation/configuration/#metatags
-      image: images/cecil-seo-fr.png
-      shadow: true
+      image: images/cecil-seo-fr.svg
+      shadow: false
       visible: true
     #- id: the-butler
     #  title: Un blog prêt à l’emploi

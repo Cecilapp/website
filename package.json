@@ -1,6 +1,10 @@
 {
   "scripts": {
     "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
-    "serve": "cecil serve --config=config/dev.yml"
+    "serve": "cecil serve --config=config/dev.yml",
+    "images:services": "node scripts/home-services.mjs"
+  },
+  "devDependencies": {
+    "subset-font": "^2.4.0"
   }
 }
