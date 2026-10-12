@@ -48,6 +48,12 @@
     {#- highlightjs-copy CSS ~#}
     <style>{% apply minify_css ~%}
       {{ asset('https://cdn.jsdelivr.net/npm/highlightjs-copy@%s/dist/highlightjs-copy.min.css'|format(site.libs.highlightjs_copy.version), {minify: false, ignore_missing: true})|inline ~}}
+      .hljs-copy-button {
+        cursor: pointer;
+      }
+      .hljs-copy-button[data-copied="true"] {
+        padding-inline: .5rem;
+      }
     {% endapply %}</style>
     {#- ToC CSS ~#}
     <style>{% apply minify_css ~%}
