@@ -10,7 +10,7 @@
             </div>
             <a href="{{ url(path, {language: 'en'}) }}" class="inline-flex items-center space-x-2">
               <span class="text-lg md:text-xl font-medium">{% trans with {'%title%': title} %}Learn more about "%title%"{% endtrans %}</span>
-              <span class="w-10 md:w-5">{{ octicons.svg('arrow-right', 24) }}</span>
+              <span class="w-8">{{ octicons.svg('arrow-right', 24) }}</span>
             </a>
           </div>
           {%- if not image_template['missing'] ~%}
