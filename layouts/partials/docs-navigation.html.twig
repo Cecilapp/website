@@ -2,7 +2,7 @@
 {%- macro tree(section, page, depth = 0) -%}
   {%- import _self as nav -%}
   {%- import 'macros/octicons.twig' as octicons -%}
-  {%- set children = section.pages|filter(p => p.parent.id|default == section.id) -%}
+  {%- set children = section.pages|default([])|filter(p => p.parent.id|default == section.id) -%}
   {%- set items = children|merge(section.sections|default([]))|sort_by_weight -%}
   {#- indents the text, not the left border (literal classes for Tailwind) -#}
   {%- set indent = ['pl-2', 'pl-5', 'pl-8', 'pl-11'][depth] ?? 'pl-11' ~%}
