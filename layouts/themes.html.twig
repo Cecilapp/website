@@ -16,10 +16,12 @@
                 {%- set repo_url = repo.homepage|default(repo.github) -%}
                 <li class="flex flex-col overflow-hidden rounded-lg border border-slate-300 dark:border-darkgray bg-white dark:bg-dark shadow-sm hover:shadow-lg transition-shadow">
                   {#- screenshot ~#}
-                  {%- set screenshot = asset(repo_basepath ~ 'docs/screenshot.png', {ignore_missing: true}) -%}
-                  {%- if screenshot['missing'] -%}
-                    {%- set screenshot = asset(repo_basepath ~ 'screenshot.png', {ignore_missing: true}) -%}
-                  {%- endif -%}
+                  {%- set screenshot = null -%}
+                  {%- for path in ['docs/screenshot.png', 'docs/screenshot.jpg', 'screenshot.png', 'screenshot.jpg'] -%}
+                    {%- if screenshot is null or screenshot['missing'] -%}
+                      {%- set screenshot = asset(repo_basepath ~ path, {ignore_missing: true}) -%}
+                    {%- endif -%}
+                  {%- endfor -%}
                   {%- if screenshot['missing'] -%}
                     {%- set screenshot = asset('images/cecil-logo-placeholder.png') -%}
                   {%- endif -%}
