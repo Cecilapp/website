@@ -1,4 +1,4 @@
 {#- button component ~#}
-<a href="{{ href }}" class="btn {{ class|default }}">
+<a href="{{ href }}" class="btn {{ class|default }}"{% if target|default %} target="{{ target }}"{% if target == '_blank' %} rel="noopener"{% endif %}{% endif %}>
   {{ slot }}
 </a>

@@ -27,7 +27,7 @@
                   {%- endif -%}
                   {#- first screenshot is above the fold: prioritize it instead of lazy loading ~#}
                   {%- set img_attrs = loop.first ? {fetchpriority: 'high'} : {loading: 'lazy', decoding: 'async'} ~%}
-                  <a href="{{ url(repo_url) }}" class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
+                  <a href="{{ url(repo_url) }}" target="_blank" rel="noopener" class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
                     {{ html(screenshot, {alt: "%name%'s screenshot"|trans({'%name%': repo.name}), class: 'showcase block w-full h-full object-cover object-top m-0', style: 'background-color:' ~ screenshot|dominant_color}|merge(img_attrs)) }}
                   </a>
                   <div class="flex flex-col grow gap-3 p-4">
@@ -35,7 +35,7 @@
                     {%- block name ~%}
                     {%- set yaml_asset = asset(repo_basepath ~ 'theme.yml', {ignore_missing: true}) -%}
                     {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
-                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" class="no-underline">{{ yaml.name|default(repo.name|split('-')[1]|capitalize) }}</a></h2>
+                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" target="_blank" rel="noopener" class="no-underline">{{ yaml.name|default(repo.name|split('-')[1]|capitalize) }}</a></h2>
                     {%- endblock name ~%}
                     {#- description ~#}
                     <p class="text-sm grow m-0">{{ repo.description }}</p>
@@ -43,15 +43,15 @@
                     <div class="flex flex-wrap gap-2">
                       {%- block button_website -%}
                         {%- if repo.homepage -%}
-                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button', target: '_blank'} ~%}
                             {{- octicons.svg('eye', 16) }}<div>{%- trans %}Demo{% endtrans %}</div>
                           {%- endx -%}
                         {%- endif -%}
                       {%- endblock button_website ~%}
-                      {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
+                      {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button', target: '_blank'} ~%}
                         {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
                       {%- endx ~%}
-                      {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
+                      {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button', target: '_blank'} ~%}
                         {{- octicons.svg('mark-github', 16) }}<div>{%- trans %}Source code{% endtrans %}</div>
                       {%- endx ~%}
                     </div>

@@ -6,7 +6,7 @@
               {%- block nav %}{% endblock ~%}
 
                     {%- block name ~%}
-                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" class="no-underline">{{ repo.name }}</a></h2>
+                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" target="_blank" rel="noopener" class="no-underline">{{ repo.name }}</a></h2>
                     {%- endblock ~%}
 
                     {%- block command ~%}
@@ -21,7 +21,7 @@
 
                       {%- block button_website ~%}
                         {%- if repo.homepage ~%}
-                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button', target: '_blank'} ~%}
                             {{- octicons.svg('home', 16) }}<div>{% trans %}Homepage{% endtrans %}</div>
                           {%- endx ~%}
                         {%- endif ~%}
