@@ -1,0 +1,83 @@
+{% extends 'page.html.twig' %}
+{% import 'macros/octicons.twig' as octicons %}
+
+{% if not repos is defined %}
+{% set repos = site.data.themes %}
+{% endif %}
+
+              {%- block toc %}{% endblock toc ~%}
+
+              {%- block content ~%}
+              <h1>{{ page.title }}</h1>
+              {{- page.content ~}}
+              <ul class="not-markdown grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0">
+              {%- for repo in repos ~%}
+                {%- set repo_basepath = 'https://raw.githubusercontent.com/' ~ repo.full_name ~ '/' ~ repo.default_branch ~ '/' -%}
+                {%- set repo_url = repo.homepage|default(repo.github) -%}
+                <li class="flex flex-col overflow-hidden rounded-lg border border-slate-300 dark:border-darkgray bg-white dark:bg-dark shadow-sm hover:shadow-lg transition-shadow">
+                  {#- screenshot ~#}
+                  {%- set screenshot = null -%}
+                  {%- for path in ['docs/screenshot.png', 'docs/screenshot.jpg', 'screenshot.png', 'screenshot.jpg'] -%}
+                    {%- if screenshot is null or screenshot['missing'] -%}
+                      {%- set screenshot = asset(repo_basepath ~ path, {ignore_missing: true}) -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- if screenshot['missing'] -%}
+                    {%- set screenshot = asset('images/cecil-logo-placeholder.png') -%}
+                  {%- endif -%}
+                  {#- first screenshot is above the fold: prioritize it instead of lazy loading ~#}
+                  {%- set img_attrs = loop.first ? {fetchpriority: 'high'} : {loading: 'lazy', decoding: 'async'} ~%}
+                  <a href="{{ url(repo_url) }}" class="block aspect-[16/10] overflow-hidden *:block *:h-full border-b border-slate-300 dark:border-darkgray" tabindex="-1" aria-hidden="true">
+                    {{ html(screenshot, {alt: "%name%'s screenshot"|trans({'%name%': repo.name}), class: 'showcase block w-full h-full object-cover object-top m-0', style: 'background-color:' ~ screenshot|dominant_color}|merge(img_attrs)) }}
+                  </a>
+                  <div class="flex flex-col grow gap-3 p-4">
+                    {#- title ~#}
+                    {%- block name ~%}
+                    {%- set yaml_asset = asset(repo_basepath ~ 'theme.yml', {ignore_missing: true}) -%}
+                    {%- set yaml = yaml_asset.content|default('yaml: false')|yaml_parse -%}
+                    <h2 class="text-base m-0"><a href="{{ url(repo_url) }}" class="no-underline">{{ yaml.name|default(repo.name|split('-')[1]|capitalize) }}</a></h2>
+                    {%- endblock name ~%}
+                    {#- description ~#}
+                    <p class="text-sm grow m-0">{{ repo.description }}</p>
+                    {#- buttons ~#}
+                    <div class="flex flex-wrap gap-2">
+                      {%- block button_website -%}
+                        {%- if repo.homepage -%}
+                          {%- x:button with {href: repo.homepage, class: 'btn-sm', role: 'button'} ~%}
+                            {{- octicons.svg('eye', 16) }}<div>{%- trans %}Demo{% endtrans %}</div>
+                          {%- endx -%}
+                        {%- endif -%}
+                      {%- endblock button_website ~%}
+                      {%- x:button with {href: repo.github ~ '#readme', class: 'btn-sm', role: 'button'} ~%}
+                        {{- octicons.svg('book', 16) }}<div>{%- trans %}Documentation{% endtrans %}</div>
+                      {%- endx ~%}
+                      {%- x:button with {href: repo.github, class: 'btn-sm truncate', role: 'button'} ~%}
+                        {{- octicons.svg('mark-github', 16) }}<div>{%- trans %}Source code{% endtrans %}</div>
+                      {%- endx ~%}
+                    </div>
+                    {#- installation command -#}
+                    {%- block command ~%}
+                    <p class="copy-link text-sm m-0">
+                      <label for="{{ 'cmd-' ~ repo.name|lower }}" class="font-bold">{% trans %}Install{% endtrans %}</label>
+                      <input id="{{ 'cmd-' ~ repo.name|lower }}" type="text" class="copy-link-input min-w-0" value="composer require cecil/{{ repo.name|lower }}" readonly>
+                      <button type="button" class="copy-link-button" aria-label="{% trans %}Copy to clipboard{% endtrans %}">
+                        {{ octicons.svg('copy', 16) }}
+                      </button>
+                    </p>
+                    {%- endblock command -%}
+                    {#- license ~#}
+                    {%- if repo.license|default ~%}
+                    <p class="text-xs m-0">{{ repo.license }}</p>
+                    {%- endif ~%}
+                  </div>
+                </li>
+              {%- endfor ~%}
+              </ul>
+              {%- endblock content ~%}
+
+          {%- block xltoc %}{% endblock xltoc ~%}
+
+    {%- block footer_scripts ~%}
+    {{- parent() ~}}
+    {{- include('partials/copy-link.js.twig', with_context = false) ~}}
+    {%- endblock ~%}
