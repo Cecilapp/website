@@ -1,5 +1,70 @@
 [
   {
+    "name": "photo-stream",
+    "full_name": "Cecilapp/photo-stream",
+    "description": "Photo Stream is a self hosted static website for your photos, with really good loading performance, powered by Cecil.",
+    "github": "https://github.com/Cecilapp/photo-stream",
+    "license": "MIT License",
+    "homepage": "https://photo-stream.cecil.app",
+    "date": "2026-10-12T22:14:47Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "galery",
+      "photos",
+      "static-site"
+    ]
+  },
+  {
+    "name": "the-butler",
+    "full_name": "Cecilapp/the-butler",
+    "description": "The Butler is a ready to use static blog, powered by Cecil.",
+    "github": "https://github.com/Cecilapp/the-butler",
+    "license": "MIT License",
+    "homepage": "https://the-butler.cecil.app",
+    "date": "2026-10-11T00:12:37Z",
+    "default_branch": "master",
+    "topics": [
+      "blog",
+      "cecil",
+      "cecil-starter",
+      "static-site"
+    ]
+  },
+  {
+    "name": "staticast",
+    "full_name": "Cecilapp/staticast",
+    "description": "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS.",
+    "github": "https://github.com/Cecilapp/staticast",
+    "license": "MIT License",
+    "homepage": "https://staticast.cecil.app",
+    "date": "2026-10-10T23:22:42Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "podcast",
+      "static-site"
+    ]
+  },
+  {
+    "name": "statidocs",
+    "full_name": "Cecilapp/statidocs",
+    "description": "Statidocs is a documentation starter site, built on top of Cecil and the Docs theme.",
+    "github": "https://github.com/Cecilapp/statidocs",
+    "license": "MIT License",
+    "homepage": "https://statidocs.cecil.app",
+    "date": "2026-10-10T12:52:23Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "documentation",
+      "static-site"
+    ]
+  },
+  {
     "name": "Links",
     "full_name": "Cecilapp/Links",
     "description": "Links is an open source Linktree alternative powered by Cecil.",
@@ -16,39 +81,6 @@
     ]
   },
   {
-    "name": "photo-stream",
-    "full_name": "Cecilapp/photo-stream",
-    "description": "Photo Stream is a self hosted static website for your photos, with really good loading performance, powered by Cecil.",
-    "github": "https://github.com/Cecilapp/photo-stream",
-    "license": "MIT License",
-    "homepage": "https://photo-stream.cecil.app",
-    "date": "2026-09-18T23:53:28Z",
-    "default_branch": "master",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "galery",
-      "photos",
-      "static-site"
-    ]
-  },
-  {
-    "name": "statidocs",
-    "full_name": "Cecilapp/statidocs",
-    "description": "Statidocs is a documentation starter site, built on top of Cecil and the Docs theme.",
-    "github": "https://github.com/Cecilapp/statidocs",
-    "license": "MIT License",
-    "homepage": "https://statidocs.cecil.app",
-    "date": "2026-09-14T08:55:41Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "documentation",
-      "static-site"
-    ]
-  },
-  {
     "name": "URL",
     "full_name": "Cecilapp/URL",
     "description": "URL is an URL manager (and shortener) powered by Cecil.",
@@ -60,43 +92,8 @@
     "topics": [
       "cecil",
       "cecil-starter",
-      "netlify",
       "shorten-urls",
       "shorturl",
-      "static-site"
-    ]
-  },
-  {
-    "name": "the-butler",
-    "full_name": "Cecilapp/the-butler",
-    "description": "The Butler is a ready to use static blog, powered by Cecil.",
-    "github": "https://github.com/Cecilapp/the-butler",
-    "license": "MIT License",
-    "homepage": "https://the-butler.cecil.app",
-    "date": "2026-07-10T23:56:48Z",
-    "default_branch": "master",
-    "topics": [
-      "blog",
-      "cecil",
-      "cecil-demo",
-      "cecil-starter",
-      "netlify",
-      "static-site"
-    ]
-  },
-  {
-    "name": "staticast",
-    "full_name": "Cecilapp/staticast",
-    "description": "Staticast is a ready to use Progressive Web App to publish your podcast, with a RSS feed ready for syndication platforms, and a user friendly CMS.",
-    "github": "https://github.com/Cecilapp/staticast",
-    "license": "MIT License",
-    "homepage": "https://staticast.cecil.app",
-    "date": "2026-07-06T14:41:29Z",
-    "default_branch": "master",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "podcast",
       "static-site"
     ]
   }
