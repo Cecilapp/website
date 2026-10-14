@@ -4,6 +4,15 @@ Source code of [cecil.app](https://cecil.app) website, generated with [Cecil](ht
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2353ad5a-611d-4236-9542-183fe0d585c7/deploy-status)](https://app.netlify.com/sites/cecilapp/deploys)
 
+A mirror is also deployed on [Cloudflare Pages](https://pages.cloudflare.com), built with the Cecil [standalone binary](https://cecil.app/documentation/getting-started/installation/#standalone-binary) (no PHP):
+
+- Build command: `bash ./scripts/cloudflare-build.sh`
+- Build output directory: `_site`
+- Environment variables (optional): `CECIL_VERSION` (latest release by default), `CECIL_BASEURL` (deployment URL by default)
+- Daily build: deploy hook stored in the `CLOUDFLARE_PAGES_DEPLOY_HOOK` repository secret
+
+Themes are installed from `composer.lock` without Composer, `_redirects` is adapted to Cloudflare Pages and the `*.pages.dev` domain is not indexed.
+
 ## Install
 
 Download Cecil
