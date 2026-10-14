@@ -8,3 +8,7 @@ static/cecil.phar
 static/cecil.phar.version
 cecil.phar
 .lighthouseci/
+/cecil-linux-*
+/cecil-macos-*
+/cecil-windows-*
+/cecil-binaries.sha256

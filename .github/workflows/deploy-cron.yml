@@ -7,6 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
     steps:
       - name: Trigger Netlify Build
         run: curl -fsS -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}"
+      - name: Trigger Cloudflare Pages Build
+        if: env.CLOUDFLARE_PAGES_DEPLOY_HOOK != ''
+        run: curl -fsS -X POST "$CLOUDFLARE_PAGES_DEPLOY_HOOK"
