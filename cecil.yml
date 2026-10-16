@@ -75,6 +75,7 @@ pages:
     - section: news
       path: :section/:year/:month/:day/:slug
   body:
+    toc: [h2, h3, h4]
     images:
       formats: [avif, webp]
       responsive: true
