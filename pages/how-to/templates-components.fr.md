@@ -6,7 +6,7 @@ date: 2026-10-18
 schedule:
   publish: 2026-10-18
 ---
-Les composants sont de petits templates Twig réutilisables (bouton, carte, alerte, etc.) que l’on appelle avec une balise dédiée, auxquels on passe des attributs et qui peuvent envelopper n’importe quel contenu.
+Les composants sont de petits templates Twig réutilisables (bouton, carte, alerte, etc.) que l’on appelle avec une balise dédiée : ils acceptent des attributs et peuvent envelopper n’importe quel contenu.
 
 ## Créer un composant
 
@@ -72,5 +72,5 @@ layouts:
 ```
 
 :::info
-Consultez la documentation des [composants](/documentation/templates/#components) et de la [configuration des composants](/documentation/configuration/#layouts-components). La fonctionnalité est fournie par l’[extension Twig components](https://github.com/giorgiopogliani/twig-components).
+Consultez la documentation des [composants](/fr/documentation/templates/composants/) et de la [configuration des composants](/fr/documentation/configuration/layouts/#layouts-components). La fonctionnalité est fournie par l’[extension Twig components](https://github.com/giorgiopogliani/twig-components).
 :::

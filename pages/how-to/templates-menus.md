@@ -2,6 +2,7 @@
 title: Build a navigation menu
 description: Declare menus in Cecil configuration or front matter and render them in templates.
 date: 2026-10-09
+updated: 2026-10-16
 schedule:
   publish: 2026-10-09
 ---
@@ -9,7 +10,7 @@ Cecil manages navigation menus as collections of entries (name, URL, weight) tha
 
 ## Declare entries in configuration
 
-Add a `menus` section in `cecil.yml`. Each menu (e.g.: `main`, `footer`) is a list of entries with a unique `id`:
+Add a `menus` section in `cecil.yml`. Each menu (e.g. `main`, `footer`) is a list of entries with a unique `id`:
 
 ```yaml
 menus:
@@ -26,7 +27,7 @@ menus:
 ```
 
 :::info
-A `main` menu is automatically created with the home page entry and all sections entries.
+A `main` menu is automatically created with the home page entry and all section entries.
 :::
 
 ## Add a page from its front matter
@@ -75,6 +76,10 @@ Loop over `site.menus.<menu>`, sorted by weight, and compare each entry ID with 
 </nav>
 ```
 
+:::important
+The ID of a page entry doesn't include the language prefix (e.g. `about` for the `fr/about` page), while `page.id` does. On a multilingual site, compare URLs instead: `{% if url(entry.url) == url(page) %}`.
+:::
+
 A single entry can also be reached by its ID:
 
 ```twig
@@ -84,9 +89,9 @@ A single entry can also be reached by its ID:
 ```
 
 :::tip
-Cecil also provides a built-in partial: `{{ include('partials/navigation.html.twig', {menu: 'main'}) }}`.
+Cecil also provides a built-in partial, without active item highlighting: `{{ include('partials/navigation.html.twig', {menu: 'main'}) }}`.
 :::
 
 :::info
-See the documentation of the [menus configuration](/documentation/configuration/#menus), the [`menu` front matter variable](/documentation/content/#menu) and the [`site.menus` variable](/documentation/templates/#site).
+See the documentation of the [menus configuration](/documentation/configuration/site/#menus), the [`menu` front matter variable](/documentation/content/front-matter/#menu) and the [`site.menus` variable](/documentation/templates/variables/#site-menus).
 :::

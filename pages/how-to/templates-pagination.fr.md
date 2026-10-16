@@ -3,6 +3,7 @@ title: Paginer une liste de pages
 description: Découper les longues listes de pages (blog, sections, taxonomies) en plusieurs pages avec la pagination de Cecil.
 path: comment-faire/templates-pagination
 date: 2026-10-05
+updated: 2026-10-16
 schedule:
   publish: 2026-10-05
 ---
@@ -41,10 +42,12 @@ pagination: false
 
 ## Afficher les pages paginées
 
-Dans le template de liste (ex. : `layouts/blog/list.html.twig`), bouclez sur `page.paginator.pages` et utilisez `page.pages` lorsque la pagination est désactivée :
+Le _paginator_ n’existe que lorsque la liste contient plus de pages que `max`. Lorsque la pagination est désactivée, ou lorsque toutes les pages tiennent sur une seule page, `page.paginator` est vide.
+
+Dans le template de liste (ex. : `layouts/blog/list.html.twig`), bouclez sur `page.paginator.pages` et utilisez `page.pages.showable` en l’absence de _paginator_ :
 
 ```twig
-{% for p in page.paginator.pages ?? page.pages %}
+{% for p in page.paginator.pages ?? page.pages.showable %}
   <article>
     <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
     <time datetime="{{ p.date|date('c') }}">{{ p.date|date('j M Y') }}</time>
@@ -54,7 +57,7 @@ Dans le template de liste (ex. : `layouts/blog/list.html.twig`), bouclez sur `pa
 
 ## Ajouter les liens de navigation
 
-Les liens du paginator sont des identifiants de pages : utilisez la fonction `url()` pour créer des liens fonctionnels :
+Les liens du _paginator_ sont des identifiants de pages : utilisez la fonction `url()` pour créer des liens fonctionnels. Le test `{% if page.paginator %}` masque la navigation en l’absence de _paginator_ :
 
 ```twig
 {% if page.paginator %}
@@ -89,5 +92,5 @@ Pour lister tous les numéros de page, itérez de `1` à `page.paginator.count` 
 ```
 
 :::info
-Consultez la documentation de la [variable `page.paginator`](/documentation/templates/#page), de la [configuration de la pagination](/documentation/configuration/#pages-pagination) et de la [variable `pagination` des sections](/documentation/content/#section).
+Consultez la documentation de la [variable `page.paginator`](/fr/documentation/templates/variables/#page-paginator), de la [configuration de la pagination](/fr/documentation/configuration/pages/#pages-pagination) et de la [variable `pagination` des sections](/fr/documentation/contenu/pages/#pagination).
 :::

@@ -2,6 +2,7 @@
 title: Display image placeholders while loading
 description: Show a dominant color or a blurred preview while images load in Cecil templates.
 date: 2026-10-15
+updated: 2026-10-16
 schedule:
   publish: 2026-10-15
 ---
@@ -23,11 +24,15 @@ layouts:
     placeholder: color # `color` or `lqip`
 ```
 
+:::important
+The `placeholder` option of the `html` function only applies to JPEG, PNG and GIF images, and the `lqip` placeholder is ignored for animated GIFs.
+:::
+
 ## With filters
 
-For a custom markup, use the filters directly:
+For custom markup, use the filters directly:
 
-- `lqip`: returns a 100x100 px, 50% blurred, version of the image as a data URL
+- `lqip`: returns a tiny blurred version of the image as a data URL
 - `dominant_color`: returns the dominant hexadecimal color of the image
 
 ### Dominant color
@@ -59,14 +64,10 @@ img.placeholder {
 
 The background is visible until the real image is loaded and painted over it.
 
-:::warning
-The `lqip` placeholder is not compatible with animated GIF.
-:::
-
 :::tip
-Images in Markdown support placeholders too: `![](/images/photo.jpg){placeholder=lqip}`, or globally with the [`pages.body.images.placeholder` option](/documentation/configuration/#pages-body).
+Images in Markdown support placeholders too: `![](/images/photo.jpg){placeholder=lqip}`, or globally with the [`pages.body.images.placeholder` option](/documentation/configuration/pages/#pages-body-images).
 :::
 
 :::info
-See the documentation of the [`lqip` filter](/documentation/templates/#lqip), the [`dominant_color` filter](/documentation/templates/#dominant-color) and the [`html` function](/documentation/templates/#html).
+See the documentation of the [`lqip` filter](/documentation/assets/images/#lqip), the [`dominant_color` filter](/documentation/assets/images/#dominant-color) and the [`html` function](/documentation/templates/reference/functions/#html).
 :::

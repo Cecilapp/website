@@ -3,6 +3,7 @@ title: Construire un menu de navigation
 description: Déclarer des menus dans la configuration ou le front matter de Cecil et les afficher dans les templates.
 path: comment-faire/templates-menus
 date: 2026-10-09
+updated: 2026-10-16
 schedule:
   publish: 2026-10-09
 ---
@@ -76,6 +77,10 @@ Bouclez sur `site.menus.<menu>`, trié par poids, et comparez l’ID de chaque e
 </nav>
 ```
 
+:::important
+L’ID de l’entrée d’une page n’inclut pas le préfixe de langue (ex. : `about` pour la page `fr/about`), contrairement à `page.id`. Sur un site multilingue, comparez plutôt les URL : `{% if url(entry.url) == url(page) %}`.
+:::
+
 Une entrée peut aussi être atteinte directement par son ID :
 
 ```twig
@@ -85,9 +90,9 @@ Une entrée peut aussi être atteinte directement par son ID :
 ```
 
 :::tip
-Cecil fournit également un partial intégré : `{{ include('partials/navigation.html.twig', {menu: 'main'}) }}`.
+Cecil fournit également un partial intégré, sans mise en évidence de l’élément actif : `{{ include('partials/navigation.html.twig', {menu: 'main'}) }}`.
 :::
 
 :::info
-Consultez la documentation de la [configuration des menus](/documentation/configuration/#menus), de la [variable de front matter `menu`](/documentation/content/#menu) et de la [variable `site.menus`](/documentation/templates/#site).
+Consultez la documentation de la [configuration des menus](/fr/documentation/configuration/site/#menus), de la [variable de front matter `menu`](/fr/documentation/contenu/front-matter/#menu) et de la [variable `site.menus`](/fr/documentation/templates/variables/#site-menus).
 :::

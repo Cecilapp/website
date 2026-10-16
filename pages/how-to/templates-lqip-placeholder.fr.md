@@ -1,8 +1,9 @@
 ---
-title: Afficher des placeholders d’images pendant le chargement
+title: Afficher un aperçu des images pendant leur chargement
 description: Afficher une couleur dominante ou un aperçu flouté pendant le chargement des images dans les templates Cecil.
 path: comment-faire/templates-placeholder-lqip
 date: 2026-10-15
+updated: 2026-10-16
 schedule:
   publish: 2026-10-15
 ---
@@ -24,12 +25,16 @@ layouts:
     placeholder: color # `color` ou `lqip`
 ```
 
+:::important
+L’option `placeholder` de la fonction `html` ne s’applique qu’aux images JPEG, PNG et GIF, et le _placeholder_ `lqip` est ignoré pour les GIF animés.
+:::
+
 ## Avec les filtres
 
 Pour un balisage personnalisé, utilisez directement les filtres :
 
-- `lqip` : retourne une version 100x100 px, floutée à 50 %, de l’image sous forme de data URL
-- `dominant_color` : retourne la couleur hexadécimale dominante de l’image
+- `lqip` : renvoie une version minuscule et floutée de l’image sous forme de _data URL_
+- `dominant_color` : renvoie la couleur hexadécimale dominante de l’image
 
 ### Couleur dominante
 
@@ -60,14 +65,10 @@ img.placeholder {
 
 L’arrière-plan reste visible jusqu’à ce que l’image réelle soit chargée et affichée par-dessus.
 
-:::warning
-Le placeholder `lqip` n’est pas compatible avec les GIF animés.
-:::
-
 :::tip
-Les images en Markdown supportent aussi les placeholders : `![](/images/photo.jpg){placeholder=lqip}`, ou globalement avec l’[option `pages.body.images.placeholder`](/documentation/configuration/#pages-body).
+Les images en Markdown prennent aussi en charge les _placeholders_ : `![](/images/photo.jpg){placeholder=lqip}`, ou globalement avec l’[option `pages.body.images.placeholder`](/fr/documentation/configuration/pages/#pages-body-images).
 :::
 
 :::info
-Consultez la documentation du [filtre `lqip`](/documentation/templates/#lqip), du [filtre `dominant_color`](/documentation/templates/#dominant-color) et de la [fonction `html`](/documentation/templates/#html).
+Consultez la documentation du [filtre `lqip`](/fr/documentation/assets/images/#lqip), du [filtre `dominant_color`](/fr/documentation/assets/images/#dominant-color) et de la [fonction `html`](/fr/documentation/templates/reference/fonctions/#html).
 :::

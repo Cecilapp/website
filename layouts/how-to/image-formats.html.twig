@@ -3,6 +3,6 @@
               {%- block content ~%}
               <h1 style="view-transition-name: {{ page.slug|replace({'.': '-'}) }}" id="{{ page.slug|replace({'.': '-'}) }}" class="page-transition">{{ page.title }}</h1>
               {{ page.content }}
-              <h3>Live example</h3>
+              <h3>{{ 'Live example'|trans }}</h3>
               {{ html(asset('images/cecil-logo.png'), attributes={alt: 'Cecil logo'}, options={responsive: false, formats: ['avif', 'webp']}) }}
               {%- endblock ~%}
