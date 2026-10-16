@@ -303,6 +303,7 @@
       </div>
     </footer>
     {%- block footer_scripts ~%}
+    {{- include('partials/notes-tabs.js.twig', with_context = false) ~}}
     {{- include('partials/anchor.js.twig', with_context = false) ~}}
     {{- include('partials/highlightjs-copy.js.twig', {site}, with_context = false) ~}}
     <script defer src="{{ asset('https://github.com/tscanlin/tocbot/releases/download/%s/tocbot.min.js'|format(site.libs.tocbot.version), {minify: false, ignore_missing: true}) }}"></script>

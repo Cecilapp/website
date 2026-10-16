@@ -1,16 +1,17 @@
 /* Note block (in Markdown content) */
-.note {
+/* callouts are `<aside>`, notes rendered with a template (tabs, steps, etc.) are `<div>` */
+aside.note {
   @apply relative px-4 mb-4 border border-l-4;
   @apply border-blue-700 dark:border-white;
 }
-.note a {
+aside.note a {
   @apply text-inherit dark:text-inherit;
   @apply underline;
 }
-[class*="note-"] {
+aside[class*="note-"] {
   @apply pl-10
 }
-[class*="note-"]:before {
+aside[class*="note-"]:before {
   --svg: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"%3E%3Cpath fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"%3E%3C/path%3E%3C/svg%3E');
   @apply mask-contain mask-center mask-no-repeat;
   @apply mask-(--svg);
@@ -52,4 +53,104 @@
 .note-caution:before {
   --svg: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"%3E%3Cpath d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"%3E%3C/path%3E%3C/svg%3E');
   @apply bg-red-700 dark:bg-red-400;
+}
+
+/* Tabs and code group (`:::tabs` and `:::code-group`) */
+.note-tabs,
+.note-code-group {
+  @apply mb-4 border rounded-md overflow-hidden;
+  @apply border-slate-300 dark:border-slate-600;
+}
+.note-tabs > :not(.note-tab):not(.note-tabs-nav),
+.note-tab {
+  @apply px-4;
+}
+.note-tab + .note-tab {
+  @apply border-t border-slate-300 dark:border-slate-600;
+}
+.note-tab-title {
+  @apply font-semibold;
+}
+.note-tabs-nav {
+  @apply flex flex-wrap gap-x-1 px-2 border-b;
+  @apply border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800;
+}
+.note-tabs-nav [role="tab"] {
+  @apply -mb-px px-3 py-2 text-sm font-semibold border-b-2 border-transparent cursor-pointer;
+  @apply text-slate-500 dark:text-slate-400 hover:text-darkblue dark:hover:text-white;
+}
+.note-tabs-nav [role="tab"][aria-selected="true"] {
+  @apply border-blue text-darkblue dark:border-gold dark:text-white;
+}
+.note-tabs-nav ~ .note-tab {
+  @apply border-t-0;
+}
+.note-tabs-nav ~ .note-tab[hidden] {
+  @apply hidden;
+}
+.note-code-group .note-tab {
+  @apply px-0;
+}
+.note-code-group .note-tab pre {
+  @apply m-0 rounded-none;
+}
+
+/* Steps (`:::steps`) */
+.markdown .note-steps-list {
+  @apply list-none pl-0;
+  counter-reset: note-step;
+}
+.markdown .note-step {
+  @apply relative pl-12 pb-2 my-0;
+  counter-increment: note-step;
+}
+.note-step:before {
+  @apply absolute left-0 top-0 flex items-center justify-center w-8 h-8 rounded-full;
+  @apply text-sm font-bold bg-blue text-white dark:bg-gold dark:text-darkblue;
+  content: counter(note-step);
+}
+.note-step:not(:last-child):after {
+  @apply absolute left-4 top-10 bottom-0 w-px bg-slate-300 dark:bg-slate-600;
+  content: '';
+}
+.markdown .note-step > h4:first-child {
+  @apply mt-0 pt-1.5;
+}
+
+/* Accordion (`:::accordion`) */
+.note-accordion {
+  @apply mb-4;
+}
+.note-accordion-item {
+  @apply border-b border-slate-300 dark:border-slate-600;
+}
+.note-accordion-item:first-of-type {
+  @apply border-t;
+}
+.note-accordion-item > summary {
+  @apply py-3 font-semibold cursor-pointer;
+}
+.note-accordion-content {
+  @apply pb-2 pl-4;
+}
+
+/* Cards (`:::cards`) */
+.markdown .note-cards-list {
+  @apply grid gap-4 sm:grid-cols-2 list-none pl-0;
+}
+.markdown .note-card {
+  @apply relative m-0 p-4 border rounded-md;
+  @apply border-slate-300 dark:border-slate-600 hover:border-blue dark:hover:border-gold;
+}
+.markdown .note-card p {
+  @apply m-0;
+}
+.markdown .note-card-title {
+  @apply font-semibold;
+}
+.markdown .note-card-title a {
+  @apply no-underline after:absolute after:inset-0;
+}
+.markdown .note-card-content {
+  @apply mt-1 text-slate-600 dark:text-slate-300;
 }
