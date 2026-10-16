@@ -1,0 +1,44 @@
+# Local development configuration: fast builds, (almost) no optimization.
+# Usage: cecil serve --config=config/dev.yml
+#
+# Note: configuration files are merged and lists are concatenated, so an empty
+# list (`[]`) can't override an existing one: use `~` (null) to reset a list.
+metatags:
+  jsonld: false
+  dc: false
+  favicon: false # avoids favicons resizing
+pages:
+  default:
+    flexsearch:
+      published: false # skips the search index generation
+  body:
+    images:
+      formats: ~ # no AVIF/WebP alternatives
+      responsive: false
+      caption: true
+      placeholder: none # no LQIP generation
+      remote:
+        enabled: false # no remote images download
+    highlight: true
+assets:
+  fingerprint: false
+  minify: false
+  images:
+    optimize: false
+static:
+  exclude:
+    - 'archives'
+    - 'library'
+    - '*.phar*'
+layouts:
+  images:
+    formats: ~ # no AVIF/WebP alternatives
+    responsive: false
+flexsearch:
+  enabled: false # hides the search box (the index is not generated)
+cloudinary:
+  enabled: false # no social image generated (and downloaded) for each page
+serviceworker:
+  enabled: false
+optimize:
+  enabled: false
