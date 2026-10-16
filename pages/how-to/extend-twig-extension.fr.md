@@ -3,10 +3,11 @@ title: Ajouter une fonction ou un filtre Twig personnalisé
 description: Étendre les templates de Cecil avec vos propres fonctions et filtres Twig grâce à une extension Twig.
 path: comment-faire/extension-twig
 date: 2026-10-21
+updated: 2026-10-16
 schedule:
   publish: 2026-10-21
 ---
-Cecil fournit de nombreuses [fonctions](/documentation/templates/#functions) et de nombreux [filtres](/documentation/templates/#filters) de template, mais vous pouvez ajouter les vôtres avec une [extension Twig](https://twig.symfony.com/doc/advanced.html#creating-an-extension) écrite en PHP.
+Cecil fournit de nombreuses [fonctions](/fr/documentation/templates/reference/fonctions/) et de nombreux [filtres](/fr/documentation/templates/reference/filtres/) de template, mais vous pouvez ajouter les vôtres avec une [extension Twig](https://twig.symfony.com/doc/advanced.html#creating-an-extension) écrite en PHP.
 
 ## Créer la classe de l’extension
 
@@ -63,5 +64,5 @@ layouts:
 ```
 
 :::tip
-Lancez le build avec l’option `-vvv` pour vérifier que l’extension est chargée : Cecil affiche `Twig extension "MyExtension" added`, ou une erreur si la classe ne peut pas être chargée. Consultez la [documentation des extensions Twig](/documentation/extend/#twig-extension).
+Lancez la génération avec l’option `-vvv` pour vérifier que l’extension est chargée : Cecil affiche `Twig extension "MyExtension" added`, ou une erreur si la classe ne peut pas être chargée. Consultez la [documentation des extensions Twig](/fr/documentation/developpeurs/etendre/#extension-twig).
 :::

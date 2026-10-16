@@ -3,10 +3,11 @@ title: Organiser les pages avec des tags et des catégories
 description: Classer les pages Cecil avec des taxonomies comme les tags et les catégories, et personnaliser leurs pages de liste.
 path: comment-faire/contenu-taxonomies
 date: 2026-10-10
+updated: 2026-10-16
 schedule:
   publish: 2026-10-10
 ---
-Les taxonomies permettent de classer les pages avec des termes (ex. `PHP`) regroupés dans des vocabulaires (ex. `tags`). Cecil génère ensuite une page par vocabulaire et une page par terme.
+Les taxonomies permettent de classer les pages avec des termes (par exemple `PHP`) regroupés dans des vocabulaires (par exemple `tags`). Cecil génère ensuite une page par vocabulaire et une page par terme.
 
 ## Déclarer les vocabulaires
 
@@ -41,7 +42,7 @@ Cecil génère :
 
 ## Personnaliser la liste des termes
 
-Le template de _vocabulaire_ est nommé d’après le **pluriel**, ex. `layouts/taxonomy/tags.html.twig` :
+Le template de _vocabulaire_ est nommé d’après le **pluriel**, par exemple `layouts/taxonomy/tags.html.twig` :
 
 ```twig
 {% extends 'page.html.twig' %}
@@ -50,7 +51,7 @@ Le template de _vocabulaire_ est nommé d’après le **pluriel**, ex. `layouts/
   <h1>{{ page.title }}</h1>
   <ul>
   {% for term in page.terms %}
-    <li><a href="{{ url(term.id) }}">{{ term.name }}</a> ({{ term|length }})</li>
+    <li><a href="{{ url(term.id, {language: site.language}) }}">{{ term.name }}</a> ({{ term|length }})</li>
   {% endfor %}
   </ul>
 {% endblock %}
@@ -58,7 +59,7 @@ Le template de _vocabulaire_ est nommé d’après le **pluriel**, ex. `layouts/
 
 ## Personnaliser les pages d’un terme
 
-Le template de _terme_ est nommé d’après le **singulier**, ex. `layouts/taxonomy/tag.html.twig` :
+Le template de _terme_ est nommé d’après le **singulier**, par exemple `layouts/taxonomy/tag.html.twig` :
 
 ```twig
 {% extends 'page.html.twig' %}
@@ -70,7 +71,7 @@ Le template de _terme_ est nommé d’après le **singulier**, ex. `layouts/taxo
       <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
     </article>
   {% endfor %}
-  <a href="{{ url(page.plural) }}">All {{ page.plural }}</a>
+  <a href="{{ url(page.plural, {language: site.language}) }}">All {{ page.plural }}</a>
 {% endblock %}
 ```
 
@@ -80,12 +81,14 @@ Dans un template de page, liez chaque terme à sa page :
 
 ```twig
 {% for tag in page.tags ?? [] %}
-  <a href="{{ url('tags/' ~ tag) }}">{{ tag }}</a>
+  <a href="{{ url('tags/' ~ tag, {language: site.language}) }}">{{ tag }}</a>
 {% endfor %}
 ```
+
+L’option `language` conserve la langue courante dans les liens d’un site multilingue.
 
 Ou utilisez le partial intégré : `{{ include('partials/terms-list.html.twig', {vocabulary: 'tags'}) }}`.
 
 :::info
-Consultez la documentation de la [configuration des taxonomies](/documentation/configuration/#taxonomies), des [règles de sélection des templates](/documentation/templates/#type-vocabulary) et des [variables de taxonomie](/documentation/templates/#page).
+Consultez la documentation de la [configuration des taxonomies](/fr/documentation/configuration/site/#taxonomies), des [règles de recherche des templates](/fr/documentation/templates/regles-de-recherche/#type-vocabulary) et des [variables de taxonomie](/fr/documentation/templates/variables/#taxonomie).
 :::

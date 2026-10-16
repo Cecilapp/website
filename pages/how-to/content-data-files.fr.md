@@ -3,6 +3,7 @@ title: Générer des pages à partir de fichiers de données
 description: Utiliser des fichiers de données YAML, JSON, CSV ou XML pour construire des pages Cecil sans écrire de Markdown pour chaque élément.
 path: comment-faire/contenu-fichiers-de-donnees
 date: 2026-10-19
+updated: 2026-10-16
 schedule:
   publish: 2026-10-19
 ---
@@ -10,7 +11,7 @@ Les fichiers de données sont un moyen pratique de gérer du contenu structuré 
 
 ## Ajouter un fichier de données
 
-Stockez vos fichiers dans le dossier `data`. Les formats supportés sont YAML, JSON, XML et CSV.
+Stockez vos fichiers dans le dossier `data`. Les formats pris en charge sont YAML, JSON, XML et CSV.
 
 ```yaml
 # data/team.yml
@@ -21,12 +22,14 @@ Stockez vos fichiers dans le dossier `data`. Les formats supportés sont YAML, J
 ```
 
 :::tip
-Une version localisée peut être ajoutée avec un suffixe de langue (ex. `data/team.fr.yml`) : elle est utilisée pour les pages dans cette langue.
+Une version localisée peut être ajoutée avec un suffixe de langue (par exemple `data/team.fr.yml`) : elle est utilisée pour les pages dans cette langue.
+
+Dès qu’une langue possède au moins un fichier de données localisé, `site.data` ne contient plus que les fichiers localisés de cette langue : les fichiers non localisés ne sont alors plus disponibles pour ses pages.
 :::
 
 ## Afficher les données dans un template
 
-Le fichier est disponible dans les templates via `site.data.<nom du fichier>`, ex. `layouts/team.html.twig` :
+Le fichier est disponible dans les templates via `site.data.<nom du fichier>`, par exemple `layouts/team.html.twig` :
 
 ```twig
 {% extends 'page.html.twig' %}
@@ -45,7 +48,7 @@ Les fichiers des sous-dossiers sont imbriqués : `data/galleries/gallery-1.json`
 
 ## Créer la page
 
-La page qui utilise ce template n’a besoin d’aucun contenu : déclarez-la comme [page virtuelle](/documentation/configuration/#pages-virtual) dans `cecil.yml` :
+La page qui utilise ce template n’a besoin d’aucun contenu : déclarez-la comme [page virtuelle](/fr/documentation/configuration/pages/#pages-virtual) dans `cecil.yml` :
 
 ```yaml
 pages:
@@ -59,7 +62,7 @@ Vous pouvez aussi créer un fichier `pages/team.md` avec `layout: team` dans son
 
 ## Générer une page par élément
 
-Pour générer une page par entrée, créez un [générateur de pages](/documentation/extend/#pages-generator). Les données chargées depuis les fichiers de données sont disponibles via `$this->builder->getData()` :
+Pour générer une page par entrée, créez un [générateur de pages](/fr/documentation/developpeurs/etendre/#generateurs-de-pages). Les données chargées depuis les fichiers de données sont disponibles via `$this->builder->getData()` :
 
 ```php
 <?php
@@ -80,6 +83,7 @@ class Team extends AbstractGenerator implements GeneratorInterface
             $page = (new Page("team/$slug"))
                 ->setType(Type::PAGE->value)
                 ->setPath("team/$slug")
+                ->setSection('team')
                 ->setBodyHtml('<p>' . htmlspecialchars($member['role']) . '</p>')
                 ->setVariable('title', $member['name']);
             $this->generatedPages->add($page);
@@ -97,5 +101,9 @@ pages:
 ```
 
 :::info
-Consultez la documentation de la [configuration des données](/documentation/configuration/#data), de la [variable `site.data`](/documentation/templates/#site) et des [générateurs de pages](/documentation/extend/#pages-generator).
+Les pages créées par un générateur sont _virtuelles_ : `setSection()` est nécessaire pour les regrouper dans la section `team`, et elles ne sont listées ni dans `site.pages.showable` ni dans le sitemap.
+:::
+
+:::info
+Consultez la documentation de la [configuration des données](/fr/documentation/configuration/donnees-et-statiques/#donnees), de la [variable `site.data`](/fr/documentation/templates/variables/#site-data) et des [générateurs de pages](/fr/documentation/developpeurs/etendre/#generateurs-de-pages).
 :::

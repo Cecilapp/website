@@ -3,6 +3,7 @@ title: Rediriger d’anciennes URL
 description: Conserver le fonctionnement des anciens liens dans Cecil avec les variables de front matter redirect et alias.
 path: comment-faire/contenu-redirection-alias
 date: 2026-10-13
+updated: 2026-10-16
 schedule:
   publish: 2026-10-13
 ---
@@ -16,12 +17,12 @@ La variable `alias` liste les anciens chemins de la page courante. Chacun d’eu
 ---
 title: About
 alias:
-  - contact
+  - company
   - about-us
 ---
 ```
 
-Dans cet exemple, `/contact/` et `/about-us/` redirigent vers `/about/`.
+Dans cet exemple, `/company/` et `/about-us/` redirigent vers `/about/`.
 
 ## Rediriger une page vers une autre URL
 
@@ -36,7 +37,7 @@ redirect: "https://cecil.app/documentation/"
 
 ## Sans fichier Markdown
 
-Si l’ancienne page n’a plus de contenu, déclarez-la comme [page virtuelle](/documentation/configuration/#pages-virtual) dans `cecil.yml` :
+Si l’ancienne page n’a plus de contenu, déclarez-la comme [page virtuelle](/fr/documentation/configuration/pages/#pages-virtual) dans `cecil.yml` :
 
 ```yaml
 pages:
@@ -59,5 +60,5 @@ Pour personnaliser cette page, créez votre propre template `layouts/redirect.ht
 :::
 
 :::info
-Consultez la documentation des variables [`redirect`](/documentation/content/#redirect) et [`alias`](/documentation/content/#alias).
+Consultez la documentation des variables [`redirect`](/fr/documentation/contenu/front-matter/#redirect) et [`alias`](/fr/documentation/contenu/front-matter/#alias).
 :::

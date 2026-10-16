@@ -3,6 +3,7 @@ title: Créer un générateur de pages personnalisé
 description: Créer des pages Cecil à partir d’une API, d’une base de données ou de toute autre source avec un générateur de pages personnalisé.
 path: comment-faire/extension-generateur-de-pages
 date: 2026-10-22
+updated: 2026-10-16
 schedule:
   publish: 2026-10-22
 ---
@@ -27,12 +28,13 @@ class Posts extends AbstractGenerator implements GeneratorInterface
 {
     public function generate(): void
     {
-        $posts = json_decode(file_get_contents('https://jsonplaceholder.typicode.com/posts'), true);
+        $posts = json_decode(file_get_contents('https://jsonplaceholder.typicode.com/posts'), true) ?? [];
 
         foreach ($posts as $post) {
             $page = (new Page("posts/{$post['id']}"))
                 ->setType(Type::PAGE->value)
                 ->setPath("posts/{$post['id']}")
+                ->setSection('posts')
                 ->setBodyHtml('<p>' . htmlspecialchars($post['body']) . '</p>')
                 ->setVariable('title', $post['title']);
             $this->generatedPages->add($page);
@@ -47,7 +49,7 @@ Les pages existantes (issues des fichiers Markdown et des générateurs précéd
 
 ## Déclarer le générateur
 
-Ajoutez le nom de la classe à la liste [`pages.generators`](/documentation/configuration/#pages-generators) dans `cecil.yml`, avec une priorité comme clé :
+Ajoutez le nom de la classe à la liste [`pages.generators`](/fr/documentation/configuration/pages/#pages-generators) dans `cecil.yml`, avec une priorité comme clé :
 
 ```yaml
 pages:
@@ -55,7 +57,11 @@ pages:
     35: Cecil\Generator\Posts
 ```
 
-Les générateurs sont exécutés par ordre de priorité croissant. Ceux fournis par Cecil utilisent les priorités `10` (`DefaultPages`) à `90` (`Redirect`) : avec `35`, les pages sont créées avant les sections (`40`) et sont donc regroupées dans la section `posts`, comme les pages issues de fichiers Markdown.
+Les générateurs sont exécutés par ordre de priorité croissant. Ceux fournis par Cecil utilisent les priorités `10` (`DefaultPages`) à `90` (`Redirect`) : avec `35`, les pages sont créées avant les sections (`40`) et, grâce à `setSection()`, sont donc regroupées dans la section `posts`, comme les pages issues de fichiers Markdown.
+
+:::info
+Les pages créées par un générateur sont _virtuelles_ : sans `setSection()`, elles n’appartiennent à aucune section, et elles ne sont listées ni dans `site.pages.showable` ni dans le sitemap.
+:::
 
 ## Générer le site
 
@@ -66,5 +72,5 @@ php cecil.phar build
 Les pages sont désormais disponibles aux adresses `/posts/1/`, `/posts/2/`, etc., rendues avec les templates `page` par défaut.
 
 :::info
-Consultez la [documentation des générateurs de pages](/documentation/extend/#pages-generator) pour un autre exemple, basé sur une base de données SQLite.
+Consultez la [documentation des générateurs de pages](/fr/documentation/developpeurs/etendre/#generateurs-de-pages) pour un autre exemple, basé sur une base de données SQLite.
 :::

@@ -2,6 +2,7 @@
 title: Redirect old URLs
 description: Keep old links working in Cecil with the redirect and alias front matter variables.
 date: 2026-10-13
+updated: 2026-10-16
 schedule:
   publish: 2026-10-13
 ---
@@ -15,12 +16,12 @@ The `alias` variable lists the old paths of the current page. Each of them redir
 ---
 title: About
 alias:
-  - contact
+  - company
   - about-us
 ---
 ```
 
-In this example, `/contact/` and `/about-us/` redirect to `/about/`.
+In this example, `/company/` and `/about-us/` redirect to `/about/`.
 
 ## Redirect a page to another URL
 
@@ -35,7 +36,7 @@ redirect: "https://cecil.app/documentation/"
 
 ## Without a Markdown file
 
-If the old page has no content anymore, declare it as a [virtual page](/documentation/configuration/#pages-virtual) in `cecil.yml`:
+If the old page has no content anymore, declare it as a [virtual page](/documentation/configuration/pages/#pages-virtual) in `cecil.yml`:
 
 ```yaml
 pages:
@@ -58,5 +59,5 @@ To customize this page, create your own `layouts/redirect.html.twig` template: i
 :::
 
 :::info
-See the documentation of the [`redirect`](/documentation/content/#redirect) and [`alias`](/documentation/content/#alias) variables.
+See the documentation of the [`redirect`](/documentation/content/front-matter/#redirect) and [`alias`](/documentation/content/front-matter/#alias) variables.
 :::

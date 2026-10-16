@@ -2,10 +2,11 @@
 title: Deploy to GitHub Pages with GitHub Actions
 description: Build and deploy a Cecil site to GitHub Pages automatically with the Cecil GitHub Action.
 date: 2026-10-07
+updated: 2026-10-16
 schedule:
   publish: 2026-10-07
 ---
-With the [Cecil Action](https://github.com/Cecilapp/Cecil-Action), every push to your repository builds the site and publishes it to **GitHub Pages**, with no server to manage.
+With the [Cecil Action](https://github.com/Cecilapp/Action), every push to your repository builds the site and publishes it to **GitHub Pages**, with no server to manage.
 
 ## Enable GitHub Pages
 
@@ -29,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Build site
-        uses: Cecilapp/Cecil-Action@v4
+        uses: Cecilapp/Action@v4
   deploy:
     needs: build
     permissions:
@@ -59,13 +60,18 @@ The action accepts the following optional inputs:
 
 ```yaml
       - name: Build site
-        uses: Cecilapp/Cecil-Action@v4
+        uses: Cecilapp/Action@v4
         with:
-          version: '9.6.2'       # Cecil version (latest by default)
+          path: docs             # site directory, relative to the repository root (`.` by default)
+          version: '9.13.0'      # Cecil version (latest by default)
           install_themes: 'no'   # skip themes installation (`yes` by default)
           options: '-v --drafts' # build command options (`-v` by default)
 ```
 
+:::warning
+The action uploads the `_site` directory of the site, or the directory given with the `--output` (`-o`) option in `options`: it doesn’t read `output.dir` from `cecil.yml`. If you change the output directory, pass it in `options`, e.g. `options: '-v --output=public'`.
+:::
+
 :::tip
-To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [GitHub Pages deployment documentation](/documentation/deploy/#github-pages), and the list of [build options](/documentation/commands/#build).
+To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [GitHub Pages deployment documentation](/documentation/deploy/continuous-deployment/#github-pages), and the list of [build options](/documentation/commands/build/).
 :::
