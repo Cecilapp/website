@@ -60,6 +60,10 @@ msgstr "Commencer avec la ligne de commande"
 msgid "Cecil is generously supported by"
 msgstr "Cecil est généreusement soutenu par"
 
+#: how-to/image-formats.html.twig:6 how-to/responsive-images.html.twig:6
+msgid "Live example"
+msgstr "Exemple en direct"
+
 #: news/list.html.twig:5
 msgid "News"
 msgstr "Actualités"

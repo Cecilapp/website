@@ -2,10 +2,11 @@
 title: Paginate a list of pages
 description: Split long lists of pages (blog, sections, taxonomies) into several pages with Cecil pagination.
 date: 2026-10-05
+updated: 2026-10-16
 schedule:
   publish: 2026-10-05
 ---
-When a section contains many pages, Cecil can split its list into several pages (e.g.: `/blog/`, `/blog/page/2/`, `/blog/page/3/`, etc.) and give you a _paginator_ to build the navigation links.
+When a section contains many pages, Cecil can split its list into several pages (e.g. `/blog/`, `/blog/page/2/`, `/blog/page/3/`, etc.) and give you a _paginator_ to build the navigation links.
 
 ## Configure pagination
 
@@ -15,12 +16,12 @@ Pagination is enabled by default for list pages (_homepage_, _section_ and _term
 pages:
   pagination:
     max: 10    # maximum number of entries per page
-    path: page # path to the paginated page
+    path: page # path of the paginated pages
 ```
 
 ## Override it for a section
 
-Set the `pagination` variable in the front matter of the section index file (e.g.: `pages/blog/index.md`):
+Set the `pagination` variable in the front matter of the section index file (e.g. `pages/blog/index.md`):
 
 ```yaml
 ---
@@ -40,10 +41,12 @@ pagination: false
 
 ## Display the paginated pages
 
-In the list template (e.g.: `layouts/blog/list.html.twig`), loop over `page.paginator.pages` and fall back to `page.pages` when pagination is disabled:
+The paginator only exists when the list contains more pages than `max`. When pagination is disabled, or when all the pages fit on a single page, `page.paginator` is empty.
+
+In the list template (e.g. `layouts/blog/list.html.twig`), loop over `page.paginator.pages` and fall back to `page.pages.showable` when there is no paginator:
 
 ```twig
-{% for p in page.paginator.pages ?? page.pages %}
+{% for p in page.paginator.pages ?? page.pages.showable %}
   <article>
     <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
     <time datetime="{{ p.date|date('c') }}">{{ p.date|date('j M Y') }}</time>
@@ -53,7 +56,7 @@ In the list template (e.g.: `layouts/blog/list.html.twig`), loop over `page.pagi
 
 ## Add navigation links
 
-Paginator links are page IDs, so use the `url()` function to create working links:
+Paginator links are page IDs, so use the `url()` function to create working links. The `{% if page.paginator %}` test hides the navigation when there is no paginator:
 
 ```twig
 {% if page.paginator %}
@@ -88,5 +91,5 @@ To list every page number, iterate from `1` to `page.paginator.count`:
 ```
 
 :::info
-See the documentation of the [`page.paginator` variable](/documentation/templates/#page), the [pagination configuration](/documentation/configuration/#pages-pagination) and the [section `pagination` variable](/documentation/content/#section).
+See the documentation of the [`page.paginator` variable](/documentation/templates/variables/#page-paginator), the [pagination configuration](/documentation/configuration/pages/#pages-pagination) and the [section `pagination` variable](/documentation/content/pages/#pagination).
 :::

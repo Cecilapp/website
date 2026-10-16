@@ -5,7 +5,7 @@ date: 2026-10-18
 schedule:
   publish: 2026-10-18
 ---
-Components are small reusable Twig templates (button, card, alert, etc.) that you call with a dedicated tag, pass attributes to, and wrap around any content.
+Components are small reusable Twig templates (button, card, alert, etc.) called with a dedicated tag: they accept attributes and can wrap any content.
 
 ## Create a component
 
@@ -71,5 +71,5 @@ layouts:
 ```
 
 :::info
-See the documentation of [components](/documentation/templates/#components) and the [components configuration](/documentation/configuration/#layouts-components). The feature is provided by the [Twig components extension](https://github.com/giorgiopogliani/twig-components).
+See the documentation of [components](/documentation/templates/components/) and the [components configuration](/documentation/configuration/layouts/#layouts-components). The feature is provided by the [Twig components extension](https://github.com/giorgiopogliani/twig-components).
 :::
