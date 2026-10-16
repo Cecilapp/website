@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2026-10-04
+updated: 2026-10-16
 layout: download
 slug: telecharger
 menu:
@@ -26,7 +26,17 @@ PHP 8.3+ est requis.
 
 Pour plus de confort, nous vous recommandons d’installer Cecil globalement.
 
-### macOS
+::::tabs
+#### Linux
+
+Déplacez `cecil.phar` dans un dossier de votre `PATH` et rendez-le exécutable :
+
+```bash
+mv cecil.phar /usr/local/bin/cecil
+chmod +x /usr/local/bin/cecil
+```
+
+#### macOS
 
 Vous pouvez installer Cecil sur macOS avec 🍺[Homebrew](https://brew.sh) :
 
@@ -34,7 +44,7 @@ Vous pouvez installer Cecil sur macOS avec 🍺[Homebrew](https://brew.sh) :
 brew install cecilapp/tap/cecil
 ```
 
-### Windows
+#### Windows
 
 Vous pouvez installer Cecil sur Windows avec 🍨[Scoop](https://scoop.sh) :
 
@@ -59,22 +69,14 @@ Ou manuellement :
 3. Ajoutez `;C:\bin` à votre variable d’environnement `PATH`
 4. Créez un [script batch d’encapsulation](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
 
-### PHIVE
+#### PHIVE
 
 Cecil est disponible via [PHIVE](https://phar.io) (the PHAR Installation and Verification Environment) :
 
 ```bash
 phive install cecil
 ```
-
-### Linux
-
-Déplacez `cecil.phar` dans un dossier de votre `PATH` et rendez-le exécutable :
-
-```bash
-mv cecil.phar /usr/local/bin/cecil
-chmod +x /usr/local/bin/cecil
-```
+::::
 
 ## Mise à jour {#update}
 
@@ -82,15 +84,31 @@ chmod +x /usr/local/bin/cecil
 
 La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée, ou votre gestionnaire de paquets :
 
+:::code-group
+#### Cecil
+
 ```bash
 php cecil.phar self-update
-# Homebrew
+```
+
+#### Homebrew
+
+```bash
 brew upgrade cecilapp/tap/cecil
-# Scoop
+```
+
+#### Scoop
+
+```bash
 scoop update cecil
-# PHIVE
+```
+
+#### PHIVE
+
+```bash
 phive update cecil
 ```
+:::
 
 ## Télécharger une version spécifique
 
@@ -109,5 +127,16 @@ La [liste des versions](https://github.com/Cecilapp/Cecil/releases) est disponib
 
 La version d’aperçu contient les dernières modifications, pas encore publiées, prêtes à être testées.
 
-- Homebrew : `brew install cecilapp/tap/cecil@preview`
-- Scoop : `scoop install https://cecil.app/scoop/cecil-preview.json`
+:::code-group
+#### Homebrew
+
+```bash
+brew install cecilapp/tap/cecil@preview
+```
+
+#### Scoop
+
+```bash
+scoop install https://cecil.app/scoop/cecil-preview.json
+```
+:::

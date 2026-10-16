@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2026-10-04
+updated: 2026-10-16
 layout: download
 alias: install
 menu:
@@ -26,7 +26,17 @@ PHP 8.3+ is required.
 
 For convenience, we recommend installing Cecil globally.
 
-### macOS
+::::tabs
+#### Linux
+
+Move `cecil.phar` to a directory in your `PATH` and make it executable:
+
+```bash
+mv cecil.phar /usr/local/bin/cecil
+chmod +x /usr/local/bin/cecil
+```
+
+#### macOS
 
 You can install Cecil on macOS with 🍺[Homebrew](https://brew.sh):
 
@@ -34,7 +44,7 @@ You can install Cecil on macOS with 🍺[Homebrew](https://brew.sh):
 brew install cecilapp/tap/cecil
 ```
 
-### Windows
+#### Windows
 
 You can install Cecil on Windows with 🍨[Scoop](https://scoop.sh):
 
@@ -59,22 +69,14 @@ Or manually:
 3. Append `;C:\bin` to your `PATH` environment variable
 4. Create a [batch wrapper script](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
 
-### PHIVE
+#### PHIVE
 
 Cecil is available through [PHIVE](https://phar.io) (the PHAR Installation and Verification Environment):
 
 ```bash
 phive install cecil
 ```
-
-### Linux
-
-Move `cecil.phar` to a directory in your `PATH` and make it executable:
-
-```bash
-mv cecil.phar /usr/local/bin/cecil
-chmod +x /usr/local/bin/cecil
-```
+::::
 
 ## Update {#update}
 
@@ -82,15 +84,31 @@ chmod +x /usr/local/bin/cecil
 
 The easiest way to update Cecil to the latest version is to use the dedicated command, or your package manager:
 
+:::code-group
+#### Cecil
+
 ```bash
 php cecil.phar self-update
-# Homebrew
+```
+
+#### Homebrew
+
+```bash
 brew upgrade cecilapp/tap/cecil
-# Scoop
+```
+
+#### Scoop
+
+```bash
 scoop update cecil
-# PHIVE
+```
+
+#### PHIVE
+
+```bash
 phive update cecil
 ```
+:::
 
 ## Download a specific version
 
@@ -109,5 +127,16 @@ The [list of releases](https://github.com/Cecilapp/Cecil/releases) is available 
 
 The preview version contains the latest changes that have not been released yet, ready for testing.
 
-- Homebrew: `brew install cecilapp/tap/cecil@preview`
-- Scoop: `scoop install https://cecil.app/scoop/cecil-preview.json`
+:::code-group
+#### Homebrew
+
+```bash
+brew install cecilapp/tap/cecil@preview
+```
+
+#### Scoop
+
+```bash
+scoop install https://cecil.app/scoop/cecil-preview.json
+```
+:::
