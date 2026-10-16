@@ -1,0 +1,13 @@
+{#- redirects anchors of the former flat documentation pages to their new location -#}
+{%- set redirects = site.data.docs_redirects[url(page)]|default -%}
+{%- if redirects ~%}
+<script>{% apply minify_js ~%}
+  (function () {
+    var map = {{ redirects|json_encode|raw }};
+    var hash = decodeURIComponent(window.location.hash.slice(1));
+    if (hash && map[hash] && !document.getElementById(hash)) {
+      window.location.replace(map[hash]);
+    }
+  })();
+{% endapply %}</script>
+{%- endif -%}
