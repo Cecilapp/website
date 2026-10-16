@@ -2,6 +2,7 @@
 title: Add a table of contents and notes
 description: Enrich Cecil Markdown pages with a table of contents, note blocks and custom attributes.
 date: 2026-10-14
+updated: 2026-10-16
 schedule:
   publish: 2026-10-14
 ---
@@ -52,7 +53,7 @@ Highlight information with a note block:
 :::
 ```
 
-Is converted to:
+It is converted to:
 
 ```html
 <aside class="note note-tip">
@@ -64,9 +65,25 @@ Is converted to:
 
 Available types are `info`, `tip`, `important`, `warning` and `caution` (or no type). Style them with the `note` and `note-<type>` CSS classes.
 
+To nest notes, use a longer fence for the parent note (`::::`, then `:::::` for a third level, etc.):
+
+```markdown
+::::info
+Before.
+
+:::tip
+**Tip:** This is advice.
+:::
+
+After.
+::::
+```
+
+Cecil also provides note templates to structure content without JavaScript: `tabs`, `code-group`, `steps`, `accordion` and `cards`. Their items are defined with `####` headings (or list entries for `cards`), and each type is rendered with the `partials/notes/<type>.html.twig` template, which you can override.
+
 ## Add attributes
 
-Set an id, a class or any attribute on a heading, a fenced code block, a link or an image, inside curly brackets at the end of the line:
+Set an id, a class or any attribute on a heading, a fenced code block, a link or an image, inside curly braces at the end of the line:
 
 ```markdown
 ## Installation {#install .highlighted}
@@ -79,5 +96,5 @@ For an inline element, like a link, add a line break after the closing brace.
 :::
 
 :::info
-See the documentation of the [table of contents](/documentation/content/#table-of-contents), [notes](/documentation/content/#notes), [attributes](/documentation/content/#attributes) and the [`toc` filter](/documentation/templates/#toc).
+See the documentation of the [table of contents](/documentation/content/markdown/#table-of-contents), [notes](/documentation/content/markdown/#notes) and their [templates](/documentation/content/markdown/#templates), [attributes](/documentation/content/markdown/#attributes) and the [`toc` filter](/documentation/templates/reference/filters/#toc).
 :::

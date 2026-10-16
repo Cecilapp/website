@@ -2,6 +2,7 @@
 title: Add client-side search
 description: Add a client-side search to a Cecil static site with a JSON index of pages and a small JavaScript library.
 date: 2026-10-08
+updated: 2026-10-16
 schedule:
   publish: 2026-10-08
 ---
@@ -9,7 +10,7 @@ A static site has no server-side search, but Cecil can generate a **JSON index o
 
 ## Create the index page
 
-Create a page whose only [output format](/documentation/content/#output) is `json`, with a dedicated layout:
+Create a page whose only [output format](/documentation/content/front-matter/#output) is `json`, with a dedicated layout:
 
 _pages/search.md_
 
@@ -22,11 +23,11 @@ excluded: true
 ---
 ```
 
-[`excluded: true`](/documentation/content/#excluded) keeps this technical page out of list pages and the sitemap.
+[`excluded: true`](/documentation/content/front-matter/#excluded) keeps this technical page out of list pages and the sitemap.
 
 ## Write the JSON template
 
-Following the [lookup rules](/documentation/templates/#lookup-rules), Cecil renders this page with `layouts/search.json.twig`. Build an array of the [showable](/documentation/templates/#site) pages, then encode it:
+Following the [lookup rules](/documentation/templates/lookup-rules/#lookup-rules), Cecil renders this page with `layouts/search.json.twig`. Build an array of the [showable](/documentation/templates/variables/#site) pages, then encode it:
 
 ```twig
 {%- set index = [] -%}
@@ -43,8 +44,8 @@ Following the [lookup rules](/documentation/templates/#lookup-rules), Cecil rend
 
 After `php cecil.phar build`, the index is available at `/search.json`.
 
-:::info
-See the [`output` variable](/documentation/content/#output), the [output formats](/documentation/configuration/#output-formats) and the [`url` function](/documentation/templates/#url) documentation.
+:::warning
+`site.pages.showable` excludes virtual pages: pages created by a generator or declared in `pages.virtual` are not indexed.
 :::
 
 ## Search with Fuse.js
@@ -96,5 +97,9 @@ Then load its UI in a template:
 ```
 
 :::tip
-The index is a regular page: to regenerate only JSON outputs, declare a [subset](/documentation/configuration/#pages-subsets) and run `php cecil.phar build --render-subset=<name>`.
+The index is a regular page: to regenerate only JSON outputs, declare a [subset](/documentation/configuration/pages/#pages-subsets) and run `php cecil.phar build --render-subset=<name>`.
+:::
+
+:::info
+See the [`output` variable](/documentation/content/front-matter/#output), the [output formats](/documentation/configuration/output/#output-formats) and the [`url` function](/documentation/templates/reference/functions/#url) documentation.
 :::

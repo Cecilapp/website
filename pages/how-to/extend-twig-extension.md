@@ -2,10 +2,11 @@
 title: Add a custom Twig function or filter
 description: Extend Cecil templates with your own Twig functions and filters through a Twig extension.
 date: 2026-10-21
+updated: 2026-10-16
 schedule:
   publish: 2026-10-21
 ---
-Cecil provides many template [functions](/documentation/templates/#functions) and [filters](/documentation/templates/#filters), but you can add your own with a [Twig extension](https://twig.symfony.com/doc/advanced.html#creating-an-extension) written in PHP.
+Cecil provides many template [functions](/documentation/templates/reference/functions/) and [filters](/documentation/templates/reference/filters/), but you can add your own with a [Twig extension](https://twig.symfony.com/doc/advanced.html#creating-an-extension) written in PHP.
 
 ## Create the extension class
 
@@ -62,5 +63,5 @@ layouts:
 ```
 
 :::tip
-Run the build with the `-vvv` option to check that the extension is loaded: Cecil logs `Twig extension "MyExtension" added`, or an error if the class can’t be loaded. See the [Twig extension documentation](/documentation/extend/#twig-extension).
+Run the build with the `-vvv` option to check that the extension is loaded: Cecil logs `Twig extension "MyExtension" added`, or an error if the class can’t be loaded. See the [Twig extension documentation](/documentation/developers/extend/#twig-extension).
 :::

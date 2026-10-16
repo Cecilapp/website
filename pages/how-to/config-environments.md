@@ -2,6 +2,7 @@
 title: Use different settings per environment
 description: Override the Cecil configuration per environment with CECIL_ environment variables and extra config files.
 date: 2026-10-12
+updated: 2026-10-16
 schedule:
   publish: 2026-10-12
 ---
@@ -20,8 +21,9 @@ debug: false
 Create a file with only the keys to change, for example `config/dev.yml`:
 
 ```yaml
-baseurl: http://localhost:8000/
 debug: true
+cache:
+  enabled: false
 ```
 
 Then load it with the `--config` option, available with the `build` and `serve` commands:
@@ -30,11 +32,19 @@ Then load it with the `--config` option, available with the `build` and `serve` 
 php cecil.phar serve --config=config/dev.yml
 ```
 
+:::info
+You don’t need to set `baseurl` for local preview: the `serve` command always builds the site with its own local URL (e.g. `http://localhost:8000/`).
+:::
+
 You can pass several files, separated by commas. They are merged in order after `cecil.yml`, so each file overrides the previous ones:
 
 ```bash
 php cecil.phar build --config=config/prod.yml,config/local.yml
 ```
+
+:::warning
+Lists are merged, not replaced: if `cecil.yml` defines `pages.body.toc: [h2, h3]` and an extra file defines `pages.body.toc: [h4]`, the result is `[h2, h3, h4]`.
+:::
 
 ## Override with environment variables
 
@@ -46,14 +56,18 @@ export CECIL_DEBUG=true
 php cecil.phar build
 ```
 
+:::info
+As each underscore is turned into a dot, keys that contain an underscore (e.g. `pages.body.images.dark_suffix`) can’t be set with an environment variable.
+:::
+
 Cecil also loads a `.env` file from the site root, if it exists (variables already defined by the system are preserved):
 
 ```dotenv
-CECIL_BASEURL="http://localhost:8000/"
+CECIL_TITLE="My site (preview)"
 CECIL_DEBUG=true
 ```
 
-Environment variables are applied on top of the configuration files, which makes them handy in CI, for example:
+Environment variables are applied last, on top of the configuration files **and** of command options such as `--baseurl`, which makes them handy in CI, for example:
 
 ```yaml
 # .gitlab-ci.yml
@@ -80,5 +94,5 @@ The `site.debug` variable tells you if debug mode is enabled:
 ```
 
 :::info
-See the documentation for [overriding the configuration](/documentation/configuration/#override-configuration), the [`debug` option](/documentation/configuration/#debug) and the [`getenv` function](/documentation/templates/#getenv).
+See the documentation for [overriding the configuration](/documentation/configuration/override/), the [`debug` option](/documentation/configuration/site/#debug) and the [`getenv` function](/documentation/templates/reference/functions/#getenv).
 :::

@@ -3,6 +3,7 @@ title: Traduire un site en plusieurs langues
 description: Traduire les pages, la configuration et les textes des templates d’un site Cecil en plusieurs langues.
 path: comment-faire/contenu-multilingue
 date: 2026-10-04
+updated: 2026-10-16
 schedule:
   publish: 2026-10-04
 ---
@@ -64,9 +65,13 @@ Chaque page expose ses traductions via `page.translations`. Ajoutez un sélecteu
 
 Vous pouvez aussi inclure le partial intégré : `{{ include('partials/languages.html.twig') }}`.
 
+:::tip
+Les traductions sont reliées par la variable `langref`, qui est déduite par défaut du chemin du fichier. Pour relier des pages dont les chemins diffèrent, définissez le même `langref` dans leur front matter (par exemple `langref: about`).
+:::
+
 ## Traduire les textes des templates
 
-Encadrez les textes avec le tag ou le filtre `trans` :
+Encadrez les textes avec la balise ou le filtre `trans` :
 
 ```twig
 {% trans %}Read more{% endtrans %}
@@ -87,5 +92,5 @@ php cecil.phar util:translations:extract --locale=fr_FR --save
 ```
 
 :::info
-Consultez la documentation du [contenu multilingue](/documentation/content/#multilingual), de la [configuration des langues](/documentation/configuration/#languages) et de la [localisation des templates](/documentation/templates/#localization).
+Consultez la documentation du [contenu multilingue](/fr/documentation/contenu/multilingue/), de la [configuration des langues](/fr/documentation/configuration/langues/#languages) et de la [localisation des templates](/fr/documentation/templates/localisation/).
 :::

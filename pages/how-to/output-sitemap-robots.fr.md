@@ -3,10 +3,11 @@ title: Personnaliser le sitemap et le robots.txt
 description: Contrôler les fichiers sitemap XML et robots.txt générés par Cecil, exclure des pages et surcharger les templates.
 path: comment-faire/sortie-sitemap-robots
 date: 2026-10-16
+updated: 2026-10-16
 schedule:
   publish: 2026-10-16
 ---
-Cecil génère automatiquement `/sitemap.xml` et `/robots.txt` : ce sont des [pages par défaut](/documentation/configuration/#pages-default) générées avec les templates intégrés `_default/sitemap.xml.twig` et `_default/robots.txt.twig`.
+Cecil génère automatiquement `/sitemap.xml` et `/robots.txt` : ce sont des [pages par défaut](/fr/documentation/configuration/pages/#pages-default) générées avec les templates intégrés `_default/sitemap.xml.twig` et `_default/robots.txt.twig`.
 
 ## Fonctionnement
 
@@ -28,15 +29,15 @@ pages:
 ```
 
 - le **sitemap** liste toutes les pages affichables (publiées, ni virtuelles, ni redirigées, ni exclues), avec leurs traductions ;
-- le **robots.txt** autorise tout, interdit les redirections et la page 404, et indique l’emplacement du sitemap.
+- le **robots.txt** autorise tout, interdit les pages de redirection et la page 404, et indique l’emplacement du sitemap.
 
 :::important
-Définissez [`baseurl`](/documentation/configuration/#baseurl) dans `cecil.yml` : les deux fichiers utilisent des URL absolues.
+Définissez [`baseurl`](/fr/documentation/configuration/site/#baseurl) dans `cecil.yml` : les deux fichiers utilisent des URL absolues.
 :::
 
 ## Exclure une page du sitemap
 
-Ajoutez [`excluded`](/documentation/content/#excluded) dans le front matter de la page :
+Ajoutez [`excluded`](/fr/documentation/contenu/front-matter/#excluded) dans le front matter de la page :
 
 ```yaml
 ---
@@ -45,7 +46,7 @@ excluded: true
 ---
 ```
 
-La page est toujours publiée, mais masquée du sitemap et des pages de liste (page d’accueil, sections, etc.). Utilisez `published: false` pour ne pas la publier du tout.
+La page est toujours publiée, mais retirée du sitemap et des pages de liste (page d’accueil, sections, etc.). Utilisez `published: false` pour ne pas la publier du tout.
 
 ## Modifier la fréquence et la priorité par défaut
 
@@ -57,13 +58,29 @@ pages:
       priority: 0.8
 ```
 
+Vous pouvez aussi les définir page par page, dans le front matter :
+
+```yaml
+---
+title: Actualités
+sitemap:
+  changefreq: daily
+  priority: 0.9
+---
+```
+
+:::info
+Les pages ayant une URL canonique personnalisée (`canonical.url` dans le front matter) ne sont pas listées dans le sitemap.
+:::
+
 ## Ajouter des règles au robots.txt
 
-Créez une page `pages/robots.md` : son contenu est ajouté aux règles générées.
+Créez une page `pages/robots.md` : son contenu est ajouté aux règles générées. Comme elle remplace la page `robots` par défaut, définissez `excluded: true` pour l’exclure du sitemap et des pages de liste.
 
 ```markdown
 ---
 layout: robots
+excluded: true
 output: txt
 ---
 User-agent: GPTBot
@@ -72,7 +89,7 @@ Disallow: /
 
 ## Surcharger les templates
 
-Extrayez les [templates intégrés](/documentation/templates/#built-in-templates) pour partir des originaux :
+Extrayez les [templates intégrés](/fr/documentation/templates/regles-de-recherche/#templates-integres) pour partir des originaux :
 
 ```bash
 php cecil.phar util:templates:extract

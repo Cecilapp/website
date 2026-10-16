@@ -2,6 +2,7 @@
 title: Publish an RSS or JSON feed
 description: Publish RSS, Atom or JSON feeds of your Cecil site with output formats and built-in templates.
 date: 2026-10-06
+updated: 2026-10-16
 schedule:
   publish: 2026-10-06
 ---
@@ -21,23 +22,23 @@ output:
 Cecil now generates `rss.xml` and `feed.json` next to each `index.html` of the home page and sections (e.g. `/blog/rss.xml`, `/blog/feed.json`).
 
 :::info
-Formats are replaced, not merged: keep `html` in the list. See [`output.pagetypeformats`](/documentation/configuration/#output-pagetypeformats) and the list of [default formats](/documentation/configuration/#output-formats).
+Formats are replaced, not merged: keep `html` in the list. See [`output.pagetypeformats`](/documentation/configuration/output/#output-pagetypeformats) and the list of [default formats](/documentation/configuration/output/#default-formats).
 :::
 
 ## Enable a feed for a single section
 
-To publish a feed only for one section, use the [`output`](/documentation/content/#output) variable in the front matter of the section index page:
+To publish a feed only for one section, use the [`output`](/documentation/content/front-matter/#output) variable in the front matter of the section index page. It replaces the default formats of the section, so keep `atom` in the list if you still want the Atom feed:
 
 ```yaml
 ---
 title: Blog
-output: [html, rss]
+output: [html, atom, rss]
 ---
 ```
 
 ## Advertise the feed
 
-If your templates include the [metatags partial](/documentation/configuration/#metatags), `<link rel="alternate">` tags pointing to the feeds of the current page are added automatically in the `<head>`.
+If your templates include the [metatags partial](/how-to/templates-metatags/) (see the [`metatags` configuration](/documentation/configuration/site/#metatags)), `<link rel="alternate">` tags pointing to the feeds of the current page are added automatically in the `<head>`.
 
 Otherwise, add the link yourself with the `url()` function and its `format` option:
 
@@ -47,7 +48,7 @@ Otherwise, add the link yourself with the `url()` function and its `format` opti
 
 ## Customize the feed template
 
-Feeds are rendered by the [built-in templates](/documentation/templates/#built-in-templates) `_default/list.rss.twig`, `_default/list.atom.twig` and `_default/list.jsonfeed.twig`. Following the [lookup rules](/documentation/templates/#lookup-rules), create `layouts/list.rss.twig` (all list pages) or `layouts/blog/list.rss.twig` (`blog` section only) to override them.
+Feeds are rendered by the [built-in templates](/documentation/templates/lookup-rules/#built-in-templates) `_default/list.rss.twig`, `_default/list.atom.twig` and `_default/list.jsonfeed.twig`. Following the [lookup rules](/documentation/templates/lookup-rules/#lookup-rules), create `layouts/list.rss.twig` (home page and sections) or `layouts/blog/list.rss.twig` (`blog` section only) to override them.
 
 You can extend the built-in template and redefine only the `item` block, for example to publish an excerpt instead of the full content:
 
@@ -64,9 +65,9 @@ You can extend the built-in template and redefine only the `item` block, for exa
 ```
 
 :::tip
-Set [`baseurl`](/documentation/configuration/#baseurl) in `cecil.yml`: feeds use absolute URLs.
+Set [`baseurl`](/documentation/configuration/site/#baseurl) in `cecil.yml`: feeds use absolute URLs.
 
-The RSS feed can also be styled in browsers by enabling the `xsl/rss` [default page](/documentation/configuration/#pages-default):
+The RSS feed can also be styled in browsers by enabling the `xsl/rss` [default page](/documentation/configuration/pages/#pages-default):
 
 ```yaml
 pages:

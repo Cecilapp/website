@@ -2,6 +2,7 @@
 title: Generate pages from data files
 description: Use YAML, JSON, CSV or XML data files to build Cecil pages without writing Markdown for each item.
 date: 2026-10-19
+updated: 2026-10-16
 schedule:
   publish: 2026-10-19
 ---
@@ -21,6 +22,8 @@ Store your files in the `data` directory. Supported formats are YAML, JSON, XML 
 
 :::tip
 A localized version can be added with a language suffix (e.g. `data/team.fr.yml`): it is used for the pages in that language.
+
+As soon as a language has at least one localized data file, `site.data` only contains the localized files for that language: non-localized files are no longer available to its pages.
 :::
 
 ## Display data in a template
@@ -44,7 +47,7 @@ Files in sub-directories are nested: `data/galleries/gallery-1.json` is availabl
 
 ## Create the page
 
-The page that uses this template doesn’t need any content, so declare it as a [virtual page](/documentation/configuration/#pages-virtual) in `cecil.yml`:
+The page that uses this template doesn’t need any content, so declare it as a [virtual page](/documentation/configuration/pages/#pages-virtual) in `cecil.yml`:
 
 ```yaml
 pages:
@@ -58,7 +61,7 @@ You can also create a `pages/team.md` file with `layout: team` in its front matt
 
 ## Generate one page per item
 
-To generate a page per entry, create a [pages generator](/documentation/extend/#pages-generator). Data loaded from data files is available with `$this->builder->getData()`:
+To generate a page per entry, create a [pages generator](/documentation/developers/extend/#page-generators). Data loaded from data files is available with `$this->builder->getData()`:
 
 ```php
 <?php
@@ -79,6 +82,7 @@ class Team extends AbstractGenerator implements GeneratorInterface
             $page = (new Page("team/$slug"))
                 ->setType(Type::PAGE->value)
                 ->setPath("team/$slug")
+                ->setSection('team')
                 ->setBodyHtml('<p>' . htmlspecialchars($member['role']) . '</p>')
                 ->setVariable('title', $member['name']);
             $this->generatedPages->add($page);
@@ -96,5 +100,9 @@ pages:
 ```
 
 :::info
-See the documentation of [data configuration](/documentation/configuration/#data), the [`site.data` variable](/documentation/templates/#site) and [pages generators](/documentation/extend/#pages-generator).
+Pages created by a generator are _virtual_: `setSection()` is required to group them in the `team` section, and they are not listed in `site.pages.showable` nor in the sitemap.
+:::
+
+:::info
+See the documentation of [data configuration](/documentation/configuration/data-static/#data), the [`site.data` variable](/documentation/templates/variables/#site-data) and [pages generators](/documentation/developers/extend/#page-generators).
 :::

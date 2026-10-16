@@ -3,14 +3,15 @@ title: Ajouter une recherche côté client
 description: Ajouter une recherche côté client à un site statique Cecil avec un index JSON des pages et une petite bibliothèque JavaScript.
 path: comment-faire/sortie-index-de-recherche
 date: 2026-10-08
+updated: 2026-10-16
 schedule:
   publish: 2026-10-08
 ---
-Un site statique n’a pas de recherche côté serveur, mais Cecil peut générer un **index JSON de vos pages** au moment du build. Quelques lignes de JavaScript suffisent ensuite pour l’interroger dans le navigateur.
+Un site statique n’a pas de recherche côté serveur, mais Cecil peut générer un **index JSON de vos pages** au moment de la génération. Quelques lignes de JavaScript suffisent ensuite pour l’interroger dans le navigateur.
 
 ## Créer la page d’index
 
-Créez une page dont le seul [format de sortie](/documentation/content/#output) est `json`, avec un layout dédié :
+Créez une page dont le seul [format de sortie](/fr/documentation/contenu/front-matter/#output) est `json`, avec un layout dédié :
 
 _pages/search.md_
 
@@ -23,11 +24,11 @@ excluded: true
 ---
 ```
 
-[`excluded: true`](/documentation/content/#excluded) exclut cette page technique des pages de liste et du sitemap.
+[`excluded: true`](/fr/documentation/contenu/front-matter/#excluded) exclut cette page technique des pages de liste et du sitemap.
 
 ## Écrire le template JSON
 
-Selon les [règles de recherche](/documentation/templates/#lookup-rules), Cecil génère cette page avec `layouts/search.json.twig`. Construisez un tableau des pages [affichables](/documentation/templates/#site) (_showable_), puis encodez-le :
+Selon les [règles de recherche](/fr/documentation/templates/regles-de-recherche/#regles-de-recherche), Cecil génère cette page avec `layouts/search.json.twig`. Construisez un tableau des pages [affichables](/fr/documentation/templates/variables/#site) (_showable_), puis encodez-le :
 
 ```twig
 {%- set index = [] -%}
@@ -44,8 +45,8 @@ Selon les [règles de recherche](/documentation/templates/#lookup-rules), Cecil 
 
 Après `php cecil.phar build`, l’index est disponible à l’adresse `/search.json`.
 
-:::info
-Consultez la documentation de la [variable `output`](/documentation/content/#output), des [formats de sortie](/documentation/configuration/#output-formats) et de la [fonction `url`](/documentation/templates/#url).
+:::warning
+`site.pages.showable` exclut les pages virtuelles : les pages créées par un générateur ou déclarées dans `pages.virtual` ne sont pas indexées.
 :::
 
 ## Rechercher avec Fuse.js
@@ -78,7 +79,7 @@ Ajoutez un champ de recherche dans un template et chargez [Fuse.js](https://www.
 
 ## Alternative : Pagefind
 
-[Pagefind](https://pagefind.app) indexe directement les fichiers HTML générés : aucun template JSON n’est nécessaire. Lancez-le après le build, sur le répertoire de sortie (`_site` par défaut) :
+[Pagefind](https://pagefind.app) indexe directement les fichiers HTML générés : aucun template JSON n’est nécessaire. Lancez-le après la génération, sur le répertoire de sortie (`_site` par défaut) :
 
 ```bash
 php cecil.phar build
@@ -97,5 +98,9 @@ Chargez ensuite son interface dans un template :
 ```
 
 :::tip
-L’index est une page comme les autres : pour ne régénérer que les sorties JSON, déclarez un [sous-ensemble](/documentation/configuration/#pages-subsets) et lancez `php cecil.phar build --render-subset=<name>`.
+L’index est une page comme les autres : pour ne régénérer que les sorties JSON, déclarez un [sous-ensemble](/fr/documentation/configuration/pages/#pages-subsets) et lancez `php cecil.phar build --render-subset=<name>`.
+:::
+
+:::info
+Consultez la documentation de la [variable `output`](/fr/documentation/contenu/front-matter/#output), des [formats de sortie](/fr/documentation/configuration/sortie/#output-formats) et de la [fonction `url`](/fr/documentation/templates/reference/fonctions/#url).
 :::

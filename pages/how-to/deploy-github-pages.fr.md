@@ -1,12 +1,13 @@
 ---
 title: Déployer sur GitHub Pages avec GitHub Actions
-description: Générer et déployer automatiquement un site Cecil sur GitHub Pages avec la GitHub Action de Cecil.
+description: Générer et déployer automatiquement un site Cecil sur GitHub Pages avec l’action GitHub de Cecil.
 path: comment-faire/deploiement-github-pages
 date: 2026-10-07
+updated: 2026-10-16
 schedule:
   publish: 2026-10-07
 ---
-Avec la [Cecil Action](https://github.com/Cecilapp/Cecil-Action), chaque push sur votre dépôt génère le site et le publie sur **GitHub Pages**, sans serveur à gérer.
+Avec l’[action Cecil](https://github.com/Cecilapp/Action), chaque push sur votre dépôt génère le site et le publie sur **GitHub Pages**, sans serveur à gérer.
 
 ## Activer GitHub Pages
 
@@ -30,9 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Build site
-        uses: Cecilapp/Cecil-Action@v4
+        uses: Cecilapp/Action@v4
   deploy:
     needs: build
     permissions:
@@ -60,13 +61,18 @@ L’action accepte les paramètres optionnels suivants :
 
 ```yaml
       - name: Build site
-        uses: Cecilapp/Cecil-Action@v4
+        uses: Cecilapp/Action@v4
         with:
-          version: '9.6.2'       # version de Cecil (la dernière par défaut)
+          path: docs             # répertoire du site, relatif à la racine du dépôt (`.` par défaut)
+          version: '9.13.0'      # version de Cecil (la dernière par défaut)
           install_themes: 'no'   # ne pas installer les thèmes (`yes` par défaut)
           options: '-v --drafts' # options de la commande build (`-v` par défaut)
 ```
 
+:::warning
+L’action envoie le répertoire `_site` du site, ou celui indiqué par l’option `--output` (`-o`) dans `options` : elle ne lit pas `output.dir` dans `cecil.yml`. Si vous changez le répertoire de sortie, passez-le dans `options`, par exemple `options: '-v --output=public'`.
+:::
+
 :::tip
-Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans la [documentation du déploiement sur GitHub Pages](/documentation/deploy/#github-pages), ainsi que la liste des [options de build](/documentation/commands/#build).
+Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans la [documentation du déploiement sur GitHub Pages](/fr/documentation/deployer/deploiement-continu/#github-pages), ainsi que la liste des [options de génération](/fr/documentation/commandes/build/).
 :::

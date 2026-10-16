@@ -2,6 +2,7 @@
 title: Organize pages with tags and categories
 description: Classify Cecil pages with taxonomies like tags and categories, and customize their list pages.
 date: 2026-10-10
+updated: 2026-10-16
 schedule:
   publish: 2026-10-10
 ---
@@ -49,7 +50,7 @@ The _vocabulary_ template is named after the **plural**, e.g. `layouts/taxonomy/
   <h1>{{ page.title }}</h1>
   <ul>
   {% for term in page.terms %}
-    <li><a href="{{ url(term.id) }}">{{ term.name }}</a> ({{ term|length }})</li>
+    <li><a href="{{ url(term.id, {language: site.language}) }}">{{ term.name }}</a> ({{ term|length }})</li>
   {% endfor %}
   </ul>
 {% endblock %}
@@ -69,7 +70,7 @@ The _term_ template is named after the **singular**, e.g. `layouts/taxonomy/tag.
       <h2><a href="{{ url(p) }}">{{ p.title }}</a></h2>
     </article>
   {% endfor %}
-  <a href="{{ url(page.plural) }}">All {{ page.plural }}</a>
+  <a href="{{ url(page.plural, {language: site.language}) }}">All {{ page.plural }}</a>
 {% endblock %}
 ```
 
@@ -79,12 +80,14 @@ In a page template, link each term to its page:
 
 ```twig
 {% for tag in page.tags ?? [] %}
-  <a href="{{ url('tags/' ~ tag) }}">{{ tag }}</a>
+  <a href="{{ url('tags/' ~ tag, {language: site.language}) }}">{{ tag }}</a>
 {% endfor %}
 ```
+
+The `language` option keeps links in the current language on a multilingual site.
 
 Or use the built-in partial: `{{ include('partials/terms-list.html.twig', {vocabulary: 'tags'}) }}`.
 
 :::info
-See the documentation of [taxonomies configuration](/documentation/configuration/#taxonomies), [templates lookup rules](/documentation/templates/#type-vocabulary) and [taxonomy variables](/documentation/templates/#page).
+See the documentation of [taxonomies configuration](/documentation/configuration/site/#taxonomies), [templates lookup rules](/documentation/templates/lookup-rules/#type-vocabulary) and [taxonomy variables](/documentation/templates/variables/#taxonomy).
 :::

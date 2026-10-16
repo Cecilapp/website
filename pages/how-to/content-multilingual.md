@@ -2,6 +2,7 @@
 title: Translate a site into multiple languages
 description: Translate pages, configuration and template strings of a Cecil site into multiple languages.
 date: 2026-10-04
+updated: 2026-10-16
 schedule:
   publish: 2026-10-04
 ---
@@ -33,7 +34,7 @@ Duplicate the reference page and suffix its file name with the language code:
 ```plaintext
 pages/
 ├─ about.md    # the reference page
-└─ about.fr.md # the french version
+└─ about.fr.md # the French version
 ```
 
 Use the `slug` variable to translate the URL of the page:
@@ -63,6 +64,10 @@ Each page exposes its translations with `page.translations`. Add a language swit
 
 You can also include the built-in partial: `{{ include('partials/languages.html.twig') }}`.
 
+:::tip
+Translations are linked through the `langref` variable, which is derived from the file path by default. To link pages whose file paths differ, set the same `langref` in their front matter (e.g. `langref: about`).
+:::
+
 ## Translate template strings
 
 Wrap texts with the `trans` tag or filter:
@@ -86,5 +91,5 @@ php cecil.phar util:translations:extract --locale=fr_FR --save
 ```
 
 :::info
-See the documentation of [multilingual content](/documentation/content/#multilingual), [languages configuration](/documentation/configuration/#languages) and [templates localization](/documentation/templates/#localization).
+See the documentation of [multilingual content](/documentation/content/multilingual/), [languages configuration](/documentation/configuration/languages/#languages) and [templates localization](/documentation/templates/localization/).
 :::
