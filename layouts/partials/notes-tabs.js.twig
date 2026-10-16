@@ -1,17 +1,21 @@
-    {#- Tabs and code group notes: turns stacked panels into tabs, synced by label across the page ~#}
+    {#- Tabs and code group notes: turns stacked panels into tabs, optionally synced by label across the page ~#}
     <script>{% apply minify_js ~%}
       (() => {
+        const sync = {{ (site.notes.tabs.sync ?? false) ? 'true' : 'false' }};
         const storageKey = 'notes-tabs';
         const groups = [];
-        const select = (label, store = false) => {
+        const select = (group, index) => {
+          group.tabs.forEach((tab, i) => {
+            tab.setAttribute('aria-selected', i === index);
+            tab.tabIndex = i === index ? 0 : -1;
+            group.panels[i].hidden = i !== index;
+          });
+        };
+        // selects the tab with this label in every group
+        const selectLabel = (label, store = false) => {
           groups.forEach((group) => {
             const index = group.labels.indexOf(label);
-            if (index === -1) return;
-            group.tabs.forEach((tab, i) => {
-              tab.setAttribute('aria-selected', i === index);
-              tab.tabIndex = i === index ? 0 : -1;
-              group.panels[i].hidden = i !== index;
-            });
+            if (index !== -1) select(group, index);
           });
           if (store) {
             try { localStorage.setItem(storageKey, label); } catch (e) {}
@@ -36,7 +40,7 @@
             tab.setAttribute('aria-controls', panel.id);
             panel.setAttribute('role', 'tabpanel');
             panel.setAttribute('aria-labelledby', tab.id);
-            tab.addEventListener('click', () => select(label, true));
+            tab.addEventListener('click', () => (sync ? selectLabel(label, true) : select(group, i)));
             tab.addEventListener('keydown', (event) => {
               const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
               if (!step) return;
@@ -52,14 +56,20 @@
           note.querySelectorAll('h4').forEach((heading) => heading.classList.add('js-toc-ignore'));
           panels[0].before(nav);
           groups.push(group);
-          select(group.labels[0]);
+          select(group, 0);
         });
-        let saved = null;
-        try { saved = localStorage.getItem(storageKey); } catch (e) {}
-        if (saved) select(saved);
-        // displays the tab containing the targeted anchor
+        if (sync) {
+          let saved = null;
+          try { saved = localStorage.getItem(storageKey); } catch (e) {}
+          if (saved) selectLabel(saved);
+        }
+        // displays the tab containing the targeted anchor (and its parent tabs, if nested)
         const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-        const panel = target && target.closest('.note-tab[role="tabpanel"]');
-        if (panel) select(document.getElementById(panel.id + '-tab').textContent);
+        if (target) {
+          groups.forEach((group) => {
+            const index = group.panels.findIndex((panel) => panel.contains(target));
+            if (index !== -1) select(group, index);
+          });
+        }
       })();
     {% endapply %}</script>

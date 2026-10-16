@@ -195,3 +195,8 @@ flexsearch:
       date: true # show the date of the post in the search results
 
 snow: false
+
+# tabs and code group notes
+notes:
+  tabs:
+    sync: false # selects the tab with the same label in every group of the page, and remembers it
