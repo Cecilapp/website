@@ -1,12 +1,28 @@
 [
   {
+    "name": "theme-papermod",
+    "full_name": "Cecilapp/theme-papermod",
+    "description": "A port of Hugo PaperMod theme for Cecil",
+    "github": "https://github.com/Cecilapp/theme-papermod",
+    "license": "MIT License",
+    "homepage": "https://cecilapp.github.io/theme-papermod/",
+    "date": "2026-10-17T01:56:29Z",
+    "default_branch": "main",
+    "topics": [
+      "blog",
+      "cecil",
+      "cecil-theme",
+      "theme"
+    ]
+  },
+  {
     "name": "theme-leon",
     "full_name": "Cecilapp/theme-leon",
     "description": "Léon is a documentation theme for Cecil, with a warm palette, an editorial typography, tabs, search, content components and AI friendly pages.",
     "github": "https://github.com/Cecilapp/theme-leon",
     "license": "MIT License",
     "homepage": "https://cecilapp.github.io/theme-leon/",
-    "date": "2026-10-14T21:18:33Z",
+    "date": "2026-10-16T22:05:16Z",
     "default_branch": "main",
     "topics": [
       "cecil",
