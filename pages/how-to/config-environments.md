@@ -2,7 +2,7 @@
 title: Use different settings per environment
 description: Override the Cecil configuration per environment with CECIL_ environment variables and extra config files.
 date: 2026-10-12
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-12
 ---
@@ -33,7 +33,7 @@ php cecil.phar serve --config=config/dev.yml
 ```
 
 :::info
-You don’t need to set `baseurl` for local preview: the `serve` command always builds the site with its own local URL (e.g. `http://localhost:8000/`).
+You don’t need to set `baseurl` for local preview: the `serve` command builds the site with its own local URL (e.g. `http://localhost:8000/`), unless the `CECIL_BASEURL` environment variable is set, including in a `.env` file (see below).
 :::
 
 You can pass several files, separated by commas. They are merged in order after `cecil.yml`, so each file overrides the previous ones:
@@ -43,7 +43,7 @@ php cecil.phar build --config=config/prod.yml,config/local.yml
 ```
 
 :::warning
-Lists are merged, not replaced: if `cecil.yml` defines `pages.body.toc: [h2, h3]` and an extra file defines `pages.body.toc: [h4]`, the result is `[h2, h3, h4]`.
+Lists of values are replaced, not merged: if `cecil.yml` defines `pages.body.toc: [h2, h3]` and an extra file defines `pages.body.toc: [h4]`, the result is `[h4]`. To add or remove a value instead, use a map of booleans (e.g. `pages.body.toc: {h4: true}`). Lists of entries, such as menus, are concatenated. See [lists](/documentation/configuration/#lists).
 :::
 
 ## Override with environment variables

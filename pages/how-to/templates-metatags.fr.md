@@ -3,9 +3,9 @@ title: Appliquer les fonctionnalités SEO dans les templates
 description: Ajouter les fonctionnalités SEO de Cecil aux templates avec le partial metatags.
 path: comment-faire/templates-metatags
 date: 2026-06-09
-updated: 2026-10-16
+updated: 2026-10-18
 ---
-Cecil expose ses fonctionnalités SEO via le template `partials/metatags.html.twig`. Il suffit de l’inclure dans le `<head>` du template de base pour que chaque page bénéficie automatiquement **du titre, des balises meta, des liens canoniques, des cartes sociales et des données structurées**.
+Cecil expose ses fonctionnalités SEO via le template `partials/metatags.html.twig`. Il suffit de l’inclure dans le `<head>` du template de base pour que chaque page bénéficie automatiquement **du titre, des balises meta, des liens canoniques et des cartes sociales**. Les données structurées (JSON-LD) peuvent aussi être ajoutées, en passant l’option `metatags.data` à `true`.
 
 ```twig
 <html lang="{{ site.language }}">

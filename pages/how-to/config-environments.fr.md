@@ -3,7 +3,7 @@ title: Utiliser des réglages différents selon l’environnement
 description: Surcharger la configuration de Cecil selon l’environnement avec les variables d’environnement CECIL_ et des fichiers de configuration supplémentaires.
 path: comment-faire/configuration-environnements
 date: 2026-10-12
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-12
 ---
@@ -34,7 +34,7 @@ php cecil.phar serve --config=config/dev.yml
 ```
 
 :::info
-Inutile de définir `baseurl` pour la prévisualisation locale : la commande `serve` génère toujours le site avec sa propre URL locale (par exemple `http://localhost:8000/`).
+Inutile de définir `baseurl` pour la prévisualisation locale : la commande `serve` génère le site avec sa propre URL locale (par exemple `http://localhost:8000/`), sauf si la variable d’environnement `CECIL_BASEURL` est définie, y compris dans un fichier `.env` (voir ci-dessous).
 :::
 
 Vous pouvez passer plusieurs fichiers, séparés par des virgules. Ils sont fusionnés dans l’ordre après `cecil.yml` : chaque fichier surcharge donc les précédents.
@@ -44,7 +44,7 @@ php cecil.phar build --config=config/prod.yml,config/local.yml
 ```
 
 :::warning
-Les listes sont fusionnées, pas remplacées : si `cecil.yml` définit `pages.body.toc: [h2, h3]` et qu’un fichier supplémentaire définit `pages.body.toc: [h4]`, le résultat est `[h2, h3, h4]`.
+Les listes de valeurs sont remplacées, pas fusionnées : si `cecil.yml` définit `pages.body.toc: [h2, h3]` et qu’un fichier supplémentaire définit `pages.body.toc: [h4]`, le résultat est `[h4]`. Pour ajouter ou retirer une valeur, utilisez plutôt une table de booléens (par exemple `pages.body.toc: {h4: true}`). Les listes d’entrées, comme les menus, sont concaténées. Voir les [listes](/fr/documentation/configuration/#listes).
 :::
 
 ## Surcharger avec des variables d’environnement

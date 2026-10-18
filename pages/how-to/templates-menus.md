@@ -2,7 +2,7 @@
 title: Build a navigation menu
 description: Declare menus in Cecil configuration or front matter and render them in templates.
 date: 2026-10-09
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-09
 ---
@@ -27,7 +27,7 @@ menus:
 ```
 
 :::info
-A `main` menu is automatically created with the home page entry and all section entries.
+A `main` menu is automatically created with the home page entry and the top-level section entries (unless they define their own `menu` variable).
 :::
 
 ## Add a page from its front matter

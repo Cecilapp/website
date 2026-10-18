@@ -3,7 +3,7 @@ title: Programmer la publication d’une page
 description: Publier ou dépublier une page Cecil à une date donnée avec la variable de front matter schedule.
 path: comment-faire/contenu-programmation
 date: 2026-10-17
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-17
 ---
@@ -33,9 +33,18 @@ schedule:
 ---
 ```
 
-:::warning
-Utilisez `publish` **ou** `expiry` dans une page, pas les deux : la page est publiée dès que l’une des deux conditions est remplie.
-:::
+## Publier une page entre deux dates
+
+Combinez les deux dates : la page est publiée uniquement si la date `publish` est atteinte **et** que la date `expiry` n’est pas dépassée :
+
+```yaml
+---
+title: Black Friday
+schedule:
+  publish: 2026-11-27
+  expiry: 2026-12-01
+---
+```
 
 ## Régénérer le site régulièrement
 

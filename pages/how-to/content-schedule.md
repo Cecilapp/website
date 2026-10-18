@@ -2,7 +2,7 @@
 title: Schedule the publication of a page
 description: Publish or unpublish a Cecil page at a given date with the schedule front matter variable.
 date: 2026-10-17
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-17
 ---
@@ -32,9 +32,18 @@ schedule:
 ---
 ```
 
-:::warning
-Use `publish` **or** `expiry` in a page, not both: the page is published as soon as one of the two conditions is met.
-:::
+## Publish a page between two dates
+
+Combine both dates: the page is published only if the `publish` date is reached **and** the `expiry` date is not passed:
+
+```yaml
+---
+title: Black Friday
+schedule:
+  publish: 2026-11-27
+  expiry: 2026-12-01
+---
+```
 
 ## Rebuild the site regularly
 

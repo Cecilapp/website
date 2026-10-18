@@ -3,7 +3,7 @@ title: Afficher un aperçu des images pendant leur chargement
 description: Afficher une couleur dominante ou un aperçu flouté pendant le chargement des images dans les templates Cecil.
 path: comment-faire/templates-placeholder-lqip
 date: 2026-10-15
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-15
 ---
@@ -34,7 +34,7 @@ L’option `placeholder` de la fonction `html` ne s’applique qu’aux images J
 Pour un balisage personnalisé, utilisez directement les filtres :
 
 - `lqip` : renvoie une version minuscule et floutée de l’image sous forme de _data URL_
-- `dominant_color` : renvoie la couleur hexadécimale dominante de l’image
+- `dominant_color` : renvoie la couleur dominante de l’image sous forme de valeur de couleur CSS (par exemple `rgb(120 85 60)`)
 
 ### Couleur dominante
 

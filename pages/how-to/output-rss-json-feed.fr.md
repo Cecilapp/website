@@ -3,7 +3,7 @@ title: Publier un flux RSS ou JSON
 description: Publier des flux RSS, Atom ou JSON de votre site Cecil avec les formats de sortie et les templates intégrés.
 path: comment-faire/sortie-flux-rss-json
 date: 2026-10-06
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-06
 ---
@@ -22,8 +22,17 @@ output:
 
 Cecil génère alors `rss.xml` et `feed.json` à côté de chaque `index.html` de la page d’accueil et des sections (par exemple `/blog/rss.xml`, `/blog/feed.json`).
 
+La liste remplace les formats par défaut : conservez-y `html` et `atom`. Pour seulement ajouter des formats à ceux par défaut, utilisez plutôt une table de booléens :
+
+```yaml
+output:
+  pagetypeformats:
+    homepage: {rss: true, jsonfeed: true}
+    section: {rss: true, jsonfeed: true}
+```
+
 :::info
-Les formats sont remplacés, pas fusionnés : conservez `html` dans la liste. Voir [`output.pagetypeformats`](/fr/documentation/configuration/sortie/#output-pagetypeformats) et la liste des [formats par défaut](/fr/documentation/configuration/sortie/#formats-par-defaut).
+Voir les [listes](/fr/documentation/configuration/#listes), [`output.pagetypeformats`](/fr/documentation/configuration/sortie/#output-pagetypeformats) et la liste des [formats par défaut](/fr/documentation/configuration/sortie/#formats-par-defaut).
 :::
 
 ## Activer un flux pour une seule section

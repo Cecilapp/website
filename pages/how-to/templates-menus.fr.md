@@ -3,7 +3,7 @@ title: Construire un menu de navigation
 description: Déclarer des menus dans la configuration ou le front matter de Cecil et les afficher dans les templates.
 path: comment-faire/templates-menus
 date: 2026-10-09
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-09
 ---
@@ -28,7 +28,7 @@ menus:
 ```
 
 :::info
-Un menu `main` est automatiquement créé avec l’entrée de la page d’accueil et celles de toutes les sections.
+Un menu `main` est automatiquement créé avec l’entrée de la page d’accueil et celles des sections de premier niveau (sauf si elles définissent leur propre variable `menu`).
 :::
 
 ## Ajouter une page depuis son front matter

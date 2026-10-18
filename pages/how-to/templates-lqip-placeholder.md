@@ -2,7 +2,7 @@
 title: Display image placeholders while loading
 description: Show a dominant color or a blurred preview while images load in Cecil templates.
 date: 2026-10-15
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-15
 ---
@@ -33,7 +33,7 @@ The `placeholder` option of the `html` function only applies to JPEG, PNG and GI
 For custom markup, use the filters directly:
 
 - `lqip`: returns a tiny blurred version of the image as a data URL
-- `dominant_color`: returns the dominant hexadecimal color of the image
+- `dominant_color`: returns the dominant color of the image as a CSS color value (e.g. `rgb(120 85 60)`)
 
 ### Dominant color
 

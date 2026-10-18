@@ -2,7 +2,7 @@
 title: Publish an RSS or JSON feed
 description: Publish RSS, Atom or JSON feeds of your Cecil site with output formats and built-in templates.
 date: 2026-10-06
-updated: 2026-10-16
+updated: 2026-10-18
 schedule:
   publish: 2026-10-06
 ---
@@ -21,8 +21,17 @@ output:
 
 Cecil now generates `rss.xml` and `feed.json` next to each `index.html` of the home page and sections (e.g. `/blog/rss.xml`, `/blog/feed.json`).
 
+The list replaces the default formats: keep `html` and `atom` in it. To only add formats to the defaults, use a map of booleans instead:
+
+```yaml
+output:
+  pagetypeformats:
+    homepage: {rss: true, jsonfeed: true}
+    section: {rss: true, jsonfeed: true}
+```
+
 :::info
-Formats are replaced, not merged: keep `html` in the list. See [`output.pagetypeformats`](/documentation/configuration/output/#output-pagetypeformats) and the list of [default formats](/documentation/configuration/output/#default-formats).
+See [lists](/documentation/configuration/#lists), [`output.pagetypeformats`](/documentation/configuration/output/#output-pagetypeformats) and the list of [default formats](/documentation/configuration/output/#default-formats).
 :::
 
 ## Enable a feed for a single section
