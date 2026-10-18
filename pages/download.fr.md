@@ -2,7 +2,7 @@
 title: Télécharger
 description: "Comment télécharger Cecil."
 date: 2021-10-26
-updated: 2026-10-16
+updated: 2026-10-18
 layout: download
 slug: telecharger
 menu:
@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-PHP 8.3+ est requis.
+PHP 8.3+ est requis, sauf si vous utilisez le [binaire autonome](#standalone).
 :::
 
 ## Installation globale {#install}
@@ -77,6 +77,52 @@ Cecil est disponible via [PHIVE](https://phar.io) (the PHAR Installation and Ver
 phive install cecil
 ```
 ::::
+
+## Binaire autonome {#standalone}
+
+Si PHP n’est pas installé, téléchargez le binaire autonome correspondant à votre plateforme depuis la [dernière version GitHub](https://github.com/Cecilapp/Cecil/releases/latest) : un unique fichier exécutable qui embarque PHP et les extensions requises.
+
+| Plateforme | Fichier |
+| ---------- | ------- |
+| Linux x64 | `cecil-linux-x64` |
+| Linux ARM64 | `cecil-linux-arm64` |
+| macOS Intel | `cecil-macos-x64` |
+| macOS Apple Silicon | `cecil-macos-arm64` |
+| Windows x64 | `cecil-windows-x64.exe` |
+
+::::tabs
+#### Linux
+
+```bash
+curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-linux-x64
+chmod +x cecil
+./cecil --version
+```
+
+#### macOS
+
+```bash
+curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-macos-arm64
+chmod +x cecil
+xattr -d com.apple.quarantine cecil
+./cecil --version
+```
+
+Les binaires ne sont pas signés : la commande `xattr` supprime l’attribut de quarantaine avant la première exécution.
+
+#### Windows
+
+```powershell
+curl.exe -Lo cecil.exe https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-windows-x64.exe
+.\cecil.exe --version
+```
+::::
+
+:::important
+Le binaire autonome utilise GD pour le traitement des images (Imagick et libvips ne sont pas disponibles), et la commande `self-update` n’est pas disponible : téléchargez à nouveau le binaire pour le mettre à jour. La commande `serve` nécessite toujours un exécutable PHP local.
+
+Consultez la [documentation d’installation](/fr/documentation/bien-demarrer/installation/#standalone-binary) pour plus de détails.
+:::
 
 ## Mise à jour {#update}
 

@@ -2,7 +2,7 @@
 title: Download
 description: "How to download Cecil."
 date: 2018-11-21
-updated: 2026-10-16
+updated: 2026-10-18
 layout: download
 alias: install
 menu:
@@ -19,7 +19,7 @@ curl -LO https://cecil.app/cecil.phar
 ```
 
 :::important
-PHP 8.3+ is required.
+PHP 8.3+ is required, unless you use the [standalone binary](#standalone).
 :::
 
 ## Install globally {#install}
@@ -77,6 +77,52 @@ Cecil is available through [PHIVE](https://phar.io) (the PHAR Installation and V
 phive install cecil
 ```
 ::::
+
+## Standalone binary {#standalone}
+
+If PHP is not installed, download the standalone binary for your platform from the [latest GitHub release](https://github.com/Cecilapp/Cecil/releases/latest): a single executable file that embeds PHP and the required extensions.
+
+| Platform | File |
+| -------- | ---- |
+| Linux x64 | `cecil-linux-x64` |
+| Linux ARM64 | `cecil-linux-arm64` |
+| macOS Intel | `cecil-macos-x64` |
+| macOS Apple Silicon | `cecil-macos-arm64` |
+| Windows x64 | `cecil-windows-x64.exe` |
+
+::::tabs
+#### Linux
+
+```bash
+curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-linux-x64
+chmod +x cecil
+./cecil --version
+```
+
+#### macOS
+
+```bash
+curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-macos-arm64
+chmod +x cecil
+xattr -d com.apple.quarantine cecil
+./cecil --version
+```
+
+Binaries are not signed: the `xattr` command removes the quarantine attribute before the first run.
+
+#### Windows
+
+```powershell
+curl.exe -Lo cecil.exe https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-windows-x64.exe
+.\cecil.exe --version
+```
+::::
+
+:::important
+The standalone binary uses GD for image processing (Imagick and libvips are not available), and the `self-update` command is not available: download the binary again to update it. The `serve` command still requires a local PHP executable.
+
+See the [installation documentation](/documentation/getting-started/installation/#standalone-binary) for more details.
+:::
 
 ## Update {#update}
 
