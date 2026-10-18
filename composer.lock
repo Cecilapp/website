@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e358359698786afd9966d45ba72a1266",
+    "content-hash": "07417993c33a37b5fae30cab02be8ed6",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -282,16 +282,16 @@
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "2.21.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "d44e4a85147a3c82fedc2164899c9028e423ec92"
+                "reference": "2bff652ff89b45203b6e8a133bb610480e252046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/d44e4a85147a3c82fedc2164899c9028e423ec92",
-                "reference": "d44e4a85147a3c82fedc2164899c9028e423ec92",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/2bff652ff89b45203b6e8a133bb610480e252046",
+                "reference": "2bff652ff89b45203b6e8a133bb610480e252046",
                 "shasum": ""
             },
             "require": {
@@ -301,7 +301,7 @@
             "extra": {
                 "name": "pwa",
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "3.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -316,7 +316,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.21.1"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/3.0.0"
             },
             "funding": [
                 {
@@ -328,7 +328,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-08-28T10:26:48+00:00"
+            "time": "2026-10-18T23:38:38+00:00"
         },
         {
             "name": "psr/container",
