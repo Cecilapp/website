@@ -3,7 +3,7 @@ title: Créer un générateur de pages personnalisé
 description: Créer des pages Cecil à partir d’une API, d’une base de données ou de toute autre source avec un générateur de pages personnalisé.
 path: comment-faire/extension-generateur-de-pages
 date: 2026-10-22
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-22
 ---
@@ -32,7 +32,7 @@ class Posts extends AbstractGenerator implements GeneratorInterface
 
         foreach ($posts as $post) {
             $page = (new Page("posts/{$post['id']}"))
-                ->setType(Type::PAGE->value)
+                ->setType(Type::PAGE)
                 ->setPath("posts/{$post['id']}")
                 ->setSection('posts')
                 ->setBodyHtml('<p>' . htmlspecialchars($post['body']) . '</p>')
@@ -60,7 +60,7 @@ pages:
 Les générateurs sont exécutés par ordre de priorité croissant. Ceux fournis par Cecil utilisent les priorités `10` (`DefaultPages`) à `90` (`Redirect`) : avec `35`, les pages sont créées avant les sections (`40`) et, grâce à `setSection()`, sont donc regroupées dans la section `posts`, comme les pages issues de fichiers Markdown.
 
 :::info
-Les pages créées par un générateur sont _virtuelles_ : sans `setSection()`, elles n’appartiennent à aucune section, et elles ne sont listées ni dans `site.pages.showable` ni dans le sitemap.
+Sans `setSection()`, les pages créées par un générateur n’appartiennent à aucune section. Comme toute autre page, elles sont listées dans `site.pages.showable` et dans le sitemap : définissez la variable `excluded` à `true` pour retirer une page des listes.
 :::
 
 ## Générer le site

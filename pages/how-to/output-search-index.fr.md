@@ -3,7 +3,7 @@ title: Ajouter une recherche côté client
 description: Ajouter une recherche côté client à un site statique Cecil avec un index JSON des pages et une petite bibliothèque JavaScript.
 path: comment-faire/sortie-index-de-recherche
 date: 2026-10-08
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-08
 ---
@@ -45,8 +45,8 @@ Selon les [règles de recherche](/fr/documentation/templates/regles-de-recherche
 
 Après `php cecil.phar build`, l’index est disponible à l’adresse `/search.json`.
 
-:::warning
-`site.pages.showable` exclut les pages virtuelles : les pages créées par un générateur ou déclarées dans `pages.virtual` ne sont pas indexées.
+:::info
+`site.pages.showable` inclut aussi les pages sans fichier de contenu : le filtre `p.type == 'page'` écarte les sections et les taxonomies de l’index, mais les pages créées par un générateur ou déclarées dans `pages.default` sont indexées, sauf si elles ont `excluded: true`.
 :::
 
 ## Rechercher avec Fuse.js

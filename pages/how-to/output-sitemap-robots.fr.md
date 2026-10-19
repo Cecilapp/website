@@ -3,7 +3,7 @@ title: Personnaliser le sitemap et le robots.txt
 description: Contrôler les fichiers sitemap XML et robots.txt générés par Cecil, exclure des pages et surcharger les templates.
 path: comment-faire/sortie-sitemap-robots
 date: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-16
 ---
@@ -28,7 +28,7 @@ pages:
       priority: 0.5
 ```
 
-- le **sitemap** liste toutes les pages affichables (publiées, ni virtuelles, ni redirigées, ni exclues), avec leurs traductions ;
+- le **sitemap** liste toutes les pages affichables (publiées, ni paginées, ni redirigées, ni exclues), y compris les sections et les taxonomies, avec leurs traductions ;
 - le **robots.txt** autorise tout, interdit les pages de redirection et la page 404, et indique l’emplacement du sitemap.
 
 :::important

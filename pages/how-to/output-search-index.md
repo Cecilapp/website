@@ -2,7 +2,7 @@
 title: Add client-side search
 description: Add a client-side search to a Cecil static site with a JSON index of pages and a small JavaScript library.
 date: 2026-10-08
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-08
 ---
@@ -44,8 +44,8 @@ Following the [lookup rules](/documentation/templates/lookup-rules/#lookup-rules
 
 After `php cecil.phar build`, the index is available at `/search.json`.
 
-:::warning
-`site.pages.showable` excludes virtual pages: pages created by a generator or declared in `pages.virtual` are not indexed.
+:::info
+`site.pages.showable` also includes pages without content file: the `p.type == 'page'` filter keeps sections and taxonomies out of the index, but pages created by a generator or declared in `pages.default` are indexed, unless they have `excluded: true`.
 :::
 
 ## Search with Fuse.js

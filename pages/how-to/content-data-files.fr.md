@@ -3,7 +3,7 @@ title: Générer des pages à partir de fichiers de données
 description: Utiliser des fichiers de données YAML, JSON, CSV ou XML pour construire des pages Cecil sans écrire de Markdown pour chaque élément.
 path: comment-faire/contenu-fichiers-de-donnees
 date: 2026-10-19
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-19
 ---
@@ -48,12 +48,13 @@ Les fichiers des sous-dossiers sont imbriqués : `data/galleries/gallery-1.json`
 
 ## Créer la page
 
-La page qui utilise ce template n’a besoin d’aucun contenu : déclarez-la comme [page virtuelle](/fr/documentation/configuration/pages/#pages-virtual) dans `cecil.yml` :
+La page qui utilise ce template n’a besoin d’aucun contenu : déclarez-la comme [page par défaut](/fr/documentation/configuration/pages/#pages-default) dans `cecil.yml`, indexée par ID :
 
 ```yaml
 pages:
-  virtual:
-    - path: team
+  default:
+    team:
+      path: team
       title: Our team
       layout: team
 ```
@@ -81,7 +82,7 @@ class Team extends AbstractGenerator implements GeneratorInterface
         foreach ($data['team'] ?? [] as $member) {
             $slug = Slugifier::slugify($member['name']);
             $page = (new Page("team/$slug"))
-                ->setType(Type::PAGE->value)
+                ->setType(Type::PAGE)
                 ->setPath("team/$slug")
                 ->setSection('team')
                 ->setBodyHtml('<p>' . htmlspecialchars($member['role']) . '</p>')
@@ -101,7 +102,7 @@ pages:
 ```
 
 :::info
-Les pages créées par un générateur sont _virtuelles_ : `setSection()` est nécessaire pour les regrouper dans la section `team`, et elles ne sont listées ni dans `site.pages.showable` ni dans le sitemap.
+Les pages créées par un générateur n’appartiennent à aucune section : `setSection()` est nécessaire pour les regrouper dans la section `team`. Comme toute autre page, elles sont listées dans `site.pages.showable` et dans le sitemap : définissez la variable `excluded` à `true` pour retirer une page des listes.
 :::
 
 :::info

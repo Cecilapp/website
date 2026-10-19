@@ -2,7 +2,7 @@
 title: Create a custom pages generator
 description: Create Cecil pages from an API, a database or any other source with a custom pages generator.
 date: 2026-10-22
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-22
 ---
@@ -31,7 +31,7 @@ class Posts extends AbstractGenerator implements GeneratorInterface
 
         foreach ($posts as $post) {
             $page = (new Page("posts/{$post['id']}"))
-                ->setType(Type::PAGE->value)
+                ->setType(Type::PAGE)
                 ->setPath("posts/{$post['id']}")
                 ->setSection('posts')
                 ->setBodyHtml('<p>' . htmlspecialchars($post['body']) . '</p>')
@@ -59,7 +59,7 @@ pages:
 Generators run in ascending priority order. The built-in ones use priorities from `10` (`DefaultPages`) to `90` (`Redirect`): with `35`, the generated pages are created before sections (`40`), so thanks to `setSection()` they are grouped in the `posts` section like pages from Markdown files.
 
 :::info
-Pages created by a generator are _virtual_: without `setSection()` they don’t belong to any section, and they are not listed in `site.pages.showable` nor in the sitemap.
+Without `setSection()`, pages created by a generator don’t belong to any section. Like any other page, they are listed in `site.pages.showable` and in the sitemap: set the `excluded` variable to `true` to keep a page out of lists.
 :::
 
 ## Build

@@ -2,7 +2,7 @@
 title: Redirect old URLs
 description: Keep old links working in Cecil with the redirect and alias front matter variables.
 date: 2026-10-13
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-13
 ---
@@ -36,12 +36,13 @@ redirect: "https://cecil.app/documentation/"
 
 ## Without a Markdown file
 
-If the old page has no content anymore, declare it as a [virtual page](/documentation/configuration/pages/#pages-virtual) in `cecil.yml`:
+If the old page has no content anymore, declare it as a [default page](/documentation/configuration/pages/#pages-default) in `cecil.yml`, indexed by ID:
 
 ```yaml
 pages:
-  virtual:
-    - path: code
+  default:
+    code:
+      path: code
       redirect: https://github.com/Cecilapp/Cecil
 ```
 

@@ -2,7 +2,7 @@
 title: Generate pages from data files
 description: Use YAML, JSON, CSV or XML data files to build Cecil pages without writing Markdown for each item.
 date: 2026-10-19
-updated: 2026-10-16
+updated: 2026-10-20
 schedule:
   publish: 2026-10-19
 ---
@@ -47,12 +47,13 @@ Files in sub-directories are nested: `data/galleries/gallery-1.json` is availabl
 
 ## Create the page
 
-The page that uses this template doesn’t need any content, so declare it as a [virtual page](/documentation/configuration/pages/#pages-virtual) in `cecil.yml`:
+The page that uses this template doesn’t need any content, so declare it as a [default page](/documentation/configuration/pages/#pages-default) in `cecil.yml`, indexed by ID:
 
 ```yaml
 pages:
-  virtual:
-    - path: team
+  default:
+    team:
+      path: team
       title: Our team
       layout: team
 ```
@@ -80,7 +81,7 @@ class Team extends AbstractGenerator implements GeneratorInterface
         foreach ($data['team'] ?? [] as $member) {
             $slug = Slugifier::slugify($member['name']);
             $page = (new Page("team/$slug"))
-                ->setType(Type::PAGE->value)
+                ->setType(Type::PAGE)
                 ->setPath("team/$slug")
                 ->setSection('team')
                 ->setBodyHtml('<p>' . htmlspecialchars($member['role']) . '</p>')
@@ -100,7 +101,7 @@ pages:
 ```
 
 :::info
-Pages created by a generator are _virtual_: `setSection()` is required to group them in the `team` section, and they are not listed in `site.pages.showable` nor in the sitemap.
+Pages created by a generator don’t belong to any section: `setSection()` is required to group them in the `team` section. Like any other page, they are listed in `site.pages.showable` and in the sitemap: set the `excluded` variable to `true` to keep a page out of lists.
 :::
 
 :::info
