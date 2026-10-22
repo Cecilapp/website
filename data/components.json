@@ -1,90 +1,12 @@
 [
   {
-    "name": "theme-netlify",
-    "full_name": "Cecilapp/theme-netlify",
-    "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
-    "github": "https://github.com/Cecilapp/theme-netlify",
-    "license": "MIT License",
-    "homepage": "https://cecil.app/themes/components/",
-    "date": "2026-10-17T00:52:42Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "netlify"
-    ]
-  },
-  {
-    "name": "theme-flexsearch",
-    "full_name": "Cecilapp/theme-flexsearch",
-    "description": "The FlexSearch component theme for Cecil adds a client side full-text search, with an index generated at build time and a DocSearch-like modal.",
-    "github": "https://github.com/Cecilapp/theme-flexsearch",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-flexsearch/",
-    "date": "2026-10-16T21:58:46Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "flexsearch",
-      "search"
-    ]
-  },
-  {
-    "name": "theme-fontawesome",
-    "full_name": "Cecilapp/theme-fontawesome",
-    "description": "The Font Awesome component theme for Cecil provides helpers to use Font Awesome icons.",
-    "github": "https://github.com/Cecilapp/theme-fontawesome",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-fontawesome/",
-    "date": "2026-10-10T15:57:00Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "font",
-      "icons"
-    ]
-  },
-  {
-    "name": "theme-octicons",
-    "full_name": "Cecilapp/theme-octicons",
-    "description": "The Octicons component theme provides a Twig macro to use Primer Octicons icons in Cecil templates.",
-    "github": "https://github.com/Cecilapp/theme-octicons",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-octicons/",
-    "date": "2026-10-10T15:54:17Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "icons"
-    ]
-  },
-  {
-    "name": "theme-darkmodetoggle",
-    "full_name": "Cecilapp/theme-darkmodetoggle",
-    "description": "The Dark mode toggle component theme for Cecil adds an icon button to switch a website between light and dark color schemes.",
-    "github": "https://github.com/Cecilapp/theme-darkmodetoggle",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-darkmodetoggle/",
-    "date": "2026-10-10T12:20:28Z",
-    "default_branch": "master",
-    "topics": [
-      "cecil",
-      "cecil-theme-component",
-      "color-scheme",
-      "dark-mode"
-    ]
-  },
-  {
     "name": "theme-docsearch",
     "full_name": "Cecilapp/theme-docsearch",
     "description": "The DocSearch component theme for Cecil adds Algolia DocSearch to a website.",
     "github": "https://github.com/Cecilapp/theme-docsearch",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-docsearch/",
-    "date": "2026-10-10T12:14:37Z",
+    "homepage": "http://demo.cecil.app/theme-docsearch/",
+    "date": "2026-10-21T20:00:57Z",
     "default_branch": "main",
     "topics": [
       "algolia",
@@ -95,13 +17,29 @@
     ]
   },
   {
+    "name": "theme-flexsearch",
+    "full_name": "Cecilapp/theme-flexsearch",
+    "description": "The FlexSearch component theme for Cecil adds a client side full-text search, with an index generated at build time and a DocSearch-like modal.",
+    "github": "https://github.com/Cecilapp/theme-flexsearch",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-flexsearch/",
+    "date": "2026-10-20T02:19:03Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "flexsearch",
+      "search"
+    ]
+  },
+  {
     "name": "theme-pwa",
     "full_name": "Cecilapp/theme-pwa",
     "description": "The PWA component theme for Cecil provides helpers to implement a Web manifest and a service worker to turn a website into a Progressive Web App.",
     "github": "https://github.com/Cecilapp/theme-pwa",
     "license": "MIT License",
-    "homepage": "https://cecil.app/themes/components/",
-    "date": "2026-10-08T10:00:35Z",
+    "homepage": "http://demo.cecil.app/theme-pwa/",
+    "date": "2026-10-19T21:46:22Z",
     "default_branch": "master",
     "topics": [
       "cecil",
@@ -117,7 +55,7 @@
     "github": "https://github.com/Cecilapp/theme-redirects",
     "license": "MIT License",
     "homepage": "https://cecil.app/themes/components/",
-    "date": "2025-09-16T19:16:52Z",
+    "date": "2026-10-19T11:20:19Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -131,11 +69,90 @@
     "github": "https://github.com/Cecilapp/theme-headers",
     "license": "MIT License",
     "homepage": "https://cecil.app/themes/components/",
-    "date": "2025-09-16T19:14:53Z",
+    "date": "2026-10-19T11:20:11Z",
     "default_branch": "main",
     "topics": [
       "cecil",
       "cecil-theme-component"
+    ]
+  },
+  {
+    "name": "theme-netlify",
+    "full_name": "Cecilapp/theme-netlify",
+    "description": "The Netlify component theme for Cecil provides support of Netlify's _redirects and _header.",
+    "github": "https://github.com/Cecilapp/theme-netlify",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-10-19T11:20:03Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "netlify"
+    ]
+  },
+  {
+    "name": "theme-pele",
+    "full_name": "Cecilapp/theme-pele",
+    "description": "The Pele component theme for Cecil renders the Mermaid diagrams of a website to SVG with Pele.",
+    "github": "https://github.com/Cecilapp/theme-pele",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-pele/",
+    "date": "2026-10-18T19:47:25Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "diagrams",
+      "mermaid",
+      "pele"
+    ]
+  },
+  {
+    "name": "theme-fontawesome",
+    "full_name": "Cecilapp/theme-fontawesome",
+    "description": "The Font Awesome component theme for Cecil provides helpers to use Font Awesome icons.",
+    "github": "https://github.com/Cecilapp/theme-fontawesome",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-fontawesome/",
+    "date": "2026-10-10T15:57:00Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "font",
+      "icons"
+    ]
+  },
+  {
+    "name": "theme-octicons",
+    "full_name": "Cecilapp/theme-octicons",
+    "description": "The Octicons component theme provides a Twig macro to use Primer Octicons icons in Cecil templates.",
+    "github": "https://github.com/Cecilapp/theme-octicons",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-octicons/",
+    "date": "2026-10-10T15:54:17Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "icons"
+    ]
+  },
+  {
+    "name": "theme-darkmodetoggle",
+    "full_name": "Cecilapp/theme-darkmodetoggle",
+    "description": "The Dark mode toggle component theme for Cecil adds an icon button to switch a website between light and dark color schemes.",
+    "github": "https://github.com/Cecilapp/theme-darkmodetoggle",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-darkmodetoggle/",
+    "date": "2026-10-10T12:20:28Z",
+    "default_branch": "master",
+    "topics": [
+      "cecil",
+      "cecil-theme-component",
+      "color-scheme",
+      "dark-mode"
     ]
   }
 ]

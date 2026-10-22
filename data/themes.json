@@ -1,18 +1,32 @@
 [
   {
-    "name": "theme-papermod",
-    "full_name": "Cecilapp/theme-papermod",
-    "description": "A port of Hugo PaperMod theme for Cecil",
-    "github": "https://github.com/Cecilapp/theme-papermod",
+    "name": "theme-coffee",
+    "full_name": "Cecilapp/theme-coffee",
+    "description": "Coffee is a corporate theme for Cecil.",
+    "github": "https://github.com/Cecilapp/theme-coffee",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-papermod/",
-    "date": "2026-10-17T01:56:29Z",
+    "homepage": "http://demo.cecil.app/theme-coffee/",
+    "date": "2026-10-21T23:57:24Z",
     "default_branch": "main",
     "topics": [
-      "blog",
       "cecil",
       "cecil-theme",
-      "theme"
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "theme-aube",
+    "full_name": "Cecilapp/theme-aube",
+    "description": "The Aube theme for Cecil is a clean documentation and blog theme built on Bootstrap 6.",
+    "github": "https://github.com/Cecilapp/theme-aube",
+    "license": "MIT License",
+    "homepage": "http://demo.cecil.app/theme-aube/",
+    "date": "2026-10-21T22:29:34Z",
+    "default_branch": "main",
+    "topics": [
+      "bootstrap",
+      "cecil",
+      "cecil-theme"
     ]
   },
   {
@@ -21,8 +35,8 @@
     "description": "Léon is a documentation theme for Cecil, with a warm palette, an editorial typography, tabs, search, content components and AI friendly pages.",
     "github": "https://github.com/Cecilapp/theme-leon",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-leon/",
-    "date": "2026-10-16T22:05:16Z",
+    "homepage": "http://demo.cecil.app/theme-leon/",
+    "date": "2026-10-20T22:47:36Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -38,8 +52,8 @@
     "description": "Docs is a documentation theme for Cecil, designed to provide a modern and responsive interface for your project's documentation.",
     "github": "https://github.com/Cecilapp/theme-docs",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-docs/",
-    "date": "2026-10-10T12:37:38Z",
+    "homepage": "http://demo.cecil.app/theme-docs/",
+    "date": "2026-10-20T22:25:55Z",
     "default_branch": "main",
     "topics": [
       "cecil",
@@ -49,18 +63,19 @@
     ]
   },
   {
-    "name": "theme-aube",
-    "full_name": "Cecilapp/theme-aube",
-    "description": "The Aube theme for Cecil is a clean documentation and blog theme built on Bootstrap 6.",
-    "github": "https://github.com/Cecilapp/theme-aube",
+    "name": "theme-papermod",
+    "full_name": "Cecilapp/theme-papermod",
+    "description": "A port of Hugo PaperMod theme for Cecil",
+    "github": "https://github.com/Cecilapp/theme-papermod",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-aube/",
-    "date": "2026-10-10T12:18:34Z",
+    "homepage": "http://demo.cecil.app/theme-papermod/",
+    "date": "2026-10-17T01:56:29Z",
     "default_branch": "main",
     "topics": [
-      "bootstrap",
+      "blog",
       "cecil",
-      "cecil-theme"
+      "cecil-theme",
+      "theme"
     ]
   },
   {
@@ -69,7 +84,7 @@
     "description": "Garth is a modern, clean, and responsive theme for Cecil. It is a port of the Garth theme for Jekyll created by David Darnes.",
     "github": "https://github.com/Cecilapp/theme-garth",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-garth/",
+    "homepage": "http://demo.cecil.app/theme-garth/",
     "date": "2026-10-09T22:03:02Z",
     "default_branch": "master",
     "topics": [
@@ -84,7 +99,7 @@
     "description": "Hyde is a minimalist theme for Cecil, inspired by the simplicity and elegance of the original Hyde theme for Jekyll.",
     "github": "https://github.com/Cecilapp/theme-hyde",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-hyde/",
+    "homepage": "http://demo.cecil.app/theme-hyde/",
     "date": "2026-10-09T21:43:43Z",
     "default_branch": "master",
     "topics": [
@@ -115,7 +130,7 @@
     "description": "App Landing is designed to help you quickly create a landing page for your application.",
     "github": "https://github.com/Cecilapp/theme-applanding",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-applanding/",
+    "homepage": "http://demo.cecil.app/theme-applanding/",
     "date": "2026-10-05T02:17:47Z",
     "default_branch": "main",
     "topics": [
@@ -131,7 +146,7 @@
     "description": "Resume is a theme for creating professional resumes with Cecil.",
     "github": "https://github.com/Cecilapp/theme-resume",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-resume/",
+    "homepage": "http://demo.cecil.app/theme-resume/",
     "date": "2026-10-02T01:22:19Z",
     "default_branch": "main",
     "topics": [
@@ -141,27 +156,12 @@
     ]
   },
   {
-    "name": "theme-coffee",
-    "full_name": "Cecilapp/theme-coffee",
-    "description": "Coffee is a corporate theme for Cecil.",
-    "github": "https://github.com/Cecilapp/theme-coffee",
-    "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-coffee/",
-    "date": "2026-09-30T22:44:53Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme",
-      "tailwindcss"
-    ]
-  },
-  {
     "name": "theme-comingsoon",
     "full_name": "Cecilapp/theme-comingsoon",
     "description": "Coming Soon is a landing page theme for Cecil, powered by Start Bootstrap Coming Soon and Bootstrap, with Netlify Forms integration.",
     "github": "https://github.com/Cecilapp/theme-comingsoon",
     "license": "MIT License",
-    "homepage": "https://cecilapp.github.io/theme-comingsoon/",
+    "homepage": "http://demo.cecil.app/theme-comingsoon/",
     "date": "2026-09-06T01:31:39Z",
     "default_branch": "main",
     "topics": [
