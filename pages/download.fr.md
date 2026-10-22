@@ -1,137 +1,84 @@
 ---
 title: Télécharger
-description: "Comment télécharger Cecil."
+description: "Télécharger Cecil : le fichier PHAR ou un binaire autonome pour Linux, macOS et Windows."
 date: 2021-10-26
-updated: 2026-10-18
+updated: 2026-10-22
 layout: download
 slug: telecharger
 menu:
   main:
     weight: 70
   footer:
+downloads:
+  lead: "Cecil est libre et gratuit. Téléchargez le fichier PHAR pour l’exécuter avec PHP, ou un binaire autonome qui ne nécessite pas PHP."
+  release: "Dernière version"
+  phar:
+    title: "PHAR"
+    description: "Un unique fichier pour Linux, macOS et Windows. Nécessite [PHP 8.3+](/fr/documentation/bien-demarrer/installation/#prerequis)."
+    file: cecil.phar
+    checksum: cecil.phar.sha1
+    checksum_label: "Somme de contrôle SHA-1"
+  standalone:
+    title: "Binaire autonome"
+    description: "Un unique exécutable qui embarque PHP et les extensions requises : PHP n’est pas nécessaire."
+    platforms:
+      - name: Linux
+        icon: linux
+        files:
+          - { label: "x64", file: cecil-linux-x64 }
+          - { label: "ARM64", file: cecil-linux-arm64 }
+      - name: macOS
+        icon: apple
+        files:
+          - { label: "Apple Silicon", file: cecil-macos-arm64 }
+          - { label: "Intel", file: cecil-macos-x64 }
+      - name: Windows
+        icon: windows
+        files:
+          - { label: "x64", file: cecil-windows-x64.exe }
+    checksum: cecil-binaries.sha256
+    checksum_label: "Sommes de contrôle SHA-256"
+    note: "Les binaires ne sont pas signés : sur macOS, exécutez `xattr -d com.apple.quarantine cecil` avant la première exécution. Consultez les [limitations du binaire](/fr/documentation/bien-demarrer/installation/#standalone-binary)."
+  releases: "Toutes les versions"
 ---
-# Télécharger
+## Gestionnaires de paquets {#install}
 
-Vous pouvez télécharger `cecil.phar` en cliquant sur le bouton [Télécharger](/cecil.phar), ou en exécutant la commande suivante dans votre terminal :
+Cecil est aussi disponible via des gestionnaires de paquets, pour l’installer globalement :
 
-```bash
-curl -LO https://cecil.app/cecil.phar
-```
-
-:::important
-PHP 8.3+ est requis, sauf si vous utilisez le [binaire autonome](#standalone).
-:::
-
-## Installation globale {#install}
-
-Pour plus de confort, nous vous recommandons d’installer Cecil globalement.
-
-::::tabs
-#### Linux
-
-Déplacez `cecil.phar` dans un dossier de votre `PATH` et rendez-le exécutable :
-
-```bash
-mv cecil.phar /usr/local/bin/cecil
-chmod +x /usr/local/bin/cecil
-```
-
-#### macOS
-
-Vous pouvez installer Cecil sur macOS avec 🍺[Homebrew](https://brew.sh) :
+:::code-group
+#### Homebrew
 
 ```bash
 brew install cecilapp/tap/cecil
 ```
 
-#### Windows
-
-Vous pouvez installer Cecil sur Windows avec 🍨[Scoop](https://scoop.sh) :
+#### Scoop
 
 ```bash
 scoop install https://cecil.app/scoop/cecil.json
 ```
-
-:::warning
-Avant le 22 mai 2025, le manifeste était disponible à l’adresse `https://cecil.app/cecil.json`. Si vous l’avez installé avant cette date, désinstallez-le puis réinstallez-le avec la nouvelle URL :
-
-```bash
-scoop uninstall cecil
-scoop install https://cecil.app/scoop/cecil.json
-```
-
-:::
-
-Ou manuellement :
-
-1. Déplacez `cecil.phar` dans un dossier dédié, tel que `C:\bin`
-2. Renommez `cecil.phar` en `cecil`
-3. Ajoutez `;C:\bin` à votre variable d’environnement `PATH`
-4. Créez un [script batch d’encapsulation](https://raw.githubusercontent.com/Cecilapp/Cecil/master/bin/cecil.bat)
 
 #### PHIVE
-
-Cecil est disponible via [PHIVE](https://phar.io) (the PHAR Installation and Verification Environment) :
 
 ```bash
 phive install cecil
 ```
-::::
 
-## Binaire autonome {#standalone}
-
-Si PHP n’est pas installé, téléchargez le binaire autonome correspondant à votre plateforme depuis la [dernière version GitHub](https://github.com/Cecilapp/Cecil/releases/latest) : un unique fichier exécutable qui embarque PHP et les extensions requises.
-
-| Plateforme | Fichier |
-| ---------- | ------- |
-| Linux x64 | `cecil-linux-x64` |
-| Linux ARM64 | `cecil-linux-arm64` |
-| macOS Intel | `cecil-macos-x64` |
-| macOS Apple Silicon | `cecil-macos-arm64` |
-| Windows x64 | `cecil-windows-x64.exe` |
-
-::::tabs
-#### Linux
+#### Composer
 
 ```bash
-curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-linux-x64
-chmod +x cecil
-./cecil --version
+composer global require cecil/cecil
 ```
-
-#### macOS
-
-```bash
-curl -Lo cecil https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-macos-arm64
-chmod +x cecil
-xattr -d com.apple.quarantine cecil
-./cecil --version
-```
-
-Les binaires ne sont pas signés : la commande `xattr` supprime l’attribut de quarantaine avant la première exécution.
-
-#### Windows
-
-```powershell
-curl.exe -Lo cecil.exe https://github.com/Cecilapp/Cecil/releases/latest/download/cecil-windows-x64.exe
-.\cecil.exe --version
-```
-::::
-
-:::important
-Le binaire autonome utilise GD pour le traitement des images (Imagick et libvips ne sont pas disponibles), et la commande `self-update` n’est pas disponible : téléchargez à nouveau le binaire pour le mettre à jour. La commande `serve` nécessite toujours un exécutable PHP local.
-
-Consultez la [documentation d’installation](/fr/documentation/bien-demarrer/installation/#standalone-binary) pour plus de détails.
 :::
+
+<!-- standalone -->
 
 ## Mise à jour {#update}
 
-**Le journal des modifications de la <span class="version">dernière version</span> est disponible sur [GitHub](https://github.com/Cecilapp/Cecil/releases/latest).**
-
-La manière la plus simple de mettre à jour Cecil vers la dernière version est d’utiliser la commande dédiée, ou votre gestionnaire de paquets :
+Le journal des modifications de la <span class="version">dernière version</span> est disponible sur [GitHub](https://github.com/Cecilapp/Cecil/releases/latest).
 
 :::code-group
-#### Cecil
+#### PHAR
 
 ```bash
 php cecil.phar self-update
@@ -154,24 +101,25 @@ scoop update cecil
 ```bash
 phive update cecil
 ```
+
+#### Composer
+
+```bash
+composer global update cecil/cecil
+```
 :::
 
-## Télécharger une version spécifique
+Le binaire autonome se met à jour en le téléchargeant à nouveau.
 
-Pour télécharger une version spécifique, ajoutez-la au chemin de l’URL.  
-Par exemple, pour télécharger la version `8.0.0`, ajoutez `download/8.0.0/` à l’URL :
+## Autres versions {#versions}
+
+Pour télécharger une version spécifique, ajoutez-la au chemin de l’URL, par exemple `8.0.0` :
 
 ```bash
 curl -LO https://cecil.app/download/8.0.0/cecil.phar
 ```
 
-:::info
-La [liste des versions](https://github.com/Cecilapp/Cecil/releases) est disponible sur GitHub.
-:::
-
-## Télécharger la version d’aperçu
-
-La version d’aperçu contient les dernières modifications, pas encore publiées, prêtes à être testées.
+La version d’aperçu contient les dernières modifications, pas encore publiées :
 
 :::code-group
 #### Homebrew
@@ -185,4 +133,8 @@ brew install cecilapp/tap/cecil@preview
 ```bash
 scoop install https://cecil.app/scoop/cecil-preview.json
 ```
+:::
+
+:::info
+Les prérequis, l’installation globale, la vérification et le dépannage sont détaillés dans la [documentation d’installation](/fr/documentation/bien-demarrer/installation/).
 :::
