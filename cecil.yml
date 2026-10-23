@@ -203,7 +203,8 @@ notes:
   tabs:
     sync: false # selects the tab with the same label in every group of the page, and remembers it
 
-headers:
+server:
+  headers:
     - path: /*
       headers:
         # LLMs
