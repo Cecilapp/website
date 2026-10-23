@@ -116,23 +116,25 @@
         },
         {
             "name": "cecil/theme-installer",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-installer.git",
-                "reference": "588ec8523a978229d23e10a0b8e0b6420192c154"
+                "reference": "37c6f58e09cf36e94b10b078a9c5e1f3985d5a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-installer/zipball/588ec8523a978229d23e10a0b8e0b6420192c154",
-                "reference": "588ec8523a978229d23e10a0b8e0b6420192c154",
+                "url": "https://api.github.com/repos/Cecilapp/theme-installer/zipball/37c6f58e09cf36e94b10b078a9c5e1f3985d5a38",
+                "reference": "37c6f58e09cf36e94b10b078a9c5e1f3985d5a38",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": ">=2.0"
+                "composer-plugin-api": "^2.0",
+                "php": "^8.1"
             },
             "require-dev": {
-                "composer/composer": ">=2.0"
+                "composer/composer": "^2.0",
+                "phpunit/phpunit": "^10.5"
             },
             "type": "composer-plugin",
             "extra": {
@@ -142,8 +144,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Cecil\\Installer\\Composer": "src/"
+                "psr-4": {
+                    "Cecil\\Installer\\Composer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -158,15 +160,17 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Installer for Cecil's themes",
+            "description": "Composer installer for Cecil's themes",
+            "homepage": "https://cecil.app",
             "keywords": [
                 "cecil",
+                "composer-plugin",
                 "installer",
                 "themes"
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-installer/issues",
-                "source": "https://github.com/Cecilapp/theme-installer/tree/2.0.0"
+                "source": "https://github.com/Cecilapp/theme-installer/tree/2.1.0"
             },
             "funding": [
                 {
@@ -178,7 +182,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-01-09T14:53:24+00:00"
+            "time": "2026-10-22T20:56:35+00:00"
         },
         {
             "name": "cecil/theme-netlify",
