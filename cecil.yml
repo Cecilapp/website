@@ -202,3 +202,12 @@ snow: false
 notes:
   tabs:
     sync: false # selects the tab with the same label in every group of the page, and remembers it
+
+headers:
+    - path: /*
+      headers:
+        # LLMs
+        - key: Link
+          value: '</llms.txt>; rel="llms-txt"'
+        - key: X-Llms-Txt
+          value: /llms.txt
