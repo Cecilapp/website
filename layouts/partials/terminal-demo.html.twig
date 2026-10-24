@@ -2,27 +2,36 @@
             <div class="shell-wrap">
               <p class="shell-top-bar">/Users/aligny</p>
               <div class="shell-body">
-                <video id="video-demo" autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="{{ asset('videos/cecil-demo.mp4').width }}" height="{{ asset('videos/cecil-demo.mp4').height }}" fetchpriority="high">
-                  <source data-src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
+                {%- for theme in ['light', 'dark'] ~%}
+                <video id="video-demo-{{ theme }}" class="video-demo {{ theme == 'light' ? 'inline-block dark:hidden' : 'hidden dark:inline-block' }}" style="vertical-align:top" autoplay loop muted poster="{{ asset('videos/cecil-demo-' ~ theme ~ '-poster.png') }}" width="930" height="518" fetchpriority="high">
+                  <source data-src="{{ asset('videos/cecil-demo-' ~ theme ~ '.mp4') }}" type="video/mp4">
                 </video>
+                {%- endfor ~%}
                 <script>{% apply minify_js ~%}
-                  // Load video only on desktop
+                  // Load video only on desktop, and only the one matching the current theme
                   function loadVideo() {
                     if (window.matchMedia("(min-width: 768px)").matches) {
-                      console.log('Loading video');
-                      var source = document.getElementById('video-demo').getElementsByTagName('source')[0];
-                      source.src = source.getAttribute('data-src');
-                      document.getElementById('video-demo').load();
+                      document.querySelectorAll('.video-demo').forEach(function (video) {
+                        var source = video.getElementsByTagName('source')[0];
+                        if (getComputedStyle(video).display !== 'none' && !source.src) {
+                          console.log('Loading video ' + video.id);
+                          source.src = source.getAttribute('data-src');
+                          video.load();
+                        }
+                      });
                     }
                   }
                   loadVideo();
                   window.addEventListener('resize', loadVideo, false);
+                  // theme switch
+                  new MutationObserver(loadVideo).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
                 {% endapply %}</script>
                 <noscript>
-                  <style>#video-demo{display:none;}</style>
-                  <video autoplay loop muted poster="{{ asset('videos/cecil-demo-poster.png') }}" width="{{ asset('videos/cecil-demo.mp4').width }}" height="{{ asset('videos/cecil-demo.mp4').height }}" fetchpriority="high">
-                    <source src="{{ asset('videos/cecil-demo.mp4') }}" type="video/mp4">
-                    <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ url(asset('videos/cecil-demo.mp4')) }}">link to the video</a> instead.</p>
+                  <style>.video-demo{display:none!important;}</style>
+                  <video autoplay loop muted poster="{{ asset('videos/cecil-demo-light-poster.png') }}" width="930" height="518" fetchpriority="high">
+                    <source src="{{ asset('videos/cecil-demo-light.mp4') }}" type="video/mp4" media="(prefers-color-scheme: light)">
+                    <source src="{{ asset('videos/cecil-demo-dark.mp4') }}" type="video/mp4">
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ url(asset('videos/cecil-demo-light.mp4')) }}">link to the video</a> instead.</p>
                   </video>
                 </noscript>
               </div>

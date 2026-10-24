@@ -3,7 +3,8 @@
 
     {%- block head ~%}
     {{- parent() ~}}
-    <link rel="preload" href="{{ asset('videos/cecil-demo-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px)">
+    <link rel="preload" href="{{ asset('videos/cecil-demo-light-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px) and (prefers-color-scheme: light)">
+    <link rel="preload" href="{{ asset('videos/cecil-demo-dark-poster.png') }}" as="image" fetchpriority="high" media="(min-width: 768px) and (prefers-color-scheme: dark)">
     <style>{{- asset('css/animation.css')|inline -}}</style>
     {%- endblock ~%}
 

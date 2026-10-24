@@ -12,3 +12,4 @@ cecil.phar
 /cecil-macos-*
 /cecil-windows-*
 /cecil-binaries.sha256
+scripts/demo-video/preview/
