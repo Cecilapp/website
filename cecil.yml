@@ -130,6 +130,7 @@ theme:
   - flexsearch
   - pwa
   - netlify
+  - pele
 pwa:
   manifest:
     background_color: '#163C56'
@@ -178,8 +179,10 @@ libs:
     version: 5.0.0
   tocbot:
     version: v4.34.0
-  mermaid:
-    version: 11
+
+# Mermaid diagrams (theme-pele): other options keep the theme defaults
+pele:
+  dark: attribute # dark colors only with the `dark` class set by the theme selector (not the system preference)
 
 # search (theme-flexsearch): other options keep the theme defaults
 flexsearch:

@@ -78,7 +78,18 @@
         text-decoration: none;
       }
     {% endapply %}</style>
+    {#- Mermaid diagrams CSS ~#}
+    <style>{% apply minify_css ~%}
+      :root {
+        --pele-font: Montserrat, sans-serif;
+      }
+      :root.dark {
+        --pele-bg: #152031;
+      }
+    {% endapply %}</style>
     {%- endcache ~%}
+    {#- Mermaid diagrams (only on pages containing a diagram) ~#}
+    {{- include('partials/pele.html.twig', {page, site}, with_context = false) ~}}
     {#- PWA ~#}
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     {%- endblock head ~%}

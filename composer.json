@@ -4,7 +4,8 @@
     "cecil/theme-pwa": "^3.0",
     "cecil/theme-octicons": "^1.2",
     "cecil/theme-flexsearch": "^1.2",
-    "aligny/tailwind-builder": "^1.2"
+    "aligny/tailwind-builder": "^1.2",
+    "cecil/theme-pele": "^1.0"
   },
   "config": {
     "allow-plugins": {

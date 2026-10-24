@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af4b567be59565335408ac27baa77406",
+    "content-hash": "190a283f7761abcf7b19c6901f1778c5",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -283,6 +283,58 @@
                 }
             ],
             "time": "2026-10-10T15:29:17+00:00"
+        },
+        {
+            "name": "cecil/theme-pele",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-pele.git",
+                "reference": "8fb04968251b25df8aa3daed404e9811035dfb58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pele/zipball/8fb04968251b25df8aa3daed404e9811035dfb58",
+                "reference": "8fb04968251b25df8aa3daed404e9811035dfb58",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4|^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "pele",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Pele",
+            "keywords": [
+                "Pele",
+                "cecil",
+                "diagram",
+                "mermaid",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-pele/issues",
+                "source": "https://github.com/Cecilapp/theme-pele/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2026-10-18T19:32:12+00:00"
         },
         {
             "name": "cecil/theme-pwa",
