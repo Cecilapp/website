@@ -1,0 +1,4 @@
+          {#- main menu ~#}
+          {%- for entry in site.menus.main|sort_by_weight ~%}
+            <li><a href="{{ url(entry.url) }}" data-weight="{{ entry.weight }}" class="text-slate-300 navbar-item flex{% if url(entry) == url(page) %} active{% endif %}">{{ entry.name }}</a></li>
+          {%- endfor -%}
