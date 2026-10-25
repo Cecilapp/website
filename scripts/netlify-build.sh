@@ -8,7 +8,7 @@ CECIL_CACHE_DIR="$CECIL_CACHE_DIR/$BRANCH"
 
 # Download the latest version of Cecil
 echo "Downloading Cecil..."
-curl -sSOL $CECIL_PHAR_URL
+curl -sSfLO $CECIL_PHAR_URL
 php cecil.phar --version
 
 # Fetch data from GitHub API
