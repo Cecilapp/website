@@ -1,5 +1,22 @@
 [
   {
+    "name": "theme-paper",
+    "full_name": "Cecilapp/theme-paper",
+    "description": "Cecil Paper theme, a port of AstroPaper: minimal, responsive, accessible and SEO-friendly blog theme",
+    "github": "https://github.com/Cecilapp/theme-paper",
+    "license": "MIT License",
+    "homepage": "https://demo.cecil.app/theme-paper/",
+    "date": "2026-10-25T14:11:39Z",
+    "default_branch": "main",
+    "topics": [
+      "astropaper",
+      "blog",
+      "cecil",
+      "cecil-theme",
+      "tailwindcss"
+    ]
+  },
+  {
     "name": "theme-coffee",
     "full_name": "Cecilapp/theme-coffee",
     "description": "Coffee is a corporate theme for Cecil.",

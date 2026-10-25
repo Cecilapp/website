@@ -1,5 +1,21 @@
 [
   {
+    "name": "statidocs",
+    "full_name": "Cecilapp/statidocs",
+    "description": "Statidocs is a documentation starter site, built on top of Cecil and the Docs theme.",
+    "github": "https://github.com/Cecilapp/statidocs",
+    "license": "MIT License",
+    "homepage": "https://statidocs.cecil.app",
+    "date": "2026-10-22T10:10:13Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-starter",
+      "documentation",
+      "static-site"
+    ]
+  },
+  {
     "name": "photo-stream",
     "full_name": "Cecilapp/photo-stream",
     "description": "Photo Stream is a self hosted static website for your photos, with really good loading performance, powered by Cecil.",
@@ -45,22 +61,6 @@
       "cecil",
       "cecil-starter",
       "podcast",
-      "static-site"
-    ]
-  },
-  {
-    "name": "statidocs",
-    "full_name": "Cecilapp/statidocs",
-    "description": "Statidocs is a documentation starter site, built on top of Cecil and the Docs theme.",
-    "github": "https://github.com/Cecilapp/statidocs",
-    "license": "MIT License",
-    "homepage": "https://statidocs.cecil.app",
-    "date": "2026-10-10T12:52:23Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-starter",
-      "documentation",
       "static-site"
     ]
   },

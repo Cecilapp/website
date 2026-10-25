@@ -1,5 +1,33 @@
 [
   {
+    "name": "theme-headers",
+    "full_name": "Cecilapp/theme-headers",
+    "description": "The Headers component theme for Cecil provides support of _headers file generation.",
+    "github": "https://github.com/Cecilapp/theme-headers",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-10-22T23:55:56Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component"
+    ]
+  },
+  {
+    "name": "theme-redirects",
+    "full_name": "Cecilapp/theme-redirects",
+    "description": "The Redirects component theme for Cecil provides support of _redirects file generation.",
+    "github": "https://github.com/Cecilapp/theme-redirects",
+    "license": "MIT License",
+    "homepage": "https://cecil.app/themes/components/",
+    "date": "2026-10-22T23:50:13Z",
+    "default_branch": "main",
+    "topics": [
+      "cecil",
+      "cecil-theme-component"
+    ]
+  },
+  {
     "name": "theme-docsearch",
     "full_name": "Cecilapp/theme-docsearch",
     "description": "The DocSearch component theme for Cecil adds Algolia DocSearch to a website.",
@@ -46,34 +74,6 @@
       "cecil-theme-component",
       "pwa",
       "service-worker"
-    ]
-  },
-  {
-    "name": "theme-redirects",
-    "full_name": "Cecilapp/theme-redirects",
-    "description": "The Redirects component theme for Cecil provides support of _redirects file generation.",
-    "github": "https://github.com/Cecilapp/theme-redirects",
-    "license": "MIT License",
-    "homepage": "https://cecil.app/themes/components/",
-    "date": "2026-10-19T11:20:19Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component"
-    ]
-  },
-  {
-    "name": "theme-headers",
-    "full_name": "Cecilapp/theme-headers",
-    "description": "The Headers component theme for Cecil provides support of _headers file generation.",
-    "github": "https://github.com/Cecilapp/theme-headers",
-    "license": "MIT License",
-    "homepage": "https://cecil.app/themes/components/",
-    "date": "2026-10-19T11:20:11Z",
-    "default_branch": "main",
-    "topics": [
-      "cecil",
-      "cecil-theme-component"
     ]
   },
   {
