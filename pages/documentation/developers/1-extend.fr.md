@@ -1,8 +1,8 @@
 <!--
 title: "Étendre Cecil"
-description: "Créez des générateurs de pages, ajoutez des extensions Twig et post-traitez les fichiers de sortie."
+description: "Créez des générateurs de pages, ajoutez des extensions Twig, post-traitez les fichiers de sortie et écoutez les événements de build."
 date: 2026-03-27
-updated: 2026-10-16
+updated: 2026-10-26
 alias: documentation/etendre
 path: documentation/developpeurs/etendre
 -->
@@ -12,13 +12,37 @@ Comme Cecil est écrit en PHP, il est facile d’en étendre les capacités.
 
 Les classes personnalisées sont chargées automatiquement depuis le répertoire `extensions` de votre site (ou d’un thème) : la classe `Cecil\Generator\MyGenerator` est chargée depuis `extensions/Cecil/Generator/MyGenerator.php`.
 
+## Configuration
+
+Les générateurs de pages, les extensions Twig, les post-processeurs de sortie et les abonnés aux [événements de build](#evenements-de-build) se déclarent de la même façon, sous forme de liste indexée par nom :
+
+```yaml
+<clé>:
+  <nom>: <classe>                                         # priorité par défaut (100)
+  <nom>: { class: <classe>, priority: <int> }             # priorité explicite
+  <nom>: false                                            # désactivé
+```
+
+- Les extensions sont exécutées par ordre croissant de priorité ; sans priorité, elles sont exécutées après les extensions intégrées (priorité `100`), dans leur ordre de déclaration.
+- Une extension intégrée peut être désactivée (`Redirect: false`) ou déplacée (`Section: { priority: 45 }`) par son nom.
+- Une extension qui ne peut pas être chargée (classe inconnue, mauvaise interface, option invalide) fait échouer le build. Pour simplement journaliser l’erreur et ignorer l’extension, désactivez le mode strict :
+
+```yaml
+extensions:
+  strict: false
+```
+
+:::important
+Depuis Cecil 9, les extensions doivent être indexées par nom : une priorité en clé (par ex. `35: Cecil\Generator\Database`) est refusée, utilisez `Database: { class: Cecil\Generator\Database, priority: 35 }` à la place.
+:::
+
 ## Générateurs de pages
 
 Un générateur permet de créer des pages sans fichiers Markdown (avec des données provenant d’une API ou d’une base de données, par exemple), ou de modifier des pages existantes.
 
-Créez une nouvelle classe PHP dans l’espace de noms `Cecil\Generator`, héritant de `AbstractGenerator`, puis ajoutez le nom de la classe à la liste [`pages.generators`](../configuration/4-pages.fr.md#pages-generators).
+Créez une nouvelle classe PHP dans l’espace de noms `Cecil\Generator`, héritant de `AbstractGenerator`, puis ajoutez-la à la liste [`pages.generators`](../configuration/4-pages.fr.md#pages-generators).
 
-Les générateurs sont exécutés par ordre croissant de leur clé (priorité). Les générateurs intégrés utilisent les clés `10` à `90` : utilisez une autre clé, sinon le générateur intégré est remplacé.
+Les générateurs intégrés utilisent les priorités `10` à `90` : choisissez la priorité de votre générateur selon les pages dont il a besoin (par ex. après `Section` pour accéder aux pages de sections).
 
 **Exemple :**
 
@@ -86,9 +110,8 @@ _configuration_
 ```yaml
 pages:
   generators:
-    # priorité : nom de la classe
-    99: Cecil\Generator\DummyPage
-    35: Cecil\Generator\Database
+    DummyPage: Cecil\Generator\DummyPage
+    Database: { class: Cecil\Generator\Database, priority: 35 }
 ```
 
 ## Extension Twig
@@ -97,7 +120,7 @@ Vous pouvez ajouter des [fonctions](../templates/reference/1-functions.fr.md) et
 
 1. [créez une extension Twig](https://twig.symfony.com/doc/advanced.html#creating-an-extension) dans l’espace de noms `Cecil\Renderer\Extension`
 2. ajoutez le fichier PHP dans le répertoire `extensions`
-3. ajoutez le nom de la classe à la configuration [`layouts.extensions`](../configuration/7-layouts.fr.md#layouts-extensions)
+3. ajoutez-la à la configuration [`layouts.extensions`](../configuration/7-layouts.fr.md#layouts-extensions)
 
 Le constructeur de l’extension reçoit l’instance de `Cecil\Builder`, qui donne accès à la configuration et au contenu du site.
 
@@ -133,9 +156,9 @@ layouts:
 
 Vous pouvez post-traiter le rendu des pages.
 
-Créez une nouvelle classe PHP dans l’espace de noms `Cecil\Renderer\PostProcessor`, héritant de `AbstractPostProcessor`, puis ajoutez le nom de la classe à la liste [`output.postprocessors`](../configuration/8-output.fr.md#output-postprocessors).
+Créez une nouvelle classe PHP dans l’espace de noms `Cecil\Renderer\PostProcessor`, héritant de `AbstractPostProcessor`, puis ajoutez-la à la liste [`output.postprocessors`](../configuration/8-output.fr.md#output-postprocessors).
 
-Les post-processeurs intégrés (`GeneratorMetaTag`, `HtmlExcerpt` et `MarkdownLink`) sont exécutés en premier.
+Les post-processeurs intégrés (`GeneratorMetaTag`, `HtmlExcerpt` et `MarkdownLink`) utilisent les priorités `10` à `30` : ils sont donc exécutés en premier par défaut.
 
 **Exemple :**
 
@@ -173,3 +196,75 @@ output:
   postprocessors:
     MyProcessor: Cecil\Renderer\PostProcessor\MyProcessor
 ```
+
+## Événements de build
+
+Des événements sont déclenchés pendant le build : écoutez-les pour exécuter votre propre code avant ou après le build, chaque étape, ou à chaque étape du cycle de vie d’une page (par ex. pour créer un index de recherche, notifier un service ou modifier la sortie des pages).
+
+| Événement        | Constante                     | Quand                                                                | Classe d’événement  |
+|------------------|-------------------------------|----------------------------------------------------------------------|---------------------|
+| `build.start`    | `BuildEvents::BUILD_START`    | avant la première étape                                              | `BuildEvent`        |
+| `build.finished` | `BuildEvents::BUILD_FINISHED` | après la dernière étape                                              | `BuildEvent`        |
+| `step.pre`       | `BuildEvents::STEP_PRE`       | avant chaque étape                                                   | `StepEvent`         |
+| `step.post`      | `BuildEvents::STEP_POST`      | après chaque étape                                                   | `StepEvent`         |
+| `page.created`   | `BuildEvents::PAGE_CREATED`   | après la création d’une page à partir d’un fichier de contenu        | `PageEvent`         |
+| `page.converted` | `BuildEvents::PAGE_CONVERTED` | après la conversion d’une page publiée (front matter et corps)       | `PageEvent`         |
+| `page.rendered`  | `BuildEvents::PAGE_RENDERED`  | après le rendu d’une page dans un format (après post-processeurs)    | `PageRenderedEvent` |
+| `page.saved`     | `BuildEvents::PAGE_SAVED`     | après l’enregistrement d’une page rendue dans un fichier             | `PageSavedEvent`    |
+
+Chaque événement donne accès au contexte du build (`getBuilder()`) et à ses options (`getOptions()`) ; `StepEvent` ajoute `getStep()`, `PageEvent` ajoute `getPage()`, `PageRenderedEvent` ajoute `getFormat()`, `getOutput()` et `setOutput()`, `PageSavedEvent` ajoute `getFormat()` et `getPathname()`.
+
+Créez un [abonné aux événements](https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers) héritant de `Cecil\Event\AbstractSubscriber` (qui donne accès à `$this->builder` et `$this->config`), puis ajoutez-le à la liste `extensions.subscribers`.
+
+**Exemple :**
+
+_/extensions/MySite/SearchIndex.php_
+
+```php
+<?php
+namespace MySite;
+
+use Cecil\Event\AbstractSubscriber;
+use Cecil\Event\BuildEvent;
+use Cecil\Event\BuildEvents;
+use Cecil\Event\PageEvent;
+
+class SearchIndex extends AbstractSubscriber
+{
+    private array $index = [];
+
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            BuildEvents::PAGE_CONVERTED => 'onPageConverted',
+            BuildEvents::BUILD_FINISHED => 'onBuildFinished',
+        ];
+    }
+
+    public function onPageConverted(PageEvent $event): void
+    {
+        $page = $event->getPage();
+        $this->index[] = ['title' => $page->getVariable('title'), 'path' => $page->getPath()];
+    }
+
+    public function onBuildFinished(BuildEvent $event): void
+    {
+        if ($event->getOptions()['dry-run']) {
+            return;
+        }
+        file_put_contents($this->config->getOutputPath() . '/search.json', json_encode($this->index));
+    }
+}
+```
+
+_configuration_
+
+```yaml
+extensions:
+  subscribers:
+    SearchIndex: MySite\SearchIndex
+```
+
+:::tip
+En utilisant Cecil comme [bibliothèque PHP](2-library.fr.md), des écouteurs peuvent aussi être ajoutés directement au dispatcher avant le build : `$builder->getEventDispatcher()->addListener(BuildEvents::PAGE_SAVED, $callable)`.
+:::
