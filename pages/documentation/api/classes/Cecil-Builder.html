@@ -109,7 +109,15 @@
                 
             </li>
                     <li>
+                <a href="namespaces/cecil-event.html" class="">Event</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/cecil-exception.html" class="">Exception</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/cecil-extension.html" class="">Extension</a>
                 
             </li>
                     <li>
@@ -175,7 +183,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -312,6 +320,13 @@ Builder::create($config)-&gt;build();
 <dd>Assets path collection.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/Cecil-Builder.html#property_autoloader">$autoloader</a>
+    <span>
+                        &nbsp;: <a href="classes/Cecil-Extension-Autoloader.html"><abbr title="\Cecil\Extension\Autoloader">Autoloader</abbr></a>|null            </span>
+</dt>
+<dd>Extensions autoloader.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/Cecil-Builder.html#property_buildId">$buildId</a>
     <span>
                         &nbsp;: string            </span>
@@ -345,6 +360,13 @@ Builder::create($config)-&gt;build();
                         &nbsp;: bool            </span>
 </dt>
 <dd>Debug mode state.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/Cecil-Builder.html#property_eventDispatcher">$eventDispatcher</a>
+    <span>
+                        &nbsp;: <abbr title="\Symfony\Component\EventDispatcher\EventDispatcherInterface">EventDispatcherInterface</abbr>|null            </span>
+</dt>
+<dd>Build events dispatcher.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/Cecil-Builder.html#property_generatorManager">$generatorManager</a>
@@ -417,6 +439,13 @@ Builder::create($config)-&gt;build();
 <dd>Static files collection.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/Cecil-Builder.html#property_subscribersLoaded">$subscribersLoaded</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Are the event subscribers of the configuration loaded?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/Cecil-Builder.html#property_taxonomies">$taxonomies</a>
     <span>
                         &nbsp;: array&lt;string, <a href="classes/Cecil-Collection-Taxonomy-Collection.html"><abbr title="\Cecil\Collection\Taxonomy\Collection">Collection</abbr></a>&gt;            </span>
@@ -480,6 +509,13 @@ Builder::create($config)-&gt;build();
 <dd>Returns list of assets path.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Cecil-Builder.html#method_getAutoloader">getAutoloader()</a>
+    <span>
+                                &nbsp;: <a href="classes/Cecil-Extension-Autoloader.html"><abbr title="\Cecil\Extension\Autoloader">Autoloader</abbr></a>    </span>
+</dt>
+<dd>Returns the extensions autoloader.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/Cecil-Builder.html#method_getBuildId">getBuildId()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -506,6 +542,13 @@ Builder::create($config)-&gt;build();
                                 &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>Returns data collection.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Cecil-Builder.html#method_getEventDispatcher">getEventDispatcher()</a>
+    <span>
+                                &nbsp;: <abbr title="\Symfony\Component\EventDispatcher\EventDispatcherInterface">EventDispatcherInterface</abbr>    </span>
+</dt>
+<dd>Returns the build events dispatcher, to add listeners or subscribers.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/Cecil-Builder.html#method_getLayoutCacheStats">getLayoutCacheStats()</a>
@@ -689,6 +732,13 @@ Builder::create($config)-&gt;build();
 </dt>
 <dd>Log soft errors.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/Cecil-Builder.html#method_loadSubscribers">loadSubscribers()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Adds the event subscribers declared in the `extensions.subscribers` configuration (once).</dd>
+
     </dl>
 
 
@@ -710,7 +760,7 @@ Builder::create($config)-&gt;build();
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -763,7 +813,7 @@ Builder::create($config)-&gt;build();
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -811,7 +861,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -842,7 +892,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -872,7 +922,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -902,7 +952,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -932,7 +982,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -962,7 +1012,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -1008,7 +1058,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
@@ -1046,7 +1096,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">164</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1084,7 +1134,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
@@ -1122,7 +1172,7 @@ Each step is a class that implements the StepInterface.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 
     </aside>
 
@@ -1151,6 +1201,44 @@ It is used to keep track of assets that need to be processed or copied.</p>
             phpdocumentor-element
             -property
             -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_autoloader">
+        $autoloader
+        <a href="classes/Cecil-Builder.html#property_autoloader" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">259</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Extensions autoloader.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/Cecil-Extension-Autoloader.html"><abbr title="\Cecil\Extension\Autoloader">Autoloader</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$autoloader</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
             -static                                                        "
 >
     <h4 class="phpdocumentor-element__name" id="property_buildId">
@@ -1163,7 +1251,7 @@ It is used to keep track of assets that need to be processed or copied.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -1219,7 +1307,7 @@ It can be used to track builds, especially in environments where multiple builds
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -1274,7 +1362,7 @@ It can be set to an array or a Config instance (converted to Config).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -1314,7 +1402,7 @@ It can be set to an array or a Config instance (converted to Config).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -1354,7 +1442,7 @@ It can be set to an array or a Config instance (converted to Config).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -1384,6 +1472,58 @@ It can be set to an array or a Config instance (converted to Config).</p>
             -protected
                                                                     "
 >
+    <h4 class="phpdocumentor-element__name" id="property_eventDispatcher">
+        $eventDispatcher
+        <a href="classes/Cecil-Builder.html#property_eventDispatcher" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">249</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Build events dispatcher.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\Symfony\Component\EventDispatcher\EventDispatcherInterface">EventDispatcherInterface</abbr>|null</span>
+    <span class="phpdocumentor-signature__name">$eventDispatcher</span>
+    </code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="property_eventDispatcher_tags">
+        Tags
+        <a href="classes/Cecil-Builder.html#property_eventDispatcher_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">see</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Cecil-Event-BuildEvents.html"><abbr title="\Cecil\Event\BuildEvents">BuildEvents</abbr></a></span>
+                                                                
+                                    </dd>
+                        </dl>
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
     <h4 class="phpdocumentor-element__name" id="property_generatorManager">
         $generatorManager
         <a href="classes/Cecil-Builder.html#property_generatorManager" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1394,7 +1534,7 @@ It can be set to an array or a Config instance (converted to Config).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -1436,7 +1576,7 @@ It allows for the registration and execution of various generators that can exte
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1474,7 +1614,7 @@ It allows for the registration and execution of various generators that can exte
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -1512,7 +1652,7 @@ It allows for the registration and execution of various generators that can exte
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -1567,7 +1707,7 @@ It can be set to any PSR-3 compliant logger.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">197</span>
 
     </aside>
 
@@ -1624,7 +1764,7 @@ It is used to manage navigation menus across different languages in the website.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -1665,7 +1805,7 @@ It is used to track the performance of the build and can be useful for debugging
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 
     </aside>
 
@@ -1723,7 +1863,7 @@ It is used to track the performance of the build and can be useful for debugging
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
@@ -1764,7 +1904,7 @@ It is an instance of PagesCollection, which is a custom collection class for man
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
@@ -1805,7 +1945,7 @@ It handles the rendering of templates and the application of data to those templ
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1835,6 +1975,44 @@ It handles the rendering of templates and the application of data to those templ
             -protected
                                                                     "
 >
+    <h4 class="phpdocumentor-element__name" id="property_subscribersLoaded">
+        $subscribersLoaded
+        <a href="classes/Cecil-Builder.html#property_subscribersLoaded" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">254</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Are the event subscribers of the configuration loaded?</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$subscribersLoaded</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
     <h4 class="phpdocumentor-element__name" id="property_taxonomies">
         $taxonomies
         <a href="classes/Cecil-Builder.html#property_taxonomies" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1845,7 +2023,7 @@ It handles the rendering of templates and the application of data to those templ
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
@@ -1902,7 +2080,7 @@ It is used to manage taxonomies (like categories, tags) across different languag
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 
     </aside>
 
@@ -1945,7 +2123,7 @@ It is used to manage taxonomies (like categories, tags) across different languag
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -1996,7 +2174,7 @@ It is used to manage taxonomies (like categories, tags) across different languag
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">536</span>
+    <span class="phpdocumentor-element-found-in__line">568</span>
 
     </aside>
 
@@ -2041,7 +2219,7 @@ It is used to manage taxonomies (like categories, tags) across different languag
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -2108,7 +2286,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 
     </aside>
 
@@ -2147,7 +2325,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">600</span>
 
     </aside>
 
@@ -2186,7 +2364,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">616</span>
+    <span class="phpdocumentor-element-found-in__line">648</span>
 
     </aside>
 
@@ -2215,6 +2393,45 @@ It also collects metrics about the build process, such as duration and memory us
         class="phpdocumentor-element
             -method
             -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getAutoloader">
+        getAutoloader()
+        <a href="classes/Cecil-Builder.html#method_getAutoloader" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">722</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the extensions autoloader.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getAutoloader</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Cecil-Extension-Autoloader.html"><abbr title="\Cecil\Extension\Autoloader">Autoloader</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Cecil-Extension-Autoloader.html"><abbr title="\Cecil\Extension\Autoloader">Autoloader</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_getBuildId">
@@ -2225,7 +2442,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">709</span>
+    <span class="phpdocumentor-element-found-in__line">783</span>
 
     </aside>
 
@@ -2264,7 +2481,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">447</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -2303,7 +2520,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">373</span>
+    <span class="phpdocumentor-element-found-in__line">405</span>
 
     </aside>
 
@@ -2342,7 +2559,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">515</span>
 
     </aside>
 
@@ -2383,6 +2600,59 @@ It also collects metrics about the build process, such as duration and memory us
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getEventDispatcher">
+        getEventDispatcher()
+        <a href="classes/Cecil-Builder.html#method_getEventDispatcher" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">710</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the build events dispatcher, to add listeners or subscribers.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getEventDispatcher</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\EventDispatcher\EventDispatcherInterface">EventDispatcherInterface</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_getEventDispatcher_tags">
+        Tags
+        <a href="classes/Cecil-Builder.html#method_getEventDispatcher_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">see</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Cecil-Event-BuildEvents.html"><abbr title="\Cecil\Event\BuildEvents">BuildEvents</abbr></a></span>
+                                                                
+                                    </dd>
+                        </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\EventDispatcher\EventDispatcherInterface">EventDispatcherInterface</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getLayoutCacheStats">
         getLayoutCacheStats()
         <a href="classes/Cecil-Builder.html#method_getLayoutCacheStats" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2391,7 +2661,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">599</span>
+    <span class="phpdocumentor-element-found-in__line">631</span>
 
     </aside>
 
@@ -2430,7 +2700,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">429</span>
+    <span class="phpdocumentor-element-found-in__line">461</span>
 
     </aside>
 
@@ -2469,7 +2739,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">634</span>
+    <span class="phpdocumentor-element-found-in__line">666</span>
 
     </aside>
 
@@ -2518,7 +2788,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">678</span>
+    <span class="phpdocumentor-element-found-in__line">752</span>
 
     </aside>
 
@@ -2557,7 +2827,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">528</span>
+    <span class="phpdocumentor-element-found-in__line">560</span>
 
     </aside>
 
@@ -2596,7 +2866,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">495</span>
 
     </aside>
 
@@ -2635,7 +2905,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">668</span>
+    <span class="phpdocumentor-element-found-in__line">700</span>
 
     </aside>
 
@@ -2674,7 +2944,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">512</span>
+    <span class="phpdocumentor-element-found-in__line">544</span>
 
     </aside>
 
@@ -2713,7 +2983,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">652</span>
+    <span class="phpdocumentor-element-found-in__line">684</span>
 
     </aside>
 
@@ -2762,7 +3032,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">688</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 
     </aside>
 
@@ -2815,7 +3085,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">407</span>
+    <span class="phpdocumentor-element-found-in__line">439</span>
 
     </aside>
 
@@ -2850,7 +3120,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">469</span>
 
     </aside>
 
@@ -2889,7 +3159,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">583</span>
+    <span class="phpdocumentor-element-found-in__line">615</span>
 
     </aside>
 
@@ -2934,7 +3204,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">547</span>
+    <span class="phpdocumentor-element-found-in__line">579</span>
 
     </aside>
 
@@ -2992,7 +3262,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">385</span>
 
     </aside>
 
@@ -3041,7 +3311,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">473</span>
+    <span class="phpdocumentor-element-found-in__line">505</span>
 
     </aside>
 
@@ -3086,7 +3356,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">429</span>
 
     </aside>
 
@@ -3135,7 +3405,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">453</span>
 
     </aside>
 
@@ -3180,7 +3450,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">626</span>
+    <span class="phpdocumentor-element-found-in__line">658</span>
 
     </aside>
 
@@ -3225,7 +3495,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">520</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 
     </aside>
 
@@ -3270,7 +3540,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
@@ -3315,7 +3585,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">660</span>
+    <span class="phpdocumentor-element-found-in__line">692</span>
 
     </aside>
 
@@ -3360,7 +3630,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">385</span>
+    <span class="phpdocumentor-element-found-in__line">417</span>
 
     </aside>
 
@@ -3409,7 +3679,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">534</span>
 
     </aside>
 
@@ -3454,7 +3724,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">644</span>
+    <span class="phpdocumentor-element-found-in__line">676</span>
 
     </aside>
 
@@ -3499,7 +3769,7 @@ It also collects metrics about the build process, such as duration and memory us
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">717</span>
+    <span class="phpdocumentor-element-found-in__line">791</span>
 
     </aside>
 
@@ -3515,6 +3785,55 @@ It also collects metrics about the build process, such as duration and memory us
     
     
     
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_loadSubscribers">
+        loadSubscribers()
+        <a href="classes/Cecil-Builder.html#method_loadSubscribers" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder.php"><a href="files/src-builder.html"><abbr title="src/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">736</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds the event subscribers declared in the `extensions.subscribers` configuration (once).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">loadSubscribers</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_loadSubscribers_tags">
+        Tags
+        <a href="classes/Cecil-Builder.html#method_loadSubscribers_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">throws</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Cecil-Exception-RuntimeException.html"><abbr title="\Cecil\Exception\RuntimeException">RuntimeException</abbr></a></span>
+                                                                                    
+                                    </dd>
+                        </dl>
 
         
     
@@ -3560,11 +3879,13 @@ It also collects metrics about the build process, such as duration and memory us
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_assetRegistryHits">$assetRegistryHits</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_assetRegistryMisses">$assetRegistryMisses</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_assets">$assets</a></li>
+                                                    <li class=""><a href="classes/Cecil-Builder.html#property_autoloader">$autoloader</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_buildId">$buildId</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_config">$config</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_content">$content</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_data">$data</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_debug">$debug</a></li>
+                                                    <li class=""><a href="classes/Cecil-Builder.html#property_eventDispatcher">$eventDispatcher</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_generatorManager">$generatorManager</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_layoutCacheHits">$layoutCacheHits</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_layoutCacheMisses">$layoutCacheMisses</a></li>
@@ -3575,6 +3896,7 @@ It also collects metrics about the build process, such as duration and memory us
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_pages">$pages</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_renderer">$renderer</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_static">$static</a></li>
+                                                    <li class=""><a href="classes/Cecil-Builder.html#property_subscribersLoaded">$subscribersLoaded</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_taxonomies">$taxonomies</a></li>
                                                     <li class=""><a href="classes/Cecil-Builder.html#property_version">$version</a></li>
                                             </ul>
@@ -3589,10 +3911,12 @@ It also collects metrics about the build process, such as duration and memory us
                                             <li class=""><a href="classes/Cecil-Builder.html#method_create">create()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getAssetRegistryStats">getAssetRegistryStats()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getAssetsList">getAssetsList()</a></li>
+                                            <li class=""><a href="classes/Cecil-Builder.html#method_getAutoloader">getAutoloader()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getBuildId">getBuildId()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getBuildOptions">getBuildOptions()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getConfig">getConfig()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getData">getData()</a></li>
+                                            <li class=""><a href="classes/Cecil-Builder.html#method_getEventDispatcher">getEventDispatcher()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getLayoutCacheStats">getLayoutCacheStats()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getLogger">getLogger()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_getMenus">getMenus()</a></li>
@@ -3619,6 +3943,7 @@ It also collects metrics about the build process, such as duration and memory us
                                             <li class=""><a href="classes/Cecil-Builder.html#method_setStatic">setStatic()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_setTaxonomies">setTaxonomies()</a></li>
                                             <li class=""><a href="classes/Cecil-Builder.html#method_checkErrors">checkErrors()</a></li>
+                                            <li class=""><a href="classes/Cecil-Builder.html#method_loadSubscribers">loadSubscribers()</a></li>
                                     </ul>
             </li>
                     </ul>
