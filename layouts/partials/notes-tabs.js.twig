@@ -1,0 +1,75 @@
+    {#- Tabs and code group notes: turns stacked panels into tabs, optionally synced by label across the page ~#}
+    <script>{% apply minify_js ~%}
+      (() => {
+        const sync = {{ (site.notes.tabs.sync ?? false) ? 'true' : 'false' }};
+        const storageKey = 'notes-tabs';
+        const groups = [];
+        const select = (group, index) => {
+          group.tabs.forEach((tab, i) => {
+            tab.setAttribute('aria-selected', i === index);
+            tab.tabIndex = i === index ? 0 : -1;
+            group.panels[i].hidden = i !== index;
+          });
+        };
+        // selects the tab with this label in every group
+        const selectLabel = (label, store = false) => {
+          groups.forEach((group) => {
+            const index = group.labels.indexOf(label);
+            if (index !== -1) select(group, index);
+          });
+          if (store) {
+            try { localStorage.setItem(storageKey, label); } catch (e) {}
+          }
+        };
+        document.querySelectorAll('.note-tabs, .note-code-group').forEach((note) => {
+          const panels = [...note.querySelectorAll(':scope > .note-tab')];
+          if (panels.length < 2) return;
+          const nav = document.createElement('div');
+          nav.className = 'note-tabs-nav';
+          nav.setAttribute('role', 'tablist');
+          const group = { panels, tabs: [], labels: [] };
+          panels.forEach((panel, i) => {
+            const title = panel.querySelector(':scope > h4, :scope > .note-tab-title');
+            const label = title ? title.textContent.trim() : String(i + 1);
+            if (title) title.hidden = true;
+            const tab = document.createElement('button');
+            tab.type = 'button';
+            tab.id = panel.id + '-tab';
+            tab.textContent = label;
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-controls', panel.id);
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('aria-labelledby', tab.id);
+            tab.addEventListener('click', () => (sync ? selectLabel(label, true) : select(group, i)));
+            tab.addEventListener('keydown', (event) => {
+              const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
+              if (!step) return;
+              const next = group.tabs[(i + step + panels.length) % panels.length];
+              next.focus();
+              next.click();
+            });
+            nav.append(tab);
+            group.tabs.push(tab);
+            group.labels.push(label);
+          });
+          // tab headings are not part of the table of contents
+          note.querySelectorAll('h4').forEach((heading) => heading.classList.add('js-toc-ignore'));
+          panels[0].before(nav);
+          groups.push(group);
+          select(group, 0);
+        });
+        if (sync) {
+          let saved = null;
+          try { saved = localStorage.getItem(storageKey); } catch (e) {}
+          if (saved) selectLabel(saved);
+        }
+        // displays the tab containing the targeted anchor (and its parent tabs, if nested)
+        const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (target) {
+          groups.forEach((group) => {
+            const index = group.panels.findIndex((panel) => panel.contains(target));
+            if (index !== -1) select(group, index);
+          });
+        }
+      })();
+    {% endapply %}</script>
