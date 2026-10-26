@@ -2,7 +2,7 @@
 title: Add a custom Twig function or filter
 description: Extend Cecil templates with your own Twig functions and filters through a Twig extension.
 date: 2026-10-21
-updated: 2026-10-16
+updated: 2026-10-26
 schedule:
   publish: 2026-10-21
 ---
@@ -10,17 +10,17 @@ Cecil provides many template [functions](/documentation/templates/reference/func
 
 ## Create the extension class
 
-Add a PHP file in the `extensions` directory of your site, following the `Cecil\Renderer\Extension` namespace:
+Add a PHP file in the `extensions` directory of your site, with your own namespace (e.g.: `MySite\Twig`, the `Cecil\` namespace being reserved), the file path matching the namespace:
 
-_extensions/Cecil/Renderer/Extension/MyTwigExtension.php_
+_extensions/MySite/Twig/MyTwigExtension.php_
 
 ```php
 <?php
-namespace Cecil\Renderer\Extension;
+namespace MySite\Twig;
 
 class MyTwigExtension extends \Twig\Extension\AbstractExtension
 {
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             // {{ 'text'|md5 }}
@@ -30,7 +30,7 @@ class MyTwigExtension extends \Twig\Extension\AbstractExtension
         ];
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             // {{ year() }}
@@ -45,14 +45,18 @@ class MyTwigExtension extends \Twig\Extension\AbstractExtension
 }
 ```
 
+:::tip
+The [`new:extension`](/documentation/commands/new-extension/) command creates the skeleton of the class: `php cecil.phar new:extension --type=twig --name=MyTwigExtension --namespace=MySite`.
+:::
+
 ## Register the extension
 
-Add the class name to the `layouts.extensions` list in `cecil.yml` (the key is a free name):
+Add the class name to the `layouts.extensions` map in `cecil.yml`, indexed by a name of your choice:
 
 ```yaml
 layouts:
   extensions:
-    MyExtension: Cecil\Renderer\Extension\MyTwigExtension
+    MyExtension: MySite\Twig\MyTwigExtension
 ```
 
 ## Use it in templates
@@ -63,5 +67,5 @@ layouts:
 ```
 
 :::tip
-Run the build with the `-vvv` option to check that the extension is loaded: Cecil logs `Twig extension "MyExtension" added`, or an error if the class can’t be loaded. See the [Twig extension documentation](/documentation/developers/extend/#twig-extension).
+Run the build with the `-vvv` option to check that the extension is loaded: Cecil logs `Extension "MyExtension" (layouts.extensions) loaded`, or an error if the class can’t be loaded. See the [Twig extension documentation](/documentation/developers/extend/#twig-extension).
 :::

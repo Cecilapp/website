@@ -3,7 +3,7 @@ title: Générer des pages à partir de fichiers de données
 description: Utiliser des fichiers de données YAML, JSON, CSV ou XML pour construire des pages Cecil sans écrire de Markdown pour chaque élément.
 path: comment-faire/contenu-fichiers-de-donnees
 date: 2026-10-19
-updated: 2026-10-20
+updated: 2026-10-26
 schedule:
   publish: 2026-10-19
 ---
@@ -67,11 +67,13 @@ Pour générer une page par entrée, créez un [générateur de pages](/fr/docum
 
 ```php
 <?php
-// extensions/Cecil/Generator/Team.php
-namespace Cecil\Generator;
+// extensions/MySite/Generator/Team.php
+namespace MySite\Generator;
 
 use Cecil\Collection\Page\Page;
 use Cecil\Collection\Page\Type;
+use Cecil\Generator\AbstractGenerator;
+use Cecil\Generator\GeneratorInterface;
 use Cecil\Util\Slugifier;
 
 class Team extends AbstractGenerator implements GeneratorInterface
@@ -98,7 +100,7 @@ Puis déclarez-le :
 ```yaml
 pages:
   generators:
-    25: Cecil\Generator\Team
+    Team: { class: MySite\Generator\Team, priority: 25 }
 ```
 
 :::info

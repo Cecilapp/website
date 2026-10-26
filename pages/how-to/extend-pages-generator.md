@@ -2,7 +2,7 @@
 title: Create a custom pages generator
 description: Create Cecil pages from an API, a database or any other source with a custom pages generator.
 date: 2026-10-22
-updated: 2026-10-20
+updated: 2026-10-26
 schedule:
   publish: 2026-10-22
 ---
@@ -10,18 +10,24 @@ A pages generator creates pages without Markdown files (for example from an API 
 
 ## Create the generator class
 
-Add a PHP class in the `extensions` directory of your site, in the `Cecil\Generator` namespace. It extends `AbstractGenerator`, implements `GeneratorInterface`, and adds pages to `$this->generatedPages` in the `generate()` method.
+Add a PHP class in the `extensions` directory of your site, with your own namespace (e.g.: `MySite\Generator`, the `Cecil\` namespace being reserved). It extends `AbstractGenerator`, implements `GeneratorInterface`, and adds pages to `$this->generatedPages` in the `generate()` method.
+
+:::tip
+The [`new:extension`](/documentation/commands/new-extension/) command creates the skeleton of the class, and displays the configuration to enable it: `php cecil.phar new:extension --type=generator --name=Posts --namespace=MySite`.
+:::
 
 The following example creates one page per item returned by a JSON API:
 
-_extensions/Cecil/Generator/Posts.php_
+_extensions/MySite/Generator/Posts.php_
 
 ```php
 <?php
-namespace Cecil\Generator;
+namespace MySite\Generator;
 
 use Cecil\Collection\Page\Page;
 use Cecil\Collection\Page\Type;
+use Cecil\Generator\AbstractGenerator;
+use Cecil\Generator\GeneratorInterface;
 
 class Posts extends AbstractGenerator implements GeneratorInterface
 {
@@ -48,12 +54,12 @@ Existing pages (from Markdown files and previous generators) are available throu
 
 ## Register the generator
 
-Add the class name to the [`pages.generators`](/documentation/configuration/pages/#pages-generators) list in `cecil.yml`, with a priority as key:
+Add the class name to the [`pages.generators`](/documentation/configuration/pages/#pages-generators) map in `cecil.yml`, indexed by a name, with its priority:
 
 ```yaml
 pages:
   generators:
-    35: Cecil\Generator\Posts
+    Posts: { class: MySite\Generator\Posts, priority: 35 }
 ```
 
 Generators run in ascending priority order. The built-in ones use priorities from `10` (`DefaultPages`) to `90` (`Redirect`): with `35`, the generated pages are created before sections (`40`), so thanks to `setSection()` they are grouped in the `posts` section like pages from Markdown files.

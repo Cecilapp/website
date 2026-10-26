@@ -2,7 +2,7 @@
 title: Generate pages from data files
 description: Use YAML, JSON, CSV or XML data files to build Cecil pages without writing Markdown for each item.
 date: 2026-10-19
-updated: 2026-10-20
+updated: 2026-10-26
 schedule:
   publish: 2026-10-19
 ---
@@ -66,11 +66,13 @@ To generate a page per entry, create a [pages generator](/documentation/develope
 
 ```php
 <?php
-// extensions/Cecil/Generator/Team.php
-namespace Cecil\Generator;
+// extensions/MySite/Generator/Team.php
+namespace MySite\Generator;
 
 use Cecil\Collection\Page\Page;
 use Cecil\Collection\Page\Type;
+use Cecil\Generator\AbstractGenerator;
+use Cecil\Generator\GeneratorInterface;
 use Cecil\Util\Slugifier;
 
 class Team extends AbstractGenerator implements GeneratorInterface
@@ -97,7 +99,7 @@ Then register it:
 ```yaml
 pages:
   generators:
-    25: Cecil\Generator\Team
+    Team: { class: MySite\Generator\Team, priority: 25 }
 ```
 
 :::info
