@@ -1,0 +1,63 @@
+    {#- suggests the translation of the page matching the browser language: one banner per translation, in its own language, displayed by the script below ~#}
+    {%- if (site.language_banner ?? false) and page.translations|default([])|length >= 1 ~%}
+    {%- import 'macros/octicons.twig' as octicons ~%}
+    {%- for translation in page.translations ~%}
+    {%- if translation.language is defined ~%}
+    {%- set locale = site.language.locale(translation.language) ~%}
+    {%- set link = '<a href="' ~ url(translation)|e ~ '" hreflang="' ~ translation.language|e ~ '" class="font-semibold underline underline-offset-2 decoration-gold hover:decoration-2" data-language-switch>' ~ translation.language|language_name(locale)|e ~ '</a>' ~%}
+    <aside class="fixed bottom-16 inset-x-4 mx-auto w-fit sm:bottom-4 sm:left-auto sm:right-16 sm:mx-0 sm:max-w-md z-40 flex items-center gap-3 py-2 pl-4 pr-2 bg-white dark:bg-dark border border-slate-200 dark:border-darkgray rounded-lg shadow-lg text-sm text-darkblue dark:text-slate-300" lang="{{ translation.language }}" aria-label="{{ 'Language'|trans({}, 'messages', locale) }}" data-language-banner="{{ translation.language }}" hidden>
+      {{- octicons.svg('globe', 16, 'shrink-0 size-4 text-blue dark:text-gold') -}}
+      <p class="grow mb-0">{{ 'This page is available in %language%.'|trans({'%language%': link}, 'messages', locale)|raw }}</p>
+      <button type="button" class="flex shrink-0 size-8 items-center justify-center rounded-full cursor-pointer hover:bg-slate-100 dark:hover:bg-darkgray" aria-label="{{ 'Close'|trans({}, 'messages', locale) }}" title="{{ 'Close'|trans({}, 'messages', locale) }}" data-language-close>
+        {{- octicons.svg('x', 16, 'size-4') -}}
+      </button>
+    </aside>
+    {%- endif ~%}
+    {%- endfor ~%}
+    <script>{% apply minify_js ~%}
+      (function () {
+        function storage(key, value) {
+          try {
+            if (value === undefined) return localStorage.getItem(key);
+            localStorage.setItem(key, value);
+          } catch (e) {}
+        }
+        // a language chosen with the selector hides the banner on the next pages
+        document.querySelectorAll('a[hreflang]:not([data-language-switch])').forEach(function (link) {
+          link.addEventListener('click', function () {
+            storage('language', link.hreflang || '1');
+          });
+        });
+        var banners = document.querySelectorAll('[data-language-banner]');
+        if (!banners.length || storage('language')) return;
+        var current = (document.documentElement.lang || '').toLowerCase();
+        var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        var banner = null;
+        // the first browser language matching the page or one of its translations (exact code, then primary subtag)
+        preferred.some(function (language) {
+          language = language.toLowerCase();
+          var candidates = [language, language.split('-')[0]];
+          for (var i = 0; i < candidates.length; i++) {
+            if (current === candidates[i]) return true;
+            for (var j = 0; j < banners.length; j++) {
+              if (banners[j].getAttribute('data-language-banner').toLowerCase() === candidates[i]) {
+                banner = banners[j];
+                return true;
+              }
+            }
+          }
+          return false;
+        });
+        if (!banner) return;
+        // displayed until the visitor follows it or closes it
+        banner.hidden = false;
+        banner.querySelector('[data-language-switch]').addEventListener('click', function () {
+          storage('language', banner.lang);
+        });
+        banner.querySelector('[data-language-close]').addEventListener('click', function () {
+          storage('language', current || '1');
+          banner.hidden = true;
+        });
+      })();
+    {% endapply %}</script>
+    {%- endif ~%}

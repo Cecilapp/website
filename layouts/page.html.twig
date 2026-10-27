@@ -342,6 +342,7 @@
       window.addEventListener('load', videos, false)
     {% endapply %}</script>
     {%- include('partials/back-to-top.html.twig') ~%}
+    {{- include('partials/language-banner.html.twig') ~}}
     {{- include('partials/cloudflareinsights.js.twig', {token: site.cloudflareinsights|default}, with_context = false) ~}}
     <script async defer src="{{ asset('https://buttons.github.io/buttons.js', {ignore_missing: true}) }}"></script>
     {%- endblock ~%}

@@ -137,6 +137,18 @@ msgstr "Dans cette section"
 msgid "Language:"
 msgstr "Langue :"
 
+#: partials/language-banner.html.twig:9
+msgid "Language"
+msgstr "Langue"
+
+#: partials/language-banner.html.twig:11
+msgid "This page is available in %language%."
+msgstr "Cette page est disponible en %language%."
+
+#: partials/language-banner.html.twig:12
+msgid "Close"
+msgstr "Fermer"
+
 #: partials/logo.html.twig:3
 msgid "%site_title% logo"
 msgstr "Logo de %site_title%"

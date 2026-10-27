@@ -201,6 +201,9 @@ flexsearch:
 
 snow: false
 
+# suggests the translation of the page matching the browser language
+language_banner: true
+
 # tabs and code group notes
 notes:
   tabs:
