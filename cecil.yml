@@ -1,0 +1,220 @@
+title: "Cecil"
+baseline: "A simple and powerful content-driven static site generator"
+description: "Cecil is a command-line PHP application that merges Markdown pages, media and Twig templates to generate a static website."
+baseurl: "https://cecil.app/"
+keywords: ["static site generator", "SSG", "website", "PHP", "Twig", "CLI"]
+social:
+  #twitter:
+  #  site: Cecil_Static
+  #  creator: ArnaudLigny
+  #  url: https://twitter.com/Cecil_Static
+  #bluesky:
+  #  username: cecil.app
+  #  url: https://bsky.app/profile/cecil.app
+  opencollective:
+    url: https://opencollective.com/cecil
+  github:
+    repo: https://github.com/Cecilapp/Cecil
+    url: https://github.com/Cecilapp/Cecil
+    sponsor: https://github.com/sponsors/ArnaudLigny
+image: /images/cecil-logo-og.png
+cloudinary:
+  account: aligny
+  asset: cecil/og/cecil-card-2.png
+language: en
+languages:
+  - code: en
+    name: English
+    locale: en
+  - code: fr
+    enabled: true
+    name: Français
+    locale: fr_FR
+    config:
+      baseline: "Un générateur de site statique simple et puissant, axé sur le contenu"
+      description: "Cecil est une application PHP en ligne de commande qui fusionne des pages Markdown, des médias et des templates Twig afin de générer un site web statique."
+      menus:
+        main:
+          - id: index
+            enabled: false
+          - id: news
+            weight: 10
+          - id: documentation
+            weight: 20
+        footer:
+          - id: github
+            name: GitHub
+            url: https://github.com/Cecilapp/
+      pages:
+        paths:
+          - section: news
+            path: actualites/:year/:month/:day/:slug
+metatags:
+  articles: news
+  dc: true
+  jsonld: true
+menus:
+  main:
+    - id: index
+      enabled: false
+    - id: news
+      weight: 10
+    - id: documentation
+      weight: 20
+    - id: cms
+      enabled: false
+    - id: hosting
+      enabled: false
+  footer:
+    - id: github
+      name: GitHub
+      url: https://github.com/Cecilapp/
+pages:
+  pagination: false
+  paths:
+    - section: news
+      path: :section/:year/:month/:day/:slug
+  body:
+    toc: [h2, h3, h4]
+    images:
+      formats: [avif, webp]
+      responsive: true
+      class: "dark:brightness-90"
+      caption: true
+      remote: true
+      placeholder: lqip
+      dark_suffix: .dark
+    notes: true
+    highlight: true
+    links:
+      external:
+        blank: true
+assets:
+  images:
+    optimize: true
+    responsive:
+      widths: [480, 768, 1024]
+      sizes:
+        markdown: "(max-width: 1023px) calc(100vw - 3rem), 1024px"
+        home: "(max-width: 767px) 480px, 33vw"
+        showcase: "(max-width: 639px) 100vw, 480px"
+    cdn:
+      enabled: false
+      account: 'aligny'
+      url: 'https://res.cloudinary.com/%account%/image/fetch/c_limit,w_%width%,q_%quality%,f_%format%,d_default/%image_url%'
+static:
+  exclude:
+    - 'archives'
+layouts:
+  images:
+    formats: [avif, webp]
+    responsive: true
+    dark_suffix: .dark
+output:
+  formats:
+    - name: phar
+      mediatype: 'application/octet-stream'
+      extension: 'phar'
+    - name: sha1
+      mediatype: 'text/plain'
+      extension: 'phar.sha1'
+    - name: bash
+      mediatype: 'text/plain'
+      extension: 'sh'
+  pagetypeformats:
+    homepage: ['html', 'atom', 'markdown', 'llms']
+    section: ['html', 'atom', 'jsonfeed', 'markdown']
+    page: ['html', 'markdown']
+theme:
+  - octicons
+  - flexsearch
+  - pwa
+  - netlify
+  - pele
+pwa:
+  manifest:
+    background_color: '#163C56'
+    theme_color: '#163C56'
+    theme_color_dark: '#111827'
+    display_override: 'minimal-ui'
+    shortcuts: true
+  serviceworker:
+    enabled: true
+    update:
+      snackbar: true
+    offline:
+      snackbar: true
+netlify:
+  redirects:
+    - from: https://cecilapp.netlify.app/*
+      to: https://cecil.app/:splat
+      status: 301
+      force: true
+    - from: https://8-x-dev--cecilapp.netlify.app/*
+      to: https://8-x-dev.cecil.app/:splat
+      status: 301
+      force: true
+  redirect_by_language: false
+editor: typora
+
+release:
+  name: cecil.phar
+  sha1: cecil.phar.sha1
+repo:
+  docs: https://github.com/Cecilapp/Cecil/blob/main/docs/
+  website: https://github.com/Cecilapp/website/blob/main/pages/
+
+#googleanalytics: UA-387892-21
+cloudflareinsights: 601e6965b5bc43b782058112c5312906
+gsv: LIvUncCjs-xtddzUhv7CNTHWsjXpOk0C4BL4KMRYUVM
+
+libs:
+  highlight:
+    version: 11.9.0
+    styles: atom-one-dark
+    languages: twig
+  highlightjs_copy:
+    version: 1.0.6
+  anchor:
+    version: 5.0.0
+  tocbot:
+    version: v4.34.0
+
+# Mermaid diagrams (theme-pele): other options keep the theme defaults
+pele:
+  dark: attribute # dark colors only with the `dark` class set by the theme selector (not the system preference)
+
+# search (theme-flexsearch): other options keep the theme defaults
+flexsearch:
+  enabled: true
+  # sections to index, in the order of the result groups
+  sections:
+    documentation:
+      limit: 5 # maximum number of results in the group
+    how-to:
+      limit: 3
+      split: false # one record per post, not one per heading
+    news:
+      limit: 3
+      split: false
+      date: true # show the date of the post in the search results
+
+snow: false
+
+# suggests the translation of the page matching the browser language
+language_banner: true
+
+# tabs and code group notes
+notes:
+  tabs:
+    sync: false # selects the tab with the same label in every group of the page, and remembers it
+
+server:
+  headers:
+    - path: /*
+      headers:
+        # LLMs
+        - key: Link
+          value: '</llms.txt>; rel="llms-txt"'
+        - key: X-Llms-Txt
+          value: /llms.txt
