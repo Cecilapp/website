@@ -3,7 +3,7 @@ title: Programmer la publication d’une page
 description: Publier ou dépublier une page Cecil à une date donnée avec la variable de front matter schedule.
 path: comment-faire/contenu-programmation
 date: 2026-10-17
-updated: 2026-10-18
+updated: 2026-11-01
 schedule:
   publish: 2026-10-17
 ---
@@ -50,7 +50,7 @@ schedule:
 
 Un site statique ne change pas tout seul : la programmation est évaluée **au moment de la génération**. Une page prévue pour le 15 novembre n’apparaîtra qu’après une génération lancée à partir de cette date.
 
-Pour l’automatiser, régénérez le site chaque jour. Par exemple, avec [GitHub Pages](/fr/documentation/deployer/deploiement-continu/#github-pages), ajoutez un déclencheur `schedule` à la section `on` de votre workflow :
+Pour l’automatiser, régénérez le site chaque jour. Par exemple, avec [GitHub Pages](/fr/comment-faire/deploiement-github-pages/), ajoutez un déclencheur `schedule` à la section `on` de votre workflow :
 
 ```yaml
 # .github/workflows/build-and-deploy.yml
@@ -71,5 +71,5 @@ Pour vérifier le résultat en local, lancez `php cecil.phar build --show-pages`
 :::
 
 :::info
-Consultez la documentation de la [variable `schedule`](/fr/documentation/contenu/front-matter/#planification) et du [déploiement continu](/fr/documentation/deployer/deploiement-continu/#github-pages).
+Consultez la documentation de la [variable `schedule`](/fr/documentation/contenu/front-matter/#planification) et du [déploiement sur GitHub Pages](/fr/comment-faire/deploiement-github-pages/).
 :::

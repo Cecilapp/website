@@ -2,7 +2,7 @@
 title: Schedule the publication of a page
 description: Publish or unpublish a Cecil page at a given date with the schedule front matter variable.
 date: 2026-10-17
-updated: 2026-10-18
+updated: 2026-11-01
 schedule:
   publish: 2026-10-17
 ---
@@ -49,7 +49,7 @@ schedule:
 
 A static site doesn’t change by itself: the schedule is evaluated **at build time**. A page planned for November 15 will appear only after a build that runs on or after that date.
 
-To make it automatic, rebuild the site every day. For example, with [GitHub Pages](/documentation/deploy/continuous-deployment/#github-pages), add a `schedule` trigger to the `on` section of your workflow:
+To make it automatic, rebuild the site every day. For example, with [GitHub Pages](/how-to/deploy-github-pages/), add a `schedule` trigger to the `on` section of your workflow:
 
 ```yaml
 # .github/workflows/build-and-deploy.yml
@@ -70,5 +70,5 @@ To check the result locally, run `php cecil.phar build --show-pages` and look fo
 :::
 
 :::info
-See the documentation of the [`schedule` variable](/documentation/content/front-matter/#schedule) and of [continuous deployment](/documentation/deploy/continuous-deployment/#github-pages).
+See the documentation of the [`schedule` variable](/documentation/content/front-matter/#schedule) and of [deploying to GitHub Pages](/how-to/deploy-github-pages/).
 :::

@@ -3,7 +3,7 @@ title: Déployer sur GitHub Pages avec GitHub Actions
 description: Générer et déployer automatiquement un site Cecil sur GitHub Pages avec l’action GitHub de Cecil.
 path: comment-faire/deploiement-github-pages
 date: 2026-10-07
-updated: 2026-10-16
+updated: 2026-11-01
 schedule:
   publish: 2026-10-07
 ---
@@ -74,5 +74,5 @@ L’action envoie le répertoire `_site` du site, ou celui indiqué par l’opti
 :::
 
 :::tip
-Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans la [documentation du déploiement sur GitHub Pages](/fr/documentation/deployer/deploiement-continu/#github-pages), ainsi que la liste des [options de génération](/fr/documentation/commandes/build/).
+Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans les [recettes de déploiement](/fr/deployer/#github-pages), ainsi que la liste des [options de génération](/fr/documentation/commandes/build/).
 :::

@@ -2,7 +2,7 @@
 title: Deploy to GitHub Pages with GitHub Actions
 description: Build and deploy a Cecil site to GitHub Pages automatically with the Cecil GitHub Action.
 date: 2026-10-07
-updated: 2026-10-16
+updated: 2026-11-01
 schedule:
   publish: 2026-10-07
 ---
@@ -73,5 +73,5 @@ The action uploads the `_site` directory of the site, or the directory given wit
 :::
 
 :::tip
-To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [GitHub Pages deployment documentation](/documentation/deploy/continuous-deployment/#github-pages), and the list of [build options](/documentation/commands/build/).
+To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [deployment recipes](/deploy/#github-pages), and the list of [build options](/documentation/commands/build/).
 :::
