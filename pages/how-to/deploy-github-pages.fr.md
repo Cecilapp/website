@@ -74,5 +74,5 @@ L’action envoie le répertoire `_site` du site, ou celui indiqué par l’opti
 :::
 
 :::tip
-Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans les [recettes de déploiement](/fr/deployer/#github-pages), ainsi que la liste des [options de génération](/fr/documentation/commandes/build/).
+Pour accélérer la génération, vous pouvez aussi restaurer et sauvegarder le répertoire `.cache` entre deux exécutions : consultez le workflow complet dans les [recettes de déploiement](/fr/mettre-en-ligne/#github-pages), ainsi que la liste des [options de génération](/fr/documentation/commandes/build/).
 :::

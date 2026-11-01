@@ -1,9 +1,9 @@
 ---
-title: Déployer
-description: "Déployez votre site Cecil sur des plateformes Jamstack, via le déploiement continu ou sur un hébergement statique."
+title: Mettre en ligne
+description: "Mettez en ligne votre site Cecil sur des plateformes Jamstack, via le déploiement continu ou sur un hébergement statique."
 date: 2020-12-19
 updated: 2026-11-01
-slug: deployer
+slug: mettre-en-ligne
 alias:
   - documentation/deployer
   - documentation/deployer/plateformes-jamstack
