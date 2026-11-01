@@ -1,15 +1,17 @@
----
-title: Deploy
+<!--
+title: "Deploy"
 description: "Deploy your Cecil site to Jamstack platforms, through continuous deployment or to a static hosting service."
 date: 2020-12-19
 updated: 2026-11-01
+weight: 7
 alias:
-  - documentation/deploy
+  - documentation/publish
   - documentation/deploy/jamstack-platforms
   - documentation/deploy/continuous-deployment
   - documentation/deploy/static-hosting
-  - documentation/publish
----
+-->
+# Deploy
+
 By default, your static site is built in the **`_site`** directory, and **can be deployed as is**.
 
 Below are some recipes to automate the build and/or the deployment of a Cecil site. They rely on the build script and the GitHub Action described in the [`build` command documentation](/documentation/commands/build/#deploy).

@@ -1,16 +1,19 @@
----
-title: Mettre en ligne
+<!--
+title: "Mettre en ligne"
 description: "Mettez en ligne votre site Cecil sur des plateformes Jamstack, via le déploiement continu ou sur un hébergement statique."
 date: 2020-12-19
 updated: 2026-11-01
-slug: mettre-en-ligne
+weight: 7
+path: documentation/mettre-en-ligne
 alias:
+  - documentation/publier
   - documentation/deployer
   - documentation/deployer/plateformes-jamstack
   - documentation/deployer/deploiement-continu
   - documentation/deployer/hebergement-statique
-  - documentation/publier
----
+-->
+# Mettre en ligne
+
 Par défaut, votre site statique est généré dans le répertoire **`_site`** et **peut être déployé tel quel**.
 
 Vous trouverez ci-dessous quelques recettes pour automatiser la génération et/ou le déploiement d’un site Cecil. Elles s’appuient sur le script de build et la GitHub Action décrits dans la [documentation de la commande `build`](/fr/documentation/commandes/build/#deploy).

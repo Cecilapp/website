@@ -73,5 +73,5 @@ The action uploads the `_site` directory of the site, or the directory given wit
 :::
 
 :::tip
-To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [deployment recipes](/deploy/#github-pages), and the list of [build options](/documentation/commands/build/).
+To speed up builds, you can also restore and save the `.cache` directory between runs: see the full workflow in the [deployment recipes](/documentation/deploy/#github-pages), and the list of [build options](/documentation/commands/build/).
 :::
