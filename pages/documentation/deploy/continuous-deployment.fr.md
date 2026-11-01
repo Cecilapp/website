@@ -1,20 +1,21 @@
-<!--
-title: "Continuous build & deploy"
-description: "GitHub Pages and GitLab CI."
-date: 2020-12-19
+---
+title: "Génération et déploiement continus"
+description: "GitHub Pages et GitLab CI."
+date: 2026-03-27
 updated: 2026-10-16
--->
-# Continuous build & deploy
+path: documentation/deployer/deploiement-continu
+---
+# Génération et déploiement continus
 
-Continuous integration services can build your site with Cecil and deploy it on each change to your repository.
+Les services d’intégration continue peuvent générer votre site avec Cecil et le déployer à chaque modification de votre dépôt.
 
 ## GitHub Pages
 
-> Websites for you and your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
+> Des sites web pour vous et vos projets, hébergés directement depuis votre dépôt GitHub. Il suffit de modifier, pousser, et vos changements sont en ligne.
 
 ➡️ <https://pages.github.com>
 
-_.github/workflows/build-and-deploy.yml_:
+_.github/workflows/build-and-deploy.yml_ :
 
 ```yml
 name: Build and deploy to GitHub Pages
@@ -60,15 +61,15 @@ jobs:
         uses: actions/deploy-pages@v5
 ```
 
-[Official documentation](https://docs.github.com/en/pages)
+[Documentation officielle](https://docs.github.com/en/pages)
 
 ## GitLab CI
 
-> With GitLab Pages, you can publish static websites directly from a repository in GitLab.
+> Avec GitLab Pages, vous pouvez publier des sites web statiques directement depuis un dépôt GitLab.
 
 ➡️ <https://about.gitlab.com/solutions/continuous-integration/>
 
-_.gitlab-ci.yml_:
+_.gitlab-ci.yml_ :
 
 ```yml
 image: wordpress:cli-php8.4
@@ -102,4 +103,4 @@ cache:
     - .cache/
 ```
 
-[Official documentation](https://docs.gitlab.com/user/project/pages/)
+[Documentation officielle](https://docs.gitlab.com/user/project/pages/)
