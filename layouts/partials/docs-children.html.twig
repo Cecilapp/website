@@ -1,0 +1,21 @@
+{#- direct children (pages and sub-sections) of a documentation section -#}
+{%- set items = section.pages|filter(p => p.parent.id|default == section.id)|merge(section.sections|default([]))|sort_by_weight -%}
+{%- if items|length > 0 -%}
+{%- if compact ~%}
+<ul class="text-sm">
+  {%- for item in items ~%}
+  <li><a href="{{ url(item) }}">{{ item.title }}{% if item.type == 'section' %} ›{% endif %}</a></li>
+  {%- endfor ~%}
+</ul>
+{%- else ~%}
+<h2 id="in-this-section">{% trans %}In this section{% endtrans %}</h2>
+<div class="not-markdown grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+  {%- for item in items ~%}
+  <a href="{{ url(item) }}" class="block p-4 rounded-md border border-slate-200 dark:border-darkgray hover:bg-gold dark:hover:bg-black no-underline">
+    <strong class="block text-blue dark:text-slate-200">{{ item.title }}{% if item.type == 'section' %} ›{% endif %}</strong>
+    <span class="block text-sm text-slate-600 dark:text-slate-400">{{ item.description|default }}</span>
+  </a>
+  {%- endfor ~%}
+</div>
+{%- endif ~%}
+{%- endif -%}
