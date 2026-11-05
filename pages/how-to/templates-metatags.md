@@ -1,0 +1,31 @@
+---
+title: Apply SEO features in templates
+description: Add Cecil SEO features to templates with the metatags partial.
+date: 2026-06-09
+updated: 2026-10-18
+---
+Cecil exposes its SEO features through the `partials/metatags.html.twig` template. Include it in the `<head>` of your base template so every page automatically gets **title, meta tags, canonical links, and social cards**. Structured data (JSON-LD) can be enabled too, with the `metatags.data` option set to `true`.
+
+```twig
+<html lang="{{ site.language }}">
+  <head>
+    <meta charset="utf-8">
+    {{ include('partials/metatags.html.twig') }}
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+```
+
+:::important
+The partial already outputs the `<title>` element: do not add your own.
+:::
+
+The partial reads page front matter first, then falls back to site configuration when needed. See the [metatags configuration documentation](/documentation/configuration/site/#metatags) for all available options.
+
+If you need to override the default title or image, pass values directly to the partial (`image` accepts a file path or an asset):
+
+```twig
+{{ include('partials/metatags.html.twig', {title: 'Custom title', image: 'images/social-card.png'}) }}
+```

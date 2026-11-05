@@ -1,0 +1,739 @@
+<!--
+title: "Markdown"
+description: "Syntaxe et extensions Markdown : attributs, liens, images, table des matières, notes, coloration syntaxique, etc."
+date: 2026-03-27
+updated: 2026-10-24
+path: documentation/contenu/markdown
+-->
+# Markdown
+
+Cecil prend en charge le format [Markdown](https://daringfireball.net/projects/markdown/syntax), ainsi que [Markdown Extra](https://michelf.ca/projects/php-markdown/extra/).
+
+Cecil fournit aussi des **fonctionnalités supplémentaires** pour enrichir votre contenu, voir ci-dessous.
+
+## Attributs
+
+Avec [Markdown Extra](https://michelf.ca/projects/php-markdown/extra/), vous pouvez définir un id, une classe et des attributs personnalisés sur certains éléments à l’aide d’un bloc d’attributs.  
+Par exemple, placez le(s) attribut(s) souhaité(s) après un titre, un bloc de code délimité, un lien ou une image en fin de ligne, entre accolades, comme ceci :
+
+```markdown
+## Titre {#id .class attribute=value}
+```
+
+:::warning
+Pour un élément en ligne, comme un lien, vous devez utiliser un retour à la ligne après l’accolade fermante :
+
+```markdown
+Lorem ipsum [dolor](url){attribute=value} 
+sit amet.
+```
+
+:::
+
+## Liens
+
+Vous pouvez créer un lien avec la syntaxe `[Texte](url)` ; `url` peut être un chemin, un chemin relatif vers un fichier Markdown, une URL externe, etc.
+
+_Exemple :_
+
+```markdown
+[Link to a path](/about/)
+[Link to a Markdown file](about.md)
+[Link to Cecil website](https://cecil.app)
+```
+
+:::info
+Un lien relatif vers un fichier Markdown est résolu depuis le dossier du fichier courant (comme sur GitHub), puis remplacé par l’URL de la page ciblée.
+:::
+
+### Lien vers une page
+
+Vous pouvez facilement créer un lien vers une page avec la syntaxe `[Titre de page](page:page-id)`.
+
+_Exemple :_
+
+```markdown
+[Link to a blog post](page:blog/post-1)
+```
+
+### Externe
+
+Par défaut, les liens externes ont la valeur suivante pour l’attribut `rel` : `noopener noreferrer`.
+
+:::info
+Un lien est considéré comme externe si son URL commence par `http`, mais pas par la [`baseurl`](../configuration/1-site.fr.md#baseurl) : `baseurl` doit donc être définie.
+:::
+
+_Exemple :_
+
+```html
+<a href="<url>" rel="noopener noreferrer">Link to another website</a>
+```
+
+Vous pouvez modifier ce comportement avec les [options `pages.body.links.external`](../configuration/4-pages.fr.md#pages-body-links).
+
+### Liens intégrés
+
+Cecil peut essayer de transformer un lien en contenu intégré en utilisant l’attribut `{embed}` ou en définissant l’option de configuration globale `pages.body.links.embed.enabled` à `true`.
+
+:::important
+Seuls les liens **YouTube**, **Vimeo**, **Dailymotion** et **GitHub Gists** sont pris en charge.
+:::
+
+_Exemple :_
+
+```markdown
+[CECIL : LE générateur de SITES STATIQUES en PHP](https://www.youtube.com/watch?v=ur8koU0iYvc){embed}
+```
+
+[CECIL : LE générateur de SITES STATIQUES en PHP](https://www.youtube.com/watch?v=ur8koU0iYvc){embed}
+
+#### Fichiers vidéo/audio locaux
+
+Cecil peut aussi créer des éléments HTML `<video>` et `<audio>`, selon l’extension du fichier (`mp4` et `webm` pour la vidéo, `mp3`, `ogg` et `wav` pour l’audio, voir [`pages.body.links.embed`](../configuration/4-pages.fr.md#pages-body-links)).
+
+_Exemple :_
+
+```markdown
+[Video file](video.mp4){embed controls poster=/images/video-test.png}
+[Audio file](song.mp3){embed controls}
+```
+
+Est converti en :
+
+```html
+<video src="/video.mp4" controls poster="/images/video-test.png" style="max-width:100%;height:auto;background-color:#d8d8d8;"></video>
+<audio src="/song.mp3" controls></audio>
+```
+
+:::info
+Sans l’attribut `controls`, une vidéo reçoit les attributs `autoplay`, `loop`, `muted` et `playsinline`.
+:::
+
+Avec `{embed=false}` (ou lorsque l’intégration est désactivée), un fichier vidéo/audio local reste un lien, mais son URL pointe vers le fichier publié (avec empreinte si [`assets.fingerprint`](../configuration/6-assets.fr.md) est activé).
+
+## Images
+
+Pour ajouter une image, utilisez un point d’exclamation (`!`) suivi d’une description alternative entre crochets (`[]`), puis du chemin ou de l’URL de l’image entre parenthèses (`()`).  
+Vous pouvez facultativement ajouter un titre entre guillemets.
+
+```markdown
+![Alternative description](/image.jpg "Image title")
+```
+
+:::info
+Le chemin doit être relatif à la racine de votre site Web (ex. : `/image.jpg`), mais Cecil est capable de normaliser un chemin relatif aux répertoires _assets_ et _static_ (ex. : `../../assets/image.jpg`).
+:::
+
+:::info
+Les images distantes (ex. : `https://example.com/image.jpg`) sont téléchargées et traitées comme des _assets_ : elles peuvent donc être redimensionnées et converties. Vous pouvez désactiver ce comportement, ou définir une image de repli, avec l’[option `remote`](../configuration/4-pages.fr.md#pages-body-images).
+:::
+
+### Chargement différé
+
+Cecil ajoute l’attribut `loading="lazy"` à chaque image.
+
+_Exemple :_
+
+```markdown
+![](/image.jpg)
+```
+
+Est converti en :
+
+```html
+<img src="/image.jpg" loading="lazy">
+```
+
+:::info
+Vous pouvez désactiver ce comportement avec l’attribut `{loading=eager}` ou avec l’[option `lazy`](../configuration/4-pages.fr.md#pages-body-images).
+:::
+
+### Décodage
+
+Cecil ajoute l’attribut `decoding="async"` à chaque image.
+
+_Exemple :_
+
+```markdown
+![](/image.jpg)
+```
+
+Est converti en :
+
+```html
+<img src="/image.jpg" decoding="async">
+```
+
+:::info
+Vous pouvez désactiver ce comportement avec l’attribut `{decoding=auto}` ou avec l’[option `decoding`](../configuration/4-pages.fr.md#pages-body-images).
+:::
+
+### Redimensionnement
+
+Chaque image du _body_ peut être redimensionnée automatiquement en définissant une largeur inférieure à celle d’origine, avec l’attribut additionnel `{width=X}`.
+
+_Exemple :_
+
+```markdown
+![](/image.jpg){width=800}
+```
+
+Est converti en :
+
+```html
+<img src="/thumbnails/800/image.jpg" width="800" height="600">
+```
+
+:::info
+Le ratio est conservé (l’attribut `height` est calculé automatiquement), le fichier original n’est pas modifié et la version redimensionnée est stockée dans `/thumbnails/<width>/`.
+:::
+
+:::tip
+Vous pouvez aussi redimensionner toutes les images à une largeur maximale avec l’[option `resize`](../configuration/4-pages.fr.md#pages-body-images).
+:::
+
+:::important
+Cette fonctionnalité nécessite une bibliothèque de traitement d’images : [Imagick](https://www.php.net/manual/book.imagick.php) est utilisé en priorité s’il est disponible (et capable de lire le JPEG et le PNG), puis [libvips](https://www.libvips.org/) (via l’extension PHP [FFI](https://www.php.net/manual/book.ffi.php)), et enfin [GD](https://www.php.net/manual/book.image.php) en dernier recours ; sinon, elle ajoute seulement un attribut HTML `width` à la balise `img`.
+:::
+
+:::info
+La prise en charge de libvips est facultative et n’est pas incluse dans `cecil.phar`. Pour l’utiliser, Cecil doit être installé avec [Composer](https://getcomposer.org) et il faut :
+
+1. [libvips](https://www.libvips.org/install.html) installé sur le système
+2. l’extension PHP [FFI](https://www.php.net/manual/book.ffi.php) activée
+3. le paquet `intervention/image-driver-vips` installé avec Cecil
+
+Si Cecil est une dépendance de votre projet (voir [Bibliothèque](../developers/2-library.fr.md#prise-en-charge-de-libvips)) :
+
+```bash
+composer require intervention/image-driver-vips
+```
+
+Si Cecil est installé globalement :
+
+```bash
+composer global require cecil/cecil intervention/image-driver-vips
+```
+:::
+
+### Formats
+
+Si l’[option `formats`](../configuration/4-pages.fr.md#pages-body-images) est définie, des images alternatives sont créées et ajoutées.
+
+_Exemple :_
+
+```markdown
+![](/image.jpg)
+```
+
+Peut être converti en :
+
+```html
+<picture>
+  <source srcset="/image.avif" type="image/avif">
+  <source srcset="/image.webp" type="image/webp">
+  <img src="/image.jpg">
+</picture>
+```
+
+:::important
+Veuillez noter que **tous les formats d’image** ne sont pas toujours inclus dans les extensions d’image PHP.
+:::
+
+### Responsive
+
+Si l’[option `responsive`](../configuration/4-pages.fr.md#pages-body-images) est activée, alors toutes les images du _body_ seront automatiquement rendues « responsive ».
+
+_Exemple :_
+
+```markdown
+![](/image.jpg){width=800}
+```
+
+sera converti en :
+
+```html
+<img src="/thumbnails/800/image.jpg" width="800" height="600"
+  srcset="/thumbnails/480/image.jpg 480w,
+          /thumbnails/640/image.jpg 640w,
+          /thumbnails/768/image.jpg 768w,
+          /thumbnails/800/image.jpg 800w"
+  sizes="100vw"
+>
+```
+
+:::info
+Comme une image du _body_ est convertie en [asset](../assets/index.fr.md#asset), les différentes largeurs sont définies (et modifiables) dans l’option `assets.images.responsive.widths` de la [configuration des assets](../configuration/6-assets.fr.md).
+:::
+
+L’attribut `sizes` prend la valeur de l’option de configuration `assets.images.responsive.sizes.default`, mais peut être modifié en créant une nouvelle entrée nommée d’après une _class_ ajoutée à l’image.
+
+_Exemple :_
+
+```yaml
+assets:
+  images:
+    responsive:
+      sizes:
+        default: 100vw
+        my_class: "(max-width: 800px) 768px, 1024px"
+```
+
+```markdown
+![](/image.jpg){.my_class}
+```
+
+:::info
+Vous pouvez combiner les options `formats` et `responsive`.
+:::
+
+### Classe CSS
+
+Vous pouvez définir une valeur par défaut pour l’attribut `class` de chaque image avec l’[option `class`](../configuration/4-pages.fr.md#pages-body-images).
+
+### Légende
+
+Le titre optionnel peut être utilisé pour créer automatiquement une légende (`figcaption`) en activant l’[option `caption`](../configuration/4-pages.fr.md#pages-body-images).
+
+_Exemple :_
+
+```markdown
+![](/image.jpg "Title")
+```
+
+Est converti en :
+
+```html
+<figure>
+  <img src="/image.jpg" title="Title">
+  <figcaption>Title</figcaption>
+</figure>
+```
+
+:::info
+La légende prend en charge le contenu Markdown.
+:::
+
+### Image localisée
+
+Pour les pages traduites, Cecil recherche d’abord un fichier suffixé par la langue lors de la résolution des chemins d’image Markdown.
+
+_Exemple :_
+
+```markdown
+![](/images/cecil-logo.png)
+```
+
+Avec une page française (`fr`), Cecil essaie d’abord `/images/cecil-logo.fr.png`, puis revient à `/images/cecil-logo.png`.
+
+### Variantes sombre et mobile
+
+Si l’[option `dark_suffix`](../configuration/4-pages.fr.md#pages-body-images) est définie (ex. : `.dark`), Cecil recherche une variante sombre de chaque image (ex. : `image.dark.jpg` à côté de `image.jpg`) et l’ajoute en tant que `<source media="(prefers-color-scheme: dark)">` dans un élément `<picture>`.
+
+De la même manière, si l’[option `mobile_suffix`](../configuration/4-pages.fr.md#pages-body-images) est définie (ex. : `.mobile`), Cecil recherche une variante mobile de chaque image (ex. : `image.mobile.jpg`) et l’ajoute en tant que `<source>` avec la media query `mobile_media_query`.
+
+### Espace réservé (placeholder)
+
+Comme les images sont généralement des ressources plus lourdes et plus lentes, et qu’elles ne bloquent pas le rendu, il est préférable de donner aux utilisateurs quelque chose à voir pendant qu’ils attendent leur chargement.
+
+L’attribut `placeholder` accepte deux valeurs :
+
+1. `color` : affiche un fond coloré (basé sur la couleur dominante de l’image)
+2. `lqip` : [Low-Quality Image Placeholder](https://www.guypo.com/introducing-lqip-low-quality-image-placeholders)
+
+_Exemples :_
+
+```markdown
+![](/images/img.jpg){placeholder=color}
+![](/images/img.jpg){placeholder=lqip}
+```
+
+:::tip
+Vous pouvez définir une valeur pour l’attribut `placeholder` de chaque image avec l’[option `placeholder`](../configuration/4-pages.fr.md#pages-body-images).
+:::
+
+:::warning
+Les placeholders ne s’appliquent qu’aux images JPEG, PNG et GIF, et l’option `lqip` n’est pas compatible avec les GIF animés.
+:::
+
+## Ancres des titres
+
+Un lien d’ancre est ajouté à la fin des titres `h2` et `h3` (voir l’option [`pages.body.anchors`](../configuration/4-pages.fr.md#pages-body-anchors)), pour faire un lien vers un titre d’une page :
+
+```html
+<h2 id="heading">Heading<a class="heading-anchor" href="#heading" aria-hidden="true" tabindex="-1"></a></h2>
+```
+
+Le lien est vide : les templates par défaut affichent un `#` au survol.
+
+## Table des matières
+
+Vous pouvez ajouter une table des matières avec la syntaxe Markdown suivante :
+
+```markdown
+[toc]
+```
+
+:::info
+Par défaut, la table des matières extrait les titres H2 et H3. Vous pouvez modifier ce comportement avec les [options de body](../configuration/4-pages.fr.md#pages-body).
+:::
+
+## Extrait
+
+Un extrait peut être défini dans le _body_ avec l’un des commentaires HTML suivants : `<!-- excerpt -->` ou `<!-- break -->` (voir l’[option `pages.body.excerpt`](../configuration/4-pages.fr.md#pages-body-excerpt)).
+
+_Exemple :_
+
+```html
+Introduction.
+<!-- excerpt -->
+Main content.
+```
+
+Utilisez ensuite le filtre [`excerpt_html`](../templates/reference/3-filters.fr.md#excerpt-html) dans votre template.
+
+## Notes
+
+Créez un bloc de _Note_ (info, astuce, important, etc.).
+
+_Exemple :_
+
+```markdown
+:::tip
+**Tip:** This is advice.
+:::
+```
+
+Est converti en :
+
+```html
+<aside class="note note-tip">
+  <p>
+    <strong>Tip:</strong> This is advice.
+  </p>
+</aside>
+```
+
+:::tip
+**Tip:** This is advice.
+:::
+
+:::info
+N’importe quel nom de type peut être utilisé : il est ajouté à l’attribut `class` sous la forme `note-<type>` (ex. : `:::danger` donne `class="note note-danger"`).
+:::
+
+_Autres exemples :_
+
+:::
+empty
+:::
+
+:::info
+info
+:::
+
+:::tip
+tip
+:::
+
+:::important
+important
+:::
+
+:::warning
+warning
+:::
+
+:::caution
+caution
+:::
+
+### Notes imbriquées
+
+Une note est fermée par une ligne composée d’au moins autant de `:` que sa ligne d’ouverture : pour imbriquer des notes, utilisez une clôture plus longue pour la note parente (`::::`, puis `:::::` pour un troisième niveau, etc.).
+
+```markdown
+::::info
+Avant.
+
+:::tip
+**Tip:** This is advice.
+:::
+
+Après.
+::::
+```
+
+::::info
+Avant.
+
+:::tip
+**Tip:** This is advice.
+:::
+
+Après.
+::::
+
+Une clôture plus longue permet aussi d’afficher la syntaxe des notes dans un bloc de code, à l’intérieur d’une note.
+
+### Templates
+
+Une note est rendue avec le template `partials/notes/<type>.html.twig`, s’il existe (dans les `layouts/` du site, dans un thème ou intégré à Cecil), à la place de l’élément `<aside>`.
+
+Cecil fournit des templates pour les types suivants, rendus sans JavaScript : un thème peut les mettre en forme, les surcharger et y ajouter de l’interactivité. Contrairement aux autres notes, leur élément racine est un `<div class="note note-<type>">` (et non un `<aside>`), car leur contenu fait partie du contenu principal.
+
+| Type         | Éléments                                                                          | Rendu                                             |
+| ------------ | --------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `tabs`       | un par titre `####`                                                               | panneaux empilés (`<section class="note-tab">`)   |
+| `code-group` | un par titre `####`, ou un par bloc de code (intitulé avec son langage)           | comme `tabs`                                      |
+| `steps`      | un par titre `####`                                                               | liste ordonnée (`<ol class="note-steps-list">`)   |
+| `accordion`  | un par titre `####`                                                               | `<details class="note-accordion-item">`           |
+| `cards`      | un par entrée de liste (un lien en tête est le titre de la carte), ou par titre `####` | liste (`<ul class="note-cards-list">`)        |
+
+Les exemples ci-dessous sont eux-mêmes des notes imbriquées : une note `tabs` (avec une clôture `::::`) affiche la source Markdown et son rendu.
+
+#### Onglets
+
+Des contenus alternatifs, un par titre `####` (ex. : par système d’exploitation).
+
+::::tabs
+#### Markdown
+
+````markdown
+:::tabs
+#### macOS et Linux
+
+```bash
+brew install cecilapp/tap/cecil
+```
+
+#### Windows
+
+```bash
+scoop install https://cecil.app/scoop/cecil.json
+```
+:::
+````
+
+#### Rendu
+
+:::tabs
+#### macOS et Linux
+
+```bash
+brew install cecilapp/tap/cecil
+```
+
+#### Windows
+
+```bash
+scoop install https://cecil.app/scoop/cecil.json
+```
+:::
+::::
+
+#### Groupe de code
+
+Comme `tabs`, avec uniquement des blocs de code : sans titre, chaque bloc de code est intitulé avec son langage.
+
+::::tabs
+#### Markdown
+
+````markdown
+:::code-group
+```bash
+curl -LO https://cecil.app/cecil.phar
+```
+
+```powershell
+Invoke-WebRequest https://cecil.app/cecil.phar -OutFile cecil.phar
+```
+:::
+````
+
+#### Rendu
+
+:::code-group
+```bash
+curl -LO https://cecil.app/cecil.phar
+```
+
+```powershell
+Invoke-WebRequest https://cecil.app/cecil.phar -OutFile cecil.phar
+```
+:::
+::::
+
+#### Étapes
+
+Une procédure numérotée, une étape par titre `####`.
+
+::::tabs
+#### Markdown
+
+````markdown
+:::steps
+#### Créer un site
+
+```bash
+php cecil.phar new:site
+```
+
+#### Le prévisualiser
+
+```bash
+php cecil.phar serve
+```
+:::
+````
+
+#### Rendu
+
+:::steps
+#### Créer un site
+
+```bash
+php cecil.phar new:site
+```
+
+#### Le prévisualiser
+
+```bash
+php cecil.phar serve
+```
+:::
+::::
+
+#### Accordéon
+
+Des éléments repliables, un par titre `####` (ex. : une FAQ).
+
+::::tabs
+#### Markdown
+
+````markdown
+:::accordion
+#### PHP est-il requis ?
+
+Non : le binaire autonome embarque PHP.
+
+#### Où se trouve le site généré ?
+
+Dans le dossier `_site`.
+:::
+````
+
+#### Rendu
+
+:::accordion
+#### PHP est-il requis ?
+
+Non : le binaire autonome embarque PHP.
+
+#### Où se trouve le site généré ?
+
+Dans le dossier `_site`.
+:::
+::::
+
+#### Cartes
+
+Des liens vers d’autres pages, une carte par entrée de liste : un lien en tête est le titre de la carte.
+
+::::tabs
+#### Markdown
+
+````markdown
+:::cards
+- [Installation](../getting-started/2-installation.fr.md) : télécharger et installer Cecil.
+- [Configuration](../configuration/index.fr.md) : configurer votre site.
+:::
+````
+
+#### Rendu
+
+:::cards
+- [Installation](../getting-started/2-installation.fr.md) : télécharger et installer Cecil.
+- [Configuration](../configuration/index.fr.md) : configurer votre site.
+:::
+::::
+
+#### Template personnalisé
+
+Le template reçoit une variable `note` :
+
+- `note.type` : type de note (ex. : `tabs`)
+- `note.id` : identifiant unique dans la page (ex. : `note-tabs-1`)
+- `note.content` : HTML de toute la note
+- `note.intro` : HTML du contenu avant le premier titre `####`
+- `note.items` : liste des éléments, chacun avec :
+  - `title` : titre (HTML)
+  - `heading` : élément titre (HTML), avec son attribut `id`
+  - `id` : identifiant du titre, s’il existe
+  - `link` : élément lien en tête (HTML) d’une entrée de liste
+  - `url` : URL du lien en tête d’une entrée de liste
+  - `language` : langage d’un bloc de code
+  - `content` : contenu (HTML)
+
+Pour surcharger le rendu d’un type de note, créez le template dans votre site (ou thème), par exemple `layouts/partials/notes/tip.html.twig` :
+
+```twig
+<div class="callout callout-{{ note.type }}">
+  {{ note.content|raw }}
+</div>
+```
+
+:::info
+Les notes sont rendues lors de la conversion du Markdown, avant le rendu des pages : un template de note a accès à la variable `note` et aux traductions (dans la langue de la page), mais pas à `page` ni à `site`.
+:::
+
+## Coloration syntaxique
+
+La coloration syntaxique des blocs de code est activée par défaut avec l’option [`pages.body.highlight`](../configuration/4-pages.fr.md#pages-body-highlight).
+
+Si besoin, vous pouvez la désactiver avec :
+
+```yaml
+pages:
+  body:
+    highlight: false
+```
+
+_Exemple :_
+
+<pre>
+```php
+echo "Hello world";
+```
+</pre>
+
+Est rendu en :
+
+```php
+echo "Hello world";
+```
+
+:::info
+Vous pouvez personnaliser le style de coloration syntaxique en créant votre propre thème. Consultez le [guide des thèmes de Highlight.js](https://highlightjs.readthedocs.io/en/latest/theme-guide.html).
+:::
+
+:::tip
+Vous pouvez aussi utiliser [tempest/highlight](https://github.com/tempestphp/highlight) à la place de highlight.js avec l’option [`pages.body.highlight.engine`](../configuration/4-pages.fr.md#pages-body-highlight). Il est plus rapide, mais prend en charge moins de langages. Il utilise les classes CSS `hl-*` : consultez les [thèmes de tempest/highlight](https://github.com/tempestphp/highlight/tree/main/src/Themes/Css).
+:::
+
+Le langage d’un bloc de code est ajouté à l’attribut `data-lang` de l’élément `<pre>` (ex. : `<pre data-lang="php">`) : les templates par défaut l’affichent comme une étiquette.
+
+## Texte inséré
+
+Représente une plage de texte qui a été ajoutée.
+
+```markdown
+++text++
+```
+
+Est converti en :
+
+```html
+<ins>text</ins>
+```
