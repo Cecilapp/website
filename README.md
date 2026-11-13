@@ -80,6 +80,16 @@ curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/sear
 curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=topic:cecil-starter+org:Cecilapp+fork:true+is:public+archived:false' | jq '[.items[] | {name, full_name, description, github: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/starterkits.json
 ```
 
+## Social images
+
+The image displayed when a page is shared (Open Graph, X Card) is generated at build time by the [Open Graph image component theme](https://github.com/Cecilapp/theme-ogimage) (`cecil/theme-ogimage`): the title of the page drawn on [`static/images/cecil-card-2.png`](static/images/cecil-card-2.png), with the Montserrat fonts of [`assets/ogimage/fonts/`](assets/ogimage/fonts/).
+
+- **Generated**: an `og.png` next to each page (e.g. `/documentation/quick-start/og.png`), given to the metatags partial with `og_image(page)` in [`layouts/page.html.twig`](layouts/page.html.twig).
+- **Not generated**: pages with an `image` in their front matter, and the homepage (the site `image` is used).
+- **Configuration**: under the `ogimage` key of `cecil.yml` (disabled in `config/dev.yml` for faster local builds); see the [theme documentation](https://github.com/Cecilapp/theme-ogimage#configuration) for all the options.
+
+The PHP GD extension with FreeType support is required: without it, a warning is logged and the site `image` is used.
+
 ## Search
 
 The site is searched client side with the [FlexSearch component theme](https://github.com/Cecilapp/theme-flexsearch) (`cecil/theme-flexsearch`): no service, works offline, in English and French.
