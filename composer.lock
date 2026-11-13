@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fc4bc10ee23f5a5ce4cd731df361169",
+    "content-hash": "c6227d783343d9a3aa763624919e7869",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -283,6 +283,61 @@
                 }
             ],
             "time": "2026-10-10T15:29:17+00:00"
+        },
+        {
+            "name": "cecil/theme-ogimage",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-ogimage.git",
+                "reference": "7dd4cedc7032f70772571cfff239b894326c299b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-ogimage/zipball/7dd4cedc7032f70772571cfff239b894326c299b",
+                "reference": "7dd4cedc7032f70772571cfff239b894326c299b",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^2.1"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "cecil": {
+                    "theme-name": "ogimage"
+                },
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Open Graph image: generates the Open Graph images of pages",
+            "keywords": [
+                "cecil",
+                "image",
+                "open graph",
+                "plugin",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-ogimage/issues",
+                "source": "https://github.com/Cecilapp/theme-ogimage/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2026-11-13T02:15:30+00:00",
+            "published-time": "2026-11-13T02:36:02+00:00"
         },
         {
             "name": "cecil/theme-pele",
@@ -1195,5 +1250,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }

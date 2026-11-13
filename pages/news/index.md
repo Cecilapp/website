@@ -7,8 +7,6 @@ sortby:
 pagination:
   enabled: false
 image: images/cecil-card-news.png
-cascade:
-  image: images/cecil-card-news.png
 llms: false
 ---
 News about Cecil.
