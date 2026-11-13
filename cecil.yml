@@ -18,9 +18,6 @@ social:
     url: https://github.com/Cecilapp/Cecil
     sponsor: https://github.com/sponsors/ArnaudLigny
 image: /images/cecil-logo-og.png
-cloudinary:
-  account: aligny
-  asset: cecil/og/cecil-card-2.png
 language: en
 languages:
   - code: en
@@ -131,6 +128,7 @@ theme:
   - pwa
   - netlify
   - pele
+  - ogimage
 pwa:
   manifest:
     background_color: '#163C56'
@@ -183,6 +181,19 @@ libs:
 # Mermaid diagrams (theme-pele): other options keep the theme defaults
 pele:
   dark: attribute # dark colors only with the `dark` class set by the theme selector (not the system preference)
+
+# social images (theme-ogimage): an image for each page without `image` (the homepage uses the site `image`)
+ogimage:
+  background: images/cecil-card-2.png
+  color: '#ffffff'
+  fonts:
+    regular: ogimage/fonts/Montserrat-Regular.ttf
+    bold: ogimage/fonts/Montserrat-ExtraBold.ttf
+  padding:
+    top: 80
+    right: 80
+    bottom: -40 # draws the footer (site title) out of the image: the logo is already in the background
+    left: 80
 
 # search (theme-flexsearch): other options keep the theme defaults
 flexsearch:

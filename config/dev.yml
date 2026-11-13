@@ -36,8 +36,8 @@ layouts:
     responsive: false
 flexsearch:
   enabled: false # hides the search box (the index is not generated)
-cloudinary:
-  enabled: false # no social image generated (and downloaded) for each page
+ogimage:
+  enabled: false # no social image generated for each page
 serviceworker:
   enabled: false
 optimize:

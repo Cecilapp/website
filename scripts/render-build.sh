@@ -42,7 +42,7 @@ echo "Installing themes..."
 node -e '
 const lock = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
 for (const p of lock.packages.filter(p => p.type === "cecil-theme")) {
-  console.log(p.extra.name, p.source.url.replace(/^https:\/\/github\.com\/|\.git$/g, ""), p.source.reference);
+  console.log(p.extra.name ?? p.extra.cecil["theme-name"], p.source.url.replace(/^https:\/\/github\.com\/|\.git$/g, ""), p.source.reference);
 }' composer.lock | while read -r name repo ref; do
   echo "- $name ($repo@${ref:0:7})"
   rm -rf "themes/$name" && mkdir -p "themes/$name"
