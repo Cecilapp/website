@@ -1,7 +1,7 @@
 ---
 title: Accueil
 date: 2021-11-01
-updated: 2025-12-26
+updated: 2026-11-14
 blocks:
   features:
     - title: Rapide & sécurisé
@@ -44,6 +44,27 @@ blocks:
       description: "Cecil est distribué sous licence EUPL-1.2 : contribuez à son développement sur [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
+  desktop:
+    hero: "Nouveau : Cecil Desktop, en bêta"
+    badge: Bêta
+    title: Cecil Desktop, l’application desktop pour Cecil
+    description: "Une étape importante pour les utilisateurs de Cecil : gérez, rédigez, buildez, prévisualisez et publiez vos sites depuis une application desktop native, sans terminal. Cecil est embarqué : ni PHP, ni ligne de commande à installer."
+    points:
+      - Éditeur Markdown avec aperçu en direct et formulaire de front matter
+      - Builds, diagnostics et problèmes regroupés dans une seule fenêtre
+      - Publication sur Netlify, Vercel, GitHub Pages et AWS S3
+      - Mode Rédaction, pour confier un site à celles et ceux qui en écrivent le contenu
+    beta: "L’application est en cours de bêta-test : essayez-la sur vos sites et envoyez-nous vos retours."
+    download:
+      label: Télécharger la bêta
+      url: https://desktop.cecil.app/fr/#download
+    learn_more:
+      label: Découvrir Cecil Desktop
+      url: https://desktop.cecil.app/fr/
+    image: images/cecil-desktop/sites-light.png
+    image_dark: images/cecil-desktop/sites-dark.png
+    alt: Cecil Desktop listant les sites, avec l’état de leur dernier build et de leur publication
+    visible: true
   services:
     - id: markdown
       title: Expérience d’écriture intuitive

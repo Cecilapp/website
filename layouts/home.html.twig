@@ -13,12 +13,20 @@
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row space-x-0 md:space-x-6 lg:space-x-10">
           <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8">
-            {#- last release badge ~#}
-            {%- if site.menus.main.download is defined -%}
-            {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-lbl'} -%}
-              <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16) }}
-            {%- endx -%}
-            {%- endif ~%}
+            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+              {#- last release badge ~#}
+              {%- if site.menus.main.download is defined -%}
+              {%- x:button with {href: url(site.menus.main.download.url) ~ '#update', class: 'btn-lbl'} -%}
+                <div class="version">{% trans %}Update available{% endtrans %}</div>{{ octicons.svg('arrow-right', 16) }}
+              {%- endx -%}
+              {%- endif ~%}
+              {#- Cecil Desktop announcement ~#}
+              {%- if page.blocks.desktop.visible|default(false) ~%}
+              {%- x:button with {href: '#desktop', class: 'btn-lbl btn-gold'} -%}
+                <div>{{ page.blocks.desktop.hero }}</div>{{ octicons.svg('arrow-down', 16) }}
+              {%- endx -%}
+              {%- endif ~%}
+            </div>
             {#- baseline ~#}
             <h1 class="lg:mb-8 text-3xl xl:text-5xl">{{ site.baseline }}</h1>
             {#- description ~#}
@@ -118,6 +126,10 @@ php cecil.phar serve</pre>
         {%- endblock ~%}
 
     {%- block services ~%}
+    {#- Cecil Desktop ~#}
+    {%- if page.blocks.desktop.visible|default(false) ~%}
+    {{- include('partials/block-desktop.html.twig', {block: page.blocks.desktop}, with_context: false) ~}}
+    {%- endif ~%}
     <div id="services">
     {%- for block in page.blocks.services|default([])|filter(b => b.visible != false) ~%}
       {{- include('partials/block-service.html.twig', {loop, id:block.id, title:block.title, description:block.description, path:block.path, image:block.image|default, shadow:block.shadow ?? true, webp:block.webp ?? true}, with_context: false) ~}}

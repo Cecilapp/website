@@ -1,7 +1,7 @@
 ---
 title: Homepage
 date: 2019-03-14
-updated: 2025-12-23
+updated: 2026-11-14
 blocks:
   features:
     - title: Fast & secure
@@ -44,6 +44,27 @@ blocks:
       description: "Cecil is licensed under EUPL-1.2: contribute to its development on [GitHub](https://github.com/Cecilapp/Cecil)."
       icon: mark-github
       visible: true
+  desktop:
+    hero: "New: Cecil Desktop, in beta"
+    badge: Beta
+    title: Cecil Desktop, the desktop app for Cecil
+    description: "An important step for Cecil users: manage, write, build, preview and publish your sites from a native desktop app, without the terminal. Cecil is embedded: no PHP and no command line to install."
+    points:
+      - Markdown editor with live preview and front matter form
+      - Builds, diagnostics and problems grouped in one window
+      - Publishing to Netlify, Vercel, GitHub Pages and AWS S3
+      - Writing mode, to hand a site to people who write its content
+    beta: "The app is in beta testing: try it on your sites and send us your feedback."
+    download:
+      label: Download the beta
+      url: https://desktop.cecil.app/#download
+    learn_more:
+      label: Discover Cecil Desktop
+      url: https://desktop.cecil.app/
+    image: images/cecil-desktop/sites-light.png
+    image_dark: images/cecil-desktop/sites-dark.png
+    alt: Cecil Desktop listing the sites, with the state of their last build and publication
+    visible: true
   services:
     - id: markdown
       title: Intuitive writing experience
