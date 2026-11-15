@@ -1,0 +1,8 @@
+{% set title = page.title ~ ' &middot; ' ~ "Documentation"|trans ~ ' &middot; ' ~ site.title %}
+{% import 'macros/octicons.twig' as octicons %}
+
+{% extends 'page.html.twig' %}
+
+              {%- block content ~%}
+              {{ page.content }}
+              {%- endblock ~%}

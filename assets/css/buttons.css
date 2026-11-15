@@ -1,0 +1,55 @@
+/* Buttons */
+.btn {
+  @apply flex flex-row items-center justify-center;
+  @apply max-h-10;
+  @apply md:w-fit;
+  @apply font-medium;
+  @apply no-underline;
+  @apply gap-2;
+  @apply px-4 py-2;
+  @apply rounded-4xl;
+  @apply text-slate-950 dark:text-slate-100 bg-slate-300 dark:bg-slate-700;
+  @apply border border-slate-300 dark:border-slate-700;
+  &:hover {
+    @apply text-white bg-blue dark:bg-slate-600;
+    @apply border-white dark:border-slate-600;
+  }
+  > svg {
+    @apply size-4;
+  }
+}
+.btn-lg {
+  @apply max-h-14;
+  @apply text-lg;
+  @apply gap-3;
+  @apply py-2.5 px-6;
+  @apply rounded-lg;
+  @apply min-w-60;
+  > svg {
+    @apply size-6;
+  }
+}
+.btn-sm {
+  @apply max-h-8;
+  @apply px-2 py-2;
+}
+.btn-lbl {
+  @apply text-sm;
+  @apply gap-1;
+  @apply px-3 py-1.5;
+}
+.btn-gold {
+  @apply bg-gold dark:bg-gold text-darkblue dark:text-darkblue;
+  @apply border-gold dark:border-gold;
+  &:hover {
+    @apply bg-white dark:bg-white text-darkblue;
+    @apply border-white dark:border-white;
+  }
+}
+.btn-trans {
+  @apply bg-transparent dark:hover:bg-white text-white;
+  @apply border-white;
+  &:hover {
+    @apply bg-white text-darkblue;
+  }
+}
