@@ -1,0 +1,75 @@
+{% import 'macros/octicons.twig' as octicons %}
+{% extends 'page.html.twig' %}
+{%- set downloads = page.downloads %}
+{%- set releases_url = site.social.github.repo ~ '/releases' %}
+
+            {%- block head_content ~%}
+            {{ parent() ~}}
+            <div class="max-w-(--breakpoint-lg) mx-auto mb-8">
+              {#- title ~#}
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 mb-4 border-b border-slate-300 dark:border-slate-700">
+                <h1 style="view-transition-name: {{ page.slug|replace({'.': '-'}) }}" id="{{ page.slug|replace({'.': '-'}) }}" class="page-transition text-2xl font-bold mb-0">{{ page.title }}</h1>
+                {%- x:button with {href: url(releases_url ~ '/latest'), class: 'btn-lbl w-fit'} -%}
+                  {{ octicons.svg('tag', 16) }}<div class="version">{{ downloads.release }}</div>
+                {%- endx ~%}
+              </div>
+              <p class="text-base">{{ downloads.lead }}</p>
+              {#- PHAR ~#}
+              <div id="phar" class="flex flex-col md:flex-row md:items-center gap-6 text-center p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+                <div>
+                  {{- include('partials/platform-icon.html.twig', {icon: 'php', class: 'size-24 shrink-0 text-blue dark:text-slate-300'}, with_context: false) ~}}
+                </div>
+                <div class="grow">
+                  <h2 class="text-xl font-semibold mb-1">{{ downloads.phar.title }}</h2>
+                  <div class="text-sm [&_p]:mb-0">{{ downloads.phar.description|markdown_to_html }}</div>
+                </div>
+                <div class="flex flex-col items-stretch md:items-center gap-2">
+                  {%- x:button with {href: url(downloads.phar.file, {language: 'en'}), class: 'btn-lg btn-gold'} -%}
+                    {{ octicons.svg('download', 24) }}<div class="version">{{ downloads.phar.file }}</div>
+                  {%- endx ~%}
+                  <a href="{{ url(downloads.phar.checksum, {language: 'en'}) }}" class="text-xs text-center">{{ downloads.phar.checksum_label }}</a>
+                </div>
+              </div>
+            </div>
+            {%- endblock head_content ~%}
+
+              {%- block toc %}{% endblock ~%}
+
+              {%- block content ~%}
+              {#- the standalone binary section is inserted at the "standalone" marker of the content ~#}
+              {%- set content = page.content|split('<!-- standalone -->') ~%}
+              {{ content[0] }}
+              <h2 id="standalone">{{ downloads.standalone.title }}</h2>
+              <p>{{ downloads.standalone.description }}</p>
+              <div class="not-markdown mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {%- for platform in downloads.standalone.platforms ~%}
+                  <div id="{{ platform.name|lower }}" class="flex flex-col items-center gap-3 p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-center">
+                    {{- include('partials/platform-icon.html.twig', {icon: platform.icon, class: 'size-10 text-blue dark:text-slate-300'}, with_context: false) ~}}
+                    <h3 class="text-lg font-semibold">{{ platform.name }}</h3>
+                    {%- for file in platform.files ~%}
+                    {%- if loop.first ~%}
+                    {%- x:button with {href: url(releases_url ~ '/latest/download/' ~ file.file), class: 'w-full md:w-full'} -%}
+                      {{ octicons.svg('download', 16) }}<div>{{ file.label }}</div>
+                    {%- endx ~%}
+                    {%- else ~%}
+                    <a href="{{ url(releases_url ~ '/latest/download/' ~ file.file) }}" class="text-sm">{{ file.label }}</a>
+                    {%- endif ~%}
+                    {%- endfor ~%}
+                  </div>
+                  {%- endfor ~%}
+                </div>
+                <div class="mt-3 text-xs [&_p]:mb-1">
+                  {{ downloads.standalone.note|markdown_to_html }}
+                  <p><a href="{{ url(releases_url ~ '/latest/download/' ~ downloads.standalone.checksum) }}">{{ downloads.standalone.checksum_label }}</a> · <a href="{{ url(releases_url) }}">{{ downloads.releases }}</a></p>
+                </div>
+              </div>
+              {{ content[1]|default }}
+              {%- endblock ~%}
+
+          {%- block xltoc %}{% endblock ~%}
+
+    {% block footer_scripts %}
+    {{- parent() ~}}
+    {{- include('partials/version.js.twig', with_context: false) ~}}
+    {% endblock %}

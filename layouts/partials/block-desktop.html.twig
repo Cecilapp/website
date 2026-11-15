@@ -1,0 +1,35 @@
+      {#- Variables: block (page.blocks.desktop: badge, title, description, points, beta, download, learn_more, image, image_dark, alt) -#}
+      {%- import 'macros/octicons.twig' as octicons ~%}
+      <div id="desktop" class="px-6 md:px-10 py-16 md:py-24 lg:px-28 text-white bg-darkblue dark:bg-dark">
+        <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-14 xl:gap-20 items-center">
+          <div class="lg:basis-1/2 space-y-6 md:space-y-8 text-center lg:text-left">
+            <span class="inline-block px-3 py-1 rounded-4xl text-sm font-bold uppercase tracking-wider text-darkblue bg-gold">{{ block.badge }}</span>
+            <h2 class="text-3xl md:text-4xl text-white">{{ block.title }}</h2>
+            <div class="text-lg md:text-xl">{{ block.description|markdown_to_html }}</div>
+            {%- if block.points|default ~%}
+            <ul class="space-y-3 text-lg text-left w-fit mx-auto lg:mx-0">
+              {%- for point in block.points ~%}
+              <li class="flex items-start gap-3">{{ octicons.svg('check', 24, 'size-6 shrink-0 text-gold') }}<span>{{ point }}</span></li>
+              {%- endfor ~%}
+            </ul>
+            {%- endif ~%}
+            {%- if block.beta|default ~%}
+            <p class="flex items-start justify-center lg:justify-start gap-3 text-base text-slate-300">{{ octicons.svg('beaker', 16, 'size-5 shrink-0 mt-0.5') }}<span>{{ block.beta }}</span></p>
+            {%- endif ~%}
+            <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center lg:justify-start gap-4">
+              {%- x:button with {href: block.download.url, class: 'btn-lg btn-gold whitespace-nowrap'} -%}
+                {{ octicons.svg('download', 24, 'hidden sm:inline') }}<div>{{ block.download.label }}</div>
+              {%- endx -%}
+              {%- x:button with {href: block.learn_more.url, class: 'btn-lg btn-trans whitespace-nowrap'} -%}
+                <div>{{ block.learn_more.label }}</div>{{ octicons.svg('arrow-right', 24, 'hidden sm:inline') }}
+              {%- endx ~%}
+            </div>
+          </div>
+          <div class="lg:basis-1/2 animate-on-scroll">
+            <a href="{{ block.learn_more.url }}" title="{{ block.learn_more.label }}">
+              {{- html(asset(block.image), {alt: block.alt, loading: 'lazy', decoding: 'async', class: 'block dark:hidden w-full h-auto rounded-xl shadow-2xl'}) -}}
+              {{- html(asset(block.image_dark|default(block.image)), {alt: block.alt, loading: 'lazy', decoding: 'async', class: 'hidden dark:block w-full h-auto rounded-xl shadow-2xl'}) -}}
+            </a>
+          </div>
+        </div>
+      </div>

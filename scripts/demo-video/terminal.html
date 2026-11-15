@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cecil demo terminal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=block">
+<style>
+  /* dark theme (default) */
+  :root { --bg: #000; --fg: #d4d4d4; --green: #5fd35f; --yellow: #e5c07b; --blue: #6cb6ff; --magenta: #c792ea; --ok-bg: #3fb950; --ok-fg: #0d1117; }
+  /* light theme (?theme=light) */
+  :root.light { --bg: #fff; --fg: #1f2328; --green: #1a7f37; --yellow: #9a6700; --blue: #0969da; --magenta: #8250df; --ok-bg: #4ac26b; --ok-fg: #0d1117; }
+  html, body { margin: 0; background: var(--bg); overflow: hidden; }
+  #term {
+    box-sizing: border-box; width: 930px; height: 518px; padding: 14px 16px;
+    font: 15px/1.5 'JetBrains Mono', Consolas, monospace; color: var(--fg);
+    white-space: pre; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  #inner { flex: none; }
+  .g { color: var(--green); } .y { color: var(--yellow); } .b { color: var(--blue); } .m { color: var(--magenta); } .u { text-decoration: underline; }
+  .ok { display: block; background: var(--ok-bg); color: var(--ok-fg); }
+  .cur { display: inline-block; width: 0.6em; background: var(--fg); }
+  .cur.off { background: transparent; }
+</style>
+</head>
+<body>
+<div id="term"><div id="inner"></div></div>
+<script>
+if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.classList.add('light');
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const PROMPT = '<span class="g">aligny</span> <span class="b">~/www</span> <span class="m">%</span> ';
+
+// timeline actions (ms)
+const A = [];
+const wait = ms => A.push({ t: 'wait', ms });
+const out = html => A.push({ t: 'out', html });
+const type = (text, speed = 1) => A.push({ t: 'type', text, speed });
+const enter = () => A.push({ t: 'out', html: '\n' });
+const clear = () => A.push({ t: 'clear' });
+const prompt = () => out(PROMPT);
+const ask = (q, def, answer, pause = 450) => {
+  out(` <span class="g">${q}</span>${def !== null ? ` [<span class="y">${esc(def)}</span>]` : ''}:\n > `);
+  wait(pause);
+  if (answer) { type(answer, 1.2); wait(250); }
+  out('\n\n');
+  wait(answer ? 150 : 120);
+};
+
+prompt(); wait(900);
+type('cecil new:site demo'); wait(400); enter();
+wait(250);
+out('\n<span class="y"># Create a new website</span>\n\n'); wait(300);
+ask('Give a title to your website', 'New website', 'My Blog', 700);
+ask('Give a baseline to your website', 'A new Cecil website', 'Thoughts, notes and stories', 500);
+ask('Base URL?', '/', '', 500);
+ask('Write a full description of your site', 'A website created with Cecil static site generator.', '', 350);
+ask('What is the author name? (optional)', null, '', 300);
+ask('What is the main language code? (e.g. "en", "fr" or "fr-FR")', 'en', '', 300);
+ask('Add demo content? (yes/no)', 'no', 'yes', 500);
+ask('Add a GitHub Actions workflow to deploy on GitHub Pages? (yes/no)', 'no', '', 350);
+wait(300);
+clear();
+out('<span class="ok"> </span><span class="ok"> [OK] Website created at /Users/aligny/www/demo</span><span class="ok"> </span>\n');
+out(' * Start the built-in preview server with <span class="g">cecil.phar serve</span>\n');
+out(' * You can create a new page with <span class="g">cecil.phar new:page</span>\n\n');
+out(' Visit <span class="u">https://cecil.app</span> for documentation and more.\n\n');
+prompt(); wait(1300);
+type('cecil serve -v demo --open'); wait(450); enter();
+wait(200);
+out('\n<span class="y"># Build website</span>\n\n'); wait(150);
+['Loading pages', 'Loading data', 'Creating pages', 'Converting pages', 'Creating taxonomies', 'Generating pages', 'Creating menus', 'Copying static', 'Rendering pages', 'Saving pages', 'Saving assets']
+  .forEach((s, i) => { out(`<span class="g">${String(i + 1).padStart(2)}. ${s}</span>\n`); wait([60, 40, 70, 120, 50, 60, 40, 50, 260, 80, 60][i]); });
+out('<span class="g">Built in 933 ms (13.62 mb)</span>\n'); wait(80);
+out('<span class="g">Build done.</span>\n'); wait(300);
+out('Starting server (<span class="u">http://localhost:8000</span>)\n');
+wait(1200);
+const END = 'END';
+
+// deterministic typing jitter
+let seed = 7;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+let T = 0;
+const steps = A.map(a => {
+  const s = { ...a, at: T };
+  if (a.t === 'wait') T += a.ms;
+  if (a.t === 'type') {
+    s.times = [];
+    for (const ch of a.text) { T += (45 + rnd() * 70 + (ch === ' ' ? 40 : 0)) / a.speed; s.times.push(T); }
+  }
+  return s;
+});
+window.DURATION = T;
+
+window.render = t => {
+  let html = '', typing = false, lastActivity = 0;
+  for (const s of steps) {
+    if (s.at > t) break;
+    if (s.t === 'out') { html += s.html; lastActivity = s.at; }
+    if (s.t === 'clear') { html = ''; }
+    if (s.t === 'type') {
+      const n = s.times.filter(x => x <= t).length;
+      html += esc(s.text.slice(0, n));
+      if (n < s.text.length) typing = true;
+      if (n) lastActivity = s.times[n - 1];
+    }
+  }
+  const on = typing || ((t - lastActivity) % 1060) < 530;
+  document.getElementById('inner').innerHTML = html + `<span class="cur${on ? '' : ' off'}"> </span>`;
+  const term = document.getElementById('term'), inner = document.getElementById('inner');
+  const overflow = inner.offsetHeight - (term.clientHeight - 28);
+  inner.style.marginTop = overflow > 0 ? `-${overflow}px` : '0';
+};
+render(0);
+</script>
+</body>
+</html>
