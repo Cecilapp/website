@@ -486,6 +486,11 @@ Search.appendIndex(
             "summary": "Minifies\u0020a\u0020CSS\u0020or\u0020JS\u0020asset.",
             "url": "classes/Cecil-Asset.html#method_doMinify"
         },                {
+            "fqsen": "\\Cecil\\Asset\u003A\u003AcheckBundleType\u0028\u0029",
+            "name": "checkBundleType",
+            "summary": "Checks\u0020that\u0020a\u0020file\u0020can\u0020be\u0020added\u0020to\u0020a\u0020bundle\u0020of\u0020the\u0020given\u0020extension\u0020and\u0020media\u0020type.",
+            "url": "classes/Cecil-Asset.html#method_checkBundleType"
+        },                {
             "fqsen": "\\Cecil\\Asset\u003A\u003AgetBundleFamily\u0028\u0029",
             "name": "getBundleFamily",
             "summary": "Returns\u0020the\u0020bundle\u0020family\u0020of\u0020a\u0020file\u0020extension\u0020\u0028\u0022css\u0022\u0020for\u0020stylesheets,\u0020\u0022js\u0022\u0020for\u0020scripts\u0029,\u0020or\u0020null.",
@@ -3578,7 +3583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Cecil\\Config\u003A\u003AsetPagesSchema\u0028\u0029",
             "name": "setPagesSchema",
-            "summary": "Sets\u0020the\u0020effective\u0020front\u0020matter\u0020schemas\u0020\u0028\u0060pages.schema\u0060\u0029,\u0020merged\u0020field\u0020by\u0020field,\u0020from\u0020the\u0020lowest\u0020to\u0020the\u0020highest\u0020priority\u003A\n\u0060schemas\/\u0060\u0020directories\u0020of\u0020the\u0020themes\u0020\u0028a\u0020theme\u0020overrides\u0020the\u0020themes\u0020after\u0020it\u0020in\u0020the\u0020list\u0029,\u0020\u0060pages.schema\u0060\u0020of\u0020the\u0020themes\u0020configuration,\n\u0060schemas\/\u0060\u0020directory\u0020of\u0020the\u0020site,\u0020then\u0020\u0060pages.schema\u0060\u0020of\u0020the\u0020site\u0020configuration.",
+            "summary": "Sets\u0020the\u0020effective\u0020front\u0020matter\u0020schemas\u0020\u0028\u0060pages.schema\u0060\u0029,\u0020merged\u0020field\u0020by\u0020field,\u0020from\u0020the\u0020lowest\u0020to\u0020the\u0020highest\u0020priority\u003A\n\u0060schemas\/\u0060\u0020directories\u0020of\u0020the\u0020themes\u0020\u0028a\u0020theme\u0020overrides\u0020the\u0020themes\u0020after\u0020it\u0020in\u0020the\u0020list\u0029,\u0020\u0060pages.schema\u0060\u0020of\u0020the\u0020themes\u0020configuration\n\u0028a\u0020theme\u0020overrides\u0020the\u0020themes\u0020imported\u0020after\u0020it\u0029,\u0020\u0060schemas\/\u0060\u0020directory\u0020of\u0020the\u0020site,\u0020\u0060pages.schema\u0060\u0020of\u0020the\u0020site\u0020configuration,\nthen\u0020the\u0020environment\u0020variables\u0020\u0028ie\u003A\u0020\u0060CECIL_PAGES_SCHEMA_BLOG_AUTHOR\u0060\u0029.",
             "url": "classes/Cecil-Config.html#method_setPagesSchema"
         },                {
             "fqsen": "\\Cecil\\Config\u003A\u003Aexport\u0028\u0029",
@@ -3793,7 +3798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Cecil\\Config\u003A\u003AsetFromEnv\u0028\u0029",
             "name": "setFromEnv",
-            "summary": "Set\u0020configuration\u0020from\u0020environment\u0020variables\u0020starting\u0020with\u0020\u0022CECIL_\u0022.",
+            "summary": "Set\u0020configuration\u0020from\u0020environment\u0020variables\u0020starting\u0020with\u0020\u0022CECIL_\u0022\u0020\u0028only\u0020the\u0020given\u0020key\u0020and\u0020its\u0020sub\u002Dkeys,\u0020if\u0020set\u0029.",
             "url": "classes/Cecil-Config.html#method_setFromEnv"
         },                {
             "fqsen": "\\Cecil\\Config\u003A\u003AgetEnvConfig\u0028\u0029",
@@ -3900,6 +3905,11 @@ Search.appendIndex(
             "name": "themes",
             "summary": "Themes\u0020configuration\u0020layer.",
             "url": "classes/Cecil-Config.html#property_themes"
+        },                {
+            "fqsen": "\\Cecil\\Config\u003A\u003A\u0024themesSchemas",
+            "name": "themesSchemas",
+            "summary": "Front\u0020matter\u0020schemas\u0020\u0028\u0060pages.schema\u0060\u0029\u0020of\u0020the\u0020themes\u0020configuration,\u0020by\u0020import\u0020order\u0020\u0028the\u0020first\u0020one\u0020takes\u0020precedence\u0029\u003A\nkept\u0020out\u0020of\u0020the\u0020themes\u0020configuration\u0020layer,\u0020as\u0020they\u0020are\u0020merged\u0020field\u0020by\u0020field.",
+            "url": "classes/Cecil-Config.html#property_themesSchemas"
         },                {
             "fqsen": "\\Cecil\\Config\u003A\u003A\u0024site",
             "name": "site",
