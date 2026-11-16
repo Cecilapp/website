@@ -91,7 +91,7 @@ assets:
     optimize: true
     quality: 85 # sharper text in screenshots
     responsive:
-      widths: [480, 768, 1024, 1536, 2048] # 1536 and 2048 for HiDPI screens (2x of the 1024px content width)
+      widths: [480, 768, 1024, 1536] # 1536 for HiDPI screens
       sizes:
         markdown: "(max-width: 1023px) calc(100vw - 3rem), 1024px"
         home: "(max-width: 767px) 480px, 33vw"
