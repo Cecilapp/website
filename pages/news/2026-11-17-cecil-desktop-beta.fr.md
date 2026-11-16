@@ -4,12 +4,12 @@ description: "Cecil Desktop, l’application desktop pour Cecil, est disponible 
 date: 2026-11-17
 schedule:
   publish: 2026-11-17
-image: images/news/cecil-desktop-sites.png
+image: images/news/cecil-desktop-sites.fr.png
 slug: cecil-desktop-disponible-en-beta
 ---
 Cecil est un outil en ligne de commande, et il le restera. Mais tout le monde n’a pas envie d’ouvrir un terminal pour écrire une page, vérifier un build ou publier un site. Nous sommes donc heureux d’annoncer que **[Cecil Desktop](https://desktop.cecil.app/fr/) est disponible en bêta**, pour Windows et macOS.
 
-![Cecil Desktop listant les sites, avec l’état de leur dernier build et de leur publication](../../assets/images/news/cecil-desktop-sites.png)
+![Cecil Desktop listant les sites, avec l’état de leur dernier build et de leur publication](../../assets/images/news/cecil-desktop-sites.fr.png)
 
 ### Du Markdown au site en ligne, en un clic
 
