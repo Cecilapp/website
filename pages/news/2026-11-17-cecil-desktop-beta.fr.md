@@ -2,8 +2,6 @@
 title: "Cecil Desktop est disponible en bêta"
 description: "Cecil Desktop, l’application desktop pour Cecil, est disponible en bêta pour Windows et macOS : gérez, générez, prévisualisez et publiez vos sites sans terminal."
 date: 2026-11-17
-schedule:
-  publish: 2026-11-17
 image: images/news/cecil-desktop-sites.fr.png
 slug: cecil-desktop-disponible-en-beta
 ---

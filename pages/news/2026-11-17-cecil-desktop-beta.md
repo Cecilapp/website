@@ -2,8 +2,6 @@
 title: "Cecil Desktop is available in beta"
 description: "Cecil Desktop, the desktop app for Cecil, is available in beta for Windows and macOS: manage, build, preview and publish your sites without the terminal."
 date: 2026-11-17
-schedule:
-  publish: 2026-11-17
 image: images/news/cecil-desktop-sites.png
 ---
 Cecil is a command line tool, and it will stay one. But not everyone wants to open a terminal to write a page, check a build or publish a website. Today, we're happy to announce that **[Cecil Desktop](https://desktop.cecil.app) is available in beta**, for Windows and macOS.
