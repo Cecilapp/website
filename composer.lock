@@ -291,16 +291,16 @@
         },
         {
             "name": "cecil/theme-ogimage",
-            "version": "1.1.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-ogimage.git",
-                "reference": "d903cebe426db1f7d0b0c17c7db24a2a76e0dc12"
+                "reference": "3d2b5482f84e8f9f19e3b4b370208a0c47623e91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-ogimage/zipball/d903cebe426db1f7d0b0c17c7db24a2a76e0dc12",
-                "reference": "d903cebe426db1f7d0b0c17c7db24a2a76e0dc12",
+                "url": "https://api.github.com/repos/Cecilapp/theme-ogimage/zipball/3d2b5482f84e8f9f19e3b4b370208a0c47623e91",
+                "reference": "3d2b5482f84e8f9f19e3b4b370208a0c47623e91",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +329,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-ogimage/issues",
-                "source": "https://github.com/Cecilapp/theme-ogimage/tree/1.1.0"
+                "source": "https://github.com/Cecilapp/theme-ogimage/tree/1.3.0"
             },
             "funding": [
                 {
@@ -341,8 +341,8 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-11-13T10:43:30+00:00",
-            "published-time": "2026-11-13T10:45:00+00:00"
+            "time": "2026-11-16T10:32:09+00:00",
+            "published-time": "2026-11-16T10:33:40+00:00"
         },
         {
             "name": "cecil/theme-pele",
@@ -399,16 +399,16 @@
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "f7e957eb39a56eac47f7588b145d20fa0c5c50a6"
+                "reference": "28afd0ed30331c00edc939bbf7c4c60b6840c1e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/f7e957eb39a56eac47f7588b145d20fa0c5c50a6",
-                "reference": "f7e957eb39a56eac47f7588b145d20fa0c5c50a6",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/28afd0ed30331c00edc939bbf7c4c60b6840c1e3",
+                "reference": "28afd0ed30331c00edc939bbf7c4c60b6840c1e3",
                 "shasum": ""
             },
             "require": {
@@ -433,7 +433,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/3.0.3"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/3.0.4"
             },
             "funding": [
                 {
@@ -445,8 +445,8 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-10-19T21:46:00+00:00",
-            "published-time": "2026-10-19T21:46:26+00:00"
+            "time": "2026-11-17T15:04:47+00:00",
+            "published-time": "2026-11-17T15:06:25+00:00"
         },
         {
             "name": "psr/container",
