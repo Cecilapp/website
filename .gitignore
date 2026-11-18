@@ -13,3 +13,4 @@ cecil.phar
 /cecil-windows-*
 /cecil-binaries.sha256
 scripts/demo-video/preview/
+.vscode/
