@@ -128,3 +128,9 @@
   description:
     en: Website of Alpha, a web development agency in Rijeka, Croatia, building fast and long-lasting websites and applications.
     fr: Site d’Alpha, agence de développement web à Rijeka (Croatie), qui crée des sites et applications rapides et durables.
+- title: wallabag.it
+  url: https://wallabag.it/en/
+  screenshot: images/showcase/wallabag-it.png
+  description:
+    en: Website of wallabag.it, the open source read-it-later service hosted in Europe.
+    fr: Site de wallabag.it, le service open source de lecture différée hébergé en Europe.
