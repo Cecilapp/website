@@ -80,6 +80,23 @@ curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/sear
 curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/search/repositories?q=topic:cecil-starter+org:Cecilapp+fork:true+is:public+archived:false' | jq '[.items[] | {name, full_name, description, github: .html_url, license: .license.name, homepage, date: .pushed_at, default_branch, topics}] | sort_by(.date) | reverse' > data/starterkits.json
 ```
 
+### Add a website to the showcase
+
+The showcase (`/showcase/`) lists the websites of [`data/showcase.yml`](data/showcase.yml), with a screenshot from `assets/images/showcase/`. [`scripts/showcase.mjs`](scripts/showcase.mjs) collects the data of a website built with Cecil from its URL:
+
+```bash
+npm install                      # once
+npx playwright install chromium  # once (or set CHROME, falls back to the installed Chrome)
+npm run showcase -- https://example.com          # prints the YAML entry
+npm run showcase -- https://example.com --write  # appends it to data/showcase.yml
+```
+
+- **Data**: title (`og:site_name` or `<title>`), descriptions in English and French (`hreflang` alternate pages), GitHub repository (if linked from the page); the `generator` meta tag is checked.
+- **Screenshots**: 1280×800, `<name>.png`, plus `<name>.dark.png` if the site supports dark mode (`prefers-color-scheme`, `localStorage.theme` or a `dark` class/attribute), displayed automatically by Cecil for visitors in dark mode.
+- **Options**: `--title=`, `--github=`, `--name=` (screenshot file name, the domain by default), `--no-screenshot`.
+
+Review the descriptions (shorten them, translate those marked `TODO`) and the screenshots (cookie banners, popups) before committing.
+
 ## Social images
 
 The image displayed when a page is shared (Open Graph, X Card) is generated at build time by the [Open Graph image component theme](https://github.com/Cecilapp/theme-ogimage) (`cecil/theme-ogimage`): the title of the page drawn on [`static/images/cecil-card-2.png`](static/images/cecil-card-2.png), with the Montserrat fonts of [`assets/ogimage/fonts/`](assets/ogimage/fonts/).
