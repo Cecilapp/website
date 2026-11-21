@@ -92,12 +92,12 @@
   description:
     en: Personal website and blog of Kévin Thérage, Symfony lead developer.
     fr: Site personnel et blog de Kévin Thérage, lead développeur Symfony.
-- title: Thomas Ferney
-  url: https://thomas-ferney.fr
-  screenshot: images/showcase/antiseptikk-thomas-ferney-fr.png
-  description:
-    en: Personal website of Thomas Ferney, web developer and CTO, specialized in Magento 2, Symfony and Sylius.
-    fr: Site personnel de Thomas Ferney, développeur web et directeur technique, spécialisé dans Magento 2, Symfony et Sylius.
+#- title: Thomas Ferney
+#  url: https://thomas-ferney.fr
+#  screenshot: images/showcase/antiseptikk-thomas-ferney-fr.png
+#  description:
+#    en: Personal website of Thomas Ferney, web developer and CTO, specialized in Magento 2, Symfony and Sylius.
+#    fr: Site personnel de Thomas Ferney, développeur web et directeur technique, spécialisé dans Magento 2, Symfony et Sylius.
 - title: Le Moulin de Prédelles
   url: https://moulindepredelles.com/fr/
   screenshot: images/showcase/welcomattic-moulin-de-predelles.png
@@ -116,12 +116,12 @@
   description:
     en: Photography projects by Guillaume Le Roy and Thomas Guionnet, two photographers from Rennes.
     fr: Projets photographiques de Guillaume Le Roy et Thomas Guionnet, deux photographes rennais.
-- title: Le K Ludique
-  url: https://k-ludique.fr
-  screenshot: images/showcase/k-ludique-fr.png
-  description:
-    en: Board game media and game nights in Rennes.
-    fr: Média ludique et soirées jeux de société à Rennes.
+#- title: Le K Ludique
+#  url: https://k-ludique.fr
+#  screenshot: images/showcase/k-ludique-fr.png
+#  description:
+#    en: Board game media and game nights in Rennes.
+#    fr: Média ludique et soirées jeux de société à Rennes.
 - title: Alpha
   url: https://alpha.hr
   screenshot: images/showcase/alpha-hr.png
