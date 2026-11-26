@@ -13,7 +13,7 @@ A mirror is also deployed on [Cloudflare Pages](https://pages.cloudflare.com), b
 
 Themes are installed from `composer.lock` without Composer, `_redirects` is adapted to Cloudflare Pages and the `*.pages.dev` domain is not indexed.
 
-Another mirror can be deployed on [Render](https://render.com) with the [`render.yaml`](render.yaml) Blueprint, also built with the standalone binary (`bash ./scripts/render-build.sh`). Headers and non-HTML redirects are defined in the Blueprint, and the mirror is not indexed.
+Another mirror can be deployed on [Render](https://render.com) with the [`render.yaml`](render.yaml) Blueprint, also built with the standalone binary (`bash ./scripts/render-build.sh`). Headers and non-HTML redirects are defined in the Blueprint, and the mirror is not indexed (`X-Robots-Tag: noindex`, canonical URLs pointing to cecil.app).
 
 ## Install
 
