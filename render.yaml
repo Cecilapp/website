@@ -4,7 +4,7 @@
 services:
   - type: web
     runtime: static
-    name: cecil
+    name: Cecil
     buildCommand: bash ./scripts/render-build.sh
     staticPublishPath: ./_site
     autoDeployTrigger: commit
