@@ -8,17 +8,18 @@
 # - Build output directory: _site
 # - Environment variables (optional):
 #   - CECIL_VERSION: Cecil release to use (latest by default)
-#   - CECIL_BASEURL: base URL of the production deployment (deployment URL by default)
+#   - CECIL_BASEURL: base URL of the production deployment (https://cecil.app/ by default, as this is a mirror)
 
 set -o pipefail
 
 # Build context
 if [[ $CF_PAGES_BRANCH == "main" ]]; then
   export CECIL_ENV="production"
+  BASEURL=${CECIL_BASEURL:-https://cecil.app/}
 else
   export CECIL_ENV="preview"
+  BASEURL=$CF_PAGES_URL
 fi
-BASEURL=${CECIL_BASEURL:-$CF_PAGES_URL}
 
 # Download the Cecil standalone binary
 case "$(uname -s)-$(uname -m)" in
@@ -66,11 +67,11 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 # Adapt Netlify files to Cloudflare Pages
 # _redirects: domain-level redirects and the force flag ("301!") are not supported
 sed -i -E -e '/^https?:\/\//d' -e 's/[[:space:]]+(30[1278])!$/    \1/' _site/_redirects
-# _headers: this is a mirror, so *.pages.dev must not be indexed
+# _headers: this is a mirror, so it must not be indexed (*.pages.dev and custom domains)
 cat >> _site/_headers <<'EOF'
 
 # Cloudflare Pages mirror
-https://:project.pages.dev/*
+/*
   X-Robots-Tag: noindex
 EOF
 

@@ -8,10 +8,10 @@ A mirror is also deployed on [Cloudflare Pages](https://pages.cloudflare.com), b
 
 - Build command: `bash ./scripts/cloudflare-build.sh`
 - Build output directory: `_site`
-- Environment variables (optional): `CECIL_VERSION` (latest release by default), `CECIL_BASEURL` (deployment URL by default)
+- Environment variables (optional): `CECIL_VERSION` (latest release by default), `CECIL_BASEURL` (`https://cecil.app/` by default in production)
 - Daily build: deploy hook stored in the `CLOUDFLARE_PAGES_DEPLOY_HOOK` repository secret
 
-Themes are installed from `composer.lock` without Composer, `_redirects` is adapted to Cloudflare Pages and the `*.pages.dev` domain is not indexed.
+Themes are installed from `composer.lock` without Composer, `_redirects` is adapted to Cloudflare Pages and the mirror is not indexed (`X-Robots-Tag: noindex` on all domains, canonical URLs pointing to cecil.app).
 
 Another mirror can be deployed on [Render](https://render.com) with the [`render.yaml`](render.yaml) Blueprint, also built with the standalone binary (`bash ./scripts/render-build.sh`). Headers and non-HTML redirects are defined in the Blueprint, and the mirror is not indexed (`X-Robots-Tag: noindex`, canonical URLs pointing to cecil.app).
 
