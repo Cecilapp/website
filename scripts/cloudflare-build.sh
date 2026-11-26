@@ -66,11 +66,11 @@ if [ $? != 0 ]; then echo "Cecil build fail..."; exit 1; fi
 # Adapt Netlify files to Cloudflare Pages
 # _redirects: domain-level redirects and the force flag ("301!") are not supported
 sed -i -E -e '/^https?:\/\//d' -e 's/[[:space:]]+(30[1278])!$/    \1/' _site/_redirects
-# _headers: this is a mirror, so *.pages.dev must not be indexed
+# _headers: this is a mirror, so it must not be indexed (*.pages.dev and custom domains)
 cat >> _site/_headers <<'EOF'
 
 # Cloudflare Pages mirror
-https://:project.pages.dev/*
+/*
   X-Robots-Tag: noindex
 EOF
 
