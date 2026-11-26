@@ -8,17 +8,18 @@
 # - Build output directory: _site
 # - Environment variables (optional):
 #   - CECIL_VERSION: Cecil release to use (latest by default)
-#   - CECIL_BASEURL: base URL of the production deployment (deployment URL by default)
+#   - CECIL_BASEURL: base URL of the production deployment (https://cecil.app/ by default, as this is a mirror)
 
 set -o pipefail
 
 # Build context
 if [[ $CF_PAGES_BRANCH == "main" ]]; then
   export CECIL_ENV="production"
+  BASEURL=${CECIL_BASEURL:-https://cecil.app/}
 else
   export CECIL_ENV="preview"
+  BASEURL=$CF_PAGES_URL
 fi
-BASEURL=${CECIL_BASEURL:-$CF_PAGES_URL}
 
 # Download the Cecil standalone binary
 case "$(uname -s)-$(uname -m)" in
