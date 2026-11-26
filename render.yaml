@@ -98,4 +98,4 @@ services:
     routes:
       - type: redirect
         source: /build.sh
-        destination: https://raw.githubusercontent.com/Cecilapp/Cecil/master/scripts/cecil-build.sh
+        destination: https://raw.githubusercontent.com/Cecilapp/Cecil/main/scripts/cecil-build.sh
